@@ -20,6 +20,8 @@ from django.views.generic import RedirectView
 
 from rest_framework import routers
 
+from upload import views as upload_views
+
 from .index import index
 from .proxy_frontend import proxy_frontend
 
@@ -27,11 +29,12 @@ from example.views import hooray as ExampleView # DELETEME, see below
 
 api_router = routers.DefaultRouter()  # register viewsets with this router
 
-
 if settings.PROXY_FRONTEND:
     spa_url = re_path(r'^(?P<path>.*)$', proxy_frontend)
 else:
     spa_url = re_path(r'', index)
+
+
 
 urlpatterns = [
     path('api/example/', ExampleView), # this is just an example, please delete and utilize router above.
