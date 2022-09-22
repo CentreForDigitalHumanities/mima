@@ -10,6 +10,7 @@ export interface Adverbial {
     'Language group': string;
     'Source': string;
     'Label': string;
+    'Labels': string[];
     'Note(s)': string;
 }
 

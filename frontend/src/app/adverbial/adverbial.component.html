@@ -1,7 +1,8 @@
 <div class="content">
-    <h1 class="title is-6">{{adverbial['Manner adverbial']}}</h1>
+    <h1 class="title is-4">{{adverbial['Manner adverbial']}}</h1>
     <p>
         {{adverbial['Full example']}} <br/>
+        <ng-container *ngIf="adverbial['Leipzig gloss']">{{adverbial['Leipzig gloss']}}<br /></ng-container>
         <i>{{adverbial['Translation']}}</i>
     </p>
 </div>
@@ -11,6 +12,13 @@
             <span class="tag">{{adverbial['ID']}}</span>
         </div>
     </div>
+    <ng-container  *ngIf="adverbial['Labels']">
+        <div class="control" *ngFor="let label of adverbial['Labels']">
+            <div class="tag">
+                <span class="tag">{{label}}</span>
+            </div>
+        </div>
+    </ng-container>
     <div class="control">
         <div class="tags has-addons">
             <span class="tag">{{adverbial['Language family']}}</span>
@@ -22,11 +30,6 @@
     <div class="control" *ngIf="adverbial['Source']">
         <div class="tag">
             <span class="tag">{{adverbial['Source']}}</span>
-        </div>
-    </div>
-    <div class="control" *ngIf="adverbial['Label']">
-        <div class="tag">
-            <span class="tag">{{adverbial['Label']}}</span>
         </div>
     </div>
     <div class="control" [title]="adverbial['Note(s)']" *ngIf="adverbial['Note(s)']">
