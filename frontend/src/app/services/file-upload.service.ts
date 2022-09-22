@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Adverbial } from '../models/adverbial';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class FileUploadService {
-  baseApiUrl = "/api/upload/" //? TODO: find out what to put here
-  constructor(private http: HttpClient) { }
+    baseApiUrl = '/api';
+    constructor(private http: HttpClient) { }
 
-  upload(file):Observable<any> {
+    upload(file: File): Observable<Adverbial[]> {
 
-    // Create form data
-    const formData = new FormData();
+        // Create form data
+        const formData = new FormData();
 
-    // Store form name as "file" with file data
-    formData.append("file", file, file.name);
+        // Store form name as "file" with file data
+        formData.append('file', file, file.name);
 
-    // Make http post request over api
-    // with formData as req
-    return this.http.post(this.baseApiUrl, formData)
-}
+        // Make http post request over api
+        // with formData as req
+        return this.http.post<Adverbial[]>(this.baseApiUrl + '/upload/upload/', formData);
+    }
 }

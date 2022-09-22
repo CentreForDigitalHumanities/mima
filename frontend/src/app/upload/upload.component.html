@@ -10,3 +10,11 @@
 <div class="container" *ngIf="loading">
     <h3>Loading ...</h3>
 </div>
+
+<table class="table">
+    <tbody>
+        <tr *ngFor="let adverbial of adverbials">
+            <td>{{adverbial['ID']}}</td>
+        </tr>
+    </tbody>
+</table>

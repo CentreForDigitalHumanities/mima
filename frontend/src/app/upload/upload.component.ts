@@ -1,36 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import { Adverbial } from '../models/adverbial';
 import { FileUploadService } from './../services/file-upload.service';
 
 @Component({
-  selector: 'mima-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.scss']
+    selector: 'mima-upload',
+    templateUrl: './upload.component.html',
+    styleUrls: ['./upload.component.scss']
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent {
+    adverbials: Adverbial[];
 
-  loading: boolean = false;
-  file: File = null;
-  shortLink: string = "";
+    loading = false;
+    file: File = null;
+    shortLink = '';
 
-  constructor(private fileUploadService: FileUploadService) { }
+    constructor(private fileUploadService: FileUploadService) {
+    }
 
-  ngOnInit(): void {
-  }
+    onChange(event: Event): void {
+        this.file = (event.target as HTMLInputElement).files[0];
+    }
 
-  onChange(event) {
-    this.file = event.target.files[0];
-  }
+    onUpload(): void {
+        this.loading = !this.loading;
+        console.log(this.file);
 
-  onUpload() {
-    this.loading = !this.loading;
-    console.log(this.file);
-
-    this.fileUploadService.upload(this.file).subscribe(
-        (event: any) => {
-            if (typeof (event) === 'object') {
+        this.fileUploadService.upload(this.file).subscribe(
+            (adverbials: Adverbial[]) => {
                 this.loading = false;
+                this.adverbials = adverbials;
             }
-        }
-    );
-  }
+        );
+    }
 }
