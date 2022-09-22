@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
+import { AdverbialComponent } from './adverbial/adverbial.component';
+import { AdverbialListComponent } from './adverbial-list/adverbial-list.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { UploadComponent } from './upload/upload.component';
         FooterComponent,
         MenuComponent,
         HomeComponent,
-        UploadComponent
+        UploadComponent,
+        AdverbialComponent,
+        AdverbialListComponent
     ],
     imports: [
         AppRoutingModule,

@@ -1,0 +1,37 @@
+<div class="content">
+    <h1 class="title is-6">{{adverbial['Manner adverbial']}}</h1>
+    <p>
+        {{adverbial['Full example']}} <br/>
+        <i>{{adverbial['Translation']}}</i>
+    </p>
+</div>
+<div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+        <div class="tag">
+            <span class="tag">{{adverbial['ID']}}</span>
+        </div>
+    </div>
+    <div class="control">
+        <div class="tags has-addons">
+            <span class="tag">{{adverbial['Language family']}}</span>
+            <span class="tag">{{adverbial['Language group']}}</span>
+            <span class="tag is-dark">{{adverbial['Language']}}</span>
+            <span class="tag is-info">{{adverbial['Dialect']}}</span>
+        </div>
+    </div>
+    <div class="control" *ngIf="adverbial['Source']">
+        <div class="tag">
+            <span class="tag">{{adverbial['Source']}}</span>
+        </div>
+    </div>
+    <div class="control" *ngIf="adverbial['Label']">
+        <div class="tag">
+            <span class="tag">{{adverbial['Label']}}</span>
+        </div>
+    </div>
+    <div class="control" [title]="adverbial['Note(s)']" *ngIf="adverbial['Note(s)']">
+        <i class="icon">
+            <fa-icon [icon]="faCommentDots"></fa-icon>
+        </i>
+    </div>
+</div>
