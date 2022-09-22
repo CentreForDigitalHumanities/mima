@@ -28,6 +28,10 @@ export class UploadComponent {
         this.fileUploadService.upload(this.file).subscribe(
             (adverbials: Adverbial[]) => {
                 this.loading = false;
+                // TODO: move this to service
+                for (const adverbial of adverbials) {
+                    adverbial['Labels'] = adverbial['Label'].split('+');
+                }
                 this.adverbials = adverbials;
             }
         );
