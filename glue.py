@@ -41,4 +41,3 @@ STATICFILES_DIRS += [
     op.join(here, 'frontend', 'src')
 ]
 PROXY_FRONTEND = "http://localhost:4200"
-
