@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="adverbial">
     <h1 class="title is-4">{{adverbial['Manner adverbial']}}</h1>
     <p>
         {{adverbial['Full example']}} <br/>
@@ -6,7 +6,7 @@
         <i>{{adverbial['Translation']}}</i>
     </p>
 </div>
-<div class="field is-grouped is-grouped-multiline">
+<div class="field is-grouped is-grouped-multiline" *ngIf="adverbial">
     <div class="control">
         <div class="tag">
             <span class="tag">{{adverbial['ID']}}</span>
