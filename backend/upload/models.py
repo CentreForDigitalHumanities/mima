@@ -2,11 +2,14 @@ from distutils.command.upload import upload
 from django.db import models
 from typing import Callable, Dict, List, Sequence, Tuple
 
+
 def str_map(x: str):
     return x
 
+
 def label_map(x: str):
     return x.split('+')
+
 
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'ID': ('id', str_map),
@@ -23,10 +26,6 @@ adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'Note(s)': ('notes', str_map)
 }
 
-class UploadedCSV(models.Model):
-    upload_path = "backend/upload/csv_files"
-    name = models.CharField(max_length=200)
-    # file = models.FileField(upload_to=os.path.join(upload_path, name))
 
 class Adverbial:
     @staticmethod
@@ -43,7 +42,6 @@ class Adverbial:
             errors.append(['MISSING_COLUMN', name])
 
         return errors
-
 
     @staticmethod
     def from_csv_row(row: Dict[str, str]) -> 'Adverbial':
