@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { UploadComponent } from './upload/upload.component';
 import { AdverbialComponent } from './adverbial/adverbial.component';
 import { AdverbialListComponent } from './adverbial-list/adverbial-list.component';
+import { AdverbialListPageComponent } from './adverbial-list-page/adverbial-list-page.component';
+import { UploadPageComponent } from './upload-page/upload-page.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,9 @@ import { AdverbialListComponent } from './adverbial-list/adverbial-list.componen
         HomeComponent,
         UploadComponent,
         AdverbialComponent,
-        AdverbialListComponent
+        AdverbialListComponent,
+        AdverbialListPageComponent,
+        UploadPageComponent
     ],
     imports: [
         AppRoutingModule,
