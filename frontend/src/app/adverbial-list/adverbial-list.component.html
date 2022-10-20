@@ -1,3 +1,12 @@
-<div class="box" *ngFor="let adverbial of adverbials">
-    <mima-adverbial [adverbial]="adverbial"></mima-adverbial>
-</div>
+<ng-container *ngIf="adverbials && adverbials.length; else emptyList">
+    <div class="box" *ngFor="let adverbial of adverbials">
+        <mima-adverbial [adverbial]="adverbial" [filters]="filters"></mima-adverbial>
+    </div>
+</ng-container>
+<ng-template #emptyList>
+    <article class="message is-warning">
+        <div class="message-body content">
+            No matching adverbials found!
+        </div>
+    </article>
+</ng-template>

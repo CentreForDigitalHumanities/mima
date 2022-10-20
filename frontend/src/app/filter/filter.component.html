@@ -1,0 +1,15 @@
+<div class="field has-addons" *ngIf="value">
+    <div class="control has-icons-left">
+        <div class="select">
+            <select [(ngModel)]="selectedType" (change)="emit()">
+                <option *ngFor="let filterType of filterTypes" [ngValue]="filterType">{{filterType.name}}</option>
+            </select>
+        </div>
+        <span class="icon is-left">
+            <fa-icon [icon]="selectedType.icon"></fa-icon>
+        </span>
+    </div>
+    <p class="control">
+        <input class="input" type="text" name="text" [(ngModel)]="value.text" (keyup)="emit()">
+    </p>
+</div>

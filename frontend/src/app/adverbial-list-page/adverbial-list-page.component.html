@@ -1,3 +1,4 @@
 <h1 class="title">Adverbials</h1>
-
-<mima-adverbial-list [adverbials]="adverbials" *ngIf="adverbials"></mima-adverbial-list>
+<mima-filter-list (filtersChange)="applyFilters($event)"></mima-filter-list>
+<br />
+<mima-adverbial-list [adverbials]="adverbials | async" [filters]="filtersDebounced | async"></mima-adverbial-list>

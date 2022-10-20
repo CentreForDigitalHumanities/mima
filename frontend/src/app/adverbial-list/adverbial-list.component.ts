@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Adverbial } from '../models/adverbial';
+import { Filter } from '../models/filter';
 
 @Component({
     selector: 'mima-adverbial-list',
@@ -10,4 +11,6 @@ export class AdverbialListComponent {
     @Input()
     adverbials: Adverbial[];
 
+    @Input()
+    filters: Filter[];
 }
