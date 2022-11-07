@@ -20,6 +20,7 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
 import { FilterComponent } from './filter/filter.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
 import { HighlightPipe } from './highlight.pipe';
+import { HighlightPlainPipe } from './highlight-plain.pipe';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { HighlightPipe } from './highlight.pipe';
         UploadPageComponent,
         FilterComponent,
         FilterListComponent,
-        HighlightPipe
+        HighlightPipe,
+        HighlightPlainPipe
     ],
     imports: [
         AppRoutingModule,

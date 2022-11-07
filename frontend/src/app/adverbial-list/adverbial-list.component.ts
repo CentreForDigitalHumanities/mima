@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Adverbial } from '../models/adverbial';
+import { Adverbial, MatchedAdverbial } from '../models/adverbial';
 import { Filter } from '../models/filter';
 
 @Component({
@@ -9,7 +9,7 @@ import { Filter } from '../models/filter';
 })
 export class AdverbialListComponent {
     @Input()
-    adverbials: Adverbial[];
+    adverbials: (Adverbial | MatchedAdverbial)[];
 
     @Input()
     filters: Filter[];

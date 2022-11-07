@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Adverbial } from '../models/adverbial';
+import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
 import { Filter } from '../models/filter';
 
 const ignoreCharacters = ['-', '\'', '.', '(', ')'];
-const ignoreCharactersExp = /[\-'\.\(\)]/g;
+const ignoreCharactersExp = /[\-'\.\(\)\s]/g;
+
+
+// https://stackoverflow.com/a/37511463/8438971
+function removeDiacritics(text: string): string {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
 
 @Injectable({
     providedIn: 'root'
@@ -12,46 +18,92 @@ export class FilterService {
 
     constructor() { }
 
-    public filterMatch(adverbial: Adverbial, filter: Filter): boolean {
-        if (!filter.text) {
-            // empty text? always match
-            return true;
+    /**
+     * @returns MatchedAdverbial or undefined if it doesn't match
+     */
+    public applyFilters(adverbial: Adverbial, filters: Filter[]): MatchedAdverbial {
+        let anyMatch = false;
+        const result = new MatchedAdverbial();
+        const keys: (keyof Omit<MatchedAdverbial, 'labels'>)[] = [
+            'id',
+            'text',
+            'example',
+            'translation',
+            'gloss',
+            'language',
+            'dialect',
+            'language_family',
+            'language_group',
+            'source',
+            'notes'];
+        for (const key of keys) {
+            const parts = this.searchField(adverbial[key], key, filters);
+            anyMatch ||= parts.match;
+            result[key] = parts;
+        }
+        result.labels = [];
+        for (const label of adverbial.labels) {
+            const parts = this.searchField(label, 'labels', filters);
+            anyMatch ||= parts.match;
+            result.labels.push(parts);
         }
 
-        for (const field of Object.keys(adverbial) as (keyof Adverbial)[]) {
-            if (filter.field !== '*' && filter.field !== field) {
-                continue;
-            }
-            switch (field) {
-                case 'labels':
-                    // contains multiple values to match
-                    for (const label of adverbial[field]) {
-                        if (this.matchTexts(label, filter.text).length) {
-                            return true;
-                        }
-                    }
-                    break;
-                default:
-                    if (this.matchTexts(adverbial[field], filter.text).length) {
-                        return true;
-                    }
-                    break;
-            }
+        if (anyMatch) {
+            return result;
         }
 
-        return false;
+        return undefined;
     }
 
-    public *highlightFilterMatches(text: string, field: keyof Adverbial, filters: Filter[] = []):
-        Iterable<{ part: string, match: boolean }> {
+    /**
+     * Search a single field using filters
+     * @param text field text to search
+     * @param field name of the field
+     * @param filters filters to apply
+     * @returns MatchedParts
+     */
+    private searchField(text: string, field: keyof Adverbial, filters: Filter[]): MatchedParts {
         const matches: [number, number][] = [];
+        let emptyFilter = false;
         if (filters?.length) {
             for (const filter of filters) {
                 if (filter.field === '*' || filter.field === field) {
-                    matches.push(... this.matchTexts(text, filter.text));
+                    matches.push(... this.searchMultiple(text, filter.text));
+                    if (!(filter.text ?? '').trim()) {
+                        // an empty filter matches everything!
+                        emptyFilter = true;
+                    }
                 }
             }
+        } else {
+            emptyFilter = true;
         }
+
+        const results: MatchedParts = {
+            empty: !(text ?? '').trim(),
+            parts: [],
+            fullMatch: !emptyFilter && matches.length > 0,
+            match: emptyFilter || matches.length > 0,
+            emptyFilters: emptyFilter
+        };
+
+        const pushMatch = (subtext: string) => {
+            results.parts.push({
+                text: subtext,
+                match: true
+            });
+        };
+
+        const pushMiss = (subtext: string) => {
+            results.parts.push({
+                text: subtext,
+                match: false
+            });
+
+            if (results.fullMatch && subtext.replace(ignoreCharactersExp, '')) {
+                results.fullMatch = false;
+            }
+        };
 
         let lastIndex = 0;
         if (matches.length) {
@@ -79,36 +131,29 @@ export class FilterService {
             // returns the marked string
             for (const [start, end] of mergedMatches) {
                 if (start > lastIndex) {
-                    yield {
-                        part: text.substring(lastIndex, start),
-                        match: false
-                    };
+                    pushMiss(text.substring(lastIndex, start));
                 }
 
-                yield {
-                    part: text.substring(start, end),
-                    match: true
-                };
+                pushMatch(text.substring(start, end));
 
                 lastIndex = end;
             }
         }
 
         if (lastIndex < text.length) {
-            yield {
-                part: text.substring(lastIndex),
-                match: false
-            };
+            pushMiss(text.substring(lastIndex));
         }
+
+        return results;
     }
 
     /**
      * Splits search text by space and match each separate item
      */
-    private matchTexts(haystack: string, needles: string): [number, number][] {
+    private searchMultiple(haystack: string, needles: string): [number, number][] {
         return needles.split(' ')
             .filter(needle => needle)
-            .map(needle => this.matchText(haystack, needle))
+            .map(needle => this.searchSingle(haystack, needle))
             .reduce((prev, matches, index) => {
                 if (matches.length === 0 || (index > 0 && prev.length === 0)) {
                     // every part should match
@@ -124,7 +169,7 @@ export class FilterService {
      * end positions (exclusive). Case-insensitive and skips over special
      * characters.
      */
-    private matchText(haystack: string, needle: string): [number, number][] {
+    private searchSingle(haystack: string, needle: string): [number, number][] {
         let haystackIndex = 0;
         let needleIndex = 0;
         let start = 0;
@@ -135,8 +180,12 @@ export class FilterService {
             const character = haystack[haystackIndex].toLowerCase();
             if (ignoreCharacters.indexOf(character) >= 0) {
                 // ignore
+                if (start === haystackIndex) {
+                    start++; // don't highlight leading characters
+                }
                 haystackIndex++;
-            } else if (character === needle[needleIndex]) {
+            } else if (character === needle[needleIndex] ||
+                removeDiacritics(character) === needle[needleIndex]) {
                 // match!
                 needleIndex++;
                 haystackIndex++;

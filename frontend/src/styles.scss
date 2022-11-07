@@ -12,6 +12,10 @@ $highlight-text: $warning-invert;
     color: $highlight-text;
 }
 
+.is-highlight {
+    @extend .is-warning;
+}
+
 @media print {
 
     .is-hidden-print,

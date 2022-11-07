@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import { Adverbial } from '../models/adverbial';
+import { Adverbial, MatchedAdverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class UploadPageComponent implements OnInit {
     faCheckCircle = faCheckCircle;
 
     adverbials: Adverbial[];
+    matchedAdverbials: MatchedAdverbial[];
     state: 'upload' | 'review' | 'save' | 'saved' = 'upload';
     savedCount: number;
 
@@ -24,6 +25,7 @@ export class UploadPageComponent implements OnInit {
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
+        this.matchedAdverbials = adverbials.map(adverbial => new MatchedAdverbial(adverbial));
         this.state = 'review';
     }
 
