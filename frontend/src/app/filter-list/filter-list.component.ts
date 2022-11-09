@@ -1,4 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
+import { updateFilter } from '../adverbial.actions';
+import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
 
 @Component({
@@ -6,20 +10,37 @@ import { Filter } from '../models/filter';
     templateUrl: './filter-list.component.html',
     styleUrls: ['./filter-list.component.scss']
 })
-export class FilterListComponent implements OnInit {
-    filters: Filter[] = [{ index: 0, field: '*', text: '' }];
+export class FilterListComponent implements OnInit, OnDestroy {
+    filterIndexes: number[] = [];
+    private subscriptions: Subscription[];
 
     @Output()
     filtersChange = new EventEmitter<Filter[]>();
 
-    constructor() { }
+    constructor(private store: Store<State>) {
+    }
 
     ngOnInit(): void {
+        this.subscriptions = [
+            this.store.select('adverbials', 'filters').subscribe(filters => {
+                if (this.filterIndexes.length !== filters.length) {
+                    this.filterIndexes = [];
+                    for (let i = 0; i < filters.length; i++) {
+                        this.filterIndexes[i] = i;
+                    }
+                }
+            })
+        ];
+    }
+
+    ngOnDestroy(): void {
+        for (const subscription of this.subscriptions) {
+            subscription.unsubscribe();
+        }
     }
 
     filterChange(updated: Filter): void {
-        Object.assign(this.filters[updated.index], updated);
-        this.filtersChange.next(this.filters);
+        this.store.dispatch(updateFilter({ filter: updated }));
     }
 
 }

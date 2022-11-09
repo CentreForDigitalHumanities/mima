@@ -1,3 +1,8 @@
+<div class="content has-text-centered has-text-light" *ngIf="!matchedAdverbial">
+    <span class="icon is-large">
+        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+    </span>
+</div>
 <div class="content" *ngIf="matchedAdverbial">
     <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
     <p>

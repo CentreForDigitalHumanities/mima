@@ -1,4 +1,4 @@
-<div class="field has-addons" *ngIf="value">
+<div class="field has-addons" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
             <select [(ngModel)]="selectedType" (change)="emit()">
@@ -10,6 +10,6 @@
         </span>
     </div>
     <p class="control">
-        <input class="input" type="text" name="text" [(ngModel)]="value.text" (keyup)="emit()">
+        <input class="input" type="text" name="text" [(ngModel)]="filter.text" (keyup)="emit()">
     </p>
 </div>

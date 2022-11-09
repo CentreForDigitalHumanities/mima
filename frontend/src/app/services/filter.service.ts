@@ -21,7 +21,7 @@ export class FilterService {
     /**
      * @returns MatchedAdverbial or undefined if it doesn't match
      */
-    public applyFilters(adverbial: Adverbial, filters: Filter[]): MatchedAdverbial {
+    public applyFilters(adverbial: Adverbial, filters: ReadonlyArray<Filter>): MatchedAdverbial {
         let anyMatch = false;
         const result = new MatchedAdverbial();
         const keys: (keyof Omit<MatchedAdverbial, 'labels'>)[] = [
@@ -62,7 +62,7 @@ export class FilterService {
      * @param filters filters to apply
      * @returns MatchedParts
      */
-    private searchField(text: string, field: keyof Adverbial, filters: Filter[]): MatchedParts {
+    private searchField(text: string, field: keyof Adverbial, filters: ReadonlyArray<Filter>): MatchedParts {
         const matches: [number, number][] = [];
         let emptyFilter = false;
         if (filters?.length) {
@@ -79,13 +79,13 @@ export class FilterService {
             emptyFilter = true;
         }
 
-        const results: MatchedParts = {
+        const results = new MatchedParts({
             empty: !(text ?? '').trim(),
             parts: [],
             fullMatch: !emptyFilter && matches.length > 0,
             match: emptyFilter || matches.length > 0,
             emptyFilters: emptyFilter
-        };
+        });
 
         const pushMatch = (subtext: string) => {
             results.parts.push({

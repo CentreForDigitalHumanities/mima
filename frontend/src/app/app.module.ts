@@ -4,11 +4,16 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AdverbialEffects } from './adverbial.effects';
+import { adverbialReducer } from './adverbial.reducer';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
@@ -48,7 +53,16 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
         HttpClientXsrfModule.withOptions({
             cookieName: 'csrftoken',
             headerName: 'X-CSRFToken'
-        })
+        }),
+        EffectsModule.forRoot([AdverbialEffects]),
+        StoreModule.forRoot({
+            adverbials: adverbialReducer
+        }, {
+            runtimeChecks: {
+                strictStateImmutability: true,
+                strictActionImmutability: true
+            }
+        }),
     ],
     providers: [],
     bootstrap: [AppComponent]

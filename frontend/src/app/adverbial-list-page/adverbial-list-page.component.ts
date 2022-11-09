@@ -1,46 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
-import { MatchedAdverbial } from '../models/adverbial';
-import { Filter } from '../models/filter';
-import { AdverbialsService } from '../services/adverbials.service';
+import { loadAdverbials } from '../adverbial.actions';
+import { State } from '../adverbial.state';
 
 @Component({
     selector: 'mima-adverbial-list-page',
     templateUrl: './adverbial-list-page.component.html',
     styleUrls: ['./adverbial-list-page.component.scss']
 })
-export class AdverbialListPageComponent implements OnInit, OnDestroy {
-    adverbials = new BehaviorSubject<MatchedAdverbial[]>([]);
-    filters = new BehaviorSubject<Filter[]>([]);
-    filtersDebounced = this.filters.asObservable().pipe(
-        debounceTime(50));
-    subscriptions: Subscription[];
-
-    constructor(private adverbialService: AdverbialsService) {
+export class AdverbialListPageComponent implements OnInit {
+    constructor(private store: Store<State>) {
     }
 
     async ngOnInit(): Promise<void> {
-        this.subscriptions = [
-            this.filtersDebounced.pipe(
-                switchMap(async (filters) => {
-                    return await this.adverbialService.filter(filters);
-                })
-            ).subscribe(adverbials => {
-                this.adverbials.next(Array.from(adverbials));
-            })
-        ];
+        this.store.dispatch(loadAdverbials());
     }
 
-    ngOnDestroy(): void {
-        for (const subscription of this.subscriptions) {
-            subscription.unsubscribe();
-        }
-    }
-
-    async applyFilters(filters: Iterable<Filter>): Promise<void> {
-        this.filters.next([...filters]);
-    }
 
 }

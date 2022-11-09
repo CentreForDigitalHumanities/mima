@@ -24,16 +24,16 @@ type MatchedPart = {
 /**
  * Part of the text marking highlights.
  */
-export type MatchedParts = {
-    parts: MatchedPart[],
+export class MatchedParts {
+    parts: MatchedPart[];
     /**
      * is there any text?
      */
-    empty: boolean,
+    empty: boolean;
     /**
      * does the entire text match?
      */
-    fullMatch: boolean,
+    fullMatch: boolean;
     /**
      * does this text match?
      */
@@ -43,7 +43,17 @@ export type MatchedParts = {
      * "hit"
      */
     emptyFilters: boolean;
-};
+
+    get text(): string {
+        return this.parts.map(part => part.text).join('');
+    }
+
+    constructor(properties: { [T in keyof Omit<MatchedParts, 'text'>]: MatchedParts[T] }) {
+        for (const [key, value] of Object.entries(properties)) {
+            this[key] = value;
+        }
+    }
+}
 
 /**
  * Depends on the type of property
@@ -93,7 +103,7 @@ export class MatchedAdverbial implements MatchedAdverbialProperties {
     }
 
     private unmatchedValue(text: string): MatchedParts {
-        return {
+        return new MatchedParts({
             empty: !(text ?? '').trim(),
             match: false,
             fullMatch: false,
@@ -102,6 +112,6 @@ export class MatchedAdverbial implements MatchedAdverbialProperties {
                 text,
                 match: false
             }]
-        };
+        });
     }
 }

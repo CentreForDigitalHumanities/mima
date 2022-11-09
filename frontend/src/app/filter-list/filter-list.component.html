@@ -1,3 +1,5 @@
-<ng-container *ngFor="let filter of filters">
-    <mima-filter [filter]="filter" (filterChange)="filterChange($event)"></mima-filter>
+<ng-container *ngIf="!!filterIndexes">
+    <ng-container *ngFor="let index of filterIndexes">
+        <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
+    </ng-container>
 </ng-container>

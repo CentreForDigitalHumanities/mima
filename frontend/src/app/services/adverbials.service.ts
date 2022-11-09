@@ -21,7 +21,7 @@ export class AdverbialsService {
         return Promise.resolve(this.database);
     }
 
-    async filter(filters: Filter[]): Promise<Iterable<MatchedAdverbial>> {
+    async filter(filters: ReadonlyArray<Filter>): Promise<Iterable<MatchedAdverbial>> {
         const matched = this.database
             .map(adverbial => this.filterService.applyFilters(adverbial, filters))
             .filter(adverbial => !!adverbial);
