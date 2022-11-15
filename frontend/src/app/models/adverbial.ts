@@ -1,16 +1,14 @@
 export interface Adverbial {
-    'ID': string;
-    'Manner adverbial': string;
-    'Full example': string;
-    'Translation': string;
-    'Leipzig gloss': string;
-    'Language': string;
-    'Dialect': string;
-    'Language family': string;
-    'Language group': string;
-    'Source': string;
-    'Label': string;
-    'Labels': string[];
-    'Note(s)': string;
+    id: string;
+    text: string;
+    example: string;
+    translation: string;
+    gloss: string;
+    language: string;
+    dialect: string;
+    language_family: string;
+    language_group: string;
+    source: string;
+    labels: string[];
+    notes: string;
 }
-

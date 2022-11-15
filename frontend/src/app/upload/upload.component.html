@@ -1,15 +1,24 @@
-<div class="text-center">
-    <input class="form-control" type="file"
-            (change)="onChange($event)">
-
-    <button (click)="onUpload()">
-        Upload
-    </button>
+<div class="file">
+    <label class="file-label">
+        <input class="file-input" type="file" (change)="onChange($event)" accept=".csv,text/csv">
+        <span class="file-cta">
+            <span class="file-icon">
+                <fa-icon [icon]="faUpload"></fa-icon>
+            </span>
+            <span class="file-label">
+                {{ fileName || 'Choose a file...' }}
+            </span>
+        </span>
+    </label>
 </div>
-
 <div class="container" *ngIf="loading">
     <h3>Loading ...</h3>
 </div>
 
-<mima-adverbial-list [adverbials]="adverbials" *ngIf="adverbials"></mima-adverbial-list>
+<div class="notification is-danger" *ngIf="messages">
+    <p *ngFor="let message of messages">
+        {{message}}
+    </p>
+</div>
 
+<mima-adverbial-list [adverbials]="adverbials" *ngIf="adverbials"></mima-adverbial-list>
