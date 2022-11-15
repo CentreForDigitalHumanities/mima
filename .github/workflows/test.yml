@@ -70,8 +70,8 @@ jobs:
       env:
         # Provide PostgreSQL environment variables in order to default to TCP connection
         PGDATABASE: mima
-        PGHOST: postgres
-        PGPORT: 5432
+        PGHOST: localhost
+        PGPORT: ${{ job.services.postgres.ports['5432'] }}
         PGUSER: mima_user
         PGPASSWORD: mima_pwd
       run: |
