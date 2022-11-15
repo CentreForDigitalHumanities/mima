@@ -26,9 +26,9 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_DB: postgres
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgrespwd
+          POSTGRES_DB: mima
+          POSTGRES_USER: mima_user
+          POSTGRES_PASSWORD: mima_pwd
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -69,11 +69,11 @@ jobs:
     - name: Run all tests
       env:
         # Provide PostgreSQL environment variables in order to default to TCP connection
-        PGDATABASE: postgres
-        PGHOST: localhost
+        PGDATABASE: mima
+        PGHOST: postgres
         PGPORT: 5432
-        PGUSER: postgres
-        PGPASSWORD: postgrespwd
+        PGUSER: mima_user
+        PGPASSWORD: mima_pwd
       run: |
         cat bootstrap_ci.txt | python bootstrap.py
         yarn
