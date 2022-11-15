@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'mima.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mima',
-        'USER': 'mima',
-        'PASSWORD': 'mima',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('PGDATABASE') or 'mima',
+        'USER': os.environ.get('PGUSER') or 'mima',
+        'PASSWORD': os.environ.get('PGPASSWORD') or 'mima',
+        'HOST': os.environ.get('PGHOST') or 'localhost',
+        'PORT': os.environ.get('PGPORT') or '5432',
     }
 }
 
