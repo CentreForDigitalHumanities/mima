@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Adverbial } from '../models/adverbial';
 import { ValidationErrors } from '../models/validationError';
 import { FileUploadService } from './../services/file-upload.service';
-import { faUpload } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'mima-upload',
@@ -10,15 +10,18 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent {
-    faUpload = faUpload;
+    @Output()
+    adverbials = new EventEmitter<Adverbial[]>();
 
-    adverbials: Adverbial[];
+    faUpload = faUpload;
 
     loading = false;
     messages: string[];
     file: File = null;
     fileName: string;
     shortLink = '';
+
+    state: 'empty' | 'error' | 'success' = 'empty';
 
     constructor(private fileUploadService: FileUploadService) {
     }
@@ -27,11 +30,13 @@ export class UploadComponent {
         this.file = (event.target as HTMLInputElement).files[0];
         this.fileName = this.file.name;
 
-        this.loading = !this.loading;
+        this.loading = true;
         delete this.messages;
         try {
-            this.adverbials = await this.fileUploadService.upload(this.file);
+            this.adverbials.next(await this.fileUploadService.upload(this.file));
+            this.state = 'success';
         } catch (error) {
+            this.state = 'error';
             if (error instanceof ValidationErrors) {
                 this.messages = Array.from(error.toStrings());
             } else {
