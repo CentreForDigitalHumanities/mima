@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FilterComponent } from '../filter/filter.component';
+import { provideMockStore } from '@ngrx/store/testing';
 
+import { initialState } from '../adverbial.state';
+import { FilterComponent } from '../filter/filter.component';
 import { FilterListComponent } from './filter-list.component';
 
 describe('FilterListComponent', () => {
@@ -12,7 +14,8 @@ describe('FilterListComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [FilterListComponent, FilterComponent],
-            imports: [FormsModule, FontAwesomeModule]
+            imports: [FormsModule, FontAwesomeModule],
+            providers: [provideMockStore({ initialState })]
         })
             .compileComponents();
     });

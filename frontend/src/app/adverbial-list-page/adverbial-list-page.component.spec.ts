@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { provideMockStore } from '@ngrx/store/testing';
+
 import { AdverbialListComponent } from '../adverbial-list/adverbial-list.component';
+import { initialState } from '../adverbial.state';
 import { FilterListComponent } from '../filter-list/filter-list.component';
 import { FilterComponent } from '../filter/filter.component';
 
@@ -14,7 +17,8 @@ describe('AdverbialListPageComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [AdverbialListPageComponent, FilterComponent, FilterListComponent, AdverbialListComponent],
-            imports: [FormsModule, FontAwesomeModule]
+            imports: [FormsModule, FontAwesomeModule],
+            providers: [provideMockStore({ initialState })]
         })
             .compileComponents();
     });
