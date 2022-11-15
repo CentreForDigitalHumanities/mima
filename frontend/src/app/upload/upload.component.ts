@@ -33,7 +33,7 @@ export class UploadComponent {
         this.loading = true;
         delete this.messages;
         try {
-            this.adverbials.next(await this.fileUploadService.upload(this.file));
+            this.adverbials.emit(await this.fileUploadService.upload(this.file));
             this.state = 'success';
         } catch (error) {
             this.state = 'error';
