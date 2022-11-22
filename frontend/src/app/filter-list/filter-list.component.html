@@ -1,5 +1,30 @@
 <ng-container *ngIf="!!filterIndexes">
-    <ng-container *ngFor="let index of filterIndexes">
+    <div class="block" *ngFor="let index of filterIndexes">
         <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
-    </ng-container>
+    </div>
 </ng-container>
+<div class="level">
+    <div class="level-left">
+        <button class="button is-primary" (click)="add()">
+            <span class="icon is-small">
+                <fa-icon [icon]="faPlus"></fa-icon>
+            </span>
+            <span>Add Filter</span>
+        </button>
+    </div>
+    <div class="level-right" *ngIf="filterIndexes.length > 1">
+        Combine: &nbsp;
+        <div class="field has-addons">
+            <p class="control">
+                <button class="button" [ngClass]="{'is-primary':operator=='and'}" (click)="setOperator('and')">
+                    <span>And</span>
+                </button>
+            </p>
+            <p class="control">
+                <button class="button" [ngClass]="{'is-primary':operator=='or'}" (click)="setOperator('or')">
+                    <span>Or</span>
+                </button>
+            </p>
+        </div>
+    </div>
+</div>

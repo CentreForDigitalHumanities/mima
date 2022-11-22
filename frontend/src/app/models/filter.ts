@@ -5,3 +5,5 @@ export interface Filter {
     field: '*' | keyof Adverbial;
     text: string;
 }
+
+export type FilterOperator = 'and' | 'or';
