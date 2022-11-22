@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Adverbial } from '../models/adverbial';
-import { AdverbialsService } from '../services/adverbials.service';
+import { Store } from '@ngrx/store';
+
+import { loadAdverbials } from '../adverbial.actions';
+import { State } from '../adverbial.state';
 
 @Component({
     selector: 'mima-adverbial-list-page',
@@ -8,12 +10,12 @@ import { AdverbialsService } from '../services/adverbials.service';
     styleUrls: ['./adverbial-list-page.component.scss']
 })
 export class AdverbialListPageComponent implements OnInit {
-    adverbials: Adverbial[];
-
-    constructor(private adverbialService: AdverbialsService) { }
+    constructor(private store: Store<State>) {
+    }
 
     async ngOnInit(): Promise<void> {
-        this.adverbials = Array.from(await this.adverbialService.get());
+        this.store.dispatch(loadAdverbials());
     }
+
 
 }

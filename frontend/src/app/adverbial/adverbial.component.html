@@ -1,40 +1,63 @@
-<div class="content" *ngIf="adverbial">
-    <h1 class="title is-4">{{adverbial.text}}</h1>
+<div class="content has-text-centered has-text-light" *ngIf="!matchedAdverbial">
+    <span class="icon is-large">
+        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+    </span>
+</div>
+<div class="content" *ngIf="matchedAdverbial">
+    <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
     <p>
-        {{adverbial.example}} <br/>
-        <ng-container *ngIf="adverbial.gloss">{{adverbial.gloss}}<br /></ng-container>
-        <i>{{adverbial.translation}}</i>
+        <span [innerHtml]="matchedAdverbial.example | highlight"></span><br />
+        <ng-container *ngIf="matchedAdverbial.gloss"><span
+                [innerHtml]="matchedAdverbial.gloss | highlight"></span><br /></ng-container>
+        <i [innerHtml]="matchedAdverbial.translation | highlight"></i>
     </p>
 </div>
-<div class="field is-grouped is-grouped-multiline" *ngIf="adverbial">
+<div class="field is-grouped is-grouped-multiline" *ngIf="matchedAdverbial">
     <div class="control">
-        <div class="tag">
-            <span class="tag">{{adverbial.id}}</span>
+        <div class="tags">
+            <span class="tag" [ngClass]="{'is-highlight': matchedAdverbial.id.fullMatch}"
+                [innerHtml]="matchedAdverbial.id | highlight:true"></span>
         </div>
     </div>
-    <ng-container  *ngIf="adverbial.labels">
-        <div class="control" *ngFor="let label of adverbial.labels">
-            <div class="tag">
-                <span class="tag">{{label}}</span>
+    <ng-container *ngIf="matchedAdverbial.labels">
+        <div class="control" *ngFor="let label of matchedAdverbial.labels">
+            <div class="tags">
+                <span class="tag" [ngClass]="{'is-highlight': label.fullMatch}"
+                    [innerHtml]="label | highlight:true"></span>
             </div>
         </div>
     </ng-container>
     <div class="control">
         <div class="tags has-addons">
-            <span class="tag">{{adverbial.language_family}}</span>
-            <span class="tag">{{adverbial.language_group}}</span>
-            <span class="tag is-dark">{{adverbial.language}}</span>
-            <span class="tag is-info">{{adverbial.dialect}}</span>
+            <span class="tag" [ngClass]="{'is-highlight': matchedAdverbial.language_family.fullMatch}"
+                [innerHtml]="matchedAdverbial.language_family | highlight:true"></span>
+            <span class="tag" [ngClass]="{'is-highlight': matchedAdverbial.language_group.fullMatch}"
+                [innerHtml]="matchedAdverbial.language_group | highlight:true"></span>
+            <span class="tag is-dark" [ngClass]="{'is-highlight': matchedAdverbial.language.fullMatch}"
+                [innerHtml]="matchedAdverbial.language | highlight:true"></span>
+            <span class="tag is-info" [ngClass]="{'is-highlight': matchedAdverbial.dialect.fullMatch}"
+                [innerHtml]="matchedAdverbial.dialect | highlight:true"></span>
         </div>
     </div>
-    <div class="control" *ngIf="adverbial.source">
-        <div class="tag">
-            <span class="tag">{{adverbial.source}}</span>
+    <div class="control" *ngIf="matchedAdverbial.source">
+        <div class="tags">
+            <span class="tag" [ngClass]="{'is-highlight': matchedAdverbial.source.fullMatch}"
+                [innerHtml]="matchedAdverbial.source | highlight:true"></span>
         </div>
     </div>
-    <div class="control" [title]="adverbial.notes" *ngIf="adverbial.notes">
-        <i class="icon">
-            <fa-icon [icon]="faCommentDots"></fa-icon>
-        </i>
+    <div class="control" [title]="matchedAdverbial.notes | highlightPlain:true" *ngIf="!matchedAdverbial.notes.empty"
+        (click)="showNotes = !showNotes">
+        <div class="tags">
+            <span class="tag is-clickable" [ngClass]="{
+            'is-highlight': !showNotes && matchedAdverbial.notes.match && !matchedAdverbial.notes.emptyFilters
+        }">
+                <i class="icon">
+                    <fa-icon [icon]="showNotes ? faCommentSlash : faCommentDots"></fa-icon>
+                </i>
+            </span>
+        </div>
     </div>
+</div>
+<div class="notification" *ngIf="showNotes">
+    <p [innerHtml]="matchedAdverbial.notes | highlight"></p>
 </div>

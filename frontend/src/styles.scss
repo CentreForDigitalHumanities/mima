@@ -4,6 +4,18 @@
 @import 'primeng/resources/themes/fluent-light/theme.css';
 @import 'primeng/resources/primeng.css';
 
+$highlight: $warning;
+$highlight-text: $warning-invert;
+
+.highlight {
+    background: $highlight;
+    color: $highlight-text;
+}
+
+.is-highlight {
+    @extend .is-warning;
+}
+
 @media print {
 
     .is-hidden-print,

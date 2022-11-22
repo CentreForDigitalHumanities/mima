@@ -1,26 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { initialState } from '../adverbial.state';
-import { AdverbialComponent } from '../adverbial/adverbial.component';
-import { AdverbialListComponent } from './adverbial-list.component';
+import { FilterComponent } from './filter.component';
 
-describe('AdverbialListComponent', () => {
-    let component: AdverbialListComponent;
-    let fixture: ComponentFixture<AdverbialListComponent>;
+describe('FilterComponent', () => {
+    let component: FilterComponent;
+    let fixture: ComponentFixture<FilterComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AdverbialListComponent, AdverbialComponent],
-            imports: [FontAwesomeModule],
+            declarations: [FilterComponent],
+            imports: [FormsModule, FontAwesomeModule],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(AdverbialListComponent);
+        fixture = TestBed.createComponent(FilterComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

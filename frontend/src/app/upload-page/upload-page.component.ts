@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { Store } from '@ngrx/store';
+import { setAdverbials } from '../adverbial.actions';
+import { State } from '../adverbial.state';
 import { Adverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
 
@@ -17,13 +20,14 @@ export class UploadPageComponent implements OnInit {
 
     loading = false;
 
-    constructor(private adverbialsService: AdverbialsService) { }
+    constructor(private adverbialsService: AdverbialsService, private store: Store<State>) { }
 
     ngOnInit(): void {
     }
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
+        this.store.dispatch(setAdverbials({ adverbials }));
         this.state = 'review';
     }
 

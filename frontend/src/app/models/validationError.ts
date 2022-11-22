@@ -4,10 +4,14 @@
 export type ValidationError = [ValidationErrorType, ...string[]];
 
 export class ValidationErrors {
-    constructor(public errors: ValidationError[]) {
+    constructor(public errors: string | ValidationError[]) {
     }
 
     *toStrings(): Iterable<string> {
+        if (typeof this.errors === 'string') {
+            yield this.errors;
+            return;
+        }
         for (const [errorType, ...args] of this.errors) {
             switch (errorType) {
                 case 'MISSING_COLUMN':
