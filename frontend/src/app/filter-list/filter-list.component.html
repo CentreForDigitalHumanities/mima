@@ -9,20 +9,20 @@
             <span class="icon is-small">
                 <fa-icon [icon]="faPlus"></fa-icon>
             </span>
-            <span>Add Filter</span>
+            <span i18n>Add Filter</span>
         </button>
     </div>
     <div class="level-right" *ngIf="filterIndexes.length > 1">
-        Combine: &nbsp;
+        <ng-container i18n>Combine:</ng-container> &nbsp;
         <div class="field has-addons">
             <p class="control">
                 <button class="button" [ngClass]="{'is-primary':operator=='and'}" (click)="setOperator('and')">
-                    <span>And</span>
+                    <span i18n>And</span>
                 </button>
             </p>
             <p class="control">
                 <button class="button" [ngClass]="{'is-primary':operator=='or'}" (click)="setOperator('or')">
-                    <span>Or</span>
+                    <span i18n>Or</span>
                 </button>
             </p>
         </div>

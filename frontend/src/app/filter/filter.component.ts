@@ -54,15 +54,15 @@ export class FilterComponent implements OnInit, OnDestroy {
         field: '*',
         icon: faAsterisk
     }, {
-        name: 'Adverbial',
+        name: $localize `Adverbial`,
         field: 'text',
         icon: faComment
     }, {
-        name: 'Dialect',
+        name: $localize  `Dialect`,
         field: 'dialect',
         icon: faLanguage
     }, {
-        name: 'Translation',
+        name: $localize  `Translation`,
         field: 'translation',
         icon: faGlobeEurope
     }];

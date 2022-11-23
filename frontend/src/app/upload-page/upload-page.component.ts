@@ -40,7 +40,7 @@ export class UploadPageComponent implements OnInit {
             this.state = 'saved';
         } else {
             // TODO: notification
-            alert('Saving failed');
+            alert($localize `Saving failed`);
         }
         this.loading = false;
     }

@@ -1,5 +1,9 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, LOCALE_ID, Inject, OnInit, NgZone } from '@angular/core';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 import { animations, showState } from '../animations';
+
+const LANGUAGE_COOKIE_KEY = 'language';
 
 @Component({
     animations,
@@ -10,10 +14,26 @@ import { animations, showState } from '../animations';
 export class MenuComponent implements OnInit {
     burgerShow: showState;
     burgerActive = false;
+    currentLanguage: string;
 
-    constructor(private ngZone: NgZone) { }
+    faGlobe = faGlobe;
+
+    // use the target languages for displaying the respective language names
+    languages = [
+        { code: 'nl', name: 'Nederlands' },
+        { code: 'en', name: 'English' }
+    ];
+
+    constructor(
+        @Inject(LOCALE_ID) private localeId: string,
+        private ngZone: NgZone,
+        private cookieService: CookieService) { }
 
     ngOnInit(): void {
+        // allow switching even when the current locale is different
+        // this should really only be the case in development:
+        // then the instance is only running in a single language
+        this.currentLanguage = this.cookieService.get(LANGUAGE_COOKIE_KEY) || this.localeId;
     }
 
     toggleBurger(): void {
@@ -33,5 +53,14 @@ export class MenuComponent implements OnInit {
         }
 
         this.burgerShow = this.burgerShow === 'show' ? 'hide' : 'show';
+    }
+
+    setLanguage(language: string): void {
+        if (this.currentLanguage !== language) {
+            this.cookieService.set(LANGUAGE_COOKIE_KEY, language);
+            // reload the application to make the server route
+            // to the different language version
+            document.location.reload();
+        }
     }
 }
