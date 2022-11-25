@@ -19,12 +19,12 @@
             "i18n": {
                 "sourceLocale": {
                     "code": "en",
-                    "baseHref": "/"
+                    "baseHref": "/en/"
                 },
                 "locales": {
                     "nl": {
                         "translation": "src/locale/messages.nl.xlf",
-                        "baseHref": "/"
+                        "baseHref": "/nl/"
                     }
                 }
             },
