@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  assets: 'static/assets'
+  // base href is static/LANG/
+  assets: 'assets'
 };
