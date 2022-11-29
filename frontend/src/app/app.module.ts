@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
+import { MultiSelectModule } from 'primeng/multiselect';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -26,6 +28,7 @@ import { FilterComponent } from './filter/filter.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
 import { HighlightPipe } from './highlight.pipe';
 import { HighlightPlainPipe } from './highlight-plain.pipe';
+
 
 @NgModule({
     declarations: [
@@ -55,6 +58,7 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
             headerName: 'X-CSRFToken'
         }),
         EffectsModule.forRoot([AdverbialEffects]),
+        MultiSelectModule,
         StoreModule.forRoot({
             adverbials: adverbialReducer
         }, {
