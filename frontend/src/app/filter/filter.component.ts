@@ -14,11 +14,13 @@ import { map, withLatestFrom } from 'rxjs/operators';
 import { removeFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 interface FilterType {
     name: string;
     field: Filter['field'];
     icon: IconDefinition;
+    dropdown: Boolean;
 }
 
 @Component({
@@ -52,20 +54,27 @@ export class FilterComponent implements OnInit, OnDestroy {
     filterTypes: FilterType[] = [{
         name: '',
         field: '*',
-        icon: faAsterisk
+        icon: faAsterisk,
+        dropdown: false
     }, {
         name: 'Adverbial',
         field: 'text',
-        icon: faComment
+        icon: faComment,
+        dropdown: false
     }, {
         name: 'Dialect',
         field: 'dialect',
-        icon: faLanguage
+        icon: faLanguage,
+        dropdown: true
     }, {
         name: 'Translation',
         field: 'translation',
-        icon: faGlobeEurope
+        icon: faGlobeEurope,
+        dropdown: false
     }];
+
+    dropdownOptions: String[] = ['1', 'b', 'III'];
+    selectedOptions: String[];
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
@@ -114,6 +123,12 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.filter.text = '';
         this.filterChange.emit(this.filter);
         this.textField.nativeElement.focus();
+    }
+
+    showdropdown(): void {
+        if (this.selectedType.name === 'Dialect') {
+
+        }
     }
 
 }
