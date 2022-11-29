@@ -134,11 +134,4 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.filterChange.emit(this.filter);
         this.textField.nativeElement.focus();
     }
-
-    showdropdown(): void {
-        if (this.selectedType.name === 'Dialect') {
-
-        }
-    }
-
 }
