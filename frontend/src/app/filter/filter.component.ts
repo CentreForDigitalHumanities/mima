@@ -14,13 +14,16 @@ import { map, withLatestFrom } from 'rxjs/operators';
 import { removeFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
-import {MultiSelectModule} from 'primeng/multiselect';
 
 interface FilterType {
     name: string;
     field: Filter['field'];
     icon: IconDefinition;
     dropdown: Boolean;
+}
+
+interface DropdownOption {
+    name: string;
 }
 
 @Component({
@@ -73,11 +76,18 @@ export class FilterComponent implements OnInit, OnDestroy {
         dropdown: false
     }];
 
-    dropdownOptions: String[] = ['1', 'b', 'III'];
+
+
+    dropdownOptions: DropdownOption[];
     selectedOptions: String[];
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
+        this.dropdownOptions = [
+            {name: 'Waterland'},
+            {name: 'Kempenland'},
+            {name: 'Hall'}
+        ]
     }
 
     ngOnInit(): void {

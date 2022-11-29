@@ -1,3 +1,7 @@
+<div *ngIf="selectedType.dropdown">
+    <p-multiSelect [options] = "dropdownOptions" [(ngModel)]="selectedOptions"></p-multiSelect>
+</div>
+
 <div class="field has-addons" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
@@ -9,12 +13,17 @@
             <fa-icon [icon]="selectedType.icon"></fa-icon>
         </span>
     </div>
-    <p class="control" [ngClass]="{'has-icons-right': filter.text}">
-        <input #textField class="input" type="text" name="text" [(ngModel)]="filter.text" (keyup)="emit()">
-        <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="filter.text">
-            <fa-icon [icon]="faTimesCircle"></fa-icon>
-        </span>
-    </p>
+    <div *ngIf="selectedType.dropdown; else noDropdown">
+        <p-multiSelect [options] = "dropdownOptions" [(ngModel)]="selectedOptions"></p-multiSelect>
+    </div>
+    <ng-template #noDropdown>
+        <p class="control" [ngClass]="{'has-icons-right': filter.text}">
+            <input #textField class="input" type="text" name="text" [(ngModel)]="filter.text" (keyup)="emit()">
+            <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="filter.text">
+                <fa-icon [icon]="faTimesCircle"></fa-icon>
+            </span>
+        </p>
+    </ng-template>
     <p class="control">
         <button class="button" title="Delete filter" (click)="delete()">
             <span class="icon is-small">
