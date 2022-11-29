@@ -1,8 +1,17 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { faAsterisk, faComment, faGlobeEurope, faLanguage, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import {
+    faAsterisk,
+    faTimesCircle,
+    faComment,
+    faGlobeEurope,
+    faLanguage,
+    faTrash,
+    IconDefinition
+} from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
+import { removeFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
 
@@ -21,6 +30,12 @@ export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private filters$ = this.store.select('adverbials', 'filters');
     private index$ = new BehaviorSubject<number>(0);
+
+    faTimesCircle = faTimesCircle;
+    faTrash = faTrash;
+
+    @ViewChild('textField')
+    textField: ElementRef<HTMLInputElement>;
 
     @Input()
     set index(value: number) {
@@ -89,6 +104,16 @@ export class FilterComponent implements OnInit, OnDestroy {
     emit(): void {
         this.filter.field = this.selectedType.field;
         this.filterChange.emit(this.filter);
+    }
+
+    delete(): void {
+        this.store.dispatch(removeFilter({ filterIndex: this.index$.value }));
+    }
+
+    clearFilter(): void {
+        this.filter.text = '';
+        this.filterChange.emit(this.filter);
+        this.textField.nativeElement.focus();
     }
 
 }

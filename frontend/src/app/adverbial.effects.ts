@@ -2,7 +2,17 @@ import { Injectable } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { mergeMap } from 'rxjs/operators';
-import { clearFilters, loadAdverbials, setAdverbials, setFilters, setMatchedAdverbials, updateFilter } from './adverbial.actions';
+import {
+    addFilter,
+    clearFilters,
+    loadAdverbials,
+    removeFilter,
+    setAdverbials,
+    setFilters,
+    setFiltersOperator,
+    setMatchedAdverbials,
+    updateFilter
+} from './adverbial.actions';
 import { State } from './adverbial.state';
 import { MatchedAdverbial } from './models/adverbial';
 import { AdverbialsService } from './services/adverbials.service';
@@ -21,15 +31,18 @@ export class AdverbialEffects {
     ));
 
     filterAdverbials$ = createEffect(() => this.actions$.pipe(
-        ofType(clearFilters, setFilters, updateFilter, setAdverbials),
-        concatLatestFrom(() => this.store.select('adverbials', 'filters')),
-        mergeMap(async ([action, filters]) => {
+        ofType(addFilter, removeFilter, clearFilters, setFilters, updateFilter, setAdverbials, setFiltersOperator),
+        concatLatestFrom(() => [
+            this.store.select('adverbials', 'filters'),
+            this.store.select('adverbials', 'operator')
+        ]),
+        mergeMap(async ([action, filters, operator]) => {
             let matchedAdverbials: MatchedAdverbial[];
             if (action.type === '[Adverbials] Set Adverbials') {
                 // match everything
                 matchedAdverbials = action.adverbials.map(adverbial => new MatchedAdverbial(adverbial));
             } else {
-                matchedAdverbials = Array.from(await this.adverbialService.filter(filters));
+                matchedAdverbials = Array.from(await this.adverbialService.filter(filters, operator));
             }
 
             return setMatchedAdverbials({

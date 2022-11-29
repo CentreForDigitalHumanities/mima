@@ -1,9 +1,10 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { updateFilter } from '../adverbial.actions';
+import { addFilter, setFiltersOperator, updateFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
-import { Filter } from '../models/filter';
+import { Filter, FilterOperator } from '../models/filter';
 
 @Component({
     selector: 'mima-filter-list',
@@ -11,7 +12,11 @@ import { Filter } from '../models/filter';
     styleUrls: ['./filter-list.component.scss']
 })
 export class FilterListComponent implements OnInit, OnDestroy {
+    faPlus = faPlus;
+
     filterIndexes: number[] = [];
+    operator: FilterOperator;
+
     private subscriptions: Subscription[];
 
     @Output()
@@ -29,6 +34,9 @@ export class FilterListComponent implements OnInit, OnDestroy {
                         this.filterIndexes[i] = i;
                     }
                 }
+            }),
+            this.store.select('adverbials', 'operator').subscribe(operator => {
+                this.operator = operator;
             })
         ];
     }
@@ -43,4 +51,11 @@ export class FilterListComponent implements OnInit, OnDestroy {
         this.store.dispatch(updateFilter({ filter: updated }));
     }
 
+    add(): void {
+        this.store.dispatch(addFilter());
+    }
+
+    setOperator(operator: FilterOperator): void {
+        this.store.dispatch(setFiltersOperator({ operator }));
+    }
 }

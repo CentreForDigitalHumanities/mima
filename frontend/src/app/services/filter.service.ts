@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
-import { Filter } from '../models/filter';
+import { Filter, FilterOperator } from '../models/filter';
 
-const ignoreCharacters = ['-', '\'', '.', '(', ')'];
-const ignoreCharactersExp = /[\-'\.\(\)\s]/g;
-
+const ignoreCharacters = ['-', '\'', '.', ',', '(', ')'];
+const ignoreCharactersExp = /[\-'\.\,\(\)\s]/g;
 
 // https://stackoverflow.com/a/37511463/8438971
 function removeDiacritics(text: string): string {
@@ -21,9 +20,10 @@ export class FilterService {
     /**
      * @returns MatchedAdverbial or undefined if it doesn't match
      */
-    public applyFilters(adverbial: Adverbial, filters: ReadonlyArray<Filter>): MatchedAdverbial {
+    public applyFilters(adverbial: Adverbial, filters: ReadonlyArray<Filter>, operator: FilterOperator): MatchedAdverbial {
         let anyMatch = false;
         const result = new MatchedAdverbial();
+        const matchingFilters: Filter[] = [];
         const keys: (keyof Omit<MatchedAdverbial, 'labels'>)[] = [
             'id',
             'text',
@@ -37,18 +37,28 @@ export class FilterService {
             'source',
             'notes'];
         for (const key of keys) {
-            const parts = this.searchField(adverbial[key], key, filters);
+            const [parts, partFilters] = this.searchField(adverbial[key], key, filters);
+            matchingFilters.push(...partFilters);
             anyMatch ||= parts.match;
             result[key] = parts;
         }
         result.labels = [];
         for (const label of adverbial.labels) {
-            const parts = this.searchField(label, 'labels', filters);
+            const [parts, partFilters] = this.searchField(label, 'labels', filters);
+            matchingFilters.push(...partFilters);
             anyMatch ||= parts.match;
             result.labels.push(parts);
         }
 
         if (anyMatch) {
+            if (operator === 'and') {
+                // check whether all the filters matched
+                for (const filter of filters) {
+                    if (matchingFilters.indexOf(filter) === -1) {
+                        return undefined;
+                    }
+                }
+            }
             return result;
         }
 
@@ -60,18 +70,25 @@ export class FilterService {
      * @param text field text to search
      * @param field name of the field
      * @param filters filters to apply
-     * @returns MatchedParts
+     * @returns [MatchedParts, Set<Filter>] matched parts and the matching filter
      */
-    private searchField(text: string, field: keyof Adverbial, filters: ReadonlyArray<Filter>): MatchedParts {
+    private searchField(text: string, field: keyof Adverbial, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
         const matches: [number, number][] = [];
+        const matchingFilters = new Set<Filter>();
         let emptyFilter = false;
+        let anythingMatched = false;
         if (filters?.length) {
             for (const filter of filters) {
                 if (filter.field === '*' || filter.field === field) {
-                    matches.push(... this.searchMultiple(text, filter.text));
+                    const filterMatches = this.searchMultiple(text, filter.text);
+                    matches.push(...filterMatches);
                     if (!(filter.text ?? '').trim()) {
                         // an empty filter matches everything!
                         emptyFilter = true;
+                        matchingFilters.add(filter);
+                    } else if (filterMatches.length) {
+                        anythingMatched = true;
+                        matchingFilters.add(filter);
                     }
                 }
             }
@@ -82,7 +99,7 @@ export class FilterService {
         const results = new MatchedParts({
             empty: !(text ?? '').trim(),
             parts: [],
-            fullMatch: !emptyFilter && matches.length > 0,
+            fullMatch: anythingMatched && matches.length > 0,
             match: emptyFilter || matches.length > 0,
             emptyFilters: emptyFilter
         });
@@ -105,7 +122,7 @@ export class FilterService {
             }
         };
 
-        let lastIndex = 0;
+        let lastMatchEnd = 0;
         if (matches.length) {
             // sort by start index
             matches.sort((a, b) => a[0] - b[0]);
@@ -118,33 +135,40 @@ export class FilterService {
                     mergedMatches.push([start, end]);
                 } else {
                     const mergedIndex = mergedMatches.length - 1;
-                    const lastMatchEndIndex = mergedMatches[mergedIndex][1];
-                    if (lastMatchEndIndex >= start) {
-                        // merge!
+                    const previousEnd = mergedMatches[mergedIndex][1];
+
+                    // What can happen?
+                    // Note: the matches were sorted by their start index!
+                    if (previousEnd >= start && previousEnd < end) {
+                        // 1. the previous match ENDS WITHIN this match
                         mergedMatches[mergedIndex][1] = end;
-                    } else {
+                    }
+                    else if (previousEnd < start) {
+                        // 2. the previous match ENDS BEFORE this match
                         mergedMatches.push([start, end]);
                     }
+                    // 3. the previous match ENDS AFTER this match
+                    //    do nothing, they overlap!
                 }
             }
 
             // returns the marked string
             for (const [start, end] of mergedMatches) {
-                if (start > lastIndex) {
-                    pushMiss(text.substring(lastIndex, start));
+                if (start > lastMatchEnd) {
+                    pushMiss(text.substring(lastMatchEnd, start));
                 }
 
                 pushMatch(text.substring(start, end));
 
-                lastIndex = end;
+                lastMatchEnd = end;
             }
         }
 
-        if (lastIndex < text.length) {
-            pushMiss(text.substring(lastIndex));
+        if (lastMatchEnd < text.length) {
+            pushMiss(text.substring(lastMatchEnd));
         }
 
-        return results;
+        return [results, matchingFilters];
     }
 
     /**
@@ -156,7 +180,7 @@ export class FilterService {
             .map(needle => this.searchSingle(haystack, needle))
             .reduce((prev, matches, index) => {
                 if (matches.length === 0 || (index > 0 && prev.length === 0)) {
-                    // every part should match
+                    // every part (of the needle) should match
                     return [];
                 }
 
