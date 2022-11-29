@@ -30,7 +30,8 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         <span class="icon">
-                            <fa-icon [icon]="faGlobe"></fa-icon>
+                            <fa-icon *ngIf="!loading" [icon]="faGlobe"></fa-icon>
+                            <fa-icon *ngIf="loading" [icon]="faSync" [spin]="true"></fa-icon>
                         </span>
                     </a>
 

@@ -1,5 +1,5 @@
 import { Component, LOCALE_ID, Inject, OnInit, NgZone } from '@angular/core';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faSync } from '@fortawesome/free-solid-svg-icons';
 import { animations, showState } from '../animations';
 import { LanguageInfo, LanguageService } from '../services/language.service';
 
@@ -13,8 +13,10 @@ export class MenuComponent implements OnInit {
     burgerShow: showState;
     burgerActive = false;
     currentLanguage: string;
+    loading = false;
 
     faGlobe = faGlobe;
+    faSync = faSync;
 
     // use the target languages for displaying the respective language names
     languages: LanguageInfo['supported'];
@@ -52,9 +54,10 @@ export class MenuComponent implements OnInit {
         this.burgerShow = this.burgerShow === 'show' ? 'hide' : 'show';
     }
 
-    setLanguage(language: string): void {
+    async setLanguage(language: string): Promise<void> {
         if (this.currentLanguage !== language) {
-            this.languageService.set(language);
+            this.loading = true;
+            await this.languageService.set(language);
             // reload the application to make the server route
             // to the different language version
             document.location.reload();
