@@ -5,10 +5,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 
 @ensure_csrf_cookie
 def index(request: HttpRequest):
-    try:
-        language = request.COOKIES['language']
-    except KeyError:
-        language = 'nl'
+    language = request.LANGUAGE_CODE
 
     """ Thin wrapper for the static index.html that adds the CSRF cookie."""
     return HttpResponse(content=open(finders.find(path.join(language, 'index.html'))))

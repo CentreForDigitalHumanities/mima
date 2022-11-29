@@ -29,7 +29,6 @@
         "@ngrx/effects": "^11.1.1",
         "@ngrx/store": "^11.1.1",
         "bulma": "^0.9.1",
-        "ngx-cookie-service": "^11.0.0",
         "primeicons": "^4.1.0",
         "primeng": "^11.0.0",
         "rxjs": "~6.6.0",

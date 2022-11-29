@@ -1,9 +1,7 @@
 import { Component, LOCALE_ID, Inject, OnInit, NgZone } from '@angular/core';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { CookieService } from 'ngx-cookie-service';
 import { animations, showState } from '../animations';
-
-const LANGUAGE_COOKIE_KEY = 'language';
+import { LanguageInfo, LanguageService } from '../services/language.service';
 
 @Component({
     animations,
@@ -19,21 +17,20 @@ export class MenuComponent implements OnInit {
     faGlobe = faGlobe;
 
     // use the target languages for displaying the respective language names
-    languages = [
-        { code: 'nl', name: 'Nederlands' },
-        { code: 'en', name: 'English' }
-    ];
+    languages: LanguageInfo['supported'];
 
     constructor(
         @Inject(LOCALE_ID) private localeId: string,
         private ngZone: NgZone,
-        private cookieService: CookieService) { }
+        private languageService: LanguageService) { }
 
-    ngOnInit(): void {
+    async ngOnInit(): Promise<void> {
         // allow switching even when the current locale is different
         // this should really only be the case in development:
         // then the instance is only running in a single language
-        this.currentLanguage = this.cookieService.get(LANGUAGE_COOKIE_KEY) || this.localeId;
+        const languageInfo = await this.languageService.get();
+        this.currentLanguage = languageInfo.current || this.localeId;
+        this.languages = languageInfo.supported;
     }
 
     toggleBurger(): void {
@@ -57,7 +54,7 @@ export class MenuComponent implements OnInit {
 
     setLanguage(language: string): void {
         if (this.currentLanguage !== language) {
-            this.cookieService.set(LANGUAGE_COOKIE_KEY, language);
+            this.languageService.set(language);
             // reload the application to make the server route
             // to the different language version
             document.location.reload();
