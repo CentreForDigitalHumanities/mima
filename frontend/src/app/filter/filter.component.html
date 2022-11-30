@@ -10,7 +10,7 @@
         </span>
     </div>
     <div *ngIf="selectedType.dropdown; else noDropdown">
-        <p-multiSelect appendTo="body" [options] = "dropdownOptions" [(ngModel)]="filter.text" defaultLabel="Select Dialect(s)" optionLabel="name" (onChange)="emit()"></p-multiSelect>
+        <p-multiSelect appendTo="body" [options] = "dropdownOptions" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
     </div>
     <ng-template #noDropdown>
         <p class="control" [ngClass]="{'has-icons-right': filter.text}">
