@@ -34,6 +34,7 @@ interface DropdownOption {
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private filters$ = this.store.select('adverbials', 'filters');
+    private adverbials$ = this.store.select('adverbials', 'adverbials')
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -77,15 +78,18 @@ export class FilterComponent implements OnInit, OnDestroy {
     }];
 
     textFieldContent: string;
-    dropdownOptions: DropdownOption[];
+    dropdownOptions: DropdownOption[] = [];
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
-        this.dropdownOptions = [
-            {name: 'Waterland'},
-            {name: 'Kempenland'},
-            {name: 'Hall'}
-        ]
+        // fill the dropdownOptions with the available options by scanning the
+        // available adverbials, leaving out duplicates
+        this.adverbials$.subscribe((adverbialArray) => {
+            for (let adverbial of adverbialArray) {
+                if (!this.dropdownOptions.some(e => e.name == adverbial.dialect)) {
+                    this.dropdownOptions.push({name: adverbial.dialect});
+                }
+            }});
     }
 
     ngOnInit(): void {
