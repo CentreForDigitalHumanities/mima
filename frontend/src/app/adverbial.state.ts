@@ -16,7 +16,7 @@ export interface State {
 export const initialState: State = {
     adverbials: {
         operator: 'or',
-        filters: [{ index: 0, field: '*', text: '' }],
+        filters: [{ index: 0, field: '*', content: [] }],
         adverbials: [],
         adverbialsCount: 0,
         adverbialIds: [],

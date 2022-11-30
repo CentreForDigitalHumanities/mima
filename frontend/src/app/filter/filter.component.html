@@ -13,9 +13,9 @@
         <p-multiSelect appendTo="body" [options] = "dropdownOptions" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
     </div>
     <ng-template #noDropdown>
-        <p class="control" [ngClass]="{'has-icons-right': filter.text}">
-            <input #textField class="input" type="text" name="text" [(ngModel)]="filter.text" (keyup)="emit()">
-            <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="filter.text">
+        <p class="control" [ngClass]="{'has-icons-right': filter.content}">
+            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent" (keyup)="emit()">
+            <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
                 <fa-icon [icon]="faTimesCircle"></fa-icon>
             </span>
         </p>
