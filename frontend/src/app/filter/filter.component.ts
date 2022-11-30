@@ -76,10 +76,8 @@ export class FilterComponent implements OnInit, OnDestroy {
         dropdown: false
     }];
 
-
-
+    textFieldContent: string;
     dropdownOptions: DropdownOption[];
-    selectedOptions: String[];
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
@@ -122,6 +120,9 @@ export class FilterComponent implements OnInit, OnDestroy {
 
     emit(): void {
         this.filter.field = this.selectedType.field;
+        if (!this.selectedType.dropdown) {
+            this.filter.content = [this.textFieldContent];
+        }
         this.filterChange.emit(this.filter);
     }
 
@@ -130,7 +131,7 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
 
     clearFilter(): void {
-        this.filter.text = '';
+        this.filter.content = [];
         this.filterChange.emit(this.filter);
         this.textField.nativeElement.focus();
     }
