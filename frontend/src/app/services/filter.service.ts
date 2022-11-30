@@ -172,7 +172,8 @@ export class FilterService {
     }
 
     /**
-     * Splits search text by space and match each separate item
+     * For each string in the filter's content,
+     * it splits search text by space and matches each separate item
      */
     private searchMultiple(haystack: string, needles: string[]): [number, number][] {
         const results = [];
