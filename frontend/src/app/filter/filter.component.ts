@@ -14,6 +14,8 @@ import { map, withLatestFrom } from 'rxjs/operators';
 import { removeFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
+import * as _ from 'lodash';
+
 
 interface FilterType {
     name: string;
@@ -82,14 +84,6 @@ export class FilterComponent implements OnInit, OnDestroy {
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
-        // fill the dropdownOptions with the available options by scanning the
-        // available adverbials, leaving out duplicates
-        this.adverbials$.subscribe((adverbialArray) => {
-            for (let adverbial of adverbialArray) {
-                if (!this.dropdownOptions.some(e => e.name == adverbial.dialect)) {
-                    this.dropdownOptions.push({name: adverbial.dialect});
-                }
-            }});
     }
 
     ngOnInit(): void {
@@ -138,5 +132,19 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.filter.content = [];
         this.filterChange.emit(this.filter);
         this.textField.nativeElement.focus();
+    }
+
+    fillDropdown(): void {
+        // fill the dropdownOptions with the available options by scanning the
+        // available adverbials, leaving out duplicates
+        this.adverbials$.subscribe((adverbialArray) => {
+            for (let adverbial of adverbialArray) {
+                let selectedField = this.selectedType.field.toString();
+                if (!this.dropdownOptions.some(e => e.name == adverbial[selectedField])) {
+                    this.dropdownOptions.push({name: adverbial[selectedField]});
+                }
+            }
+            this.dropdownOptions = _.sortBy(this.dropdownOptions, 'name');
+        });
     }
 }

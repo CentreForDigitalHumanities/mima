@@ -1,7 +1,7 @@
 <div class="field has-addons" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
-            <select [(ngModel)]="selectedType" (change)="emit()">
+            <select [(ngModel)]="selectedType" (change)="emit(); fillDropdown()">
                 <option *ngFor="let filterType of filterTypes" [ngValue]="filterType">{{filterType.name}}</option>
             </select>
         </div>
