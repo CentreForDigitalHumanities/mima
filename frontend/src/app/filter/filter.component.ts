@@ -9,19 +9,18 @@ import {
     IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
 import { removeFilter } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Filter } from '../models/filter';
 import * as _ from 'lodash';
 
-
 interface FilterType {
     name: string;
     field: Filter['field'];
     icon: IconDefinition;
-    dropdown: Boolean;
+    dropdown: boolean;
 }
 
 interface DropdownOption {
@@ -36,7 +35,6 @@ interface DropdownOption {
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private filters$ = this.store.select('adverbials', 'filters');
-    private adverbials$ = this.store.select('adverbials', 'adverbials')
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -80,7 +78,38 @@ export class FilterComponent implements OnInit, OnDestroy {
     }];
 
     textFieldContent: string;
-    dropdownOptions: DropdownOption[] = [];
+    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('adverbials', 'adverbials').pipe(
+        withLatestFrom(this.filters$, this.index$),
+        map(([adverbials, filters, index]) => {
+            const filter = filters[index];
+            const selectedType = this.getSelectedType(filter);
+
+            const values = new Set<string>();
+            for (const adverbial of adverbials) {
+                if (selectedType.dropdown) {
+                    switch (selectedType.field) {
+                        case '*':
+                            break;
+
+                        case 'labels':
+                            for (const value of adverbial.labels) {
+                                values.add(value);
+                            }
+                            break;
+
+                        default:
+                            values.add(adverbial[selectedType.field]);
+                            break;
+
+                    }
+                }
+            }
+
+            return Array.from(values).map<DropdownOption>(name => ({
+                name
+            }));
+        })
+    );
 
     constructor(private store: Store<State>) {
         this.selectedType = this.filterTypes[0];
@@ -92,20 +121,23 @@ export class FilterComponent implements OnInit, OnDestroy {
                 withLatestFrom(this.index$),
                 map(([filters, index]) => {
                     const filter = filters[index];
-                    let selectedType: FilterType;
-                    if (filter === undefined) {
-                        // default type
-                        selectedType = this.filterTypes[0];
-                    } else {
-                        selectedType = this.filterTypes.find(x => x.field === filter.field);
-                    }
+
+                    const selectedType = this.getSelectedType(filter);
 
                     if (selectedType !== this.selectedType) {
                         this.selectedType = selectedType;
                     }
 
+                    let content: string[];
+                    this.textFieldContent = filter.content[0] ?? '';
+                    if (!this.selectedType.dropdown) {
+                        content = [this.textFieldContent];
+                    } else {
+                        content = filter.content;
+                    }
+
                     // make sure the original object isn't modified (side-effect!)
-                    this.filter = { ...filter };
+                    this.filter = { ...filter, content };
                 })).subscribe()
         ];
     }
@@ -117,10 +149,16 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
 
     emit(): void {
-        this.filter.field = this.selectedType.field;
         if (!this.selectedType.dropdown) {
             this.filter.content = [this.textFieldContent];
+        } else if (this.filter.field !== this.selectedType.field) {
+            // changed to a (different) dropdown?
+            // remove the current content to prevent ghost values
+            // influencing the filtering
+            this.filter.content = [];
         }
+
+        this.filter.field = this.selectedType.field;
         this.filterChange.emit(this.filter);
     }
 
@@ -134,17 +172,14 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.textField.nativeElement.focus();
     }
 
-    fillDropdown(): void {
-        // fill the dropdownOptions with the available options by scanning the
-        // available adverbials, leaving out duplicates
-        this.adverbials$.subscribe((adverbialArray) => {
-            for (let adverbial of adverbialArray) {
-                let selectedField = this.selectedType.field.toString();
-                if (!this.dropdownOptions.some(e => e.name == adverbial[selectedField])) {
-                    this.dropdownOptions.push({name: adverbial[selectedField]});
-                }
-            }
-            this.dropdownOptions = _.sortBy(this.dropdownOptions, 'name');
-        });
+    private getSelectedType(filter: Filter | undefined): FilterType {
+        let selectedType: FilterType;
+        if (filter === undefined) {
+            // default type
+            selectedType = this.filterTypes[0];
+        } else {
+            selectedType = this.filterTypes.find(x => x.field === filter.field);
+        }
+        return selectedType;
     }
 }
