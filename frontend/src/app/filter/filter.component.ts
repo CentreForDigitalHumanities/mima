@@ -105,7 +105,7 @@ export class FilterComponent implements OnInit, OnDestroy {
                 }
             }
 
-            return Array.from(values).map<DropdownOption>(name => ({
+            return Array.from(values).sort().map<DropdownOption>(name => ({
                 name
             }));
         })
