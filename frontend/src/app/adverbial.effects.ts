@@ -25,7 +25,8 @@ export class AdverbialEffects {
         mergeMap(async () => {
             const adverbials = Array.from(await this.adverbialService.get());
             return setAdverbials({
-                adverbials
+                adverbials,
+                applyFilters: true
             });
         })
     ));
@@ -38,7 +39,7 @@ export class AdverbialEffects {
         ]),
         mergeMap(async ([action, filters, operator]) => {
             let matchedAdverbials: MatchedAdverbial[];
-            if (action.type === '[Adverbials] Set Adverbials') {
+            if (action.type === '[Adverbials] Set Adverbials' && !action.applyFilters) {
                 // match everything
                 matchedAdverbials = action.adverbials.map(adverbial => new MatchedAdverbial(adverbial));
             } else {

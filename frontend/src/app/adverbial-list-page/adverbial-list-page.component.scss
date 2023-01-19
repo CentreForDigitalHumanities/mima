@@ -4,5 +4,7 @@ mima-filter-list {
     padding: 10px 0;
     max-height: 100vh;
     overflow: auto;
-    display: inline-block;
+    display: inline-flex;
+    width: 100%;
+    flex-direction: column;
 }

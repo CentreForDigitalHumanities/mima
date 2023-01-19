@@ -1,7 +1,7 @@
-<div class="field has-addons" *ngIf="filter">
+<div class="field has-addons is-flex-direction-row" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
-            <select [(ngModel)]="selectedType" (change)="emit(); fillDropdown()">
+            <select [(ngModel)]="selectedType" (change)="emit()">
                 <option *ngFor="let filterType of filterTypes" [ngValue]="filterType">{{filterType.name}}</option>
             </select>
         </div>
@@ -9,8 +9,8 @@
             <fa-icon [icon]="selectedType.icon"></fa-icon>
         </span>
     </div>
-    <div *ngIf="selectedType.dropdown; else noDropdown">
-        <p-multiSelect appendTo="body" [options] = "dropdownOptions" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
+    <div class="control is-flex-grow-1" *ngIf="selectedType.dropdown; else noDropdown">
+        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
     </div>
     <ng-template #noDropdown>
         <p class="control" [ngClass]="{'has-icons-right': filter.content}">

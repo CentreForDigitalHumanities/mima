@@ -16,6 +16,15 @@ $highlight-text: $warning-invert;
     @extend .is-warning;
 }
 
+p-multiselect.input {
+    // use the border styling of bulma
+    .p-multiselect {
+        background: none;
+        border: none;
+        width: 100%;
+    }
+}
+
 @media print {
 
     .is-hidden-print,
