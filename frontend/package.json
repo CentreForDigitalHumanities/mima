@@ -2,7 +2,7 @@
   "name": "mima",
   "scripts": {
     "start": "yarn serve",
-    "build": "ng build --deploy-url='' --base-href=static/ --localize",
+    "build": "ng build --base-href=static/ --localize",
     "test": "yarn lint && ng test --watch=true",
     "lint": "ng lint",
     "i18n": "ng extract-i18n --output-path locale",
