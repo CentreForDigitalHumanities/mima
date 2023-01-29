@@ -36,7 +36,7 @@
                     </a>
 
                     <div class="navbar-dropdown is-right">
-                        <a class="navbar-item" [ngClass]="{'is-active': language.code == currentLanguage }"
+                        <a class="navbar-item" [ngClass]="{'is-active': language.code === currentLanguage }"
                             *ngFor="let language of languages" (click)="setLanguage(language.code)">
                             {{language.name}}
                         </a>
