@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
 import { Adverbial } from '../models/adverbial';
 import { ValidationErrors } from '../models/validationError';
 
@@ -23,8 +24,8 @@ export class FileUploadService {
 
         // Make http post request over api
         // with formData as req
-        const response = this.http.post<Adverbial[]>(
-            this.baseApiUrl + '/upload/upload/', formData).toPromise();
+        const response = lastValueFrom(this.http.post<Adverbial[]>(
+            this.baseApiUrl + '/upload/upload/', formData));
 
         try {
             return await response;
