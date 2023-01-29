@@ -2,11 +2,9 @@
     "name": "mima",
     "scripts": {
         "start": "yarn serve",
-        "build": "ng build --deploy-url='/static/'",
+        "build": "ng build --deploy-url='' --base-href=static/ --localize",
         "test": "ng test --watch=true",
         "lint": "ng lint",
-        "build:en": "ng build  --deploy-url='/static/' --configuration=production-en",
-        "build:nl": "ng build  --deploy-url='/static/' --configuration=production-nl",
         "i18n": "ng extract-i18n --output-path locale",
         "serve": "ng serve --proxy-config ../proxy.conf.json",
         "serve:en": "ng serve --proxy-config ../proxy.conf.json --configuration=en",

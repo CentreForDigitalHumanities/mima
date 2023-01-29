@@ -1,47 +1,47 @@
-<h1 class="title">Upload Adverbials</h1>
+<h1 class="title" i18n>Upload Adverbials</h1>
 <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
     <ul>
-        <li [ngClass]="{'is-active': state=='upload'}" (click)="state='upload'"><a>Upload File</a></li>
-        <li [ngClass]="{'is-active': state=='review'}" (click)="state='review'"><a>Review</a></li>
-        <li [ngClass]="{'is-active': state=='save' || state=='saved'}" (click)="state='save'"><a>Save in Database</a>
+        <li [ngClass]="{'is-active': state=='upload'}" (click)="state='upload'"><a i18n>Upload File</a></li>
+        <li [ngClass]="{'is-active': state=='review'}" (click)="state='review'"><a i18n>Review</a></li>
+        <li [ngClass]="{'is-active': state=='save' || state=='saved'}" (click)="state='save'"><a i18n>Save in Database</a>
         </li>
     </ul>
 </nav>
 
 <ng-container *ngIf="state=='upload'">
-    <h2 class="subtitle">Upload File</h2>
+    <h2 class="subtitle" i18n>Upload File</h2>
     <mima-upload (adverbials)="setAdverbials($event)"></mima-upload>
 </ng-container>
 
 <ng-container *ngIf="state=='review'">
-    <h2 class="subtitle">Review</h2>
+    <h2 class="subtitle" i18n>Review</h2>
     <ng-container *ngIf="!adverbials">
-        <p>Please <a (click)="state='upload'">upload</a> a file first.</p>
+        <p i18n>Please <a (click)="state='upload'">upload</a> a file first.</p>
     </ng-container>
     <ng-container *ngIf="adverbials">
         <div class="content">
-            <p>A preview of the uploaded information is shown. If this is as expected you can continue to saving this
+            <p i18n>A preview of the uploaded information is shown. If this is as expected you can continue to saving this
                 data.
             </p>
-            <button class="button is-primary" (click)="state='save'">Save in Database</button>
+            <button class="button is-primary" (click)="state='save'" i18n>Save in Database</button>
         </div>
         <mima-adverbial-list></mima-adverbial-list>
     </ng-container>
 </ng-container>
 
 <ng-container *ngIf="state=='save'">
-    <h2 class="subtitle">Save in Database</h2>
+    <h2 class="subtitle" i18n>Save in Database</h2>
 
     <ng-container *ngIf="!adverbials">
-        <p>Please <a (click)="state='upload'">upload</a> a file first.</p>
+        <p i18n>Please <a (click)="state='upload'">upload</a> a file first.</p>
     </ng-container>
     <ng-container *ngIf="adverbials">
         <div class="content">
-            <p>
+            <p i18n>
                 Add {{adverbials.length}} new adverbials to the database?
             </p>
         </div>
-        <button class="button is-success" (click)="save()" [ngClass]="{'is-loading': loading}">Confirm</button>
+        <button class="button is-success" (click)="save()" [ngClass]="{'is-loading': loading}" i18n>Confirm</button>
     </ng-container>
 </ng-container>
 
@@ -49,5 +49,5 @@
     <p class="has-text-success">
         <fa-icon [icon]="faCheckCircle" size="4x"></fa-icon>
     </p>
-    <p>Successfully saved {{savedCount}} adverbials!</p>
+    <p i18n>Successfully saved {{savedCount}} adverbials!</p>
 </div>

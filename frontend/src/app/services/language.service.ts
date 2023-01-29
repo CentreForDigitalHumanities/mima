@@ -1,0 +1,51 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+export interface LanguageInfo {
+    current: string;
+    supported: {
+        code: string,
+        name: string
+    }[];
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class LanguageService {
+    baseApiUrl = '/api';
+
+    constructor(private http: HttpClient) {
+    }
+
+    async get(): Promise<LanguageInfo> {
+        const response = await this.http.get<{
+            current: string,
+            supported: [string, string][]
+        }>(this.baseApiUrl + '/i18n/get/').toPromise();
+
+        return {
+            current: response.current,
+            supported: response.supported.map(([code, name]) => ({ code, name }))
+        };
+    }
+
+    /***
+     * @throws ValidationErrors
+     */
+    async set(language: string): Promise<void> {
+        const response = this.http.post<void>(
+            this.baseApiUrl + '/i18n/set/', {
+            language
+        }).toPromise();
+
+        try {
+            return await response;
+        } catch (error) {
+            if (error instanceof HttpErrorResponse) {
+                console.error(error.error);
+            }
+            throw error;
+        }
+    }
+}
