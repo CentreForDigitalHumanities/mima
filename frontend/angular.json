@@ -26,7 +26,7 @@
         },
         "locales": {
           "nl": {
-            "translation": "src/locale/messages.nl.xlf",
+            "translation": "locale/messages.nl.xlf",
             "baseHref": "/nl/"
           }
         }
