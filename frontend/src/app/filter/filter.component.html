@@ -10,7 +10,7 @@
         </span>
     </div>
     <div class="control is-flex-grow-1" *ngIf="selectedType.dropdown; else noDropdown">
-        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
+        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" i18n-defaultLabel optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
     </div>
     <ng-template #noDropdown>
         <p class="control" [ngClass]="{'has-icons-right': filter.content}">
