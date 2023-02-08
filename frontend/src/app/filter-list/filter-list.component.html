@@ -16,12 +16,12 @@
         <ng-container i18n>Combine:</ng-container> &nbsp;
         <div class="field has-addons">
             <p class="control">
-                <button class="button" [ngClass]="{'is-primary':operator=='and'}" (click)="setOperator('and')">
+                <button class="button" [ngClass]="{'is-primary':operator==='and'}" (click)="setOperator('and')">
                     <span i18n>And</span>
                 </button>
             </p>
             <p class="control">
-                <button class="button" [ngClass]="{'is-primary':operator=='or'}" (click)="setOperator('or')">
+                <button class="button" [ngClass]="{'is-primary':operator==='or'}" (click)="setOperator('or')">
                     <span i18n>Or</span>
                 </button>
             </p>

@@ -14,7 +14,7 @@ You need to install the following software:
  - virtualenv
  - WSGI-compatible webserver (deployment only)
  - [Visual C++ for Python][1] (Windows only)
- - Node.js >= 8
+ - Node.js >= 14.20.0
  - Yarn
  - [WebDriver][2] for at least one browser (only for functional testing)
 
@@ -27,9 +27,9 @@ You need to install the following software:
 This project integrates three isolated subprojects, each inside its own subdirectory with its own code, package dependencies and tests:
 
  - **backend**: the server side web application based on [Django][3] and [DRF][4]
- 
+
  - **frontend**: the client side web application based on [Angular](https://angular.io)
- 
+
  - **functional-tests**: the functional test suite based on [Selenium][6] and [pytest][7]
 
 [3]: https://www.djangoproject.com

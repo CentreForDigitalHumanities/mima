@@ -1,19 +1,19 @@
 <h1 class="title" i18n>Upload Adverbials</h1>
 <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
     <ul>
-        <li [ngClass]="{'is-active': state=='upload'}" (click)="state='upload'"><a i18n>Upload File</a></li>
-        <li [ngClass]="{'is-active': state=='review'}" (click)="state='review'"><a i18n>Review</a></li>
-        <li [ngClass]="{'is-active': state=='save' || state=='saved'}" (click)="state='save'"><a i18n>Save in Database</a>
+        <li [ngClass]="{'is-active': state==='upload'}" (click)="state='upload'"><a i18n>Upload File</a></li>
+        <li [ngClass]="{'is-active': state==='review'}" (click)="state='review'"><a i18n>Review</a></li>
+        <li [ngClass]="{'is-active': state==='save' || state==='saved'}" (click)="state='save'"><a i18n>Save in Database</a>
         </li>
     </ul>
 </nav>
 
-<ng-container *ngIf="state=='upload'">
+<ng-container *ngIf="state==='upload'">
     <h2 class="subtitle" i18n>Upload File</h2>
     <mima-upload (adverbials)="setAdverbials($event)"></mima-upload>
 </ng-container>
 
-<ng-container *ngIf="state=='review'">
+<ng-container *ngIf="state==='review'">
     <h2 class="subtitle" i18n>Review</h2>
     <ng-container *ngIf="!adverbials">
         <p i18n>Please <a (click)="state='upload'">upload</a> a file first.</p>
@@ -29,7 +29,7 @@
     </ng-container>
 </ng-container>
 
-<ng-container *ngIf="state=='save'">
+<ng-container *ngIf="state==='save'">
     <h2 class="subtitle" i18n>Save in Database</h2>
 
     <ng-container *ngIf="!adverbials">
@@ -45,7 +45,7 @@
     </ng-container>
 </ng-container>
 
-<div class="box has-text-centered" *ngIf="state=='saved'">
+<div class="box has-text-centered" *ngIf="state==='saved'">
     <p class="has-text-success">
         <fa-icon [icon]="faCheckCircle" size="4x"></fa-icon>
     </p>

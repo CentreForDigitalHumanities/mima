@@ -1,4 +1,4 @@
-<div class="file is-boxed" [ngClass]="{'is-info': state=='empty', 'is-danger': state=='error', 'is-success': state=='success'}" *ngIf="!loading">
+<div class="file is-boxed" [ngClass]="{'is-info': state==='empty', 'is-danger': state==='error', 'is-success': state==='success'}" *ngIf="!loading">
     <label class="file-label">
         <input class="file-input" type="file" (change)="onChange($event)" accept=".csv,text/csv">
         <span class="file-cta">

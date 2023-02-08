@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { setAdverbials } from '../adverbial.actions';
@@ -11,7 +11,7 @@ import { AdverbialsService } from '../services/adverbials.service';
     templateUrl: './upload-page.component.html',
     styleUrls: ['./upload-page.component.scss']
 })
-export class UploadPageComponent implements OnInit {
+export class UploadPageComponent {
     faCheckCircle = faCheckCircle;
 
     adverbials: Adverbial[];
@@ -21,9 +21,6 @@ export class UploadPageComponent implements OnInit {
     loading = false;
 
     constructor(private adverbialsService: AdverbialsService, private store: Store<State>) { }
-
-    ngOnInit(): void {
-    }
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
@@ -40,7 +37,7 @@ export class UploadPageComponent implements OnInit {
             this.state = 'saved';
         } else {
             // TODO: notification
-            alert($localize `Saving failed`);
+            alert($localize`Saving failed`);
         }
         this.loading = false;
     }

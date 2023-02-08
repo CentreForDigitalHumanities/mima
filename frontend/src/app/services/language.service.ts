@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 
 export interface LanguageInfo {
     current: string;
@@ -19,10 +20,10 @@ export class LanguageService {
     }
 
     async get(): Promise<LanguageInfo> {
-        const response = await this.http.get<{
+        const response = await lastValueFrom(this.http.get<{
             current: string,
             supported: [string, string][]
-        }>(this.baseApiUrl + '/i18n/get/').toPromise();
+        }>(this.baseApiUrl + '/i18n/get/'));
 
         return {
             current: response.current,
@@ -34,10 +35,10 @@ export class LanguageService {
      * @throws ValidationErrors
      */
     async set(language: string): Promise<void> {
-        const response = this.http.post<void>(
+        const response = lastValueFrom(this.http.post<void>(
             this.baseApiUrl + '/i18n/set/', {
             language
-        }).toPromise();
+        }));
 
         try {
             return await response;
