@@ -61,17 +61,17 @@ export class FilterComponent implements OnInit, OnDestroy {
         icon: faAsterisk,
         dropdown: false
     }, {
-        name: 'Adverbial',
+        name: $localize `Adverbial`,
         field: 'text',
         icon: faComment,
         dropdown: false
     }, {
-        name: 'Dialect',
+        name: $localize  `Dialect`,
         field: 'dialect',
         icon: faLanguage,
         dropdown: true
     }, {
-        name: 'Translation',
+        name: $localize  `Translation`,
         field: 'translation',
         icon: faGlobeEurope,
         dropdown: false

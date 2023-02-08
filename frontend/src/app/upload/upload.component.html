@@ -1,4 +1,4 @@
-<div class="file is-boxed" [ngClass]="{'is-info': state=='empty', 'is-danger': state=='error', 'is-success': state=='success'}" *ngIf="!loading">
+<div class="file is-boxed" [ngClass]="{'is-info': state==='empty', 'is-danger': state==='error', 'is-success': state==='success'}" *ngIf="!loading">
     <label class="file-label">
         <input class="file-input" type="file" (change)="onChange($event)" accept=".csv,text/csv">
         <span class="file-cta">
@@ -6,21 +6,22 @@
                 <fa-icon [icon]="faUpload"></fa-icon>
             </span>
             <span class="file-label">
-                {{ fileName || 'Choose a file...' }}
+                <ng-container *ngIf="fileName">{{ fileName }}</ng-container>
+                <ng-container *ngIf="!fileName" i18n>Choose a file...</ng-container>
             </span>
         </span>
     </label>
 </div>
 <div class="container" *ngIf="loading">
-    <button class="button is-loading is-info">loading</button>
+    <button class="button is-loading is-info" i18n>loading</button>
 </div>
 <br />
 <article class="message is-danger" *ngIf="messages">
     <div class="message-header">
-        <p>Problems Detected</p>
+        <p i18n>Problems Detected</p>
     </div>
     <div class="message-body content">
-        Please review your file and try again. Following problems found:
+        <ng-container i18n>Please review your file and try again. Following problems found:</ng-container>
 
         <ul>
             <li *ngFor="let message of messages">

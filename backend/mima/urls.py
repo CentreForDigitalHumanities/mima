@@ -22,6 +22,7 @@ from rest_framework import routers
 
 from .index import index
 from .proxy_frontend import proxy_frontend
+from .i18n import get, set
 
 api_router = routers.DefaultRouter()  # register viewsets with this router
 
@@ -43,5 +44,7 @@ urlpatterns = [
         namespace='rest_framework',
     )),
     path('api/upload/', include('upload.urls')),
+    path('api/i18n/get/', get),
+    path('api/i18n/set/', set),
     spa_url,  # catch-all; unknown paths to be handled by a SPA
 ]
