@@ -80,9 +80,9 @@ export class FilterService {
         if (filters?.length) {
             for (const filter of filters) {
                 if (filter.field === '*' || filter.field === field) {
-                    const filterMatches = this.searchMultiple(text, filter.text);
+                    const filterMatches = this.searchMultiple(text, filter.content);
                     matches.push(...filterMatches);
-                    if (!(filter.text ?? '').trim()) {
+                    if (!(filter.content[0] ?? '').trim()) {
                         // an empty filter matches everything!
                         emptyFilter = true;
                         matchingFilters.add(filter);
@@ -172,10 +172,13 @@ export class FilterService {
     }
 
     /**
-     * Splits search text by space and match each separate item
+     * For each string in the filter's content,
+     * it splits search text by space and matches each separate item
      */
-    private searchMultiple(haystack: string, needles: string): [number, number][] {
-        return needles.split(' ')
+    private searchMultiple(haystack: string, needles: string[]): [number, number][] {
+        const results = [];
+        for (const needleGroup of needles) {
+            results.push(... needleGroup.split(' ')
             .filter(needle => needle)
             .map(needle => this.searchSingle(haystack, needle))
             .reduce((prev, matches, index) => {
@@ -185,7 +188,10 @@ export class FilterService {
                 }
 
                 return prev.concat(matches);
-            }, []);
+            }, []));
+        }
+
+        return results;
     }
 
     /**
@@ -198,7 +204,7 @@ export class FilterService {
         let needleIndex = 0;
         let start = 0;
         const matches: [number, number][] = [];
-        needle = needle.replace(ignoreCharactersExp, '');
+        needle = needle.replace(ignoreCharactersExp, '').toLowerCase();
 
         while (haystackIndex < haystack.length) {
             const character = haystack[haystackIndex].toLowerCase();

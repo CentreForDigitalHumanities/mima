@@ -47,7 +47,8 @@ export const loadAdverbials = createAction('[Adverbials] Load Adverbials from Se
  * Set adverbials which have been loaded from the server (or previewed)
  */
 export const setAdverbials = createAction('[Adverbials] Set Adverbials', props<{
-    adverbials: ReadonlyArray<Adverbial>
+    adverbials: ReadonlyArray<Adverbial>,
+    applyFilters: boolean
 }>());
 
 /**

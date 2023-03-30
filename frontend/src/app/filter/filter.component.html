@@ -1,4 +1,4 @@
-<div class="field has-addons" *ngIf="filter">
+<div class="field has-addons is-flex-direction-row" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
             <select [(ngModel)]="selectedType" (change)="emit()">
@@ -9,12 +9,17 @@
             <fa-icon [icon]="selectedType.icon"></fa-icon>
         </span>
     </div>
-    <p class="control" [ngClass]="{'has-icons-right': filter.text}">
-        <input #textField class="input" type="text" name="text" [(ngModel)]="filter.text" (keyup)="emit()">
-        <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="filter.text">
-            <fa-icon [icon]="faTimesCircle"></fa-icon>
-        </span>
-    </p>
+    <div class="control is-flex-grow-1" *ngIf="selectedType.dropdown; else noDropdown">
+        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" i18n-defaultLabel optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
+    </div>
+    <ng-template #noDropdown>
+        <p class="control" [ngClass]="{'has-icons-right': filter.content}">
+            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent" (keyup)="emit()">
+            <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
+                <fa-icon [icon]="faTimesCircle"></fa-icon>
+            </span>
+        </p>
+    </ng-template>
     <p class="control">
         <button class="button" i18n-title title="Delete filter" (click)="delete()">
             <span class="icon is-small">

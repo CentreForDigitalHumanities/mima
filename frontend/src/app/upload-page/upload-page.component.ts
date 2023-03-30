@@ -24,7 +24,7 @@ export class UploadPageComponent {
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
-        this.store.dispatch(setAdverbials({ adverbials }));
+        this.store.dispatch(setAdverbials({ adverbials, applyFilters: false }));
         this.state = 'review';
     }
 
