@@ -6,10 +6,11 @@
 <div class="content" *ngIf="matchedAdverbial">
     <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
     <p>
-        <span [innerHtml]="matchedAdverbial.example | highlight"></span><br />
-        <ng-container *ngIf="matchedAdverbial.gloss"><span
-                [innerHtml]="matchedAdverbial.gloss | highlight"></span><br /></ng-container>
-        <i [innerHtml]="matchedAdverbial.translation | highlight"></i>
+        <luu-view>
+          <luu-line type="example" [value]="matchedAdverbial.example | highlightPlain"></luu-line>
+          <luu-line *ngIf="matchedAdverbial.gloss" type="gloss" [value]="matchedAdverbial.gloss | highlightPlain"></luu-line>
+          <luu-translation><span [innerHtml]="matchedAdverbial.translation | highlight"></span></luu-translation>
+        </luu-view>
     </p>
 </div>
 <div class="field is-grouped is-grouped-multiline" *ngIf="matchedAdverbial">
