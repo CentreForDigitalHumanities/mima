@@ -5233,8 +5233,10 @@ lru-cache@^9.0.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-9.0.2.tgz#97f13c6b20532fba9bae821c39cd7d471f65119d"
   integrity sha512-7zYMKApzQ9qQE13xQUzbXVY3p2C5lh+9V+bs8M9fRf1TF59id+8jkljRWtIPfBfNP4yQAol5cqh/e8clxatdXw==
 
-luupzig@../../luupzig/dist/luupzig:
+luupzig@^0.0.1:
   version "0.0.1"
+  resolved "https://registry.yarnpkg.com/luupzig/-/luupzig-0.0.1.tgz#367b244fd4f44e9eb93df9232625158af31a2019"
+  integrity sha512-FytlGUK1yFsb2myz6H8Wrbwcx5W5UMEflhzCRNPUGrDK+uj11P9xjHKxu4VZLipK8AUPMjaeT/CXapsZbCxgcA==
   dependencies:
     tslib "^2.1.0"
 
