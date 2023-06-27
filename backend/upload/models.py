@@ -6,6 +6,9 @@ from typing import Callable, Dict, List, Sequence, Tuple
 def str_map(x: str):
     return x
 
+def lst_map(x: str):
+    return [x]
+
 
 def label_map(x: str):
     return x.split('+')
@@ -14,9 +17,9 @@ def label_map(x: str):
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'ID': ('id', str_map),
     'Manner adverbial': ('text', str_map),
-    'Full example': ('example', str_map),
-    'Translation': ('translation', str_map),
-    'Leipzig gloss': ('gloss', str_map),
+    'Full example': ('examples', lst_map),
+    'Translation': ('translations', lst_map),
+    'Leipzig gloss': ('glosses', lst_map),
     'Language': ('language', str_map),
     'Dialect': ('dialect', str_map),
     'Language family': ('language_family', str_map),

@@ -72,7 +72,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         dropdown: true
     }, {
         name: $localize  `Translation`,
-        field: 'translation',
+        field: 'translations',
         icon: faGlobeEurope,
         dropdown: false
     }];
@@ -98,7 +98,7 @@ export class FilterComponent implements OnInit, OnDestroy {
                             break;
 
                         default:
-                            values.add(adverbial[selectedType.field]);
+                            // values.add(adverbial[selectedType.field]);
                             break;
 
                     }

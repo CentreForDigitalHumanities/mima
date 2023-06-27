@@ -24,12 +24,12 @@ export class FilterService {
         let anyMatch = false;
         const result = new MatchedAdverbial();
         const matchingFilters: Filter[] = [];
-        const keys: (keyof Omit<MatchedAdverbial, 'labels'>)[] = [
+        const keys: (keyof Omit<MatchedAdverbial, 'labels' | 'examples' | 'glosses' | 'translations'>)[] = [
             'id',
             'text',
-            'example',
-            'translation',
-            'gloss',
+            // 'examples',
+            // 'translations',
+            // 'glosses',
             'language',
             'dialect',
             'language_family',
