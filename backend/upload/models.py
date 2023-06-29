@@ -16,10 +16,11 @@ def label_map(x: str):
 
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'ID': ('id', str_map),
-    'Manner adverbial': ('text', str_map),
-    'Full example': ('examples', lst_map),
-    'Translation': ('translations', lst_map),
-    'Leipzig gloss': ('glosses', lst_map),
+    'Text': ('text', str_map),
+    'Root': ('root', str_map),
+    'Examples': ('examples', lst_map),
+    'Translations': ('translations', lst_map),
+    'Glosses': ('glosses', lst_map),
     'Language': ('language', str_map),
     'Dialect': ('dialect', str_map),
     'Language family': ('language_family', str_map),
@@ -36,6 +37,8 @@ class Adverbial:
         errors: List[List[str]] = []
         missing_columns = list(adverbial_mapping.keys())
         for name in fieldnames:
+            name = name.replace('\ufeff', '')  # remove ufeff byte from microsoft excel files
+
             if name not in adverbial_mapping:
                 errors.append(['UNKNOWN_COLUMN', name])
             else:
@@ -50,6 +53,7 @@ class Adverbial:
     def from_csv_row(row: Dict[str, str]) -> 'Adverbial':
         adverbial = Adverbial()
         for key, value in row.items():
+            key = key.replace('\ufeff', '')  # remove ufeff byte from microsoft excel files
             name, mapping = adverbial_mapping[key]
             setattr(adverbial, name, mapping(value))
 
