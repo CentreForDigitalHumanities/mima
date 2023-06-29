@@ -73,7 +73,6 @@ export class FilterService {
             matchingFilters.push(...partFilters);
             return result[key], anyMatch;
         } else if (Array.isArray(adverbial[key])){
-            console.log('Array', key)
             result[key] = [];
             for (const text of adverbial[key]) {
                 const [parts, partFilters] = this.searchField(text, key as keyof Adverbial, filters);
