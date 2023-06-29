@@ -37,18 +37,15 @@ export class FilterService {
             'source',
             'notes'];
         for (const key of keys) {
-            const [parts, partFilters] = this.searchField(adverbial[key], key, filters);
-            matchingFilters.push(...partFilters);
-            anyMatch ||= parts.match;
-            result[key] = parts;
-        }
-        result.labels = [];
-        for (const label of adverbial.labels) {
-            const [parts, partFilters] = this.searchField(label, 'labels', filters);
-            matchingFilters.push(...partFilters);
-            anyMatch ||= parts.match;
-            result.labels.push(parts);
-        }
+                const [parts, partFilters] = this.searchField(adverbial[key], key, filters);
+                matchingFilters.push(...partFilters);
+                anyMatch ||= parts.match;
+                result[key] = parts;
+            }
+        result.labels = this.fill_array(adverbial, result, filters, 'labels', anyMatch, matchingFilters)
+        result.examples = this.fill_array(adverbial, result, filters, 'examples', anyMatch, matchingFilters)
+        result.glosses = this.fill_array(adverbial, result, filters, 'glosses', anyMatch, matchingFilters)
+        result.translations = this.fill_array(adverbial, result, filters, 'translations', anyMatch, matchingFilters)
 
         if (anyMatch) {
             if (operator === 'and') {
@@ -64,6 +61,18 @@ export class FilterService {
 
         return undefined;
     }
+
+    private fill_array(adverbial: Adverbial, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key:string, anyMatch:boolean, matchingFilters: Filter[]) {
+        result[key] = [];
+        for (const text of adverbial[key]) {
+            const [parts, partFilters] = this.searchField(text, key as keyof Adverbial, filters);
+            matchingFilters.push(...partFilters);
+            anyMatch ||= parts.match;
+            result[key].push(parts);
+        }
+        return result[key]
+    }
+
 
     /**
      * Search a single field using filters
