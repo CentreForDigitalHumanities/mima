@@ -5,6 +5,7 @@ import { setAdverbials } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Adverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
+import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
 
 @Component({
     selector: 'mima-upload-page',
@@ -20,7 +21,7 @@ export class UploadPageComponent {
 
     loading = false;
 
-    constructor(private adverbialsService: AdverbialsService, private store: Store<State>) { }
+    constructor(private adverbialsService: AdverbialsService, private fileUploadService: FileUploadService, private store: Store<State>) { }
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
@@ -40,5 +41,11 @@ export class UploadPageComponent {
             alert($localize`Saving failed`);
         }
         this.loading = false;
+    }
+
+    async onUploadPilot(filepath: string): Promise<void> {
+        const pilot_adverbials = await this.fileUploadService.upload_pilot(filepath);
+        this.setAdverbials(pilot_adverbials);
+        this.save();
     }
 }

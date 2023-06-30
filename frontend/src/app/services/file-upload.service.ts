@@ -36,4 +36,23 @@ export class FileUploadService {
             throw error;
         }
     }
+
+    /***
+     * Temporary method to quickly load data into the frontend from a path
+     */
+    async upload_pilot(filepath: string): Promise<Adverbial[]> {
+
+        // Make http post request over api
+        const response = lastValueFrom(this.http.post<Adverbial[]>(
+            this.baseApiUrl + '/upload/pilot_upload/', filepath));
+
+        try {
+            return await response;
+        } catch (error) {
+            if (error instanceof HttpErrorResponse) {
+                throw new ValidationErrors(error.error);
+            }
+            throw error;
+        }
+    }
 }

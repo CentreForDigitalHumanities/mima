@@ -8,6 +8,15 @@
     </ul>
 </nav>
 
+<div>
+    <ng-container *ngIf="state==='upload'">
+        <h2 class="subtitle">Quickload Data</h2>
+        <button class="button is-warning" (click)="onUploadPilot('/Users/Stiph002/Projects/mima_materials/MiMA- Pilotdata new-form utf-8.csv')">Pilot Data</button>
+    </ng-container>
+    <br><br>
+</div>
+
+
 <ng-container *ngIf="state==='upload'">
     <h2 class="subtitle" i18n>Upload File</h2>
     <mima-upload (adverbials)="setAdverbials($event)"></mima-upload>
