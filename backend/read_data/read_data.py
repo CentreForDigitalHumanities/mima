@@ -39,6 +39,13 @@ def read_csv(filepath):
             data.append(row)
     return data
 
+def remove_periods(text):
+    # Create a translation table mapping periods to None
+    translator = str.maketrans('', '', '.')
+    # Remove periods using translation table
+    stripped_text = text.translate(translator)
+    return stripped_text
+
 new_data_path = "/Users/Stiph002/Projects/mima_materials/prefinal_data/cleaned_data_meertens_panel.csv"
 new_data = read_csv(new_data_path)
 
@@ -66,7 +73,7 @@ for index, cell in enumerate(new_data[0]):
         questionnaire_item = Question(
             tag = cell.split()[1],
             index = index,
-            question = ' '.join(cell.split()[2:]),
+            question = remove_periods(' '.join(cell.split()[2:])),
             type = 'Translation',
             cleaned = True
         )
@@ -74,14 +81,14 @@ for index, cell in enumerate(new_data[0]):
         questionnaire_item = Question(
             tag = first_word,
             index = index,
-            question = ' '.join(cell.split()[1:]),
+            question = remove_periods(' '.join(cell.split()[1:])),
             type = 'Translation'
         )
     else:
         questionnaire_item = Question(
             tag = first_word,
             index = index,
-            question = ' '.join(cell.split()[1:])
+            question = remove_periods(' '.join(cell.split()[1:]))
         )
 
     q_items[questionnaire_item.index] = questionnaire_item
@@ -133,7 +140,7 @@ for index in q_items:
         prompt = item.prompt
         if item.answers:
             for answer in item.answers:
-                translation = Answer(tag, prompt, answer[1], participants[answer[0]])
+                translation = Answer(remove_periods(tag), remove_periods(prompt), remove_periods(answer[1]), participants[answer[0]])
                 translations.append(translation)
 
 
@@ -141,14 +148,15 @@ for index in q_items:
 ## Get MA positions from prompts
 prompt_pos = read_csv("/Users/Stiph002/Projects/mima_materials/prelim_cleaned/ma_positions.csv")
 
+## fill a dict with prompt (row[1]) and position (row[2])
 ma_positions = {}
 for row in prompt_pos[1:]:
     if ':' in row[2]:
         start = int(row[2].split(':')[0])
         end = int(row[2].split(':')[1])
-        ma_positions[row[1].strip()] = (start, end)
+        ma_positions[remove_periods(row[1].strip())] = (start, end)
     else:
-        ma_positions[row[1].strip()] = int(row[2])
+        ma_positions[remove_periods(row[1].strip())] = int(row[2])
 
 
 ## Use MA positions to get MAs from answer
@@ -199,13 +207,64 @@ for tr in translations:
         else:
             prompt_translation_mas[tr.prompt_ma] = [tr.ma]
     else:
-        pass ## TODO: make a decision on what to do with MAs that have several candidates
+        ## TODO: make a decision on what to do with MAs that have several candidates
+        if tr.prompt_ma in prompt_translation_mas:
+            if tr.ma[0] not in prompt_translation_mas[tr.prompt_ma]:
+                prompt_translation_mas[tr.prompt_ma].append(tr.ma[0])
+        else:
+            prompt_translation_mas[tr.prompt_ma] = [tr.ma[0]]
 
-filename = '/Users/Stiph002/Projects/mima/backend/read_data/trans_per_ma.csv'
-with open(filename, 'w', newline='', encoding='utf8') as file:
-    writer = csv.writer(file)
-    for ptm in prompt_translation_mas:
-        line = [ptm] + [tr for tr in prompt_translation_mas[ptm]]
-        writer.writerow(line)
+## Temporary file to show to team
 
+# filename = '/Users/Stiph002/Projects/mima_materials/trans_per_ma.csv'
+# with open(filename, 'w', newline='', encoding='utf8') as file:
+#     writer = csv.writer(file)
+#     for ptm in prompt_translation_mas:
+#         line = [ptm] + [tr for tr in prompt_translation_mas[ptm]]
+#         writer.writerow(line)
+def generate_id():
+    random_string = 'id'
+    return(random_string)
+
+class Adverbial:
+    def __init__(self, answer):
+        self.id = generate_id()
+        self.text = answer.ma
+        self.root = answer.prompt_ma
+        self.examples = [answer.answer]
+        self.translations = [answer.prompt]
+        self.glosses = []
+        self.language = 'Dutch'
+        self.dialect = answer.dialect
+        self.language_family = 'Indo-European'
+        self.language_group = 'Germanic'
+        self.source = 'Questionnaire'
+        self.labels = []
+        self.notes = ''
+
+adverbials = {}
+for answer in translations:
+    key = str([answer.ma, answer.dialect])
+    if key in adverbials.keys():
+        adverbials[key].examples.append(answer.answer)
+        adverbials[key].translations.append(answer.prompt)
+    else:
+        new_adverbial = Adverbial(answer)
+        adverbials[key] = new_adverbial
+
+print('Adverbials:', len(adverbials))
+
+import json
+
+adverbials_list = [adverbial for adverbial in adverbials.values()]
+
+# Convert the list of Adverbial objects to JSON
+def obj_dict(obj):
+    return obj.__dict__
+
+json_data = json.dumps(adverbials_list, default=obj_dict, indent=2)
+
+# Write the JSON data to a file
+with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire.json', 'w') as json_file:
+    json_file.write(json_data)
 
