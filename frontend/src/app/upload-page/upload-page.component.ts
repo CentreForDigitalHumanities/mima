@@ -48,4 +48,10 @@ export class UploadPageComponent {
         this.setAdverbials(pilot_adverbials);
         this.save();
     }
+
+    async onUploadQuestionnaire(filepath: string): Promise<void> {
+        const quest_adverbials = await this.fileUploadService.upload_questionnaire(filepath);
+        this.setAdverbials(quest_adverbials);
+        // this.save();
+    }
 }

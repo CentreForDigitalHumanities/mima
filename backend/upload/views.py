@@ -1,5 +1,6 @@
 import codecs
 import csv
+import json
 from typing import List
 from rest_framework.decorators import api_view
 from rest_framework.request import Request
@@ -38,3 +39,15 @@ def upload_pilot_view(filepath):  # Temporary view to help with quickly uploadin
                 Adverbial.from_csv_row(row).as_dict())
 
     return Response(result)
+
+@api_view(['POST'])
+def upload_questionnaire_view(filepath):
+    with open(filepath.body, 'r') as file:
+        data = json.load(file)
+        result: List[Adverbial] = []
+    for row in data:
+        result.append(
+            Adverbial.from_csv_row(row).as_dict()
+        )
+    return Response(result)
+
