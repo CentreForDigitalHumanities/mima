@@ -15,19 +15,19 @@ def label_map(x: str):
 
 
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
-    'ID': ('id', str_map),
-    'Text': ('text', str_map),
-    'Root': ('root', str_map),
-    'Examples': ('examples', lst_map),
-    'Translations': ('translations', lst_map),
-    'Glosses': ('glosses', lst_map),
-    'Language': ('language', str_map),
-    'Dialect': ('dialect', str_map),
-    'Language family': ('language_family', str_map),
-    'Language group': ('language_group', str_map),
-    'Source': ('source', str_map),
-    'Label': ('labels', label_map),
-    'Note(s)': ('notes', str_map)
+    'id': ('id', str_map),
+    'text': ('text', str_map),
+    'root': ('root', str_map),
+    'examples': ('examples', lst_map),
+    'translations': ('translations', lst_map),
+    'glosses': ('glosses', lst_map),
+    'language': ('language', str_map),
+    'dialect': ('dialect', str_map),
+    'language_family': ('language_family', str_map),
+    'language_group': ('language_group', str_map),
+    'source': ('source', str_map),
+    'labels': ('labels', label_map),
+    'notes': ('notes', str_map)
 }
 
 
