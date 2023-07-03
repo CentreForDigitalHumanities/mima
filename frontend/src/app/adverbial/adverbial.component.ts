@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Adverbial, MatchedAdverbial } from '../models/adverbial';
-import { faCircleNotch, faCommentDots, faCommentSlash } from '@fortawesome/free-solid-svg-icons';
+import { faCircleNotch, faCommentDots, faCommentSlash, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { Filter } from '../models/filter';
 
 @Component({
@@ -12,6 +12,8 @@ export class AdverbialComponent {
     faCircleNotch = faCircleNotch;
     faCommentDots = faCommentDots;
     faCommentSlash = faCommentSlash;
+    faCaretDown = faCaretDown;
+    examplesExpanded = false;
     matchedAdverbial: MatchedAdverbial;
     showNotes = false;
 
@@ -32,4 +34,8 @@ export class AdverbialComponent {
 
     @Input()
     filters: Filter[];
+
+    public onExpandExamples() {
+        this.examplesExpanded = !this.examplesExpanded;
+    }
 }

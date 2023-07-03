@@ -1,0 +1,19 @@
+.adverbial-outer {
+    position: relative;
+}
+
+.adverbial-inner {
+    display: flex;
+    flex-direction: row;
+}
+
+.p-examples {
+    flex: 1;
+}
+
+.expand-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

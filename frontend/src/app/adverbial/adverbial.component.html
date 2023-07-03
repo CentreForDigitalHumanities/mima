@@ -3,14 +3,34 @@
         <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
     </span>
 </div>
-<div class="content" *ngIf="matchedAdverbial">
+<div class="content adverbial-outer" *ngIf="matchedAdverbial">
     <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
-        <p>
-            <span [innerHtml]="matchedAdverbial.examples[0] | highlight"></span><br />
+    <span class=expand-button *ngIf="matchedAdverbial.examples.length > 1" (click)="onExpandExamples()">
+        <fa-icon [icon]="faCaretDown" class="fa-caret"></fa-icon>
+    </span>
+    <span class="adverbial-inner" *ngIf="!examplesExpanded else expandedExamples">
+        <p class="p-examples">
+        <span [innerHtml]="matchedAdverbial.examples[0] | highlight"></span><br />
             <ng-container *ngIf="matchedAdverbial.glosses[0]"><span
-                    [innerHtml]="matchedAdverbial.glosses[0] | highlight"></span><br /></ng-container>
-            <i [innerHtml]="matchedAdverbial.translations[0] | highlight"></i>
+                [innerHtml]="matchedAdverbial.glosses[0] | highlight"></span><br /></ng-container>
+                <i [innerHtml]="matchedAdverbial.translations[0] | highlight"></i>
         </p>
+    </span>
+    <ng-template #expandedExamples>
+        <ng-container *ngFor="let item of matchedAdverbial.examples; let i = index">
+            <div class="example">
+                <p class="p-examples">
+                    <p class="p-example">
+                        <span [innerHtml]="matchedAdverbial.examples[i] | highlight"></span><br />
+                        <ng-container *ngIf="matchedAdverbial.glosses[i]">
+                            <span [innerHtml]="matchedAdverbial.glosses[i] | highlight"></span><br />
+                        </ng-container>
+                        <i [innerHtml]="matchedAdverbial.translations[i] | highlight"></i>
+                    </p>
+            </div>
+        </ng-container>
+
+    </ng-template>
 </div>
 <div class="field is-grouped is-grouped-multiline" *ngIf="matchedAdverbial">
     <div class="control">
