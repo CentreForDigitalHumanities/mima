@@ -208,6 +208,7 @@ for tr in translations:
             prompt_translation_mas[tr.prompt_ma] = [tr.ma]
     else:
         ## TODO: make a decision on what to do with MAs that have several candidates
+        ## Now it simply takes the first one
         if tr.prompt_ma in prompt_translation_mas:
             if tr.ma[0] not in prompt_translation_mas[tr.prompt_ma]:
                 prompt_translation_mas[tr.prompt_ma].append(tr.ma[0])
@@ -241,7 +242,11 @@ class Adverbial:
         self.source = 'Questionnaire'
         self.labels = []
         self.notes = ''
+        ## Temporary bit of code that picks the first candidate for MA if two are identified by the read_data script
+        if type(answer.ma) == list:
+            self.text = answer.ma[0]
 
+## Fill the adverbials dict with all translated examples
 adverbials = {}
 for answer in translations:
     key = str([answer.ma, answer.dialect])
