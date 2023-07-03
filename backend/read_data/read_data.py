@@ -223,13 +223,27 @@ for tr in translations:
 #     for ptm in prompt_translation_mas:
 #         line = [ptm] + [tr for tr in prompt_translation_mas[ptm]]
 #         writer.writerow(line)
-def generate_id():
-    random_string = 'id'
-    return(random_string)
+class IDs():
+    def __init__(self, existing_ids=None):
+        self.existing_ids = set(existing_ids) if existing_ids else set()
+        self.counter = 1
+
+    def generate_id(self):
+        while True:
+            new_id = f"Q-{self.counter}"
+            self.counter += 1
+            if new_id not in self.existing_ids:
+                self.existing_ids.add(new_id)
+                return new_id
+
+
+existing_ids = []
+id_generator = IDs(existing_ids)
+
 
 class Adverbial:
     def __init__(self, answer):
-        self.id = generate_id()
+        self.id = id_generator.generate_id()
         self.text = answer.ma
         self.root = answer.prompt_ma
         self.examples = [answer.answer]
