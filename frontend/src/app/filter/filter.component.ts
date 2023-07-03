@@ -92,13 +92,16 @@ export class FilterComponent implements OnInit, OnDestroy {
                             break;
 
                         case 'labels':
+                        case 'examples':
+                        case 'translations':
+                        case 'glosses':
                             for (const value of adverbial.labels) {
                                 values.add(value);
                             }
                             break;
 
                         default:
-                            // values.add(adverbial[selectedType.field]);
+                            values.add(adverbial[selectedType.field]);
                             break;
 
                     }
