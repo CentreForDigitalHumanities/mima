@@ -7,11 +7,17 @@ def str_map(x: str):
     return x
 
 def lst_map(x: str):
-    return [x]
+    if type(x) == list:
+        return x
+    else :
+        return [x]
 
 
-def label_map(x: str):
-    return x.split('+')
+def label_map(x):
+    if type(x) == str:
+        return x.split('+')
+    else:
+        return lst_map(x)
 
 
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
