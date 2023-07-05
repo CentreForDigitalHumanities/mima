@@ -92,6 +92,7 @@ export class FilterComponent implements OnInit, OnDestroy {
                             break;
 
                         case 'labels':
+                        case 'roots':
                         case 'examples':
                         case 'translations':
                         case 'glosses':

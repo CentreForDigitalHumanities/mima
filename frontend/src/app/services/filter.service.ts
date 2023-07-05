@@ -27,6 +27,7 @@ export class FilterService {
         const keys: (keyof MatchedAdverbial)[] = [
             'id',
             'text',
+            'roots',
             'examples',
             'translations',
             'glosses',

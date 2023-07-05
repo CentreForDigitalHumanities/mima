@@ -22,3 +22,14 @@
     color: rgb(134, 131, 131);
     font-style: italic;
 }
+
+.adverbial-header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+.subtitle-container {
+    display: flex;
+    flex-direction: row;
+}

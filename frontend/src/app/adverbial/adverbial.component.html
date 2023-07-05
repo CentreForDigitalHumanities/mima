@@ -4,8 +4,16 @@
     </span>
 </div>
 <div class="content adverbial-outer" *ngIf="matchedAdverbial">
-    <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
-    <h1 *ngIf="matchedAdverbial.root" class="subtitle is-5 " [innerHTML]="matchedAdverbial.root | highlight"></h1>
+    <div class="adverbial-header">
+        <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
+    </div>
+    <div class="subtitle-container" *ngIf="matchedAdverbial.roots">
+        <ng-container *ngFor="let root of matchedAdverbial.roots; let last = last">
+            <p class="subtitle is-5" [innerHTML]="root | highlight"></p>
+            <span *ngIf="!last"> <p class="subtitle is-5">,&nbsp;</p></span>
+        </ng-container>
+    </div>
+
     <span class=expand-button *ngIf="matchedAdverbial.examples.length > 1" (click)="onExpandExamples()">
         <fa-icon [icon]="faCaretDown" class="fa-caret"></fa-icon>
     </span>

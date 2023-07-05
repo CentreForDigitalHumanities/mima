@@ -1,7 +1,7 @@
 export interface Adverbial {
     id: string;
     text: string;
-    root: string;
+    roots: string[];
     examples: string[];
     translations: string[];
     glosses: string[];
@@ -73,7 +73,7 @@ type MatchedAdverbialProperties = {
 export class MatchedAdverbial implements MatchedAdverbialProperties {
     id: MatchedParts;
     text: MatchedParts;
-    root: MatchedParts;
+    roots: MatchedParts[];
     examples: MatchedParts[];
     translations: MatchedParts[];
     glosses: MatchedParts[];
@@ -91,7 +91,7 @@ export class MatchedAdverbial implements MatchedAdverbialProperties {
         if (adverbial) {
             this.id = this.unmatchedValue(adverbial.id);
             this.text = this.unmatchedValue(adverbial.text);
-            this.root = this.unmatchedValue(adverbial.root);
+            this.roots = adverbial.roots.map(root => this.unmatchedValue(root));
             this.examples = adverbial.examples.map(example => this.unmatchedValue(example));
             this.translations = adverbial.translations.map(translation => this.unmatchedValue(translation));
             this.glosses = adverbial.glosses.map(gloss => this.unmatchedValue(gloss));

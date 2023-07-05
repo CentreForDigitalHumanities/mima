@@ -245,7 +245,7 @@ class Adverbial:
     def __init__(self, answer):
         self.id = id_generator.generate_id()
         self.text = answer.ma
-        self.root = answer.prompt_ma
+        self.roots = [answer.prompt_ma]
         self.examples = [answer.answer]
         self.translations = [answer.prompt]
         self.glosses = []
@@ -267,6 +267,8 @@ for answer in translations:
     if key in adverbials.keys():
         adverbials[key].examples.append(answer.answer)
         adverbials[key].translations.append(answer.prompt)
+        if answer.prompt_ma not in adverbials[key].roots:
+            adverbials[key].roots.append(answer.prompt_ma)
     else:
         new_adverbial = Adverbial(answer)
         adverbials[key] = new_adverbial
@@ -282,8 +284,13 @@ def obj_dict(obj):
     return obj.__dict__
 
 json_data = json.dumps(adverbials_list, default=obj_dict, indent=2)
+json_data_abridged = json.dumps(adverbials_list[0:50], default=obj_dict, indent=2)
+
 
 # Write the JSON data to a file
 with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire.json', 'w') as json_file:
     json_file.write(json_data)
+
+with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire_abridged.json', 'w') as json_file:
+    json_file.write(json_data_abridged)
 

@@ -23,7 +23,7 @@ def label_map(x):
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'id': ('id', str_map),
     'text': ('text', str_map),
-    'root': ('root', str_map),
+    'roots': ('roots', lst_map),
     'examples': ('examples', lst_map),
     'translations': ('translations', lst_map),
     'glosses': ('glosses', lst_map),
