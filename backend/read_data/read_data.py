@@ -294,3 +294,12 @@ with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire.json
 with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire_abridged.json', 'w') as json_file:
     json_file.write(json_data_abridged)
 
+
+# write a csv file to manually check for the correct MA: for Tess
+with open('/Users/Stiph002/Projects/mima_materials/list_MAs_to_check', 'w') as file:
+    writer = csv.writer(file)
+    for adverbial in adverbials_list:
+        row = [adverbial.id, adverbial.examples[0], adverbial.text, '']
+        writer.writerow(row)
+
+
