@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
+import { LuupzigModule } from 'luupzig';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -60,6 +61,7 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
         }),
         EffectsModule.forRoot([AdverbialEffects]),
         MultiSelectModule,
+        LuupzigModule,
         StoreModule.forRoot({
             adverbials: adverbialReducer
         }, {
