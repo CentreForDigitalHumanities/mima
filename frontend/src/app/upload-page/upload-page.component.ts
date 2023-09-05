@@ -6,6 +6,7 @@ import { State } from '../adverbial.state';
 import { Adverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
 import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
+import { PILOT_DATA_PATH, QUESTIONNAIRE_DATA_PATH, ABRIDGED_QUESIONNAIRE_DATA_PATH } from 'config';
 
 @Component({
     selector: 'mima-upload-page',
@@ -18,6 +19,10 @@ export class UploadPageComponent {
     adverbials: Adverbial[];
     state: 'upload' | 'review' | 'save' | 'saved' = 'upload';
     savedCount: number;
+
+    pilot_data_path = PILOT_DATA_PATH;
+    questionnaire_data_path = QUESTIONNAIRE_DATA_PATH;
+    abridged_questionnaire_data_path = ABRIDGED_QUESIONNAIRE_DATA_PATH;
 
     loading = false;
 
