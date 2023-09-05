@@ -19,11 +19,12 @@ class Question():
         return('Question {}: {}'.format(self.tag, self.question))
 
 class Answer:
-    def __init__(self, tag, prompt, answer, dialect, ma='NA', prompt_ma='NA'):
+    def __init__(self, tag, prompt, answer, dialect, participant_id, ma='NA', prompt_ma='NA'):
         self.tag = tag
         self.prompt = prompt
         self.answer = answer
         self.dialect = dialect
+        self.participant_id = participant_id
         self.ma = ma
         self.prompt_ma = prompt_ma
 
@@ -140,13 +141,13 @@ for index in q_items:
         prompt = item.prompt
         if item.answers:
             for answer in item.answers:
-                translation = Answer(remove_periods(tag), remove_periods(prompt), remove_periods(answer[1]), participants[answer[0]])
+                translation = Answer(remove_periods(tag), remove_periods(prompt), remove_periods(answer[1]), participants[answer[0]], answer[0])
                 translations.append(translation)
 
 
 ## Detect the Manner Adverbials in each translation
 ## Get MA positions from prompts
-prompt_pos = read_csv("/Users/Stiph002/Projects/mima_materials/prelim_cleaned/ma_positions.csv")
+prompt_pos = read_csv(OUTPUT_PATH + "ma_positions.csv")
 
 ## fill a dict with prompt (row[1]) and position (row[2])
 ma_positions = {}
@@ -242,6 +243,7 @@ class Adverbial:
         self.glosses = []
         self.language = 'Dutch'
         self.dialect = answer.dialect
+        self.participant_ids = [answer.participant_id]
         self.language_family = 'Indo-European'
         self.language_group = 'Germanic'
         self.source = 'Questionnaire'
@@ -258,8 +260,9 @@ for answer in translations:
     if key in adverbials.keys():
         adverbials[key].examples.append(answer.answer)
         adverbials[key].translations.append(answer.prompt)
-        if answer.prompt_ma not in adverbials[key].roots:
-            adverbials[key].roots.append(answer.prompt_ma)
+        # if answer.prompt_ma not in adverbials[key].roots:
+        adverbials[key].roots.append(answer.prompt_ma)
+        adverbials[key].participant_ids.append(answer.participant_id)
     else:
         new_adverbial = Adverbial(answer)
         adverbials[key] = new_adverbial
@@ -289,5 +292,46 @@ with open(OUTPUT_PATH + 'list_MAs_to_check', 'w') as file:
     for adverbial in adverbials_list:
         row = [adverbial.id, adverbial.examples[0], adverbial.text, '']
         writer.writerow(row)
+
+# now that Tess has checked the MAs, read the csv file and update the adverbials
+with open(OUTPUT_PATH + 'checked_MAs.csv', encoding='utf8') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        adverbial_id = row[0]
+        adverbial_text = row[2]
+        adverbial_correction = row[3]
+        for adverbial in adverbials_list:
+            if adverbial.id == adverbial_id:
+                if adverbial_correction != '':
+                    adverbial.text = adverbial_correction
+                    print('replaced {} with {}'.format(adverbial_text, adverbial_correction))
+
+# Save the final collection of Adverbials as a csv file:
+with open(OUTPUT_PATH + 'dutch_adverbials_from_meertens.csv', 'w', encoding='utf8') as file:
+    writer = csv.writer(file)
+    header_row = [
+        'participant_id',            # participant ID
+        'dialect',                   # dialect of participant
+        'response_id',               # ID assigned to a unique dialect-ma pairing
+        'prompt',                    # prompt in Dutch (ABN)
+        'translation',               # translation of prompt in dialect by participant
+        'prompt_manner_adverbial',   # prompt for the manner adverbial
+        'manner_adverbial'           # manner adverbial translated by the participant
+    ]
+    writer.writerow(header_row)
+    for adverbial in adverbials_list:
+        rows = []
+        for i in range(len(adverbial.examples)):
+            row = [
+                adverbial.participant_ids[i],
+                adverbial.dialect,
+                adverbial.id,
+                adverbial.translations[i],
+                adverbial.examples[i],
+                adverbial.roots[i],
+                adverbial.text
+            ]
+            rows.append(row)
+        writer.writerows(rows)
 
 
