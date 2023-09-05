@@ -1,6 +1,9 @@
 import csv
 import re
 import editdistance
+import json
+
+from backend.config import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
 
 class Question():
     def __init__(self, tag, index, question, type='NA', prompt='NA', cleaned=False, answers=None):
@@ -46,11 +49,8 @@ def remove_periods(text):
     stripped_text = text.translate(translator)
     return stripped_text
 
-new_data_path = "/Users/Stiph002/Projects/mima_materials/prefinal_data/cleaned_data_meertens_panel.csv"
-new_data = read_csv(new_data_path)
-
-participants_path = "/Users/Stiph002/Projects/mima_materials/prelim_cleaned/deelnemers.csv"
-participants_data = read_csv(participants_path)
+data = read_csv(DATA_PATH)
+participants_data = read_csv(PARTICIPANTS_PATH)
 
 ## Match dialects to participant IDs
 participants = {}
@@ -67,7 +67,7 @@ for participant in participants_data[1:]:
 ## Create a Question for each question and save it as an instance
 q_items = {} #keys: question tags, e.g. V1Z1b[SQ001_SQ001]., values: Questions
 
-for index, cell in enumerate(new_data[0]):
+for index, cell in enumerate(data[0]):
     first_word = cell.split()[0]
     if first_word == 'CLEANED':
         questionnaire_item = Question(
@@ -111,7 +111,7 @@ for ti in translation_indices:
         q_items[ti].prompt = 'No prompt found'
 
 ## Fill the answers for each question
-for row in new_data[1:]:
+for row in data[1:]:
     participant = ''.join(row[0:2])
     for index, cell in enumerate(row):
         if cell != '' and index in translation_indices:
@@ -215,14 +215,6 @@ for tr in translations:
         else:
             prompt_translation_mas[tr.prompt_ma] = [tr.ma[0]]
 
-## Temporary file to show to team
-
-# filename = '/Users/Stiph002/Projects/mima_materials/trans_per_ma.csv'
-# with open(filename, 'w', newline='', encoding='utf8') as file:
-#     writer = csv.writer(file)
-#     for ptm in prompt_translation_mas:
-#         line = [ptm] + [tr for tr in prompt_translation_mas[ptm]]
-#         writer.writerow(line)
 class IDs():
     def __init__(self, existing_ids=None):
         self.existing_ids = set(existing_ids) if existing_ids else set()
@@ -235,7 +227,6 @@ class IDs():
             if new_id not in self.existing_ids:
                 self.existing_ids.add(new_id)
                 return new_id
-
 
 existing_ids = []
 id_generator = IDs(existing_ids)
@@ -273,9 +264,7 @@ for answer in translations:
         new_adverbial = Adverbial(answer)
         adverbials[key] = new_adverbial
 
-print('Adverbials:', len(adverbials))
-
-import json
+print('Number of Adverbials:', len(adverbials))
 
 adverbials_list = [adverbial for adverbial in adverbials.values()]
 
@@ -286,17 +275,16 @@ def obj_dict(obj):
 json_data = json.dumps(adverbials_list, default=obj_dict, indent=2)
 json_data_abridged = json.dumps(adverbials_list[0:50], default=obj_dict, indent=2)
 
-
 # Write the JSON data to a file
-with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire.json', 'w') as json_file:
+with open(OUTPUT_PATH + 'adverbials_questionnaire.json', 'w') as json_file:
     json_file.write(json_data)
 
-with open('/Users/Stiph002/Projects/mima_materials/adverbials_questionnaire_abridged.json', 'w') as json_file:
+with open(OUTPUT_PATH + 'adverbials_questionnaire_abridged.json', 'w') as json_file:
     json_file.write(json_data_abridged)
 
 
 # write a csv file to manually check for the correct MA: for Tess
-with open('/Users/Stiph002/Projects/mima_materials/list_MAs_to_check', 'w') as file:
+with open(OUTPUT_PATH + 'list_MAs_to_check', 'w') as file:
     writer = csv.writer(file)
     for adverbial in adverbials_list:
         row = [adverbial.id, adverbial.examples[0], adverbial.text, '']
