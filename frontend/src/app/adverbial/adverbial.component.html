@@ -19,10 +19,9 @@
     </span>
     <span class="adverbial-inner" *ngIf="!examplesExpanded else expandedExamples">
         <p class="p-examples">
-        <span [innerHtml]="matchedAdverbial.examples[0] | highlight"></span><br />
-            <ng-container *ngIf="matchedAdverbial.glosses[0]"><span
-                [innerHtml]="matchedAdverbial.glosses[0] | highlight"></span><br /></ng-container>
-                <i [innerHtml]="matchedAdverbial.translations[0] | highlight"></i>
+            <luu-line type="example" [value]="matchedAdverbial.examples[0] | highlightPlain"></luu-line><br />
+            <luu-line *ngIf="matchedAdverbial.glosses[0]" type="gloss" [value]="matchedAdverbial.glosses[0] | highlightPlain"></luu-line>
+            <luu-translation><span [innerHtml]="matchedAdverbial.translations[0] | highlight"></span></luu-translation>
         </p>
     </span>
     <ng-template #expandedExamples>
@@ -30,11 +29,9 @@
             <div class="example">
                 <p class="p-examples">
                     <p class="p-example">
-                        <span [innerHtml]="matchedAdverbial.examples[i] | highlight"></span><br />
-                        <ng-container *ngIf="matchedAdverbial.glosses[i]">
-                            <span [innerHtml]="matchedAdverbial.glosses[i] | highlight"></span><br />
-                        </ng-container>
-                        <i [innerHtml]="matchedAdverbial.translations[i] | highlight"></i>
+                        <luu-line type="example" [value]="matchedAdverbial.examples[i] | highlightPlain"></luu-line><br />
+                        <luu-line *ngIf="matchedAdverbial.glosses[i]" type="gloss" [value]="matchedAdverbial.glosses[0] | highlightPlain"></luu-line>
+                        <luu-translation><span [innerHtml]="matchedAdverbial.translations[i] | highlight"></span></luu-translation>
                     </p>
             </div>
         </ng-container>

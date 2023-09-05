@@ -17,7 +17,7 @@ export interface Adverbial {
 /**
  * Part of the text marking highlights.
  */
-type MatchedPart = {
+export type MatchedPart = {
     text: string,
     match: boolean
 };
@@ -66,7 +66,7 @@ type MatchedAdverbialValue<T> =
     ? MatchedParts[]
     : never;
 
-type MatchedAdverbialProperties = {
+export type MatchedAdverbialProperties = {
     [key in keyof Adverbial]: MatchedAdverbialValue<Adverbial[key]>
 };
 
