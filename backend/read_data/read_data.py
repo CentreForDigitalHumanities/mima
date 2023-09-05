@@ -310,7 +310,7 @@ with open(OUTPUT_PATH + 'checked_MAs.csv', encoding='utf8') as file:
 with open(OUTPUT_PATH + 'dutch_adverbials_from_meertens.csv', 'w', encoding='utf8') as file:
     writer = csv.writer(file)
     header_row = [
-        'participant_id',            # participant ID
+        'participant_id',            # participant ID (combination of participant number and survey number)
         'dialect',                   # dialect of participant
         'response_id',               # ID assigned to a unique dialect-ma pairing
         'prompt',                    # prompt in Dutch (ABN)

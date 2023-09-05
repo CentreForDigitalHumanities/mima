@@ -29,6 +29,7 @@ adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
     'glosses': ('glosses', lst_map),
     'language': ('language', str_map),
     'dialect': ('dialect', str_map),
+    'participant_ids': ('participant_ids', lst_map),
     'language_family': ('language_family', str_map),
     'language_group': ('language_group', str_map),
     'source': ('source', str_map),

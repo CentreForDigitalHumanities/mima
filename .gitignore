@@ -33,3 +33,7 @@ venv.bak/
 
 # Node
 node_modules/
+
+# local settings
+config.py
+config.ts
