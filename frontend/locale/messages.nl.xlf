@@ -23,7 +23,7 @@
         <target state="translated"> Geen uitdrukkingen gevonden! </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/adverbial-list/adverbial-list.component.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6766437680170628987" datatype="html">
@@ -143,7 +143,7 @@
         <target state="translated"> MiMa </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8364309938383915497" datatype="html">
@@ -151,7 +151,7 @@
         <target state="translated"> Startpagina </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">19,21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3224517396841337973" datatype="html">
@@ -159,7 +159,7 @@
         <target state="translated"> Uitdrukkingen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">23,24</context>
+          <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4842432534148275616" datatype="html">
@@ -167,7 +167,7 @@
         <target state="translated"> Toevoegen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">26,27</context>
+          <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5857934386762652898" datatype="html">
@@ -243,7 +243,7 @@
         <target state="translated"> Voeg <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> nieuwe uitdrukkingen toe aan de database? </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">41,42</context>
+          <context context-type="linenumber">40,42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9178182467454450952" datatype="html">
@@ -308,6 +308,110 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="59817210266713223" datatype="html">
+        <source>About the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> project and database</source>
+        <target state="translated">Het <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>-project en de database</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3423148240695254048" datatype="html">
+        <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). The research project is funded by the Dutch Research Council (NWO).</source>
+        <target state="translated">Welkom op de website van de MiMA-database, een product van het onderzoeksproject Mind your Manner Adverbials!, uitgevoerd door taalkundigen van de Universiteit Utrecht (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, voorheen UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). Het onderzoeksproject is gesubsidieerd door de Nederlandse Organisatie voor Wetenschappelijk Onderzoek.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">5,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3660086085587815253" datatype="html">
+        <source>One of the main aims of the research project is to map the cross-linguistic variation in the (morpho)syntax of manner adverbials. In pursuing this, we are interested in the internal structure (i.e., the internal make-up of complex words and groups of words) of these adverbials, their external structure (i.e., the way in which they distribute in the larger sentence), and the way in which these two variables interact. Part of building towards this goal consists of collecting the data contained in this database, and compiling and making them available in the database.</source>
+        <target state="translated">Een van de hoofddoelen van het onderzoeksproject is om de cross-linguïstische variatie in de (morfo-)syntaxis van bijwoordelijke bepalingen van wijze in kaart te brengen. Hierbij zijn we niet alleen geïnteresseerd in de interne structuur (d.w.z., de opbouw van complexe woorden en woordgroepen) van de bijwoordelijke bepalingen, maar ook in hun externe structuur (hoe deze bepalingen zich gedragen in de grotere zinsstructuur), en hoe deze twee variabelen interacteren. Een deel van het realiseren van dit doel bestaat uit het verzamelen van de data in deze database, en het compileren en beschikbaar maken ervan in de database.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">12,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8308134195200285374" datatype="html">
+        <source>As one look at the database reveals, there is a lot of variation in the way in which languages form and use manner adverbials. This rich variation is found between unrelated, but also (closely) related languages/language varieties, and has not been studied on a large scale and in detail before. The MiMA project contributes to the study of the (morpho)syntax of manner adverbials by systematic collection and study of data from languages/language varieties that exhibit different degrees of relatedness: the Dutch dialects are very closely related languages/language varieties, the Germanic languages are less closely related, and the non-Germanic languages are even further removed/unrelated. By studying the differences and similarities in the structure of the manner adverbials, we can relate these to the differences and similarities between the languages/language varieties. The sample of languages/language varieties in our database allows us to do this at different levels of fine-grainedness. </source>
+        <target state="translated">Zoals een blik in de database leert, bestaat er veel variatie tussen talen in de manier waarop zij uitdrukkingen van wijze vormen en gebruiken. We vinden deze variatie tussen onverwante talen, maar ook tussen aan elkaar verwante talen/taalvariëteiten. Deze rijke variatie is niet eerder op grotere schaal en in detail bestudeerd. In het MiMA-project dragen we bij aan onderzoek naar de structuur van bijwoordelijke bepalingen van wijze door systematische verzameling en studie van data afkomstig van talen/taalvariëteiten die verschillende maten van verwantschap vertonen: Nederlandse dialecten als zeer verwante talen/taalvariëteiten, Germaanse talen als iets minder nauw verwante talen, en talen buiten de Germaanse familie als nog minder verwante/onverwante talen. Door de verschillen en overeenkomsten in structuur van de bijwoordelijke bepalingen te bestuderen, kunnen we deze relateren aan de verschillen en overeenkomsten tussen de verschillende talen/taalvariëteiten. De opzet van het talensample in de database stelt ons in staat om dit op verschillende niveaus van fijnmazigheid te doen. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">21,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7297570420253704244" datatype="html">
+        <source>Research group</source>
+        <target state="translated">Onderzoeksgroep</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="495773505965911553" datatype="html">
+        <source>Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;&gt;"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PI) </source>
+        <target state="translated">Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;&gt;"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (hoofdonderzoeker) </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4428091336900553605" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;&gt;"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student) </source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;&gt;"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (AiO) </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4244871897783889194" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;&gt;"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student)</source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;&gt;"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (AiO)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6461110097291912174" datatype="html">
+        <source>Tess Wensink (student assistant)</source>
+        <target state="translated">Tess Wensink (student-assistant)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7774380265675144980" datatype="html">
+        <source>https://www.uu.nl/en/research/institute-for-language-sciences</source>
+        <target state="translated">https://www.uu.nl/onderzoek/institute-for-language-sciences</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2618944292593937749" datatype="html">
+        <source>https://www.uu.nl/staff/NFMCorver</source>
+        <target state="translated">https://www.uu.nl/medewerkers/NFMCorver</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1307865425968830027" datatype="html">
+        <source>https://www.uu.nl/staff/MMassaia</source>
+        <target state="translated">https://www.uu.nl/medewerkers/MMassaia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1143985546535460657" datatype="html">
+        <source>https://www.uu.nl/staff/LTavenier</source>
+        <target state="translated">https://www.uu.nl/medewerkers/LTavenier</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
     </body>
