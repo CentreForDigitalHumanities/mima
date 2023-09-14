@@ -5,6 +5,11 @@ import { setAdverbials } from '../adverbial.actions';
 import { State } from '../adverbial.state';
 import { Adverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
+import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
+import { environment } from '../../environments/environment';
+import { localEnvironment } from '../../environments/environment.local';
+
+const mergedEnvironment = Object.assign({}, environment, localEnvironment);
 
 @Component({
     selector: 'mima-upload-page',
@@ -18,9 +23,13 @@ export class UploadPageComponent {
     state: 'upload' | 'review' | 'save' | 'saved' = 'upload';
     savedCount: number;
 
+    pilot_data_path = mergedEnvironment.PILOT_DATA_PATH;
+    questionnaire_data_path = mergedEnvironment.QUESTIONNAIRE_DATA_PATH;
+    abridged_questionnaire_data_path = mergedEnvironment.ABRIDGED_QUESIONNAIRE_DATA_PATH;
+
     loading = false;
 
-    constructor(private adverbialsService: AdverbialsService, private store: Store<State>) { }
+    constructor(private adverbialsService: AdverbialsService, private fileUploadService: FileUploadService, private store: Store<State>) { }
 
     setAdverbials(adverbials: Adverbial[]): void {
         this.adverbials = adverbials;
@@ -40,5 +49,17 @@ export class UploadPageComponent {
             alert($localize`Saving failed`);
         }
         this.loading = false;
+    }
+
+    async onUploadPilot(filepath: string): Promise<void> {
+        const pilot_adverbials = await this.fileUploadService.uploadPilot(filepath);
+        this.setAdverbials(pilot_adverbials);
+        this.save();
+    }
+
+    async onUploadQuestionnaire(filepath: string): Promise<void> {
+        const quest_adverbials = await this.fileUploadService.uploadQuestionnaire(filepath);
+        this.setAdverbials(quest_adverbials);
+        // this.save();
     }
 }

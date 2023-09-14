@@ -3,15 +3,40 @@
         <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
     </span>
 </div>
-<div class="content" *ngIf="matchedAdverbial">
-    <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
-    <p>
-        <luu-view>
-          <luu-line type="example" [value]="matchedAdverbial.example | highlightPlain"></luu-line>
-          <luu-line *ngIf="matchedAdverbial.gloss" type="gloss" [value]="matchedAdverbial.gloss | highlightPlain"></luu-line>
-          <luu-translation><span [innerHtml]="matchedAdverbial.translation | highlight"></span></luu-translation>
-        </luu-view>
-    </p>
+<div class="content adverbial-outer" *ngIf="matchedAdverbial">
+    <div class="adverbial-header">
+        <h1 class="title is-4" [innerHtml]="matchedAdverbial.text | highlight"></h1>
+    </div>
+    <div class="subtitle-container" *ngIf="matchedAdverbial.roots">
+        <ng-container *ngFor="let root of unique(matchedAdverbial.roots); let last = last">
+            <p class="subtitle is-5" [innerHTML]="root | highlight"></p>
+            <span *ngIf="!last"> <p class="subtitle is-5">,&nbsp;</p></span>
+        </ng-container>
+    </div>
+
+    <span class=expand-button *ngIf="matchedAdverbial.examples.length > 1" (click)="onExpandExamples()">
+        <fa-icon [icon]="faCaretDown" class="fa-caret"></fa-icon>
+    </span>
+    <span class="adverbial-inner" *ngIf="!examplesExpanded else expandedExamples">
+        <p class="p-examples">
+            <luu-line type="example" [value]="matchedAdverbial.examples[0] | highlightPlain"></luu-line><br />
+            <luu-line *ngIf="matchedAdverbial.glosses[0]" type="gloss" [value]="matchedAdverbial.glosses[0] | highlightPlain"></luu-line>
+            <luu-translation><span [innerHtml]="matchedAdverbial.translations[0] | highlight"></span></luu-translation>
+        </p>
+    </span>
+    <ng-template #expandedExamples>
+        <ng-container *ngFor="let item of matchedAdverbial.examples; let i = index">
+            <div class="example">
+                <p class="p-examples">
+                    <p class="p-example">
+                        <luu-line type="example" [value]="matchedAdverbial.examples[i] | highlightPlain"></luu-line><br />
+                        <luu-line *ngIf="matchedAdverbial.glosses[i]" type="gloss" [value]="matchedAdverbial.glosses[0] | highlightPlain"></luu-line>
+                        <luu-translation><span [innerHtml]="matchedAdverbial.translations[i] | highlight"></span></luu-translation>
+                    </p>
+            </div>
+        </ng-container>
+
+    </ng-template>
 </div>
 <div class="field is-grouped is-grouped-multiline" *ngIf="matchedAdverbial">
     <div class="control">

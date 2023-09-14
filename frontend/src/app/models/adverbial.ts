@@ -1,9 +1,10 @@
 export interface Adverbial {
     id: string;
     text: string;
-    example: string;
-    translation: string;
-    gloss: string;
+    roots: string[];
+    examples: string[];
+    translations: string[];
+    glosses: string[];
     language: string;
     dialect: string;
     language_family: string;
@@ -72,9 +73,10 @@ export type MatchedAdverbialProperties = {
 export class MatchedAdverbial implements MatchedAdverbialProperties {
     id: MatchedParts;
     text: MatchedParts;
-    example: MatchedParts;
-    translation: MatchedParts;
-    gloss: MatchedParts;
+    roots: MatchedParts[];
+    examples: MatchedParts[];
+    translations: MatchedParts[];
+    glosses: MatchedParts[];
     language: MatchedParts;
     dialect: MatchedParts;
     // tslint:disable-next-line:variable-name
@@ -89,9 +91,10 @@ export class MatchedAdverbial implements MatchedAdverbialProperties {
         if (adverbial) {
             this.id = this.unmatchedValue(adverbial.id);
             this.text = this.unmatchedValue(adverbial.text);
-            this.example = this.unmatchedValue(adverbial.example);
-            this.translation = this.unmatchedValue(adverbial.translation);
-            this.gloss = this.unmatchedValue(adverbial.gloss);
+            this.roots = adverbial.roots.map(root => this.unmatchedValue(root));
+            this.examples = adverbial.examples.map(example => this.unmatchedValue(example));
+            this.translations = adverbial.translations.map(translation => this.unmatchedValue(translation));
+            this.glosses = adverbial.glosses.map(gloss => this.unmatchedValue(gloss));
             this.language = this.unmatchedValue(adverbial.language);
             this.dialect = this.unmatchedValue(adverbial.dialect);
             this.language_family = this.unmatchedValue(adverbial.language_family);

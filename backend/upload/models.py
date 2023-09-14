@@ -6,24 +6,35 @@ from typing import Callable, Dict, List, Sequence, Tuple
 def str_map(x: str):
     return x
 
+def lst_map(x: str):
+    if type(x) == list:
+        return x
+    else :
+        return [x]
 
-def label_map(x: str):
-    return x.split('+')
+
+def label_map(x):
+    if type(x) == str:
+        return x.split('+')
+    else:
+        return lst_map(x)
 
 
 adverbial_mapping: Dict[str, Tuple[str, Callable[[str], any]]] = {
-    'ID': ('id', str_map),
-    'Manner adverbial': ('text', str_map),
-    'Full example': ('example', str_map),
-    'Translation': ('translation', str_map),
-    'Leipzig gloss': ('gloss', str_map),
-    'Language': ('language', str_map),
-    'Dialect': ('dialect', str_map),
-    'Language family': ('language_family', str_map),
-    'Language group': ('language_group', str_map),
-    'Source': ('source', str_map),
-    'Label': ('labels', label_map),
-    'Note(s)': ('notes', str_map)
+    'id': ('id', str_map),
+    'text': ('text', str_map),
+    'roots': ('roots', lst_map),
+    'examples': ('examples', lst_map),
+    'translations': ('translations', lst_map),
+    'glosses': ('glosses', lst_map),
+    'language': ('language', str_map),
+    'dialect': ('dialect', str_map),
+    'participant_ids': ('participant_ids', lst_map),
+    'language_family': ('language_family', str_map),
+    'language_group': ('language_group', str_map),
+    'source': ('source', str_map),
+    'labels': ('labels', label_map),
+    'notes': ('notes', str_map)
 }
 
 
@@ -33,6 +44,8 @@ class Adverbial:
         errors: List[List[str]] = []
         missing_columns = list(adverbial_mapping.keys())
         for name in fieldnames:
+            name = name.replace('\ufeff', '')  # remove ufeff byte from microsoft excel files
+
             if name not in adverbial_mapping:
                 errors.append(['UNKNOWN_COLUMN', name])
             else:
@@ -47,6 +60,7 @@ class Adverbial:
     def from_csv_row(row: Dict[str, str]) -> 'Adverbial':
         adverbial = Adverbial()
         for key, value in row.items():
+            key = key.replace('\ufeff', '')  # remove ufeff byte from microsoft excel files
             name, mapping = adverbial_mapping[key]
             setattr(adverbial, name, mapping(value))
 

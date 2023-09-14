@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Adverbial, MatchedAdverbial } from '../models/adverbial';
-import { faCircleNotch, faCommentDots, faCommentSlash } from '@fortawesome/free-solid-svg-icons';
+import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
+import { faCircleNotch, faCommentDots, faCommentSlash, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { Filter } from '../models/filter';
 
 @Component({
@@ -12,6 +12,8 @@ export class AdverbialComponent {
     faCircleNotch = faCircleNotch;
     faCommentDots = faCommentDots;
     faCommentSlash = faCommentSlash;
+    faCaretDown = faCaretDown;
+    examplesExpanded = false;
     matchedAdverbial: MatchedAdverbial;
     showNotes = false;
 
@@ -32,4 +34,24 @@ export class AdverbialComponent {
 
     @Input()
     filters: Filter[];
+
+    /**
+     * @param array : MatchedParts[], an array of MatchedParts that can contain duplicates
+     * @returns newarray : MatchedParts[], an array of MatchedParts that contains no duplicates
+     */
+    public unique(array: MatchedParts[]): MatchedParts[] {
+        let uniques = [];
+        let newarray = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i].text && !uniques.includes(array[i].text)) {
+                uniques.push(array[i].text);
+                newarray.push(array[i]);
+            }
+        }
+        return newarray;
+    }
+
+    public onExpandExamples() {
+        this.examplesExpanded = !this.examplesExpanded;
+    }
 }

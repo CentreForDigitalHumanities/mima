@@ -2,8 +2,6 @@
 
 [![Actions Status](https://github.com/UUDigitalHumanitieslab/mima/workflows/Unit%20tests/badge.svg)](https://github.com/UUDigitalHumanitieslab/mima/actions)
 
-MiMa will humanize all your digits!
-
 
 ## Before you start
 
@@ -51,6 +49,8 @@ First time after cloning this project:
 ```console
 $ python bootstrap.py
 ```
+
+Be sure to supply filepaths to `backend/mima/settings_local.py` and `frontend/src/environments/environment.local.ts` for the quick-upload buttons to work.
 
 Running the application in [development mode][8] (hit ctrl-C to stop):
 

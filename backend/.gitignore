@@ -31,3 +31,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# User folders and files
+generated_csvs/
+read_data_legacy/
+.DS_Store
