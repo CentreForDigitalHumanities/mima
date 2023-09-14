@@ -26,8 +26,7 @@ def upload_view(request: Request):
 
 @api_view(['POST'])
 def upload_pilot_view(filepath):  # Temporary view to help with quickly uploading data to view in frontend
-    # filepath = "/Users/Stiph002/Projects/mima_materials/MiMA- Pilotdata clean-up utf-8.csv"
-    with open(filepath.body, 'r') as file:
+    with open(filepath.body, 'r', encoding='utf-8-sig') as file:
         reader = csv.DictReader(file, delimiter=',', quotechar='"')
         result: List[Adverbial] = []
         errors = Adverbial.validate_fieldnames(reader.fieldnames)

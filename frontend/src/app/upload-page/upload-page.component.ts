@@ -52,13 +52,13 @@ export class UploadPageComponent {
     }
 
     async onUploadPilot(filepath: string): Promise<void> {
-        const pilot_adverbials = await this.fileUploadService.upload_pilot(filepath);
+        const pilot_adverbials = await this.fileUploadService.uploadPilot(filepath);
         this.setAdverbials(pilot_adverbials);
         this.save();
     }
 
     async onUploadQuestionnaire(filepath: string): Promise<void> {
-        const quest_adverbials = await this.fileUploadService.upload_questionnaire(filepath);
+        const quest_adverbials = await this.fileUploadService.uploadQuestionnaire(filepath);
         this.setAdverbials(quest_adverbials);
         // this.save();
     }

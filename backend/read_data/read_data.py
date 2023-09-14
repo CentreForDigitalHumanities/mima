@@ -1,5 +1,6 @@
 import csv
 import re
+import os
 import editdistance
 import json
 
@@ -16,7 +17,7 @@ class Question():
         self.answers = answers
 
     def __str__(self) -> str:
-        return('Question {}: {}'.format(self.tag, self.question))
+        return 'Question {}: {}'.format(self.tag, self.question)
 
 class Answer:
     def __init__(self, tag, prompt, answer, dialect, participant_id, ma='NA', prompt_ma='NA'):
@@ -147,7 +148,7 @@ for index in q_items:
 
 ## Detect the Manner Adverbials in each translation
 ## Get MA positions from prompts
-prompt_pos = read_csv(OUTPUT_PATH + "ma_positions.csv")
+prompt_pos = read_csv(os.path.join(OUTPUT_PATH, "ma_positions.csv"))
 
 ## fill a dict with prompt (row[1]) and position (row[2])
 ma_positions = {}
@@ -279,35 +280,34 @@ json_data = json.dumps(adverbials_list, default=obj_dict, indent=2)
 json_data_abridged = json.dumps(adverbials_list[0:50], default=obj_dict, indent=2)
 
 # Write the JSON data to a file
-with open(OUTPUT_PATH + 'adverbials_questionnaire.json', 'w') as json_file:
+with open(os.path.join(OUTPUT_PATH, 'adverbials_questionnaire.json'), 'w') as json_file:
     json_file.write(json_data)
 
-with open(OUTPUT_PATH + 'adverbials_questionnaire_abridged.json', 'w') as json_file:
+with open(os.path.join(OUTPUT_PATH, 'adverbials_questionnaire_abridged.json'), 'w') as json_file:
     json_file.write(json_data_abridged)
 
 
 # write a csv file to manually check for the correct MA: for Tess
-with open(OUTPUT_PATH + 'list_MAs_to_check', 'w') as file:
+with open(os.path.join(OUTPUT_PATH, 'list_MAs_to_check'), 'w') as file:
     writer = csv.writer(file)
     for adverbial in adverbials_list:
         row = [adverbial.id, adverbial.examples[0], adverbial.text, '']
         writer.writerow(row)
 
 # now that Tess has checked the MAs, read the csv file and update the adverbials
-with open(OUTPUT_PATH + 'checked_MAs.csv', encoding='utf8') as file:
+with open(os.path.join(OUTPUT_PATH, 'checked_MAs.csv'), encoding='utf8') as file:
     reader = csv.reader(file)
     for row in reader:
         adverbial_id = row[0]
         adverbial_text = row[2]
         adverbial_correction = row[3]
         for adverbial in adverbials_list:
-            if adverbial.id == adverbial_id:
-                if adverbial_correction != '':
-                    adverbial.text = adverbial_correction
-                    print('replaced {} with {}'.format(adverbial_text, adverbial_correction))
+            if adverbial.id == adverbial_id and adverbial_correction != '':
+                adverbial.text = adverbial_correction
+                print('replaced {} with {}'.format(adverbial_text, adverbial_correction))
 
 # Save the final collection of Adverbials as a csv file:
-with open(OUTPUT_PATH + 'dutch_adverbials_from_meertens.csv', 'w', encoding='utf8') as file:
+with open(os.path.join(OUTPUT_PATH, 'dutch_adverbials_from_meertens.csv'), 'w', encoding='utf8') as file:
     writer = csv.writer(file)
     header_row = [
         'participant_id',            # participant ID (combination of participant number and survey number)
