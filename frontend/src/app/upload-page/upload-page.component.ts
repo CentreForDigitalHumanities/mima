@@ -6,7 +6,10 @@ import { State } from '../adverbial.state';
 import { Adverbial } from '../models/adverbial';
 import { AdverbialsService } from '../services/adverbials.service';
 import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
-import { PILOT_DATA_PATH, QUESTIONNAIRE_DATA_PATH, ABRIDGED_QUESIONNAIRE_DATA_PATH } from 'config';
+import { environment } from '../../environments/environment';
+import { localEnvironment } from '../../environments/environment.local';
+
+const mergedEnvironment = Object.assign({}, environment, localEnvironment);
 
 @Component({
     selector: 'mima-upload-page',
@@ -20,9 +23,9 @@ export class UploadPageComponent {
     state: 'upload' | 'review' | 'save' | 'saved' = 'upload';
     savedCount: number;
 
-    pilot_data_path = PILOT_DATA_PATH;
-    questionnaire_data_path = QUESTIONNAIRE_DATA_PATH;
-    abridged_questionnaire_data_path = ABRIDGED_QUESIONNAIRE_DATA_PATH;
+    pilot_data_path = mergedEnvironment.PILOT_DATA_PATH;
+    questionnaire_data_path = mergedEnvironment.QUESTIONNAIRE_DATA_PATH;
+    abridged_questionnaire_data_path = mergedEnvironment.ABRIDGED_QUESIONNAIRE_DATA_PATH;
 
     loading = false;
 

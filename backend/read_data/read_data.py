@@ -3,7 +3,7 @@ import re
 import editdistance
 import json
 
-from backend.config import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+from backend.mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
 
 class Question():
     def __init__(self, tag, index, question, type='NA', prompt='NA', cleaned=False, answers=None):

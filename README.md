@@ -50,7 +50,7 @@ First time after cloning this project:
 $ python bootstrap.py
 ```
 
-Be sure to supply filepaths to `backend/config.py` and `frontend/config.ts`. You can find default_config files in the backend and frontend folders.
+Be sure to supply filepaths to `backend/mima/settings_local.py` and `frontend/src/environments/environment.local.ts` for the quick-upload buttons to work.
 
 Running the application in [development mode][8] (hit ctrl-C to stop):
 
