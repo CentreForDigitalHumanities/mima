@@ -288,15 +288,15 @@
           <context context-type="linenumber">12,19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="59817210266713223" datatype="html">
-        <source>About the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> project and database</source>
+      <trans-unit id="5846168834347158335" datatype="html">
+        <source>About the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project and Database</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7297570420253704244" datatype="html">
-        <source>Research group</source>
+      <trans-unit id="7371720759766624829" datatype="html">
+        <source>Research Group</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">37</context>
@@ -363,6 +363,34 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1010334701046010615" datatype="html">
+        <source> If you have any suggestions or feedback about the data (base), please mail us at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;&gt;"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, using the subject line MiMA database. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">69,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2305971167120630158" datatype="html">
+        <source> The database contains XXXX tokens of manner adverbials, split across XXXX types. These data primarily stem from our questionnaire research among native speakers. By studying (dialect) reference grammars, and the broader scientific literature, and by consulting native speakers, we first made a selection of languages/language varieties that are interesting for our research purposes (because of differences in word order phenomena, use of pronouns, etc.). Next, we made questionnaires to systematically chart the (im)possible patterns in the morphosyntax of the manner adverbials in these languages. The Dutch dialect data were collected in the Netherlands and Flanders (Belgium), in collaboration with the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;&gt;"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. The results of the questionnaires were glossed (according to the <x id="START_LINK_1" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;&gt;"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>) and provided with (English) translations, and embedded in the database. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">51,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2684615246776565388" datatype="html">
+        <source>About the Database</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8258249353448683970" datatype="html">
+        <source> Further information on the organization of the data in the database can be found on the Instructions page of this website. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">65,68</context>
         </context-group>
       </trans-unit>
     </body>
