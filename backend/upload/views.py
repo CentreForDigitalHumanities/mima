@@ -7,7 +7,7 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from django.core.files.uploadedfile import UploadedFile
 from .models import Adverbial
-from backend.mima.settings import PILOT_DATA_PATH, QUESTIONNAIRE_DATA_PATH, ABRIDGED_QUESIONNAIRE_DATA_PATH
+from mima.settings import PILOT_DATA_PATH, QUESTIONNAIRE_DATA_PATH, ABRIDGED_QUESIONNAIRE_DATA_PATH
 
 # Create your views here.
 
