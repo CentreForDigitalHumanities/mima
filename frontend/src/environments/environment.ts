@@ -6,9 +6,6 @@ export const environment = {
   production: false,
   // URL path prefix for assets
   assets: 'assets',
-  PILOT_DATA_PATH: '',
-  QUESTIONNAIRE_DATA_PATH: '',
-  ABRIDGED_QUESIONNAIRE_DATA_PATH: ''
 };
 
 /*

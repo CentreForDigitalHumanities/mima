@@ -40,11 +40,11 @@ export class FileUploadService {
     /***
      * Temporary method to quickly load data into the frontend from a path
      */
-    async uploadPilot(filepath: string): Promise<Adverbial[]> {
+    async uploadPilot(): Promise<Adverbial[]> {
 
         // Make http post request over api
         const response = lastValueFrom(this.http.post<Adverbial[]>(
-            this.baseApiUrl + '/upload/pilot_upload/', filepath));
+            this.baseApiUrl + '/upload/pilot_upload/', {}));
 
         try {
             return await response;
@@ -56,11 +56,11 @@ export class FileUploadService {
         }
     }
 
-    async uploadQuestionnaire(filepath: string): Promise<Adverbial[]> {
+    async uploadQuestionnaire(abridged: boolean): Promise<Adverbial[]> {
 
         // Make http post request over api
         const response = lastValueFrom(this.http.post<Adverbial[]>(
-            this.baseApiUrl + '/upload/questionnaire_upload/', filepath));
+            this.baseApiUrl + '/upload/questionnaire_upload/', abridged));
 
         try {
             return await response;
