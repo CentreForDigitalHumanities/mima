@@ -101,4 +101,5 @@ PARTICIPANTS_PATH = ""
 ## Path to the output folder
 OUTPUT_PATH = ""
 
-from mima.local_settings import *
+if os.path.exists(os.path.join(BASE_DIR, 'mima/local_settings.py')):
+    from mima.local_settings import *
