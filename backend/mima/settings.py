@@ -101,5 +101,10 @@ PARTICIPANTS_PATH = ""
 ## Path to the output folder
 OUTPUT_PATH = ""
 
+PILOT_DATA_PATH = ""
+QUESTIONNAIRE_DATA_PATH = ""
+ABRIDGED_QUESIONNAIRE_DATA_PATH =  ""
+
+
 if os.path.exists(os.path.join(BASE_DIR, 'mima/local_settings.py')):
     from mima.local_settings import *
