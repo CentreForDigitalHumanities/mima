@@ -53,10 +53,12 @@ function getMatchedParts(text: string, emptyFilters: boolean): MatchedParts {
             // include up to the end
             matchIndex = text.length;
         }
-        parts.push({
-            match,
-            text: text.substring(index, matchIndex)
-        });
+        if (matchIndex - index > 1) {
+            parts.push({
+                match,
+                text: text.substring(index, matchIndex)
+            });
+        }
 
         match = !match;
         // skip the asterisk
@@ -80,7 +82,7 @@ function getMatchedAdverbial(adverbial: Adverbial, emptyFilters: boolean): Match
     const result = {};
     for (const [key, value] of Object.entries(adverbial)) {
         if (Array.isArray(value)) {
-            result[key] = value.map(item => getMatchedParts(item, emptyFilters));
+            result[key] = value.map((item: string) => getMatchedParts(item, emptyFilters));
         } else {
             result[key] = getMatchedParts(value, emptyFilters);
         }
@@ -102,7 +104,7 @@ describe('FilterService', () => {
     });
 
     // Fix this test when we define the adverbials better
-    xit('should match', () => {
+    it('should match', () => {
         const testData: {
             expected: Adverbial,
             input: Adverbial,
@@ -130,7 +132,7 @@ describe('FilterService', () => {
             },
             input: {
                 id: '',
-                text: 'Dit is een *test*',
+                text: 'Dit is een test',
                 roots: [''],
                 examples: [''],
                 translations: [''],
@@ -165,9 +167,10 @@ describe('FilterService', () => {
                 index++;
             }
 
-            const output = <MatchedAdverbialProperties>service.applyFilters(input, indexedFilters, operator);
+            const output = service.applyFilters(input, indexedFilters, operator);
+            const properties: MatchedAdverbialProperties = Object.assign({}, output);
 
-            expect(getMatchedAdverbial(expected, emptyFilters)).toContain(jasmine.objectContaining(output));
+            expect(getMatchedAdverbial(expected, emptyFilters)).toEqual(properties);
         }
 
     });

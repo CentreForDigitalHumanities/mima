@@ -39,7 +39,7 @@ export class FilterService {
             'labels',
             'notes'];
         for (const key of keys) {
-            result[key], anyMatch = this.detect_matches(adverbial, result, filters, key, anyMatch, matchingFilters);
+            result[key], anyMatch = this.detectMatches(adverbial, result, filters, key, anyMatch, matchingFilters);
         }
         if (anyMatch) {
             if (operator === 'and') {
@@ -66,14 +66,14 @@ export class FilterService {
      * @param matchingFilters List of matching filters
      * @returns MatchedParts or MatchedParts[], anyMatch (boolean)
      */
-    private detect_matches(adverbial: Adverbial, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key:string, anyMatch:boolean, matchingFilters: Filter[]) {
+    private detectMatches(adverbial: Adverbial, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
         if (typeof adverbial[key] === 'string') {
             const [parts, partFilters] = this.searchField(adverbial[key], key as keyof Adverbial, filters);
             result[key] = parts;
             anyMatch ||= parts.match;
             matchingFilters.push(...partFilters);
             return result[key], anyMatch;
-        } else if (Array.isArray(adverbial[key])){
+        } else if (Array.isArray(adverbial[key])) {
             result[key] = [];
             for (const text of adverbial[key]) {
                 const [parts, partFilters] = this.searchField(text, key as keyof Adverbial, filters);
@@ -199,17 +199,17 @@ export class FilterService {
     private searchMultiple(haystack: string, needles: string[]): [number, number][] {
         const results = [];
         for (const needleGroup of needles) {
-            results.push(... needleGroup.split(' ')
-            .filter(needle => needle)
-            .map(needle => this.searchSingle(haystack, needle))
-            .reduce((prev, matches, index) => {
-                if (matches.length === 0 || (index > 0 && prev.length === 0)) {
-                    // every part (of the needle) should match
-                    return [];
-                }
+            results.push(...needleGroup.split(' ')
+                .filter(needle => needle)
+                .map(needle => this.searchSingle(haystack, needle))
+                .reduce((prev, matches, index) => {
+                    if (matches.length === 0 || (index > 0 && prev.length === 0)) {
+                        // every part (of the needle) should match
+                        return [];
+                    }
 
-                return prev.concat(matches);
-            }, []));
+                    return prev.concat(matches);
+                }, []));
         }
 
         return results;
