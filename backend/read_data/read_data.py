@@ -67,7 +67,7 @@ for participant in participants_data[1:]:
     participants[''.join(participant[0:2])] = dialect
 
 ## Create a Question for each question and save it as an instance
-q_items = {} #keys: question tags, e.g. V1Z1b[SQ001_SQ001]., values: Questions
+q_items = {} #keys: question index
 
 for index, cell in enumerate(data[0]):
     first_word = cell.split()[0]
