@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { LuupzigModule } from 'luupzig';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -30,6 +31,8 @@ import { FilterComponent } from './filter/filter.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
 import { HighlightPipe } from './highlight.pipe';
 import { HighlightPlainPipe } from './highlight-plain.pipe';
+import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
+import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
 
 
 @NgModule({
@@ -46,12 +49,15 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
         FilterComponent,
         FilterListComponent,
         HighlightPipe,
-        HighlightPlainPipe
+        HighlightPlainPipe,
+        QuestionnaireListPageComponent,
+        QuestionnaireItemComponent
     ],
     imports: [
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
+        DropdownModule,
         FontAwesomeModule,
         FormsModule,
         HttpClientModule,

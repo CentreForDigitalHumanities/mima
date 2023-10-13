@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
+import { Participant } from '../models/participant';
 
 
 @Injectable({
@@ -48,5 +49,38 @@ export class QuestionnaireService {
             questions.push(question);
         }
         return questions;
+    }
+
+    convertToAnswers(questionnaire: Question[]) {
+        const answers: Answer[] = [];
+        for (const question of questionnaire) {
+            for (const subentry of question['answers']) {
+                // console.log('subentry:', subentry);
+                const answer: Answer = {
+                    questionId: subentry['questionId'],
+                    answer: subentry['answer'],
+                    participantId: subentry['participantId'],
+                    dialect: subentry['dialect']
+                }
+                answers.push(answer);
+            };
+        }
+        return answers;
+    }
+
+    getParticipants(answers: Answer[]) {
+        const participants: Participant[] = [];
+        const participantIds: string[] = [];
+        for (const answer of answers) {
+            const participant: Participant = {
+                participantId: answer['participantId'],
+                dialect: answer['dialect']
+            };
+            if (!participantIds.includes(participant.participantId)) {
+                participants.push(participant);
+                participantIds.push(participant.participantId);
+            }
+        }
+        return participants
     }
 }

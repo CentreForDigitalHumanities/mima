@@ -1,0 +1,18 @@
+<h1 class="title" i18n>Questionnaires</h1>
+<h2 class="subtitle" i18n>Subtitle</h2>
+<div class="columns">
+    <div class="column is-4">
+        <p>Filter by:</p>
+        <a class="button" [class.is-primary]="selectedOption === 'question'" (click)="changeOption('question')">Question</a>
+        <a class="button" [class.is-primary]="selectedOption === 'dialect'" (click)="changeOption('dialect')">Dialect</a>
+        <a class="button" [class.is-primary]="selectedOption === 'participant'" (click)="changeOption('participant')">Participant</a>
+
+        <div class="control is-flex-grow-1">
+            <p-multiSelect class="input" appendTo="body" [(ngModel)]="selectedFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange()"></p-multiSelect>
+        </div>
+    </div>
+    <div class="column">
+        <p>Main space</p>
+        <mima-questionnaire-item></mima-questionnaire-item>
+    </div>
+</div>
