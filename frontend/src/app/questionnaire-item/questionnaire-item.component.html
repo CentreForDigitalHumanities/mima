@@ -2,10 +2,10 @@
     <div class="box">
         <h2 class="is-size-4 has-text-weight-semibold">{{questions.get(id).prompt}}</h2>
         <ng-container *ngFor="let dialect of questions.get(id).answerMap.keys()">
-            <div>
+            <div *ngIf="selectedFilters.get('dialect').includes(dialect) && hasParticipants(dialect)">
                 <p class="has-text-weight-semibold is-size-5 is-italic my-2">{{ dialect }}</p>
                 <ng-container *ngFor="let answer of questions.get(id).answerMap.get(dialect)">
-                    <div class="level">
+                    <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId)">
                         <p class="level-left">{{ answer.answer }}</p>
                         <p class="level-right">{{ answer.participantId }}</p>
                     </div>

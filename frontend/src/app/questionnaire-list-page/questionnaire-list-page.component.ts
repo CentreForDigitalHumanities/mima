@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Subscription, withLatestFrom } from 'rxjs';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant'
@@ -56,16 +56,19 @@ export class QuestionnaireListPageComponent {
         this.changeOption('question');  // sets question as default filter option, might change later
     }
 
+    /**
+     * implements the new filters and matches the question IDs selected.
+     * @param filters the new filters, as provided by the p-multiselect component
+     */
     filterChange(filters) {
         this.selectedFilters.set(this.selectedOption, filters);
-        console.log('ids:', this.questionIds)
-        console.log(' question ids:', this.selectedFilters.get('question'))
         this.matchedQuestionIds = [];
         for (let id of this.questionIds) {
             if (this.selectedFilters.get('question').includes(id)) {
                 this.matchedQuestionIds.push(id);
             }
         }
+        this.selectedFilters = new Map(this.selectedFilters)
     }
 
     /**
@@ -108,9 +111,11 @@ export class QuestionnaireListPageComponent {
         this.dropdownOptions.get('dialect').sort((a,b) => a.label < b.label ? -1 : 1)
     }
 
+    /**
+     * Initializes the respective filters to have all options selected by default.
+     */
     initializeFilters() {
         this.questionFilters = this.dropdownOptions.get('question').map(option => option.value);
-        console.log('question filters:', this.questionFilters);
         this.dialectFilters = this.dropdownOptions.get('dialect').map(option => option.value);
         this.participantFilters = this.dropdownOptions.get('participant').map(option => option.value);
         this.selectedFilters = new Map<string, string[]>([

@@ -16,7 +16,7 @@
     <div *ngIf="!isLoading" class="column">
         <p>Questions:</p>
         <ng-container *ngFor="let questionId of matchedQuestionIds">
-            <mima-questionnaire-item [questions]="questions" [id]="questionId"></mima-questionnaire-item>
+            <mima-questionnaire-item [questions]="questions" [id]="questionId" [selectedFilters]="selectedFilters"></mima-questionnaire-item>
         </ng-container>
     </div>
 </div>

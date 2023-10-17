@@ -56,7 +56,6 @@ export class QuestionnaireService {
             };
             questions.push(question);
         }
-        console.log('the questionnaire:', questions);
         return questions;
     }
 
