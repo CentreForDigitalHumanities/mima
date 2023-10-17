@@ -13,16 +13,24 @@ export class QuestionnaireService {
 
     constructor(private http: HttpClient) { }
 
-    async get() {
+    async get(): Promise<ReadonlyArray<Question>> {
         const response = lastValueFrom(this.http.get('assets/cleaned_translation_questions.json'));
 
         try {
             const data = await response.then(res => res);
             const questionnaire = this.convertToQuestionnaire(data);
-            return questionnaire;
+            return Promise.resolve(questionnaire);
         } catch (error) {
             throw error;
         }
+    }
+
+    getQuestionIds(questionnaire: ReadonlyArray<Question>) {
+        const questionIds = [];
+        for (let question of questionnaire) {
+            questionIds.push(question.id);
+        }
+        return questionIds;
     }
 
     convertToQuestionnaire(response: Object) {
@@ -48,37 +56,43 @@ export class QuestionnaireService {
             };
             questions.push(question);
         }
+        console.log('the questionnaire:', questions);
         return questions;
     }
 
-    convertToAnswers(questionnaire: Question[]) {
-        const answers: Answer[] = [];
+    convertToAnswersByDialect(questionnaire: ReadonlyArray<Question>) {
+        const answers =  new Map<string, Answer[]>();
         for (const question of questionnaire) {
             for (const subentry of question['answers']) {
-                // console.log('subentry:', subentry);
                 const answer: Answer = {
                     questionId: subentry['questionId'],
                     answer: subentry['answer'],
                     participantId: subentry['participantId'],
                     dialect: subentry['dialect']
                 }
-                answers.push(answer);
+                if (answers.has(subentry['dialect'])) {
+                    answers.get(subentry['dialect']).push(answer);
+                } else {
+                    answers.set(subentry['dialect'], [answer]);
+                }
             };
         }
         return answers;
     }
 
-    getParticipants(answers: Answer[]) {
+    getParticipants(answers: Map<string,Answer[]>) {
         const participants: Participant[] = [];
         const participantIds: string[] = [];
-        for (const answer of answers) {
-            const participant: Participant = {
-                participantId: answer['participantId'],
-                dialect: answer['dialect']
-            };
-            if (!participantIds.includes(participant.participantId)) {
-                participants.push(participant);
-                participantIds.push(participant.participantId);
+        for (const dialect of answers.keys()) {
+            for (const answer of answers.get(dialect)) {
+                const participant: Participant = {
+                    participantId: answer['participantId'],
+                    dialect: answer['dialect']
+                };
+                if (!participantIds.includes(participant.participantId)) {
+                    participants.push(participant);
+                    participantIds.push(participant.participantId);
+                }
             }
         }
         return participants

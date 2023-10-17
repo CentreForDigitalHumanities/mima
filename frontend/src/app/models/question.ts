@@ -6,4 +6,5 @@ export interface Question {
     question: string;
     prompt?: string;
     answers?: Answer[];
+    answerMap?: Map<string, Answer[]>;
 }

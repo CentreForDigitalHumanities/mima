@@ -1,9 +1,13 @@
+import { Store } from '@ngrx/store';
+import { Subscription, withLatestFrom } from 'rxjs';
 import { Component } from '@angular/core';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant'
+import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { SelectItem } from 'primeng/api';
+import { loadQuestionnaire } from '../questionnaire.actions';
 
 
 @Component({
@@ -12,10 +16,18 @@ import { SelectItem } from 'primeng/api';
   styleUrls: ['./questionnaire-list-page.component.scss']
 })
 export class QuestionnaireListPageComponent {
+    private subscriptions: Subscription[];
+    private questions$ = this.store.select('questionnaire', 'questions');
+    private questionIds$ = this.store.select('questionnaire', 'questionIds');
+
+
     public isLoading = false;
     selectedOption: string;
     questionnaire: Question[] = [];
-    answers: Answer[] = [];
+    questionIds: string[] = [];
+    questions: Map<string,Question>;
+    matchedQuestionIds: string[] = [];
+    answers: Map<string, Answer[]> = new Map<string, Answer[]>();
     participants: Participant[] = [];
     dialects: string[] = [];
     dropdownOptions = new Map<string, SelectItem[]>([
@@ -23,31 +35,49 @@ export class QuestionnaireListPageComponent {
         ['dialect', []],
         ['participant', []],
     ]);
-    selectedFilters: [];
+    selectedFilters = new Map<string, string[]>();
+    questionFilters: string[]
+    dialectFilters: string[];
+    participantFilters: string[];
 
 
-    constructor(private questionnaireService: QuestionnaireService) {
+    constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
 
     ngOnInit() {
-        this.isLoading = true;
-        this.load();
-        this.changeOption('question');
+        this.store.dispatch(loadQuestionnaire());
+        this.questions$.subscribe(questions => {
+            if (questions) {
+                this.isLoading = true;
+                this.questions = questions;
+                this.load();
+            }
+        })
+        this.changeOption('question');  // sets question as default filter option, might change later
     }
 
-    filterChange() {
-        console.log(this.selectedFilters);
+    filterChange(filters) {
+        this.selectedFilters.set(this.selectedOption, filters);
+        console.log('ids:', this.questionIds)
+        console.log(' question ids:', this.selectedFilters.get('question'))
+        this.matchedQuestionIds = [];
+        for (let id of this.questionIds) {
+            if (this.selectedFilters.get('question').includes(id)) {
+                this.matchedQuestionIds.push(id);
+            }
+        }
     }
 
     /**
      * loads the questionnaire and sets the variables accordingly.
      */
-    private async load() {
-        // this.questionnaire = [... await this.questionnaireService.get()]; //save output as an array, not yet applicable but soon
-        this.questionnaire = await this.questionnaireService.get();
-        this.answers = this.questionnaireService.convertToAnswers(this.questionnaire);
+    private load() {
+        this.questionIds = Array.from(this.questions.keys())
+        this.matchedQuestionIds = this.questionIds; // obviously temporary, get filtering in later
+        this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
         this.participants = this.questionnaireService.getParticipants(this.answers);
         this.setDropdownOptions();
+        this.initializeFilters();
         this.isLoading = false
     }
 
@@ -62,19 +92,31 @@ export class QuestionnaireListPageComponent {
      * - the participant IDs and dialects
      */
     setDropdownOptions() {
-        for (const question of this.questionnaire) {
+        for (const question of Array.from(this.questions.values())) {
             const item = question.id + ' ' + question.prompt;
-            this.dropdownOptions.get('question').push({label: item, value: item});
+            this.dropdownOptions.get('question').push({label: item, value: question.id});
         }
 
         for (const participant of this.participants) {
             const item = participant.participantId + ' ' + participant.dialect;
-            this.dropdownOptions.get('participant').push({label: item, value: item});
+            this.dropdownOptions.get('participant').push({label: item, value: participant.participantId});
             if (!this.dialects.includes(participant.dialect)) {
                 this.dropdownOptions.get('dialect').push({label: participant.dialect, value: participant.dialect});
                 this.dialects.push(participant.dialect);
             }
         }
         this.dropdownOptions.get('dialect').sort((a,b) => a.label < b.label ? -1 : 1)
+    }
+
+    initializeFilters() {
+        this.questionFilters = this.dropdownOptions.get('question').map(option => option.value);
+        console.log('question filters:', this.questionFilters);
+        this.dialectFilters = this.dropdownOptions.get('dialect').map(option => option.value);
+        this.participantFilters = this.dropdownOptions.get('participant').map(option => option.value);
+        this.selectedFilters = new Map<string, string[]>([
+            ['question', this.questionFilters],
+            ['dialect', this.dialectFilters],
+            ['participant', this.participantFilters]
+        ]);
     }
 }

@@ -8,11 +8,15 @@
         <a class="button" [class.is-primary]="selectedOption === 'participant'" (click)="changeOption('participant')">Participant</a>
 
         <div class="control is-flex-grow-1">
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="selectedFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange()"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='question'" class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='dialect'" class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='participant'" class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
         </div>
     </div>
-    <div class="column">
-        <p>Main space</p>
-        <mima-questionnaire-item></mima-questionnaire-item>
+    <div *ngIf="!isLoading" class="column">
+        <p>Questions:</p>
+        <ng-container *ngFor="let questionId of matchedQuestionIds">
+            <mima-questionnaire-item [questions]="questions" [id]="questionId"></mima-questionnaire-item>
+        </ng-container>
     </div>
 </div>
