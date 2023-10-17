@@ -19,6 +19,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AdverbialEffects } from './adverbial.effects';
 import { adverbialReducer } from './adverbial.reducer';
+import { QuestionnaireEffects } from './questionnaire.effects';
+import { questionnaireReducer } from './questionnaire.reducer';
+
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
@@ -65,11 +68,12 @@ import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-i
             cookieName: 'csrftoken',
             headerName: 'X-CSRFToken'
         }),
-        EffectsModule.forRoot([AdverbialEffects]),
+        EffectsModule.forRoot([AdverbialEffects, QuestionnaireEffects]),
         MultiSelectModule,
         LuupzigModule,
         StoreModule.forRoot({
-            adverbials: adverbialReducer
+            adverbials: adverbialReducer,
+            questionnaire: questionnaireReducer
         }, {
             runtimeChecks: {
                 strictStateImmutability: true,
