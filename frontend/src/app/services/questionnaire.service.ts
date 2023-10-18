@@ -13,6 +13,10 @@ export class QuestionnaireService {
 
     constructor(private http: HttpClient) { }
 
+    /**
+     * Reads the json file in assets
+     * @returns a Promise of an Array of Question objects
+     */
     async get(): Promise<ReadonlyArray<Question>> {
         const response = lastValueFrom(this.http.get('assets/cleaned_translation_questions.json'));
 
@@ -25,14 +29,24 @@ export class QuestionnaireService {
         }
     }
 
+    /**
+     *
+     * @param questionnaire Array of Question objects
+     * @returns array of questiondIds
+     */
     getQuestionIds(questionnaire: ReadonlyArray<Question>) {
-        const questionIds = [];
+        const questionIds: string[] = [];
         for (let question of questionnaire) {
             questionIds.push(question.id);
         }
         return questionIds;
     }
 
+    /**
+     *
+     * @param response Object derived from a json file
+     * @returns an Array of Question objects
+     */
     convertToQuestionnaire(response: Object) {
         const questions: Question[] = [];
 
@@ -59,6 +73,10 @@ export class QuestionnaireService {
         return questions;
     }
 
+    /**
+     * @param questionnaire Array of Question objects
+     * @returns a Map with dialects as its keys and an Array of Answer objects as its values
+     */
     convertToAnswersByDialect(questionnaire: ReadonlyArray<Question>) {
         const answers =  new Map<string, Answer[]>();
         for (const question of questionnaire) {
@@ -81,6 +99,11 @@ export class QuestionnaireService {
         return answers;
     }
 
+    /**
+     * Derives the participants from a Map containing answers
+     * @param answers Map of a list of answers per dialect
+     * @returns An array of Participant objects
+     */
     getParticipants(answers: Map<string,Answer[]>) {
         const participants: Participant[] = [];
         const participantIds: string[] = [];

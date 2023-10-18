@@ -34,5 +34,4 @@ export class QuestionnaireItemComponent {
         }
         return false
     }
-
 }
