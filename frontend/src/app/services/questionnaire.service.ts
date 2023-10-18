@@ -63,16 +63,18 @@ export class QuestionnaireService {
         const answers =  new Map<string, Answer[]>();
         for (const question of questionnaire) {
             for (const subentry of question['answers']) {
-                const answer: Answer = {
-                    questionId: subentry['questionId'],
-                    answer: subentry['answer'],
-                    participantId: subentry['participantId'],
-                    dialect: subentry['dialect']
-                }
-                if (answers.has(subentry['dialect'])) {
-                    answers.get(subentry['dialect']).push(answer);
-                } else {
-                    answers.set(subentry['dialect'], [answer]);
+                for (let example of subentry['answer'].split('|')) {
+                    const answer: Answer = {
+                        questionId: subentry['questionId'],
+                        answer: example,
+                        participantId: subentry['participantId'],
+                        dialect: subentry['dialect']
+                    }
+                    if (answers.has(subentry['dialect'])) {
+                        answers.get(subentry['dialect']).push(answer);
+                    } else {
+                        answers.set(subentry['dialect'], [answer]);
+                    }
                 }
             };
         }
