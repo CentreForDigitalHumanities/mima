@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { LuupzigModule } from 'luupzig';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -71,6 +72,7 @@ import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-i
         EffectsModule.forRoot([AdverbialEffects, QuestionnaireEffects]),
         MultiSelectModule,
         LuupzigModule,
+        PanelModule,
         StoreModule.forRoot({
             adverbials: adverbialReducer,
             questionnaire: questionnaireReducer
