@@ -44,7 +44,7 @@ export class QuestionnaireListPageComponent {
     constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
 
-    ngOnInit() {
+    onInit() {
         this.store.dispatch(loadQuestionnaire());
         this.questions$.subscribe(questions => {
             if (questions) {

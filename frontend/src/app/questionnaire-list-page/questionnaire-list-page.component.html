@@ -7,7 +7,7 @@
             <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" (ngModelChange)="filterChange('question', $event)">
                 <ng-template let-value pTemplate="selectedItems">
                     <div>
-                        <p>{{ selectedFilters.get('question').length }} question{{selectedFilters.get('question').length != 1 ? 's' : ''}} selected</p>
+                        <p>{{ selectedFilters.get('question').length }} question{{selectedFilters.get('question').length !== 1 ? 's' : ''}} selected</p>
                     </div>
                 </ng-template>
             </p-multiSelect>
@@ -15,7 +15,7 @@
             <p-multiSelect class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get('dialect')" display="chip" (ngModelChange)="filterChange('dialect', $event)">
                 <ng-template let-value pTemplate="selectedItems">
                     <div>
-                        <p>{{ selectedFilters.get('dialect').length }} dialect{{selectedFilters.get('dialect').length != 1 ? 's' : ''}} selected</p>
+                        <p>{{ selectedFilters.get('dialect').length }} dialect{{selectedFilters.get('dialect').length !== 1 ? 's' : ''}} selected</p>
                     </div>
                 </ng-template>
             </p-multiSelect>
@@ -23,7 +23,7 @@
             <p-multiSelect class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get('participant')" display="chip" (ngModelChange)="filterChange('participant', $event)">
                 <ng-template let-value pTemplate="selectedItems">
                     <div>
-                        <p>{{ selectedFilters.get('participant').length }} participant{{selectedFilters.get('participant').length != 1 ? 's' : ''}} selected</p>
+                        <p>{{ selectedFilters.get('participant').length }} participant{{selectedFilters.get('participant').length !== 1 ? 's' : ''}} selected</p>
                     </div>
                 </ng-template>
             </p-multiSelect>
