@@ -60,8 +60,8 @@ export class QuestionnaireListPageComponent {
      * implements the new filters and matches the question IDs selected.
      * @param filters the new filters, as provided by the p-multiselect component
      */
-    filterChange(filters) {
-        this.selectedFilters.set(this.selectedOption, filters);
+    filterChange(option, filters) {
+        this.selectedFilters.set(option, filters);
         this.matchedQuestionIds = [];
         for (let id of this.questionIds) {
             if (this.selectedFilters.get('question').includes(id)) {

@@ -1,5 +1,5 @@
 <h1 class="title" i18n>Questionnaires</h1>
-<h2 class="subtitle" i18n>Subtitle</h2>
+<h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
 <div class="columns">
     <div class="column is-4">
         <!-- <p>Filter by:</p> -->
@@ -9,11 +9,11 @@
 
         <div class="control is-flex-grow-1">
             <h3 class="is-3 has-text-weight-semibold">Question</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" display="chip" (ngModelChange)="filterChange('question', $event)"></p-multiSelect>
             <h3 class="is-3 has-text-weight-semibold">Dialect</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get('dialect')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get('dialect')" display="chip" (ngModelChange)="filterChange('dialect', $event)"></p-multiSelect>
             <h3 class="is-3 has-text-weight-semibold">Participant</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get('participant')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get('participant')" display="chip" (ngModelChange)="filterChange('participant', $event)"></p-multiSelect>
         </div>
     </div>
     <div *ngIf="!isLoading" class="column">
