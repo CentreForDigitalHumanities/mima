@@ -30,7 +30,6 @@
         </div>
     </div>
     <div *ngIf="!isLoading" class="column">
-        <p>Questions:</p>
         <ng-container *ngFor="let questionId of matchedQuestionIds">
             <mima-questionnaire-item [questions]="questions" [id]="questionId" [selectedFilters]="selectedFilters"></mima-questionnaire-item>
         </ng-container>
