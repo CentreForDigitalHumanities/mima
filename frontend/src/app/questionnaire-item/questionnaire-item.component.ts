@@ -19,19 +19,20 @@ export class QuestionnaireItemComponent {
     constructor(private questionnaireService: QuestionnaireService) {  }
 
     /**
-     * checks whether a question has answers from a specific dialect, given the participant filters
+     * counts the answers to a question for a specific dialect, given the participant filters
      * @param dialect string of the dialect that needs to be checked
      * @returns boolean
      */
-    hasParticipants(dialect: string) {
+    countAnswersShown(dialect) {
+        let count = 0;
         const answers = this.questions.get(this.id)?.answerMap.get(dialect);
         if (answers) {
             for (let answer of answers) {
                 if (this.selectedFilters.get('participant')?.includes(answer.participantId)) {
-                    return true
+                    count += 1;
                 }
             }
         }
-        return false
+        return count
     }
 }
