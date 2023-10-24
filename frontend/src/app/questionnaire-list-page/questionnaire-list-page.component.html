@@ -2,18 +2,15 @@
 <h2 class="subtitle" i18n>Subtitle</h2>
 <div class="columns">
     <div class="column is-4">
-        <!-- <p>Filter by:</p> -->
-        <!-- <a class="button" [class.is-primary]="selectedOption === 'question'" (click)="changeOption('question')">Question</a>
+        <p>Filter by:</p>
+        <a class="button" [class.is-primary]="selectedOption === 'question'" (click)="changeOption('question')">Question</a>
         <a class="button" [class.is-primary]="selectedOption === 'dialect'" (click)="changeOption('dialect')">Dialect</a>
-        <a class="button" [class.is-primary]="selectedOption === 'participant'" (click)="changeOption('participant')">Participant</a> -->
+        <a class="button" [class.is-primary]="selectedOption === 'participant'" (click)="changeOption('participant')">Participant</a>
 
         <div class="control is-flex-grow-1">
-            <h3 class="is-3 has-text-weight-semibold">Question</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
-            <h3 class="is-3 has-text-weight-semibold">Dialect</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get('dialect')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
-            <h3 class="is-3 has-text-weight-semibold">Participant</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get('participant')" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='question'" class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='dialect'" class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
+            <p-multiSelect *ngIf="selectedOption=='participant'" class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get(selectedOption)" display="chip" (ngModelChange)="filterChange($event)"></p-multiSelect>
         </div>
     </div>
     <div *ngIf="!isLoading" class="column">
