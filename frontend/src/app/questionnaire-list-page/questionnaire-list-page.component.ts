@@ -41,7 +41,11 @@ export class QuestionnaireListPageComponent {
     questionFilters: string[];
     dialectFilters: string[];
     participantFilters: string[];
-
+    singleFilters = new Map<string, string>([
+        ['question', ''],
+        ['dialect', ''],
+        ['participant', '']
+    ]);
 
     constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
@@ -73,6 +77,7 @@ export class QuestionnaireListPageComponent {
             }
         }
         this.selectedFilters = new Map(this.selectedFilters)
+
     }
 
     /**
@@ -131,7 +136,8 @@ export class QuestionnaireListPageComponent {
         ]);
     }
 
-    onFilterSelect(filterData) {
+    onSingleFilterSelect(filterData) {
         this.filterChange(filterData[0], [filterData[1]]);
+        this.singleFilters.set(filterData[0], filterData[1]);
     }
 }

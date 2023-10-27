@@ -5,7 +5,9 @@
             <div *ngIf="selectedFilters.get('dialect').includes(dialect) && countAnswersShown(dialect)">
                 <p-panel [toggleable]="true" toggler="header" [collapsed]="true" >
                 <ng-template pTemplate="header">
-                    <a class="has-text-weight-semibold is-size-6 is-italic my-2" (click)="filterSelected($event, 'dialect', dialect)">
+                    <a class="has-text-weight-semibold is-size-6 is-italic my-2 has-text-dark filterclick"
+                    [class.active]="singleFilters.get('dialect') === dialect"
+                    (click)="filterSelected($event, 'dialect', dialect)">
                         {{ dialect + ' (' + countAnswersShown(dialect) + ')' }}
                     </a>
                 </ng-template>

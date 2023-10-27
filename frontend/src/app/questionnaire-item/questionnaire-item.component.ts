@@ -15,7 +15,8 @@ export class QuestionnaireItemComponent {
     @Input() id: string;
     @Input() questions: Map<string,Question>;
     @Input() selectedFilters: Map<string, string[]>
-    @Output() filterSelect = new EventEmitter<Array<string>>();
+    @Input() singleFilters: Map<string, string>;
+    @Output() singleFilterSelect = new EventEmitter<Array<string>>();
 
     constructor(private questionnaireService: QuestionnaireService) {  }
 
@@ -44,11 +45,8 @@ export class QuestionnaireItemComponent {
      * @param filter selected filter
      */
     filterSelected(event, filterType: string, filter: string) {
-        const newFilter = new Map(
-            [[filterType, [filter]]]
-        )
-        console.log(newFilter);
-        this.filterSelect.emit([filterType, filter]);
+        this.singleFilterSelect.emit([filterType, filter]);
+        console.log(this.singleFilters.get('dialect') === 'Limburgs (Nederland)');
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 }
