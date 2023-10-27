@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Subscription, withLatestFrom } from 'rxjs';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant'
@@ -20,6 +20,8 @@ export class QuestionnaireListPageComponent {
     private questions$ = this.store.select('questionnaire', 'questions');
     private questionIds$ = this.store.select('questionnaire', 'questionIds');
 
+    @Input() filterSelect: Map<string, string[]>;
+
 
     public isLoading = false;
     selectedOption: string;
@@ -36,7 +38,7 @@ export class QuestionnaireListPageComponent {
         ['participant', []],
     ]);
     selectedFilters = new Map<string, string[]>();
-    questionFilters: string[]
+    questionFilters: string[];
     dialectFilters: string[];
     participantFilters: string[];
 
@@ -45,7 +47,9 @@ export class QuestionnaireListPageComponent {
     }
 
     ngOnInit() {
-        this.store.dispatch(loadQuestionnaire());
+        if (!this.questions) {
+            this.store.dispatch(loadQuestionnaire());
+        }
         this.questions$.subscribe(questions => {
             if (questions) {
                 this.isLoading = true;
@@ -60,7 +64,7 @@ export class QuestionnaireListPageComponent {
      * implements the new filters and matches the question IDs selected.
      * @param filters the new filters, as provided by the p-multiselect component
      */
-    filterChange(option, filters) {
+    filterChange(option: string, filters: string[]) {
         this.selectedFilters.set(option, filters);
         this.matchedQuestionIds = [];
         for (let id of this.questionIds) {
@@ -79,7 +83,9 @@ export class QuestionnaireListPageComponent {
         this.matchedQuestionIds = this.questionIds; // obviously temporary, get filtering in later
         this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
         this.participants = this.questionnaireService.getParticipants(this.answers);
-        this.setDropdownOptions();
+        if (this.dropdownOptions.get('question').length === 0) {  // TEMPORARY FIX, will refactor when processing PR
+            this.setDropdownOptions();
+        }
         this.initializeFilters();
         this.isLoading = false
     }
@@ -123,5 +129,9 @@ export class QuestionnaireListPageComponent {
             ['dialect', this.dialectFilters],
             ['participant', this.participantFilters]
         ]);
+    }
+
+    onFilterSelect(filterData) {
+        this.filterChange(filterData[0], [filterData[1]]);
     }
 }

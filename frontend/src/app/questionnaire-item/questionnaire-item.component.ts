@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { QuestionnaireService } from '../services/questionnaire.service'
@@ -15,6 +15,7 @@ export class QuestionnaireItemComponent {
     @Input() id: string;
     @Input() questions: Map<string,Question>;
     @Input() selectedFilters: Map<string, string[]>
+    @Output() filterSelect = new EventEmitter<Array<string>>();
 
     constructor(private questionnaireService: QuestionnaireService) {  }
 
@@ -34,5 +35,20 @@ export class QuestionnaireItemComponent {
             }
         }
         return count
+    }
+
+    /**
+     * emits a new filter to the parent component
+     * this filter always contains a single filter, i.e. one dialect, one question, or one participant
+     * @param filterType type of filter ('dialect', 'question', or 'participant')
+     * @param filter selected filter
+     */
+    filterSelected(event, filterType: string, filter: string) {
+        const newFilter = new Map(
+            [[filterType, [filter]]]
+        )
+        console.log(newFilter);
+        this.filterSelect.emit([filterType, filter]);
+        event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 }

@@ -3,7 +3,12 @@
         <h2 class="is-size-4 has-text-weight-semibold">{{questions.get(id).prompt}}</h2>
         <ng-container *ngFor="let dialect of questions.get(id).answerMap.keys()">
             <div *ngIf="selectedFilters.get('dialect').includes(dialect) && countAnswersShown(dialect)">
-                <p-panel [header]="dialect + ' (' + countAnswersShown(dialect) + ')'" [toggleable]="true" toggler="header" [collapsed]="true" class="has-text-weight-semibold is-size-5 is-italic my-2">
+                <p-panel [toggleable]="true" toggler="header" [collapsed]="true" >
+                <ng-template pTemplate="header">
+                    <a class="has-text-weight-semibold is-size-6 is-italic my-2" (click)="filterSelected($event, 'dialect', dialect)">
+                        {{ dialect + ' (' + countAnswersShown(dialect) + ')' }}
+                    </a>
+                </ng-template>
                 <ng-container *ngFor="let answer of questions.get(id).answerMap.get(dialect)">
                     <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId)">
                         <p class="level-left">{{ answer.answer }}</p>
