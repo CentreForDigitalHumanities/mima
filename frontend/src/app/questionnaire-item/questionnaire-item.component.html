@@ -14,7 +14,8 @@
                 <ng-container *ngFor="let answer of questions.get(id).answerMap.get(dialect)">
                     <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId)">
                         <p class="level-left">{{ answer.answer }}</p>
-                        <p class="level-right">{{ answer.participantId }}</p>
+                        <a class="level-right filterclick has-text-grey"
+                        (click)="filterSelected($event, 'participant', answer.participantId)">{{ answer.participantId }}</a>
                     </div>
                 </ng-container>
             </p-panel>
