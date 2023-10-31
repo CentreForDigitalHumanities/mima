@@ -34,7 +34,8 @@
             <mima-questionnaire-item [questions]="questions"
             [id]="questionId" [selectedFilters]="selectedFilters"
             [singleFilters]="singleFilters"
-            (singleFilterSelect)="onSingleFilterSelect($event)"></mima-questionnaire-item>
+            (singleFilterSelect)="onSingleFilterSelect($event)"
+            (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
         </ng-container>
     </div>
 </div>

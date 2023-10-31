@@ -1,5 +1,5 @@
 import { Store } from '@ngrx/store';
-import { Subscription, withLatestFrom } from 'rxjs';
+import { Subscription, filter, withLatestFrom } from 'rxjs';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question } from '../models/question';
 import { Answer } from '../models/answer';
@@ -136,8 +136,13 @@ export class QuestionnaireListPageComponent {
         ]);
     }
 
-    onSingleFilterSelect(filterData) {
+    onSingleFilterSelect(filterData: [string, string]) {
         this.filterChange(filterData[0], [filterData[1]]);
         this.singleFilters.set(filterData[0], filterData[1]);
+    }
+
+    onExcludeFilter(filterData: [string, string]) {
+        let updatedFilters = this.selectedFilters.get(filterData[0]).filter(element => element !== filterData[1]);
+        this.filterChange(filterData[0], updatedFilters);
     }
 }

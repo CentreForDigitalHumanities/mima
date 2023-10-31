@@ -16,7 +16,8 @@ export class QuestionnaireItemComponent {
     @Input() questions: Map<string,Question>;
     @Input() selectedFilters: Map<string, string[]>
     @Input() singleFilters: Map<string, string>;
-    @Output() singleFilterSelect = new EventEmitter<Array<string>>();
+    @Output() singleFilterSelect = new EventEmitter<[string, string]>();
+    @Output() excludeFilter = new EventEmitter<[string, string]>();
 
     constructor(private questionnaireService: QuestionnaireService) {  }
 
@@ -39,13 +40,22 @@ export class QuestionnaireItemComponent {
     }
 
     /**
-     * emits a new filter to the parent component
+     * emits a filter to be the only filter to the parent component
      * this filter always contains a single filter, i.e. one dialect, one question, or one participant
      * @param filterType type of filter ('dialect', 'question', or 'participant')
      * @param filter selected filter
      */
-    filterSelected(event, filterType: string, filter: string) {
+    onFilterSelected(event, filterType: string, filter: string) {
         this.singleFilterSelect.emit([filterType, filter]);
+        event.stopPropagation();  // to ensure that the panel does not collapse or expand
+    }
+
+    /**
+     * emits a filter to be excluded to the parent component
+     * params same as for onFilterSelected
+     */
+    onExcludeFilter(event, filterType: string, filter: string) {
+        this.excludeFilter.emit([filterType, filter]);
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 }

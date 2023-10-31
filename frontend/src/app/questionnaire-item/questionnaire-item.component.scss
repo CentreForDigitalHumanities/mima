@@ -12,3 +12,26 @@
 .active {
     color: hsl(171, 43%, 63%) !important;
 }
+
+.panelheader {
+    display: flex;
+    align-items: center;
+}
+
+.exclude-filter {
+    margin-left: .25rem;
+    margin-right: .25rem;
+    display: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.panelheader:hover .exclude-filter{
+    display: block;
+    opacity: 100%;
+}
+
+.level-right:hover .exclude-filter {
+    display: block;
+    opacity: 100%;
+}
