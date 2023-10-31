@@ -46,7 +46,6 @@ export class QuestionnaireItemComponent {
      */
     filterSelected(event, filterType: string, filter: string) {
         this.singleFilterSelect.emit([filterType, filter]);
-        console.log(this.singleFilters.get('dialect') === 'Limburgs (Nederland)');
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 }
