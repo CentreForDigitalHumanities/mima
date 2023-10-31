@@ -37,7 +37,11 @@ export class QuestionnaireListPageComponent {
         ['dialect', []],
         ['participant', []],
     ]);
-    selectedFilters = new Map<string, string[]>();
+    selectedFilters = new Map<string, string[]>(
+        [['question', []],
+        ['dialect', []],
+        ['participant', []],]
+    );
     singleFilters = new Map<string, string>();
     questionFilters: string[];
     dialectFilters: string[];
@@ -74,6 +78,17 @@ export class QuestionnaireListPageComponent {
             }
         }
         this.selectedFilters = new Map(this.selectedFilters)
+        switch(option) {  // temporary solution to make ngModel work on the dropdown
+            case 'question': {
+                this.questionFilters = this.selectedFilters.get('question')
+            }
+            case 'dialect': {
+                this.dialectFilters = this.selectedFilters.get('dialect')
+            }
+            case 'participant': {
+                this.participantFilters = this.selectedFilters.get('participant')
+            }
+        }
 
     }
 
