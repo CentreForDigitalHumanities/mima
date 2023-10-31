@@ -70,6 +70,7 @@ export class QuestionnaireListPageComponent {
      */
     filterChange(option: string, filters: string[]) {
         this.selectedFilters.set(option, filters);
+        this.singleFilters.set(option, '');
         this.matchedQuestionIds = [];
         for (let id of this.questionIds) {
             if (this.selectedFilters.get('question').includes(id)) {
