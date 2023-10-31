@@ -12,8 +12,8 @@
                             {{ dialect + ' (' + countAnswersShown(dialect) + ')' }}
                         </a>
                         <div class="exclude-filter">
-                            <span class="exclude-filter-button has-text-weight-bold has-text-grey"
-                            (click)="onExcludeFilter($event, 'dialect', dialect)">-</span>
+                            <a class="exclude-filter-button has-text-weight-bold has-text-grey"
+                            (click)="onExcludeFilter($event, 'dialect', dialect)">-</a>
                         </div>
                     </div>
                 </ng-template>
@@ -21,8 +21,8 @@
                     <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId)">
                         <p class="level-left">{{ answer.answer }}</p>
                         <div class="level-right">
-                            <span class="exclude-filter has-text-grey has-text-weight-semibold"
-                            (click)="onExcludeFilter($event, 'participant', answer.participantId)">-</span>
+                            <a class="exclude-filter has-text-grey has-text-weight-semibold"
+                            (click)="onExcludeFilter($event, 'participant', answer.participantId)">-</a>
                             <a class="filterclick has-text-grey"
                             (click)="onFilterSelected($event, 'participant', answer.participantId)">{{ answer.participantId }}</a>
                         </div>
