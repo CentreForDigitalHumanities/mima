@@ -1,3 +1,8 @@
+.questionheader {
+    display: flex;
+    align-items: center;
+}
+
 ::ng-deep .p-panel .p-panel-header {
     margin-top: .25rem;
     margin-bottom: .25rem;
@@ -26,11 +31,8 @@
     transition: opacity 0.3s;
 }
 
-.panelheader:hover .exclude-filter{
-    display: block;
-    opacity: 100%;
-}
-
+.questionheader:hover .exclude-filter,
+.panelheader:hover .exclude-filter,
 .level-right:hover .exclude-filter {
     display: block;
     opacity: 100%;

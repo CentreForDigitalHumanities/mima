@@ -1,6 +1,12 @@
 <ng-container>
     <div class="box">
-        <h2 class="is-size-4 has-text-weight-semibold">{{questions.get(id).prompt}}</h2>
+        <div class="questionheader">
+            <h2 class="is-size-4 has-text-weight-semibold">{{questions.get(id).prompt}}</h2>
+            <div class="exclude-filter">
+                <a class="exclude-filter-button has-text-weight-bold has-text-grey"
+                (click)="onExcludeFilter($event, 'question', questions.get(id).id)">-</a>
+            </div>
+        </div>
         <ng-container *ngFor="let dialect of questions.get(id).answerMap.keys()">
             <div *ngIf="selectedFilters.get('dialect').includes(dialect) && countAnswersShown(dialect)">
                 <p-panel [toggleable]="true" toggler="header" [collapsed]="!(singleFilters.get('dialect') || singleFilters.get('participant'))" >
