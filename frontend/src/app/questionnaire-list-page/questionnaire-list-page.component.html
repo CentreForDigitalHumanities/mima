@@ -28,6 +28,10 @@
                 </ng-template>
             </p-multiSelect>
         </div>
+        <div class="level">
+            <button class="button is-danger is-outlined level-item"
+            (click)="initializeFilters()">RESET FILTERS</button>
+        </div>
     </div>
     <div *ngIf="!isLoading" class="column">
         <ng-container *ngFor="let questionId of matchedQuestionIds">

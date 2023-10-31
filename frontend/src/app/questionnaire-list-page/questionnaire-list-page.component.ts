@@ -38,14 +38,10 @@ export class QuestionnaireListPageComponent {
         ['participant', []],
     ]);
     selectedFilters = new Map<string, string[]>();
+    singleFilters = new Map<string, string>();
     questionFilters: string[];
     dialectFilters: string[];
     participantFilters: string[];
-    singleFilters = new Map<string, string>([
-        ['question', ''],
-        ['dialect', ''],
-        ['participant', '']
-    ]);
 
     constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
@@ -135,6 +131,11 @@ export class QuestionnaireListPageComponent {
             ['dialect', this.dialectFilters],
             ['participant', this.participantFilters]
         ]);
+        this.singleFilters = new Map<string, string>([
+            ['question', ''],
+            ['dialect', ''],
+            ['participant', '']
+        ])
     }
 
     onSingleFilterSelect(filterData: [string, string]) {
