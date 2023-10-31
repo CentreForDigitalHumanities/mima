@@ -7,8 +7,8 @@
                 (click)="onExcludeFilter($event, 'question', questions.get(id).id)">-</a>
             </div>
         </div>
-        <ng-container *ngFor="let dialect of questions.get(id).answerMap.keys()">
-            <div *ngIf="selectedFilters.get('dialect').includes(dialect) && countAnswersShown(dialect)">
+        <ng-container *ngFor="let dialect of selectedFilters.get('dialect').sort()">
+            <div *ngIf="countAnswersShown(dialect)">
                 <p-panel [toggleable]="true" toggler="header" [collapsed]="!(singleFilters.get('dialect') || singleFilters.get('participant'))" >
                 <ng-template pTemplate="header">
                     <div class="panelheader">
