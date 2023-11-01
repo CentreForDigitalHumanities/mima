@@ -1,9 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question } from '../models/question';
-import { Answer } from '../models/answer';
 import { QuestionnaireService } from '../services/questionnaire.service'
-import { Store } from '@ngrx/store';
-import { State } from '../questionnaire.state'
 
 @Component({
   selector: 'mima-questionnaire-item',
