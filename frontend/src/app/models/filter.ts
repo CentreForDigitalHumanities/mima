@@ -1,8 +1,9 @@
 import { Adverbial } from './adverbial';
+import { Question } from './question';
 
 export interface Filter {
     index: number;
-    field: '*' | keyof Adverbial;
+    field: '*' | keyof Adverbial | keyof Question;
     content: string[];
 }
 
