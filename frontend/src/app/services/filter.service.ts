@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
 import { Filter, FilterOperator } from '../models/filter';
+import { MatchedQuestion, Question } from '../models/question';
 
 const ignoreCharacters = ['-', '\'', '.', ',', '(', ')'];
 const ignoreCharactersExp = /[\-'\.\,\(\)\s]/g;
@@ -8,6 +9,10 @@ const ignoreCharactersExp = /[\-'\.\,\(\)\s]/g;
 // https://stackoverflow.com/a/37511463/8438971
 function removeDiacritics(text: string): string {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function isQuestion(object: object): object is Question {
+    return (object as Question).question !== undefined;
 }
 
 @Injectable({
@@ -18,28 +23,40 @@ export class FilterService {
     constructor() { }
 
     /**
-     * @returns MatchedAdverbial or undefined if it doesn't match
+     * @returns MatchedAdverbial|MatchedQuestion, or undefined if it doesn't match
      */
-    public applyFilters(adverbial: Adverbial, filters: ReadonlyArray<Filter>, operator: FilterOperator): MatchedAdverbial {
+    public applyFilters(object_to_filter: Adverbial | Question, filters: ReadonlyArray<Filter>, operator: FilterOperator): MatchedAdverbial | MatchedQuestion {
         let anyMatch = false;
-        const result = new MatchedAdverbial();
+        let result = undefined;
+        let keys: string[] = [];
         const matchingFilters: Filter[] = [];
-        const keys: (keyof MatchedAdverbial)[] = [
-            'id',
-            'text',
-            'roots',
-            'examples',
-            'translations',
-            'glosses',
-            'language',
-            'dialect',
-            'language_family',
-            'language_group',
-            'source',
-            'labels',
-            'notes'];
+        if (isQuestion(object_to_filter)) {
+            result = new MatchedQuestion();
+            keys = [
+                'id',
+                'type',
+                'question',
+                'answers'
+            ]
+        } else {
+            result = new MatchedAdverbial();
+            keys = [
+                'id',
+                'text',
+                'roots',
+                'examples',
+                'translations',
+                'glosses',
+                'language',
+                'dialect',
+                'language_family',
+                'language_group',
+                'source',
+                'labels',
+                'notes'];
+        }
         for (const key of keys) {
-            result[key], anyMatch = this.detectMatches(adverbial, result, filters, key, anyMatch, matchingFilters);
+            result[key], anyMatch = this.detectMatches(object_to_filter, result, filters, key, anyMatch, matchingFilters);
         }
         if (anyMatch) {
             if (operator === 'and') {
@@ -58,7 +75,7 @@ export class FilterService {
     /**
      * Detect matches for a certain field of Adverbial,
      * either a string field or an array field
-     * @param adverbial Adverbial object in which to detect matches
+     * @param object_to_filter Adverbial object in which to detect matches
      * @param result MatchedAdverbial object in which to update the matches
      * @param filters filters to apply
      * @param key name of the field
@@ -66,17 +83,17 @@ export class FilterService {
      * @param matchingFilters List of matching filters
      * @returns MatchedParts or MatchedParts[], anyMatch (boolean)
      */
-    private detectMatches(adverbial: Adverbial, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
-        if (typeof adverbial[key] === 'string') {
-            const [parts, partFilters] = this.searchField(adverbial[key], key as keyof Adverbial, filters);
+    private detectMatches(object_to_filter: Adverbial | Question, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
+        if (typeof object_to_filter[key] === 'string') {
+            const [parts, partFilters] = this.searchField(object_to_filter[key], key as keyof Adverbial, filters);
             result[key] = parts;
             anyMatch ||= parts.match;
             matchingFilters.push(...partFilters);
             return result[key], anyMatch;
-        } else if (Array.isArray(adverbial[key])) {
+        } else if (Array.isArray(object_to_filter[key])) {
             result[key] = [];
-            for (const text of adverbial[key]) {
-                const [parts, partFilters] = this.searchField(text, key as keyof Adverbial, filters);
+            for (const text of object_to_filter[key]) {
+                const [parts, partFilters] = this.searchField(text, key, filters);
                 matchingFilters.push(...partFilters);
                 anyMatch ||= parts.match;
                 result[key].push(parts);
@@ -93,7 +110,7 @@ export class FilterService {
      * @param filters filters to apply
      * @returns [MatchedParts, Set<Filter>] matched parts and the matching filter
      */
-    private searchField(text: string, field: keyof Adverbial, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
+    private searchField(text: string, field: string, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
         const matches: [number, number][] = [];
         const matchingFilters = new Set<Filter>();
         let emptyFilter = false;
