@@ -1,5 +1,6 @@
 import { Adverbial, MatchedAdverbial } from './models/adverbial';
 import { Filter, FilterOperator } from './models/filter';
+import { MatchedQuestion } from './models/question';
 export interface State {
     adverbials: {
         operator: FilterOperator;
@@ -7,7 +8,7 @@ export interface State {
         adverbials: ReadonlyArray<Adverbial>;
         adverbialsCount: number;
         adverbialIds: ReadonlyArray<string>;
-        matchedAdverbials: ReadonlyMap<string, MatchedAdverbial>;
+        matchedAdverbials: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
         matchedAdverbialsCount: number;
         matchedAdverbialIds: ReadonlyArray<string>;
     };

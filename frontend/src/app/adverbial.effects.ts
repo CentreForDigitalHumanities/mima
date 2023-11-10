@@ -16,6 +16,7 @@ import {
 import { State } from './adverbial.state';
 import { MatchedAdverbial } from './models/adverbial';
 import { AdverbialsService } from './services/adverbials.service';
+import { MatchedQuestion } from './models/question';
 
 @Injectable()
 export class AdverbialEffects {
@@ -38,7 +39,7 @@ export class AdverbialEffects {
             this.store.select('adverbials', 'operator')
         ]),
         mergeMap(async ([action, filters, operator]) => {
-            let matchedAdverbials: MatchedAdverbial[];
+            let matchedAdverbials: (MatchedAdverbial| MatchedQuestion)[];
             if (action.type === '[Adverbials] Set Adverbials' && !action.applyFilters) {
                 // match everything
                 matchedAdverbials = action.adverbials.map(adverbial => new MatchedAdverbial(adverbial));
