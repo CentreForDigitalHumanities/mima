@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { Question } from '../models/question';
+import { MatchedQuestion, Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant';
+import { Filter, FilterOperator } from '../models/filter';
+import { MatchedAdverbial } from '../models/adverbial';
+import { FilterService } from './filter.service';
 
 
 @Injectable({
@@ -11,7 +14,7 @@ import { Participant } from '../models/participant';
 })
 export class QuestionnaireService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private filterService: FilterService) { }
 
     /**
      * Reads the json file in assets
@@ -120,5 +123,17 @@ export class QuestionnaireService {
             }
         }
         return participants
+    }
+
+    private database: Question[] = [];
+    /**
+     * Taken verbatim from the adverbialsService
+     */
+    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedAdverbial | MatchedQuestion>> {
+        const matched = this.database
+            .map(object_to_filter => this.filterService.applyFilters(object_to_filter, filters, operator))
+            .filter(object_to_filter => !!object_to_filter);
+
+        return Promise.resolve(matched);
     }
 }

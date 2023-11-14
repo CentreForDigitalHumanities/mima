@@ -1,4 +1,5 @@
-import { Question } from "./models/question";
+import { Question, MatchedQuestion } from "./models/question";
+import { MatchedAdverbial } from "./models/adverbial";
 import { Filter, FilterOperator } from './models/filter';
 
 
@@ -9,7 +10,7 @@ export interface State {
         questions: Map<string, Question>;
         questionIds: ReadonlyArray<string>;
         questionsCount: number;
-        matchedQuestions: ReadonlyArray<Question>;
+        matchedQuestions: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
         matchedQuestionIds: ReadonlyArray<string>;
     }
 }
@@ -21,7 +22,7 @@ export const initialState: State = {
         questions: new Map<string, Question>(),
         questionIds: [],
         questionsCount: 0,
-        matchedQuestions: [],
+        matchedQuestions: new Map(),
         matchedQuestionIds: []
     }
 }

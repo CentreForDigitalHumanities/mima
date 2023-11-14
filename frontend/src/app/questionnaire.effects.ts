@@ -6,8 +6,9 @@ import { State } from './questionnaire.state';
 
 
 import { QuestionnaireService } from './services/questionnaire.service';
-import { loadQuestionnaire, setQuestions } from './questionnaire.actions';
-import { Question } from './models/question';
+import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions } from './questionnaire.actions';
+import { MatchedQuestion, Question } from './models/question';
+import { MatchedAdverbial } from './models/adverbial';
 
 
 @Injectable()
@@ -31,6 +32,27 @@ export class QuestionnaireEffects {
             return setQuestions({
                 questions,
                 applyFilters: true
+            });
+        })
+    ));
+
+    filterQuestions$ = createEffect(() => this.actions$.pipe(
+        ofType(addFilter, removeFilter, clearFilters, setFilters, updateFilter, setQuestions, setFiltersOperator),
+        concatLatestFrom(() => [
+            this.store.select('questionnaire', 'filters'),
+            this.store.select('questionnaire', 'operator')
+        ]),
+        mergeMap(async ([action, filters, operator]) => {
+            let matchedQuestions: (MatchedAdverbial| MatchedQuestion)[];
+            if (action.type === '[Questionnaire] Set Questions' && !action.applyFilters) {
+                // match everything
+                matchedQuestions =  Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
+            } else {
+                matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
+            }
+
+            return setMatchedQuestions({
+                matchedQuestions
             });
         })
     ));

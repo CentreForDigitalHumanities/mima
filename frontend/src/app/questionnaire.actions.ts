@@ -1,5 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { Question } from './models/question';
+import { MatchedQuestion, Question } from './models/question';
+import { Filter, FilterOperator } from './models/filter';
+import { MatchedAdverbial } from './models/adverbial';
 
 /**
  * Load the questionnaire from the json in assets
@@ -18,5 +20,42 @@ export const setQuestions = createAction('[Questionnaire] Set Questions', props<
  * Set all the questions which have been found to match the current filters
  */
 export const setMatchedQuestions = createAction('[Questionnaire] Set Matched questions', props<{
-    matchedquestions: Array<Question>
+    matchedQuestions: Array<MatchedQuestion|MatchedAdverbial>
+}>());
+
+
+/**
+ * Clear all the set filters (if any)
+ */
+export const clearFilters = createAction('[Questionnaire] Clear Filters');
+
+/**
+ * Add new filter
+ */
+export const addFilter = createAction('[Questionnaire] Add Filter');
+
+
+/**
+ * Replaces all filters
+ */
+export const setFilters = createAction('[Questionnaire] Set Filters', props<{
+    filters: ReadonlyArray<Filter>
+}>());
+
+export const setFiltersOperator = createAction('[Questionnaire] Set Filters Operator', props<{
+    operator: FilterOperator
+}>());
+
+/**
+ * Update specific filter
+ */
+export const updateFilter = createAction('[Questionnaire] Update Filter', props<{
+    filter: Readonly<Filter>
+}>());
+
+/**
+ * Remove specific filter
+ */
+export const removeFilter = createAction('[Questionnaire] Remove Filter', props<{
+    filterIndex: number
 }>());
