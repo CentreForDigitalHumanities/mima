@@ -50,6 +50,7 @@ export class QuestionnaireEffects {
             } else {
                 matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
             }
+            console.log('matchedQuestions:', matchedQuestions);
 
             return setMatchedQuestions({
                 matchedQuestions

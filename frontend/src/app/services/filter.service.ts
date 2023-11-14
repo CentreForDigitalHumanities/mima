@@ -83,9 +83,9 @@ export class FilterService {
      * @param matchingFilters List of matching filters
      * @returns MatchedParts or MatchedParts[], anyMatch (boolean)
      */
-    private detectMatches(object_to_filter: Adverbial | Question, result: MatchedAdverbial, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
+    private detectMatches(object_to_filter: Adverbial | Question, result: MatchedAdverbial|MatchedQuestion, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
         if (typeof object_to_filter[key] === 'string') {
-            const [parts, partFilters] = this.searchField(object_to_filter[key], key as keyof Adverbial, filters);
+            const [parts, partFilters] = this.searchField(object_to_filter[key], key, filters);
             result[key] = parts;
             anyMatch ||= parts.match;
             matchingFilters.push(...partFilters);
@@ -93,7 +93,13 @@ export class FilterService {
         } else if (Array.isArray(object_to_filter[key])) {
             result[key] = [];
             for (const text of object_to_filter[key]) {
-                const [parts, partFilters] = this.searchField(text, key, filters);
+                let text_to_search = '';
+                if (typeof text === 'string') {
+                    text_to_search = text;
+                } else {
+                    text_to_search = text.answer;
+                }
+                const [parts, partFilters] = this.searchField(text_to_search, key, filters);
                 matchingFilters.push(...partFilters);
                 anyMatch ||= parts.match;
                 result[key].push(parts);

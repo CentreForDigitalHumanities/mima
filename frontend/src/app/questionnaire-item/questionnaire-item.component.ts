@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Question } from '../models/question';
+import { Question, MatchedQuestion } from '../models/question';
 import { QuestionnaireService } from '../services/questionnaire.service'
 
 @Component({
@@ -15,6 +15,17 @@ export class QuestionnaireItemComponent {
     @Input() singleFilters: Map<string, string>;
     @Output() singleFilterSelect = new EventEmitter<[string, string]>();
     @Output() excludeFilter = new EventEmitter<[string, string]>();
+
+    matchedQuestion: MatchedQuestion;
+
+    @Input()
+    set question(value: Question | MatchedQuestion) {
+        if (value instanceof MatchedQuestion) {
+            this.matchedQuestion = value;
+        } else {
+            this.matchedQuestion = new MatchedQuestion(value);
+        }
+    }
 
     constructor(private questionnaireService: QuestionnaireService) {  }
 

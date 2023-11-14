@@ -16,7 +16,7 @@ export interface Question {
 type MatchedQuestionValue<T> =
     T extends string
     ? MatchedParts
-    : T extends string[] | Answer[] // Figure out what to do with Answer[]
+    : T extends string[] | Answer[] | Map<string, Answer[]> // Figure out what to do with Answer[] and answerMap
     ? MatchedParts[]
     : never;
 

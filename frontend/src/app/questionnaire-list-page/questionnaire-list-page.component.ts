@@ -1,15 +1,18 @@
 import { Store } from '@ngrx/store';
 import { Subscription, filter, withLatestFrom } from 'rxjs';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Question } from '../models/question';
+import { Component, EventEmitter, Input, Output, QueryList, ViewChildren } from '@angular/core';
+import { Question, MatchedQuestion } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant'
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { SelectItem } from 'primeng/api';
 import { loadQuestionnaire } from '../questionnaire.actions';
+import { MatchedAdverbial } from '../models/adverbial';
+import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 
-
+const renderSteps = 10; //potentially move these to settings
+const renderInterval = 100;
 @Component({
   selector: 'mima-questionnaire-list-page',
   templateUrl: './questionnaire-list-page.component.html',
@@ -18,17 +21,28 @@ import { loadQuestionnaire } from '../questionnaire.actions';
 export class QuestionnaireListPageComponent {
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
-    private questionIds$ = this.store.select('questionnaire', 'questionIds');
+    questionIds$ = this.store.select('questionnaire', 'questionIds');
+    private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions')
+    private matchedQuestionIds$ = this.store.select('questionnaire', 'matchedQuestionIds')
 
     @Input() filterSelect: Map<string, string[]>;
 
+    matchedQuestions: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
+    matchedQuestionIds = new Set<string>();
+
+    private renderIndex = 0;
+
+    renderTimeout: ReturnType<typeof setInterval>;
+
+
+    @ViewChildren(QuestionnaireItemComponent)
+    questionComponents!: QueryList<QuestionnaireItemComponent>;
 
     public isLoading = false;
     selectedOption: string;
     questionnaire: Question[] = [];
     questionIds: string[] = [];
     questions: Map<string,Question>;
-    matchedQuestionIds: string[] = [];
     answers: Map<string, Answer[]> = new Map<string, Answer[]>();
     participants: Participant[] = [];
     dialects: string[] = [];
@@ -47,6 +61,8 @@ export class QuestionnaireListPageComponent {
     dialectFilters: string[];
     participantFilters: string[];
 
+
+
     constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
 
@@ -54,14 +70,63 @@ export class QuestionnaireListPageComponent {
         if (!this.questions) {
             this.store.dispatch(loadQuestionnaire());
         }
-        this.questions$.subscribe(questions => {
-            if (questions) {
-                this.isLoading = true;
-                this.questions = questions;
-                this.load();
-            }
-        })
+        this.subscriptions = [
+            // Mees idea
+            this.questions$.subscribe(questions => {
+                if (questions) {
+                    this.isLoading = true;
+                    this.questions = questions;
+                    this.load();
+                }
+            }),
+            // Sheean idea
+            this.matchedQuestionIds$.pipe(
+                withLatestFrom(this.matchedQuestions$)
+            ).subscribe(([ids, questions]) => {
+                this.matchedQuestions = questions;
+                this.matchedQuestionIds = new Set<string>(ids);
+                this.renderQuestions();
+            })
+        ]
+
         this.changeOption('question');  // sets question as default filter option, might change later
+    }
+
+    /**
+     * Rendering the adverbials and its highlights real-time whilst
+     * the user is typing characters is SLOW. To make the user
+     * experience much faster, render it incrementally:
+     * - the matching components are rendered immediately (but empty!)
+     * - their contents are set/updated in batches which are spread
+     *   out over time. This way the first few (visible) hits are
+     *   rendered straight away but hits further down the page wait.
+     *   If the user quickly types a new character, only this small
+     *   set of components for each batch is re-rendered. This limits
+     *   the amount of rendering to be done on each key press.
+     *   The complete rendering of all the matches will then be done
+     *   in the background, once the filter has stabilized.
+     */
+    renderQuestions() {
+        // start from the first item again
+        this.renderIndex = 0;
+        if (this.renderTimeout) {
+            return;
+        }
+
+        this.renderTimeout = setInterval(() => {
+            let i = 0;
+            while (i < renderSteps && this.renderIndex < this.matchedQuestionIds.size) {
+                const component = this.questionComponents.get(this.renderIndex);
+                component.question = this.matchedQuestions[component.id];
+                i++;
+                this.renderIndex++;
+            }
+
+            if (this.renderIndex >= this.matchedQuestionIds.size) {
+                clearInterval(this.renderTimeout);
+                delete this.renderTimeout;
+            }
+        }, renderInterval);
     }
 
     /**
@@ -71,14 +136,14 @@ export class QuestionnaireListPageComponent {
     filterChange(option: string, filters: string[]) {
         this.selectedFilters.set(option, filters);
         this.singleFilters.set(option, '');
-        this.matchedQuestionIds = [];
+        this.matchedQuestionIds = new Set();
         for (let id of this.questionIds) {
             if (this.selectedFilters.get('question').includes(id)) {
-                this.matchedQuestionIds.push(id);
+                this.matchedQuestionIds.add(id);
             }
         }
         this.selectedFilters = new Map(this.selectedFilters)
-        switch(option) {  // temporary solution to make ngModel work on the dropdown
+        switch(option) {  // temporary solution to make ngModel work on the dropdown, ideally we can get rid of the three separate filter arrays.
             case 'question': {
                 this.questionFilters = this.selectedFilters.get('question')
             }
@@ -97,7 +162,7 @@ export class QuestionnaireListPageComponent {
      */
     private load() {
         this.questionIds = Array.from(this.questions.keys())
-        this.matchedQuestionIds = this.questionIds; // obviously temporary, get filtering in later
+        this.matchedQuestionIds = new Set(this.questionIds); // a temporary way to fill the matched questions set, get filtering in later
         this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
         this.participants = this.questionnaireService.getParticipants(this.answers);
         if (this.dropdownOptions.get('question').length === 0) {  // TEMPORARY FIX, will refactor when processing PR

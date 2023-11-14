@@ -2,8 +2,8 @@ import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/cor
 import { Store } from '@ngrx/store';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
-import { addFilter, setFiltersOperator, updateFilter } from '../adverbial.actions';
-import { State } from '../adverbial.state';
+import { addFilter, setFiltersOperator, updateFilter } from '../questionnaire.actions';
+import { State } from '../questionnaire.state';
 import { Filter, FilterOperator } from '../models/filter';
 
 @Component({
@@ -27,7 +27,7 @@ export class FilterListComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.subscriptions = [
-            this.store.select('adverbials', 'filters').subscribe(filters => {
+            this.store.select('questionnaire', 'filters').subscribe(filters => {
                 if (this.filterIndexes.length !== filters.length) {
                     this.filterIndexes = [];
                     for (let i = 0; i < filters.length; i++) {
@@ -35,7 +35,7 @@ export class FilterListComponent implements OnInit, OnDestroy {
                     }
                 }
             }),
-            this.store.select('adverbials', 'operator').subscribe(operator => {
+            this.store.select('questionnaire', 'operator').subscribe(operator => {
                 this.operator = operator;
             })
         ];

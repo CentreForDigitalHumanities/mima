@@ -2,6 +2,8 @@
 <h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
 <div class="columns">
     <div class="column is-4">
+        <mima-filter-list></mima-filter-list>
+
         <div class="control is-flex-grow-1">
             <h3 class="is-3 has-text-weight-semibold">Question</h3>
             <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" (ngModelChange)="filterChange('question', $event)">
@@ -34,12 +36,14 @@
         </div>
     </div>
     <div *ngIf="!isLoading" class="column">
-        <ng-container *ngFor="let questionId of matchedQuestionIds">
-            <mima-questionnaire-item [questions]="questions"
-            [id]="questionId" [selectedFilters]="selectedFilters"
-            [singleFilters]="singleFilters"
-            (singleFilterSelect)="onSingleFilterSelect($event)"
-            (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
+        <ng-container *ngFor="let questionId of questionIds$ | async">
+            <ng-container *ngIf="matchedQuestionIds.has(questionId)">
+                <mima-questionnaire-item [questions]="questions"
+                [id]="questionId" [selectedFilters]="selectedFilters"
+                [singleFilters]="singleFilters"
+                (singleFilterSelect)="onSingleFilterSelect($event)"
+                (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
+            </ng-container>
         </ng-container>
     </div>
 </div>

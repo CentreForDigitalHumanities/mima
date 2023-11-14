@@ -11,8 +11,8 @@ import {
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { removeFilter } from '../adverbial.actions';
-import { State } from '../adverbial.state';
+import { removeFilter } from '../questionnaire.actions';
+import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
 import * as _ from 'lodash';
 
@@ -34,7 +34,7 @@ interface DropdownOption {
 })
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
-    private filters$ = this.store.select('adverbials', 'filters');
+    private filters$ = this.store.select('questionnaire', 'filters');
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -78,7 +78,7 @@ export class FilterComponent implements OnInit, OnDestroy {
     }];
 
     textFieldContent: string;
-    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('adverbials', 'adverbials').pipe(
+    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
         withLatestFrom(this.filters$, this.index$),
         map(([adverbials, filters, index]) => {
             const filter = filters[index];
@@ -91,15 +91,16 @@ export class FilterComponent implements OnInit, OnDestroy {
                         case '*':
                             break;
 
-                        case 'labels':
-                        case 'roots':
-                        case 'examples':
-                        case 'translations':
-                        case 'glosses':
-                            for (const value of adverbial.labels) {
-                                values.add(value);
-                            }
-                            break;
+                        // commenting out because of switching to Questions format of data
+                        // case 'labels':
+                        // case 'roots':
+                        // case 'examples':
+                        // case 'translations':
+                        // case 'glosses':
+                        //     for (const value of adverbial.labels) {
+                        //         values.add(value);
+                        //     }
+                        //     break;
 
                         default:
                             values.add(adverbial[selectedType.field]);

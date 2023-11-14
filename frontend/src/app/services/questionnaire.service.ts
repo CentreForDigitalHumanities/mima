@@ -26,6 +26,7 @@ export class QuestionnaireService {
         try {
             const data = await response.then(res => res);
             const questionnaire = this.convertToQuestionnaire(data);
+            this.database.push(...questionnaire);
             return Promise.resolve(questionnaire);
         } catch (error) {
             throw error;

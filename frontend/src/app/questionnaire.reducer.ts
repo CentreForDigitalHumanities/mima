@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { initialState } from './questionnaire.state';
-import { setQuestions, updateFilter } from './questionnaire.actions';
+import { setMatchedQuestions, setQuestions, updateFilter } from './questionnaire.actions';
+import { MatchedQuestion } from './models/question';
 
 
 export const questionnaireReducer = createReducer(
@@ -19,4 +20,20 @@ export const questionnaireReducer = createReducer(
             filters
         };
     }),
+    on(setMatchedQuestions, (state, action) => {
+        const matchedQuestions = new Map<string, MatchedQuestion>();
+        const matchedQuestionIds: string[] = [];
+
+        for (const match of action.matchedQuestions) {
+            const id = match.id.text;
+            matchedQuestionIds.push(id);
+            matchedQuestions[id] = match;
+        }
+        return {
+            ...state,
+            matchedQuestions,
+            matchedQuestionsCount: matchedQuestionIds.length,
+            matchedQuestionIds
+        };
+    })
 )
