@@ -60,7 +60,7 @@ export class QuestionnaireService {
                 for (let example of subentry['answer'].split('|')) {
                     const answer: Answer = {
                         questionId: subentry['tag'],
-                        answer: subentry['answer'],
+                        answer: example,
                         answerId: '',
                         participantId: subentry['participant_id'],
                         dialect: subentry['dialect']
