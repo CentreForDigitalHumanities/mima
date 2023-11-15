@@ -28,14 +28,14 @@
                         </div>
                     </div>
                 </ng-template>
-                <ng-container *ngFor="let answer of questions.get(id).answerMap.get(dialect)">
-                    <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId)">
-                        <p class="level-left">{{ answer.answer }}</p>
+                <ng-container *ngFor="let answer of matchedQuestion.answerMap.get(dialect)">
+                    <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId.text)">
+                        <p class="level-left" [innerHTML]="answer.answer | highlight"></p>
                         <div class="level-right">
                             <a class="exclude-filter has-text-grey has-text-weight-semibold"
-                            (click)="onExcludeFilter($event, 'participant', answer.participantId)">-</a>
+                            (click)="onExcludeFilter($event, 'participant', answer.participantId.text)">-</a>
                             <a class="filterclick has-text-grey"
-                            (click)="onFilterSelected($event, 'participant', answer.participantId)">{{ answer.participantId }}</a>
+                            (click)="onFilterSelected($event, 'participant', answer.participantId.text)">{{ answer.participantId.text }}</a>
                         </div>
                     </div>
                 </ng-container>
