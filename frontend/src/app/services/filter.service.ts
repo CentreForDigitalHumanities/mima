@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
 import { Filter, FilterOperator } from '../models/filter';
 import { MatchedQuestion, Question } from '../models/question';
+import { MatchedAnswer } from '../models/answer';
+
 
 const ignoreCharacters = ['-', '\'', '.', ',', '(', ')'];
 const ignoreCharactersExp = /[\-'\.\,\(\)\s]/g;
@@ -35,8 +37,9 @@ export class FilterService {
             keys = [
                 'id',
                 'prompt',
-                'answers'
-            ]
+                'answers',
+                'answerMap'
+            ];
         } else {
             result = new MatchedAdverbial();
             keys = [
@@ -91,17 +94,42 @@ export class FilterService {
             return result[key], anyMatch;
         } else if (Array.isArray(object_to_filter[key])) {
             result[key] = [];
-            for (const text of object_to_filter[key]) {
+            for (const item of object_to_filter[key]) {
                 let text_to_search = '';
-                if (typeof text === 'string') {
-                    text_to_search = text;
-                } else {
-                    text_to_search = text.answer;
+                if (typeof item === 'string') {
+                    text_to_search = item;
+                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
+                    anyMatch ||= parts.match;
+                    result[key].push(parts);
+                    matchingFilters.push(...partFilters);
+                } else { //for Answers objects
+                    text_to_search = item.answer;
+                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
+                    anyMatch ||= parts.match;
+                    const matchedAnswer = new MatchedAnswer(item);
+                    matchedAnswer.answer = parts;
+                    result[key].push(matchedAnswer);
+                    matchingFilters.push(...partFilters);
                 }
-                const [parts, partFilters] = this.searchField(text_to_search, key, filters);
-                matchingFilters.push(...partFilters);
-                anyMatch ||= parts.match;
-                result[key].push(parts);
+
+            }
+            return result[key], anyMatch;
+        } else if (object_to_filter[key] instanceof Map) { //for answerMap
+            result[key] = new Map();
+            for (const dialect of object_to_filter[key].keys()) {
+                for (const item of object_to_filter[key].get(dialect)) {
+                    let text_to_search = item.answer;
+                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
+                    anyMatch ||= parts.match;
+                    const matchedAnswer = new MatchedAnswer(item);
+                    matchedAnswer.answer = parts;
+                    if (result[key].has(dialect)) {
+                        result[key].get(dialect).push(matchedAnswer);
+                    } else {
+                        result[key].set(dialect, [matchedAnswer]);
+                    }
+                    matchingFilters.push(...partFilters);
+                }
             }
             return result[key], anyMatch;
         }

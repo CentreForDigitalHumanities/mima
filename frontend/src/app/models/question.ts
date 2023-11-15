@@ -1,5 +1,5 @@
 import { MatchedParts } from './adverbial';
-import { Answer } from './answer';
+import { Answer, MatchedAnswer } from './answer';
 
 export interface Question {
     id: string;
@@ -16,8 +16,12 @@ export interface Question {
 type MatchedQuestionValue<T> =
     T extends string
     ? MatchedParts
-    : T extends string[] | Answer[] | Map<string, Answer[]> // Figure out what to do with Answer[] and answerMap
+    : T extends string[] // Figure out what to do with Answer[] and answerMap
     ? MatchedParts[]
+    : T extends Answer[]
+    ? MatchedAnswer[]
+    : T extends Map<string, Answer[]>
+    ? Map<string, MatchedAnswer[]>
     : never;
 
 export type MatchedQuestionProperties = {
@@ -28,8 +32,9 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     id: MatchedParts;
     type: MatchedParts;
     question: MatchedParts;
-    prompt?: MatchedParts;
-    answers?: MatchedParts[];
+    prompt: MatchedParts;
+    answers?: MatchedAnswer[];
+    answerMap?: Map<string, MatchedAnswer[]>;
 
     constructor(question?: Question) {
         if (question) {
@@ -37,7 +42,12 @@ export class MatchedQuestion implements MatchedQuestionProperties {
             this.type = this.unmatchedValue(question.type);
             this.prompt = this.unmatchedValue(question.prompt);
             // take the 'answer' strings from the Answer objects
-            this.answers = question.answers?.map(answer => this.unmatchedValue(answer.answer));
+            // this.answers = question.answers?.map(answer => this.unmatchedValue(answer.answer));
+            this.answers = question.answers.map(answer => new MatchedAnswer(answer));
+            question.answerMap.forEach((answers, dialect) => {
+                const unmatchedAnswers = answers.map(answer => new MatchedAnswer(answer));
+                this.answerMap.set(dialect, unmatchedAnswers);
+            })
         }
     }
 
