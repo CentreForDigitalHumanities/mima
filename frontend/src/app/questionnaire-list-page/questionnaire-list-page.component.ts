@@ -92,7 +92,25 @@ export class QuestionnaireListPageComponent {
         this.changeOption('question');  // sets question as default filter option, might change later
     }
 
+    ngAfterViewInit(): void {
+        this.renderQuestions();
+        this.subscriptions.push(
+            this.questionComponents.changes.subscribe((r) => {
+                this.renderQuestions();
+            }));
+    }
+
+    ngOnDestroy(): void {
+        for (const subscription of this.subscriptions) {
+            subscription.unsubscribe();
+        }
+        if (this.renderTimeout) {
+            clearTimeout(this.renderTimeout);
+        }
+    }
+
     /**
+     * TAKEN FROM THE ADVERBIAL-LIST COMPONENT:
      * Rendering the adverbials and its highlights real-time whilst
      * the user is typing characters is SLOW. To make the user
      * experience much faster, render it incrementally:
@@ -106,7 +124,7 @@ export class QuestionnaireListPageComponent {
      *   The complete rendering of all the matches will then be done
      *   in the background, once the filter has stabilized.
      */
-    renderQuestions() {
+    renderQuestions(): void {
         // start from the first item again
         this.renderIndex = 0;
         if (this.renderTimeout) {
@@ -162,7 +180,7 @@ export class QuestionnaireListPageComponent {
      */
     private load() {
         this.questionIds = Array.from(this.questions.keys())
-        this.matchedQuestionIds = new Set(this.questionIds); // a temporary way to fill the matched questions set, get filtering in later
+        // this.matchedQuestionIds = new Set(this.questionIds); // a temporary way to fill the matched questions set, get filtering in later
         this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
         this.participants = this.questionnaireService.getParticipants(this.answers);
         if (this.dropdownOptions.get('question').length === 0) {  // TEMPORARY FIX, will refactor when processing PR

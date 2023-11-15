@@ -36,6 +36,7 @@ export class FilterService {
                 'id',
                 'type',
                 'question',
+                'prompt',
                 'answers'
             ]
         } else {

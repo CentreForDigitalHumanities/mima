@@ -1,7 +1,12 @@
 <ng-container>
-    <div class="box">
+    <div class="content has-text-centered has-text-light" *ngIf="!matchedQuestion">
+        <span class="icon is-large">
+            <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+        </span>
+    </div>
+    <div class="box" *ngIf="matchedQuestion">
         <div class="questionheader">
-            <h2 class="is-size-4 has-text-weight-semibold">{{questions.get(id).prompt}}</h2>
+            <h2 class="is-size-4 has-text-weight-semibold" [innerHTML]="matchedQuestion.prompt | highlight"></h2>
             <div class="exclude-filter">
                 <a class="exclude-filter-button has-text-weight-bold has-text-grey"
                 (click)="onExcludeFilter($event, 'question', questions.get(id).id)">-</a>

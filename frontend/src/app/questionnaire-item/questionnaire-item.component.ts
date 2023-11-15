@@ -1,14 +1,16 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { QuestionnaireService } from '../services/questionnaire.service'
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'mima-questionnaire-item',
   templateUrl: './questionnaire-item.component.html',
   styleUrls: ['./questionnaire-item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuestionnaireItemComponent {
+    faCircleNotch = faCircleNotch;
+
     @Input() id: string;
     @Input() questions: Map<string,Question>;
     @Input() selectedFilters: Map<string, string[]>
