@@ -34,8 +34,6 @@ export class FilterService {
             result = new MatchedQuestion();
             keys = [
                 'id',
-                'type',
-                'question',
                 'prompt',
                 'answers'
             ]

@@ -28,14 +28,13 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     id: MatchedParts;
     type: MatchedParts;
     question: MatchedParts;
-    prompt: MatchedParts;
+    prompt?: MatchedParts;
     answers?: MatchedParts[];
 
     constructor(question?: Question) {
         if (question) {
             this.id = this.unmatchedValue(question.id);
             this.type = this.unmatchedValue(question.type);
-            this.question = this.unmatchedValue(question.question);
             this.prompt = this.unmatchedValue(question.prompt);
             // take the 'answer' strings from the Answer objects
             this.answers = question.answers?.map(answer => this.unmatchedValue(answer.answer));
