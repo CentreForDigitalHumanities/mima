@@ -57,13 +57,16 @@ export class QuestionnaireService {
         for (const [tag, entry] of Object.entries(response)) {
             const answers: Answer[] = [];
             for (const subentry of entry['answers']) {
-                const answer: Answer = {
-                    questionId: subentry['tag'],
-                    answer: subentry['answer'],
-                    participantId: subentry['participant_id'],
-                    dialect: subentry['dialect']
+                for (let example of subentry['answer'].split('|')) {
+                    const answer: Answer = {
+                        questionId: subentry['tag'],
+                        answer: subentry['answer'],
+                        answerId: '',
+                        participantId: subentry['participant_id'],
+                        dialect: subentry['dialect']
+                    }
+                    answers.push(answer);
                 }
-                answers.push(answer);
             }
             const question: Question = {
                 id: entry['tag'],
@@ -82,25 +85,17 @@ export class QuestionnaireService {
      * @returns a Map with dialects as its keys and an Array of Answer objects as its values
      */
     convertToAnswersByDialect(questionnaire: ReadonlyArray<Question>) {
-        const answers =  new Map<string, Answer[]>();
+        const answerMap =  new Map<string, Answer[]>();
         for (const question of questionnaire) {
-            for (const subentry of question['answers']) {
-                for (let example of subentry['answer'].split('|')) {
-                    const answer: Answer = {
-                        questionId: subentry['questionId'],
-                        answer: example,
-                        participantId: subentry['participantId'],
-                        dialect: subentry['dialect']
-                    }
-                    if (answers.has(subentry['dialect'])) {
-                        answers.get(subentry['dialect']).push(answer);
-                    } else {
-                        answers.set(subentry['dialect'], [answer]);
-                    }
+            for (const entry of question['answers']) {
+                if (answerMap.has(entry['dialect'])) {
+                    answerMap.get(entry['dialect']).push(entry);
+                } else {
+                    answerMap.set(entry['dialect'], [entry]);
                 }
-            };
-        }
-        return answers;
+            }
+        };
+        return answerMap;
     }
 
     /**
