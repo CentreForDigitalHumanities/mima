@@ -71,25 +71,28 @@ export class QuestionnaireListPageComponent {
             this.store.dispatch(loadQuestionnaire());
         }
         this.subscriptions = [
-            // Mees idea
+            // Fires when a new questionnaire dataset is loaded
             this.questions$.subscribe(questions => {
                 if (questions) {
-                    this.isLoading = true;
                     this.questions = questions;
-                    this.load();
+                    this.questionIds = Array.from(this.questions.keys());
+                    this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
+                    this.participants = this.questionnaireService.getParticipants(this.answers);
+                    if (this.dropdownOptions.get('question').length === 0) {  // TEMPORARY FIX, will refactor when processing PR
+                        this.setDropdownOptions();
+                    }
+                    this.initializeFilters();
                 }
             }),
-            // Sheean idea
+            // Fires when matchedQuestionIds are changed
             this.matchedQuestionIds$.pipe(
                 withLatestFrom(this.matchedQuestions$)
-            ).subscribe(([ids, questions]) => {
-                this.matchedQuestions = questions;
-                this.matchedQuestionIds = new Set<string>(ids);
-                this.renderQuestions();
-            })
-        ]
-
-        this.changeOption('question');  // sets question as default filter option, might change later
+                ).subscribe(([ids, questions]) => {
+                    this.matchedQuestions = questions;
+                    this.matchedQuestionIds = new Set<string>(ids);
+                    this.renderQuestions();
+                })
+            ]
     }
 
     ngAfterViewInit(): void {
@@ -173,25 +176,6 @@ export class QuestionnaireListPageComponent {
             }
         }
 
-    }
-
-    /**
-     * loads the questionnaire and sets the variables accordingly.
-     */
-    private load() {
-        this.questionIds = Array.from(this.questions.keys())
-        // this.matchedQuestionIds = new Set(this.questionIds); // a temporary way to fill the matched questions set, get filtering in later
-        this.answers = this.questionnaireService.convertToAnswersByDialect(Array.from(this.questions.values()));
-        this.participants = this.questionnaireService.getParticipants(this.answers);
-        if (this.dropdownOptions.get('question').length === 0) {  // TEMPORARY FIX, will refactor when processing PR
-            this.setDropdownOptions();
-        }
-        this.initializeFilters();
-        this.isLoading = false
-    }
-
-    changeOption(option: string) {
-        this.selectedOption = option;
     }
 
     /**
