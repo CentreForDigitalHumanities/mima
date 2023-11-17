@@ -49,6 +49,8 @@
         <ng-template #questionCollapsed>
             <div class="collapsed">
                 <p>Details about the question</p>
+                <p>number of answers: {{ matchedQuestion.answers.length }}</p>
+                <p>number of dialects: {{ matchedQuestion.answerMap.size }} </p>
             </div>
         </ng-template>
 
