@@ -48,3 +48,24 @@
 .questionheader:hover {
     background-color: rgba(202, 201, 201, 0.3);
 }
+
+@keyframes append-animate {
+	from {
+		transform: scaleY(0);
+		opacity: 0;
+	}
+	to {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+}
+
+.expanded {
+	transform-origin: 50% 0;
+	animation: append-animate .3s linear;
+}
+
+.collapsed {
+    transform-origin: 50% 0;
+    animation: append-animate .3s linear;
+}
