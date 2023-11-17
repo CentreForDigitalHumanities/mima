@@ -34,7 +34,6 @@ export class QuestionnaireListPageComponent {
 
     renderTimeout: ReturnType<typeof setInterval>;
 
-
     @ViewChildren(QuestionnaireItemComponent)
     questionComponents!: QueryList<QuestionnaireItemComponent>;
 
@@ -60,8 +59,6 @@ export class QuestionnaireListPageComponent {
     questionFilters: string[];
     dialectFilters: string[];
     participantFilters: string[];
-
-
 
     constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
     }
@@ -151,6 +148,7 @@ export class QuestionnaireListPageComponent {
     }
 
     /**
+     * My bad: this is a method that does not yet utilize the Filter model
      * implements the new filters and matches the question IDs selected.
      * @param filters the new filters, as provided by the p-multiselect component
      */

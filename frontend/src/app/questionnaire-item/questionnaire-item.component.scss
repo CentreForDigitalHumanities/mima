@@ -63,9 +63,11 @@
 .expanded {
 	transform-origin: 50% 0;
 	animation: append-animate .3s linear;
+    margin-left: .3rem;
 }
 
 .collapsed {
     transform-origin: 50% 0;
     animation: append-animate .3s linear;
+    margin-left: .5rem;
 }
