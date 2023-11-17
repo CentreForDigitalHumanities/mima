@@ -61,35 +61,42 @@ export class FilterComponent implements OnInit, OnDestroy {
         icon: faAsterisk,
         dropdown: false
     }, {
-        name: $localize `Adverbial`,
-        field: 'text',
+        name: $localize `Question`,
+        field: 'prompt',
         icon: faComment,
         dropdown: false
-    }, {
+    },
+    {
+        name: $localize  `Translation`,
+        field: 'answer',
+        icon: faGlobeEurope,
+        dropdown: false
+    },
+    {
         name: $localize  `Dialect`,
         field: 'dialect',
         icon: faLanguage,
         dropdown: true
-    }, {
-        name: $localize  `Translation`,
-        field: 'translations',
-        icon: faGlobeEurope,
-        dropdown: false
-    }];
+    },];
 
     textFieldContent: string;
     dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
         withLatestFrom(this.filters$, this.index$),
-        map(([adverbials, filters, index]) => {
+        map(([questions, filters, index]) => {
             const filter = filters[index];
             const selectedType = this.getSelectedType(filter);
 
             const values = new Set<string>();
-            for (const adverbial of adverbials) {
+            for (const [id, question] of questions) {
                 if (selectedType.dropdown) {
                     switch (selectedType.field) {
                         case '*':
                             break;
+
+                        case 'dialect':
+                            for (let answer of question.answers) {
+                                values.add(answer[selectedType.field])
+                            }
 
                         // commenting out because of switching to Questions format of data
                         // case 'labels':
@@ -103,7 +110,7 @@ export class FilterComponent implements OnInit, OnDestroy {
                         //     break;
 
                         default:
-                            values.add(adverbial[selectedType.field]);
+                            values.add(question[selectedType.field]);
                             break;
 
                     }
