@@ -5,42 +5,48 @@
         </span>
     </div>
     <div class="box" *ngIf="matchedQuestion">
-        <div class="questionheader">
+        <div class="questionheader" (click)="toggleQuestion()">
             <h2 class="is-size-4 has-text-weight-semibold" [innerHTML]="matchedQuestion.prompt | highlight"></h2>
             <div class="exclude-filter">
                 <a class="exclude-filter-button has-text-weight-bold has-text-grey"
                 (click)="onExcludeFilter($event, 'question', questions.get(id).id)">-</a>
             </div>
         </div>
-        <ng-container *ngFor="let dialect of selectedFilters.get('dialect').sort()">
-            <div *ngIf="countAnswersShown(dialect)">
-                <p-panel [toggleable]="true" toggler="header" [collapsed]="!(singleFilters.get('dialect') || singleFilters.get('participant'))" >
-                <ng-template pTemplate="header">
-                    <div class="panelheader">
-                        <a class="has-text-weight-semibold is-size-6 is-italic my-2 has-text-dark filterclick"
-                        [class.active]="singleFilters.get('dialect') === dialect"
-                        (click)="onFilterSelected($event, 'dialect', dialect)">
-                            {{ dialect + ' (' + countAnswersShown(dialect) + ')' }}
-                        </a>
-                        <div class="exclude-filter">
-                            <a class="exclude-filter-button has-text-weight-bold has-text-grey"
-                            (click)="onExcludeFilter($event, 'dialect', dialect)">-</a>
+        <div class="expanded-question" *ngIf="questionExpanded else questionCollapsed">
+            <ng-container *ngFor="let dialect of selectedFilters.get('dialect').sort()">
+                <div *ngIf="countAnswersShown(dialect)">
+                    <p-panel [toggleable]="true" toggler="header" [collapsed]="!(singleFilters.get('dialect') || singleFilters.get('participant'))" >
+                    <ng-template pTemplate="header">
+                        <div class="panelheader">
+                            <a class="has-text-weight-semibold is-size-6 is-italic my-2 has-text-dark filterclick"
+                            [class.active]="singleFilters.get('dialect') === dialect"
+                            (click)="onFilterSelected($event, 'dialect', dialect)">
+                                {{ dialect + ' (' + countAnswersShown(dialect) + ')' }}
+                            </a>
+                            <div class="exclude-filter">
+                                <a class="exclude-filter-button has-text-weight-bold has-text-grey"
+                                (click)="onExcludeFilter($event, 'dialect', dialect)">-</a>
+                            </div>
                         </div>
-                    </div>
-                </ng-template>
-                <ng-container *ngFor="let answer of matchedQuestion.answerMap.get(dialect)">
-                    <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId.text)">
-                        <p class="level-left" [innerHTML]="answer.answer | highlight"></p>
-                        <div class="level-right">
-                            <a class="exclude-filter has-text-grey has-text-weight-semibold"
-                            (click)="onExcludeFilter($event, 'participant', answer.participantId.text)">-</a>
-                            <a class="filterclick has-text-grey"
-                            (click)="onFilterSelected($event, 'participant', answer.participantId.text)">{{ answer.participantId.text }}</a>
+                    </ng-template>
+                    <ng-container *ngFor="let answer of matchedQuestion.answerMap.get(dialect)">
+                        <div class="level" *ngIf="selectedFilters.get('participant').includes(answer.participantId.text)">
+                            <p class="level-left" [innerHTML]="answer.answer | highlight"></p>
+                            <div class="level-right">
+                                <a class="exclude-filter has-text-grey has-text-weight-semibold"
+                                (click)="onExcludeFilter($event, 'participant', answer.participantId.text)">-</a>
+                                <a class="filterclick has-text-grey"
+                                (click)="onFilterSelected($event, 'participant', answer.participantId.text)">{{ answer.participantId.text }}</a>
+                            </div>
                         </div>
-                    </div>
-                </ng-container>
-            </p-panel>
-            </div>
-        </ng-container>
+                    </ng-container>
+                </p-panel>
+                </div>
+            </ng-container>
+        </div>
+        <ng-template #questionCollapsed>
+            <p>Details about the question</p>
+        </ng-template>
+
     </div>
 </ng-container>

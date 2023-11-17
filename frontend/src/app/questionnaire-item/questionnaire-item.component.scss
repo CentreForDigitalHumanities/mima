@@ -8,6 +8,7 @@
     margin-bottom: .25rem;
     border-top-right-radius: 16px;
     border-top-left-radius: 4px;
+    padding: 0.2rem .5rem !important;
 }
 
 .filterclick:hover {
@@ -36,4 +37,14 @@
 .level-right:hover .exclude-filter {
     display: block;
     opacity: 100%;
+}
+
+.questionheader {
+    background-color: rgba(202, 201, 201, 0.1);
+    border-radius: 4px;
+    padding: 6px;
+    transition: 300ms;
+}
+.questionheader:hover {
+    background-color: rgba(202, 201, 201, 0.3);
 }

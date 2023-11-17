@@ -19,6 +19,7 @@ export class QuestionnaireItemComponent {
     @Output() excludeFilter = new EventEmitter<[string, string]>();
 
     matchedQuestion: MatchedQuestion;
+    questionExpanded: boolean = false;
 
     @Input()
     set question(value: Question | MatchedQuestion) {
@@ -67,5 +68,9 @@ export class QuestionnaireItemComponent {
     onExcludeFilter(event, filterType: string, filter: string) {
         this.excludeFilter.emit([filterType, filter]);
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
+    }
+
+    toggleQuestion(): void {
+        this.questionExpanded = !this.questionExpanded;
     }
 }
