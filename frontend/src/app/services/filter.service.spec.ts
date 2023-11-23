@@ -168,7 +168,7 @@ describe('FilterService', () => {
             }
 
             const output = service.applyFilters(input, indexedFilters, operator);
-            const properties: MatchedAdverbialProperties = Object.assign({}, output);
+            const properties = <MatchedAdverbialProperties>({ ...output});
 
             expect(getMatchedAdverbial(expected, emptyFilters)).toEqual(properties);
         }

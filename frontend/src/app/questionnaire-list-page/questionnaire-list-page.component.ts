@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
-import { Subscription, filter, withLatestFrom } from 'rxjs';
-import { Component, EventEmitter, Input, Output, QueryList, ViewChildren } from '@angular/core';
+import { Subscription, withLatestFrom } from 'rxjs';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant'
@@ -14,11 +14,11 @@ import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-
 const renderSteps = 10; //potentially move these to settings
 const renderInterval = 100;
 @Component({
-  selector: 'mima-questionnaire-list-page',
-  templateUrl: './questionnaire-list-page.component.html',
-  styleUrls: ['./questionnaire-list-page.component.scss']
+    selector: 'mima-questionnaire-list-page',
+    templateUrl: './questionnaire-list-page.component.html',
+    styleUrls: ['./questionnaire-list-page.component.scss']
 })
-export class QuestionnaireListPageComponent {
+export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy, OnInit {
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
     questionIds$ = this.store.select('questionnaire', 'questionIds');
@@ -27,7 +27,7 @@ export class QuestionnaireListPageComponent {
 
     @Input() filterSelect: Map<string, string[]>;
 
-    matchedQuestions: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
+    matchedQuestions: ReadonlyMap<string, MatchedAdverbial | MatchedQuestion>;
     matchedQuestionIds = new Set<string>();
 
     private renderIndex = 0;
@@ -41,7 +41,7 @@ export class QuestionnaireListPageComponent {
     selectedOption: string;
     questionnaire: Question[] = [];
     questionIds: string[] = [];
-    questions: Map<string,Question>;
+    questions: Map<string, Question>;
     answers: Map<string, Answer[]> = new Map<string, Answer[]>();
     participants: Participant[] = [];
     dialects: string[] = [];
@@ -84,12 +84,12 @@ export class QuestionnaireListPageComponent {
             // Fires when matchedQuestionIds are changed
             this.matchedQuestionIds$.pipe(
                 withLatestFrom(this.matchedQuestions$)
-                ).subscribe(([ids, questions]) => {
-                    this.matchedQuestions = questions;
-                    this.matchedQuestionIds = new Set<string>(ids);
-                    this.renderQuestions();
-                })
-            ]
+            ).subscribe(([ids, questions]) => {
+                this.matchedQuestions = questions;
+                this.matchedQuestionIds = new Set<string>(ids);
+                this.renderQuestions();
+            })
+        ]
     }
 
     ngAfterViewInit(): void {
@@ -162,7 +162,7 @@ export class QuestionnaireListPageComponent {
             }
         }
         this.selectedFilters = new Map(this.selectedFilters)
-        switch(option) {  // temporary solution to make ngModel work on the dropdown, ideally we can get rid of the three separate filter arrays.
+        switch (option) {  // temporary solution to make ngModel work on the dropdown, ideally we can get rid of the three separate filter arrays.
             case 'question': {
                 this.questionFilters = this.selectedFilters.get('question')
             }
@@ -185,18 +185,18 @@ export class QuestionnaireListPageComponent {
     setDropdownOptions() {
         for (const question of Array.from(this.questions.values())) {
             const item = question.id + ' ' + question.prompt;
-            this.dropdownOptions.get('question').push({label: item, value: question.id});
+            this.dropdownOptions.get('question').push({ label: item, value: question.id });
         }
 
         for (const participant of this.participants) {
             const item = participant.participantId + ' ' + participant.dialect;
-            this.dropdownOptions.get('participant').push({label: item, value: participant.participantId});
+            this.dropdownOptions.get('participant').push({ label: item, value: participant.participantId });
             if (!this.dialects.includes(participant.dialect)) {
-                this.dropdownOptions.get('dialect').push({label: participant.dialect, value: participant.dialect});
+                this.dropdownOptions.get('dialect').push({ label: participant.dialect, value: participant.dialect });
                 this.dialects.push(participant.dialect);
             }
         }
-        this.dropdownOptions.get('dialect').sort((a,b) => a.label < b.label ? -1 : 1)
+        this.dropdownOptions.get('dialect').sort((a, b) => a.label < b.label ? -1 : 1)
     }
 
     /**
