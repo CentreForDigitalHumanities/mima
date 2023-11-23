@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Adverbial, MatchedAdverbial } from './models/adverbial';
 import { Filter, FilterOperator } from './models/filter';
+import { MatchedQuestion } from './models/question';
 
 /**
  * Clear all the set filters (if any)
@@ -55,5 +56,5 @@ export const setAdverbials = createAction('[Adverbials] Set Adverbials', props<{
  * Set all the adverbials which have been found to match the current filters
  */
 export const setMatchedAdverbials = createAction('[Adverbials] Set Matched Adverbials', props<{
-    matchedAdverbials: ReadonlyArray<MatchedAdverbial>
+    matchedAdverbials: ReadonlyArray<MatchedAdverbial|MatchedQuestion>
 }>());

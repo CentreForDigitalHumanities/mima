@@ -11,8 +11,8 @@ import {
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { removeFilter } from '../adverbial.actions';
-import { State } from '../adverbial.state';
+import { removeFilter } from '../questionnaire.actions';
+import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
 import * as _ from 'lodash';
 
@@ -34,7 +34,7 @@ interface DropdownOption {
 })
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
-    private filters$ = this.store.select('adverbials', 'filters');
+    private filters$ = this.store.select('questionnaire', 'filters');
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -61,48 +61,56 @@ export class FilterComponent implements OnInit, OnDestroy {
         icon: faAsterisk,
         dropdown: false
     }, {
-        name: $localize `Adverbial`,
-        field: 'text',
+        name: $localize `Question`,
+        field: 'prompt',
         icon: faComment,
         dropdown: false
-    }, {
+    },
+    {
+        name: $localize  `Translation`,
+        field: 'answer',
+        icon: faGlobeEurope,
+        dropdown: false
+    },
+    {
         name: $localize  `Dialect`,
         field: 'dialect',
         icon: faLanguage,
         dropdown: true
-    }, {
-        name: $localize  `Translation`,
-        field: 'translations',
-        icon: faGlobeEurope,
-        dropdown: false
-    }];
+    },];
 
     textFieldContent: string;
-    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('adverbials', 'adverbials').pipe(
+    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
         withLatestFrom(this.filters$, this.index$),
-        map(([adverbials, filters, index]) => {
+        map(([questions, filters, index]) => {
             const filter = filters[index];
             const selectedType = this.getSelectedType(filter);
 
             const values = new Set<string>();
-            for (const adverbial of adverbials) {
+            for (const [id, question] of questions) {
                 if (selectedType.dropdown) {
                     switch (selectedType.field) {
                         case '*':
                             break;
 
-                        case 'labels':
-                        case 'roots':
-                        case 'examples':
-                        case 'translations':
-                        case 'glosses':
-                            for (const value of adverbial.labels) {
-                                values.add(value);
+                        case 'dialect':
+                            for (let answer of question.answers) {
+                                values.add(answer[selectedType.field])
                             }
-                            break;
+
+                        // commenting out because of switching to Questions format of data
+                        // case 'labels':
+                        // case 'roots':
+                        // case 'examples':
+                        // case 'translations':
+                        // case 'glosses':
+                        //     for (const value of adverbial.labels) {
+                        //         values.add(value);
+                        //     }
+                        //     break;
 
                         default:
-                            values.add(adverbial[selectedType.field]);
+                            values.add(question[selectedType.field]);
                             break;
 
                     }
