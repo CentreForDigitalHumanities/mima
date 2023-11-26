@@ -1,49 +1,14 @@
 <h1 class="title" i18n>Questionnaires</h1>
 <h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
-<div class="columns">
-    <div class="column is-4">
-        <mima-filter-list></mima-filter-list>
-
-        <div class="control is-flex-grow-1">
-            <h3 class="is-3 has-text-weight-semibold">Question</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="questionFilters" [options]="dropdownOptions.get('question')" (ngModelChange)="filterChange('question', $event)">
-                <ng-template let-value pTemplate="selectedItems">
-                    <div>
-                        <p>{{ selectedFilters.get('question').length }} question{{selectedFilters.get('question').length !== 1 ? 's' : ''}} selected</p>
-                    </div>
-                </ng-template>
-            </p-multiSelect>
-            <h3 class="is-3 has-text-weight-semibold">Dialect</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="dialectFilters" [options]="dropdownOptions.get('dialect')" display="chip" (ngModelChange)="filterChange('dialect', $event)">
-                <ng-template let-value pTemplate="selectedItems">
-                    <div>
-                        <p>{{ selectedFilters.get('dialect').length }} dialect{{selectedFilters.get('dialect').length !== 1 ? 's' : ''}} selected</p>
-                    </div>
-                </ng-template>
-            </p-multiSelect>
-            <h3 class="is-3 has-text-weight-semibold">Participant</h3>
-            <p-multiSelect class="input" appendTo="body" [(ngModel)]="participantFilters" [options]="dropdownOptions.get('participant')" display="chip" (ngModelChange)="filterChange('participant', $event)">
-                <ng-template let-value pTemplate="selectedItems">
-                    <div>
-                        <p>{{ selectedFilters.get('participant').length }} participant{{selectedFilters.get('participant').length !== 1 ? 's' : ''}} selected</p>
-                    </div>
-                </ng-template>
-            </p-multiSelect>
-        </div>
-        <div class="level">
-            <button class="button is-danger is-outlined level-item"
-            (click)="initializeFilters()">RESET FILTERS</button>
-        </div>
-    </div>
-    <div *ngIf="!isLoading" class="column">
-        <ng-container *ngFor="let questionId of questionIds$ | async">
-            <ng-container *ngIf="matchedQuestionIds.has(questionId)">
-                <mima-questionnaire-item [questions]="questions"
-                [id]="questionId" [selectedFilters]="selectedFilters"
-                [singleFilters]="singleFilters"
+<div class="box">
+    <mima-filter-list></mima-filter-list>
+</div>
+<div *ngIf="!isLoading">
+    <ng-container *ngFor="let questionId of questionIds$ | async">
+        <ng-container *ngIf="matchedQuestionIds.has(questionId)">
+            <mima-questionnaire-item [questions]="questions" [id]="questionId"
                 (singleFilterSelect)="onSingleFilterSelect($event)"
                 (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
-            </ng-container>
         </ng-container>
-    </div>
+    </ng-container>
 </div>

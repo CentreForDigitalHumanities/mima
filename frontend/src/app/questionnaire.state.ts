@@ -18,7 +18,7 @@ export interface State {
 export const initialState: State = {
     questionnaire: {
         operator: 'or',
-        filters: [{ index: 0, field: '*', content: [] }],
+        filters: [{ index: 0, field: '*', content: [], onlyFullMatch: false }],
         questions: new Map<string, Question>(),
         questionIds: [],
         questionsCount: 0,

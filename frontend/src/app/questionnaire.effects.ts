@@ -6,7 +6,7 @@ import { State } from './questionnaire.state';
 
 
 import { QuestionnaireService } from './services/questionnaire.service';
-import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions } from './questionnaire.actions';
+import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions, setSingularFilter, setExcludingFilter } from './questionnaire.actions';
 import { MatchedQuestion, Question } from './models/question';
 import { MatchedAdverbial } from './models/adverbial';
 
@@ -26,7 +26,6 @@ export class QuestionnaireEffects {
             const questionArray = Array.from(await this.questionnaireService.get());
             const questions = new Map<string, Question>();
             for (let question of questionArray) {
-                question.answerMap = this.questionnaireService.convertToAnswersByDialect([question]);
                 questions.set(question.id, question);
             }
             return setQuestions({
@@ -37,7 +36,7 @@ export class QuestionnaireEffects {
     ));
 
     filterQuestions$ = createEffect(() => this.actions$.pipe(
-        ofType(addFilter, removeFilter, clearFilters, setFilters, updateFilter, setQuestions, setFiltersOperator),
+        ofType(addFilter, removeFilter, clearFilters, setFilters, setSingularFilter, setExcludingFilter, updateFilter, setQuestions, setFiltersOperator),
         concatLatestFrom(() => [
             this.store.select('questionnaire', 'filters'),
             this.store.select('questionnaire', 'operator')
@@ -50,7 +49,6 @@ export class QuestionnaireEffects {
             } else {
                 matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
             }
-            console.log('matchedQuestions:', matchedQuestions);
 
             return setMatchedQuestions({
                 matchedQuestions

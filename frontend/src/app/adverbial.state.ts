@@ -8,7 +8,7 @@ export interface State {
         adverbials: ReadonlyArray<Adverbial>;
         adverbialsCount: number;
         adverbialIds: ReadonlyArray<string>;
-        matchedAdverbials: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
+        matchedAdverbials: ReadonlyMap<string, MatchedAdverbial | MatchedQuestion>;
         matchedAdverbialsCount: number;
         matchedAdverbialIds: ReadonlyArray<string>;
     };
@@ -17,7 +17,7 @@ export interface State {
 export const initialState: State = {
     adverbials: {
         operator: 'or',
-        filters: [{ index: 0, field: '*', content: [] }],
+        filters: [{ index: 0, field: '*', content: [], onlyFullMatch: false }],
         adverbials: [],
         adverbialsCount: 0,
         adverbialIds: [],

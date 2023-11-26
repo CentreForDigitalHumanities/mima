@@ -32,6 +32,7 @@ export class MatchedAnswer implements MatchedAnswerProperties {
     ma?: MatchedParts;
     prompt?: MatchedParts;
     promptMa?: MatchedParts;
+    match = false;
 
     constructor(answer: Answer) {
         this.questionId = this.unmatchedValue(answer.questionId);

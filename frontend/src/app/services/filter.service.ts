@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
-import { Filter, FilterOperator } from '../models/filter';
+import { Filter, FilterField, FilterOperator } from '../models/filter';
 import { MatchedQuestion, Question } from '../models/question';
-import { MatchedAnswer } from '../models/answer';
+import { Answer, MatchedAnswer } from '../models/answer';
 
 
 const ignoreCharacters = ['-', '\'', '.', ',', '(', ')'];
@@ -17,28 +17,33 @@ function isQuestion(object: object): object is Question {
     return (object as Question).question !== undefined;
 }
 
+export function isDefaultFilter(filter: Filter) {
+    return filter &&
+        filter.field === '*' &&
+        filter.content.length <= 1 &&
+        !filter.content[0]?.trim()
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export class FilterService {
 
-    constructor() { }
-
     /**
      * @returns MatchedAdverbial|MatchedQuestion, or undefined if it doesn't match
      */
-    public applyFilters(object_to_filter: Adverbial | Question, filters: ReadonlyArray<Filter>, operator: FilterOperator): MatchedAdverbial | MatchedQuestion {
+    public applyFilters<T extends Adverbial | Question>(item: T, filters: ReadonlyArray<Filter>, operator: FilterOperator):
+        T extends Adverbial ? MatchedAdverbial : MatchedQuestion {
         let anyMatch = false;
-        let result = undefined;
-        let keys: string[] = [];
+        let result: MatchedQuestion | MatchedAdverbial;
+        let keys: (keyof MatchedQuestion)[] | (keyof MatchedAdverbial)[] = [];
         const matchingFilters: Filter[] = [];
-        if (isQuestion(object_to_filter)) {
+        if (isQuestion(item)) {
             result = new MatchedQuestion();
             keys = [
                 'id',
                 'prompt',
-                'answers',
-                'answerMap'
+                'answers'
             ];
         } else {
             result = new MatchedAdverbial();
@@ -58,7 +63,7 @@ export class FilterService {
                 'notes'];
         }
         for (const key of keys) {
-            result[key], anyMatch = this.detectMatches(object_to_filter, result, filters, key, anyMatch, matchingFilters);
+            [result[key], anyMatch] = this.detectMatches(item, result, filters, key, anyMatch, matchingFilters);
         }
         if (anyMatch) {
             if (operator === 'and') {
@@ -69,15 +74,18 @@ export class FilterService {
                     }
                 }
             }
-            return result;
+
+            return <T extends Adverbial ? MatchedAdverbial : MatchedQuestion>result;
         }
+
 
         return undefined;
     }
+
     /**
      * Detect matches for a certain field of Adverbial,
      * either a string field or an array field
-     * @param object_to_filter Adverbial object in which to detect matches
+     * @param object Adverbial object in which to detect matches
      * @param result MatchedAdverbial object in which to update the matches
      * @param filters filters to apply
      * @param key name of the field
@@ -85,54 +93,60 @@ export class FilterService {
      * @param matchingFilters List of matching filters
      * @returns MatchedParts or MatchedParts[], anyMatch (boolean)
      */
-    private detectMatches(object_to_filter: Adverbial | Question, result: MatchedAdverbial|MatchedQuestion, filters: ReadonlyArray<Filter>, key: string, anyMatch: boolean, matchingFilters: Filter[]) {
-        if (typeof object_to_filter[key] === 'string') {
-            const [parts, partFilters] = this.searchField(object_to_filter[key], key, filters);
+    private detectMatches<T extends Adverbial | Question>(
+        object: T,
+        result: MatchedAdverbial | MatchedQuestion,
+        filters: ReadonlyArray<Filter>,
+        key: keyof MatchedAdverbial | keyof MatchedQuestion,
+        anyMatch: boolean,
+        matchingFilters: Filter[])
+        : [T, boolean] {
+        const value = object[key];
+        if (typeof value === 'string') {
+            const [parts, partFilters] = this.searchField(value, key, filters);
             result[key] = parts;
             anyMatch ||= parts.match;
             matchingFilters.push(...partFilters);
-            return result[key], anyMatch;
-        } else if (Array.isArray(object_to_filter[key])) {
+        } else if (key == 'answers') {
             result[key] = [];
-            for (const item of object_to_filter[key]) {
-                let text_to_search = '';
-                if (typeof item === 'string') {
-                    text_to_search = item;
-                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
-                    anyMatch ||= parts.match;
-                    result[key].push(parts);
-                    matchingFilters.push(...partFilters);
-                } else { //for Answers objects
-                    text_to_search = item.answer;
-                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
-                    anyMatch ||= parts.match;
-                    const matchedAnswer = new MatchedAnswer(item);
-                    matchedAnswer.answer = parts;
-                    result[key].push(matchedAnswer);
-                    matchingFilters.push(...partFilters);
-                }
+            const question = <Question>object;
+            const answers = question.answers;
 
-            }
-            return result[key], anyMatch;
-        } else if (object_to_filter[key] instanceof Map) { //for answerMap
-            result[key] = new Map();
-            for (const dialect of object_to_filter[key].keys()) {
-                for (const item of object_to_filter[key].get(dialect)) {
-                    let text_to_search = item.answer;
-                    const [parts, partFilters] = this.searchField(text_to_search, key, filters);
-                    anyMatch ||= parts.match;
-                    const matchedAnswer = new MatchedAnswer(item);
-                    matchedAnswer.answer = parts;
-                    if (result[key].has(dialect)) {
-                        result[key].get(dialect).push(matchedAnswer);
-                    } else {
-                        result[key].set(dialect, [matchedAnswer]);
+            const answerKeys: (keyof Answer)[] = [
+                'answer',
+                'dialect',
+                'participantId'
+            ];
+            const answerFilters = filters.filter(
+                filter => ['*', ...answerKeys].includes(filter.field));
+            const matchingAnswerFilters = new Set<Filter>();
+            for (const answer of answers) {
+                const matchedAnswer = new MatchedAnswer(answer);
+                for (const answerKey of answerKeys) {
+                    const [parts, partFilters] = this.searchField(answer[answerKey], answerKey, answerFilters);
+                    matchedAnswer.match ||= parts.match;
+                    matchedAnswer[answerKey] = parts;
+                    for (const filter of partFilters) {
+                        matchingAnswerFilters.add(filter);
                     }
-                    matchingFilters.push(...partFilters);
                 }
+                if (answerFilters.length) {
+                    anyMatch ||= matchedAnswer.match;
+                }
+                result[key].push(matchedAnswer);
             }
-            return result[key], anyMatch;
+            matchingFilters.push(...matchingAnswerFilters);
+        } else if (Array.isArray(value)) {
+            result[key] = [];
+            for (const property of value) {
+                const [parts, partFilters] = this.searchField(property, key, filters);
+                anyMatch ||= parts.match;
+                result[key].push(parts);
+                matchingFilters.push(...partFilters);
+            }
         }
+
+        return [result[key], anyMatch];
     }
 
 
@@ -143,7 +157,7 @@ export class FilterService {
      * @param filters filters to apply
      * @returns [MatchedParts, Set<Filter>] matched parts and the matching filter
      */
-    private searchField(text: string, field: string, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
+    private searchField(text: string, field: FilterField, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
         const matches: [number, number][] = [];
         const matchingFilters = new Set<Filter>();
         let emptyFilter = false;
@@ -151,7 +165,7 @@ export class FilterService {
         if (filters?.length) {
             for (const filter of filters) {
                 if (filter.field === '*' || filter.field === field) {
-                    const filterMatches = this.searchMultiple(text, filter.content);
+                    const filterMatches = this.searchMultiple(text, filter.content, filter.onlyFullMatch);
                     matches.push(...filterMatches);
                     if (!(filter.content[0] ?? '').trim()) {
                         // an empty filter matches everything!
@@ -246,9 +260,15 @@ export class FilterService {
      * For each string in the filter's content,
      * it splits search text by space and matches each separate item
      */
-    private searchMultiple(haystack: string, needles: string[]): [number, number][] {
+    private searchMultiple(haystack: string, needles: string[], onlyFullMatch: boolean): [number, number][] {
         const results = [];
         for (const needleGroup of needles) {
+            if (onlyFullMatch) {
+                if (needleGroup == haystack) {
+                    return [[0, haystack.length]];
+                }
+                continue;
+            }
             results.push(...needleGroup.split(' ')
                 .filter(needle => needle)
                 .map(needle => this.searchSingle(haystack, needle))

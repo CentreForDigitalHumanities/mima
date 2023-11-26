@@ -31,7 +31,8 @@ export class HighlightPipe implements PipeTransform {
     private sanitizedLineBreaks(text: string, breakPlaceholder: string = '<br />'): string {
         const substrings = text.split(/[\r\n]{1,2}/g);
         return substrings.map(substring => {
-            return this.sanitizer.sanitize(SecurityContext.HTML, substring);
+            // preserve whitespace around parts
+            return this.sanitizer.sanitize(SecurityContext.HTML, substring).replace(/(^ | $)/g, '&nbsp;');
         }).join(breakPlaceholder);
     }
 

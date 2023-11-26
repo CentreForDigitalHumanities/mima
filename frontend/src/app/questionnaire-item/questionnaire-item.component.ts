@@ -1,63 +1,80 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
-import { Question, MatchedQuestion } from '../models/question';
-import { QuestionnaireService } from '../services/questionnaire.service'
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { QuestionnaireService } from '../services/questionnaire.service'
+import { Question, MatchedQuestion } from '../models/question';
+import { MatchedAnswer } from '../models/answer';
+import { FilterField } from '../models/filter';
+
+export interface FilterEvent {
+    field: FilterField;
+    content: string;
+}
 
 @Component({
-  selector: 'mima-questionnaire-item',
-  templateUrl: './questionnaire-item.component.html',
-  styleUrls: ['./questionnaire-item.component.scss'],
+    selector: 'mima-questionnaire-item',
+    templateUrl: './questionnaire-item.component.html',
+    styleUrls: ['./questionnaire-item.component.scss'],
 })
 export class QuestionnaireItemComponent {
     faCircleNotch = faCircleNotch;
 
     @Input() id: string;
-    @Input() questions: Map<string,Question>;
-    @Input() selectedFilters: Map<string, string[]>
-    @Input() singleFilters: Map<string, string>;
-    @Output() singleFilterSelect = new EventEmitter<[string, string]>();
-    @Output() excludeFilter = new EventEmitter<[string, string]>();
+    @Input() questions: Map<string, Question>;
+    @Output() singleFilterSelect = new EventEmitter<FilterEvent>();
+    @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
+    dialectsCount = 0;
     matchedQuestion: MatchedQuestion;
+    matchedAnswerCount = 0;
+    matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
+    matchedDialectNames: string[] = [];
+    matchedDialectsCount = 0;
     questionExpanded: boolean = false;
 
     @Input()
-    set question(value: Question | MatchedQuestion) {
-        if (value instanceof MatchedQuestion) {
-            this.matchedQuestion = value;
-        } else {
-            this.matchedQuestion = new MatchedQuestion(value);
-        }
+    set question(value: MatchedQuestion) {
+        this.matchedQuestion = value;
+        this.updateCounts();
     }
 
-    constructor(private questionnaireService: QuestionnaireService) {  }
+    constructor(private questionnaireService: QuestionnaireService) {
+    }
 
-    /**
-     * counts the answers to a question for a specific dialect, given the participant filters
-     * @param dialect string of the dialect that needs to be checked
-     * @returns boolean
-     */
-    countAnswersShown(dialect) {
-        let count = 0;
-        const answers = this.questions.get(this.id)?.answerMap.get(dialect);
-        if (answers) {
-            for (let answer of answers) {
-                if (this.selectedFilters.get('participant')?.includes(answer.participantId)) {
-                    count += 1;
+    private updateCounts() {
+        if (!this.matchedQuestion.answers) {
+            return;
+        }
+
+        const dialects = new Set<string>();
+        this.matchedDialects = {};
+
+        this.matchedAnswerCount = 0;
+        this.matchedDialectsCount = 0;
+
+        for (let answer of this.matchedQuestion.answers) {
+            dialects.add(answer.dialect.text);
+
+            if (answer.match) {
+                this.matchedAnswerCount++;
+                if (answer.dialect.text in this.matchedDialects) {
+                    this.matchedDialects[answer.dialect.text].push(answer);
+                } else {
+                    this.matchedDialects[answer.dialect.text] = [answer];
+                    this.matchedDialectsCount++;
                 }
             }
         }
-        return count
+
+        this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
+        this.dialectsCount = dialects.size;
     }
 
     /**
      * emits a filter to be the only filter to the parent component
      * this filter always contains a single filter, i.e. one dialect, one question, or one participant
-     * @param filterType type of filter ('dialect', 'question', or 'participant')
-     * @param filter selected filter
      */
-    onFilterSelected(event, filterType: string, filter: string) {
-        this.singleFilterSelect.emit([filterType, filter]);
+    onFilterSelected(event: MouseEvent, field: FilterField, content: string) {
+        this.singleFilterSelect.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 
@@ -65,8 +82,8 @@ export class QuestionnaireItemComponent {
      * emits a filter to be excluded to the parent component
      * params same as for onFilterSelected
      */
-    onExcludeFilter(event, filterType: string, filter: string) {
-        this.excludeFilter.emit([filterType, filter]);
+    onExcludeFilter(event: MouseEvent, field: FilterField, content: string) {
+        this.excludeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 

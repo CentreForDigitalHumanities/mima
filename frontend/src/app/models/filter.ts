@@ -4,8 +4,11 @@ import { Question } from './question';
 
 export interface Filter {
     index: number;
-    field: '*' | keyof Adverbial | keyof Question | keyof Answer;
+    field: FilterField;
     content: string[];
+    onlyFullMatch: boolean;
 }
+
+export type FilterField = '*' | keyof Adverbial | keyof Question | keyof Answer;
 
 export type FilterOperator = 'and' | 'or';

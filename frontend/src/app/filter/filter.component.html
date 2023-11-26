@@ -9,12 +9,15 @@
             <fa-icon [icon]="selectedType.icon"></fa-icon>
         </span>
     </div>
-    <div class="control is-flex-grow-1" *ngIf="selectedType.dropdown; else noDropdown">
-        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" i18n-defaultLabel optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
+    <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
+        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
+            display="chip" [panelStyle]="{'width':'min(800px,50vw)'}" [defaultLabel]="selectedType.dropdownLabel"
+            i18n-defaultLabel (onChange)="emit()"></p-multiSelect>
     </div>
     <ng-template #noDropdown>
-        <p class="control" [ngClass]="{'has-icons-right': filter.content}">
-            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent" (keyup)="emit()">
+        <p class="control is-expanded" [ngClass]="{'has-icons-right': filter.content}">
+            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent"
+                (keyup)="keyup$.next(1)">
             <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
                 <fa-icon [icon]="faTimesCircle"></fa-icon>
             </span>

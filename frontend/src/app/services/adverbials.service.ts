@@ -22,10 +22,10 @@ export class AdverbialsService {
         return Promise.resolve(this.database);
     }
 
-    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedAdverbial | MatchedQuestion>> {
+    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedAdverbial>> {
         const matched = this.database
-            .map(object_to_filter => this.filterService.applyFilters(object_to_filter, filters, operator))
-            .filter(object_to_filter => !!object_to_filter);
+            .map(adverbial => this.filterService.applyFilters(adverbial, filters, operator))
+            .filter(adverbial => !!adverbial);
 
         return Promise.resolve(matched);
     }

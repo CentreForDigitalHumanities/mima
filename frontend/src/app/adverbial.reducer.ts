@@ -21,7 +21,7 @@ export const adverbialReducer = createReducer(
     })),
     on(addFilter, (state) => ({
         ...state,
-        filters: state.filters.concat([{ index: state.filters.length, field: '*', content: [] }])
+        filters: state.filters.concat([{ index: state.filters.length, field: '*', content: [], onlyFullMatch: false }])
     })),
     on(setFilters, (state, action) => ({
         ...state,

@@ -5,12 +5,11 @@ import { MatchedQuestion, Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant';
 import { Filter, FilterOperator } from '../models/filter';
-import { MatchedAdverbial } from '../models/adverbial';
 import { FilterService } from './filter.service';
 
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class QuestionnaireService {
 
@@ -80,55 +79,54 @@ export class QuestionnaireService {
         return questions;
     }
 
-    /**
-     * @param questionnaire Array of Question objects
-     * @returns a Map with dialects as its keys and an Array of Answer objects as its values
-     */
-    convertToAnswersByDialect(questionnaire: ReadonlyArray<Question>) {
-        const answerMap =  new Map<string, Answer[]>();
-        for (const question of questionnaire) {
-            for (const entry of question['answers']) {
-                if (answerMap.has(entry['dialect'])) {
-                    answerMap.get(entry['dialect']).push(entry);
-                } else {
-                    answerMap.set(entry['dialect'], [entry]);
-                }
+    *getAnswers(questions: Iterable<Question>): Iterable<Answer> {
+        for (const question of questions) {
+            if (!question.answers) {
+                continue;
             }
-        };
-        return answerMap;
+            for (const answer of question.answers) {
+                yield answer;
+            }
+        }
     }
+
+    getDialects(answers: Iterable<Answer>): Set<string> {
+        const dialects = new Set<string>();
+        for (const answer of answers) {
+            dialects.add(answer.dialect);
+        }
+        return dialects;
+    }
+
 
     /**
      * Derives the participants from a Map containing answers
      * @param answers Map of a list of answers per dialect
      * @returns An array of Participant objects
      */
-    getParticipants(answers: Map<string,Answer[]>) {
-        const participants: Participant[] = [];
-        const participantIds: string[] = [];
-        for (const dialect of answers.keys()) {
-            for (const answer of answers.get(dialect)) {
-                const participant: Participant = {
-                    participantId: answer['participantId'],
-                    dialect: answer['dialect']
-                };
-                if (!participantIds.includes(participant.participantId)) {
-                    participants.push(participant);
-                    participantIds.push(participant.participantId);
-                }
-            }
+    getParticipants(answers: Iterable<Answer>): Participant[] {
+        const participants: { [id: string]: Participant } = {};
+
+        for (const answer of answers) {
+            const participant: Participant = {
+                participantId: answer.participantId,
+                dialect: answer.dialect
+            };
+
+            participants[participant.participantId] = participant;
         }
-        return participants
+
+        return Object.values(participants);
     }
 
     private database: Question[] = [];
     /**
      * Taken verbatim from the adverbialsService
      */
-    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedAdverbial | MatchedQuestion>> {
+    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedQuestion>> {
         const matched = this.database
-            .map(object_to_filter => this.filterService.applyFilters(object_to_filter, filters, operator))
-            .filter(object_to_filter => !!object_to_filter);
+            .map(question => this.filterService.applyFilters(question, filters, operator))
+            .filter(question => !!question);
 
         return Promise.resolve(matched);
     }

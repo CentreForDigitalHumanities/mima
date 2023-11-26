@@ -7,7 +7,6 @@ export interface Question {
     question: string;
     prompt?: string;  // as of yet not implemented because it is identical to question for now
     answers?: Answer[];
-    answerMap?: Map<string, Answer[]>;
 }
 
 /**
@@ -33,21 +32,14 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     type: MatchedParts;
     question: MatchedParts;
     prompt: MatchedParts;
-    answers?: MatchedAnswer[];
-    answerMap?: Map<string, MatchedAnswer[]>;
+    answers: MatchedAnswer[];
 
     constructor(question?: Question) {
         if (question) {
             this.id = this.unmatchedValue(question.id);
             this.type = this.unmatchedValue(question.type);
             this.prompt = this.unmatchedValue(question.prompt);
-            // take the 'answer' strings from the Answer objects
-            // this.answers = question.answers?.map(answer => this.unmatchedValue(answer.answer));
             this.answers = question.answers.map(answer => new MatchedAnswer(answer));
-            question.answerMap.forEach((answers, dialect) => {
-                const unmatchedAnswers = answers.map(answer => new MatchedAnswer(answer));
-                this.answerMap.set(dialect, unmatchedAnswers);
-            })
         }
     }
 
