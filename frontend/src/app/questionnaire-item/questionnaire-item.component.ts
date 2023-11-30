@@ -5,6 +5,8 @@ import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 
+const autoExpandSize = 3;
+
 export interface FilterEvent {
     field: FilterField;
     content: string;
@@ -37,11 +39,15 @@ export class QuestionnaireItemComponent {
         this.updateCounts();
     }
 
+    @Input()
+    onlyQuestion = false;
+
     constructor(private questionnaireService: QuestionnaireService) {
     }
 
     private updateCounts() {
         if (!this.matchedQuestion.answers) {
+            this.questionExpanded = false;
             return;
         }
 
@@ -67,6 +73,7 @@ export class QuestionnaireItemComponent {
 
         this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
         this.dialectsCount = dialects.size;
+        this.questionExpanded = this.onlyQuestion || this.matchedDialectsCount <= autoExpandSize;
     }
 
     /**
