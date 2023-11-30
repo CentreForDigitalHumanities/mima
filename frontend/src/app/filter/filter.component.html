@@ -11,8 +11,15 @@
     </div>
     <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
         <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
-            display="chip" [panelStyle]="{'width':'min(800px,50vw)'}" [defaultLabel]="selectedType.dropdownLabel"
-            i18n-defaultLabel (onChange)="emit()"></p-multiSelect>
+            [panelStyle]="{'width':'min(800px,50vw)'}" [defaultLabel]="selectedType.dropdownLabel" i18n-defaultLabel
+            (onChange)="emit()">
+            <ng-template let-value pTemplate="selectedItems">
+                <span *ngIf="!value || value.length === 0; else tags">{{selectedType.dropdownLabel}}</span>
+                <ng-template #tags>
+                    <mima-filter-tags [labels]="dropdownLabels" [selected]="value"></mima-filter-tags>
+                </ng-template>
+            </ng-template>
+        </p-multiSelect>
     </div>
     <ng-template #noDropdown>
         <p class="control is-expanded" [ngClass]="{'has-icons-right': filter.content}">

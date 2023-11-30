@@ -110,7 +110,8 @@ describe('FilterService', () => {
             input: Adverbial,
             filters: {
                 field: Filter['field'],
-                content: string[]
+                content: string[],
+                onlyFullMatch: boolean
             }[],
             operator: FilterOperator
         }[] = [{
@@ -147,7 +148,8 @@ describe('FilterService', () => {
             },
             filters: [{
                 field: '*',
-                content: ['test']
+                content: ['test'],
+                onlyFullMatch: false
             }],
             operator: 'and'
         }];

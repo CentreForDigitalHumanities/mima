@@ -144,6 +144,8 @@ export class FilterComponent implements OnInit, OnDestroy {
                 }
             }
 
+            this.dropdownLabels = values;
+
             return Object.entries(values).sort(([x, a], [y, b]) => {
                 if (a < b) {
                     return -1;
@@ -157,6 +159,8 @@ export class FilterComponent implements OnInit, OnDestroy {
             }));
         })
     );
+
+    dropdownLabels: { [value: string]: string };
 
     constructor(private store: Store<State>, private questionnaireService: QuestionnaireService) {
         this.selectedType = this.filterTypes[0];
@@ -185,11 +189,12 @@ export class FilterComponent implements OnInit, OnDestroy {
                     }
 
                     let content: string[];
-                    this.textFieldContent = filter.content[0] ?? '';
                     if (!this.selectedType.dropdown) {
                         content = [this.textFieldContent];
+                        this.textFieldContent = filter.content[0] ?? '';
                     } else {
                         content = filter.content;
+                        this.textFieldContent = '';
                     }
 
                     // make sure the original object isn't modified (side-effect!)
@@ -216,6 +221,7 @@ export class FilterComponent implements OnInit, OnDestroy {
             // remove the current content to prevent ghost values
             // influencing the filtering
             this.filter.content = [];
+            this.textFieldContent = '';
         }
 
         this.filter.field = this.selectedType.field;

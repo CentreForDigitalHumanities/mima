@@ -37,6 +37,7 @@ import { HighlightPipe } from './highlight.pipe';
 import { HighlightPlainPipe } from './highlight-plain.pipe';
 import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
 import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
+import { FilterTagsComponent } from './filter-tags/filter-tags.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-i
         HighlightPipe,
         HighlightPlainPipe,
         QuestionnaireListPageComponent,
-        QuestionnaireItemComponent
+        QuestionnaireItemComponent,
+        FilterTagsComponent
     ],
     imports: [
         AppRoutingModule,

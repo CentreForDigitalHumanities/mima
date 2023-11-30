@@ -24,6 +24,10 @@ export function isDefaultFilter(filter: Filter) {
         !filter.content[0]?.trim()
 }
 
+export function isEmptyFilter(filter: Filter) {
+    return filter && !filter.content.find(val => !!val.trim());
+}
+
 @Injectable({
     providedIn: 'root'
 })

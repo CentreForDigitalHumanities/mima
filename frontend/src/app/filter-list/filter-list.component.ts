@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { addFilter, clearFilters, setFiltersOperator, updateFilter } from '../questionnaire.actions';
 import { State } from '../questionnaire.state';
 import { Filter, FilterOperator } from '../models/filter';
-import { isDefaultFilter } from '../services/filter.service';
+import { isEmptyFilter } from '../services/filter.service';
 
 @Component({
     selector: 'mima-filter-list',
@@ -31,7 +31,7 @@ export class FilterListComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.subscriptions = [
             this.store.select('questionnaire', 'filters').subscribe(filters => {
-                this.clearable = (filters.length > 1 || !isDefaultFilter(filters[0]));
+                this.clearable = !!filters.find(filter => !isEmptyFilter(filter));
 
                 if (this.filterIndexes.length !== filters.length) {
                     this.filterIndexes = [];
