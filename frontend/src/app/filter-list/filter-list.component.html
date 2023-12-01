@@ -3,7 +3,7 @@
         <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
     </div>
 </ng-container>
-<div class="level">
+<div class="level" *ngIf="clearable">
     <div class="level-left">
         <div class="buttons">
             <button class="button is-primary" (click)="add()">
@@ -12,7 +12,7 @@
                 </span>
                 <span i18n>Add Filter</span>
             </button>
-            <button class="button" (click)="clear()" *ngIf="clearable">
+            <button class="button" (click)="clear()">
                 <span class="icon is-small">
                     <fa-icon [icon]="faTimes"></fa-icon>
                 </span>

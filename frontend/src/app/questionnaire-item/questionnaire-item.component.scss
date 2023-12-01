@@ -1,77 +1,100 @@
-.questionheader {
-    display: flex;
-    align-items: center;
+@import '../../variables.scss';
+
+.tag:not(body).is-delete:hover,
+.tag:not(body).is-delete:focus {
+    background-color: $danger;
+    color: $danger-invert;
 }
 
-::ng-deep .p-panel .p-panel-header {
-    margin-top: .25rem;
-    margin-bottom: .25rem;
-    border-top-right-radius: 16px;
-    border-top-left-radius: 4px;
-    padding: 0.2rem .5rem !important;
+:host:not(:first-child) {
+    .question-header {
+        margin-top: 2rem;
+    }
 }
 
-.filterclick:hover {
-    color: hsl(171, 100%, 41%) !important;
+.question-header {
+    cursor: pointer;
+    border-radius: 5px;
+
+    .exclude-filter {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .question-filters {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: rgba(202, 201, 201, 0.3);
+
+        .exclude-filter {
+            opacity: 100%;
+        }
+    }
+
+    .expand-button {
+        .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &.expanded .icon {
+            transform: rotate(180deg);
+        }
+    }
 }
 
-.active {
-    color: hsl(171, 43%, 63%) !important;
+:host:hover {
+    .question-filters {
+        opacity: 1;
+    }
 }
 
-.panelheader {
-    display: flex;
-    align-items: center;
+.dialect-header {
+    position: sticky;
+    top: 0;
 }
 
-.exclude-filter {
-    margin-left: .25rem;
-    margin-right: .25rem;
-    display: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
+.dialect-row {
+    border-bottom: 1px solid $grey-light;
+
+    &.expanded {
+        animation: append-animate .3s ease-in-out;
+    }
+
+    &:not(:hover) {
+        .dialect-tag .tag {
+            background: none;
+
+            &.is-delete {
+                opacity: 0;
+            }
+        }
+    }
+
 }
 
-.questionheader:hover .exclude-filter,
-.panelheader:hover .exclude-filter,
-.level-right:hover .exclude-filter {
-    display: block;
-    opacity: 100%;
-}
+.filterable:hover,
+a.has-text-dark.filterable:hover {
+    color: $success !important;
+    cursor: pointer;
 
-.questionheader {
-    background-color: rgba(202, 201, 201, 0.1);
-    border-radius: 4px;
-    padding: 6px;
-    transition: 300ms;
-}
-.questionheader:hover {
-    background-color: rgba(202, 201, 201, 0.3);
+    ::ng-deep .highlight {
+        background: $success;
+        color: $success-invert !important;
+
+    }
 }
 
 @keyframes append-animate {
-	from {
-		transform: scaleY(0);
-		opacity: 0;
-	}
-	to {
-		transform: scaleY(1);
-		opacity: 1;
-	}
-}
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
 
-.expanded {
-	transform-origin: 50% 0;
-	animation: append-animate .3s linear;
-    margin-left: .3rem;
-}
-
-.collapsed {
-    transform-origin: 50% 0;
-    animation: append-animate .3s linear;
-    margin-left: .5rem;
-}
-
-.inline-block {
-    display: inline-block;
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

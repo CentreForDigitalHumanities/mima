@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 
-const autoExpandSize = 3;
+const autoExpandDialectCount = 3;
+const autoExpandAnswerCount = 10;
 
 export interface FilterEvent {
     field: FilterField;
@@ -18,7 +19,11 @@ export interface FilterEvent {
     styleUrls: ['./questionnaire-item.component.scss'],
 })
 export class QuestionnaireItemComponent {
+    faCheck = faCheck;
+    faChevronDown = faChevronDown;
     faCircleNotch = faCircleNotch;
+    faTimes = faTimes;
+    faUser = faUser;
 
     @Input() id: string;
     @Input() questions: Map<string, Question>;
@@ -39,6 +44,9 @@ export class QuestionnaireItemComponent {
         this.updateCounts();
     }
 
+    /**
+     * Is this the only question in a result list?
+     */
     @Input()
     onlyQuestion = false;
 
@@ -73,7 +81,9 @@ export class QuestionnaireItemComponent {
 
         this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
         this.dialectsCount = dialects.size;
-        this.questionExpanded = this.onlyQuestion || this.matchedDialectsCount <= autoExpandSize;
+        this.questionExpanded = this.onlyQuestion ||
+            this.matchedDialectsCount <= autoExpandDialectCount ||
+            this.matchedAnswerCount <= autoExpandAnswerCount;
     }
 
     /**

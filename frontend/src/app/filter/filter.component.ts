@@ -21,13 +21,10 @@ import { QuestionnaireService } from '../services/questionnaire.service';
 type FilterType = {
     name: string,
     field: Filter['field'],
-    icon: IconDefinition
-} & ({
-    dropdown: false
-} | {
-    dropdown: true,
-    dropdownLabel: string
-});
+    icon: IconDefinition,
+    dropdown: boolean,
+    placeholder: string
+}
 
 
 interface DropdownOption {
@@ -77,35 +74,38 @@ export class FilterComponent implements OnInit, OnDestroy {
         name: '',
         field: '*',
         icon: faAsterisk,
-        dropdown: false
+        dropdown: false,
+        placeholder: $localize`Search in all Fields`
     }, {
         name: $localize`Question`,
         field: 'id',
         icon: faComment,
         dropdown: true,
-        dropdownLabel: $localize`Select Question(s)`
+        placeholder: $localize`Select Question(s)`
     }, {
         name: $localize`Question Text`,
         field: 'prompt',
         icon: faCommentDots,
-        dropdown: false
+        dropdown: false,
+        placeholder: ''
     }, {
         name: $localize`Translation`,
         field: 'answer',
         icon: faGlobeEurope,
-        dropdown: false
+        dropdown: false,
+        placeholder: ''
     }, {
         name: $localize`Dialect`,
         field: 'dialect',
         icon: faLanguage,
         dropdown: true,
-        dropdownLabel: $localize`Select Dialect(s)`
+        placeholder: $localize`Select Dialect(s)`
     }, {
         name: $localize`Participant`,
         field: 'participantId',
         icon: faUser,
         dropdown: true,
-        dropdownLabel: $localize`Select Participant(s)`
+        placeholder: $localize`Select Participant(s)`
     },];
 
     textFieldContent: string;

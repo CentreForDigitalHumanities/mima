@@ -1,59 +1,96 @@
-<ng-container>
-    <div class="content has-text-centered has-text-light" *ngIf="!matchedQuestion">
-        <span class="icon is-large">
-            <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
-        </span>
+<div class="content has-text-centered has-text-light" *ngIf="!matchedQuestion">
+    <span class="icon is-large">
+        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+    </span>
+</div>
+<ng-container *ngIf="matchedQuestion">
+    <div class="question-header" (click)="toggleQuestion()">
+        <h2 class="subtitle is-4 mb-4 has-text-weight-semibold">
+            <div class="level">
+                <div class="level-left">
+                    <span class="expand-button icon-text" [ngClass]="{'expanded': questionExpanded}">
+                        <span class="icon">
+                            <fa-icon [icon]="faChevronDown"></fa-icon>
+                        </span>
+                        <span [innerHTML]="matchedQuestion.prompt | highlight"></span>
+                    </span>
+                </div>
+                <div class="level-right question-filters">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <button class="button is-success is-light" (click)="onFilterSelected($event, 'id', id)">
+                                <span class="icon">
+                                    <fa-icon [icon]="faCheck"></fa-icon>
+                                </span>
+                                <span>Select</span>
+                            </button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-danger is-light" (click)="onExcludeFilter($event, 'id', id)">
+                                <span class="icon">
+                                    <fa-icon [icon]="faTimes"></fa-icon>
+                                </span>
+                                <span>Exclude</span>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </h2>
     </div>
-    <div class="box" *ngIf="matchedQuestion">
-        <div class="questionheader" (click)="toggleQuestion()">
-            <h2 class="is-size-4 has-text-weight-semibold"
-                [innerHTML]="matchedQuestion.prompt | highlight"></h2>
-            <div class="exclude-filter">
-                <a class="exclude-filter-button has-text-weight-bold has-text-grey"
-                    (click)="onExcludeFilter($event, 'id', id)">-</a>
-            </div>
-        </div>
-        <div class="expanded-question" [class.expanded]="questionExpanded"
-            *ngIf="questionExpanded else questionCollapsed">
-            <div class="question-content">
-                <ng-container *ngFor="let dialect of matchedDialectNames">
-                    <p-panel [toggleable]="true" toggler="header">
-                        <ng-template pTemplate="header">
-                            <div class="panelheader">
-                                <a class="has-text-weight-semibold is-size-6 is-italic my-2 has-text-dark filterclick"
-                                    (click)="onFilterSelected($event, 'dialect', dialect)">
-                                    <div class="inline-block"
-                                        [innerHTML]="matchedDialects[dialect][0].dialect | highlight"></div>
-                                    {{ ' (' + matchedDialects[dialect].length + ')' }}
-                                </a>
-                                <div class="exclude-filter">
-                                    <a class="exclude-filter-button has-text-weight-bold has-text-grey"
-                                        (click)="onExcludeFilter($event, 'dialect', dialect)">-</a>
+    <div class="box">
+        <div class="tile is-ancestor is-vertical">
+            <ng-container *ngIf="questionExpanded">
+                <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
+                    <div class="tile is-child" [id]="dialect">
+                        <div class="dialect-header">
+                            <h3 class="subtitle mb-1">
+                                <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                                    <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
+                                        (click)="onFilterSelected($event, 'dialect', dialect)"></div>
+                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)"></a>
+                                </div>
+                            </h3>
+                            <div class="tag">
+                                {{matchedDialects[dialect].length}} answers
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tile is-child is-parent is-vertical is-9 p-0">
+                        <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
+                            <div class="is-flex">
+                                <span [innerHTML]="answer.answer | highlight"></span>
+                                &nbsp;
+                                <div class="tags has-addons is-flex-wrap-nowrap">
+                                    <div class="tag filterable"
+                                        (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <fa-icon [icon]="faUser"></fa-icon>
+                                            </span>
+                                            <span [innerHTML]="answer.participantId | highlight"></span>
+                                        </span>
+                                    </div>
+                                    <a class="tag is-delete"
+                                        (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)"></a>
                                 </div>
                             </div>
-                        </ng-template>
-                        <ng-container *ngFor="let answer of matchedDialects[dialect]">
-                            <div class="level">
-                                <p class="level-left" [innerHTML]="answer.answer | highlight"></p>
-                                <div class="level-right">
-                                    <a class="exclude-filter has-text-grey has-text-weight-semibold"
-                                        (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)">-</a>
-                                    <a class="filterclick has-text-grey"
-                                        (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">{{
-                                        answer.participantId.text }}</a>
-                                </div>
-                            </div>
-                        </ng-container>
-                    </p-panel>
-                </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <span>
+                        {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
+                    </span>
+                </div>
+                <div class="tile is-child is-9">
+                    <span>
+                        {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
+                    </span>
+                </div>
             </div>
         </div>
-        <ng-template #questionCollapsed>
-            <div class="collapsed">
-                <p>{{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched</p>
-                <p>{{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched</p>
-            </div>
-        </ng-template>
-
     </div>
 </ng-container>

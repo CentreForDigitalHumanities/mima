@@ -94,6 +94,16 @@ export const questionnaireReducer = createReducer(
             filters.push(newFilter);
         }
 
+        if (filters.length === 0) {
+            // need to have at least one default filter
+            filters.push({
+                content: [],
+                field: '*',
+                index: 0,
+                onlyFullMatch: false
+            });
+        }
+
         return {
             ...state,
             filters,
