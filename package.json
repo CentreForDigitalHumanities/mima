@@ -1,7 +1,7 @@
 {
     "name": "mima",
     "version": "0.0.0",
-    "description": "MiMa will humanize all your digits!",
+    "description": "MiMA will humanize all your digits!",
     "author": "UU Digital Humanities Lab",
     "license": "BSD-3-Clause",
     "repository": "github:UUDigitalHumanitieslab/mima",

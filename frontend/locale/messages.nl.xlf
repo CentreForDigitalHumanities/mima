@@ -31,7 +31,7 @@
         <target state="translated">Filter toevoegen</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3746183536188848835" datatype="html">
@@ -39,7 +39,7 @@
         <target state="translated">Combineren:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="188313477943387511" datatype="html">
@@ -47,7 +47,7 @@
         <target state="translated">En</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5504129468136884250" datatype="html">
@@ -55,7 +55,7 @@
         <target state="translated">Of</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4607479538666247502" datatype="html">
@@ -63,15 +63,7 @@
         <target state="translated">Verwijder filter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5889759564820041548" datatype="html">
-        <source>Adverbial</source>
-        <target state="translated">Uitdrukking</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5743446572871974801" datatype="html">
@@ -79,7 +71,7 @@
         <target state="translated">Dialect</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6870893562392932905" datatype="html">
@@ -87,12 +79,12 @@
         <target state="translated">Vertaling</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="301454029741140482" datatype="html">
-        <source>MiMa</source>
-        <target state="translated">MiMa</target>
+      <trans-unit id="2248848052060803390" datatype="html">
+        <source>MiMA</source>
+        <target state="translated">MiMA</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
@@ -138,9 +130,9 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3313626400514649964" datatype="html">
-        <source> MiMa </source>
-        <target state="translated"> MiMa </target>
+      <trans-unit id="2538114383139722003" datatype="html">
+        <source> MiMA </source>
+        <target state="translated"> MiMA </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">4,6</context>
@@ -152,22 +144,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">19,21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3224517396841337973" datatype="html">
-        <source> Adverbials </source>
-        <target state="translated"> Uitdrukkingen </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">22,24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4842432534148275616" datatype="html">
-        <source> Upload </source>
-        <target state="translated"> Toevoegen </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5857934386762652898" datatype="html">
@@ -187,7 +163,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7430680760319628492" datatype="html">
@@ -199,7 +175,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244756340996494478" datatype="html">
@@ -211,23 +187,23 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7132963326679881921" datatype="html">
-        <source>Please <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;state='upload'&quot;>"/>upload<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> a file first.</source>
-        <target state="translated">Het is nodig om een bestand te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;state='upload'&quot;>"/>uploaden<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>.</target>
+        <source>Please <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;state=&apos;upload&apos;&quot;&gt;"/>upload<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> a file first.</source>
+        <target state="translated">Het is nodig om een bestand te <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;state=&apos;upload&apos;&quot;&gt;"/>uploaden<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1676366868669887147" datatype="html">
@@ -235,7 +211,7 @@
         <target state="translated">Een voorbeeld van de geüploade informatie wordt getoond. Wanneer dit is zoals verwacht is het mogelijk om deze data op te slaan. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">23,25</context>
+          <context context-type="linenumber">35,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6459376977606598638" datatype="html">
@@ -243,7 +219,7 @@
         <target state="translated"> Voeg <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> nieuwe uitdrukkingen toe aan de database? </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">40,42</context>
+          <context context-type="linenumber">52,54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9178182467454450952" datatype="html">
@@ -251,7 +227,7 @@
         <target state="translated">Bevestig</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6926404035489068834" datatype="html">
@@ -259,7 +235,7 @@
         <target state="translated"><x id="INTERPOLATION" equiv-text="{{savedCount}}"/> uitdrukkingen succesvol toegevoegd aan de database!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9085409670702590328" datatype="html">
@@ -267,7 +243,7 @@
         <target state="translated">Opslaan mislukt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3475689872614747615" datatype="html">
@@ -306,21 +282,21 @@
         <source>Select Dialect(s)</source>
         <target state="translated">Kies dialect(en)</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5846168834347158335" datatype="html">
-        <source>About the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/> Project and Database</source>
-        <target state="translated">Het <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>-project en de database</target>
+        <source>About the <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Project and Database</source>
+        <target state="translated">Het <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>MiMA<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>-project en de database</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3423148240695254048" datatype="html">
-        <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;>"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>). The research project is funded by the Dutch Research Council (NWO).</source>
-        <target state="translated">Welkom op de website van de MiMA-database, een product van het onderzoeksproject Mind your Manner Adverbials!, uitgevoerd door taalkundigen van de Universiteit Utrecht (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;>"/>ILS, voorheen UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>). Het onderzoeksproject is gesubsidieerd door de Nederlandse Organisatie voor Wetenschappelijk Onderzoek.</target>
+        <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). The research project is funded by the Dutch Research Council (NWO).</source>
+        <target state="translated">Welkom op de website van de MiMA-database, een product van het onderzoeksproject Mind your Manner Adverbials!, uitgevoerd door taalkundigen van de Universiteit Utrecht (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, voorheen UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). Het onderzoeksproject is gesubsidieerd door de Nederlandse Organisatie voor Wetenschappelijk Onderzoek.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">5,10</context>
@@ -351,24 +327,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="495773505965911553" datatype="html">
-        <source>Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;>"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (PI) </source>
-        <target state="translated">Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;>"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (hoofdonderzoeker) </target>
+        <source>Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;&gt;"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PI) </source>
+        <target state="translated">Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;&gt;"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (hoofdonderzoeker) </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">40,41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4428091336900553605" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;>"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (PhD student) </source>
-        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;>"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (AiO) </target>
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;&gt;"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student) </source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;&gt;"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (AiO) </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4244871897783889194" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;>"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (PhD student)</source>
-        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;>"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> (AiO)</target>
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;&gt;"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student)</source>
+        <target state="translated"><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;&gt;"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (AiO)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">44,45</context>
@@ -423,8 +399,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2305971167120630158" datatype="html">
-        <source> The database contains XXXX tokens of manner adverbials, split across XXXX types. These data primarily stem from our questionnaire research among native speakers. By studying (dialect) reference grammars, and the broader scientific literature, and by consulting native speakers, we first made a selection of languages/language varieties that are interesting for our research purposes (because of differences in word order phenomena, use of pronouns, etc.). Next, we made questionnaires to systematically chart the (im)possible patterns in the morphosyntax of the manner adverbials in these languages. The Dutch dialect data were collected in the Netherlands and Flanders (Belgium), in collaboration with the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;>"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. The results of the questionnaires were glossed (according to the <x id="START_LINK_1" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;>"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>) and provided with (English) translations, and embedded in the database. </source>
-        <target state="translated"> De database bevat XXXX tokens van bijwoordelijke bepalingen van wijze, verdeeld over XXXX typen. Deze data zijn voornamelijk afkomstig van enquêteonderzoek onder moedertaalsprekers. Door (dialect)grammatica’s en de bredere wetenschappelijke literatuur te bestuderen en moedertaalsprekers te ondervragen, hebben we een selectie gemaakt van talen/taalvariëteiten die voor onze onderzoeksdoeleinden interessant waren (vanwege hun verschillende eigenschappen als woordvolgordeverschijnselen, gebruik van voornaamwoorden, etc.). Vervolgens hebben we vragenlijsten opgezet om systematisch de (on)mogelijke patronen in de morfosyntaxis van de bijwoordelijke bepalingen van wijze in deze talen in kaart te brengen. De Nederlandse dialectdata zijn verzameld in Nederland en Vlaanderen in samenwerking met het <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;>"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>. De resultaten van de vragenlijsten zijn voorzien van een gloss (volgens de <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;>"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>) en Engelse vertaling, en ondergebracht in de database. </target>
+        <source> The database contains XXXX tokens of manner adverbials, split across XXXX types. These data primarily stem from our questionnaire research among native speakers. By studying (dialect) reference grammars, and the broader scientific literature, and by consulting native speakers, we first made a selection of languages/language varieties that are interesting for our research purposes (because of differences in word order phenomena, use of pronouns, etc.). Next, we made questionnaires to systematically chart the (im)possible patterns in the morphosyntax of the manner adverbials in these languages. The Dutch dialect data were collected in the Netherlands and Flanders (Belgium), in collaboration with the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;&gt;"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. The results of the questionnaires were glossed (according to the <x id="START_LINK_1" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;&gt;"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>) and provided with (English) translations, and embedded in the database. </source>
+        <target state="translated"> De database bevat XXXX tokens van bijwoordelijke bepalingen van wijze, verdeeld over XXXX typen. Deze data zijn voornamelijk afkomstig van enquêteonderzoek onder moedertaalsprekers. Door (dialect)grammatica’s en de bredere wetenschappelijke literatuur te bestuderen en moedertaalsprekers te ondervragen, hebben we een selectie gemaakt van talen/taalvariëteiten die voor onze onderzoeksdoeleinden interessant waren (vanwege hun verschillende eigenschappen als woordvolgordeverschijnselen, gebruik van voornaamwoorden, etc.). Vervolgens hebben we vragenlijsten opgezet om systematisch de (on)mogelijke patronen in de morfosyntaxis van de bijwoordelijke bepalingen van wijze in deze talen in kaart te brengen. De Nederlandse dialectdata zijn verzameld in Nederland en Vlaanderen in samenwerking met het <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;&gt;"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. De resultaten van de vragenlijsten zijn voorzien van een gloss (volgens de <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;&gt;"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>) en Engelse vertaling, en ondergebracht in de database. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">51,64</context>
@@ -439,11 +415,143 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1010334701046010615" datatype="html">
-        <source> If you have any suggestions or feedback about the data (base), please mail us at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;>"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>, using the subject line MiMA database. </source>
-        <target state="translated"> Heeft u op- of aanmerkingen bij de data(base)? Mail dan s.v.p. naar <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;>"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> met als onderwerp MiMA database. </target>
+        <source> If you have any suggestions or feedback about the data (base), please mail us at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;&gt;"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, using the subject line MiMA database. </source>
+        <target state="translated"> Heeft u op- of aanmerkingen bij de data(base)? Mail dan s.v.p. naar <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;&gt;"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> met als onderwerp MiMA database. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">69,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4359014576353578997" datatype="html">
+        <source>Clear Filters</source>
+        <target state="translated">Wis filters</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1299159208295260312" datatype="html">
+        <source>Search in all Fields</source>
+        <target state="translated">Zoek in alle velden</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5320870651003627043" datatype="html">
+        <source>Question</source>
+        <target state="translated">Vraag</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5129980223571446304" datatype="html">
+        <source>Select Question(s)</source>
+        <target state="translated">Kies vraag(en)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="920567845139554152" datatype="html">
+        <source>Question Text</source>
+        <target state="translated">Vraagtekst</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1122787259445706401" datatype="html">
+        <source>Participant</source>
+        <target state="translated">Participant</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1434304467944125566" datatype="html">
+        <source>Select Participant(s)</source>
+        <target state="translated">Kies participant(en)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="674321618652063659" datatype="html">
+        <source> Questionnaires </source>
+        <target state="translated"> Vragenlijsten </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1434327601231025030" datatype="html">
+        <source>Questionnaires</source>
+        <target state="translated">Vragenlijsten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9041172628832548089" datatype="html">
+        <source>Eerste Nederlandse Questionnaire</source>
+        <target state="translated">Eerste Nederlandse Questionnaire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797570084942068182" datatype="html">
+        <source>Select</source>
+        <target state="translated">Selecteren</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5668077948386857930" datatype="html">
+        <source>Exclude</source>
+        <target state="translated">Uitsluiten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8856905278208146821" datatype="html">
+        <source>
+          <x id="ICU" equiv-text="{answerCount, plural, =0 {no answers} =1 {1 answer} other {{{answerCount}} answers}}" xid="2415248560049776019"/>
+        </source>
+        <target state="translated">
+          <x id="ICU" equiv-text="{answerCount, plural, =0 {no answers} =1 {1 answer} other {{{answerCount}} answers}}" xid="2415248560049776019"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">56,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="906232868136769061" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
+        <target state="translated">{VAR_PLURAL, plural, =0 {geen antwoorden} =1 {1 antwoord} other {<x id="INTERPOLATION"/> antwoorden}}</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">57,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7775219266550892224" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
+        <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialecten matchen </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">92,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5486058096582576529" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> answers matched </source>
+        <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> antwoorden matchen </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">97,99</context>
         </context-group>
       </trans-unit>
     </body>

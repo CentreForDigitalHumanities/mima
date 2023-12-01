@@ -1,8 +1,8 @@
-# MiMa functional tests
+# MiMA functional tests
 
-MiMa will humanize all your digits!
+MiMA will humanize all your digits!
 
-This is a functional test suite based on [pytest][1] and [Selenium WebDriver][2]. It is designed such that it can test any network-reachable instance of the MiMa application. While the tests are based on knowledge about the user interface of the application, no knowledge of its implementation is needed.
+This is a functional test suite based on [pytest][1] and [Selenium WebDriver][2]. It is designed such that it can test any network-reachable instance of the MiMA application. While the tests are based on knowledge about the user interface of the application, no knowledge of its implementation is needed.
 
 [1]: https://docs.pytest.org/en/latest/
 [2]: https://www.selenium.dev/documentation/webdriver/
@@ -23,7 +23,7 @@ You can find links to WebDrivers for the most common browsers [over here][3].
 
 ## How it works
 
-Every test in this suite is a short, automated simulation of the interaction between a user and MiMa, written in Python. [Selenium][2] provides the programmable web browser interface while [pytest][1] provides administrative support in the form of configuration and fixtures.
+Every test in this suite is a short, automated simulation of the interaction between a user and MiMA, written in Python. [Selenium][2] provides the programmable web browser interface while [pytest][1] provides administrative support in the form of configuration and fixtures.
 
 A typical test starts by visiting a page of the application. The "user" then interacts with the application by clicking on buttons and links, filling and submitting forms, etcetera. The result is validated by checking that the user ends up at the right page, particular content is present, and so forth. Finally, some cleanup is done in order to not influence the next test.
 

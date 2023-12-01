@@ -1,4 +1,4 @@
-# MiMa
+# MiMA
 
 [![Actions Status](https://github.com/UUDigitalHumanitieslab/mima/workflows/Unit%20tests/badge.svg)](https://github.com/UUDigitalHumanitieslab/mima/actions)
 

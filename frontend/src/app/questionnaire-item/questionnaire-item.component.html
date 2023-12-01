@@ -22,7 +22,7 @@
                                 <span class="icon">
                                     <fa-icon [icon]="faCheck"></fa-icon>
                                 </span>
-                                <span>Select</span>
+                                <span i18n>Select</span>
                             </button>
                         </p>
                         <p class="control">
@@ -30,7 +30,7 @@
                                 <span class="icon">
                                     <fa-icon [icon]="faTimes"></fa-icon>
                                 </span>
-                                <span>Exclude</span>
+                                <span i18n>Exclude</span>
                             </button>
                         </p>
                     </div>
@@ -46,14 +46,22 @@
                         <div class="dialect-header">
                             <h3 class="subtitle mb-1">
                                 <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                                    <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
+                                    <div class="tag filterable"
+                                        [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
                                         (click)="onFilterSelected($event, 'dialect', dialect)"></div>
                                     <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)"></a>
                                 </div>
                             </h3>
-                            <div class="tag">
-                                {{matchedDialects[dialect].length}} answers
-                            </div>
+                            <ng-template #answerCountTag let-answerCount="answerCount">
+                                <div class="tag" i18n>
+                                    {answerCount, plural,
+                                    =0 {no answers}
+                                    =1 {1 answer}
+                                    other {{{answerCount}} answers}}
+                                </div>
+                            </ng-template>
+                            <ng-container [ngTemplateOutlet]="answerCountTag"
+                                [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
                         </div>
                     </div>
                     <div class="tile is-child is-parent is-vertical is-9 p-0">
@@ -81,12 +89,12 @@
             </ng-container>
             <div class="tile is-parent">
                 <div class="tile is-child">
-                    <span>
+                    <span i18n>
                         {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
                     </span>
                 </div>
                 <div class="tile is-child is-9">
-                    <span>
+                    <span i18n>
                         {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
                     </span>
                 </div>
