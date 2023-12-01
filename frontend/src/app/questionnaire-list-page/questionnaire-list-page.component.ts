@@ -5,7 +5,6 @@ import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setExcludingFilter, setSingularFilter } from '../questionnaire.actions';
-import { MatchedAdverbial } from '../models/adverbial';
 import { FilterEvent as FilterEventData, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 
 const renderSteps = 10; //potentially move these to settings

@@ -11,7 +11,7 @@
                 (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
         </ng-container>
     </ng-container>
-    <div class="notification is-warning" *ngIf="matchedQuestions.size === 0" i18n>
+    <div class="notification is-warning" *ngIf="matchedQuestions && matchedQuestions.size === 0" i18n>
         No matches found!
     </div>
 </div>
