@@ -154,7 +154,7 @@ export const questionnaireReducer = createReducer(
         for (const match of action.matchedQuestions) {
             const id = match.id.text;
             matchedQuestionIds.push(id);
-            matchedQuestions[id] = match;
+            matchedQuestions.set(id, match);
         }
         return {
             ...state,

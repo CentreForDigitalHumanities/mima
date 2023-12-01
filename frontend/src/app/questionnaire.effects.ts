@@ -42,10 +42,10 @@ export class QuestionnaireEffects {
             this.store.select('questionnaire', 'operator')
         ]),
         mergeMap(async ([action, filters, operator]) => {
-            let matchedQuestions: (MatchedAdverbial| MatchedQuestion)[];
+            let matchedQuestions: MatchedQuestion[];
             if (action.type === '[Questionnaire] Set Questions' && !action.applyFilters) {
                 // match everything
-                matchedQuestions =  Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
+                matchedQuestions = Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
             } else {
                 matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
             }

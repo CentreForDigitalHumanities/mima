@@ -7,9 +7,11 @@
     <ng-container *ngFor="let questionId of questionIds$ | async">
         <ng-container *ngIf="matchedQuestionIds.has(questionId)">
             <mima-questionnaire-item [questions]="questions" [id]="questionId"
-                [onlyQuestion]="matchedQuestionIds.size === 1"
-                (singleFilterSelect)="onSingleFilterSelect($event)"
+                [onlyQuestion]="matchedQuestionIds.size === 1" (singleFilterSelect)="onSingleFilterSelect($event)"
                 (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
         </ng-container>
     </ng-container>
+    <div class="notification is-warning" *ngIf="matchedQuestions.size === 0" i18n>
+        No matches found!
+    </div>
 </div>

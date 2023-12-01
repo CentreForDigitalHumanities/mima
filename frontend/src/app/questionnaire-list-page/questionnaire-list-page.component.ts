@@ -24,7 +24,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     @Input() filterSelect: Map<string, string[]>;
 
-    matchedQuestions: ReadonlyMap<string, MatchedAdverbial | MatchedQuestion>;
+    matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     matchedQuestionIds = new Set<string>();
 
     private renderIndex = 0;
@@ -115,7 +115,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             let i = 0;
             while (i < renderSteps && this.renderIndex < this.matchedQuestionIds.size) {
                 const component = this.questionComponents.get(this.renderIndex);
-                component.question = this.matchedQuestions[component.id];
+                component.question = this.matchedQuestions.get(component.id);
                 i++;
                 this.renderIndex++;
             }

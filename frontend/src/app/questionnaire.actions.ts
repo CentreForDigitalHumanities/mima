@@ -1,7 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { MatchedQuestion, Question } from './models/question';
 import { Filter, FilterField, FilterOperator } from './models/filter';
-import { MatchedAdverbial } from './models/adverbial';
 
 /**
  * Load the questionnaire from the json in assets
@@ -20,7 +19,7 @@ export const setQuestions = createAction('[Questionnaire] Set Questions', props<
  * Set all the questions which have been found to match the current filters
  */
 export const setMatchedQuestions = createAction('[Questionnaire] Set Matched questions', props<{
-    matchedQuestions: Array<MatchedQuestion | MatchedAdverbial>
+    matchedQuestions: Array<MatchedQuestion>
 }>());
 
 
