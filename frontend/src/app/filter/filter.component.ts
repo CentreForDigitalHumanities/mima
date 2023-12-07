@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
-import { combineLatestWith, debounceTime, map, withLatestFrom } from 'rxjs/operators';
+import { combineLatestWith, map, throttleTime, withLatestFrom } from 'rxjs/operators';
 import { removeFilter } from '../questionnaire.actions';
 import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
@@ -170,7 +170,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.subscriptions = [
             // rate limit the keyboard input
             this.keyup$.pipe(
-                debounceTime(50)
+                throttleTime(150, undefined, { leading: true, trailing: true})
             ).subscribe(() => {
                 this.emit()
             }),

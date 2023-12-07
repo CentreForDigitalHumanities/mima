@@ -68,7 +68,7 @@
                         <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
                             <div class="is-flex">
                                 <span [innerHTML]="answer.answer | highlight"></span>
-                                &nbsp;
+                                &nbsp;&nbsp;&nbsp;
                                 <div class="tags has-addons is-flex-wrap-nowrap">
                                     <div class="tag filterable"
                                         (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
