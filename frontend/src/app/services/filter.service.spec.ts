@@ -110,7 +110,8 @@ describe('FilterService', () => {
             input: Adverbial,
             filters: {
                 field: Filter['field'],
-                content: string[]
+                content: string[],
+                onlyFullMatch: boolean
             }[],
             operator: FilterOperator
         }[] = [{
@@ -147,7 +148,8 @@ describe('FilterService', () => {
             },
             filters: [{
                 field: '*',
-                content: ['test']
+                content: ['test'],
+                onlyFullMatch: false
             }],
             operator: 'and'
         }];
@@ -168,7 +170,7 @@ describe('FilterService', () => {
             }
 
             const output = service.applyFilters(input, indexedFilters, operator);
-            const properties: MatchedAdverbialProperties = Object.assign({}, output);
+            const properties = <MatchedAdverbialProperties>({ ...output});
 
             expect(getMatchedAdverbial(expected, emptyFilters)).toEqual(properties);
         }

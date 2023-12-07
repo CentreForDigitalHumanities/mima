@@ -1,6 +1,6 @@
 def test_mima_frontend(browser, base_address):
     browser.get(base_address)
-    assert 'MiMa' in browser.title
+    assert 'MiMA' in browser.title
 
 
 def test_mima_admin(browser, admin_address):

@@ -1,0 +1,104 @@
+<div class="content has-text-centered has-text-light" *ngIf="!matchedQuestion">
+    <span class="icon is-large">
+        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+    </span>
+</div>
+<ng-container *ngIf="matchedQuestion">
+    <div class="question-header" (click)="toggleQuestion()">
+        <h2 class="subtitle is-4 mb-4 has-text-weight-semibold">
+            <div class="level">
+                <div class="level-left">
+                    <span class="expand-button icon-text" [ngClass]="{'expanded': questionExpanded}">
+                        <span class="icon">
+                            <fa-icon [icon]="faChevronDown"></fa-icon>
+                        </span>
+                        <span [innerHTML]="matchedQuestion.prompt | highlight"></span>
+                    </span>
+                </div>
+                <div class="level-right question-filters">
+                    <div class="field has-addons">
+                        <p class="control">
+                            <button class="button is-success is-light" (click)="onFilterSelected($event, 'id', id)">
+                                <span class="icon">
+                                    <fa-icon [icon]="faCheck"></fa-icon>
+                                </span>
+                                <span i18n>Select</span>
+                            </button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-danger is-light" (click)="onExcludeFilter($event, 'id', id)">
+                                <span class="icon">
+                                    <fa-icon [icon]="faTimes"></fa-icon>
+                                </span>
+                                <span i18n>Exclude</span>
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </h2>
+    </div>
+    <div class="box">
+        <div class="tile is-ancestor is-vertical">
+            <ng-container *ngIf="questionExpanded">
+                <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
+                    <div class="tile is-child" [id]="dialect">
+                        <div class="dialect-header">
+                            <h3 class="subtitle mb-1">
+                                <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                                    <div class="tag filterable"
+                                        [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
+                                        (click)="onFilterSelected($event, 'dialect', dialect)"></div>
+                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)"></a>
+                                </div>
+                            </h3>
+                            <ng-template #answerCountTag let-answerCount="answerCount">
+                                <div class="tag" i18n>
+                                    {answerCount, plural,
+                                    =0 {no answers}
+                                    =1 {1 answer}
+                                    other {{{answerCount}} answers}}
+                                </div>
+                            </ng-template>
+                            <ng-container [ngTemplateOutlet]="answerCountTag"
+                                [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
+                        </div>
+                    </div>
+                    <div class="tile is-child is-parent is-vertical is-9 p-0">
+                        <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
+                            <div class="is-flex">
+                                <span [innerHTML]="answer.answer | highlight"></span>
+                                &nbsp;&nbsp;&nbsp;
+                                <div class="tags has-addons is-flex-wrap-nowrap">
+                                    <div class="tag filterable"
+                                        (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <fa-icon [icon]="faUser"></fa-icon>
+                                            </span>
+                                            <span [innerHTML]="answer.participantId | highlight"></span>
+                                        </span>
+                                    </div>
+                                    <a class="tag is-delete"
+                                        (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="tile is-parent">
+                <div class="tile is-child">
+                    <span i18n>
+                        {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
+                    </span>
+                </div>
+                <div class="tile is-child is-9">
+                    <span i18n>
+                        {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

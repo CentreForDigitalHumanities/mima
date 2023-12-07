@@ -16,12 +16,19 @@ $highlight-text: $warning-invert;
     @extend .is-warning;
 }
 
+
 p-multiselect.input {
+    height: fit-content;
+
     // use the border styling of bulma
     .p-multiselect {
         background: none;
         border: none;
         width: 100%;
+
+        .p-multiselect-label {
+            padding: 0;
+        }
     }
 }
 

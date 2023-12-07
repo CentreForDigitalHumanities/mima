@@ -3,14 +3,22 @@
         <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
     </div>
 </ng-container>
-<div class="level">
+<div class="level" *ngIf="clearable">
     <div class="level-left">
-        <button class="button is-primary" (click)="add()">
-            <span class="icon is-small">
-                <fa-icon [icon]="faPlus"></fa-icon>
-            </span>
-            <span i18n>Add Filter</span>
-        </button>
+        <div class="buttons">
+            <button class="button is-primary" (click)="add()">
+                <span class="icon is-small">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                </span>
+                <span i18n>Add Filter</span>
+            </button>
+            <button class="button" (click)="clear()">
+                <span class="icon is-small">
+                    <fa-icon [icon]="faTimes"></fa-icon>
+                </span>
+                <span i18n>Clear Filters</span>
+            </button>
+        </div>
     </div>
     <div class="level-right" *ngIf="filterIndexes.length > 1">
         <ng-container i18n>Combine:</ng-container> &nbsp;

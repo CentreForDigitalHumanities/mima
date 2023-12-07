@@ -1,0 +1,100 @@
+@import '../../variables.scss';
+
+.tag:not(body).is-delete:hover,
+.tag:not(body).is-delete:focus {
+    background-color: $danger;
+    color: $danger-invert;
+}
+
+:host:not(:first-child) {
+    .question-header {
+        margin-top: 2rem;
+    }
+}
+
+.question-header {
+    cursor: pointer;
+    border-radius: 5px;
+
+    .exclude-filter {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .question-filters {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-color: rgba(202, 201, 201, 0.3);
+
+        .exclude-filter {
+            opacity: 100%;
+        }
+    }
+
+    .expand-button {
+        .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &.expanded .icon {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+:host:hover {
+    .question-filters {
+        opacity: 1;
+    }
+}
+
+.dialect-header {
+    position: sticky;
+    top: 0;
+}
+
+.dialect-row {
+    border-bottom: 1px solid $grey-light;
+
+    &.expanded {
+        animation: append-animate .3s ease-in-out;
+    }
+
+    &:not(:hover) {
+        .dialect-tag .tag {
+            background: none;
+
+            &.is-delete {
+                opacity: 0;
+            }
+        }
+    }
+
+}
+
+.filterable:hover,
+a.has-text-dark.filterable:hover {
+    color: $success !important;
+    cursor: pointer;
+
+    ::ng-deep .highlight {
+        background: $success;
+        color: $success-invert !important;
+
+    }
+}
+
+@keyframes append-animate {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

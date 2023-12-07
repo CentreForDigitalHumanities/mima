@@ -27,67 +27,60 @@
         <source>Add Filter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3746183536188848835" datatype="html">
         <source>Combine:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="188313477943387511" datatype="html">
         <source>And</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5504129468136884250" datatype="html">
         <source>Or</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8300886767108503684" datatype="html">
         <source>Select Dialect(s)</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4607479538666247502" datatype="html">
         <source>Delete filter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5889759564820041548" datatype="html">
-        <source>Adverbial</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5743446572871974801" datatype="html">
         <source>Dialect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6870893562392932905" datatype="html">
         <source>Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="301454029741140482" datatype="html">
-        <source>MiMa</source>
+      <trans-unit id="2248848052060803390" datatype="html">
+        <source>MiMA</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
@@ -128,8 +121,8 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3313626400514649964" datatype="html">
-        <source> MiMa </source>
+      <trans-unit id="2538114383139722003" datatype="html">
+        <source> MiMA </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">4,6</context>
@@ -140,20 +133,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">19,21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3224517396841337973" datatype="html">
-        <source> Adverbials </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">22,24</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4842432534148275616" datatype="html">
-        <source> Upload </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">25,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5857934386762652898" datatype="html">
@@ -171,7 +150,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7430680760319628492" datatype="html">
@@ -182,7 +161,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244756340996494478" datatype="html">
@@ -193,57 +172,57 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7132963326679881921" datatype="html">
         <source>Please <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;state=&apos;upload&apos;&quot;&gt;"/>upload<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> a file first.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1676366868669887147" datatype="html">
         <source>A preview of the uploaded information is shown. If this is as expected you can continue to saving this data. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">23,25</context>
+          <context context-type="linenumber">35,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6459376977606598638" datatype="html">
         <source> Add <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> new adverbials to the database? </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">40,42</context>
+          <context context-type="linenumber">52,54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9178182467454450952" datatype="html">
         <source>Confirm</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6926404035489068834" datatype="html">
         <source>Successfully saved <x id="INTERPOLATION" equiv-text="{{savedCount}}"/> adverbials!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9085409670702590328" datatype="html">
         <source>Saving failed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3475689872614747615" datatype="html">
@@ -391,6 +370,127 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
           <context context-type="linenumber">65,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1122787259445706401" datatype="html">
+        <source>Participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1299159208295260312" datatype="html">
+        <source>Search in all Fields</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1434304467944125566" datatype="html">
+        <source>Select Participant(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1434327601231025030" datatype="html">
+        <source>Questionnaires</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4359014576353578997" datatype="html">
+        <source>Clear Filters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5129980223571446304" datatype="html">
+        <source>Select Question(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5320870651003627043" datatype="html">
+        <source>Question</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="674321618652063659" datatype="html">
+        <source> Questionnaires </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9041172628832548089" datatype="html">
+        <source>Eerste Nederlandse Questionnaire</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="920567845139554152" datatype="html">
+        <source>Question Text</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3797570084942068182" datatype="html">
+        <source>Select</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5668077948386857930" datatype="html">
+        <source>Exclude</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8856905278208146821" datatype="html">
+        <source>
+          <x id="ICU" equiv-text="{answerCount, plural, =0 {no answers} =1 {1 answer} other {{{answerCount}} answers}}" xid="2415248560049776019"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">56,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="906232868136769061" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">57,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5486058096582576529" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> answers matched </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">97,99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7775219266550892224" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">92,94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1280221140510194500" datatype="html">
+        <source> No matches found! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
       </trans-unit>
     </body>

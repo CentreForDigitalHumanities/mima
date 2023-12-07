@@ -1,6 +1,6 @@
-# MiMa backend
+# MiMA backend
 
-MiMa will humanize all your digits!
+MiMA will humanize all your digits!
 
 This is a server side web application based on [Django][1] and [Django REST framework][2] (DRF). Its primary purpose is to provide a JSON API with authentication and authorization, in order to support a separate frontend application.
 

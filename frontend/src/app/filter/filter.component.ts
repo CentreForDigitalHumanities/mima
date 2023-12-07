@@ -6,25 +6,30 @@ import {
     faGlobeEurope,
     faLanguage,
     faTrash,
-    IconDefinition
+    IconDefinition,
+    faUser,
+    faCommentDots
 } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { map, withLatestFrom } from 'rxjs/operators';
-import { removeFilter } from '../adverbial.actions';
-import { State } from '../adverbial.state';
+import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
+import { combineLatestWith, map, throttleTime, withLatestFrom } from 'rxjs/operators';
+import { removeFilter } from '../questionnaire.actions';
+import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
-import * as _ from 'lodash';
+import { QuestionnaireService } from '../services/questionnaire.service';
 
-interface FilterType {
-    name: string;
-    field: Filter['field'];
-    icon: IconDefinition;
-    dropdown: boolean;
+type FilterType = {
+    name: string,
+    field: Filter['field'],
+    icon: IconDefinition,
+    dropdown: boolean,
+    placeholder: string
 }
 
+
 interface DropdownOption {
-    name: string;
+    label: string;
+    value: string;
 }
 
 @Component({
@@ -34,11 +39,13 @@ interface DropdownOption {
 })
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
-    private filters$ = this.store.select('adverbials', 'filters');
+    private filters$ = this.store.select('questionnaire', 'filters');
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
     faTrash = faTrash;
+
+    keyup$ = new Subject();
 
     @ViewChild('textField')
     textField: ElementRef<HTMLInputElement>;
@@ -51,7 +58,15 @@ export class FilterComponent implements OnInit, OnDestroy {
     @Output()
     filterChange = new EventEmitter<Filter>();
 
-    selectedType: FilterType;
+    selectedType$ = new BehaviorSubject<FilterType>(null);
+
+    set selectedType(value: FilterType) {
+        this.selectedType$.next(value);
+    }
+
+    get selectedType() {
+        return this.selectedType$.value;
+    }
 
     filter: Filter;
 
@@ -59,72 +74,113 @@ export class FilterComponent implements OnInit, OnDestroy {
         name: '',
         field: '*',
         icon: faAsterisk,
-        dropdown: false
+        dropdown: false,
+        placeholder: $localize`Search in all Fields`
     }, {
-        name: $localize `Adverbial`,
-        field: 'text',
+        name: $localize`Question`,
+        field: 'id',
         icon: faComment,
-        dropdown: false
+        dropdown: true,
+        placeholder: $localize`Select Question(s)`
     }, {
-        name: $localize  `Dialect`,
+        name: $localize`Question Text`,
+        field: 'prompt',
+        icon: faCommentDots,
+        dropdown: false,
+        placeholder: ''
+    }, {
+        name: $localize`Translation`,
+        field: 'answer',
+        icon: faGlobeEurope,
+        dropdown: false,
+        placeholder: ''
+    }, {
+        name: $localize`Dialect`,
         field: 'dialect',
         icon: faLanguage,
-        dropdown: true
+        dropdown: true,
+        placeholder: $localize`Select Dialect(s)`
     }, {
-        name: $localize  `Translation`,
-        field: 'translations',
-        icon: faGlobeEurope,
-        dropdown: false
-    }];
+        name: $localize`Participant`,
+        field: 'participantId',
+        icon: faUser,
+        dropdown: true,
+        placeholder: $localize`Select Participant(s)`
+    },];
 
     textFieldContent: string;
-    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('adverbials', 'adverbials').pipe(
-        withLatestFrom(this.filters$, this.index$),
-        map(([adverbials, filters, index]) => {
-            const filter = filters[index];
-            const selectedType = this.getSelectedType(filter);
-
-            const values = new Set<string>();
-            for (const adverbial of adverbials) {
+    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
+        combineLatestWith(this.selectedType$),
+        map(([questions, selectedType]) => {
+            const values: { [value: string]: string } = {};
+            for (const [id, question] of questions) {
                 if (selectedType.dropdown) {
                     switch (selectedType.field) {
                         case '*':
                             break;
 
-                        case 'labels':
-                        case 'roots':
-                        case 'examples':
-                        case 'translations':
-                        case 'glosses':
-                            for (const value of adverbial.labels) {
-                                values.add(value);
+                        case 'dialect':
+                            for (let answer of question.answers) {
+                                values[answer[selectedType.field]] = answer[selectedType.field];
                             }
                             break;
 
+                        case 'id':
+                            values[id] = question.prompt;
+                            break;
+
+                        case 'participantId':
+                            for (let participant of this.questionnaireService.getParticipants(question.answers)) {
+                                values[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                            }
+
+                            break;
+
                         default:
-                            values.add(adverbial[selectedType.field]);
+                            values[question[selectedType.field]] = question[selectedType.field];
                             break;
 
                     }
                 }
             }
 
-            return Array.from(values).sort().map<DropdownOption>(name => ({
-                name
+            this.dropdownLabels = values;
+
+            return Object.entries(values).sort(([x, a], [y, b]) => {
+                if (a < b) {
+                    return -1;
+                } else if (a > b) {
+                    return 1;
+                }
+                return 0;
+            }).map<DropdownOption>(([value, label]) => ({
+                value,
+                label
             }));
         })
     );
 
-    constructor(private store: Store<State>) {
+    dropdownLabels: { [value: string]: string };
+
+    constructor(private store: Store<State>, private questionnaireService: QuestionnaireService) {
         this.selectedType = this.filterTypes[0];
     }
 
     ngOnInit(): void {
         this.subscriptions = [
+            // rate limit the keyboard input
+            this.keyup$.pipe(
+                throttleTime(150, undefined, { leading: true, trailing: true})
+            ).subscribe(() => {
+                this.emit()
+            }),
             this.filters$.pipe(
                 withLatestFrom(this.index$),
                 map(([filters, index]) => {
                     const filter = filters[index];
+                    if (!filter) {
+                        return;
+                    }
 
                     const selectedType = this.getSelectedType(filter);
 
@@ -133,15 +189,20 @@ export class FilterComponent implements OnInit, OnDestroy {
                     }
 
                     let content: string[];
-                    this.textFieldContent = filter.content[0] ?? '';
                     if (!this.selectedType.dropdown) {
                         content = [this.textFieldContent];
+                        this.textFieldContent = filter.content[0] ?? '';
                     } else {
                         content = filter.content;
+                        this.textFieldContent = '';
                     }
 
                     // make sure the original object isn't modified (side-effect!)
-                    this.filter = { ...filter, content };
+                    this.filter = {
+                        ...filter,
+                        content,
+                        onlyFullMatch: this.selectedType.dropdown
+                    };
                 })).subscribe()
         ];
     }
@@ -160,6 +221,7 @@ export class FilterComponent implements OnInit, OnDestroy {
             // remove the current content to prevent ghost values
             // influencing the filtering
             this.filter.content = [];
+            this.textFieldContent = '';
         }
 
         this.filter.field = this.selectedType.field;

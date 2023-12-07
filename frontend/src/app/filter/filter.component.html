@@ -1,4 +1,4 @@
-<div class="field has-addons is-flex-direction-row" *ngIf="filter">
+<div class="field is-grouped is-flex-direction-row" *ngIf="filter">
     <div class="control has-icons-left">
         <div class="select">
             <select [(ngModel)]="selectedType" (change)="emit()">
@@ -9,12 +9,22 @@
             <fa-icon [icon]="selectedType.icon"></fa-icon>
         </span>
     </div>
-    <div class="control is-flex-grow-1" *ngIf="selectedType.dropdown; else noDropdown">
-        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content" defaultLabel="Select Dialect(s)" i18n-defaultLabel optionLabel="name" optionValue="name"(onChange)="emit()"></p-multiSelect>
+    <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
+        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
+            [panelStyle]="{'width':'min(800px,50vw)'}" [defaultLabel]="selectedType.placeholder" i18n-defaultLabel
+            (onChange)="emit()">
+            <ng-template let-value pTemplate="selectedItems">
+                <span *ngIf="!value || value.length === 0; else tags">{{selectedType.placeholder}}</span>
+                <ng-template #tags>
+                    <mima-filter-tags [labels]="dropdownLabels" [selected]="value"></mima-filter-tags>
+                </ng-template>
+            </ng-template>
+        </p-multiSelect>
     </div>
     <ng-template #noDropdown>
-        <p class="control" [ngClass]="{'has-icons-right': filter.content}">
-            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent" (keyup)="emit()">
+        <p class="control is-expanded" [ngClass]="{'has-icons-right': filter.content}">
+            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent"
+                (keyup)="keyup$.next(1)" [placeholder]="selectedType.placeholder">
             <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
                 <fa-icon [icon]="faTimesCircle"></fa-icon>
             </span>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Adverbial, MatchedAdverbial } from '../models/adverbial';
 import { Filter, FilterOperator } from '../models/filter';
 import { FilterService } from './filter.service';
+import { MatchedQuestion } from '../models/question';
 
 @Injectable({
     providedIn: 'root'

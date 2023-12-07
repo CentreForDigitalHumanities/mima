@@ -10,6 +10,8 @@ import { StoreModule } from '@ngrx/store';
 
 import { LuupzigModule } from 'luupzig';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -18,6 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AdverbialEffects } from './adverbial.effects';
 import { adverbialReducer } from './adverbial.reducer';
+import { QuestionnaireEffects } from './questionnaire.effects';
+import { questionnaireReducer } from './questionnaire.reducer';
+
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +35,9 @@ import { FilterComponent } from './filter/filter.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
 import { HighlightPipe } from './highlight.pipe';
 import { HighlightPlainPipe } from './highlight-plain.pipe';
+import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
+import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
+import { FilterTagsComponent } from './filter-tags/filter-tags.component';
 
 
 @NgModule({
@@ -46,12 +54,16 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
         FilterComponent,
         FilterListComponent,
         HighlightPipe,
-        HighlightPlainPipe
+        HighlightPlainPipe,
+        QuestionnaireListPageComponent,
+        QuestionnaireItemComponent,
+        FilterTagsComponent
     ],
     imports: [
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
+        DropdownModule,
         FontAwesomeModule,
         FormsModule,
         HttpClientModule,
@@ -59,11 +71,13 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
             cookieName: 'csrftoken',
             headerName: 'X-CSRFToken'
         }),
-        EffectsModule.forRoot([AdverbialEffects]),
+        EffectsModule.forRoot([AdverbialEffects, QuestionnaireEffects]),
         MultiSelectModule,
         LuupzigModule,
+        PanelModule,
         StoreModule.forRoot({
-            adverbials: adverbialReducer
+            adverbials: adverbialReducer,
+            questionnaire: questionnaireReducer
         }, {
             runtimeChecks: {
                 strictStateImmutability: true,

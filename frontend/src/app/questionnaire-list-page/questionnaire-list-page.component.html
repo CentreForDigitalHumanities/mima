@@ -1,0 +1,17 @@
+<h1 class="title" i18n>Questionnaires</h1>
+<h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
+<div class="box">
+    <mima-filter-list></mima-filter-list>
+</div>
+<div *ngIf="!isLoading">
+    <ng-container *ngFor="let questionId of questionIds$ | async">
+        <ng-container *ngIf="matchedQuestionIds.has(questionId)">
+            <mima-questionnaire-item [questions]="questions" [id]="questionId"
+                [onlyQuestion]="matchedQuestionIds.size === 1" (singleFilterSelect)="onSingleFilterSelect($event)"
+                (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-item>
+        </ng-container>
+    </ng-container>
+    <div class="notification is-warning" *ngIf="matchedQuestions && matchedQuestions.size === 0" i18n>
+        No matches found!
+    </div>
+</div>

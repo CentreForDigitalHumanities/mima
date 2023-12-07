@@ -1,4 +1,4 @@
-# MiMa frontend
+# MiMA frontend
 
 ## Development server
 

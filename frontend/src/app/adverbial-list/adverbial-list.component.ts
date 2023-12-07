@@ -5,6 +5,7 @@ import { withLatestFrom } from 'rxjs/operators';
 import { State } from '../adverbial.state';
 import { AdverbialComponent } from '../adverbial/adverbial.component';
 import { MatchedAdverbial } from '../models/adverbial';
+import { MatchedQuestion } from '../models/question';
 
 const renderSteps = 10;
 const renderInterval = 100;
@@ -25,7 +26,7 @@ export class AdverbialListComponent implements OnInit, OnDestroy, AfterViewInit 
 
     renderTimeout: ReturnType<typeof setInterval>;
 
-    matchedAdverbials: ReadonlyMap<string, MatchedAdverbial>;
+    matchedAdverbials: ReadonlyMap<string, MatchedAdverbial|MatchedQuestion>;
     matchedAdverbialIds = new Set<string>();
     adverbialIds$ = this.store.select('adverbials', 'adverbialIds');
 

@@ -15,7 +15,7 @@
     </div>
 
     <span class=expand-button *ngIf="matchedAdverbial.examples.length > 1" (click)="onExpandExamples()">
-        <fa-icon [icon]="faCaretDown" class="fa-caret"></fa-icon>
+        <fa-icon [icon]="faCaretDown"></fa-icon>
     </span>
     <span class="adverbial-inner" *ngIf="!examplesExpanded else expandedExamples">
         <p class="p-examples">

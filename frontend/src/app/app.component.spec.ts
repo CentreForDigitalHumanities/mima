@@ -35,6 +35,6 @@ describe('AppComponent', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.navbar-brand .navbar-item').textContent).toContain('MiMa');
+        expect(compiled.querySelector('.navbar-brand .navbar-item').textContent).toContain('MiMA');
     });
 });
