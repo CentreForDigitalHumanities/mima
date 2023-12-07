@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { Adverbial, MatchedAdverbialProperties, MatchedPart, MatchedParts } from '../models/adverbial';
 import { Filter, FilterOperator } from '../models/filter';
+import { SearchExpression } from '../models/search-expression';
 import { FilterService } from './filter.service';
 
 function getMatchedParts(text: string, emptyFilters: boolean): MatchedParts {
@@ -170,10 +171,95 @@ describe('FilterService', () => {
             }
 
             const output = service.applyFilters(input, indexedFilters, operator);
-            const properties = <MatchedAdverbialProperties>({ ...output});
+            const properties = <MatchedAdverbialProperties>({ ...output });
 
             expect(getMatchedAdverbial(expected, emptyFilters)).toEqual(properties);
         }
 
+    });
+
+    it('should support search queries', () => {
+        // contains query, haystack and the expected matches marked with asterisks
+        const tests: [string, string, string][] = [
+            [
+                'appel',
+                'ik zoek een appel',
+                '            *****'
+            ],
+            [
+                'appel of banaan',
+                'alleen appel is goed',
+                '       *****        '
+            ],
+            [
+                'appel AND banaan',
+                'alleen appel is niet goed',
+                '                         '
+            ],
+            [
+                'appel AND banaan',
+                'alleen banaan is ook niet goed',
+                '                              '
+            ],
+            [
+                'appel AND banaan',
+                'een appel en banaan is wel goed',
+                '    *****    ******            '
+            ],
+            [
+                'banaan en "een appel"',
+                'uno banaan of een appel',
+                '    ******    *** *****'
+            ],
+            [
+                'mango of " een appel "',
+                'de banaan en de appel',
+                '                     '
+            ],
+            [
+                '"niet',
+                'de query is nog niet af',
+                '                ****   '
+            ],
+            [
+                '"een"',
+                'ook een woord moet kunnen',
+                '    ***                  '
+            ]
+        ];
+
+        for (const [query, haystack, expected] of tests) {
+            const searchExpression = new SearchExpression(query);
+            let actual = searchExpression.search(haystack);
+            actual = service.mergeMatches(actual);
+            let match: RegExpMatchArray;
+            let matchIndex = 0;
+            const matchPattern = /\*+/g;
+            let description = `query:    ${query}
+haystack: ${haystack}
+expected: ${expected}
+actual:   ${actual}`;
+
+            const expectedIndexes: [number, number][] = [];
+            while (match = matchPattern.exec(expected)) {
+                description = `query:    ${query}
+haystack: ${haystack}
+expected: ${expected}
+            ${expectedIndexes}
+actual:   ${actual}`;
+                try {
+                    const [start, end] = actual[matchIndex]
+                    expect([match.index, match.index + match[0].length]).withContext(description).toEqual([start, end]);
+                    matchIndex++;
+                    expectedIndexes.push([match.index, match.index + match[0].length]);
+                }
+                catch (error) {
+                    console.log(description);
+                    throw error;
+                }
+            }
+
+            expect(matchIndex).withContext(description).toEqual(actual.length);
+        }
     });
 });

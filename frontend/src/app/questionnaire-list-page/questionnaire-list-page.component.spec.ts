@@ -6,6 +6,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { QuestionnaireListPageComponent } from './questionnaire-list-page.component';
 import { initialState } from '../adverbial.state';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
+import { FilterListComponent } from '../filter-list/filter-list.component';
 
 describe('QuestionnaireListPageComponent', () => {
     let component: QuestionnaireListPageComponent;
@@ -13,7 +14,7 @@ describe('QuestionnaireListPageComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [QuestionnaireListPageComponent, QuestionnaireItemComponent],
+            declarations: [QuestionnaireListPageComponent, QuestionnaireItemComponent, FilterListComponent],
             imports: [HttpClientTestingModule, MultiSelectModule],
             providers: [provideMockStore({ initialState })]
         })

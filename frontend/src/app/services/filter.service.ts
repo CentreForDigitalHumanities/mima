@@ -3,15 +3,7 @@ import { Adverbial, MatchedAdverbial, MatchedParts } from '../models/adverbial';
 import { Filter, FilterField, FilterOperator } from '../models/filter';
 import { MatchedQuestion, Question } from '../models/question';
 import { Answer, MatchedAnswer } from '../models/answer';
-
-
-const ignoreCharacters = ['-', '\'', '.', ',', '(', ')'];
-const ignoreCharactersExp = /[\-'\.\,\(\)\s]/g;
-
-// https://stackoverflow.com/a/37511463/8438971
-function removeDiacritics(text: string): string {
-    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-}
+import { SearchExpression, ignoreCharactersExp } from '../models/search-expression';
 
 function isQuestion(object: object): object is Question {
     return (object as Question).question !== undefined;
@@ -213,33 +205,7 @@ export class FilterService {
 
         let lastMatchEnd = 0;
         if (matches.length) {
-            // sort by start index
-            matches.sort((a, b) => a[0] - b[0]);
-
-            const mergedMatches: [number, number][] = [];
-
-            for (const [start, end] of matches) {
-                if (mergedMatches.length === 0) {
-                    // always push the first match
-                    mergedMatches.push([start, end]);
-                } else {
-                    const mergedIndex = mergedMatches.length - 1;
-                    const previousEnd = mergedMatches[mergedIndex][1];
-
-                    // What can happen?
-                    // Note: the matches were sorted by their start index!
-                    if (previousEnd >= start && previousEnd < end) {
-                        // 1. the previous match ENDS WITHIN this match
-                        mergedMatches[mergedIndex][1] = end;
-                    }
-                    else if (previousEnd < start) {
-                        // 2. the previous match ENDS BEFORE this match
-                        mergedMatches.push([start, end]);
-                    }
-                    // 3. the previous match ENDS AFTER this match
-                    //    do nothing, they overlap!
-                }
-            }
+            const mergedMatches = this.mergeMatches(matches);
 
             // returns the marked string
             for (const [start, end] of mergedMatches) {
@@ -260,6 +226,38 @@ export class FilterService {
         return [results, matchingFilters];
     }
 
+    public mergeMatches(matches: [number, number][]) {
+        // sort by start index
+        matches.sort((a, b) => a[0] - b[0]);
+
+        const mergedMatches: [number, number][] = [];
+
+        for (const [start, end] of matches) {
+            if (mergedMatches.length === 0) {
+                // always push the first match
+                mergedMatches.push([start, end]);
+            } else {
+                const mergedIndex = mergedMatches.length - 1;
+                const previousEnd = mergedMatches[mergedIndex][1];
+
+                // What can happen?
+                // Note: the matches were sorted by their start index!
+                if (previousEnd >= start && previousEnd < end) {
+                    // 1. the previous match ENDS WITHIN this match
+                    mergedMatches[mergedIndex][1] = end;
+                }
+                else if (previousEnd < start) {
+                    // 2. the previous match ENDS BEFORE this match
+                    mergedMatches.push([start, end]);
+                }
+                // 3. the previous match ENDS AFTER this match
+                //    do nothing, they overlap!
+            }
+        }
+
+        return mergedMatches;
+    }
+
     /**
      * For each string in the filter's content,
      * it splits search text by space and matches each separate item
@@ -273,62 +271,12 @@ export class FilterService {
                 }
                 continue;
             }
-            results.push(...needleGroup.split(' ')
-                .filter(needle => needle)
-                .map(needle => this.searchSingle(haystack, needle))
-                .reduce((prev, matches, index) => {
-                    if (matches.length === 0 || (index > 0 && prev.length === 0)) {
-                        // every part (of the needle) should match
-                        return [];
-                    }
 
-                    return prev.concat(matches);
-                }, []));
+            const expression = new SearchExpression(needleGroup);
+            results.push(...expression.search(haystack));
         }
 
         return results;
     }
 
-    /**
-     * Returns the matches in the text (haystack) with their start and
-     * end positions (exclusive). Case-insensitive and skips over special
-     * characters.
-     */
-    private searchSingle(haystack: string, needle: string): [number, number][] {
-        let haystackIndex = 0;
-        let needleIndex = 0;
-        let start = 0;
-        const matches: [number, number][] = [];
-        needle = needle.replace(ignoreCharactersExp, '').toLowerCase();
-
-        while (haystackIndex < haystack.length) {
-            const character = haystack[haystackIndex].toLowerCase();
-            if (ignoreCharacters.indexOf(character) >= 0) {
-                // ignore
-                if (start === haystackIndex) {
-                    start++; // don't highlight leading characters
-                }
-                haystackIndex++;
-            } else if (character === needle[needleIndex] ||
-                removeDiacritics(character) === needle[needleIndex]) {
-                // match!
-                needleIndex++;
-                haystackIndex++;
-
-                if (needleIndex === needle.length) {
-                    matches.push([start, haystackIndex]);
-                    start = haystackIndex;
-                    needleIndex = 0;
-                }
-            } else {
-                // no match! move one character ahead from the last
-                // starting point
-                haystackIndex = start + 1;
-                start = haystackIndex;
-                needleIndex = 0;
-            }
-        }
-
-        return matches;
-    }
 }
