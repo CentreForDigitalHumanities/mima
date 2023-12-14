@@ -6,9 +6,8 @@ import { State } from './questionnaire.state';
 
 
 import { QuestionnaireService } from './services/questionnaire.service';
-import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions, setSingularFilter, setExcludingFilter } from './questionnaire.actions';
+import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions, setIncludingFilter, setExcludingFilter } from './questionnaire.actions';
 import { MatchedQuestion, Question } from './models/question';
-import { MatchedAdverbial } from './models/adverbial';
 
 
 @Injectable()
@@ -36,7 +35,7 @@ export class QuestionnaireEffects {
     ));
 
     filterQuestions$ = createEffect(() => this.actions$.pipe(
-        ofType(addFilter, removeFilter, clearFilters, setFilters, setSingularFilter, setExcludingFilter, updateFilter, setQuestions, setFiltersOperator),
+        ofType(addFilter, removeFilter, clearFilters, setFilters, setIncludingFilter, setExcludingFilter, updateFilter, setQuestions, setFiltersOperator),
         concatLatestFrom(() => [
             this.store.select('questionnaire', 'filters'),
             this.store.select('questionnaire', 'operator')

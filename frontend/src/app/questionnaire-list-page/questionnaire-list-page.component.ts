@@ -4,7 +4,7 @@ import { AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChil
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
-import { loadQuestionnaire, setExcludingFilter, setSingularFilter } from '../questionnaire.actions';
+import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 
 const renderSteps = 10; //potentially move these to settings
@@ -126,8 +126,8 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
         }, renderInterval);
     }
 
-    onSingleFilterSelect(filterData: FilterEventData) {
-        this.store.dispatch(setSingularFilter({
+    onIncludeFilter(filterData: FilterEventData) {
+        this.store.dispatch(setIncludingFilter({
             ...filterData
         }));
     }
