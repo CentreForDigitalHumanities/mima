@@ -92,7 +92,9 @@ export class SearchExpression {
     private queryParts: string[];
 
     public constructor(query: string) {
-        this.queryParts = query.split(' ');
+        // make sure & is split into a separate token
+        // e.g. this will correctly transform 'apple&mango &banana& peach& berry'
+        this.queryParts = query.split(/(\s+|(?=&)|(?<=&))/g).filter(x => !/^\s*$/g.test(x))
     }
 
     private init() {
@@ -193,7 +195,8 @@ export class SearchExpression {
         const result: [number, number][] = [];
 
         for (let part of this.queryParts) {
-            if (part.toUpperCase() === "AND") {
+            // and statement
+            if (part === "&") {
                 this.and = true;
                 if (this.current.length === 0) {
                     this.rejectAnd = true;

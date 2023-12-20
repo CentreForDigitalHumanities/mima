@@ -28,7 +28,7 @@ export const questionnaireReducer = createReducer(
 
         // find existing filter on this field
         const filterIndex = filters.findIndex(filter => filter.field === action.field);
-        const existing: string[] = [];
+        let existing: string[] = [];
         if (filterIndex !== -1) {
             for (let i = filterIndex; i < filters.length;) {
                 if (filters[i].field === action.field) {
@@ -42,6 +42,11 @@ export const questionnaireReducer = createReducer(
 
                 i++;
             }
+        }
+
+        if (existing.indexOf(action.content) >= 0) {
+            // if it was already included, make it exclusive
+            existing = [];
         }
 
         const newFilter: Filter = {
