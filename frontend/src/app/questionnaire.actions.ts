@@ -34,9 +34,9 @@ export const clearFilters = createAction('[Questionnaire] Clear Filters');
 export const addFilter = createAction('[Questionnaire] Add Filter');
 
 /**
- * Adds or updates a filter to search only for the field matching a specific content
+ * Adds or updates a filter to search for the field matching a specific content
  */
-export const setSingularFilter = createAction('[Questionnaire Add Singular Filter', props<{
+export const setIncludingFilter = createAction('[Questionnaire Add Singular Filter', props<{
     field: FilterField,
     content: string
 }>());

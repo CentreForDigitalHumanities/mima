@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { QuestionnaireItemComponent } from './questionnaire-item.component';
 
@@ -10,7 +11,7 @@ describe('QuestionnaireItemComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ QuestionnaireItemComponent ],
-      imports: [ HttpClientTestingModule ]
+      imports: [ HttpClientTestingModule, FontAwesomeModule ]
     })
     .compileComponents();
 

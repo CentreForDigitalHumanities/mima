@@ -27,7 +27,7 @@ export class QuestionnaireItemComponent {
 
     @Input() id: string;
     @Input() questions: Map<string, Question>;
-    @Output() singleFilterSelect = new EventEmitter<FilterEvent>();
+    @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
     dialectsCount = 0;
@@ -91,7 +91,7 @@ export class QuestionnaireItemComponent {
      * this filter always contains a single filter, i.e. one dialect, one question, or one participant
      */
     onFilterSelected(event: MouseEvent, field: FilterField, content: string) {
-        this.singleFilterSelect.emit({ field, content });
+        this.includeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
 

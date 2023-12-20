@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { initialState } from './questionnaire.state';
-import { addFilter, clearFilters, removeFilter, setExcludingFilter, setFilters, setFiltersOperator, setMatchedQuestions, setQuestions, setSingularFilter, updateFilter } from './questionnaire.actions';
+import { addFilter, clearFilters, removeFilter, setExcludingFilter, setFilters, setFiltersOperator, setMatchedQuestions, setQuestions, setIncludingFilter, updateFilter } from './questionnaire.actions';
 import { MatchedQuestion } from './models/question';
 import { Filter, FilterOperator } from './models/filter';
 import { isDefaultFilter } from './services/filter.service';
@@ -22,26 +22,36 @@ export const questionnaireReducer = createReducer(
         ...state,
         filters: state.filters.concat([{ index: state.filters.length, field: '*', content: [], onlyFullMatch: false }])
     })),
-    on(setSingularFilter, (state, action) => {
+    on(setIncludingFilter, (state, action) => {
         // remove default filter
         const filters = state.filters.filter(filter => !isDefaultFilter(filter));
 
         // find existing filter on this field
         const filterIndex = filters.findIndex(filter => filter.field === action.field);
+        let existing: string[] = [];
         if (filterIndex !== -1) {
-            // remove any more filters on this field
             for (let i = filterIndex; i < filters.length;) {
                 if (filters[i].field === action.field) {
-                    filters.splice(i, 1);
-                } else {
-                    i++;
+                    existing.push(...filters[i].content);
+                    if (i > filterIndex) {
+                        // remove any more filters on this field
+                        filters.splice(i, 1);
+                        continue;
+                    }
                 }
+
+                i++;
             }
+        }
+
+        if (existing.indexOf(action.content) >= 0) {
+            // if it was already included, make it exclusive
+            existing = [];
         }
 
         const newFilter: Filter = {
             field: action.field,
-            content: [action.content],
+            content: [...new Set([...existing, action.content])],
             index: filterIndex === -1 ? filters.length : filterIndex,
             onlyFullMatch: true
         };
@@ -55,7 +65,8 @@ export const questionnaireReducer = createReducer(
         return {
             ...state,
             filters,
-            operator: 'and' as FilterOperator
+            // new filter? set it to AND, else preserve the current operator
+            operator: state.filters.length >= 2 ? state.operator : <FilterOperator>'and'
         };
     }),
     on(setExcludingFilter, (state, action) => {
@@ -107,7 +118,8 @@ export const questionnaireReducer = createReducer(
         return {
             ...state,
             filters,
-            operator: <FilterOperator>'and'
+            // new filter? set it to AND, else preserve the current operator
+            operator: state.filters.length >= 2 ? state.operator : <FilterOperator>'and'
         };
     }),
     on(setFilters, (state, action) => ({
