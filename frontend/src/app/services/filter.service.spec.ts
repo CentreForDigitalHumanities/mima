@@ -192,17 +192,17 @@ describe('FilterService', () => {
                 '       *****        '
             ],
             [
-                'appel AND banaan',
+                'appel & banaan',
                 'alleen appel is niet goed',
                 '                         '
             ],
             [
-                'appel AND banaan',
+                'appel & banaan',
                 'alleen banaan is ook niet goed',
                 '                              '
             ],
             [
-                'appel AND banaan',
+                'appel&banaan',
                 'een appel en banaan is wel goed',
                 '    *****    ******            '
             ],
