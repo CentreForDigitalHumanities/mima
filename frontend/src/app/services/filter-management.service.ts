@@ -30,13 +30,19 @@ export class FilterManagementService {
 
         let empty = true;
         for (const filter of filters) {
-            const fieldName = `${filter.onlyFullMatch ? fullMatchPrefix : ''}${filter.field}${filter.index}`;
+            const fieldName = `${filter.onlyFullMatch ? fullMatchPrefix : ''}${filter.field}`;
 
             if (empty && filter.content.find(c => !!c?.trim())) {
                 empty = false;
             }
 
-            queryParams[fieldName] = filter.content;
+            let suffix = '';
+            let i = 0;
+            while ((fieldName + suffix) in queryParams) {
+                suffix = `${i}`;
+            }
+
+            queryParams[fieldName + suffix] = filter.content;
         }
 
         if (filters.length > 1) {
@@ -61,13 +67,12 @@ export class FilterManagementService {
                 if (key.startsWith(fullMatchPrefix)) {
                     onlyFullMatch = true;
                 }
-                let keyIndex = /\d/.exec(key).index;
 
                 let content = queryParams.getAll(key);
                 filters.push({
                     content,
-                    field: <FilterField>key.substring(onlyFullMatch ? 1 : 0, keyIndex),
-                    index: parseInt(key.substring(keyIndex)),
+                    field: <FilterField>key.substring(onlyFullMatch ? 1 : 0).replace(/\d+$/, ''),
+                    index: filters.length,
                     onlyFullMatch
                 });
             }

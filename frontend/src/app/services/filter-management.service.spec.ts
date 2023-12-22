@@ -45,11 +45,16 @@ describe('FilterManagementService', () => {
                 content: ['nog iets'],
                 index: 1,
                 onlyFullMatch: true
+            }, {
+                field: '*',
+                content: ['maar er is meer!'],
+                index: 1,
+                onlyFullMatch: false
             }]);
-        console.log(queryParams);
         expect(queryParams).toEqual({
-            '*0': ['hallo wereld'],
-            '_*1': ['nog iets'],
+            '*': ['hallo wereld'],
+            '_*': ['nog iets'],
+            '*0': ['maar er is meer!'],
             'OP': ['and']
         })
     });
