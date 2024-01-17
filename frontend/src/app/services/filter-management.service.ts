@@ -160,14 +160,14 @@ export class FilterManagementService {
      * @returns whether this filter could be more compactly written as excluding values instead of including them
      */
     private negativeFilter(filter: Filter, questions: Map<string, Question>): { negative: boolean, content: string[] } {
-        if (!filter.onlyFullMatch || filter.field === '*') {
-            return { negative: false, content: filter.content };
+        if (filter.onlyFullMatch && filter.field !== '*') {
+            const options = this.filterFieldOptions(filter.field, questions);
+            if (options.options.length - filter.content.length < filter.content.length) {
+                return { negative: true, content: Array.from(this.excludeFrom(options.options.map(o => o.value), filter.content)) };
+            }
         }
 
-        const options = this.filterFieldOptions(filter.field, questions);
-        if (options.options.length - filter.content.length < filter.content.length) {
-            return { negative: true, content: Array.from(this.excludeFrom(options.options.map(o => o.value), filter.content)) };
-        }
+        return { negative: false, content: filter.content };
     }
 
     private *excludeFrom(items: string[], remove: string[]): Iterable<string> {
