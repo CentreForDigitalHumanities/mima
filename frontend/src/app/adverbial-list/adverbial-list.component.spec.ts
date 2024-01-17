@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
@@ -13,7 +14,7 @@ describe('AdverbialListComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [AdverbialListComponent, AdverbialComponent],
-            imports: [FontAwesomeModule],
+            imports: [FontAwesomeModule, HttpClientTestingModule],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();

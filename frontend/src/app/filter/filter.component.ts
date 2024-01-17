@@ -17,6 +17,8 @@ import { removeFilter } from '../questionnaire.actions';
 import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
 import { QuestionnaireService } from '../services/questionnaire.service';
+import { DropdownOption, FilterManagementService } from '../services/filter-management.service';
+
 
 type FilterType = {
     name: string,
@@ -24,12 +26,6 @@ type FilterType = {
     icon: IconDefinition,
     dropdown: boolean,
     placeholder: string
-}
-
-
-interface DropdownOption {
-    label: string;
-    value: string;
 }
 
 @Component({
@@ -112,57 +108,23 @@ export class FilterComponent implements OnInit, OnDestroy {
     dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
         combineLatestWith(this.selectedType$),
         map(([questions, selectedType]) => {
-            const values: { [value: string]: string } = {};
-            for (const [id, question] of questions) {
-                if (selectedType.dropdown) {
-                    switch (selectedType.field) {
-                        case '*':
-                            break;
+            if (selectedType.dropdown) {
+                const { labels, options } = this.filterManagementService.filterFieldOptions(
+                    selectedType.field,
+                    questions);
 
-                        case 'dialect':
-                            for (let answer of question.answers) {
-                                values[answer[selectedType.field]] = answer[selectedType.field];
-                            }
-                            break;
-
-                        case 'id':
-                            values[id] = question.prompt;
-                            break;
-
-                        case 'participantId':
-                            for (let participant of this.questionnaireService.getParticipants(question.answers)) {
-                                values[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
-                            }
-
-                            break;
-
-                        default:
-                            values[question[selectedType.field]] = question[selectedType.field];
-                            break;
-
-                    }
-                }
+                this.dropdownLabels = labels;
+                return options;
+            } else {
+                this.dropdownLabels = {};
+                return [];
             }
-
-            this.dropdownLabels = values;
-
-            return Object.entries(values).sort(([x, a], [y, b]) => {
-                if (a < b) {
-                    return -1;
-                } else if (a > b) {
-                    return 1;
-                }
-                return 0;
-            }).map<DropdownOption>(([value, label]) => ({
-                value,
-                label
-            }));
         })
     );
 
     dropdownLabels: { [value: string]: string };
 
-    constructor(private store: Store<State>, private questionnaireService: QuestionnaireService) {
+    constructor(private store: Store<State>, private filterManagementService: FilterManagementService, private questionnaireService: QuestionnaireService) {
         this.selectedType = this.filterTypes[0];
     }
 
@@ -170,7 +132,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.subscriptions = [
             // rate limit the keyboard input
             this.keyup$.pipe(
-                throttleTime(150, undefined, { leading: true, trailing: true})
+                throttleTime(150, undefined, { leading: true, trailing: true })
             ).subscribe(() => {
                 this.emit()
             }),

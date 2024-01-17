@@ -1,4 +1,5 @@
 import { TestBed, } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { FilterManagementService } from './filter-management.service';
@@ -15,6 +16,7 @@ describe('FilterManagementService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
             providers: [
                 provideMockStore<MockState>({
                     initialState: {
@@ -50,12 +52,25 @@ describe('FilterManagementService', () => {
                 content: ['maar er is meer!'],
                 index: 1,
                 onlyFullMatch: false
-            }]);
+            }],
+            new Map());
         expect(queryParams).toEqual({
-            '*': ['hallo wereld'],
-            '_*': ['nog iets'],
-            '*0': ['maar er is meer!'],
-            'OP': ['and']
+            '*': 'hallo wereld',
+            '$*': 'nog iets',
+            '*0': 'maar er is meer!',
+            'OP': 'and'
         })
+    });
+
+    it('should deal with commas and quotes', () => {
+        const cases: [string, string[]][] = [
+            ['"een, twee",drie', ['een, twee', 'drie']],
+            ['een,"""twee, drie"""', ['een', '"twee, drie"']]
+        ];
+
+        for (const [paramValue, items] of cases) {
+            expect(service.toParamValue(items)).toEqual(paramValue);
+            expect(service.fromParamValue(paramValue)).toEqual(items);
+        }
     });
 });

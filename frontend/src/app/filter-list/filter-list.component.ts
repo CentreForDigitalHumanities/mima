@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/cor
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Subscription } from 'rxjs';
+import { Subscription, combineLatestWith } from 'rxjs';
 import { addFilter, clearFilters, setFilters, setFiltersOperator, updateFilter } from '../questionnaire.actions';
 import { State } from '../questionnaire.state';
 import { Filter, FilterOperator } from '../models/filter';
@@ -36,8 +36,10 @@ export class FilterListComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.subscriptions = [
-            this.activatedRoute.queryParamMap.subscribe(queryParams => {
-                const [operator, filters] = this.filterManagementService.fromQueryParams(queryParams);
+            this.activatedRoute.queryParamMap.pipe(
+                combineLatestWith(this.store.select('questionnaire', 'questions'))
+            ).subscribe(([queryParams, questions]) => {
+                const [operator, filters] = this.filterManagementService.fromQueryParams(queryParams, questions);
                 if (filters.length) {
                     this.store.dispatch(setFilters({ filters }));
                     this.store.dispatch(setFiltersOperator({ operator }));
