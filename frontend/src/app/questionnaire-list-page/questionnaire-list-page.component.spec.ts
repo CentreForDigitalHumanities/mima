@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 import { QuestionnaireListPageComponent } from './questionnaire-list-page.component';
@@ -15,7 +16,7 @@ describe('QuestionnaireListPageComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [QuestionnaireListPageComponent, QuestionnaireItemComponent, FilterListComponent],
-            imports: [HttpClientTestingModule, MultiSelectModule],
+            imports: [HttpClientTestingModule, MultiSelectModule, RouterTestingModule.withRoutes([])],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();
