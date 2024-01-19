@@ -1,0 +1,11 @@
+progress {
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    opacity: 1;
+
+    &.hide-progress {
+        transform: translate(0, -1rem);
+        opacity: 0;
+    }
+}

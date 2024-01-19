@@ -1,11 +1,13 @@
 import { Store } from '@ngrx/store';
-import { Subscription, withLatestFrom } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { withLatestFrom } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
+import { ProgressService } from '../services/progress.service';
 
 const renderSteps = 10; //potentially move these to settings
 const renderInterval = 100;
@@ -25,6 +27,8 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     matchedQuestionIds = new Set<string>();
+    matchedAnswerCount = 0;
+    matchedDialects = new Set<string>();
 
     private renderIndex = 0;
 
@@ -42,7 +46,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     participantIds: string[];
 
-    constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
+    constructor(private questionnaireService: QuestionnaireService, private progressService: ProgressService, private store: Store<State>) {
     }
 
     ngOnInit() {
@@ -106,33 +110,61 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
     renderQuestions(): void {
         // start from the first item again
         this.renderIndex = 0;
+        this.matchedAnswerCount = 0;
+        this.matchedDialects = new Set<string>();
         if (this.renderTimeout) {
             return;
         }
+
+        if (!this.questionComponents) {
+            return;
+        }
+
+        let i = 0;
+        for (const component of this.questionComponents) {
+            if (i >= renderSteps) {
+                // don't blur the first matched questions
+                // they should be updated as quickly as possibly and not be blurred
+                // this way updating a filter by e.g. typing appears to be smooth
+                component.loading = true;
+            }
+            i++;
+        }
+
+        this.progressService.start();
 
         this.renderTimeout = setInterval(() => {
             let i = 0;
             while (i < renderSteps && this.renderIndex < this.matchedQuestionIds.size) {
                 const component = this.questionComponents.get(this.renderIndex);
                 component.question = this.matchedQuestions.get(component.id);
+                component.loading = false;
                 i++;
                 this.renderIndex++;
+                this.matchedAnswerCount += component.matchedAnswerCount;
+                for (const dialect of component.matchedDialectNames) {
+                    this.matchedDialects.add(dialect);
+                }
+                this.progressService.next(this.renderIndex, this.matchedQuestionIds.size);
             }
 
             if (this.renderIndex >= this.matchedQuestionIds.size) {
                 clearInterval(this.renderTimeout);
+                this.progressService.complete();
                 delete this.renderTimeout;
             }
         }, renderInterval);
     }
 
     onIncludeFilter(filterData: FilterEventData) {
+        this.progressService.indeterminate();
         this.store.dispatch(setIncludingFilter({
             ...filterData
         }));
     }
 
     onExcludeFilter(filterData: FilterEventData) {
+        this.progressService.indeterminate();
         let include: string[];
         switch (filterData.field) {
             case 'id':

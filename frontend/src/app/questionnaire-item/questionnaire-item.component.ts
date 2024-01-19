@@ -27,6 +27,7 @@ export class QuestionnaireItemComponent {
 
     @Input() id: string;
     @Input() questions: Map<string, Question>;
+    @Input() loading: boolean;
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
