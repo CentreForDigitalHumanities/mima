@@ -102,13 +102,13 @@
           "options": {},
           "configurations": {
             "production": {
-              "browserTarget": "mima:build:production"
+              "buildTarget": "mima:build:production"
             },
             "nl": {
-              "browserTarget": "mima:build:nl"
+              "buildTarget": "mima:build:nl"
             },
             "development": {
-              "browserTarget": "mima:build:development"
+              "buildTarget": "mima:build:development"
             }
           },
           "defaultConfiguration": "development"

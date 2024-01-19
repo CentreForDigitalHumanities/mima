@@ -16,6 +16,11 @@ $highlight-text: $warning-invert;
     @extend .is-warning;
 }
 
+// undo the reset from Bulma
+p-multiselectitem li {
+    margin: revert-layer;
+    padding: revert-layer;
+}
 
 p-multiselect.input {
     height: fit-content;
