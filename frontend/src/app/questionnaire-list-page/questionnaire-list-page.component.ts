@@ -1,5 +1,6 @@
 import { Store } from '@ngrx/store';
-import { Subscription, withLatestFrom } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { withLatestFrom } from 'rxjs/operators';
 import { AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
@@ -110,11 +111,16 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             return;
         }
 
+        for (const component of this.questionComponents) {
+            component.loading = true;
+        }
+
         this.renderTimeout = setInterval(() => {
             let i = 0;
             while (i < renderSteps && this.renderIndex < this.matchedQuestionIds.size) {
                 const component = this.questionComponents.get(this.renderIndex);
                 component.question = this.matchedQuestions.get(component.id);
+                component.loading = false;
                 i++;
                 this.renderIndex++;
             }

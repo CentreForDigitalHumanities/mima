@@ -20,7 +20,7 @@
         <source> No matching adverbials found! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/adverbial-list/adverbial-list.component.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6766437680170628987" datatype="html">
@@ -55,7 +55,7 @@
         <source>Select Dialect(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4607479538666247502" datatype="html">
@@ -69,14 +69,22 @@
         <source>Dialect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/download.service.ts</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6870893562392932905" datatype="html">
         <source>Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/download.service.ts</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2248848052060803390" datatype="html">
@@ -125,14 +133,14 @@
         <source> MiMA </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">4,6</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8364309938383915497" datatype="html">
         <source> Home </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">19,21</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5857934386762652898" datatype="html">
@@ -194,14 +202,14 @@
         <source>A preview of the uploaded information is shown. If this is as expected you can continue to saving this data. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">35,37</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6459376977606598638" datatype="html">
         <source> Add <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> new adverbials to the database? </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">52,54</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9178182467454450952" datatype="html">
@@ -257,14 +265,14 @@
         <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). The research project is funded by the Dutch Research Council (NWO).</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">5,10</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3660086085587815253" datatype="html">
         <source>One of the main aims of the research project is to map the cross-linguistic variation in the (morpho)syntax of manner adverbials. In pursuing this, we are interested in the internal structure (i.e., the internal make-up of complex words and groups of words) of these adverbials, their external structure (i.e., the way in which they distribute in the larger sentence), and the way in which these two variables interact. Part of building towards this goal consists of collecting the data contained in this database, and compiling and making them available in the database.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">12,19</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5846168834347158335" datatype="html">
@@ -285,28 +293,28 @@
         <source>As one look at the database reveals, there is a lot of variation in the way in which languages form and use manner adverbials. This rich variation is found between unrelated, but also (closely) related languages/language varieties, and has not been studied on a large scale and in detail before. The MiMA project contributes to the study of the (morpho)syntax of manner adverbials by systematic collection and study of data from languages/language varieties that exhibit different degrees of relatedness: the Dutch dialects are very closely related languages/language varieties, the Germanic languages are less closely related, and the non-Germanic languages are even further removed/unrelated. By studying the differences and similarities in the structure of the manner adverbials, we can relate these to the differences and similarities between the languages/language varieties. The sample of languages/language varieties in our database allows us to do this at different levels of fine-grainedness. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">21,34</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4244871897783889194" datatype="html">
         <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/LTavenier&quot; target=&quot;_blank&quot;&gt;"/>Lex Cloin-Tavenier<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">44,45</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4428091336900553605" datatype="html">
         <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/MMassaia&quot; target=&quot;_blank&quot;&gt;"/>Marta Massaia<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PhD student) </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">42,43</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="495773505965911553" datatype="html">
         <source>Prof. dr. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/staff/NFMCorver&quot; target=&quot;_blank&quot;&gt;"/>Norbert Corver<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> (PI) </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6461110097291912174" datatype="html">
@@ -348,14 +356,14 @@
         <source> If you have any suggestions or feedback about the data (base), please mail us at <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;mailto:mima@uu.nl?subject=MiMA database&quot;&gt;"/>mima@uu.nl<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>, using the subject line MiMA database. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">69,73</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2305971167120630158" datatype="html">
         <source> The database contains XXXX tokens of manner adverbials, split across XXXX types. These data primarily stem from our questionnaire research among native speakers. By studying (dialect) reference grammars, and the broader scientific literature, and by consulting native speakers, we first made a selection of languages/language varieties that are interesting for our research purposes (because of differences in word order phenomena, use of pronouns, etc.). Next, we made questionnaires to systematically chart the (im)possible patterns in the morphosyntax of the manner adverbials in these languages. The Dutch dialect data were collected in the Netherlands and Flanders (Belgium), in collaboration with the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://meertenspanel.meertens.knaw.nl/&quot;&gt;"/>Meertens Panel<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. The results of the questionnaires were glossed (according to the <x id="START_LINK_1" equiv-text="&lt;a target=&quot;_blank&quot; href=&quot;https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf&quot;&gt;"/>Leipzig glossing rules<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>) and provided with (English) translations, and embedded in the database. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">51,64</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2684615246776565388" datatype="html">
@@ -369,28 +377,32 @@
         <source> Further information on the organization of the data in the database can be found on the Instructions page of this website. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">65,68</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1122787259445706401" datatype="html">
         <source>Participant</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/download.service.ts</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1299159208295260312" datatype="html">
         <source>Search in all Fields</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434304467944125566" datatype="html">
         <source>Select Participant(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434327601231025030" datatype="html">
@@ -411,21 +423,21 @@
         <source>Select Question(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5320870651003627043" datatype="html">
         <source>Question</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="674321618652063659" datatype="html">
         <source> Questionnaires </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">28,30</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9041172628832548089" datatype="html">
@@ -439,7 +451,11 @@
         <source>Question Text</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/download.service.ts</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3797570084942068182" datatype="html">
@@ -462,35 +478,56 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">56,61</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">57,60</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> answers matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">97,99</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">92,94</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
         <source> No matches found! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2620086172735068115" datatype="html">
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3099741642167775297" datatype="html">
+        <source>Download</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8815853365854634252" datatype="html">
+        <source>Question ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/download.service.ts</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
     </body>

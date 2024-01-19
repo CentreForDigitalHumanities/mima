@@ -7,12 +7,28 @@
 }
 
 :host:not(:first-child) {
-    .question-header {
+
+    .question-header,
+    .content {
         margin-top: 2rem;
     }
 }
 
+%is-loading {
+    &.is-loading {
+        opacity: 0.5;
+        pointer-events: none;
+        filter: blur(2px) grayscale(100%);
+    }
+}
+
+.box {
+    @extend %is-loading;
+}
+
 .question-header {
+    @extend %is-loading;
+
     cursor: pointer;
     border-radius: 5px;
 
@@ -24,6 +40,10 @@
     .question-filters {
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
+    }
+
+    &.is-loading .question-filters {
+        display: none;
     }
 
     &:hover {
