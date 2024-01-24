@@ -8,3 +8,14 @@
         flex: 1;
     }
 }
+
+mima-menu {
+    // should be above mima-progress
+    z-index: 101;
+}
+
+mima-progress {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

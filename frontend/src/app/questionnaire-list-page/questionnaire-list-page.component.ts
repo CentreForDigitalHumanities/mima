@@ -7,6 +7,7 @@ import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
+import { ProgressService } from '../services/progress.service';
 
 const renderSteps = 10; //potentially move these to settings
 const renderInterval = 100;
@@ -43,7 +44,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     participantIds: string[];
 
-    constructor(private questionnaireService: QuestionnaireService, private store: Store<State>) {
+    constructor(private questionnaireService: QuestionnaireService, private progressService: ProgressService, private store: Store<State>) {
     }
 
     ngOnInit() {
@@ -111,9 +112,15 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             return;
         }
 
+        if (!this.questionComponents) {
+            return;
+        }
+
         for (const component of this.questionComponents) {
             component.loading = true;
         }
+
+        this.progressService.start();
 
         this.renderTimeout = setInterval(() => {
             let i = 0;
@@ -123,22 +130,26 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
                 component.loading = false;
                 i++;
                 this.renderIndex++;
+                this.progressService.next(this.renderIndex, this.matchedQuestionIds.size);
             }
 
             if (this.renderIndex >= this.matchedQuestionIds.size) {
                 clearInterval(this.renderTimeout);
+                this.progressService.complete();
                 delete this.renderTimeout;
             }
         }, renderInterval);
     }
 
     onIncludeFilter(filterData: FilterEventData) {
+        this.progressService.indeterminate();
         this.store.dispatch(setIncludingFilter({
             ...filterData
         }));
     }
 
     onExcludeFilter(filterData: FilterEventData) {
+        this.progressService.indeterminate();
         let include: string[];
         switch (filterData.field) {
             case 'id':

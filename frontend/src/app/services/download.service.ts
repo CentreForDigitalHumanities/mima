@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatchedQuestion } from '../models/question';
 import { MatchedParts } from '../models/adverbial';
+import { ProgressService } from './progress.service';
 
 type QuestionRow = {
     questionPrompt?: MatchedParts,
@@ -33,13 +34,21 @@ const QuestionColumnOrder: (keyof QuestionRow)[] =
     providedIn: 'root'
 })
 export class DownloadService {
-    downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>): void {
-        const rows: string[] = [QuestionColumnOrder.map(key => QuestionColumnNames[key]).join(',')];
-        for (const question of matchedQuestions) {
-            rows.push(...this.formatRows(this.questionsRow(question)));
-        }
+    constructor(private progressService: ProgressService) { }
 
-        this.download(rows.join('\n'));
+    downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>): void {
+        this.progressService.indeterminate();
+        try {
+            const rows: string[] = [QuestionColumnOrder.map(key => QuestionColumnNames[key]).join(',')];
+            for (const question of matchedQuestions) {
+                rows.push(...this.formatRows(this.questionsRow(question)));
+            }
+
+            this.download(rows.join('\n'));
+        }
+        finally {
+            this.progressService.complete();
+        }
     }
 
 

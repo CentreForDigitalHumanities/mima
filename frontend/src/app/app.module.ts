@@ -39,6 +39,7 @@ import { QuestionnaireListPageComponent } from './questionnaire-list-page/questi
 import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
 import { FilterTagsComponent } from './filter-tags/filter-tags.component';
 import { DownloadButtonComponent } from './download-button/download-button.component';
+import { ProgressComponent } from './progress/progress.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { DownloadButtonComponent } from './download-button/download-button.compo
                 strictActionImmutability: true
             }
         }),
-        DownloadButtonComponent
+        DownloadButtonComponent,
+        ProgressComponent
     ],
     providers: [
         // The language is used as the base_path for finding the right
