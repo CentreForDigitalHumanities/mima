@@ -116,8 +116,15 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             return;
         }
 
+        let i = 0;
         for (const component of this.questionComponents) {
-            component.loading = true;
+            if (i >= renderSteps) {
+                // don't blur the first matched questions
+                // they should be updated as quickly as possibly and not be blurred
+                // this way updating a filter by e.g. typing appears to be smooth
+                component.loading = true;
+            }
+            i++;
         }
 
         this.progressService.start();
