@@ -44,10 +44,6 @@
         transition: opacity 0.3s ease-in-out;
     }
 
-    &.is-loading .question-filters {
-        display: none;
-    }
-
     &:hover {
         background-color: rgba(202, 201, 201, 0.3);
 
