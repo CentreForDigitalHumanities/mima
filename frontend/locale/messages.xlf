@@ -530,6 +530,45 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1125602270951998559" datatype="html">
+        <source>dialect</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1222738782186578685" datatype="html">
+        <source>question</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2296681895307893686" datatype="html">
+        <source>any</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4435458555231795208" datatype="html">
+        <source>translation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="954250222839823287" datatype="html">
+        <source>participant</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

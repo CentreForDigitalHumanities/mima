@@ -36,7 +36,7 @@ const QuestionColumnOrder: (keyof QuestionRow)[] =
 export class DownloadService {
     constructor(private progressService: ProgressService) { }
 
-    downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>): void {
+    downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>, filename: string): void {
         this.progressService.indeterminate();
         try {
             const rows: string[] = [QuestionColumnOrder.map(key => QuestionColumnNames[key]).join(',')];
@@ -44,7 +44,7 @@ export class DownloadService {
                 rows.push(...this.formatRows(this.questionsRow(question)));
             }
 
-            this.download(rows.join('\n'));
+            this.download(rows.join('\n'), filename);
         }
         finally {
             this.progressService.complete();
@@ -87,14 +87,14 @@ export class DownloadService {
         }
     }
 
-    private download(data: string): void {
+    private download(data: string, filename: string): void {
         const blob = new Blob([data], {
             type: 'text/csv'
         });
 
         const element = document.createElement('a');
         element.setAttribute('href', window.URL.createObjectURL(blob));
-        element.setAttribute('download', 'results.csv');
+        element.setAttribute('download', filename);
 
         document.body.appendChild(element);
 
