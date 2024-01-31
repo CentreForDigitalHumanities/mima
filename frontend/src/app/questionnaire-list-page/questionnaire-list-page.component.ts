@@ -27,6 +27,8 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     matchedQuestionIds = new Set<string>();
+    matchedAnswerCount = 0;
+    matchedDialects = new Set<string>();
 
     private renderIndex = 0;
 
@@ -108,6 +110,8 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
     renderQuestions(): void {
         // start from the first item again
         this.renderIndex = 0;
+        this.matchedAnswerCount = 0;
+        this.matchedDialects = new Set<string>();
         if (this.renderTimeout) {
             return;
         }
@@ -137,6 +141,10 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
                 component.loading = false;
                 i++;
                 this.renderIndex++;
+                this.matchedAnswerCount += component.matchedAnswerCount;
+                for (const dialect of component.matchedDialectNames) {
+                    this.matchedDialects.add(dialect);
+                }
                 this.progressService.next(this.renderIndex, this.matchedQuestionIds.size);
             }
 

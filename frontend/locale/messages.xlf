@@ -73,7 +73,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6870893562392932905" datatype="html">
@@ -84,7 +84,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2248848052060803390" datatype="html">
@@ -388,7 +388,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1299159208295260312" datatype="html">
@@ -455,21 +455,21 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3797570084942068182" datatype="html">
         <source>Select</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5668077948386857930" datatype="html">
         <source>Exclude</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8856905278208146821" datatype="html">
@@ -478,39 +478,39 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> answers matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
         <source> No matches found! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2620086172735068115" datatype="html">
-        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/></source>
+      <trans-unit id="6512705589568471581" datatype="html">
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedDialects.size}}"/> dialects · <x id="INTERPOLATION_2" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
           <context context-type="linenumber">10</context>
@@ -527,7 +527,7 @@
         <source>Question ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
     </body>

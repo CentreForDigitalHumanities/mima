@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@ngrx/effects": "^17.1.0",
     "@ngrx/store": "^17.1.0",
+    "bezier-easing": "^2.1.0",
     "bulma": "^0.9.4",
     "luupzig": "^0.0.1",
     "primeicons": "^6.0.1",

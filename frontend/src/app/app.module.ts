@@ -40,6 +40,7 @@ import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-i
 import { FilterTagsComponent } from './filter-tags/filter-tags.component';
 import { DownloadButtonComponent } from './download-button/download-button.component';
 import { ProgressComponent } from './progress/progress.component';
+import { TransitionNumbersPipe } from './transition-numbers.pipe';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ProgressComponent } from './progress/progress.component';
         HighlightPlainPipe,
         QuestionnaireListPageComponent,
         QuestionnaireItemComponent,
-        FilterTagsComponent
+        FilterTagsComponent,
+        TransitionNumbersPipe
     ],
     imports: [
         AppRoutingModule,

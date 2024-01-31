@@ -7,7 +7,7 @@
     @if (matchedQuestions.size) {
         <div class="level">
             <div class="level-left">
-                <h1 class="title" i18n>Results: {{matchedQuestions.size}}</h1>
+                <h1 class="subtitle" i18n>Results: {{matchedQuestions.size}} questions &middot; {{matchedDialects.size}} dialects &middot; {{matchedAnswerCount | transitionNumbers}} answers</h1>
             </div>
             <div class="level-right">
                 <mima-download-button [matchedQuestions]="matchedQuestions"></mima-download-button>
