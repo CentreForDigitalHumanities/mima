@@ -1,10 +1,12 @@
-<div class="content has-text-centered has-text-light" *ngIf="!matchedQuestion">
-    <span class="icon is-large">
-        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
-    </span>
-</div>
-<ng-container *ngIf="matchedQuestion">
-    <div class="question-header" (click)="toggleQuestion()">
+@if (!matchedQuestion) {
+    <div class="content has-text-centered has-text-light">
+        <span class="icon is-large">
+            <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+        </span>
+    </div>
+}
+@else {
+    <div class="question-header" (click)="toggleQuestion()" [ngClass]="{'is-loading': loading}">
         <h2 class="subtitle is-4 mb-4 has-text-weight-semibold">
             <div class="level">
                 <div class="level-left">
@@ -38,7 +40,7 @@
             </div>
         </h2>
     </div>
-    <div class="box">
+    <div class="box" [ngClass]="{'is-loading': loading}">
         <div class="tile is-ancestor is-vertical">
             <ng-container *ngIf="questionExpanded">
                 <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
@@ -101,4 +103,4 @@
             </div>
         </div>
     </div>
-</ng-container>
+}

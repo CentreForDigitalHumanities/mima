@@ -38,6 +38,9 @@ import { HighlightPlainPipe } from './highlight-plain.pipe';
 import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
 import { QuestionnaireItemComponent } from './questionnaire-item/questionnaire-item.component';
 import { FilterTagsComponent } from './filter-tags/filter-tags.component';
+import { DownloadButtonComponent } from './download-button/download-button.component';
+import { ProgressComponent } from './progress/progress.component';
+import { TransitionNumbersPipe } from './transition-numbers.pipe';
 
 
 @NgModule({
@@ -57,7 +60,8 @@ import { FilterTagsComponent } from './filter-tags/filter-tags.component';
         HighlightPlainPipe,
         QuestionnaireListPageComponent,
         QuestionnaireItemComponent,
-        FilterTagsComponent
+        FilterTagsComponent,
+        TransitionNumbersPipe
     ],
     imports: [
         AppRoutingModule,
@@ -84,6 +88,8 @@ import { FilterTagsComponent } from './filter-tags/filter-tags.component';
                 strictActionImmutability: true
             }
         }),
+        DownloadButtonComponent,
+        ProgressComponent
     ],
     providers: [
         // The language is used as the base_path for finding the right

@@ -8,6 +8,7 @@ import { State } from '../questionnaire.state';
 import { Filter, FilterOperator } from '../models/filter';
 import { isEmptyFilter } from '../services/filter.service';
 import { FilterManagementService } from '../services/filter-management.service';
+import { ProgressService } from '../services/progress.service';
 
 @Component({
     selector: 'mima-filter-list',
@@ -30,6 +31,7 @@ export class FilterListComponent implements OnInit, OnDestroy {
     constructor(
         private activatedRoute: ActivatedRoute,
         private router: Router,
+        private progressService: ProgressService,
         private filterManagementService: FilterManagementService,
         private store: Store<State>) {
     }
@@ -77,19 +79,23 @@ export class FilterListComponent implements OnInit, OnDestroy {
     }
 
     filterChange(updated: Filter): void {
+        this.progressService.indeterminate();
         this.store.dispatch(updateFilter({ filter: updated }));
     }
 
     add(): void {
+        this.progressService.indeterminate();
         this.store.dispatch(addFilter());
     }
 
     clear(): void {
         this.clearable = false;
+        this.progressService.indeterminate();
         this.store.dispatch(clearFilters());
     }
 
     setOperator(operator: FilterOperator): void {
+        this.progressService.indeterminate();
         this.store.dispatch(setFiltersOperator({ operator }));
     }
 }
