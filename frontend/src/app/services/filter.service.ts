@@ -84,6 +84,50 @@ export class FilterService {
     }
 
     /**
+     * Checks whether the filters are equivalent and should return the same results.
+     * @param current current filters
+     * @param updated updated filters
+     * @returns true if the filters differ
+     */
+    public differ(current: readonly Filter[], updated: readonly Filter[]): boolean {
+        if (current.length !== updated.length) {
+            return true;
+        }
+
+        for (let i = 0; i < current.length; i++) {
+            const c = current[i];
+            const u = updated[i];
+
+            if (this.empty(c) && this.empty(u)) {
+                continue;
+            }
+
+            if (c.field !== u.field) {
+                return true;
+            }
+
+            if (c.content.length !== u.content.length) {
+                return true;
+            }
+
+            for (let j = 0; j < c.content.length; j++) {
+                if (c.content[j] !== u.content[j]) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks if a filter is empty.
+     */
+    private empty(filter: Filter): boolean {
+        return !(filter.content[0] ?? '').trim();
+    }
+
+    /**
      * Detect matches for a certain field of Adverbial/Question, either a string field or an array field
      * @param object Adverbial object in which to detect matches
      * @param result MatchedAdverbial object in which to update the matches
@@ -199,7 +243,7 @@ export class FilterService {
                 if (filter.field === '*' || filter.field === field) {
                     const filterMatches = this.searchMultiple(text, filter.content, filter.onlyFullMatch);
                     matches.push(...filterMatches);
-                    if (!(filter.content[0] ?? '').trim()) {
+                    if (this.empty(filter)) {
                         // an empty filter matches everything!
                         emptyFilter = true;
                         matchingFilters.add(filter);

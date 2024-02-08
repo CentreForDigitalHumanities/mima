@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
-import { mergeMap } from 'rxjs/operators';
-import { State } from './questionnaire.state';
+import { filter, mergeMap } from 'rxjs/operators';
+import { State, initialState } from './questionnaire.state';
 
 
 import { QuestionnaireService } from './services/questionnaire.service';
 import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions, setIncludingFilter, setExcludingFilter } from './questionnaire.actions';
+import { Filter, FilterOperator } from './models/filter';
 import { MatchedQuestion, Question } from './models/question';
+import { FilterService } from './services/filter.service';
+import { ProgressService } from './services/progress.service';
 
 
 @Injectable()
 export class QuestionnaireEffects {
     constructor(
         private actions$: Actions,
+        private filterService: FilterService,
+        private progressService: ProgressService,
         private questionnaireService: QuestionnaireService,
         private store: Store<State>
     ) { }
 
+    private currentFilters: readonly Filter[] = [];
+    private currentFilterOperator: FilterOperator = initialState.questionnaire.operator;
 
     loadQuestionnaire$ = createEffect(() => this.actions$.pipe(
         ofType(loadQuestionnaire),
@@ -45,13 +52,24 @@ export class QuestionnaireEffects {
             if (action.type === '[Questionnaire] Set Questions' && !action.applyFilters) {
                 // match everything
                 matchedQuestions = Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
+                this.currentFilterOperator = operator;
             } else {
+                if (action.type !== '[Questionnaire] Set Questions' && this.currentFilterOperator == operator && !this.filterService.differ(this.currentFilters, filters)) {
+                    // equivalent filters, don´t update results
+                    return null;
+                } else {
+                    this.progressService.indeterminate();
+                }
+
                 matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
+                this.currentFilters = filters;
+                this.currentFilterOperator = operator;
             }
 
             return setMatchedQuestions({
                 matchedQuestions
             });
-        })
+        }),
+        filter(action => action !== null)
     ));
 }
