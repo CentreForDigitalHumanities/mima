@@ -103,11 +103,11 @@ export class FilterComponent implements OnInit, OnDestroy {
         dropdown: true,
         placeholder: $localize`Select Participant(s)`
     }, {
-        name: $localize`Hide Unattested Answers`,
+        name: $localize`Attestation`,
         field: 'unattested',
         icon: faUser,
         dropdown: true,
-        placeholder: ''
+        placeholder: $localize`Select Attested or Unattested`
     }];
 
     textFieldContent: string;

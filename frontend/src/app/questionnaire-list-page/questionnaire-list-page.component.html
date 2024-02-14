@@ -2,9 +2,6 @@
 <h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
 <div class="box">
     <mima-filter-list></mima-filter-list>
-    <button class="button is-primary" (click)="onExcludeFilter({field: 'unattested', content: 'unattested'})">
-        <span i18n>Hide Unattested Answers</span>
-    </button>
 </div>
 <div *ngIf="!isLoading && matchedQuestions">
     @if (matchedQuestions.size) {
