@@ -69,7 +69,9 @@
                     <div class="tile is-child is-parent is-vertical is-9 p-0">
                         <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
                             <div class="is-flex">
-                                <span [ngClass]="{'unattested': answer.answer.text == 'unattested'}" [innerHTML]="answer.answer | highlight"></span>
+                                <span [ngClass]="{'unattested': answer.unattested.text}"
+                                [innerHTML]="answer.answer | highlight">
+                            </span>
                                 &nbsp;&nbsp;&nbsp;
                                 <div class="tags has-addons is-flex-wrap-nowrap">
                                     <div class="tag filterable"
