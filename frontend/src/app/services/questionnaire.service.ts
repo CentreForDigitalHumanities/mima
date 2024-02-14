@@ -63,7 +63,7 @@ export class QuestionnaireService {
                         answerId: '',
                         participantId: subentry['participant_id'],
                         dialect: subentry['dialect'],
-                        unattested: ''
+                        unattested: 'attested'
                     }
                     if (example === 'unattested') {
                         answer.answer = ''

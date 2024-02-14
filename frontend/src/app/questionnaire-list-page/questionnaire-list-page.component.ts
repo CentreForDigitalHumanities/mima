@@ -178,7 +178,12 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             case 'participantId':
                 include = this.participantIds;
                 break;
+
+            case 'unattested':
+                include = ['attested', 'unattested'];
+                break;
         }
+        console.log(filterData);
         this.store.dispatch(setExcludingFilter({
             ...filterData,
             exclude: filterData.content,

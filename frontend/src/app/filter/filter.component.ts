@@ -106,7 +106,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         name: $localize`Hide Unattested Answers`,
         field: 'unattested',
         icon: faUser,
-        dropdown: false,
+        dropdown: true,
         placeholder: ''
     }];
 

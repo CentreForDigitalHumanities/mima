@@ -253,7 +253,7 @@ export class FilterManagementService {
             return this.filterFieldOptionsCache[field];
         }
 
-        const labels: { [value: string]: string } = {};
+        let labels: { [value: string]: string } = {};
         for (const [id, question] of questions) {
             switch (field) {
                 case '*':
@@ -281,6 +281,9 @@ export class FilterManagementService {
                     break;
 
             }
+        }
+        if (field == 'unattested') {
+            labels = {'unattested': 'unattested', 'attested': 'attested'}
         }
 
         const result = {
