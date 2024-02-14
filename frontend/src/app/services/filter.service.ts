@@ -121,7 +121,7 @@ export class FilterService {
                 'answer',
                 'dialect',
                 'participantId',
-                'unattested'
+                'attestation'
             ];
             const answerFilters = filters.filter(
                 filter => ['*', ...answerKeys].includes(filter.field));

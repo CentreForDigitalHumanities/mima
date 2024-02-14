@@ -282,7 +282,7 @@ export class FilterManagementService {
 
             }
         }
-        if (field == 'unattested') {
+        if (field == 'attestation') {
             labels = {'unattested': 'unattested', 'attested': 'attested'}
         }
 

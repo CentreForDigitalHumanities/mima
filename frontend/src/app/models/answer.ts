@@ -6,7 +6,7 @@ export interface Answer {
     answerId: string;
     participantId: string;
     dialect: string;
-    unattested: string;  // using a string instead of a boolean to fit into the existing structure
+    attestation: string;  // using a string instead of a boolean to fit into the existing structure
     ma?: string;
     prompt?: string;
     promptMa?: string;
@@ -30,7 +30,7 @@ export class MatchedAnswer implements MatchedAnswerProperties {
     answerId: MatchedParts;
     participantId: MatchedParts;
     dialect: MatchedParts;
-    unattested: MatchedParts;
+    attestation: MatchedParts;
     ma?: MatchedParts;
     prompt?: MatchedParts;
     promptMa?: MatchedParts;
@@ -42,7 +42,7 @@ export class MatchedAnswer implements MatchedAnswerProperties {
         this.answerId = this.unmatchedValue(answer.answerId);
         this.participantId = this.unmatchedValue(answer.participantId);
         this.dialect = this.unmatchedValue(answer.dialect);
-        this.unattested = this.unmatchedValue(answer.unattested);
+        this.attestation = this.unmatchedValue(answer.attestation);
         this.ma = this.unmatchedValue(answer.ma);
         this.prompt = this.unmatchedValue(answer.prompt);
         this.promptMa = this.unmatchedValue(answer.promptMa);

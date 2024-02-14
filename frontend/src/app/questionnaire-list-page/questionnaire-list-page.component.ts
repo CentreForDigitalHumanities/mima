@@ -179,7 +179,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
                 include = this.participantIds;
                 break;
 
-            case 'unattested':
+            case 'attestation':
                 include = ['attested', 'unattested'];
                 break;
         }

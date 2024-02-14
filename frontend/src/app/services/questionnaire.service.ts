@@ -63,11 +63,11 @@ export class QuestionnaireService {
                         answerId: '',
                         participantId: subentry['participant_id'],
                         dialect: subentry['dialect'],
-                        unattested: 'attested'
+                        attestation: 'attested'
                     }
                     if (example === 'unattested') {
                         answer.answer = ''
-                        answer.unattested = 'unattested';
+                        answer.attestation = 'unattested';
                     }
                     answers.push(answer);
                 }

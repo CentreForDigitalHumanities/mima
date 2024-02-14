@@ -104,7 +104,7 @@ export class FilterComponent implements OnInit, OnDestroy {
         placeholder: $localize`Select Participant(s)`
     }, {
         name: $localize`Attestation`,
-        field: 'unattested',
+        field: 'attestation',
         icon: faUser,
         dropdown: true,
         placeholder: $localize`Select Attested or Unattested`
