@@ -102,7 +102,13 @@ export class FilterComponent implements OnInit, OnDestroy {
         icon: faUser,
         dropdown: true,
         placeholder: $localize`Select Participant(s)`
-    },];
+    }, {
+        name: $localize`Hide Unattested Answers`,
+        field: 'unattested',
+        icon: faUser,
+        dropdown: false,
+        placeholder: ''
+    }];
 
     textFieldContent: string;
     dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
