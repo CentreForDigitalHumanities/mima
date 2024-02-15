@@ -105,6 +105,10 @@ export class MatchedAdverbial implements MatchedAdverbialProperties {
         }
     }
 
+    updateCounts() {
+        // placeholder
+    }
+
     private unmatchedValue(text: string): MatchedParts {
         return new MatchedParts({
             empty: !(text ?? '').trim(),

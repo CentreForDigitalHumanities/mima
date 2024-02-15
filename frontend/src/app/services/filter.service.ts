@@ -33,7 +33,7 @@ export class FilterService {
         let anyMatch = false;
         let itemMatch = false;
         let result: MatchedQuestion | MatchedAdverbial;
-        let keys: (keyof MatchedQuestion)[] | (keyof MatchedAdverbial)[] = [];
+        let keys: (keyof Question)[] | (keyof Adverbial)[] = [];
         const matchingFilters: Filter[] = [];
         if (isQuestion(item)) {
             result = new MatchedQuestion();
@@ -76,6 +76,7 @@ export class FilterService {
                 }
             }
 
+            result.updateCounts();
             return <T extends Adverbial ? MatchedAdverbial : MatchedQuestion>result;
         }
 
@@ -143,7 +144,7 @@ export class FilterService {
         object: T,
         result: MatchedAdverbial | MatchedQuestion,
         filters: ReadonlyArray<Filter>,
-        key: keyof MatchedAdverbial | keyof MatchedQuestion,
+        key: keyof Adverbial | keyof Question,
         itemMatch: boolean,
         anyMatch: boolean,
         matchingFilters: Filter[],

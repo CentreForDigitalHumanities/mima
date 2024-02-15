@@ -60,28 +60,13 @@ export class QuestionnaireItemComponent {
             return;
         }
 
-        const dialects = new Set<string>();
-        this.matchedDialects = {};
+        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
 
-        this.matchedAnswerCount = 0;
-        this.matchedDialectsCount = 0;
-
-        for (let answer of this.matchedQuestion.answers) {
-            dialects.add(answer.dialect.text);
-
-            if (answer.match) {
-                this.matchedAnswerCount++;
-                if (answer.dialect.text in this.matchedDialects) {
-                    this.matchedDialects[answer.dialect.text].push(answer);
-                } else {
-                    this.matchedDialects[answer.dialect.text] = [answer];
-                    this.matchedDialectsCount++;
-                }
-            }
-        }
-
-        this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
-        this.dialectsCount = dialects.size;
+        this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
+        this.matchedDialects = this.matchedQuestion.matchedDialects;
+        this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
+        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
+        this.dialectsCount = this.matchedQuestion.dialectsCount;
         this.questionExpanded = this.onlyQuestion ||
             this.matchedDialectsCount <= autoExpandDialectCount ||
             this.matchedAnswerCount <= autoExpandAnswerCount;
