@@ -121,7 +121,6 @@ a.has-text-dark.filterable:hover {
     color: $grey-light;
 }
 
-.unattested::before {
-    content: 'unattested';
-    color: $grey-light;
+.tag {
+    margin-left: 8px;
 }
