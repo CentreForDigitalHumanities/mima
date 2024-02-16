@@ -254,37 +254,38 @@ export class FilterManagementService {
         }
 
         let labels: { [value: string]: string } = {};
-        for (const [id, question] of questions) {
-            switch (field) {
-                case '*':
-                    break;
+        if (field == 'attestation') {
+            labels = {'unattested': $localize`unattested`, 'attested': $localize`attested`}
+        } else {
+            for (const [id, question] of questions) {
+                switch (field) {
+                    case '*':
+                        break;
 
-                case 'dialect':
-                    for (let answer of question.answers) {
-                        labels[answer[field]] = answer[field];
-                    }
-                    break;
+                    case 'dialect':
+                        for (let answer of question.answers) {
+                            labels[answer[field]] = answer[field];
+                        }
+                        break;
 
-                case 'id':
-                    labels[id] = question.prompt;
-                    break;
+                    case 'id':
+                        labels[id] = question.prompt;
+                        break;
 
-                case 'participantId':
-                    for (let participant of this.questionnaireService.getParticipants(question.answers)) {
-                        labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
-                    }
+                    case 'participantId':
+                        for (let participant of this.questionnaireService.getParticipants(question.answers)) {
+                            labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                        }
 
-                    break;
+                        break;
 
-                default:
-                    labels[question[field]] = question[field];
-                    break;
-
+                    default:
+                        labels[question[field]] = question[field];
+                        break;
+                }
             }
         }
-        if (field == 'attestation') {
-            labels = {'unattested': 'unattested', 'attested': 'attested'}
-        }
+
 
         const result = {
             labels,

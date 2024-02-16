@@ -183,7 +183,6 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
                 include = ['attested', 'unattested'];
                 break;
         }
-        console.log(filterData);
         this.store.dispatch(setExcludingFilter({
             ...filterData,
             exclude: filterData.content,
