@@ -57,8 +57,6 @@ export class QuestionnaireEffects {
                 if (action.type !== '[Questionnaire] Set Questions' && this.currentFilterOperator == operator && !this.filterService.differ(this.currentFilters, filters)) {
                     // equivalent filters, don´t update results
                     return null;
-                } else {
-                    this.progressService.indeterminate();
                 }
 
                 matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));

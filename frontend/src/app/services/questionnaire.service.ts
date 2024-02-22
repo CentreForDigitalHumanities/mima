@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { MatchedQuestion, Question } from '../models/question';
@@ -6,14 +6,30 @@ import { Answer } from '../models/answer';
 import { Participant } from '../models/participant';
 import { Filter, FilterOperator } from '../models/filter';
 import { FilterService } from './filter.service';
+import { Cache, CacheService } from './cache.service';
+import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class QuestionnaireService {
+    private cache: Cache<MatchedQuestion[]>;
+    /**
+     * components displaying questions, using the question ID as key
+     */
+    private components: { [id: string]: QuestionnaireItemComponent } = {};
 
-    constructor(private http: HttpClient, private filterService: FilterService) { }
+    visibleQuestionIds: Set<string> = new Set<string>();
+    private database: Promise<Question[]>;
+    private loadData: (questions: Question[]) => void;
+
+    constructor(private http: HttpClient, private filterService: FilterService, private cacheService: CacheService, private ngZone: NgZone) {
+        this.cache = cacheService.init<MatchedQuestion[]>('questions');
+        this.database = new Promise((resolve) => {
+            this.loadData = resolve;
+        });
+    }
 
     /**
      * Reads the json file in assets
@@ -22,13 +38,35 @@ export class QuestionnaireService {
     async get(): Promise<ReadonlyArray<Question>> {
         const response = lastValueFrom(this.http.get('assets/cleaned_translation_questions.json'));
 
-        try {
-            const data = await response.then(res => res);
-            const questionnaire = this.convertToQuestionnaire(data);
-            this.database.push(...questionnaire);
-            return Promise.resolve(questionnaire);
-        } catch (error) {
-            throw error;
+        const data = await response.then(res => res);
+        const questionnaire = this.convertToQuestionnaire(data);
+        this.loadData(questionnaire);
+        return Promise.resolve(questionnaire);
+    }
+
+    /**
+     * Registers a question component so it can be updated directly during a search.
+     */
+    registerComponent(component: QuestionnaireItemComponent) {
+        this.components[component.id] = component;
+    }
+
+    /**
+     * Removes the registration for a component on clean-up.
+     */
+    unregisterComponent(component: QuestionnaireItemComponent) {
+        delete this.components[component.id];
+    }
+
+    /**
+     * Gets all the visible components
+     */
+    *visibleComponents(): Iterable<QuestionnaireItemComponent> {
+        for (const questionId of this.visibleQuestionIds) {
+            const component = this.components[questionId];
+            if (component) {
+                yield component;
+            }
         }
     }
 
@@ -119,15 +157,92 @@ export class QuestionnaireService {
         return Object.values(participants);
     }
 
-    private database: Question[] = [];
     /**
-     * Taken verbatim from the adverbialsService
+     * Searches the database for matching questions.
+     * @param filters filters to apply
+     * @param operator conjunction operator to use
+     * @returns the matching results
      */
     async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedQuestion>> {
-        const matched = this.database
+        const cacheKey = this.cacheService.key([filters, operator]);
+        const cached = this.cache.get(cacheKey);
+        if (cached !== undefined) {
+            return cached;
+        }
+
+        // update visible questions first
+        const { visible, other } = this.selectVisible(await this.database);
+        let matches = visible
             .map(question => this.filterService.applyFilters(question, filters, operator))
             .filter(question => !!question);
 
-        return Promise.resolve(matched);
+        this.ngZone.run(() => {
+            this.updateVisible(matches);
+        });
+
+        // filter remainder of the questions
+        return new Promise((resolve) => {
+            matches.push(...other
+                .map(question => this.filterService.applyFilters(question, filters, operator))
+                .filter(question => !!question));
+
+            this.cache.set(cacheKey, matches);
+
+            resolve(matches);
+        });
+    }
+
+    /**
+     * Selects the visible questions from the database.
+     * @param questions questions database
+     * @returns the questions which are visible, and the remainder
+     */
+    private selectVisible(questions: Question[]): {
+        visible: Question[],
+        other: Question[]
+    } {
+        const visible: Question[] = [];
+        const other: Question[] = [];
+        for (const question of questions) {
+            if (this.visibleQuestionIds.has(question.id)) {
+                visible.push(question);
+            } else {
+                other.push(question);
+            }
+        }
+
+        return { visible, other };
+    }
+
+    /**
+     * Directly triggers the visible components to have their content updated.
+     * @param matches results which should at least apply to all the visible questions
+     */
+    private updateVisible(matches: MatchedQuestion[]) {
+        // make a copy, so we can remove all matching question IDs
+        const visibleIds = [...this.visibleQuestionIds];
+        for (const question of matches) {
+            if (visibleIds.length === 0) {
+                break;
+            }
+
+            const index = visibleIds.indexOf(question.id.text);
+            if (index !== -1) {
+                const [questionId] = visibleIds.splice(index, 1);
+                const component = this.components[questionId];
+                if (component) {
+                    // immediately set the question to update rendering
+                    component.question = question;
+                }
+            }
+        }
+
+        // these weren't in the matches, so we know they should be hidden
+        for (const questionId of visibleIds) {
+            const component = this.components[questionId];
+            if (component) {
+                component.question = undefined;
+            }
+        }
     }
 }
