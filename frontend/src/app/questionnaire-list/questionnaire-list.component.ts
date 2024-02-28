@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, EventEmitter, Input, NgZone, OnDestroy, Output, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, NgZone, OnChanges, OnDestroy, Output, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
 import { FilterEvent, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { Subject, Subscription, throttleTime } from 'rxjs';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { MatchedQuestion, Question } from '../models/question';
+import { TypedChanges } from '../models/typed-changes';
 
 @Component({
     selector: 'mima-questionnaire-list',
@@ -11,7 +12,7 @@ import { MatchedQuestion, Question } from '../models/question';
     templateUrl: './questionnaire-list.component.html',
     styleUrl: './questionnaire-list.component.scss'
 })
-export class QuestionnaireListComponent implements AfterViewInit, OnDestroy {
+export class QuestionnaireListComponent implements AfterViewInit, OnChanges, OnDestroy {
     private subscriptions: Subscription[];
     /**
      * Tracks which questions have become visible or hidden
@@ -49,6 +50,12 @@ export class QuestionnaireListComponent implements AfterViewInit, OnDestroy {
             this.questionComponents.changes.subscribe(() => {
                 this.triggerRender.next();
             }));
+    }
+
+    ngOnChanges(changes: TypedChanges<QuestionnaireListComponent>): void {
+        if (changes.matchedQuestions && !changes.matchedQuestions.firstChange) {
+            this.triggerRender.next();
+        }
     }
 
     ngOnDestroy(): void {
