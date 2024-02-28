@@ -41,7 +41,7 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges, OnD
 
     constructor(private questionnaireService: QuestionnaireService, private ngZone: NgZone) {
         this.questionsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(entries, observer));
-        this.subscriptions = [this.triggerRender.pipe(throttleTime(50)).subscribe(() => this.renderQuestions())];
+        this.subscriptions = [this.triggerRender.pipe(throttleTime(50, undefined, { trailing: true })).subscribe(() => this.renderQuestions())];
     }
 
     ngAfterViewInit(): void {
@@ -54,6 +54,8 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges, OnD
 
     ngOnChanges(changes: TypedChanges<QuestionnaireListComponent>): void {
         if (changes.matchedQuestions && !changes.matchedQuestions.firstChange) {
+            // when the list of results isn't changed, but the content of the
+            // questions themselves could still have been changed
             this.triggerRender.next();
         }
     }
