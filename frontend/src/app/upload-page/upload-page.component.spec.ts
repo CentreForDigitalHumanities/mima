@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { initialState } from '../adverbial.state';
+import { initialState } from '../questionnaire.state';
 import { UploadComponent } from '../upload/upload.component';
 import { UploadPageComponent } from './upload-page.component';
 

@@ -2,27 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="410108238198338107" datatype="html">
-        <source>Adverbials</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list-page/adverbial-list-page.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5554451848245969203" datatype="html">
-        <source>Matched <x id="INTERPOLATION" equiv-text="{{matchCount$ | async}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalCount$ | async}}"/> adverbials</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list-page/adverbial-list-page.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3244153850785660600" datatype="html">
-        <source> No matching adverbials found! </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list/adverbial-list.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="6766437680170628987" datatype="html">
         <source>Add Filter</source>
         <context-group purpose="location">
@@ -55,7 +34,7 @@
         <source>Select Dialect(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4607479538666247502" datatype="html">
@@ -69,7 +48,7 @@
         <source>Dialect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">102</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -80,7 +59,7 @@
         <source>Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -143,13 +122,6 @@
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5857934386762652898" datatype="html">
-        <source>Upload Adverbials</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7037889682600256786" datatype="html">
         <source>Upload File</source>
         <context-group purpose="location">
@@ -205,8 +177,8 @@
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6459376977606598638" datatype="html">
-        <source> Add <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> new adverbials to the database? </source>
+      <trans-unit id="7098092177525488649" datatype="html">
+        <source> Add <x id="INTERPOLATION" equiv-text="{{questions.length}}"/> new questions to the database? </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
           <context context-type="linenumber">52</context>
@@ -219,8 +191,8 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6926404035489068834" datatype="html">
-        <source>Successfully saved <x id="INTERPOLATION" equiv-text="{{savedCount}}"/> adverbials!</source>
+      <trans-unit id="3263152905672441226" datatype="html">
+        <source>Successfully saved <x id="INTERPOLATION" equiv-text="{{savedCount}}"/> questions!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
           <context context-type="linenumber">64</context>
@@ -230,7 +202,7 @@
         <source>Saving failed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3475689872614747615" datatype="html">
@@ -384,7 +356,7 @@
         <source>Participant</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -395,14 +367,14 @@
         <source>Search in all Fields</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434304467944125566" datatype="html">
         <source>Select Participant(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434327601231025030" datatype="html">
@@ -423,14 +395,14 @@
         <source>Select Question(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5320870651003627043" datatype="html">
         <source>Question</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="674321618652063659" datatype="html">
@@ -451,7 +423,7 @@
         <source>Question Text</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">90</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -505,8 +477,8 @@
       <trans-unit id="1280221140510194500" datatype="html">
         <source> No matches found! </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="sourcefile">src/app/questionnaire-list/questionnaire-list.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6512705589568471581" datatype="html">
@@ -567,6 +539,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
           <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4875117548236744651" datatype="html">
+        <source>Upload Questions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4140001714396323304" datatype="html">
+        <source> Selected <x id="INTERPOLATION" equiv-text="{{selected.length}}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-tags/filter-tags.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5341781744857763716" datatype="html">
+        <source> Excluded <x id="INTERPOLATION" equiv-text="{{unselected.length}}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-tags/filter-tags.component.html</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
     </body>

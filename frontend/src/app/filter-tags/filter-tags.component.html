@@ -1,6 +1,6 @@
 <div class="tags">
-    <ng-container [ngSwitch]="display">
-        <ng-container *ngSwitchCase="'selected'">
+    @switch (display) {
+        @case ('selected') {
             <div class="tag is-success is-light" *ngFor="let option of selected">
                 <span class="icon-text">
                     <span class="icon">
@@ -11,8 +11,8 @@
                     </span>
                 </span>
             </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="'unselected'">
+        }
+        @case ('unselected') {
             <div class="tag is-danger is-light" *ngFor="let option of unselected">
                 <span class="icon-text">
                     <span class="icon">
@@ -23,14 +23,14 @@
                     </span>
                 </span>
             </div>
-        </ng-container>
-        <ng-container *ngSwitchCase="'count'">
+        }
+        @case ('count') {
             <div class="tag is-success is-light">
                 <span class="icon-text">
                     <span class="icon">
                         <fa-icon [icon]="faCheck"></fa-icon>
                     </span>
-                    <span>
+                    <span i18n>
                         Selected {{selected.length}}
                     </span>
                 </span>
@@ -40,11 +40,11 @@
                     <span class="icon">
                         <fa-icon [icon]="faTimes"></fa-icon>
                     </span>
-                    <span>
+                    <span i18n>
                         Excluded {{unselected.length}}
                     </span>
                 </span>
             </div>
-        </ng-container>
-    </ng-container>
+        }
+    }
 </div>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
-import { setAdverbials } from '../adverbial.actions';
-import { State } from '../adverbial.state';
-import { Adverbial } from '../models/adverbial';
-import { AdverbialsService } from '../services/adverbials.service';
+import { setQuestions } from '../questionnaire.actions';
+import { State } from '../questionnaire.state';
 import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
+import { Question } from '../models/question';
+import { QuestionnaireService } from '../services/questionnaire.service';
 
 @Component({
     selector: 'mima-upload-page',
@@ -15,26 +15,31 @@ import { FileUploadService } from './../services/file-upload.service'; // Just f
 export class UploadPageComponent {
     faCheckCircle = faCheckCircle;
 
-    adverbials: Adverbial[];
+    questions: Question[];
     state: 'upload' | 'review' | 'save' | 'saved' = 'upload';
     savedCount: number;
 
     loading = false;
 
-    constructor(private adverbialsService: AdverbialsService, private fileUploadService: FileUploadService, private store: Store<State>) { }
+    constructor(private questionnaireService: QuestionnaireService, private fileUploadService: FileUploadService, private store: Store<State>) { }
 
-    setAdverbials(adverbials: Adverbial[]): void {
-        this.adverbials = adverbials;
-        this.store.dispatch(setAdverbials({ adverbials, applyFilters: false }));
+    setQuestions(questions: Question[]): void {
+        this.questions = questions;
+        const questionsMap = new Map<string, Question>();
+        for (const question of questions) {
+            questionsMap[question.id] = question;
+        }
+
+        this.store.dispatch(setQuestions({ questions: questionsMap, applyFilters: false }));
         this.state = 'review';
     }
 
     async save(): Promise<void> {
         this.loading = true;
-        const result = await this.adverbialsService.save(this.adverbials);
+        const result = await this.questionnaireService.save(this.questions);
         if (result.success) {
-            this.savedCount = this.adverbials.length;
-            delete this.adverbials;
+            this.savedCount = this.questions.length;
+            delete this.questions;
             this.state = 'saved';
         } else {
             // TODO: notification
@@ -44,14 +49,14 @@ export class UploadPageComponent {
     }
 
     async onUploadPilot(): Promise<void> {
-        const pilot_adverbials = await this.fileUploadService.uploadPilot();
-        this.setAdverbials(pilot_adverbials);
+        const pilotAdverbials = await this.fileUploadService.uploadPilot();
+        this.setQuestions(pilotAdverbials);
         this.save();
     }
 
     async onUploadQuestionnaire(abridged: boolean): Promise<void> {
-        const quest_adverbials = await this.fileUploadService.uploadQuestionnaire(abridged);
-        this.setAdverbials(quest_adverbials);
+        const questAdverbials = await this.fileUploadService.uploadQuestionnaire(abridged);
+        this.setQuestions(questAdverbials);
         // this.save();
     }
 }

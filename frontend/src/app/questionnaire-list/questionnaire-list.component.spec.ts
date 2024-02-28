@@ -1,0 +1,24 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { QuestionnaireListComponent } from './questionnaire-list.component';
+
+describe('QuestionnaireListComponent', () => {
+    let component: QuestionnaireListComponent;
+    let fixture: ComponentFixture<QuestionnaireListComponent>;
+
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [QuestionnaireListComponent, HttpClientTestingModule]
+        })
+            .compileComponents();
+
+        fixture = TestBed.createComponent(QuestionnaireListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+});

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
-import { Adverbial } from '../models/adverbial';
 import { ValidationErrors } from '../models/validationError';
+import { Question } from '../models/question';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +14,7 @@ export class FileUploadService {
     /***
      * @throws ValidationErrors
      */
-    async upload(file: File): Promise<Adverbial[]> {
+    async upload(file: File): Promise<Question[]> {
 
         // Create form data
         const formData = new FormData();
@@ -24,7 +24,7 @@ export class FileUploadService {
 
         // Make http post request over api
         // with formData as req
-        const response = lastValueFrom(this.http.post<Adverbial[]>(
+        const response = lastValueFrom(this.http.post<Question[]>(
             this.baseApiUrl + '/upload/upload/', formData));
 
         try {
@@ -40,10 +40,10 @@ export class FileUploadService {
     /***
      * Temporary method to quickly load data into the frontend from a path
      */
-    async uploadPilot(): Promise<Adverbial[]> {
+    async uploadPilot(): Promise<Question[]> {
 
         // Make http post request over api
-        const response = lastValueFrom(this.http.post<Adverbial[]>(
+        const response = lastValueFrom(this.http.post<Question[]>(
             this.baseApiUrl + '/upload/pilot_upload/', {}));
 
         try {
@@ -56,10 +56,10 @@ export class FileUploadService {
         }
     }
 
-    async uploadQuestionnaire(abridged: boolean): Promise<Adverbial[]> {
+    async uploadQuestionnaire(abridged: boolean): Promise<Question[]> {
 
         // Make http post request over api
-        const response = lastValueFrom(this.http.post<Adverbial[]>(
+        const response = lastValueFrom(this.http.post<Question[]>(
             this.baseApiUrl + '/upload/questionnaire_upload/', abridged));
 
         try {

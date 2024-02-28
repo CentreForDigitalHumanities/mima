@@ -2,30 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" target-language="nl" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="410108238198338107" datatype="html">
-        <source>Adverbials</source>
-        <target state="translated">Bijwoordelijke uitdrukkingen</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list-page/adverbial-list-page.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5554451848245969203" datatype="html">
-        <source>Matched <x id="INTERPOLATION" equiv-text="{{matchCount$ | async}}"/> of <x id="INTERPOLATION_1" equiv-text="{{totalCount$ | async}}"/> adverbials</source>
-        <target state="translated"><x id="INTERPOLATION" equiv-text="{{matchCount$ | async}}"/> van <x id="INTERPOLATION_1" equiv-text="{{totalCount$ | async}}"/> uitdrukkingen gevonden</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list-page/adverbial-list-page.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3244153850785660600" datatype="html">
-        <source> No matching adverbials found! </source>
-        <target state="translated"> Geen uitdrukkingen gevonden! </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/adverbial-list/adverbial-list.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="6766437680170628987" datatype="html">
         <source>Add Filter</source>
         <target state="translated">Filter toevoegen</target>
@@ -71,7 +47,7 @@
         <target state="translated">Dialect</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">102</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -83,7 +59,7 @@
         <target state="translated">Vertaling</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">96</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -154,14 +130,6 @@
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5857934386762652898" datatype="html">
-        <source>Upload Adverbials</source>
-        <target state="translated">Uitdrukkingen toevoegen</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7037889682600256786" datatype="html">
         <source>Upload File</source>
         <target state="translated">Bestanden toevoegen</target>
@@ -222,9 +190,9 @@
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6459376977606598638" datatype="html">
-        <source> Add <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> new adverbials to the database? </source>
-        <target state="translated"> Voeg <x id="INTERPOLATION" equiv-text="{{adverbials.length}}"/> nieuwe uitdrukkingen toe aan de database? </target>
+      <trans-unit id="7098092177525488649" datatype="html">
+        <source> Add <x id="INTERPOLATION" equiv-text="{{questions.length}}"/> new questions to the database? </source>
+        <target state="translated"> <x id="INTERPOLATION" equiv-text="{{questions.length}}"/> nieuwe vragen toevoegen aan de database? </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
           <context context-type="linenumber">52</context>
@@ -238,9 +206,9 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6926404035489068834" datatype="html">
-        <source>Successfully saved <x id="INTERPOLATION" equiv-text="{{savedCount}}"/> adverbials!</source>
-        <target state="translated"><x id="INTERPOLATION" equiv-text="{{savedCount}}"/> uitdrukkingen succesvol toegevoegd aan de database!</target>
+      <trans-unit id="3263152905672441226" datatype="html">
+        <source>Successfully saved <x id="INTERPOLATION" equiv-text="{{savedCount}}"/> questions!</source>
+        <target state="translated"><x id="INTERPOLATION" equiv-text="{{savedCount}}"/> vragen succesvol toegevoegd aan de database!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
           <context context-type="linenumber">64</context>
@@ -251,7 +219,7 @@
         <target state="translated">Opslaan mislukt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/upload-page/upload-page.component.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3475689872614747615" datatype="html">
@@ -291,7 +259,7 @@
         <target state="translated">Kies dialect(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5846168834347158335" datatype="html">
@@ -443,7 +411,7 @@
         <target state="translated">Zoek in alle velden</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5320870651003627043" datatype="html">
@@ -451,7 +419,7 @@
         <target state="translated">Vraag</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5129980223571446304" datatype="html">
@@ -459,7 +427,7 @@
         <target state="translated">Kies vraag(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="920567845139554152" datatype="html">
@@ -467,7 +435,7 @@
         <target state="translated">Vraagtekst</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">90</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -479,7 +447,7 @@
         <target state="translated">Participant</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -491,7 +459,7 @@
         <target state="translated">Kies participant(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="674321618652063659" datatype="html">
@@ -574,8 +542,8 @@
         <source> No matches found! </source>
         <target state="translated"> Geen resultaten gevonden! </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="sourcefile">src/app/questionnaire-list/questionnaire-list.component.html</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
@@ -644,6 +612,30 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/download-button/download-button.component.ts</context>
           <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4875117548236744651" datatype="html">
+        <source>Upload Questions</source>
+        <target state="translated">Vragen uploaden</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/upload-page/upload-page.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4140001714396323304" datatype="html">
+        <source> Selected <x id="INTERPOLATION" equiv-text="{{selected.length}}"/> </source>
+        <target state="translated"> <x id="INTERPOLATION" equiv-text="{{selected.length}}"/> gekozen </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-tags/filter-tags.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5341781744857763716" datatype="html">
+        <source> Excluded <x id="INTERPOLATION" equiv-text="{{unselected.length}}"/> </source>
+        <target state="translated"> <x id="INTERPOLATION" equiv-text="{{unselected.length}}"/> uitgesloten </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter-tags/filter-tags.component.html</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
     </body>

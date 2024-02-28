@@ -1,13 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MatchedParts } from './models/adverbial';
+import { MatchedParts } from './models/matched-parts';
 
 @Pipe({
     name: 'highlightPlain'
 })
 export class HighlightPlainPipe implements PipeTransform {
-    constructor() {
-    }
-
     /**
      * Highlights the matching part by surrounding them with *asterisks*
      * @param text matched and unmatched parts

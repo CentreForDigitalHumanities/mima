@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { initialState } from '../adverbial.state';
+import { initialState } from '../questionnaire.state';
 import { FilterComponent } from './filter.component';
 
 describe('FilterComponent', () => {
@@ -13,8 +11,8 @@ describe('FilterComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FilterComponent],
-            imports: [FormsModule, FontAwesomeModule, HttpClientTestingModule],
+            declarations: [],
+            imports: [FilterComponent, HttpClientTestingModule],
             providers: [provideMockStore({ initialState })]
         }).compileComponents();
     });

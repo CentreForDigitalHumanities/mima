@@ -1,4 +1,4 @@
-<h1 class="title" i18n>Upload Adverbials</h1>
+<h1 class="title" i18n>Upload Questions</h1>
 <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
     <ul>
         <li [ngClass]="{'is-active': state==='upload'}" (click)="state='upload'"><a i18n>Upload File</a></li>
@@ -22,35 +22,35 @@
 
 <ng-container *ngIf="state==='upload'">
     <h2 class="subtitle" i18n>Upload File</h2>
-    <mima-upload (adverbials)="setAdverbials($event)"></mima-upload>
+    <mima-upload (questions)="setQuestions($event)"></mima-upload>
 </ng-container>
 
 <ng-container *ngIf="state==='review'">
     <h2 class="subtitle" i18n>Review</h2>
-    <ng-container *ngIf="!adverbials">
+    <ng-container *ngIf="!questions">
         <p i18n>Please <a (click)="state='upload'">upload</a> a file first.</p>
     </ng-container>
-    <ng-container *ngIf="adverbials">
+    <ng-container *ngIf="questions">
         <div class="content">
             <p i18n>A preview of the uploaded information is shown. If this is as expected you can continue to saving this
                 data.
             </p>
             <button class="button is-primary" (click)="state='save'" i18n>Save in Database</button>
         </div>
-        <mima-adverbial-list></mima-adverbial-list>
+        <mima-questionnaire-list></mima-questionnaire-list>
     </ng-container>
 </ng-container>
 
 <ng-container *ngIf="state==='save'">
     <h2 class="subtitle" i18n>Save in Database</h2>
 
-    <ng-container *ngIf="!adverbials">
+    <ng-container *ngIf="!questions">
         <p i18n>Please <a (click)="state='upload'">upload</a> a file first.</p>
     </ng-container>
-    <ng-container *ngIf="adverbials">
+    <ng-container *ngIf="questions">
         <div class="content">
             <p i18n>
-                Add {{adverbials.length}} new adverbials to the database?
+                Add {{questions.length}} new questions to the database?
             </p>
         </div>
         <button class="button is-success" (click)="save()" [ngClass]="{'is-loading': loading}" i18n>Confirm</button>
@@ -61,5 +61,5 @@
     <p class="has-text-success">
         <fa-icon [icon]="faCheckCircle" size="4x"></fa-icon>
     </p>
-    <p i18n>Successfully saved {{savedCount}} adverbials!</p>
+    <p i18n>Successfully saved {{savedCount}} questions!</p>
 </div>

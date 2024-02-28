@@ -5,7 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { initialState } from '../adverbial.state';
+import { initialState } from '../questionnaire.state';
 import { FilterComponent } from '../filter/filter.component';
 import { FilterListComponent } from './filter-list.component';
 
@@ -15,8 +15,8 @@ describe('FilterListComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FilterListComponent, FilterComponent],
-            imports: [FormsModule, FontAwesomeModule, HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+            declarations: [FilterListComponent],
+            imports: [FilterComponent, FormsModule, FontAwesomeModule, HttpClientTestingModule, RouterTestingModule.withRoutes([])],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();

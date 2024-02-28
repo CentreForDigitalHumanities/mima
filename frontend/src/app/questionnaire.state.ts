@@ -7,10 +7,8 @@ export interface State {
         operator: FilterOperator;
         filters: ReadonlyArray<Filter>;
         questions: Map<string, Question>;
-        questionIds: ReadonlyArray<string>;
         questionsCount: number;
         matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
-        matchedQuestionIds: ReadonlyArray<string>;
     }
 }
 
@@ -18,10 +16,8 @@ export const initialState: State = {
     questionnaire: {
         operator: 'or',
         filters: [{ index: 0, field: '*', content: [], onlyFullMatch: false }],
-        questions: new Map<string, Question>(),
-        questionIds: [],
+        questions: new Map(),
         questionsCount: 0,
-        matchedQuestions: new Map(),
-        matchedQuestionIds: []
+        matchedQuestions: new Map()
     }
 }
