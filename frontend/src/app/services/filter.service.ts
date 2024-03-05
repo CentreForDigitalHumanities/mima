@@ -120,7 +120,8 @@ export class FilterService {
             const answerKeys: (keyof Answer)[] = [
                 'answer',
                 'dialect',
-                'participantId'
+                'participantId',
+                'attestation'
             ];
             const answerFilters = filters.filter(
                 filter => ['*', ...answerKeys].includes(filter.field));
