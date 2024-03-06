@@ -93,6 +93,10 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
             case 'participantId':
                 include = this.participantIds;
                 break;
+
+            case 'attestation':
+                include = ['attested', 'unattested'];
+                break;
         }
         this.store.dispatch(setExcludingFilter({
             ...filterData,

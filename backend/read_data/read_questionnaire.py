@@ -4,7 +4,7 @@ import json
 import os
 from dataclasses import dataclass, asdict
 
-from backend.mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+from mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
 
 def read_csv(filepath):
     data = []
@@ -114,16 +114,25 @@ for row in data[1:]:
     participant = ''.join(row[0:2])
     for index, cell in enumerate(row):
         question = questionnaire_items[index]
-        if cell != '' and index in translation_indices:
-            # skip cells that have cleaned versions of them in the next line
-            if questionnaire_items[index+1].cleaned and row[index+1] != '':
-                pass
-            else:
-                answer = Answer(question.tag, answer=cell, dialect=participants[participant], participant_id=participant)
+        if index in translation_indices:
+            # mark unattested answers for empty cells
+            # cleaned cells are skipped
+            if cell == '' and not questionnaire_items[index].cleaned:
+                answer = Answer(question.tag, answer='unattested', dialect=participants[participant], participant_id=participant)
                 if question.answers:
                     question.answers.append(answer)
                 else:
                     question.answers = [answer]
+            elif cell != '':
+                # skip cells that have cleaned versions of them in the next line
+                if questionnaire_items[index+1].cleaned and row[index+1] != '':
+                    pass
+                else:
+                    answer = Answer(question.tag, answer=cell, dialect=participants[participant], participant_id=participant)
+                    if question.answers:
+                        question.answers.append(answer)
+                    else:
+                        question.answers = [answer]
 
 ## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
 ## and save it in a cleaned_translation_questions_dict
