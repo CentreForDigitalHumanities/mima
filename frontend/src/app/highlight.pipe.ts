@@ -1,9 +1,10 @@
 import { Pipe, PipeTransform, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { MatchedParts } from './models/adverbial';
+import { MatchedParts } from './models/matched-parts';
 
 @Pipe({
-    name: 'highlight'
+    name: 'highlight',
+    standalone: true
 })
 export class HighlightPipe implements PipeTransform {
     constructor(private sanitizer: DomSanitizer) {

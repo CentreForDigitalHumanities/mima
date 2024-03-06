@@ -1,0 +1,17 @@
+@if (questions) {
+    @for (questionId of questions.keys(); track questionId) {
+        @if (matchedQuestions.has(questionId)) {
+            <mima-questionnaire-item
+                [questions]="questions"
+                [id]="questionId"
+                [onlyQuestion]="matchedQuestions.size === 1"
+                (includeFilter)="includeFilter.next($event)"
+                (excludeFilter)="excludeFilter.next($event)"></mima-questionnaire-item>
+        }
+    }
+    @empty {
+        <div class="notification is-warning" i18n>
+            No matches found!
+        </div>
+    }
+}

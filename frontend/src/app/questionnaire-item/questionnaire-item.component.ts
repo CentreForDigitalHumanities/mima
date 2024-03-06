@@ -1,9 +1,12 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
+import { HighlightPipe } from '../highlight.pipe';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -17,6 +20,8 @@ export interface FilterEvent {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe],
+    standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     faCheck = faCheck;
@@ -27,7 +32,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     @Input() id: string;
     @Input() questions: Map<string, Question>;
-    @Input() loading: boolean;
+    @Input() loading = false;
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 

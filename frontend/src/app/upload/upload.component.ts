@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
-import { Adverbial } from '../models/adverbial';
 import { ValidationErrors } from '../models/validationError';
+import { Question } from '../models/question';
 import { FileUploadService } from './../services/file-upload.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { FileUploadService } from './../services/file-upload.service';
 })
 export class UploadComponent {
     @Output()
-    adverbials = new EventEmitter<Adverbial[]>();
+    questions = new EventEmitter<Question[]>();
 
     faUpload = faUpload;
 
@@ -33,7 +33,7 @@ export class UploadComponent {
         this.loading = true;
         delete this.messages;
         try {
-            this.adverbials.emit(await this.fileUploadService.upload(this.file));
+            this.questions.emit(await this.fileUploadService.upload(this.file));
             this.state = 'success';
         } catch (error) {
             this.state = 'error';

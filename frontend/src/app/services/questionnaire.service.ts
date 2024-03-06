@@ -31,6 +31,17 @@ export class QuestionnaireService {
         });
     }
 
+    async save(items: Iterable<Question>): Promise<{ success: boolean }> {
+        const data = [...items];
+        // resolves existing awaiters (if any)
+        this.loadData(data);
+        // if it has already been loaded, override it
+        this.database = Promise.resolve(data);
+
+        // async to allow modifying this method when saving it to an actual external database
+        return Promise.resolve({ success: true });
+    }
+
     /**
      * Reads the json file in assets
      * @returns a Promise of an Array of Question objects

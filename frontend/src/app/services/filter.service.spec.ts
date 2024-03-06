@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Adverbial, MatchedAdverbialProperties, MatchedPart, MatchedParts } from '../models/adverbial';
+import { MatchedPart, MatchedParts } from '../models/matched-parts';
 import { Filter, FilterOperator } from '../models/filter';
+import { MatchedQuestion, MatchedQuestionProperties, Question } from '../models/question';
 import { SearchExpression } from '../models/search-expression';
 import { FilterService } from './filter.service';
 
@@ -79,7 +80,7 @@ function getMatchedParts(text: string, emptyFilters: boolean): MatchedParts {
  * Constructs a mock matched adverbial.
  * @param adverbial adverbial containing *highlighted* texts
  */
-function getMatchedAdverbial(adverbial: Adverbial, emptyFilters: boolean): MatchedAdverbialProperties {
+function getMatchedQuestion(adverbial: Question, emptyFilters: boolean): MatchedQuestionProperties {
     const result = {};
     for (const [key, value] of Object.entries(adverbial)) {
         if (Array.isArray(value)) {
@@ -89,7 +90,16 @@ function getMatchedAdverbial(adverbial: Adverbial, emptyFilters: boolean): Match
         }
     }
 
-    return result as MatchedAdverbialProperties;
+    result['dialectsCount'] = 0;
+    result['matchedAnswerCount'] = 0;
+    result['matchedDialects'] = {};
+    result['matchedDialectsCount'] = 0;
+    result['matchedDialectNames'] = [];
+
+    delete result['type'];
+    delete result['question'];
+
+    return result as MatchedQuestion;
 }
 
 describe('FilterService', () => {
@@ -107,8 +117,8 @@ describe('FilterService', () => {
     // Fix this test when we define the adverbials better
     it('should match', () => {
         const testData: {
-            expected: Adverbial,
-            input: Adverbial,
+            expected: Question,
+            input: Question,
             filters: {
                 field: Filter['field'],
                 content: string[],
@@ -118,34 +128,18 @@ describe('FilterService', () => {
         }[] = [{
             expected: {
                 id: '',
-                text: 'Dit is een *test*',
-                roots: [''],
-                examples: [''],
-                translations: [''],
-                glosses: [''],
-                language: '',
-                dialect: '',
-                language_family: '',
-                language_group: '',
-                source: '',
-                labels: [],
-                notes: '',
+                prompt: 'Dit is een *test*',
+                type: '',
+                answers: [],
+                question: ''
 
             },
             input: {
                 id: '',
-                text: 'Dit is een test',
-                roots: [''],
-                examples: [''],
-                translations: [''],
-                glosses: [''],
-                language: '',
-                dialect: '',
-                language_family: '',
-                language_group: '',
-                source: '',
-                labels: [],
-                notes: '',
+                prompt: 'Dit is een test',
+                type: '',
+                answers: [],
+                question: ''
             },
             filters: [{
                 field: '*',
@@ -171,9 +165,10 @@ describe('FilterService', () => {
             }
 
             const output = service.applyFilters(input, indexedFilters, operator);
-            const properties = <MatchedAdverbialProperties>({ ...output });
+            const properties = <MatchedQuestionProperties>({ ...output });
 
-            expect(getMatchedAdverbial(expected, emptyFilters)).toEqual(properties);
+            const expectedQuestion = getMatchedQuestion(expected, emptyFilters);
+            expect(expectedQuestion).toEqual(properties);
         }
 
     });

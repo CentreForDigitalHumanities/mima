@@ -5,22 +5,21 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { QuestionnaireItemComponent } from './questionnaire-item.component';
 
 describe('QuestionnaireItemComponent', () => {
-  let component: QuestionnaireItemComponent;
-  let fixture: ComponentFixture<QuestionnaireItemComponent>;
+    let component: QuestionnaireItemComponent;
+    let fixture: ComponentFixture<QuestionnaireItemComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ QuestionnaireItemComponent ],
-      imports: [ HttpClientTestingModule, FontAwesomeModule ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [QuestionnaireItemComponent, HttpClientTestingModule, FontAwesomeModule]
+        })
+            .compileComponents();
 
-    fixture = TestBed.createComponent(QuestionnaireItemComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(QuestionnaireItemComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const ShowMax = 5;
@@ -6,7 +8,9 @@ const ShowMax = 5;
 @Component({
     selector: 'mima-filter-tags',
     templateUrl: './filter-tags.component.html',
-    styleUrls: ['./filter-tags.component.scss']
+    styleUrls: ['./filter-tags.component.scss'],
+    standalone: true,
+    imports: [CommonModule, FontAwesomeModule]
 })
 export class FilterTagsComponent implements OnChanges {
     display: 'selected' | 'unselected' | 'count' = 'selected';

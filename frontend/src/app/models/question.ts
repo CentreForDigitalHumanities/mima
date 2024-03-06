@@ -1,4 +1,4 @@
-import { MatchedParts } from './adverbial';
+import { MatchedParts } from './matched-parts';
 import { Answer, MatchedAnswer } from './answer';
 
 export interface Question {

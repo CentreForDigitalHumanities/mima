@@ -1,4 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
     faAsterisk,
     faTimesCircle,
@@ -13,11 +16,14 @@ import {
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
 import { combineLatestWith, map, throttleTime, withLatestFrom } from 'rxjs/operators';
+import { MultiSelectModule } from 'primeng/multiselect';
+
 import { removeFilter } from '../questionnaire.actions';
 import { State } from '../questionnaire.state';
 import { Filter } from '../models/filter';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { DropdownOption, FilterManagementService } from '../services/filter-management.service';
+import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 
 
 type FilterType = {
@@ -31,7 +37,9 @@ type FilterType = {
 @Component({
     selector: 'mima-filter',
     templateUrl: './filter.component.html',
-    styleUrls: ['./filter.component.scss']
+    styleUrls: ['./filter.component.scss'],
+    standalone: true,
+    imports: [CommonModule, FontAwesomeModule, FormsModule, MultiSelectModule, FilterTagsComponent]
 })
 export class FilterComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];

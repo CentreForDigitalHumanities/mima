@@ -1,4 +1,4 @@
-import { MatchedParts } from './adverbial';
+import { MatchedParts } from './matched-parts';
 
 export interface Answer {
     questionId: string;

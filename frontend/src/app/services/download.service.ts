@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatchedQuestion } from '../models/question';
-import { MatchedParts } from '../models/adverbial';
+import { MatchedParts } from '../models/matched-parts';
 import { ProgressService } from './progress.service';
 
 type QuestionRow = {

@@ -11,8 +11,7 @@ export const questionnaireReducer = createReducer(
     on(setQuestions, (state, action) => ({
         ...state,
         questions: action.questions,
-        questionsCount: action.questions.size,
-        questionIds: Array.from(action.questions.keys())
+        questionsCount: action.questions.size
     })),
     on(clearFilters, (state) => ({
         ...state,
@@ -161,18 +160,15 @@ export const questionnaireReducer = createReducer(
     }),
     on(setMatchedQuestions, (state, action) => {
         const matchedQuestions = new Map<string, MatchedQuestion>();
-        const matchedQuestionIds: string[] = [];
 
         for (const match of action.matchedQuestions) {
             const id = match.id.text;
-            matchedQuestionIds.push(id);
             matchedQuestions.set(id, match);
         }
         return {
             ...state,
             matchedQuestions,
-            matchedQuestionsCount: matchedQuestionIds.length,
-            matchedQuestionIds
+            matchedQuestionsCount: matchedQuestions.size
         };
     })
 )

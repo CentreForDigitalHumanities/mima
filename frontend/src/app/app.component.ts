@@ -1,6 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ProgressService } from './services/progress.service';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'mima-root',
