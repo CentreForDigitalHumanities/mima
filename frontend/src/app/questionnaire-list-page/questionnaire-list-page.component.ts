@@ -1,16 +1,13 @@
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { withLatestFrom } from 'rxjs/operators';
-import { AfterViewInit, Component, Input, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, Input, NgZone, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
-import { ProgressService } from '../services/progress.service';
 
-const renderSteps = 10; //potentially move these to settings
-const renderInterval = 100;
 @Component({
     selector: 'mima-questionnaire-list-page',
     templateUrl: './questionnaire-list-page.component.html',
@@ -20,8 +17,12 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
     questionIds$ = this.store.select('questionnaire', 'questionIds');
-    private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions')
-    private matchedQuestionIds$ = this.store.select('questionnaire', 'matchedQuestionIds')
+    private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions');
+    private matchedQuestionIds$ = this.store.select('questionnaire', 'matchedQuestionIds');
+    /**
+     * Tracks which questions have become visible or hidden
+     */
+    private questionsObserver: IntersectionObserver;
 
     @Input() filterSelect: Map<string, string[]>;
 
@@ -29,10 +30,6 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
     matchedQuestionIds = new Set<string>();
     matchedAnswerCount = 0;
     matchedDialects = new Set<string>();
-
-    private renderIndex = 0;
-
-    renderTimeout: ReturnType<typeof setInterval>;
 
     @ViewChildren(QuestionnaireItemComponent)
     questionComponents!: QueryList<QuestionnaireItemComponent>;
@@ -46,7 +43,8 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
 
     participantIds: string[];
 
-    constructor(private questionnaireService: QuestionnaireService, private progressService: ProgressService, private store: Store<State>) {
+    constructor(private questionnaireService: QuestionnaireService, private store: Store<State>, private ngZone: NgZone) {
+        this.questionsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(entries, observer));
     }
 
     ngOnInit() {
@@ -70,6 +68,16 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
             ).subscribe(([ids, questions]) => {
                 this.matchedQuestions = questions;
                 this.matchedQuestionIds = new Set<string>(ids);
+
+                this.matchedAnswerCount = 0;
+                this.matchedDialects = new Set<string>();
+                for (const question of this.matchedQuestions.values()) {
+                    this.matchedAnswerCount += question.matchedAnswerCount;
+                    for (const dialect of question.matchedDialectNames) {
+                        this.matchedDialects.add(dialect);
+                    }
+                }
+
                 this.renderQuestions();
             })
         ]
@@ -78,7 +86,7 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
     ngAfterViewInit(): void {
         this.renderQuestions();
         this.subscriptions.push(
-            this.questionComponents.changes.subscribe((r) => {
+            this.questionComponents.changes.subscribe(() => {
                 this.renderQuestions();
             }));
     }
@@ -87,84 +95,77 @@ export class QuestionnaireListPageComponent implements AfterViewInit, OnDestroy,
         for (const subscription of this.subscriptions) {
             subscription.unsubscribe();
         }
-        if (this.renderTimeout) {
-            clearTimeout(this.renderTimeout);
-        }
     }
 
     /**
-     * TAKEN FROM THE ADVERBIAL-LIST COMPONENT:
+     * Called by the intersection observer when questions scroll in or out of the viewport
+     */
+    private intersectionObserverCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
+        for (const entry of entries) {
+            const id = (<HTMLElement>entry.target).dataset['id'];
+            if (entry.isIntersecting) {
+                // scrolled into view
+                this.questionnaireService.visibleQuestionIds.add(id);
+            } else {
+                // scrolled out of view
+                this.questionnaireService.visibleQuestionIds.delete(id);
+            }
+        }
+
+        this.renderVisibleQuestions();
+    }
+
+    /**
      * Rendering the adverbials and its highlights real-time whilst
      * the user is typing characters is SLOW. To make the user
      * experience much faster, render it incrementally:
      * - the matching components are rendered immediately (but empty!)
-     * - their contents are set/updated in batches which are spread
-     *   out over time. This way the first few (visible) hits are
-     *   rendered straight away but hits further down the page wait.
-     *   If the user quickly types a new character, only this small
-     *   set of components for each batch is re-rendered. This limits
-     *   the amount of rendering to be done on each key press.
-     *   The complete rendering of all the matches will then be done
-     *   in the background, once the filter has stabilized.
+     * - their contents are set/updated in whenever they are scrolled
+     *   into view. This way the visible hits are rendered straight
+     *   away but hits further down the page wait.
+     *   If the user quickly types a new character, only the visible
+     *   set of components is re-rendered. This limits the amount
+     *   of rendering to be done on each key press.
+     *   The complete rendering of all the matches is only done
+     *   if the user would scroll through the entire page.
      */
     renderQuestions(): void {
-        // start from the first item again
-        this.renderIndex = 0;
-        this.matchedAnswerCount = 0;
-        this.matchedDialects = new Set<string>();
-        if (this.renderTimeout) {
-            return;
-        }
-
         if (!this.questionComponents) {
             return;
         }
 
-        let i = 0;
         for (const component of this.questionComponents) {
-            if (i >= renderSteps) {
-                // don't blur the first matched questions
-                // they should be updated as quickly as possibly and not be blurred
-                // this way updating a filter by e.g. typing appears to be smooth
-                component.loading = true;
-            }
-            i++;
+            this.questionsObserver.observe(component.nativeElement);
+            component.loading = true;
         }
 
-        this.progressService.start();
+        this.renderVisibleQuestions();
+    }
 
-        this.renderTimeout = setInterval(() => {
-            let i = 0;
-            while (i < renderSteps && this.renderIndex < this.matchedQuestionIds.size) {
-                const component = this.questionComponents.get(this.renderIndex);
+    private renderVisibleQuestions() {
+        const renderQueue: QuestionnaireItemComponent[] = [];
+        for (const component of this.questionnaireService.visibleComponents()) {
+            if (component?.loading) {
+                renderQueue.push(component);
+            }
+        }
+
+        if (renderQueue.length === 0) { return; }
+        this.ngZone.run(() => {
+            for (const component of renderQueue) {
                 component.question = this.matchedQuestions.get(component.id);
                 component.loading = false;
-                i++;
-                this.renderIndex++;
-                this.matchedAnswerCount += component.matchedAnswerCount;
-                for (const dialect of component.matchedDialectNames) {
-                    this.matchedDialects.add(dialect);
-                }
-                this.progressService.next(this.renderIndex, this.matchedQuestionIds.size);
             }
-
-            if (this.renderIndex >= this.matchedQuestionIds.size) {
-                clearInterval(this.renderTimeout);
-                this.progressService.complete();
-                delete this.renderTimeout;
-            }
-        }, renderInterval);
+        });
     }
 
     onIncludeFilter(filterData: FilterEventData) {
-        this.progressService.indeterminate();
         this.store.dispatch(setIncludingFilter({
             ...filterData
         }));
     }
 
     onExcludeFilter(filterData: FilterEventData) {
-        this.progressService.indeterminate();
         let include: string[];
         switch (filterData.field) {
             case 'id':

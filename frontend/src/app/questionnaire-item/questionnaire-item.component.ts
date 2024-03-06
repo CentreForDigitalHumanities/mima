@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
@@ -18,7 +18,7 @@ export interface FilterEvent {
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
 })
-export class QuestionnaireItemComponent {
+export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     faCheck = faCheck;
     faChevronDown = faChevronDown;
     faCircleNotch = faCircleNotch;
@@ -39,10 +39,17 @@ export class QuestionnaireItemComponent {
     matchedDialectsCount = 0;
     questionExpanded: boolean = false;
 
+    /**
+     * Native element used to render this component.
+     */
+    nativeElement: HTMLElement;
+
     @Input()
     set question(value: MatchedQuestion) {
         this.matchedQuestion = value;
-        this.updateCounts();
+        if (value) {
+            this.updateCounts();
+        }
     }
 
     /**
@@ -51,37 +58,37 @@ export class QuestionnaireItemComponent {
     @Input()
     onlyQuestion = false;
 
-    constructor(private questionnaireService: QuestionnaireService) {
+    constructor(private questionnaireService: QuestionnaireService, element: ElementRef) {
+        this.nativeElement = element.nativeElement;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        if (this.id !== this.nativeElement.dataset['id']) {
+            // this is used to find the associated data when
+            // this component becomes visible
+            this.nativeElement.dataset['id'] = this.id;
+            this.questionnaireService.registerComponent(this);
+        }
+    }
+
+    ngOnDestroy(): void {
+        this.questionnaireService.unregisterComponent(this);
+    }
+
+
     private updateCounts() {
-        if (!this.matchedQuestion.answers) {
+        if (!this.matchedQuestion?.answers) {
             this.questionExpanded = false;
             return;
         }
 
-        const dialects = new Set<string>();
-        this.matchedDialects = {};
+        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
 
-        this.matchedAnswerCount = 0;
-        this.matchedDialectsCount = 0;
-
-        for (let answer of this.matchedQuestion.answers) {
-            dialects.add(answer.dialect.text);
-
-            if (answer.match) {
-                this.matchedAnswerCount++;
-                if (answer.dialect.text in this.matchedDialects) {
-                    this.matchedDialects[answer.dialect.text].push(answer);
-                } else {
-                    this.matchedDialects[answer.dialect.text] = [answer];
-                    this.matchedDialectsCount++;
-                }
-            }
-        }
-
-        this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
-        this.dialectsCount = dialects.size;
+        this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
+        this.matchedDialects = this.matchedQuestion.matchedDialects;
+        this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
+        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
+        this.dialectsCount = this.matchedQuestion.dialectsCount;
         this.questionExpanded = this.onlyQuestion ||
             this.matchedDialectsCount <= autoExpandDialectCount ||
             this.matchedAnswerCount <= autoExpandAnswerCount;

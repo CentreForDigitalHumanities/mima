@@ -34,6 +34,12 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     prompt: MatchedParts;
     answers: MatchedAnswer[];
 
+    dialectsCount = 0;
+    matchedAnswerCount = 0;
+    matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
+    matchedDialectsCount = 0;
+    matchedDialectNames: string[] = [];
+
     constructor(question?: Question) {
         if (question) {
             this.id = this.unmatchedValue(question.id);
@@ -41,6 +47,30 @@ export class MatchedQuestion implements MatchedQuestionProperties {
             this.prompt = this.unmatchedValue(question.prompt);
             this.answers = question.answers.map(answer => new MatchedAnswer(answer));
         }
+    }
+
+    updateCounts() {
+        const dialects = new Set<string>();
+
+        this.matchedAnswerCount = 0;
+        this.matchedDialects = {};
+
+        for (const answer of this.answers) {
+            dialects.add(answer.dialect.text);
+
+            if (answer.match) {
+                this.matchedAnswerCount++;
+                if (answer.dialect.text in this.matchedDialects) {
+                    this.matchedDialects[answer.dialect.text].push(answer);
+                } else {
+                    this.matchedDialects[answer.dialect.text] = [answer];
+                }
+            }
+        }
+
+        this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
+        this.matchedDialectsCount = this.matchedDialectNames.length;
+        this.dialectsCount = dialects.size;
     }
 
     private unmatchedValue(text: string): MatchedParts {

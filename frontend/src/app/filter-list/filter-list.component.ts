@@ -79,23 +79,19 @@ export class FilterListComponent implements OnInit, OnDestroy {
     }
 
     filterChange(updated: Filter): void {
-        this.progressService.indeterminate();
         this.store.dispatch(updateFilter({ filter: updated }));
     }
 
     add(): void {
-        this.progressService.indeterminate();
         this.store.dispatch(addFilter());
     }
 
     clear(): void {
         this.clearable = false;
-        this.progressService.indeterminate();
         this.store.dispatch(clearFilters());
     }
 
     setOperator(operator: FilterOperator): void {
-        this.progressService.indeterminate();
         this.store.dispatch(setFiltersOperator({ operator }));
     }
 }
