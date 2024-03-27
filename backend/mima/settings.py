@@ -95,6 +95,9 @@ PROXY_FRONTEND = None
 ## Path to the Meertens data in csv format
 DATA_PATH = ""
 
+## Path to the additional data, i.e. chapters, tags, glosses, and translations
+ADDITIONAL_DATA_PATH = ""
+
 ## Path to the participants' data in csv format
 PARTICIPANTS_PATH = ""
 
