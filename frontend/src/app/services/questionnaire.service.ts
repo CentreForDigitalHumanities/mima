@@ -126,6 +126,11 @@ export class QuestionnaireService {
                 type: entry['type'],
                 question: entry['question'],
                 prompt: entry['prompt'],
+                split_item: entry['split_item'],
+                chapter: entry['chapter'],
+                subtags: entry['subtags'],
+                gloss: entry['gloss'],
+                en_translation: entry['en_translation'],
                 answers: answers
             };
             questions.push(question);

@@ -5,6 +5,11 @@ export interface Question {
     id: string;
     type: string;
     question: string;
+    split_item: string;
+    chapter: string;
+    subtags: string[];
+    gloss: string;
+    en_translation: string;
     prompt?: string;  // as of yet not implemented because it is identical to question for now
     answers?: Answer[];
 }
@@ -33,6 +38,11 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     question: MatchedParts;
     prompt: MatchedParts;
     answers: MatchedAnswer[];
+    split_item: MatchedParts;
+    chapter: MatchedParts;
+    subtags: MatchedParts[];
+    gloss: MatchedParts;
+    en_translation: MatchedParts;
 
     dialectsCount = 0;
     matchedAnswerCount = 0;
