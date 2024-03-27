@@ -43,6 +43,8 @@
     <div class="box" [ngClass]="{'is-loading': loading}">
         <div class="tile is-ancestor is-vertical">
             <ng-container *ngIf="questionExpanded">
+                <div [innerHTML]="matchedQuestion.gloss.text"></div>
+                <div [innerHTML]="matchedQuestion.en_translation.text"></div>
                 <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
                     <div class="tile is-child" [id]="dialect">
                         <div class="dialect-header">
@@ -94,15 +96,21 @@
                 </div>
             </ng-container>
             <div class="tile is-parent">
-                <div class="tile is-child">
+                <div class="tile is-child is-3">
                     <span i18n>
                         {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
                     </span>
                 </div>
-                <div class="tile is-child is-9">
+                <div class="tile is-child is-3">
                     <span i18n>
                         {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
                     </span>
+                </div>
+                <div class="tile is-child is-1">
+                    <span i18n class="tag">{{ matchedQuestion.chapter.text }}</span>
+                </div>
+                <div *ngIf="matchedQuestion.subtags" class="is-child is-5">
+                    <span *ngFor="let subtag of matchedQuestion.subtags" class="tag ml-1">{{subtag.text}}</span>
                 </div>
             </div>
         </div>
