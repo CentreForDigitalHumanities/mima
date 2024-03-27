@@ -37,6 +37,7 @@ export class FilterService {
         keys = [
             'id',
             'prompt',
+            'split_item',
             'answers',
             'chapter',
             'subtags',
@@ -142,6 +143,7 @@ export class FilterService {
             case 'chapter':
             case 'gloss':
             case 'en_translation':
+            case 'split_item':
                 {
                     const value = object[key];
                     const [parts, partFilters] = this.searchField(value, key, filters);
