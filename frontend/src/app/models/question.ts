@@ -55,6 +55,10 @@ export class MatchedQuestion implements MatchedQuestionProperties {
             this.id = this.unmatchedValue(question.id);
             this.type = this.unmatchedValue(question.type);
             this.prompt = this.unmatchedValue(question.prompt);
+            this.split_item = this.unmatchedValue(question.split_item);
+            this.chapter = this.unmatchedValue(question.chapter);
+            this.subtags = question.subtags.map(subtag => this.unmatchedValue(subtag))
+            this.prompt = this.unmatchedValue(question.prompt);
             this.answers = question.answers.map(answer => new MatchedAnswer(answer));
         }
     }

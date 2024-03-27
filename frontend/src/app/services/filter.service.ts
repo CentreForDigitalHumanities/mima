@@ -37,7 +37,11 @@ export class FilterService {
         keys = [
             'id',
             'prompt',
-            'answers'
+            'answers',
+            'chapter',
+            'subtags',
+            'gloss',
+            'en_translation',
         ];
         for (const key of keys) {
             [itemMatch, anyMatch] = this.detectMatches(item, result, filters, key, itemMatch, anyMatch, matchingFilters, operator);
@@ -135,6 +139,9 @@ export class FilterService {
             case 'prompt':
             case 'question':
             case 'type':
+            case 'chapter':
+            case 'gloss':
+            case 'en_translation':
                 {
                     const value = object[key];
                     const [parts, partFilters] = this.searchField(value, key, filters);
@@ -144,7 +151,20 @@ export class FilterService {
                     matchingFilters.push(...partFilters);
                 }
                 break;
-
+            case 'subtags':
+                {
+                    result[key] = [];
+                    const subtags = object.subtags;
+                    if (subtags) {
+                        for (const subtag of subtags) {
+                            const [parts, partFilters] = this.searchField(subtag, key, filters);
+                            anyMatch ||= parts.match;
+                            result[key].push(parts);
+                            matchingFilters.push(...partFilters);
+                        }
+                    }
+                }
+                break;
             case 'answers':
                 {
                     result[key] = [];
