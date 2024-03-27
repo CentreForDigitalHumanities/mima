@@ -269,6 +269,7 @@ export class FilterManagementService {
                         break;
 
                     case 'id':
+                        console.log(labels)
                         labels[id] = question.prompt;
                         break;
 
@@ -277,6 +278,15 @@ export class FilterManagementService {
                             labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
                         }
 
+                        break;
+
+                    case 'subtags':
+                        console.log(labels);
+                        if (question.subtags) {
+                            for (let subtag of question.subtags) {
+                                    labels[subtag] = subtag;
+                            }
+                        }
                         break;
 
                     default:

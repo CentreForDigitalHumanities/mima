@@ -116,6 +116,30 @@ export class FilterComponent implements OnInit, OnDestroy {
         icon: faUser,
         dropdown: true,
         placeholder: $localize`Select Attested or Unattested`
+    }, {
+        name: $localize`Gloss`,
+        field: 'gloss',
+        icon: faUser,
+        dropdown: false,
+        placeholder: ''
+    }, {
+        name: $localize`English Translation`,
+        field: 'en_translation',
+        icon: faUser,
+        dropdown: false,
+        placeholder: ''
+    }, {
+        name: $localize`Chapter`,
+        field: 'chapter',
+        icon: faUser,
+        dropdown: true,
+        placeholder: $localize`Select Chapter(s)`
+    }, {
+        name: `Subtags`,
+        field: 'subtags',
+        icon: faUser,
+        dropdown: true,
+        placeholder: $localize`Select Tag(s)`
     }];
 
     textFieldContent: string;
