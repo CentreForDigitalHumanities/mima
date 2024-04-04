@@ -33,7 +33,11 @@ export class MatchedParts {
         return this.parts.map(part => part.text).join('');
     }
 
-    constructor(properties: { [T in keyof Omit<MatchedParts, 'text'>]: MatchedParts[T] }) {
+    get highlightedText(): string {
+        return this.parts.map(part => part.match ? `*${part.text}*` : part.text).join('');
+    }
+
+    constructor(properties: { [T in keyof Omit<MatchedParts, 'text' | 'highlightedText'>]: MatchedParts[T] }) {
         for (const [key, value] of Object.entries(properties)) {
             this[key] = value;
         }

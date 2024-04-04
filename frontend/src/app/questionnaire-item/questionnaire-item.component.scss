@@ -28,6 +28,18 @@
     @extend %is-loading;
 }
 
+:host:hover .metadata {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+}
+
+luu-view,
+hr {
+    animation: append-animate .3s ease-in-out;
+    display: block;
+}
+
 .question-header {
     @extend %is-loading;
 
@@ -119,6 +131,11 @@ a.has-text-dark.filterable:hover {
 
 .unattested {
     color: $grey-light;
+
+    &.is-match {
+        background-color: $warning;
+        color: $warning-invert;
+    }
 }
 
 .tag {

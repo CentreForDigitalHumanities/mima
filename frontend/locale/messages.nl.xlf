@@ -511,7 +511,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">106</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
@@ -519,7 +519,7 @@
         <target state="translated">{VAR_PLURAL, plural, =0 {geen antwoorden} =1 {1 antwoord} other {<x id="INTERPOLATION"/> antwoorden}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
@@ -527,7 +527,7 @@
         <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialecten matchen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
@@ -535,7 +535,7 @@
         <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> antwoorden matchen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
@@ -636,6 +636,102 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-tags/filter-tags.component.html</context>
           <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4009088558739680278" datatype="html">
+        <source>Attestation</source>
+        <target state="translated">Bevestiging</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7226628024978874949" datatype="html">
+        <source>Select Attested or Unattested</source>
+        <target state="translated">Kies bevestigd of onbevestigd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4979758064528998175" datatype="html">
+        <source>Gloss</source>
+        <target state="translated">Glos</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2946765255271348390" datatype="html">
+        <source>English Translation</source>
+        <target state="translated">Engelse vertaling</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5322922947143379212" datatype="html">
+        <source>Chapter</source>
+        <target state="translated">Hoofdstuk</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5707780993008694763" datatype="html">
+        <source>Select Chapter(s)</source>
+        <target state="translated">Kies hoofdstuk(ken)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6616264141636110160" datatype="html">
+        <source>Select Tag(s)</source>
+        <target state="translated">Kies tag(s)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5676206059994743921" datatype="html">
+        <source>exclude</source>
+        <target state="translated">uitsluiten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3690478070680374141" datatype="html">
+        <source>unattested</source>
+        <target state="translated">onbevestigd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
+          <context context-type="linenumber">258</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1672281619854157401" datatype="html">
+        <source>attested</source>
+        <target state="translated">bevestigd</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
+          <context context-type="linenumber">258</context>
         </context-group>
       </trans-unit>
     </body>

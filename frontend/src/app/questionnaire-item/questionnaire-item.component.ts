@@ -2,6 +2,7 @@ import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Outpu
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { LuupzigModule } from 'luupzig';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
@@ -20,7 +21,7 @@ export interface FilterEvent {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule],
     standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy {

@@ -255,7 +255,7 @@ export class FilterManagementService {
 
         let labels: { [value: string]: string } = {};
         if (field == 'attestation') {
-            labels = {'unattested': $localize`unattested`, 'attested': $localize`attested`}
+            labels = { 'unattested': $localize`unattested`, 'attested': $localize`attested` }
         } else {
             for (const [id, question] of questions) {
                 switch (field) {
@@ -269,7 +269,6 @@ export class FilterManagementService {
                         break;
 
                     case 'id':
-                        console.log(labels)
                         labels[id] = question.prompt;
                         break;
 
@@ -281,10 +280,11 @@ export class FilterManagementService {
                         break;
 
                     case 'subtags':
-                        console.log(labels);
                         if (question.subtags) {
                             for (let subtag of question.subtags) {
+                                if (subtag) {
                                     labels[subtag] = subtag;
+                                }
                             }
                         }
                         break;

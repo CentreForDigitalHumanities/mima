@@ -7,6 +7,7 @@ import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData } from '../questionnaire-item/questionnaire-item.component';
 import { ProgressService } from '../services/progress.service';
+import { FilterManagementService } from '../services/filter-management.service';
 
 @Component({
     selector: 'mima-questionnaire-list-page',
@@ -30,7 +31,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
 
     participantIds: string[];
 
-    constructor(private questionnaireService: QuestionnaireService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
+    constructor(private questionnaireService: QuestionnaireService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
         this.progressService.indeterminate();
     }
 
@@ -96,6 +97,10 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
 
             case 'attestation':
                 include = ['attested', 'unattested'];
+                break;
+
+            default:
+                include = this.filterManagementService.filterFieldOptions(filterData.field, this.questions).options.map(({ value }) => value);
                 break;
         }
         this.store.dispatch(setExcludingFilter({
