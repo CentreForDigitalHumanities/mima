@@ -1,5 +1,5 @@
-import { MatchedParts } from './matched-parts';
-import { Answer, MatchedAnswer } from './answer';
+import { MatchedParts, MatchedPartsProperties } from './matched-parts';
+import { Answer, MatchedAnswer, MatchedAnswerProperties } from './answer';
 
 export interface Question {
     id: string;
@@ -49,6 +49,10 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
     matchedDialectsCount = 0;
     matchedDialectNames: string[] = [];
+    /**
+     * Matched participant IDs
+     */
+    matchedParticipants: string[] = [];
 
     constructor(question?: Question) {
         if (question) {
@@ -63,8 +67,39 @@ export class MatchedQuestion implements MatchedQuestionProperties {
         }
     }
 
+    /**
+     * Reconstructs an object from the deserialized value.
+     * @param value deserialized value
+     * @returns
+     */
+    static restore(value: MatchedQuestionDeserialized): MatchedQuestion {
+        const properties: Omit<MatchedQuestion, 'updateCounts'> = {
+            id: MatchedParts.restore(value.id),
+            type: MatchedParts.restore(value.type),
+            question: MatchedParts.restore(value.question),
+            prompt: MatchedParts.restore(value.prompt),
+            answers: value.answers.map(answer => MatchedAnswer.restore(answer)),
+            split_item: MatchedParts.restore(value.split_item),
+            chapter: MatchedParts.restore(value.chapter),
+            subtags: value.subtags.map(subtag => MatchedParts.restore(subtag)),
+            gloss: MatchedParts.restore(value.gloss),
+            en_translation: MatchedParts.restore(value.en_translation),
+            dialectsCount: value.dialectsCount,
+            matchedAnswerCount: value.matchedAnswerCount,
+            matchedDialects: Object.fromEntries(
+                Object.entries(value.matchedDialects)
+                    .map(([dialect, answers]) => [dialect, answers.map(a => MatchedAnswer.restore(a))])),
+            matchedDialectsCount: value.matchedDialectsCount,
+            matchedDialectNames: value.matchedDialectNames,
+            matchedParticipants: value.matchedParticipants
+        };
+
+        return Object.setPrototypeOf(properties, MatchedQuestion.prototype);
+    }
+
     updateCounts() {
         const dialects = new Set<string>();
+        const participants = new Set<string>();
 
         this.matchedAnswerCount = 0;
         this.matchedDialects = {};
@@ -74,6 +109,7 @@ export class MatchedQuestion implements MatchedQuestionProperties {
 
             if (answer.match) {
                 this.matchedAnswerCount++;
+                participants.add(answer.participantId.text);
                 if (answer.dialect.text in this.matchedDialects) {
                     this.matchedDialects[answer.dialect.text].push(answer);
                 } else {
@@ -84,6 +120,7 @@ export class MatchedQuestion implements MatchedQuestionProperties {
 
         this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
         this.matchedDialectsCount = this.matchedDialectNames.length;
+        this.matchedParticipants = [...participants];
         this.dialectsCount = dialects.size;
     }
 
@@ -100,3 +137,21 @@ export class MatchedQuestion implements MatchedQuestionProperties {
         });
     }
 }
+
+/**
+ * Depends on the type of property
+ */
+type MatchedQuestionDeserializedValue<T> =
+    T extends MatchedParts
+    ? MatchedPartsProperties
+    : T extends MatchedParts[] // Figure out what to do with Answer[] and answerMap
+    ? MatchedPartsProperties[]
+    : T extends MatchedAnswer[]
+    ? MatchedAnswerProperties[]
+    : T extends { [dialect: string]: MatchedAnswer[] }
+    ? { [dialect: string]: MatchedAnswerProperties[] }
+    : T;
+
+export type MatchedQuestionDeserialized = {
+    [key in keyof Omit<MatchedQuestion, 'updateCounts'>]: MatchedQuestionDeserializedValue<MatchedQuestion[key]>
+};

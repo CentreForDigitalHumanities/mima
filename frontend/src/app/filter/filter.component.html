@@ -11,7 +11,7 @@
     </div>
     <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
         <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
-            [panelStyle]="{'width':'min(800px,50vw)'}" [defaultLabel]="selectedType.placeholder" i18n-defaultLabel
+            [panelStyle]="{'width':'min(800px,50vw)'}" [placeholder]="selectedType.placeholder" i18n-placeholder
             (onChange)="emit()">
             <ng-template let-value pTemplate="selectedItems">
                 <span *ngIf="!value || value.length === 0; else tags">{{selectedType.placeholder}}</span>

@@ -95,6 +95,7 @@ function getMatchedQuestion(adverbial: Question, emptyFilters: boolean): Matched
     result['matchedDialects'] = {};
     result['matchedDialectsCount'] = 0;
     result['matchedDialectNames'] = [];
+    result['matchedParticipants'] = [];
 
     delete result['type'];
     delete result['question'];

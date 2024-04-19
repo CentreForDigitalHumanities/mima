@@ -25,6 +25,11 @@ export interface FilterEvent {
     standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
+    /**
+     * Did the user manually expand this question? Don't automatically close it.
+     */
+    private manuallyExpanded = false;
+
     faCheck = faCheck;
     faChevronDown = faChevronDown;
     faCircleNotch = faCircleNotch;
@@ -84,6 +89,8 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     private updateCounts() {
         if (!this.matchedQuestion?.answers) {
+            // once the question is hidden - reset the state
+            this.manuallyExpanded = false;
             this.questionExpanded = false;
             return;
         }
@@ -95,9 +102,11 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
         this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
         this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
         this.dialectsCount = this.matchedQuestion.dialectsCount;
-        this.questionExpanded = this.onlyQuestion ||
-            this.matchedDialectsCount <= autoExpandDialectCount ||
-            this.matchedAnswerCount <= autoExpandAnswerCount;
+        if (!this.manuallyExpanded) {
+            this.questionExpanded = this.onlyQuestion ||
+                this.matchedDialectsCount <= autoExpandDialectCount ||
+                this.matchedAnswerCount <= autoExpandAnswerCount;
+        }
     }
 
     /**
@@ -120,5 +129,6 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     toggleQuestion(): void {
         this.questionExpanded = !this.questionExpanded;
+        this.manuallyExpanded = this.questionExpanded;
     }
 }

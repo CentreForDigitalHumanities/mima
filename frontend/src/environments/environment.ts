@@ -4,8 +4,14 @@
 
 export const environment = {
   production: false,
-  // URL path prefix for assets
+  /**
+   * URL path prefix for assets
+   */
   assets: 'assets',
+  /**
+   * Enable web workers
+   */
+  workers: true
 };
 
 /*

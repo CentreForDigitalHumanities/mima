@@ -1,28 +1,36 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 import { filter, mergeMap } from 'rxjs/operators';
 import { State, initialState } from './questionnaire.state';
-
 
 import { QuestionnaireService } from './services/questionnaire.service';
 import { loadQuestionnaire, setQuestions, addFilter, removeFilter, clearFilters, setFilters, updateFilter, setFiltersOperator, setMatchedQuestions, setIncludingFilter, setExcludingFilter } from './questionnaire.actions';
 import { Filter, FilterOperator } from './models/filter';
 import { MatchedQuestion, Question } from './models/question';
 import { FilterService } from './services/filter.service';
-import { ProgressService } from './services/progress.service';
 
 
 @Injectable()
-export class QuestionnaireEffects {
+export class QuestionnaireEffects implements OnDestroy {
+
     constructor(
         private actions$: Actions,
         private filterService: FilterService,
-        private progressService: ProgressService,
         private questionnaireService: QuestionnaireService,
         private store: Store<State>
-    ) { }
+    ) {
+        this.subscriptions = [
+            this.questionnaireService.results$.subscribe(matchedQuestions => {
+                store.dispatch(setMatchedQuestions({
+                    matchedQuestions
+                }))
+            })
+        ];
+    }
 
+    private subscriptions!: Subscription[];
     private currentFilters: readonly Filter[] = [];
     private currentFilterOperator: FilterOperator = initialState.questionnaire.operator;
 
@@ -53,21 +61,27 @@ export class QuestionnaireEffects {
                 // match everything
                 matchedQuestions = Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
                 this.currentFilterOperator = operator;
+
+                return setMatchedQuestions({
+                    matchedQuestions
+                });
             } else {
                 if (action.type !== '[Questionnaire] Set Questions' && this.currentFilterOperator == operator && !this.filterService.differ(this.currentFilters, filters)) {
                     // equivalent filters, don´t update results
                     return null;
                 }
 
-                matchedQuestions = Array.from(await this.questionnaireService.filter(filters, operator));
+                this.questionnaireService.filter(filters, operator);
                 this.currentFilters = filters;
                 this.currentFilterOperator = operator;
-            }
 
-            return setMatchedQuestions({
-                matchedQuestions
-            });
+                return null;
+            }
         }),
         filter(action => action !== null)
     ));
+
+    ngOnDestroy(): void {
+        this.subscriptions.forEach(s => s.unsubscribe());
+    }
 }

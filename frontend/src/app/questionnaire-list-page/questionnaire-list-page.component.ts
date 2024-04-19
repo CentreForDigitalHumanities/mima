@@ -24,6 +24,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     matchedAnswerCount = 0;
     matchedDialects = new Set<string>();
+    matchedParticipants = new Set<string>();
 
     loading = false;
     questions: Map<string, Question>;
@@ -58,10 +59,14 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
 
                 this.matchedAnswerCount = 0;
                 this.matchedDialects = new Set<string>();
+                this.matchedParticipants = new Set<string>();
                 for (const question of this.matchedQuestions.values()) {
                     this.matchedAnswerCount += question.matchedAnswerCount;
                     for (const dialect of question.matchedDialectNames) {
                         this.matchedDialects.add(dialect);
+                    }
+                    for (const participantId of question.matchedParticipants) {
+                        this.matchedParticipants.add(participantId);
                     }
                 }
             })

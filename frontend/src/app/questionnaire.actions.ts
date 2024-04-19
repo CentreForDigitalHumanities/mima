@@ -19,7 +19,7 @@ export const setQuestions = createAction('[Questionnaire] Set Questions', props<
  * Set all the questions which have been found to match the current filters
  */
 export const setMatchedQuestions = createAction('[Questionnaire] Set Matched questions', props<{
-    matchedQuestions: Array<MatchedQuestion>
+    matchedQuestions: Iterable<MatchedQuestion>
 }>());
 
 
