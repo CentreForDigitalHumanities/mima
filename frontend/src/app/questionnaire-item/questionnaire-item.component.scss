@@ -2,8 +2,8 @@
 
 .tag:not(body).is-delete:hover,
 .tag:not(body).is-delete:focus {
-    background-color: $danger;
-    color: $danger-invert;
+    background-color: var(--bulma-danger);
+    color: var(--bulma-danger-invert);
 }
 
 :host:not(:first-child) {
@@ -87,7 +87,7 @@ hr {
 }
 
 .dialect-row {
-    border-bottom: 1px solid $grey-light;
+    border-bottom: 1px solid var(--bulma-grey-light);
 
     &.expanded {
         animation: append-animate .3s ease-in-out;
@@ -107,12 +107,12 @@ hr {
 
 .filterable:hover,
 a.has-text-dark.filterable:hover {
-    color: $success !important;
+    color: var(--bulma-success) !important;
     cursor: pointer;
 
     ::ng-deep .highlight {
-        background: $success;
-        color: $success-invert !important;
+        background: var(--bulma-success);
+        color: var(--bulma-success-invert) !important;
 
     }
 }
@@ -130,14 +130,15 @@ a.has-text-dark.filterable:hover {
 }
 
 .unattested {
-    color: $grey-light;
+    color: var(--bulma-grey-light);
 
     &.is-match {
-        background-color: $warning;
-        color: $warning-invert;
+        background-color: var(--bulma-warning);
+        color: var(--bulma-warning-invert);
     }
 }
 
 .tag {
-    margin-left: 8px;
+    max-width: 20em;
+    overflow: clip;
 }

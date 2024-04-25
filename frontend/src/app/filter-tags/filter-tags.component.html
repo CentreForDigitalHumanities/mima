@@ -1,7 +1,7 @@
 <div class="tags">
     @switch (display) {
         @case ('selected') {
-            <div class="tag is-success is-light" *ngFor="let option of selected">
+            <div class="tag is-success is-light-or-dark" *ngFor="let option of selected">
                 <span class="icon-text">
                     <span class="icon">
                         <fa-icon [icon]="faCheck"></fa-icon>
@@ -13,7 +13,7 @@
             </div>
         }
         @case ('unselected') {
-            <div class="tag is-danger is-light" *ngFor="let option of unselected">
+            <div class="tag is-danger is-light-or-dark" *ngFor="let option of unselected">
                 <span class="icon-text">
                     <span class="icon">
                         <fa-icon [icon]="faTimes"></fa-icon>
@@ -25,7 +25,7 @@
             </div>
         }
         @case ('count') {
-            <div class="tag is-success is-light">
+            <div class="tag is-success is-light-or-dark">
                 <span class="icon-text">
                     <span class="icon">
                         <fa-icon [icon]="faCheck"></fa-icon>
@@ -35,7 +35,7 @@
                     </span>
                 </span>
             </div>
-            <div class="tag is-danger is-light" *ngIf="unselected.length">
+            <div class="tag is-danger is-light-or-dark" *ngIf="unselected.length">
                 <span class="icon-text">
                     <span class="icon">
                         <fa-icon [icon]="faTimes"></fa-icon>

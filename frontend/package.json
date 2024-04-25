@@ -29,7 +29,7 @@
     "@ngrx/effects": "^17.1.0",
     "@ngrx/store": "^17.1.0",
     "bezier-easing": "^2.1.0",
-    "bulma": "^0.9.4",
+    "bulma": "1.0.0",
     "luupzig": "^0.0.1",
     "primeicons": "^6.0.1",
     "primeng": "^17.3.3",

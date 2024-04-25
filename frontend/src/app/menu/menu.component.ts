@@ -12,6 +12,7 @@ import { LanguageInfo, LanguageService } from '../services/language.service';
 export class MenuComponent implements OnInit {
     burgerShow: showState;
     burgerActive = false;
+    burgerIconActive = false;
     currentLanguage: string;
     loading = false;
 
@@ -39,6 +40,7 @@ export class MenuComponent implements OnInit {
         if (!this.burgerActive) {
             // make it active to make it visible (add a class to
             // override it being hidden for smaller screens)
+            this.burgerIconActive = true;
             this.burgerActive = true;
             // immediately hide it
             this.burgerShow = 'hide';
@@ -52,6 +54,9 @@ export class MenuComponent implements OnInit {
         }
 
         this.burgerShow = this.burgerShow === 'show' ? 'hide' : 'show';
+
+        // only toggle the menu icon; the menu is hidden by the animation
+        this.burgerIconActive = false;
     }
 
     async setLanguage(language: string): Promise<void> {

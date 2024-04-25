@@ -6,7 +6,7 @@
             </strong>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample" (click)="toggleBurger()" [ngClass]="{'is-active': burgerActive}">
+                data-target="navbarBasicExample" (click)="toggleBurger()" [ngClass]="{'is-active': burgerIconActive}">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -29,7 +29,9 @@
                     Questionnaires
                 </a>
             </div>
-            <div class="navbar-end" *ngIf="languages">
+            <div class="navbar-end">
+                <mima-dark-mode-toggle class="navbar-item"></mima-dark-mode-toggle>
+                @if (languages) {
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         <span class="icon">
@@ -45,6 +47,7 @@
                         </a>
                     </div>
                 </div>
+                }
             </div>
         </div>
     </div>

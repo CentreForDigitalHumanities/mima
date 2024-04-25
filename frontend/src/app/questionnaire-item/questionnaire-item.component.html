@@ -20,7 +20,7 @@
             <div class="level-right question-filters">
                 <div class="field has-addons">
                     <p class="control">
-                        <button class="button is-success is-light" (click)="onFilterSelected($event, 'id', id)">
+                        <button class="button is-success is-light-or-dark" (click)="onFilterSelected($event, 'id', id)">
                             <span class="icon">
                                 <fa-icon [icon]="faCheck"></fa-icon>
                             </span>
@@ -28,7 +28,7 @@
                         </button>
                     </p>
                     <p class="control">
-                        <button class="button is-danger is-light" (click)="onExcludeFilter($event, 'id', id)">
+                        <button class="button is-danger is-light-or-dark" (click)="onExcludeFilter($event, 'id', id)">
                             <span class="icon">
                                 <fa-icon [icon]="faTimes"></fa-icon>
                             </span>
@@ -49,50 +49,53 @@
     </luu-view>
     <hr class="mt-2 mb-2" />
     }
-    <div class="tile is-parent">
-        <div class="tile is-child is-3">
-            <span i18n>
-                {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
-            </span>
-        </div>
-        <div class="tile is-child is-3">
-            <span i18n>
-                {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
-            </span>
-        </div>
-        <div class="is-child is-5">
-            <div class="field is-grouped is-grouped-multiline">
-                <div class="control">
-                    <div class="tags has-addons is-flex-wrap-nowrap">
-                        <div class="tag filterable"
-                            (click)="onFilterSelected($event, 'chapter', matchedQuestion.chapter.text)">
-                            <span [innerHTML]="matchedQuestion.chapter | highlight"></span>
+    <div class="fixed-grid has-11-cols has-1-cols-mobile">
+        <div class="grid">
+            <div class="cell is-col-span-3">
+                <span i18n>
+                    {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
+                </span>
+            </div>
+            <div class="cell is-col-span-3">
+                <span i18n>
+                    {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
+                </span>
+            </div>
+            <div class="cell is-col-span-5">
+                <div class="field is-grouped is-grouped-multiline">
+                    <div class="control">
+                        <div class="tags has-addons is-flex-wrap-nowrap">
+                            <div class="tag filterable"
+                                (click)="onFilterSelected($event, 'chapter', matchedQuestion.chapter.text)">
+                                <span [innerHTML]="matchedQuestion.chapter | highlight"></span>
+                            </div>
+                            <a class="tag is-delete"
+                                (click)="onExcludeFilter($event, 'chapter', matchedQuestion.chapter.text)"
+                                i18n-aria-label aria-label="exclude"></a>
                         </div>
-                        <a class="tag is-delete"
-                            (click)="onExcludeFilter($event, 'chapter', matchedQuestion.chapter.text)" i18n-aria-label
-                            aria-label="exclude"></a>
                     </div>
-                </div>
-                @for (subtag of matchedQuestion.subtags; track subtag.text) {
-                <div class="control">
-                    <div class="tags has-addons is-flex-wrap-nowrap">
-                        <div class="tag filterable" (click)="onFilterSelected($event, 'subtags', subtag.text)">
-                            <span [innerHTML]="subtag | highlight"></span>
+                    @for (subtag of matchedQuestion.subtags; track subtag.text) {
+                    <div class="control">
+                        <div class="tags has-addons is-flex-wrap-nowrap">
+                            <div class="tag filterable" (click)="onFilterSelected($event, 'subtags', subtag.text)">
+                                <span [innerHTML]="subtag | highlight"></span>
+                            </div>
+                            <a class="tag is-delete" (click)="onExcludeFilter($event, 'subtags', subtag.text)"
+                                i18n-aria-label aria-label="exclude"></a>
                         </div>
-                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'subtags', subtag.text)"
-                            i18n-aria-label aria-label="exclude"></a>
                     </div>
+                    }
                 </div>
-                }
             </div>
         </div>
     </div>
 </div>
 @if (questionExpanded && matchedDialectNames.length) {
-<div class="box" [ngClass]="{'is-loading': loading}">
-    <div class="tile is-ancestor is-vertical">
-        <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
-            <div class="tile is-child" [id]="dialect">
+<div class="box mt-3" [ngClass]="{'is-loading': loading}">
+    <div class="fixed-grid has-5-cols">
+        <div class="grid is-column-gap-0">
+            @for (dialect of matchedDialectNames; track dialect) {
+            <div class="cell expanded dialect-row py-3" [id]="dialect">
                 <div class="dialect-header">
                     <h3 class="subtitle mb-1">
                         <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
@@ -114,33 +117,31 @@
                         [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
                 </div>
             </div>
-            <div class="tile is-child is-parent is-vertical is-9 p-0">
-                <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
-                    <div class="is-flex">
-                        @if (answer.attestation.text === 'unattested') {
-                        <span i18n class="unattested"
-                            [ngClass]="{'is-match': answer.attestation.match}">unattested</span>
-                        }
-                        @else {
-                        <span [innerHTML]="answer.answer | highlight"></span>
-                        }
-                        <div class="tags has-addons is-flex-wrap-nowrap">
-                            <div class="tag filterable"
-                                (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
-                                <span class="icon-text">
-                                    <span class="icon">
-                                        <fa-icon [icon]="faUser"></fa-icon>
-                                    </span>
-                                    <span [innerHTML]="answer.participantId | highlight"></span>
+            <div class="cell is-col-start-2 is-col-span-4 expanded dialect-row">
+                <div class="is-flex my-3"  *ngFor="let answer of matchedDialects[dialect]">
+                    @if (answer.attestation.text === 'unattested') {
+                    <span i18n class="unattested" [ngClass]="{'is-match': answer.attestation.match}">unattested</span>
+                    }
+                    @else {
+                    <span [innerHTML]="answer.answer | highlight"></span>
+                    }
+                    <div class="tags ml-3 has-addons is-flex-wrap-nowrap">
+                        <div class="tag filterable"
+                            (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <fa-icon [icon]="faUser"></fa-icon>
                                 </span>
-                            </div>
-                            <a class="tag is-delete"
-                                (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)"
-                                i18n-aria-label aria-label="exclude"></a>
+                                <span [innerHTML]="answer.participantId | highlight"></span>
+                            </span>
                         </div>
+                        <a class="tag is-delete"
+                            (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)"
+                            i18n-aria-label aria-label="exclude"></a>
                     </div>
                 </div>
             </div>
+            }
         </div>
     </div>
 </div>
