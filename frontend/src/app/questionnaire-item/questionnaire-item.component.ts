@@ -8,6 +8,7 @@ import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
+import { MatchedParts } from '../models/matched-parts';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -15,6 +16,17 @@ const autoExpandAnswerCount = 10;
 export interface FilterEvent {
     field: FilterField;
     content: string;
+}
+
+/**
+ * Matched answers grouped by their text
+ */
+interface MatchedAnswerGrouped {
+    text: string;
+    answer: MatchedParts;
+    attestation: MatchedParts;
+    dialect: MatchedParts;
+    participantIds: MatchedParts[];
 }
 
 @Component({
@@ -45,7 +57,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     dialectsCount = 0;
     matchedQuestion: MatchedQuestion;
     matchedAnswerCount = 0;
-    matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
+    matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
     matchedDialectNames: string[] = [];
     matchedDialectsCount = 0;
     questionExpanded: boolean = false;
@@ -95,10 +107,8 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
             return;
         }
 
-        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
-
         this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
-        this.matchedDialects = this.matchedQuestion.matchedDialects;
+        this.matchedDialects = this.groupAnswers(this.matchedQuestion.matchedDialects);
         this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
         this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
         this.dialectsCount = this.matchedQuestion.dialectsCount;
@@ -107,6 +117,38 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
                 this.matchedDialectsCount <= autoExpandDialectCount ||
                 this.matchedAnswerCount <= autoExpandAnswerCount;
         }
+    }
+
+    private groupAnswers(matchedDialects: MatchedQuestion['matchedDialects']): { [dialect: string]: MatchedAnswerGrouped[] } {
+        const grouped: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+        for (const [dialect, answers] of Object.entries(matchedDialects)) {
+            const dialectGroup: { [text: string]: MatchedAnswer[] } = {};
+            for (const answer of answers) {
+                const text = answer.answer.text;
+                if (text in dialectGroup) {
+                    dialectGroup[text].push(answer);
+                } else {
+                    dialectGroup[text] = [answer];
+                }
+            }
+
+            // sort by text; put unattested last
+            grouped[dialect] = [...Object.entries(dialectGroup)].sort(([textA], [textB]) =>
+                textA === ''
+                    ? 1
+                    : textB === ''
+                        ? -1
+                        : textA.localeCompare(textB)
+            ).map(([text, answers]) => ({
+                text,
+                answer: answers[0].answer,
+                attestation: answers[0].attestation,
+                dialect: answers[0].dialect,
+                participantIds: answers.map(answer => answer.participantId)
+            }));
+        }
+
+        return grouped;
     }
 
     /**
