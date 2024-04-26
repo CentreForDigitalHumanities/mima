@@ -14,25 +14,6 @@ $highlight-text: var(--bulma-warning-invert);
     @extend .is-warning;
 }
 
-.is-light-or-dark {
-    @extend .is-light;
-}
-
-[data-theme=dark],
-.theme-dark {
-    .is-light-or-dark {
-        @extend .is-dark;
-
-        &.is-success {
-            @extend .is-success;
-        }
-
-        &.is-danger {
-            @extend .is-danger;
-        }
-    }
-}
-
 // undo the reset from Bulma
 p-multiselectitem li {
     margin: revert-layer;
