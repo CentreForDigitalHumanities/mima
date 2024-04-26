@@ -92,33 +92,31 @@
 </div>
 @if (questionExpanded && matchedDialectNames.length) {
 <div class="box mt-3" [ngClass]="{'is-loading': loading}">
-    <div class="fixed-grid has-5-cols">
+    <div class="fixed-grid has-5-cols-tablet">
         <div class="grid is-column-gap-0">
             @for (dialect of matchedDialectNames; track dialect) {
-            <div class="cell expanded dialect-row py-3" [id]="dialect">
-                <div class="dialect-header">
-                    <h3 class="subtitle mb-1">
-                        <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                            <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
-                                (click)="onFilterSelected($event, 'dialect', dialect)"></div>
-                            <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)"
-                                i18n-aria-label aria-label="exclude"></a>
-                        </div>
-                    </h3>
-                    <ng-template #answerCountTag let-answerCount="answerCount">
-                        <div class="tag" i18n>
-                            {answerCount, plural,
-                            =0 {no answers}
-                            =1 {1 answer}
-                            other {{{answerCount}} answers}}
-                        </div>
-                    </ng-template>
-                    <ng-container [ngTemplateOutlet]="answerCountTag"
-                        [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
-                </div>
+            <div class="cell expanded dialect-header py-3" [id]="dialect">
+                <h3 class="subtitle mb-1">
+                    <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
+                            (click)="onFilterSelected($event, 'dialect', dialect)"></div>
+                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)" i18n-aria-label
+                            aria-label="exclude"></a>
+                    </div>
+                </h3>
+                <ng-template #answerCountTag let-answerCount="answerCount">
+                    <div class="tag" i18n>
+                        {answerCount, plural,
+                        =0 {no answers}
+                        =1 {1 answer}
+                        other {{{answerCount}} answers}}
+                    </div>
+                </ng-template>
+                <ng-container [ngTemplateOutlet]="answerCountTag"
+                    [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
             </div>
-            <div class="cell is-col-start-2 is-col-span-4 expanded dialect-row">
-                <div class="is-flex my-3"  *ngFor="let answer of matchedDialects[dialect]">
+            <div class="cell is-col-span-4 expanded dialect-answers">
+                <div class="is-flex my-3" *ngFor="let answer of matchedDialects[dialect]">
                     @if (answer.attestation.text === 'unattested') {
                     <span i18n class="unattested" [ngClass]="{'is-match': answer.attestation.match}">unattested</span>
                     }
