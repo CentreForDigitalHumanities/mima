@@ -82,9 +82,16 @@ hr {
     }
 }
 
+// border to separate dialects
+@mixin border-bottom {
+    &:not(.is-last) {
+        border-bottom: 1px solid var(--bulma-grey-light);
+    }
+}
+
 %dialect-row {
     @include mixins.tablet {
-        border-bottom: 1px solid var(--bulma-grey-light);
+        @include border-bottom;
     }
 
     &.expanded {
@@ -116,7 +123,7 @@ hr {
     @extend %dialect-row;
 
     // always have this border, even on mobile
-    border-bottom: 1px solid var(--bulma-grey-light);
+    @include border-bottom;
 }
 
 .filterable:hover,
@@ -144,15 +151,15 @@ a.has-text-dark.filterable:hover {
 }
 
 .unattested {
-    color: var(--bulma-grey-light);
-
-    &.is-match {
-        background-color: var(--bulma-warning);
-        color: var(--bulma-warning-invert);
-    }
+    color: var(--bulma-danger-bold);
 }
 
 .tag {
     max-width: 20em;
     overflow: clip;
+
+    &.is-match {
+        background-color: var(--bulma-warning);
+        color: var(--bulma-warning-invert);
+    }
 }
