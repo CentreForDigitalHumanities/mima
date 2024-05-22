@@ -2,11 +2,13 @@ import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Outpu
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { LuupzigModule } from 'luupzig';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
 import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
+import { MatchedParts } from '../models/matched-parts';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -16,14 +18,30 @@ export interface FilterEvent {
     content: string;
 }
 
+/**
+ * Matched answers grouped by their text
+ */
+interface MatchedAnswerGrouped {
+    text: string;
+    answer: MatchedParts;
+    attestation: MatchedParts;
+    dialect: MatchedParts;
+    participantIds: MatchedParts[];
+}
+
 @Component({
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule],
     standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
+    /**
+     * Did the user manually expand this question? Don't automatically close it.
+     */
+    private manuallyExpanded = false;
+
     faCheck = faCheck;
     faChevronDown = faChevronDown;
     faCircleNotch = faCircleNotch;
@@ -39,7 +57,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     dialectsCount = 0;
     matchedQuestion: MatchedQuestion;
     matchedAnswerCount = 0;
-    matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
+    matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
     matchedDialectNames: string[] = [];
     matchedDialectsCount = 0;
     questionExpanded: boolean = false;
@@ -83,20 +101,54 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     private updateCounts() {
         if (!this.matchedQuestion?.answers) {
+            // once the question is hidden - reset the state
+            this.manuallyExpanded = false;
             this.questionExpanded = false;
             return;
         }
 
-        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
-
         this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
-        this.matchedDialects = this.matchedQuestion.matchedDialects;
+        this.matchedDialects = this.groupAnswers(this.matchedQuestion.matchedDialects);
         this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
         this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
         this.dialectsCount = this.matchedQuestion.dialectsCount;
-        this.questionExpanded = this.onlyQuestion ||
-            this.matchedDialectsCount <= autoExpandDialectCount ||
-            this.matchedAnswerCount <= autoExpandAnswerCount;
+        if (!this.manuallyExpanded) {
+            this.questionExpanded = this.onlyQuestion ||
+                this.matchedDialectsCount <= autoExpandDialectCount ||
+                this.matchedAnswerCount <= autoExpandAnswerCount;
+        }
+    }
+
+    private groupAnswers(matchedDialects: MatchedQuestion['matchedDialects']): { [dialect: string]: MatchedAnswerGrouped[] } {
+        const grouped: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+        for (const [dialect, answers] of Object.entries(matchedDialects)) {
+            const dialectGroup: { [text: string]: MatchedAnswer[] } = {};
+            for (const answer of answers) {
+                const text = answer.answer.text;
+                if (text in dialectGroup) {
+                    dialectGroup[text].push(answer);
+                } else {
+                    dialectGroup[text] = [answer];
+                }
+            }
+
+            // sort by text; put unattested last
+            grouped[dialect] = [...Object.entries(dialectGroup)].sort(([textA], [textB]) =>
+                textA === ''
+                    ? 1
+                    : textB === ''
+                        ? -1
+                        : textA.localeCompare(textB)
+            ).map(([text, answers]) => ({
+                text,
+                answer: answers[0].answer,
+                attestation: answers[0].attestation,
+                dialect: answers[0].dialect,
+                participantIds: answers.map(answer => answer.participantId)
+            }));
+        }
+
+        return grouped;
     }
 
     /**
@@ -119,5 +171,6 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     toggleQuestion(): void {
         this.questionExpanded = !this.questionExpanded;
+        this.manuallyExpanded = this.questionExpanded;
     }
 }

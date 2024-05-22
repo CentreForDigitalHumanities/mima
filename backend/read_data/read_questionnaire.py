@@ -4,7 +4,7 @@ import json
 import os
 from dataclasses import dataclass, asdict
 
-from mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+from mima.settings import DATA_PATH, ADDITIONAL_DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
 
 def read_csv(filepath):
     data = []
@@ -29,7 +29,13 @@ class Question:
     type: str = 'NA'
     prompt: str = 'NA'
     cleaned: bool = False
+    split_item: str = 'NA'  # same as the question but split morphologically with punctuation
+    chapter: str = 'NA'
+    subtags: list = None
+    en_translation: str = 'NA'
+    gloss: str = 'NA'
     answers: list = None
+
 
     def __str__(self) -> str:
         return 'Question {}: {}'.format(self.tag, self.question)
@@ -52,6 +58,7 @@ class Dialect:
 
 data = read_csv(DATA_PATH)
 participants_data = read_csv(PARTICIPANTS_PATH)
+additional_data = read_csv(ADDITIONAL_DATA_PATH)
 
 ## Match dialects to participant IDs
 participants = {}
@@ -70,22 +77,24 @@ for index, cell in enumerate(data[0]):
     first_word = cell.split()[0]
     if first_word == 'CLEANED':
         questionnaire_item = Question(
-            tag = cell.split()[1],
+            tag = remove_periods(cell.split()[1]),
             index = index,
             question = remove_periods(' '.join(cell.split()[2:])),
             type = 'Translation',
             cleaned = True
         )
     elif cell.endswith('[Vertaling]') and first_word not in ['COMMENT', 'DEVIATION']:
+        if remove_periods(first_word) == 'B2Z9b[SQ001_SQ001]':
+            print('it exists!')
         questionnaire_item = Question(
-            tag = first_word,
+            tag = remove_periods(first_word),
             index = index,
             question = remove_periods(' '.join(cell.split()[1:])),
             type = 'Translation'
         )
     else:
         questionnaire_item = Question(
-            tag = first_word,
+            tag = remove_periods(first_word),
             index = index,
             question = remove_periods(' '.join(cell.split()[1:]))
         )
@@ -139,14 +148,39 @@ for row in data[1:]:
 cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
 for index in questionnaire_items:
     question = questionnaire_items[index]
+    if index == 479:
+        print('halt!')
     if question.answers and question.type == 'Translation' and not question.cleaned:
         if questionnaire_items[index+1].cleaned:
             if questionnaire_items[index+1].answers:
                 questionnaire_items[index+1].answers += question.answers
             else:
                 questionnaire_items[index+1].answers = question.answers
+        else: #if there is no CLEANED column, the answers of this question are added
+            cleaned_translation_questions[question.tag] = question
     if question.cleaned:
         cleaned_translation_questions[question.tag] = question
+
+
+## Go through the additional data and attach the necessary information to the cleaned_translation_questions
+for entry in additional_data[1:]:
+    ids = entry[0].split(';')
+    split_item = entry[1]
+    chapter = entry[2]
+    subtags = entry[3].split(';')
+    en_translation = entry[4]
+    gloss = entry[5]
+    for id in ids:
+        try:
+            question = cleaned_translation_questions[id]
+            question.split_item = split_item
+            question.chapter = chapter
+            question.subtags = subtags
+            question.en_translation = en_translation
+            question.gloss = gloss
+        except:
+            pass
+
 
 # Define a custom function to serialize data classes as dictionaries
 def serialize_classes(obj):

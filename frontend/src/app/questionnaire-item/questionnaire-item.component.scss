@@ -1,9 +1,10 @@
+@use "bulma/sass/utilities/mixins";
 @import '../../variables.scss';
 
 .tag:not(body).is-delete:hover,
 .tag:not(body).is-delete:focus {
-    background-color: $danger;
-    color: $danger-invert;
+    background-color: var(--bulma-danger);
+    color: var(--bulma-danger-invert);
 }
 
 :host:not(:first-child) {
@@ -26,6 +27,18 @@
 
 .box {
     @extend %is-loading;
+}
+
+:host:hover .metadata {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+}
+
+luu-view,
+hr {
+    animation: append-animate .3s ease-in-out;
+    display: block;
 }
 
 .question-header {
@@ -69,16 +82,30 @@
     }
 }
 
-.dialect-header {
-    position: sticky;
-    top: 0;
+// border to separate dialects
+@mixin border-bottom {
+    &:not(.is-last) {
+        border-bottom: 1px solid var(--bulma-grey-light);
+    }
 }
 
-.dialect-row {
-    border-bottom: 1px solid $grey-light;
+%dialect-row {
+    @include mixins.tablet {
+        @include border-bottom;
+    }
 
     &.expanded {
         animation: append-animate .3s ease-in-out;
+    }
+}
+
+.dialect-header {
+    @extend %dialect-row;
+
+    .dialect-tag .tag {
+        height: auto;
+        min-height: 2em;
+        white-space: normal;
     }
 
     &:not(:hover) {
@@ -90,17 +117,23 @@
             }
         }
     }
+}
 
+.dialect-answers {
+    @extend %dialect-row;
+
+    // always have this border, even on mobile
+    @include border-bottom;
 }
 
 .filterable:hover,
 a.has-text-dark.filterable:hover {
-    color: $success !important;
+    color: var(--bulma-success) !important;
     cursor: pointer;
 
     ::ng-deep .highlight {
-        background: $success;
-        color: $success-invert !important;
+        background: var(--bulma-success);
+        color: var(--bulma-success-invert) !important;
 
     }
 }
@@ -118,9 +151,15 @@ a.has-text-dark.filterable:hover {
 }
 
 .unattested {
-    color: $grey-light;
+    color: var(--bulma-danger-bold);
 }
 
 .tag {
-    margin-left: 8px;
+    max-width: 20em;
+    overflow: clip;
+
+    &.is-match {
+        background-color: var(--bulma-warning);
+        color: var(--bulma-warning-invert);
+    }
 }

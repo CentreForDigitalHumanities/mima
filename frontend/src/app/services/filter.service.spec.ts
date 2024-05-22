@@ -95,6 +95,7 @@ function getMatchedQuestion(adverbial: Question, emptyFilters: boolean): Matched
     result['matchedDialects'] = {};
     result['matchedDialectsCount'] = 0;
     result['matchedDialectNames'] = [];
+    result['matchedParticipants'] = [];
 
     delete result['type'];
     delete result['question'];
@@ -131,7 +132,12 @@ describe('FilterService', () => {
                 prompt: 'Dit is een *test*',
                 type: '',
                 answers: [],
-                question: ''
+                question: '',
+                split_item: '',
+                chapter: '',
+                subtags: [],
+                gloss: '',
+                en_translation: ''
 
             },
             input: {
@@ -139,7 +145,12 @@ describe('FilterService', () => {
                 prompt: 'Dit is een test',
                 type: '',
                 answers: [],
-                question: ''
+                question: '',
+                split_item: '',
+                chapter: '',
+                subtags: [],
+                gloss: '',
+                en_translation: ''
             },
             filters: [{
                 field: '*',

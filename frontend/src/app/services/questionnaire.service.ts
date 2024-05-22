@@ -1,42 +1,48 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { lastValueFrom } from 'rxjs';
+import { Observable, Subscription, lastValueFrom } from 'rxjs';
 import { MatchedQuestion, Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant';
 import { Filter, FilterOperator } from '../models/filter';
 import { FilterService } from './filter.service';
-import { Cache, CacheService } from './cache.service';
+import { CacheService } from './cache.service';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
+import { FilterWorkerService } from './filter-worker.service';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class QuestionnaireService {
-    private cache: Cache<MatchedQuestion[]>;
+export class QuestionnaireService implements OnDestroy {
     /**
      * components displaying questions, using the question ID as key
      */
     private components: { [id: string]: QuestionnaireItemComponent } = {};
 
-    visibleQuestionIds: Set<string> = new Set<string>();
-    private database: Promise<Question[]>;
-    private loadData: (questions: Question[]) => void;
+    private visibleQuestionIds: Set<string> = new Set<string>();
+    private subscriptions!: Subscription[];
 
-    constructor(private http: HttpClient, private filterService: FilterService, private cacheService: CacheService, private ngZone: NgZone) {
-        this.cache = cacheService.init<MatchedQuestion[]>('questions');
-        this.database = new Promise((resolve) => {
-            this.loadData = resolve;
-        });
+    /**
+     * Emits an updated list of matches
+     */
+    results$!: Observable<readonly MatchedQuestion[]>;
+
+    constructor(private http: HttpClient, private filterWorkerService: FilterWorkerService, private filterService: FilterService, private cacheService: CacheService, private ngZone: NgZone) {
+        this.subscriptions = [
+            this.filterWorkerService.results$.subscribe(results => { this.updateVisible(results) })
+        ];
+        this.results$ = this.filterWorkerService.results$;
+    }
+
+    ngOnDestroy(): void {
+        this.subscriptions.forEach(s => s.unsubscribe());
     }
 
     async save(items: Iterable<Question>): Promise<{ success: boolean }> {
         const data = [...items];
-        // resolves existing awaiters (if any)
-        this.loadData(data);
         // if it has already been loaded, override it
-        this.database = Promise.resolve(data);
+        this.filterWorkerService.setData(data);
 
         // async to allow modifying this method when saving it to an actual external database
         return Promise.resolve({ success: true });
@@ -51,7 +57,7 @@ export class QuestionnaireService {
 
         const data = await response.then(res => res);
         const questionnaire = this.convertToQuestionnaire(data);
-        this.loadData(questionnaire);
+        this.filterWorkerService.setData(questionnaire);
         return Promise.resolve(questionnaire);
     }
 
@@ -79,6 +85,16 @@ export class QuestionnaireService {
                 yield component;
             }
         }
+    }
+
+    addVisibleId(id: string): void {
+        this.visibleQuestionIds.add(id);
+        this.filterWorkerService.setVisible(this.visibleQuestionIds);
+    }
+
+    deleteVisibleId(id: string): void {
+        this.visibleQuestionIds.delete(id);
+        this.filterWorkerService.setVisible(this.visibleQuestionIds);
     }
 
     /**
@@ -126,6 +142,11 @@ export class QuestionnaireService {
                 type: entry['type'],
                 question: entry['question'],
                 prompt: entry['prompt'],
+                split_item: entry['split_item'],
+                chapter: entry['chapter'],
+                subtags: entry['subtags'],
+                gloss: entry['gloss'],
+                en_translation: entry['en_translation'],
                 answers: answers
             };
             questions.push(question);
@@ -177,64 +198,17 @@ export class QuestionnaireService {
      * Searches the database for matching questions.
      * @param filters filters to apply
      * @param operator conjunction operator to use
-     * @returns the matching results
      */
-    async filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): Promise<Iterable<MatchedQuestion>> {
-        const cacheKey = this.cacheService.key([filters, operator]);
-        const cached = this.cache.get(cacheKey);
-        if (cached !== undefined) {
-            return cached;
-        }
-
-        // update visible questions first
-        const { visible, other } = this.selectVisible(await this.database);
-        let matches = visible
-            .map(question => this.filterService.applyFilters(question, filters, operator))
-            .filter(question => !!question);
-
-        this.ngZone.run(() => {
-            this.updateVisible(matches);
-        });
-
-        // filter remainder of the questions
-        return new Promise((resolve) => {
-            matches.push(...other
-                .map(question => this.filterService.applyFilters(question, filters, operator))
-                .filter(question => !!question));
-
-            this.cache.set(cacheKey, matches);
-
-            resolve(matches);
-        });
+    filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): void {
+        this.filterWorkerService.setFilters(filters, operator);
     }
 
-    /**
-     * Selects the visible questions from the database.
-     * @param questions questions database
-     * @returns the questions which are visible, and the remainder
-     */
-    private selectVisible(questions: Question[]): {
-        visible: Question[],
-        other: Question[]
-    } {
-        const visible: Question[] = [];
-        const other: Question[] = [];
-        for (const question of questions) {
-            if (this.visibleQuestionIds.has(question.id)) {
-                visible.push(question);
-            } else {
-                other.push(question);
-            }
-        }
-
-        return { visible, other };
-    }
 
     /**
      * Directly triggers the visible components to have their content updated.
      * @param matches results which should at least apply to all the visible questions
      */
-    private updateVisible(matches: MatchedQuestion[]) {
+    private updateVisible(matches: Iterable<MatchedQuestion>) {
         // make a copy, so we can remove all matching question IDs
         const visibleIds = [...this.visibleQuestionIds];
         for (const question of matches) {

@@ -1,110 +1,165 @@
 @if (!matchedQuestion) {
-    <div class="content has-text-centered has-text-light">
-        <span class="icon is-large">
-            <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
-        </span>
-    </div>
+<div class="content has-text-centered has-text-light">
+    <span class="icon is-large">
+        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
+    </span>
+</div>
 }
 @else {
-    <div class="question-header" (click)="toggleQuestion()" [ngClass]="{'is-loading': loading}">
-        <h2 class="subtitle is-4 mb-4 has-text-weight-semibold">
-            <div class="level">
-                <div class="level-left">
-                    <span class="expand-button icon-text" [ngClass]="{'expanded': questionExpanded}">
-                        <span class="icon">
-                            <fa-icon [icon]="faChevronDown"></fa-icon>
-                        </span>
-                        <span [innerHTML]="matchedQuestion.prompt | highlight"></span>
+<div class="question-header" (click)="toggleQuestion()" [ngClass]="{'is-loading': loading}">
+    <h2 class="subtitle is-4 mb-4 has-text-weight-semibold">
+        <div class="level">
+            <div class="level-left">
+                <span class="expand-button icon-text" [ngClass]="{'expanded': questionExpanded}">
+                    <span class="icon">
+                        <fa-icon [icon]="faChevronDown"></fa-icon>
                     </span>
-                </div>
-                <div class="level-right question-filters">
-                    <div class="field has-addons">
-                        <p class="control">
-                            <button class="button is-success is-light" (click)="onFilterSelected($event, 'id', id)">
-                                <span class="icon">
-                                    <fa-icon [icon]="faCheck"></fa-icon>
-                                </span>
-                                <span i18n>Select</span>
-                            </button>
-                        </p>
-                        <p class="control">
-                            <button class="button is-danger is-light" (click)="onExcludeFilter($event, 'id', id)">
-                                <span class="icon">
-                                    <fa-icon [icon]="faTimes"></fa-icon>
-                                </span>
-                                <span i18n>Exclude</span>
-                            </button>
-                        </p>
-                    </div>
+                    <span [innerHTML]="matchedQuestion.prompt | highlight"></span>
+                </span>
+            </div>
+            <div class="level-right question-filters">
+                <div class="field has-addons">
+                    <p class="control">
+                        <button class="button is-success is-soft" (click)="onFilterSelected($event, 'id', id)">
+                            <span class="icon">
+                                <fa-icon [icon]="faCheck"></fa-icon>
+                            </span>
+                            <span i18n>Select</span>
+                        </button>
+                    </p>
+                    <p class="control">
+                        <button class="button is-danger is-soft" (click)="onExcludeFilter($event, 'id', id)">
+                            <span class="icon">
+                                <fa-icon [icon]="faTimes"></fa-icon>
+                            </span>
+                            <span i18n>Exclude</span>
+                        </button>
+                    </p>
                 </div>
             </div>
-        </h2>
-    </div>
-    <div class="box" [ngClass]="{'is-loading': loading}">
-        <div class="tile is-ancestor is-vertical">
-            <ng-container *ngIf="questionExpanded">
-                <div class="tile is-parent expanded dialect-row" *ngFor="let dialect of matchedDialectNames">
-                    <div class="tile is-child" [id]="dialect">
-                        <div class="dialect-header">
-                            <h3 class="subtitle mb-1">
-                                <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                                    <div class="tag filterable"
-                                        [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
-                                        (click)="onFilterSelected($event, 'dialect', dialect)"></div>
-                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)"></a>
-                                </div>
-                            </h3>
-                            <ng-template #answerCountTag let-answerCount="answerCount">
-                                <div class="tag" i18n>
-                                    {answerCount, plural,
-                                    =0 {no answers}
-                                    =1 {1 answer}
-                                    other {{{answerCount}} answers}}
-                                </div>
-                            </ng-template>
-                            <ng-container [ngTemplateOutlet]="answerCountTag"
-                                [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
-                        </div>
-                    </div>
-                    <div class="tile is-child is-parent is-vertical is-9 p-0">
-                        <div class="tile is-child" *ngFor="let answer of matchedDialects[dialect]">
-                            <div class="is-flex">
-                                @if (answer.attestation.text === 'unattested') {
-                                    <span i18n class="unattested">unattested</span>
-                                  }
-                                  @else {
-                                    <span [innerHTML]="answer.answer | highlight"></span>
-                                }
-                                <div class="tags has-addons is-flex-wrap-nowrap">
-                                    <div class="tag filterable"
-                                        (click)="onFilterSelected($event, 'participantId', answer.participantId.text)">
-                                        <span class="icon-text">
-                                            <span class="icon">
-                                                <fa-icon [icon]="faUser"></fa-icon>
-                                            </span>
-                                            <span [innerHTML]="answer.participantId | highlight"></span>
-                                        </span>
-                                    </div>
-                                    <a class="tag is-delete"
-                                        (click)="onExcludeFilter($event, 'participantId', answer.participantId.text)"></a>
-                                </div>
+        </div>
+    </h2>
+</div>
+<div class="box metadata" [ngClass]="{'is-loading': loading}">
+    @if (questionExpanded) {
+    <luu-view>
+        <luu-line type="example" [value]="matchedQuestion.prompt.highlightedText"></luu-line>
+        <luu-line type="gloss" [value]="matchedQuestion.gloss.highlightedText"></luu-line>
+        <luu-translation [innerHTML]="matchedQuestion.en_translation | highlight"></luu-translation>
+    </luu-view>
+    <hr class="mt-2 mb-2" />
+    }
+    <div class="fixed-grid has-11-cols has-1-cols-mobile">
+        <div class="grid">
+            <div class="cell is-col-span-3">
+                <span i18n>
+                    {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
+                </span>
+            </div>
+            <div class="cell is-col-span-3">
+                <span i18n>
+                    {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
+                </span>
+            </div>
+            <div class="cell is-col-span-5">
+                <div class="field is-grouped is-grouped-multiline">
+                    <div class="control">
+                        <div class="tags has-addons is-flex-wrap-nowrap">
+                            <div class="tag filterable"
+                                (click)="onFilterSelected($event, 'chapter', matchedQuestion.chapter.text)">
+                                <span [innerHTML]="matchedQuestion.chapter | highlight"></span>
                             </div>
+                            <a class="tag is-delete"
+                                (click)="onExcludeFilter($event, 'chapter', matchedQuestion.chapter.text)"
+                                i18n-aria-label aria-label="exclude"></a>
                         </div>
                     </div>
-                </div>
-            </ng-container>
-            <div class="tile is-parent">
-                <div class="tile is-child">
-                    <span i18n>
-                        {{ matchedDialectsCount }} of {{ dialectsCount }} dialects matched
-                    </span>
-                </div>
-                <div class="tile is-child is-9">
-                    <span i18n>
-                        {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
-                    </span>
+                    @for (subtag of matchedQuestion.subtags; track subtag.text) {
+                    <div class="control">
+                        <div class="tags has-addons is-flex-wrap-nowrap">
+                            <div class="tag filterable" (click)="onFilterSelected($event, 'subtags', subtag.text)">
+                                <span [innerHTML]="subtag | highlight"></span>
+                            </div>
+                            <a class="tag is-delete" (click)="onExcludeFilter($event, 'subtags', subtag.text)"
+                                i18n-aria-label aria-label="exclude"></a>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
+</div>
+@if (questionExpanded && matchedDialectNames.length) {
+<div class="box mt-3" [ngClass]="{'is-loading': loading}">
+    <div class="fixed-grid has-5-cols-tablet">
+        <div class="grid is-column-gap-0">
+            @for (dialect of matchedDialectNames; track dialect; let last = $last) {
+            <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect" [ngClass]="{'is-last': last}">
+                <h3 class="subtitle mb-1">
+                    <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
+                            (click)="onFilterSelected($event, 'dialect', dialect)"></div>
+                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)" i18n-aria-label
+                            aria-label="exclude"></a>
+                    </div>
+                </h3>
+                <ng-template #answerCountTag let-answerCount="answerCount">
+                    <div class="tag" i18n>
+                        {answerCount, plural,
+                        =0 {no answers}
+                        =1 {1 answer}
+                        other {{{answerCount}} answers}}
+                    </div>
+                </ng-template>
+                <ng-container [ngTemplateOutlet]="answerCountTag"
+                    [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
+            </div>
+            <div class="cell is-col-span-4 expanded dialect-answers pb-4" [ngClass]="{'is-last': last}">
+                @for (group of matchedDialects[dialect]; track group.text) {
+                <div class="is-flex my-3">
+                    <div>
+                        @if (group.attestation.text === 'unattested') {
+                        <div class="tags has-addons is-flex-wrap-nowrap">
+                            <div i18n class="unattested tag filterable"
+                                [ngClass]="{'is-match': group.attestation.fullMatch}"
+                                (click)="onFilterSelected($event, 'attestation', 'unattested')">
+                                unattested
+                            </div>
+                            <a class="tag is-delete" (click)="onExcludeFilter($event, 'attestation', 'unattested')"
+                                i18n-aria-label aria-label="exclude"></a>
+                        </div>
+                        }
+                        @else {
+                        <span [innerHTML]="group.answer | highlight"></span>
+                        }
+                    </div>
+                    <div class="field ml-3 is-grouped is-grouped-multiline">
+                        @for (participantId of group.participantIds; track participantId.text) {
+                        <div class="control">
+                            <div class="tags has-addons is-flex-wrap-nowrap">
+                                <div class="tag filterable" [ngClass]="{'is-match': participantId.fullMatch}"
+                                    (click)="onFilterSelected($event, 'participantId', participantId.text)">
+                                    <span class="icon-text">
+                                        <span class="icon">
+                                            <fa-icon [icon]="faUser"></fa-icon>
+                                        </span>
+                                        <span [innerHTML]="participantId | highlight"></span>
+                                    </span>
+                                </div>
+                                <a class="tag is-delete"
+                                    (click)="onExcludeFilter($event, 'participantId', participantId.text)"
+                                    i18n-aria-label aria-label="exclude"></a>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</div>
+}
 }

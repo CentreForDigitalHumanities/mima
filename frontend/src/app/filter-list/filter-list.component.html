@@ -1,9 +1,12 @@
-<ng-container *ngIf="!!filterIndexes">
-    <div class="block" *ngFor="let index of filterIndexes">
-        <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
-    </div>
-</ng-container>
-<div class="level" *ngIf="clearable">
+@if (!!filterIndexes) {
+@for (index of filterIndexes; track index) {
+<div class="block">
+    <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
+</div>
+}
+}
+@if (clearable) {
+<div class="level">
     <div class="level-left">
         <div class="buttons">
             <button class="button is-primary" (click)="add()">
@@ -20,7 +23,8 @@
             </button>
         </div>
     </div>
-    <div class="level-right" *ngIf="filterIndexes.length > 1">
+    @if (filterIndexes.length > 1) {
+    <div class="level-right">
         <ng-container i18n>Combine:</ng-container> &nbsp;
         <div class="field has-addons">
             <p class="control">
@@ -35,4 +39,6 @@
             </p>
         </div>
     </div>
+    }
 </div>
+}

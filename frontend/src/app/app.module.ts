@@ -35,6 +35,7 @@ import { DownloadButtonComponent } from './download-button/download-button.compo
 import { ProgressComponent } from './progress/progress.component';
 import { TransitionNumbersPipe } from './transition-numbers.pipe';
 import { QuestionnaireListComponent } from './questionnaire-list/questionnaire-list.component';
+import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { QuestionnaireListComponent } from './questionnaire-list/questionnaire-l
         HighlightPipe,
         ProgressComponent,
         QuestionnaireItemComponent,
-        QuestionnaireListComponent
+        QuestionnaireListComponent,
+        DarkModeToggleComponent
     ],
     providers: [
         // The language is used as the base_path for finding the right

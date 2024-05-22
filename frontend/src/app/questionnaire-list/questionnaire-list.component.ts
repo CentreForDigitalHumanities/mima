@@ -74,10 +74,10 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges, OnD
             const id = (<HTMLElement>entry.target).dataset['id'];
             if (entry.isIntersecting) {
                 // scrolled into view
-                this.questionnaireService.visibleQuestionIds.add(id);
+                this.questionnaireService.addVisibleId(id);
             } else {
                 // scrolled out of view
-                this.questionnaireService.visibleQuestionIds.delete(id);
+                this.questionnaireService.deleteVisibleId(id);
             }
         }
 

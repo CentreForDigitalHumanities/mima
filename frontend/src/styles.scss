@@ -1,11 +1,9 @@
-@import 'variables';
-@import 'bulma/bulma';
+@use 'variables';
+@use 'bulma/bulma';
 @import 'primeicons/primeicons.css';
-@import 'primeng/resources/themes/fluent-light/theme.css';
-@import 'primeng/resources/primeng.css';
 
-$highlight: $warning;
-$highlight-text: $warning-invert;
+$highlight: var(--bulma-warning);
+$highlight-text: var(--bulma-warning-invert);
 
 .highlight {
     background: $highlight;
@@ -54,7 +52,7 @@ p-multiselect.input {
 
         >tr>th,
         >tr>td {
-            border: solid 1px $dark !important;
+            border: solid 1px variables.$dark !important;
         }
     }
 }
