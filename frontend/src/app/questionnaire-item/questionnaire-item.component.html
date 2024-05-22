@@ -95,7 +95,7 @@
     <div class="fixed-grid has-5-cols-tablet">
         <div class="grid is-column-gap-0">
             @for (dialect of matchedDialectNames; track dialect; let last = $last) {
-            <div class="cell expanded dialect-header py-3" [id]="dialect" [ngClass]="{'is-last': last}">
+            <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect" [ngClass]="{'is-last': last}">
                 <h3 class="subtitle mb-1">
                     <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
                         <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
@@ -115,7 +115,7 @@
                 <ng-container [ngTemplateOutlet]="answerCountTag"
                     [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
             </div>
-            <div class="cell is-col-span-4 expanded dialect-answers" [ngClass]="{'is-last': last}">
+            <div class="cell is-col-span-4 expanded dialect-answers pb-4" [ngClass]="{'is-last': last}">
                 @for (group of matchedDialects[dialect]; track group.text) {
                 <div class="is-flex my-3">
                     <div>
