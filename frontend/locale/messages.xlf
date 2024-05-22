@@ -6,28 +6,28 @@
         <source>Add Filter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3746183536188848835" datatype="html">
         <source>Combine:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="188313477943387511" datatype="html">
         <source>And</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5504129468136884250" datatype="html">
         <source>Or</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8300886767108503684" datatype="html">
@@ -388,7 +388,7 @@
         <source>Clear Filters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter-list/filter-list.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5129980223571446304" datatype="html">
@@ -450,28 +450,28 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ matchedQuestion.answers.length }}"/> answers matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
@@ -481,8 +481,8 @@
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6512705589568471581" datatype="html">
-        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedDialects.size}}"/> dialects · <x id="INTERPOLATION_2" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
+      <trans-unit id="3575576256728575513" datatype="html">
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="INTERPOLATION_2" equiv-text="{{matchedDialects.size}}"/> dialects · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
           <context context-type="linenumber">10</context>
@@ -579,10 +579,6 @@
       <trans-unit id="3690478070680374141" datatype="html">
         <source>unattested</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">121</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
           <context context-type="linenumber">258</context>
         </context-group>
@@ -612,19 +608,23 @@
         <source>exclude</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">84</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">104</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">152</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5707780993008694763" datatype="html">
@@ -646,6 +646,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.ts</context>
           <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1911323071896446751" datatype="html">
+        <source> unattested </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4608015944298801142" datatype="html">
+        <source>Switch to light mode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dark-mode-toggle/dark-mode-toggle.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="803131845720356706" datatype="html">
+        <source>Switch to dark mode</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dark-mode-toggle/dark-mode-toggle.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
     </body>
