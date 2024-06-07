@@ -72,6 +72,7 @@ class CalculatorWorker {
     private worker!: Worker | FakeWorker;
     private results!: BehaviorSubject<{ [id: string]: Result }>;
     private complete = new BehaviorSubject(false);
+    private active = new BehaviorSubject<boolean>(true);
 
     /**
      * List of matches
@@ -86,7 +87,7 @@ class CalculatorWorker {
     /**
      * Whether it's currently calculating
      */
-    active = true;
+    active$ = this.active.asObservable();
 
     constructor(filterService: FilterService,
         filters: readonly Filter[],
@@ -132,7 +133,7 @@ class CalculatorWorker {
     terminate() {
         this.results.unsubscribe();
         this.worker.terminate();
-        this.active = false;
+        this.active.next(false);
     }
 
     setVisible(ids: string[]) {
@@ -143,7 +144,7 @@ class CalculatorWorker {
     }
 
     pause() {
-        this.active = false;
+        this.active.next(false);
         if (!this.complete.value) {
             this.postMessage({
                 command: 'pause'
@@ -152,8 +153,8 @@ class CalculatorWorker {
     }
 
     resume() {
-        if (!this.complete.value && !this.active) {
-            this.active = true;
+        if (!this.complete.value && !this.active.value) {
+            this.active.next(true);
             this.postMessage({
                 command: 'resume'
             });
@@ -194,7 +195,7 @@ class CalculatorWorker {
             case 'done':
                 this.worker.terminate();
                 this.complete.next(true);
-                this.active = false;
+                this.active.next(false);
                 break;
 
             default:
@@ -251,6 +252,7 @@ export class FilterWorkerService implements OnDestroy {
     ngOnDestroy(): void {
         this.subscription.forEach(s => s.unsubscribe());
     }
+
     private createWorker(key: string, filters: readonly Filter[], operator: FilterOperator) {
         this.workers[key] = new CalculatorWorker(
             this.filterService,
@@ -275,7 +277,7 @@ export class FilterWorkerService implements OnDestroy {
         this.current = this.workers[key];
         this.currentKey = key;
         this.current.resume();
-        this.progressService.indeterminate();
+        const progress = this.progressService.start(true);
 
         this.workerSubscriptions = [
             this.current.results$.subscribe(results => {
@@ -283,7 +285,13 @@ export class FilterWorkerService implements OnDestroy {
             }),
             this.current.complete$.subscribe(done => {
                 if (done) {
-                    this.progressService.complete();
+                    progress.complete();
+                }
+            }),
+            this.current.active$.subscribe(active => {
+                if (!active) {
+                    // remove the progress for this one
+                    progress.hide();
                 }
             })
         ];
