@@ -1,4 +1,5 @@
 import { Component, LOCALE_ID, Inject, OnInit, NgZone } from '@angular/core';
+import { IsActiveMatchOptions } from '@angular/router';
 import { faGlobe, faSync } from '@fortawesome/free-solid-svg-icons';
 import { animations, showState } from '../animations';
 import { LanguageInfo, LanguageService } from '../services/language.service';
@@ -21,6 +22,12 @@ export class MenuComponent implements OnInit {
 
     // use the target languages for displaying the respective language names
     languages: LanguageInfo['supported'];
+    routerLinkActiveOptions: IsActiveMatchOptions = {
+        matrixParams: 'ignored',
+        queryParams: 'ignored',
+        paths: 'subset',
+        fragment: 'ignored',
+    };
 
     constructor(
         @Inject(LOCALE_ID) private localeId: string,

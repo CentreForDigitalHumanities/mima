@@ -119,7 +119,7 @@
         <target state="translated"> MiMA </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8364309938383915497" datatype="html">
@@ -127,7 +127,7 @@
         <target state="translated"> Startpagina </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7037889682600256786" datatype="html">
@@ -467,7 +467,7 @@
         <target state="translated"> Vragenlijsten </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434327601231025030" datatype="html">
@@ -756,6 +756,46 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
           <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2233560223291461480" datatype="html">
+        <source>Manual</source>
+        <target state="translated">Handleiding</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/manual-button/manual-button.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8653786565693391704" datatype="html">
+        <source>View in Manual</source>
+        <target state="translated">Bekijk in handleiding</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/manual-button/manual-button.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8054614372970301403" datatype="html">
+        <source>Manual Topics</source>
+        <target state="translated">Onderwerpen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/manual-menu/manual-menu.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="254382446573360981" datatype="html">
+        <source> Manual </source>
+        <target state="translated"> Handleiding </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/menu/menu.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3136968475418206768" datatype="html">
+        <source>en-GB</source>
+        <target state="translated">nl-NL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/manual.service.ts</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
     </body>

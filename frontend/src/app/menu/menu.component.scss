@@ -1,0 +1,5 @@
+.navbar.is-dark {
+    a.navbar-item.is-active {
+        --bulma-navbar-item-background-l-delta: var(--bulma-navbar-item-active-background-l-delta);
+    }
+}
