@@ -31,11 +31,10 @@ export class ManualService {
             const progress = this.progressService.start(true);
             try {
                 const path = this.getLocalizedPath(`manual`, `${id}.md`);
-                const pagePromise = fetch(path).then(response => this.parseResponse(response));
-
-                const html = await pagePromise;
+                const response = await fetch(path);
+                const html = await this.parseResponse(response);
                 const manifest = await this.getManifest();
-                const title = manifest.find(page => page.id === id).title;
+                const title = manifest.find(page => page.id === id)?.title;
                 return { id, html, title };
             }
             finally {
@@ -44,13 +43,27 @@ export class ManualService {
         });
     }
 
-    public getManifest(): Promise<ManualPageMetadata[]> {
+    public async getManifest(): Promise<ManualPageMetadata[]> {
         if (this.manifest) {
             return this.manifest;
         }
 
         const path = this.getLocalizedPath(`manual`, `/manifest.json`);
-        return this.manifest = fetch(path).then(response => response.json());
+        let result: ManualPageMetadata[];
+        try {
+            const response = await fetch(path);
+            if (response.ok) {
+                result = await response.json();
+            } else {
+                console.error(response);
+            }
+        }
+        catch (exception) {
+            console.error(exception);
+        }
+        finally {
+            return result ?? [];
+        }
     }
 
     /**
