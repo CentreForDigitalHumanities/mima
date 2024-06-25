@@ -1,0 +1,107 @@
+from mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+import re
+import os
+import json
+import csv
+from dataclasses import dataclass, asdict
+
+@dataclass
+class JudgementItem:
+    main_question: str
+    main_question_id: str
+    sub_question: str
+    sub_question_id: str
+    responses: list
+
+@dataclass
+class Response:
+    participant_id: str
+    dialect: str
+    score: int
+
+def read_csv(filepath):
+    data = []
+    with open(filepath, encoding='utf8') as file:
+        reader = csv.reader(file)
+        for index, row in enumerate(reader):
+            data.append(row)
+    return data
+
+def get_dialects(data):
+    participants = {}
+    for participant in data[1:]:
+        if participant[29] == 'Het dialect van …':
+            dialect = ' '.join(participant[29:31])
+        elif participant[29] == '':
+            dialect = 'Geen Dialect'
+        else:
+            dialect = participant[29]
+        participants[''.join(participant[0:2])] = dialect
+    return participants
+
+def get_questions_and_ids(item):
+    line = item.replace('...', 'XXX')
+    sub_question = re.findall(r'\[(.*?)\]', line.split('.')[-1])[0]
+    main_question = line.split('.')[1].replace('Invulzin', '').strip().replace('XXX', '...')
+    ids = item.split('Invulzin')[0]
+    main_question_id = ids.split('[')[0]
+    sub_question_id = re.findall(r'\[(.*?)\]', ids)[0]
+    return main_question, sub_question, main_question_id, sub_question_id
+
+def get_full_id(item):
+    return item.split('.')[0]
+
+def get_judgement_items(line):
+    judgements = {}
+    indices = []
+    for index, item in enumerate(line):
+        if 'Invulzin' in item:
+            indices.append(index)
+            main_question, sub_question, main_question_id, sub_question_id = get_questions_and_ids(item)
+            judgement_item = JudgementItem(main_question, main_question_id, sub_question, sub_question_id, [])
+            judgements["{}[{}]".format(main_question_id, sub_question_id)] = judgement_item
+    return judgements, indices
+
+def get_responses(data, participant_dialects, indices, judgements):
+    for line in data[1:]:
+        participant_id = ''.join(line[0:2])
+        for index in indices:
+            score = line[index]
+            question_id = get_full_id(data[0][index])
+            judgements[question_id].responses.append(
+                Response(participant_id, participant_dialects[participant_id], score)
+            )
+    return judgements
+
+
+# custom function to serialize data classes as dictionaries
+def serialize_classes(obj):
+    if isinstance(obj, JudgementItem) or isinstance(obj, Response):
+        return asdict(obj)
+    return obj.__dict__
+
+
+def export_to_json(dictionary):
+    ## dump as json
+    with open(os.path.join(OUTPUT_PATH, 'likert_scales_test.json'), 'w') as file:
+        json.dump(dictionary, file, default=serialize_classes, indent=4)
+
+
+
+def __main__():
+    data = read_csv(DATA_PATH)
+    participants_data = read_csv(PARTICIPANTS_PATH)
+    participant_dialects = get_dialects(participants_data)
+    judgement_items, judgement_indices = get_judgement_items(data[0])
+    judgement_items = get_responses(data, participant_dialects, judgement_indices, judgement_items)
+    export_to_json(judgement_items)
+
+
+if __name__ == "__main__":
+    __main__()
+
+
+
+
+
+
