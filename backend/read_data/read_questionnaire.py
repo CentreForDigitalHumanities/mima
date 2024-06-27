@@ -84,8 +84,6 @@ for index, cell in enumerate(data[0]):
             cleaned = True
         )
     elif cell.endswith('[Vertaling]') and first_word not in ['COMMENT', 'DEVIATION']:
-        if remove_periods(first_word) == 'B2Z9b[SQ001_SQ001]':
-            print('it exists!')
         questionnaire_item = Question(
             tag = remove_periods(first_word),
             index = index,
@@ -148,8 +146,6 @@ for row in data[1:]:
 cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
 for index in questionnaire_items:
     question = questionnaire_items[index]
-    if index == 479:
-        print('halt!')
     if question.answers and question.type == 'Translation' and not question.cleaned:
         if questionnaire_items[index+1].cleaned:
             if questionnaire_items[index+1].answers:
