@@ -1,0 +1,28 @@
+@use "bulma/sass/utilities/mixins";
+@import '../../variables.scss';
+
+.tag:not(body).is-delete:hover,
+.tag:not(body).is-delete:focus {
+    background-color: var(--bulma-danger);
+    color: var(--bulma-danger-invert);
+}
+
+.judgmentHeader {
+    animation: append-animate .3s ease-in-out;
+    display: block;
+}
+
+.metadata {
+    padding-top: .5rem;
+}
+
+
+:host:hover .metadata {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    background-color: var(--bulma-background);
+
+}
+
+

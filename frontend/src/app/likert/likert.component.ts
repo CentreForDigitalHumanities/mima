@@ -137,4 +137,12 @@ export class LikertComponent implements OnChanges, OnDestroy {
         }
     }
 
+    formatQuestion(mainQuestion, subQuestion) {
+        if (mainQuestion.includes('…')) {
+            return mainQuestion.replace('…', `<strong>${subQuestion}</strong>`);
+        } else {
+            return `${mainQuestion} <strong>${subQuestion}</strong>`;
+        }
+    }
+
 }
