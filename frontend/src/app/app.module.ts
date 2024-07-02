@@ -20,6 +20,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuestionnaireEffects } from './questionnaire.effects';
 import { questionnaireReducer } from './questionnaire.reducer';
 
+import { JudgementsEffects } from './judgements.effects';
+import { judgementsReducer } from './judgements.reducer';
+
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +39,9 @@ import { ProgressComponent } from './progress/progress.component';
 import { TransitionNumbersPipe } from './transition-numbers.pipe';
 import { QuestionnaireListComponent } from './questionnaire-list/questionnaire-list.component';
 import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
+import { LikertListPageComponent } from './likert-list-page/likert-list-page.component';
+import { LikertListComponent } from './likert-list/likert-list.component';
+import { LikertComponent } from './likert/likert.component';
 
 
 @NgModule({
@@ -64,11 +70,12 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
             cookieName: 'csrftoken',
             headerName: 'X-CSRFToken'
         }),
-        EffectsModule.forRoot([QuestionnaireEffects]),
+        EffectsModule.forRoot([QuestionnaireEffects, JudgementsEffects]),
         LuupzigModule,
         PanelModule,
         StoreModule.forRoot({
-            questionnaire: questionnaireReducer
+            questionnaire: questionnaireReducer,
+            judgements: judgementsReducer,
         }, {
             runtimeChecks: {
                 strictStateImmutability: true,
@@ -80,7 +87,10 @@ import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.com
         ProgressComponent,
         QuestionnaireItemComponent,
         QuestionnaireListComponent,
-        DarkModeToggleComponent
+        DarkModeToggleComponent,
+        LikertListPageComponent,
+        LikertListComponent,
+        LikertComponent,
     ],
     providers: [
         // The language is used as the base_path for finding the right

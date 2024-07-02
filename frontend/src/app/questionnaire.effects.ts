@@ -22,7 +22,7 @@ export class QuestionnaireEffects implements OnDestroy {
         private store: Store<State>
     ) {
         this.subscriptions = [
-            this.questionnaireService.results$.subscribe(matchedQuestions => {
+            this.questionnaireService.results$.subscribe((matchedQuestions: MatchedQuestion[]) => {
                 store.dispatch(setMatchedQuestions({
                     matchedQuestions
                 }))

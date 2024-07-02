@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UploadPageComponent } from './upload-page/upload-page.component';
 import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
+import { LikertListPageComponent } from './likert-list-page/likert-list-page.component';
 
 const routes: Routes = [
     {
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'questionnaires',
         component: QuestionnaireListPageComponent
+    },
+    {
+        path: 'likert',
+        component: LikertListPageComponent
     },
     {
         path: '',

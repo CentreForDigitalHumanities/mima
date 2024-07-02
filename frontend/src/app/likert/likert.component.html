@@ -1,0 +1,17 @@
+@if (!matchedJudgement) {
+    <p>loading</p>
+}
+@else {
+    <p [innerHTML]="matchedJudgement.judgementId.text"></p>
+    <button (click)="updateLikertValues()">Values</button>
+    @for (dialect of dialectNames; track dialect) {
+        <h3 [innerHTML]="dialect"></h3>
+        <svg width="1000" height="50">
+            <rect [attr.x]="xCoordinates[dialect][0]" y="0" [attr.width]="widths[dialect][0]" height="100%" fill="tomato"></rect>
+            <rect [attr.x]="xCoordinates[dialect][1]" y="0" [attr.width]="widths[dialect][1]" height="100%" fill="sandybrown"></rect>
+            <rect [attr.x]="xCoordinates[dialect][2]" y="0" [attr.width]="widths[dialect][2]" height="100%" fill="lemonchiffon"></rect>
+            <rect [attr.x]="xCoordinates[dialect][3]" y="0" [attr.width]="widths[dialect][3]" height="100%" fill="darkseagreen"></rect>
+            <rect [attr.x]="xCoordinates[dialect][4]" y="0" [attr.width]="widths[dialect][4]" height="100%" fill="forestgreen"></rect>
+        </svg>
+    }
+}

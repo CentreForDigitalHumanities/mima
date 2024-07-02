@@ -8,12 +8,14 @@ import { FilterService, isEmptyFilter } from './filter.service';
 import { ProgressService } from './progress.service';
 import { WorkerReceiver } from './filter.worker-receiver';
 import { environment } from 'src/environments/environment';
+import { Judgement, MatchedJudgement } from '../models/judgement';
 
 
 export type FilterWorkerMessage = {
     command: 'startCalc',
     value: {
         questions: Question[],
+        judgements: Judgement[],
         filters: ReadonlyArray<Filter>,
         operator: FilterOperator,
         visibleIds: string[]
@@ -35,7 +37,7 @@ export type FilterWorkerMessage = {
 
 class Result {
     match: boolean;
-    value: MatchedQuestion;
+    value: MatchedQuestion | MatchedJudgement;
 }
 
 class FakeWorker {
@@ -76,7 +78,7 @@ class CalculatorWorker {
     /**
      * List of matches
      */
-    results$!: Observable<readonly MatchedQuestion[]>;
+    results$!: Observable<readonly (MatchedQuestion|MatchedJudgement)[]>;
 
     /**
      * Whether the calculations are done
@@ -91,7 +93,8 @@ class CalculatorWorker {
     constructor(filterService: FilterService,
         filters: readonly Filter[],
         operator: FilterOperator,
-        questions: Question[],
+        questions: Question[] = [],
+        judgements: Judgement[] = [],
         visibleIds: string[],
         previous?: CalculatorWorker) {
         this.results = new BehaviorSubject<{ [id: string]: Result }>(
@@ -124,6 +127,7 @@ class CalculatorWorker {
                 filters,
                 operator,
                 questions,
+                judgements,
                 visibleIds
             }
         });
@@ -222,6 +226,7 @@ export class FilterWorkerService implements OnDestroy {
     private visibleIds = new BehaviorSubject<string[]>([]);
     private workers: { [key: string]: CalculatorWorker } = {};
     private questions: Question[];
+    private judgements: Judgement[];
     private current: CalculatorWorker = undefined;
     private currentKey: string = undefined;
 
@@ -230,7 +235,7 @@ export class FilterWorkerService implements OnDestroy {
      */
     private workerSubscriptions: Subscription[] = [];
 
-    private results = new BehaviorSubject<readonly MatchedQuestion[]>([]);
+    private results = new BehaviorSubject<readonly (MatchedQuestion|MatchedJudgement)[]>([]);
 
     /**
      * List of matches
@@ -257,6 +262,7 @@ export class FilterWorkerService implements OnDestroy {
             filters,
             operator,
             this.questions,
+            this.judgements,
             this.visibleIds.value,
             this.current);
         this.activateWorker(key);
@@ -279,6 +285,7 @@ export class FilterWorkerService implements OnDestroy {
 
         this.workerSubscriptions = [
             this.current.results$.subscribe(results => {
+                console.log('results', results)
                 this.results.next(results);
             }),
             this.current.complete$.subscribe(done => {
@@ -291,14 +298,22 @@ export class FilterWorkerService implements OnDestroy {
     }
 
     // pass questions
-    setData(questions: Question[]) {
+    setData(questions: (Question | Judgement)[]) {
         this.workerSubscriptions.forEach(s => s.unsubscribe());
         Object.values(this.workers).forEach(worker => worker.terminate());
         this.workers = {};
-        this.questions = questions;
-        this.current = undefined;
-        this.currentKey = undefined;
-        this.createWorker(FilterWorkerService.emptyFilterKey, [], 'and');
+
+        if (questions.length > 0 && this.isQuestion(questions[0])) {
+            this.questions = questions as Question[];
+            this.current = undefined;
+            this.currentKey = undefined;
+            this.createWorker(FilterWorkerService.emptyFilterKey, [], 'and');
+        } else if (questions.length > 0 && this.isJudgement(questions[0])) {
+            this.judgements = questions as Judgement[];
+            // Perform the desired action for Judgement objects
+        } else {
+            // Handle the case when the input is neither Question nor Judgement objects
+        }
     }
 
     // set filters
@@ -319,6 +334,14 @@ export class FilterWorkerService implements OnDestroy {
     // set visible questions
     setVisible(ids: Set<string>) {
         this.visibleIds.next(Array.from(ids.values()));
+    }
+
+    isQuestion(obj: any): obj is Question {
+        return 'question' in obj && 'answers' in obj;
+    }
+
+    isJudgement(obj: any): obj is Judgement {
+        return 'judgementId' in obj && 'responses' in obj;
     }
 
 }
