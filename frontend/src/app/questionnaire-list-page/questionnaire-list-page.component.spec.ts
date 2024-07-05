@@ -5,10 +5,6 @@ import { provideMockStore } from '@ngrx/store/testing';
 
 import { QuestionnaireListPageComponent } from './questionnaire-list-page.component';
 import { initialState } from '../questionnaire.state';
-import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
-import { FilterListComponent } from '../filter-list/filter-list.component';
-import { FormsModule } from '@angular/forms';
-import { FilterComponent } from '../filter/filter.component';
 
 describe('QuestionnaireListPageComponent', () => {
     let component: QuestionnaireListPageComponent;
@@ -16,8 +12,7 @@ describe('QuestionnaireListPageComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [QuestionnaireListPageComponent, FilterListComponent],
-            imports: [FilterComponent, FormsModule, HttpClientTestingModule, QuestionnaireItemComponent, RouterTestingModule.withRoutes([])],
+            imports: [QuestionnaireListPageComponent, HttpClientTestingModule, RouterTestingModule.withRoutes([])],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();

@@ -1,14 +1,20 @@
 import { Component, LOCALE_ID, Inject, OnInit, NgZone } from '@angular/core';
-import { IsActiveMatchOptions } from '@angular/router';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGlobe, faSync } from '@fortawesome/free-solid-svg-icons';
 import { animations, showState } from '../animations';
 import { LanguageInfo, LanguageService } from '../services/language.service';
+import { ProgressService } from '../services/progress.service';
+import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.component';
 
 @Component({
     animations,
     selector: 'mima-menu',
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss']
+    styleUrls: ['./menu.component.scss'],
+    standalone: true,
+    imports: [CommonModule, RouterLink, RouterLinkActive, FontAwesomeModule, DarkModeToggleComponent]
 })
 export class MenuComponent implements OnInit {
     burgerShow: showState;
@@ -30,9 +36,24 @@ export class MenuComponent implements OnInit {
     };
 
     constructor(
+        @Inject(DOCUMENT) document: Document,
         @Inject(LOCALE_ID) private localeId: string,
         private ngZone: NgZone,
-        private languageService: LanguageService) { }
+        private progressService: ProgressService,
+        private languageService: LanguageService) {
+        const window = document.defaultView;
+        // Window is undefined on the server
+        let isDesktop: boolean;
+        try {
+            isDesktop = window ? window.matchMedia("screen and (min-width: 1024px)").matches : true;
+        } catch (err) {
+            // not available in server-mode
+            console.error(err);
+            isDesktop = true;
+        }
+        this.burgerShow = isDesktop ? 'show' : 'hide';
+        this.currentLanguage = this.localeId;
+    }
 
     async ngOnInit(): Promise<void> {
         // allow switching even when the current locale is different
@@ -69,6 +90,7 @@ export class MenuComponent implements OnInit {
     async setLanguage(language: string): Promise<void> {
         if (this.currentLanguage !== language) {
             this.loading = true;
+            this.progressService.start(true);
             await this.languageService.set(language);
             // reload the application to make the server route
             // to the different language version

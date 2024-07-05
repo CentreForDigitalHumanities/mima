@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { setQuestions } from '../questionnaire.actions';
@@ -6,11 +8,15 @@ import { State } from '../questionnaire.state';
 import { FileUploadService } from './../services/file-upload.service'; // Just for the temporary pilot upload
 import { Question } from '../models/question';
 import { QuestionnaireService } from '../services/questionnaire.service';
+import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
+import { UploadComponent } from '../upload/upload.component';
 
 @Component({
     selector: 'mima-upload-page',
     templateUrl: './upload-page.component.html',
-    styleUrls: ['./upload-page.component.scss']
+    styleUrls: ['./upload-page.component.scss'],
+    standalone: true,
+    imports: [CommonModule, FontAwesomeModule, UploadComponent, QuestionnaireListComponent]
 })
 export class UploadPageComponent {
     faCheckCircle = faCheckCircle;

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { ValidationErrors } from '../models/validationError';
 import { Question } from '../models/question';
@@ -7,7 +9,9 @@ import { FileUploadService } from './../services/file-upload.service';
 @Component({
     selector: 'mima-upload',
     templateUrl: './upload.component.html',
-    styleUrls: ['./upload.component.scss']
+    styleUrls: ['./upload.component.scss'],
+    standalone: true,
+    imports: [CommonModule, FontAwesomeModule]
 })
 export class UploadComponent {
     @Output()

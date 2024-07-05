@@ -86,7 +86,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+# It must start with a / or it will fail for paths containing multiple parts
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = []

@@ -17,7 +17,12 @@
         </section>
         <footer class="modal-card-foot">
             <div class="buttons">
-                <button i18n class="button" [routerLink]="['/manual', id]">View in Manual</button>
+                <button class="button is-primary" [routerLink]="['/manual', id]">
+                    <span class="icon">
+                        <fa-icon [icon]="faBook"></fa-icon>
+                    </span>
+                    <span i18n>View in Manual</span>
+                </button>
             </div>
         </footer>
     </div>

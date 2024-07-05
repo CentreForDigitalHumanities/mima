@@ -2,16 +2,21 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { buildTime, version, sourceUrl } from './version';
+
 export const environment = {
-  production: false,
-  /**
-   * URL path prefix for assets
-   */
-  assets: 'assets',
-  /**
-   * Enable web workers
-   */
-  workers: true
+    production: false,
+    /**
+     * URL path prefix for assets
+     */
+    assets: 'assets',
+    /**
+     * Enable web workers
+     */
+    workers: true,
+    buildTime,
+    version,
+    sourceUrl
 };
 
 /*

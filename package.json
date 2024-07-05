@@ -2,9 +2,9 @@
     "name": "mima",
     "version": "0.0.0",
     "description": "MiMA will humanize all your digits!",
-    "author": "UU Digital Humanities Lab",
+    "author": "Research Software Lab, Centre for Digital Humanities, Utrecht University",
     "license": "BSD-3-Clause",
-    "repository": "github:UUDigitalHumanitieslab/mima",
+    "repository": "github:CentreForDigitalHumanities/mima",
     "private": true,
     "scripts": {
         "front": "cd frontend && ",
