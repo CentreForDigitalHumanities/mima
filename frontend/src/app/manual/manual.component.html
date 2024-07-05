@@ -1,0 +1,14 @@
+@if (loading) {
+<h1 class="title is-skeleton">&nbsp;</h1>
+<div class="skeleton-lines">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+}
+@else {
+<h1 *ngIf="showTitle" class="title">{{title}}</h1>
+<div class="content" [innerHTML]="content"></div>
+}

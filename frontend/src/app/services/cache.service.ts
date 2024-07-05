@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
 export class Cache<T> {
-    private items: { [key: string]: T } = {};
+    private items: { [key: string]: Promise<T> } = {};
 
-    get(key: string): T | undefined {
-        return this.items[key] || undefined;
-    }
+    async get(key: string, set: () => Promise<T>): Promise<T> {
+        if (this.items[key] === undefined) {
+            this.items[key] = set();
+        }
 
-    set(key: string, value: T): void {
-        this.items[key] = value;
+        return await this.items[key];
     }
 }
 

@@ -1,0 +1,13 @@
+<aside class="menu" *ngIf="pages">
+    <span i18n>Manual Topics</span>
+    <ul class="menu-list">
+        @for (page of pages; track page.id) {
+        <li>
+            <a [routerLink]="['/manual', page.id]" routerLinkActive="is-active">
+                <fa-icon [icon]="faBook"></fa-icon>
+                {{page.title}}
+            </a>
+        </li>
+        }
+    </ul>
+</aside>

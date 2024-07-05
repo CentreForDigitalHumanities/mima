@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProgressComponent } from './progress/progress.component';
+import { DarkModeToggleComponent } from './dark-mode-toggle/dark-mode-toggle.component';
 
 describe('AppComponent', () => {
     beforeEach(waitForAsync(() => {
@@ -16,7 +17,7 @@ describe('AppComponent', () => {
                 MenuComponent,
                 FooterComponent
             ],
-            imports: [NoopAnimationsModule, RouterTestingModule, HttpClientTestingModule, ProgressComponent]
+            imports: [NoopAnimationsModule, DarkModeToggleComponent, RouterTestingModule, HttpClientTestingModule, ProgressComponent]
         }).compileComponents();
     }));
 

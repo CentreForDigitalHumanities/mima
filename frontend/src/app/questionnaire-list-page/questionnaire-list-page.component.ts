@@ -6,7 +6,7 @@ import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData } from '../questionnaire-item/questionnaire-item.component';
-import { ProgressService } from '../services/progress.service';
+import { ProgressService, ProgressSession } from '../services/progress.service';
 import { FilterManagementService } from '../services/filter-management.service';
 
 @Component({
@@ -31,9 +31,10 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     dialects: string[] = [];
 
     participantIds: string[];
+    progress: ProgressSession;
 
     constructor(private questionnaireService: QuestionnaireService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
-        this.progressService.indeterminate();
+        this.progress = this.progressService.start(true);
     }
 
     ngOnInit() {
@@ -45,7 +46,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
             this.questions$.subscribe(questions => {
                 if (questions) {
                     if (questions.size) {
-                        this.progressService.complete();
+                        this.progress.complete();
                         this.questions = questions;
                         const answers = [...this.questionnaireService.getAnswers(this.questions.values())];
                         this.dialects = [...this.questionnaireService.getDialects(answers)];
@@ -74,6 +75,8 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     }
 
     ngOnDestroy(): void {
+        this.progress.hide();
+
         for (const subscription of this.subscriptions) {
             subscription.unsubscribe();
         }

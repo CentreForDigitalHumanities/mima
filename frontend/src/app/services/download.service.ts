@@ -37,7 +37,7 @@ export class DownloadService {
     constructor(private progressService: ProgressService) { }
 
     downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>, filename: string): void {
-        this.progressService.indeterminate();
+        const progress = this.progressService.start(true);
         try {
             const rows: string[] = [QuestionColumnOrder.map(key => QuestionColumnNames[key]).join(',')];
             for (const question of matchedQuestions) {
@@ -47,7 +47,7 @@ export class DownloadService {
             this.download(rows.join('\n'), filename);
         }
         finally {
-            this.progressService.complete();
+            progress.complete();
         }
     }
 
