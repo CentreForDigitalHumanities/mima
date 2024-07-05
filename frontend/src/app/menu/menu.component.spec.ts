@@ -4,7 +4,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { MenuComponent } from './menu.component';
-import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.component';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
@@ -12,8 +11,11 @@ describe('MenuComponent', () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [MenuComponent],
-            imports: [NoopAnimationsModule, DarkModeToggleComponent, RouterTestingModule, HttpClientTestingModule]
+            imports: [
+                MenuComponent,
+                NoopAnimationsModule,
+                RouterTestingModule,
+                HttpClientTestingModule]
         }).compileComponents();
     }));
 

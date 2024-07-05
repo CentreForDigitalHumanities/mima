@@ -8,7 +8,8 @@ const easing = bezier(0.00, 0.67, 0.41, 1);
 
 @Pipe({
     name: 'transitionNumbers',
-    pure: false
+    pure: false,
+    standalone: true
 })
 export class TransitionNumbersPipe implements PipeTransform {
     private current = 0;

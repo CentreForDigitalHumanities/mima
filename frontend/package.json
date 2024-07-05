@@ -2,14 +2,17 @@
   "name": "mima",
   "scripts": {
     "start": "yarn serve",
-    "build": "ng build --base-href=static/ --localize",
+    "prebuild": "node ./build/build-pre.js",
+    "build": "ng build --base-href=/static/ --localize",
     "test": "yarn lint && ng test --watch=true",
     "lint": "ng lint",
     "i18n": "ng extract-i18n --output-path locale",
+    "preserve": "yarn prebuild",
     "serve": "ng serve --proxy-config ../proxy.conf.json",
     "serve:en": "ng serve --proxy-config ../proxy.conf.json --configuration=en",
     "serve:nl": "ng serve --proxy-config ../proxy.conf.json --configuration=nl",
     "stop": "lsof -t -i tcp:4200 | xargs kill -9 || echo \"not running\"",
+    "pretest": "yarn prebuild",
     "test-once": "yarn lint && ng test --watch=false",
     "watch": "ng build --configuration production --watch"
   },

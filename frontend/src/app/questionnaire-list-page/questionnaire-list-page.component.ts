@@ -1,6 +1,7 @@
+import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
@@ -8,11 +9,24 @@ import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../qu
 import { FilterEvent as FilterEventData } from '../questionnaire-item/questionnaire-item.component';
 import { ProgressService, ProgressSession } from '../services/progress.service';
 import { FilterManagementService } from '../services/filter-management.service';
+import { FilterListComponent } from '../filter-list/filter-list.component';
+import { ManualButtonComponent } from '../manual-button/manual-button.component';
+import { DownloadButtonComponent } from '../download-button/download-button.component';
+import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
+import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 
 @Component({
     selector: 'mima-questionnaire-list-page',
     templateUrl: './questionnaire-list-page.component.html',
-    styleUrls: ['./questionnaire-list-page.component.scss']
+    styleUrls: ['./questionnaire-list-page.component.scss'],
+    standalone: true,
+    imports: [
+        CommonModule,
+        FilterListComponent,
+        ManualButtonComponent,
+        DownloadButtonComponent,
+        QuestionnaireListComponent,
+        TransitionNumbersPipe]
 })
 export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     private subscriptions: Subscription[];
