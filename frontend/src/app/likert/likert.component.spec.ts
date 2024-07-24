@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 import { LikertComponent } from './likert.component';
 
@@ -8,10 +10,10 @@ describe('LikertComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LikertComponent]
+      imports: [LikertComponent, HttpClientTestingModule]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(LikertComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
