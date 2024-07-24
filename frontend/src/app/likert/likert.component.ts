@@ -34,6 +34,7 @@ export class LikertComponent implements OnChanges, OnDestroy {
     likertValues: {[dialect: string]: {[score: string]: number}} = {};
     widths: {[dialect: string]: string[]} = {};
     xCoordinates: {[dialect: string]: string[]} = {};
+    xCoordinatesN: {[dialect: string]: string[]} = {};
     n_responses: {[dialect: string]: number} = {};
 
     dialectNames: string[] = [];
@@ -90,13 +91,14 @@ export class LikertComponent implements OnChanges, OnDestroy {
 
     initializeWidths() {
         for (let dialect of Object.keys(this.likertValues)) {
-            this.widths[dialect] = ['0%','0%','0%','0%','0%']
+            this.widths[dialect] = ['0%','0%','0%','0%','0%'];
         }
     }
 
     initializeXCoordinates() {
         for (let dialect of Object.keys(this.likertValues)) {
-            this.xCoordinates[dialect] = ['0%','0%','0%','0%','0%']
+            this.xCoordinates[dialect] = ['0%','0%','0%','0%','0%'];
+            this.xCoordinatesN[dialect] = ['0%','0%','0%','0%','0%'];
         }
     }
 
@@ -109,10 +111,14 @@ export class LikertComponent implements OnChanges, OnDestroy {
         }
     }
 
+    convertToNumber(percentage_string: string) {
+        return Number(percentage_string.replace('%', ''))
+    }
+
     convertToNumbers(string_array: string[]) {
         let number_array = [];
         for (let item of string_array) {
-            number_array.push(Number(item.replace('%', '')));
+            number_array.push(this.convertToNumber(item));
         }
         return number_array;
     }
@@ -120,7 +126,7 @@ export class LikertComponent implements OnChanges, OnDestroy {
     convertToPercentages(number_array: number[]) {
         let string_array = [];
         for (let item of number_array) {
-            string_array.push(item.toFixed(2) + "%")
+            string_array.push(item.toFixed(2) + "%");
         }
         return string_array;
     }
@@ -128,12 +134,15 @@ export class LikertComponent implements OnChanges, OnDestroy {
     calculateXCoordinates() {
         this.initializeXCoordinates();
         for (let dialect of Object.keys(this.likertValues)) {
-            let xCoordinates_numbers = [0]
+            let xCoordinatesNumbers = [0] // initialize the first value to 0
+            let xCoordinatesNumbersN = [(this.convertToNumber(this.widths[dialect][0])/2)]
             for (let i = 1; i <= 4; i++) {
                 let sumarray = this.convertToNumbers(this.widths[dialect].slice(0, i));
-                xCoordinates_numbers[i] = (sumarray.reduce((sum, count) => sum + count, 0));
+                xCoordinatesNumbers[i] = (sumarray.reduce((sum, count) => sum + count, 0));
+                xCoordinatesNumbersN[i] = xCoordinatesNumbers[i] + (this.convertToNumber(this.widths[dialect][i])/2)
             }
-            this.xCoordinates[dialect] = this.convertToPercentages(xCoordinates_numbers);
+            this.xCoordinates[dialect] = this.convertToPercentages(xCoordinatesNumbers);
+            this.xCoordinatesN[dialect] = this.convertToPercentages(xCoordinatesNumbersN);
         }
     }
 

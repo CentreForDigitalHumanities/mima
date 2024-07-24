@@ -12,11 +12,36 @@
             <div class="columns">
                 <div class="column is-three-quarters">
                     <svg width="100%" height="100%" viewBox="0 0 800 30">
-                        <rect [attr.x]="xCoordinates[dialect][0]" y="0" [attr.width]="widths[dialect][0]" height="100%" fill="tomato"></rect>
-                        <rect [attr.x]="xCoordinates[dialect][1]" y="0" [attr.width]="widths[dialect][1]" height="100%" fill="sandybrown"></rect>
-                        <rect [attr.x]="xCoordinates[dialect][2]" y="0" [attr.width]="widths[dialect][2]" height="100%" fill="lemonchiffon"></rect>
-                        <rect [attr.x]="xCoordinates[dialect][3]" y="0" [attr.width]="widths[dialect][3]" height="100%" fill="darkseagreen"></rect>
-                        <rect [attr.x]="xCoordinates[dialect][4]" y="0" [attr.width]="widths[dialect][4]" height="100%" fill="forestgreen"></rect>
+                        @if (likertValues[dialect]['1'] !== 0) {
+                            <g>
+                                <rect [attr.x]="xCoordinates[dialect][0]" y="0" [attr.width]="widths[dialect][0]" height="100%" fill="#cf5757"></rect>
+                                <text [attr.x]="xCoordinatesN[dialect][0]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['1']}}</text>
+                            </g>
+                        }
+                        @if (likertValues[dialect]['2'] !== 0) {
+                            <g>
+                                <rect [attr.x]="xCoordinates[dialect][1]" y="0" [attr.width]="widths[dialect][1]" height="100%" fill="#FFA447"></rect>
+                                <text [attr.x]="xCoordinatesN[dialect][1]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['2']}}</text>
+                            </g>
+                        }
+                        @if (likertValues[dialect]['3'] !== 0) {
+                            <g>
+                                <rect [attr.x]="xCoordinates[dialect][2]" y="0" [attr.width]="widths[dialect][2]" height="100%" fill="#FFFC9B"></rect>
+                                <text [attr.x]="xCoordinatesN[dialect][2]" y="20" fill="#595956" text-anchor="middle">{{likertValues[dialect]['3']}}</text>
+                            </g>
+                        }
+                        @if (likertValues[dialect]['4'] !== 0) {
+                            <g>
+                                <rect [attr.x]="xCoordinates[dialect][3]" y="0" [attr.width]="widths[dialect][3]" height="100%" fill="#B7E5B4"></rect>
+                                <text [attr.x]="xCoordinatesN[dialect][3]" y="20" fill="#595956" text-anchor="middle">{{likertValues[dialect]['4']}}</text>
+                            </g>
+                        }
+                        @if (likertValues[dialect]['5'] !== 0) {
+                            <g>
+                                <rect [attr.x]="xCoordinates[dialect][4]" y="0" [attr.width]="widths[dialect][4]" height="100%" fill="#44784f"></rect>
+                                <text [attr.x]="xCoordinatesN[dialect][4]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['5']}}</text>
+                            </g>
+                        }
                     </svg>
                 </div>
                 <div class="column is-one-quarter">
