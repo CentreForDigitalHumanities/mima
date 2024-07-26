@@ -74,8 +74,4 @@ export class LikertListPageComponent {
         }
     }
 
-    log() {
-        console.log(this.matchedJudgements);
-    }
-
 }

@@ -25,6 +25,12 @@ export class LikertComponent implements OnChanges, OnDestroy {
    }
    @Input() loading: boolean = false;
 
+   questionExpanded: boolean = false;
+    /**
+     * Did the user manually expand this question? Don't automatically close it.
+     */
+    private manuallyExpanded = false;
+
     /**
      * Native element used to render this component.
      */
@@ -32,10 +38,15 @@ export class LikertComponent implements OnChanges, OnDestroy {
 
 
     likertValues: {[dialect: string]: {[score: string]: number}} = {};
+    likertValuesGeneral: {[score: string]: number} = {};
     widths: {[dialect: string]: string[]} = {};
-    xCoordinates: {[dialect: string]: string[]} = {};
-    xCoordinatesN: {[dialect: string]: string[]} = {};
+    widthsGeneral: string[]
+    xCoordinates: {[dialect: string]: string[]} = {}; // for placing the start of each bar
+    xCoordinatesN: {[dialect: string]: string[]} = {}; // for placing the n of responses per bar
+    xCoordinatesGeneral: string[]  //for placing the start of each bar in the general chart
+    xCoordinatesNGeneral: string[] //for placing the n of responses of each bar in the general chart
     n_responses: {[dialect: string]: number} = {};
+    nResponsesGeneral: number = 0;
 
     dialectNames: string[] = [];
 
@@ -58,6 +69,9 @@ export class LikertComponent implements OnChanges, OnDestroy {
         this.judgementsService.unregisterComponent(this);
     }
 
+    /**
+     * Initializes the likert values for each dialect as well as the general likert values
+     */
     initializeLikertValues() {
         if (this.matchedJudgement) {
             for (let response of this.matchedJudgement.responses) {
@@ -70,45 +84,83 @@ export class LikertComponent implements OnChanges, OnDestroy {
                     }
                 }
             }
+            for (let i = 1; i <= 5; i++) {
+                this.likertValuesGeneral[i.toString()] = 0;
+            }
         }
-    };
 
-    updateDialectNames() {
-        this.dialectNames = Object.keys(this.likertValues);
     }
 
     updateLikertValues() {
         this.initializeLikertValues();
         for (let response of this.matchedJudgement.responses) {
-            let dialect = response.dialect.text;
-            let score = response.score.text;
             this.likertValues[response.dialect.text][response.score.text] += 1;
+            this.likertValuesGeneral[response.score.text] += 1
         }
         this.calculateWidths();
-        this.calculateXCoordinates();
+        this.initializeXCoordinates();
+        for (let dialect of Object.keys(this.likertValues)) {
+            [this.xCoordinates[dialect], this.xCoordinatesN[dialect]] = this.calculateXCoordinates(this.widths[dialect]);
+        }
+        [this.xCoordinatesGeneral, this.xCoordinatesNGeneral] = this.calculateXCoordinates(this.widthsGeneral);
         this.updateDialectNames();
+    }
+
+
+    updateDialectNames() {
+        this.dialectNames = Object.keys(this.likertValues);
     }
 
     initializeWidths() {
         for (let dialect of Object.keys(this.likertValues)) {
             this.widths[dialect] = ['0%','0%','0%','0%','0%'];
         }
+        this.widthsGeneral = ['0%','0%','0%','0%','0%']
     }
 
-    initializeXCoordinates() {
+    initializeXCoordinates() { //Do we actually still need this?
         for (let dialect of Object.keys(this.likertValues)) {
             this.xCoordinates[dialect] = ['0%','0%','0%','0%','0%'];
             this.xCoordinatesN[dialect] = ['0%','0%','0%','0%','0%'];
         }
+        this.xCoordinatesGeneral = ['0%','0%','0%','0%','0%']
     }
 
     calculateWidths() {
         this.initializeWidths();
         for (let dialect of Object.keys(this.likertValues)) {
             this.n_responses[dialect] = Object.values(this.likertValues[dialect]).reduce((sum, count) => sum + count, 0);
+            this.nResponsesGeneral += this.n_responses[dialect]
             this.widths[dialect] = Object.keys(this.likertValues[dialect]).map(
                 score => (this.likertValues[dialect][score] / this.n_responses[dialect] * 100).toFixed(2) + "%");
         }
+        this.widthsGeneral = Object.keys(this.likertValuesGeneral).map(
+            score => (this.likertValuesGeneral[score] / this.nResponsesGeneral * 100).toFixed(2) + "%");
+    }
+
+    calculateXCoordinates(widths: string[]) {
+        let xCoordinatesNumbers = [0] // initialize the first value to 0
+        let xCoordinatesNumbersN = [(this.convertToNumber(widths[0])/2)]
+        for (let i = 1; i <= 4; i++) {
+            let sumarray = this.convertToNumbers(widths.slice(0, i));
+            xCoordinatesNumbers[i] = (sumarray.reduce((sum, count) => sum + count, 0));
+            xCoordinatesNumbersN[i] = xCoordinatesNumbers[i] + (this.convertToNumber(widths[i])/2)
+        }
+        return [this.convertToPercentages(xCoordinatesNumbers), this.convertToPercentages(xCoordinatesNumbersN)]
+
+    }
+
+    formatQuestion(mainQuestion, subQuestion) {
+        if (mainQuestion.includes('…')) {
+            return mainQuestion.replace('…', `<strong>${subQuestion}</strong>`);
+        } else {
+            return `${mainQuestion} <strong>${subQuestion}</strong>`;
+        }
+    }
+
+    toggleQuestion(): void {
+        this.questionExpanded = !this.questionExpanded;
+        this.manuallyExpanded = this.questionExpanded;
     }
 
     convertToNumber(percentage_string: string) {
@@ -130,28 +182,4 @@ export class LikertComponent implements OnChanges, OnDestroy {
         }
         return string_array;
     }
-
-    calculateXCoordinates() {
-        this.initializeXCoordinates();
-        for (let dialect of Object.keys(this.likertValues)) {
-            let xCoordinatesNumbers = [0] // initialize the first value to 0
-            let xCoordinatesNumbersN = [(this.convertToNumber(this.widths[dialect][0])/2)]
-            for (let i = 1; i <= 4; i++) {
-                let sumarray = this.convertToNumbers(this.widths[dialect].slice(0, i));
-                xCoordinatesNumbers[i] = (sumarray.reduce((sum, count) => sum + count, 0));
-                xCoordinatesNumbersN[i] = xCoordinatesNumbers[i] + (this.convertToNumber(this.widths[dialect][i])/2)
-            }
-            this.xCoordinates[dialect] = this.convertToPercentages(xCoordinatesNumbers);
-            this.xCoordinatesN[dialect] = this.convertToPercentages(xCoordinatesNumbersN);
-        }
-    }
-
-    formatQuestion(mainQuestion, subQuestion) {
-        if (mainQuestion.includes('…')) {
-            return mainQuestion.replace('…', `<strong>${subQuestion}</strong>`);
-        } else {
-            return `${mainQuestion} <strong>${subQuestion}</strong>`;
-        }
-    }
-
 }
