@@ -6,7 +6,7 @@ export interface State {
     judgements: {
         operator: FilterOperator;
         filters: ReadonlyArray<Filter>;
-        judgements: Map<string, Judgement>;
+        judgements: ReadonlyMap<string, Judgement>;
         judgementsCount: number;
         matchedJudgements: ReadonlyMap<string, MatchedJudgement>;
     }

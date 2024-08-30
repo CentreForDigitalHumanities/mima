@@ -10,7 +10,7 @@ export const loadJudgements = createAction('[Judgements] Load Judgements from Se
  * Set the judgements
  */
 export const setJudgements = createAction('[Judgements] Set Judgements', props<{
-    judgements: Map<string, Judgement>,
+    judgements: ReadonlyMap<string, Judgement>,
     applyFilters: boolean
 }>());
 

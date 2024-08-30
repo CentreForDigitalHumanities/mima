@@ -45,7 +45,7 @@ export class JudgementsEffects implements OnDestroy {
                 judgements.set(judgement.judgementId, judgement);
             }
             return setJudgements({
-                judgements,
+                judgements: judgements as ReadonlyMap<string, Judgement>,
                 applyFilters: false
             });
         })

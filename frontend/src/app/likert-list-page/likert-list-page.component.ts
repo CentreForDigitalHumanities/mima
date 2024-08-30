@@ -27,7 +27,7 @@ export class LikertListPageComponent {
         this.progressService.indeterminate();
     }
 
-    judgements: Map<string, Judgement>;
+    judgements: ReadonlyMap<string, Judgement>;
     matchedJudgements: ReadonlyMap<string, MatchedJudgement>;
     matchedAnswerCount = 0;
     matchedDialects = new Set<string>();
