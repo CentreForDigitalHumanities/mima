@@ -35,6 +35,7 @@ venv.bak/
 node_modules/
 yarn.lock
 package-lock.json
+frontend/src/environments/version.ts
 
 # local settings
 config.py

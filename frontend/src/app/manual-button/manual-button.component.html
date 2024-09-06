@@ -1,0 +1,31 @@
+<button class="button" (click)="open()">
+    <span class="icon">
+        <fa-icon [icon]="faBook"></fa-icon>
+    </span>
+    <span i18n>Manual</span>
+</button>
+@if (isOpen) {
+<dialog open class="modal is-active">
+    <div class="modal-background" (click)="close()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{title$ | async}}</p>
+            <button class="delete" aria-label="close" (click)="close()"></button>
+        </header>
+        <section class="modal-card-body">
+            <mima-manual [id]="id" [showTitle]="false"></mima-manual>
+        </section>
+        <footer class="modal-card-foot">
+            <div class="buttons">
+                <button class="button is-primary" [routerLink]="['/manual', id]">
+                    <span class="icon">
+                        <fa-icon [icon]="faBook"></fa-icon>
+                    </span>
+                    <span i18n>View in Manual</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="close()"></button>
+</dialog>
+}

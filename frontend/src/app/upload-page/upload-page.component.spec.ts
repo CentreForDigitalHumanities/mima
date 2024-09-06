@@ -4,7 +4,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideMockStore } from '@ngrx/store/testing';
 
 import { initialState } from '../questionnaire.state';
-import { UploadComponent } from '../upload/upload.component';
 import { UploadPageComponent } from './upload-page.component';
 
 describe('UploadPageComponent', () => {
@@ -13,8 +12,7 @@ describe('UploadPageComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [UploadPageComponent, UploadComponent],
-            imports: [HttpClientTestingModule, FontAwesomeModule],
+            imports: [UploadPageComponent, HttpClientTestingModule, FontAwesomeModule],
             providers: [provideMockStore({ initialState })]
         })
             .compileComponents();

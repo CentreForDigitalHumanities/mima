@@ -101,7 +101,7 @@ export class QuestionnaireService implements OnDestroy {
     /**
      *
      * @param questionnaire Array of Question objects
-     * @returns array of questiondIds
+     * @returns array of question IDs
      */
     getQuestionIds(questionnaire: ReadonlyArray<Question>) {
         const questionIds: string[] = [];

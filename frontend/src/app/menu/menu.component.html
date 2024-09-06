@@ -1,57 +1,55 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <div class="navbar-brand">
-            <strong class="navbar-item" i18n>
-                MiMA
-            </strong>
+    <div class="navbar-brand">
+        <strong class="navbar-item" i18n>
+            MiMA
+        </strong>
 
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample" (click)="toggleBurger()" [ngClass]="{'is-active': burgerIconActive}">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+        <button class="navbar-burger burger" aria-label="menu" aria-expanded="false" (click)="toggleBurger()"
+            [ngClass]="{'is-active': burgerIconActive}">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <div class="navbar-menu" [ngClass]="{'is-active': burgerActive}" [@slideInOut]="burgerShow">
+        <div class="navbar-start">
+            <a [routerLink]="['/home']" routerLinkActive="is-active" class="navbar-item"
+                [routerLinkActiveOptions]="routerLinkActiveOptions" i18n>
+                Home
+            </a>
+            <a [routerLink]="['/questionnaires']" routerLinkActive="is-active" class="navbar-item"
+                [routerLinkActiveOptions]="routerLinkActiveOptions" i18n>
+                Questionnaires
+            </a>
+            <a [routerLink]="['/likert']" routerLinkActive="is-active" class="navbar-item"
+                [routerLinkActiveOptions]="routerLinkActiveOptions" i18n>
+                Judgements
+            </a>
+            <a [routerLink]="['/manual']" routerLinkActive="is-active"
+                [routerLinkActiveOptions]="routerLinkActiveOptions" class="navbar-item" i18n>
+                Manual
             </a>
         </div>
+        <div class="navbar-end">
+            <mima-dark-mode-toggle class="navbar-item"></mima-dark-mode-toggle>
+            @if (languages) {
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    <span class="icon">
+                        <fa-icon *ngIf="!loading" [icon]="faGlobe"></fa-icon>
+                        <fa-icon *ngIf="loading" [icon]="faSync" [spin]="true"></fa-icon>
+                    </span>
+                </a>
 
-        <div id="navbarBasicExample" class="navbar-menu" [ngClass]="{'is-active': burgerActive}"
-            [@slideInOut]="burgerShow">
-            <div class="navbar-start">
-                <a [routerLink]="['/home']" routerLinkActive="is-active" class="navbar-item" i18n>
-                    Home
-                </a>
-                <!-- <a [routerLink]="['/adverbials']" routerLinkActive="is-active" class="navbar-item" i18n>
-                    Adverbials
-                </a>
-                <a [routerLink]="['/upload']" routerLinkActive="is-active" class="navbar-item" i18n>
-                    Upload
-                </a> -->
-                <a [routerLink]="['/questionnaires']" routerLinkActive="is-active" class="navbar-item" i18n>
-                    Questionnaires
-                </a>
-                <a [routerLink]="['/likert']" routerLinkActive="is-active" class="navbar-item" i18n>
-                    Judgements
-                </a>
-            </div>
-            <div class="navbar-end">
-                <mima-dark-mode-toggle class="navbar-item"></mima-dark-mode-toggle>
-                @if (languages) {
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        <span class="icon">
-                            <fa-icon *ngIf="!loading" [icon]="faGlobe"></fa-icon>
-                            <fa-icon *ngIf="loading" [icon]="faSync" [spin]="true"></fa-icon>
-                        </span>
+                <div class="navbar-dropdown is-right">
+                    <a class="navbar-item" [ngClass]="{'is-active': language.code === currentLanguage }"
+                        *ngFor="let language of languages" (click)="setLanguage(language.code)">
+                        {{language.name}}
                     </a>
-
-                    <div class="navbar-dropdown is-right">
-                        <a class="navbar-item" [ngClass]="{'is-active': language.code === currentLanguage }"
-                            *ngFor="let language of languages" (click)="setLanguage(language.code)">
-                            {{language.name}}
-                        </a>
-                    </div>
                 </div>
-                }
             </div>
+            }
         </div>
     </div>
 </nav>

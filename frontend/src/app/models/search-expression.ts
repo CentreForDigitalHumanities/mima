@@ -53,7 +53,7 @@ function searchSingle(haystack: string, needle: string): [number, number][] {
  * Search a string using a query expression. The expression can be:
  *
  *  * words, any matching word will return
- *  * combination using ANDs, all words combined should match or an
+ *  * combination using &, all words combined should match or an
  *    empty match will be returned
  *  * an exact phrase surrounded by ""
  *  * any combination of these

@@ -10,8 +10,7 @@ describe('UploadComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule, FontAwesomeModule],
-            declarations: [UploadComponent]
+            imports: [UploadComponent, HttpClientTestingModule, FontAwesomeModule],
         })
             .compileComponents();
     });

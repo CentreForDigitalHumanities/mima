@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Subscription, combineLatestWith } from 'rxjs';
 import { addFilter, clearFilters, setFilters, setFiltersOperator, updateFilter } from '../questionnaire.actions';
@@ -8,12 +10,14 @@ import { State } from '../questionnaire.state';
 import { Filter, FilterOperator } from '../models/filter';
 import { isEmptyFilter } from '../services/filter.service';
 import { FilterManagementService } from '../services/filter-management.service';
-import { ProgressService } from '../services/progress.service';
+import { FilterComponent } from '../filter/filter.component';
 
 @Component({
     selector: 'mima-filter-list',
     templateUrl: './filter-list.component.html',
-    styleUrls: ['./filter-list.component.scss']
+    styleUrls: ['./filter-list.component.scss'],
+    standalone: true,
+    imports: [CommonModule, FilterComponent, FontAwesomeModule]
 })
 export class FilterListComponent implements OnInit, OnDestroy {
     faPlus = faPlus;
@@ -31,7 +35,6 @@ export class FilterListComponent implements OnInit, OnDestroy {
     constructor(
         private activatedRoute: ActivatedRoute,
         private router: Router,
-        private progressService: ProgressService,
         private filterManagementService: FilterManagementService,
         private store: Store<State>) {
     }

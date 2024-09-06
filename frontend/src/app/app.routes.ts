@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { ManualPageComponent } from './manual-page/manual-page.component';
 import { UploadPageComponent } from './upload-page/upload-page.component';
 import { QuestionnaireListPageComponent } from './questionnaire-list-page/questionnaire-list-page.component';
 import { LikertListPageComponent } from './likert-list-page/likert-list-page.component';
@@ -21,6 +22,14 @@ const routes: Routes = [
     {
         path: 'likert',
         component: LikertListPageComponent
+    },
+    {
+        path: 'manual/:id',
+        component: ManualPageComponent
+    },
+    {
+        path: 'manual',
+        redirectTo: '/manual/query'
     },
     {
         path: '',

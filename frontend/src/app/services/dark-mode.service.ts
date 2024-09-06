@@ -35,6 +35,9 @@ export class DarkModeService {
      * @returns
      */
     private get(): Theme | null {
+        if (typeof localStorage == 'undefined') {
+            return null;
+        }
         return <Theme | null>localStorage.getItem('theme');
     }
 

@@ -10,11 +10,11 @@ import { loadJudgements } from '../judgements.actions';
 import { Judgement, MatchedJudgement } from '../models/judgement';
 
 @Component({
-  selector: 'mima-likert-list-page',
-  standalone: true,
-  imports: [LikertListComponent],
-  templateUrl: './likert-list-page.component.html',
-  styleUrl: './likert-list-page.component.scss'
+    selector: 'mima-likert-list-page',
+    standalone: true,
+    imports: [LikertListComponent],
+    templateUrl: './likert-list-page.component.html',
+    styleUrl: './likert-list-page.component.scss'
 })
 export class LikertListPageComponent {
     private subscriptions: Subscription[];
@@ -24,7 +24,6 @@ export class LikertListPageComponent {
     @Input() filterSelect: Map<string, string[]>;
 
     constructor(private judgementsService: JudgementsService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
-        this.progressService.indeterminate();
     }
 
     judgements: ReadonlyMap<string, Judgement>;
@@ -34,15 +33,15 @@ export class LikertListPageComponent {
     matchedParticipants = new Set<string>();
 
     ngOnInit() {
-        if (!this.judgements) {
-            this.store.dispatch(loadJudgements());
-        }
+        const progress = this.progressService.start(true);
+
+        this.store.dispatch(loadJudgements());
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.judgements$.subscribe(judgements => {
                 if (judgements) {
                     if (judgements.size) {
-                        this.progressService.complete();
+                        progress.complete();
                         this.judgements = judgements;
                         // const answers = [...this.judgementsService.getAnswers(this.judgements.values())];
                         // this.dialects = [...this.judgementsService.getDialects(answers)];
