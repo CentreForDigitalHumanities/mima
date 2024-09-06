@@ -1,8 +1,8 @@
 import { MatchedParts, MatchedPartsProperties } from './matched-parts';
 import { LikertResponse, MatchedLikertResponse } from './likert-response';
 
-export interface Judgement {
-    judgementId: string;
+export interface Judgment {
+    judgmentId: string;
     mainQuestion: string;
     mainQuestionId: string;
     subQuestion: string;
@@ -10,33 +10,33 @@ export interface Judgement {
     responses: LikertResponse[];
 }
 
-type MatchedJudgementValue<T> =
+type MatchedJudgmentValue<T> =
     T extends string
     ? MatchedParts
     : T extends LikertResponse[]
     ? MatchedLikertResponse[]
     : never;
 
-export type MatchedJudgementProperties = {
-    [key in keyof Judgement]: MatchedJudgementValue<Judgement[key]>
+export type MatchedJudgmentProperties = {
+    [key in keyof Judgment]: MatchedJudgmentValue<Judgment[key]>
 };
 
-export class MatchedJudgement implements MatchedJudgementProperties {
-    judgementId: MatchedParts;
+export class MatchedJudgment implements MatchedJudgmentProperties {
+    judgmentId: MatchedParts;
     mainQuestion: MatchedParts
     mainQuestionId: MatchedParts
     subQuestion: MatchedParts
     subQuestionId: MatchedParts
     responses: MatchedLikertResponse[]
 
-    constructor(judgement?: Judgement) {
-        if (judgement) {
-            this.judgementId = this.unmatchedValue(judgement.judgementId);
-            this.mainQuestion = this.unmatchedValue(judgement.mainQuestion);
-            this.mainQuestionId = this.unmatchedValue(judgement.mainQuestionId);
-            this.subQuestion = this.unmatchedValue(judgement.subQuestion);
-            this.subQuestionId = this.unmatchedValue(judgement.subQuestionId);
-            this.responses = judgement.responses.map(response => new MatchedLikertResponse(response));
+    constructor(judgment?: Judgment) {
+        if (judgment) {
+            this.judgmentId = this.unmatchedValue(judgment.judgmentId);
+            this.mainQuestion = this.unmatchedValue(judgment.mainQuestion);
+            this.mainQuestionId = this.unmatchedValue(judgment.mainQuestionId);
+            this.subQuestion = this.unmatchedValue(judgment.subQuestion);
+            this.subQuestionId = this.unmatchedValue(judgment.subQuestionId);
+            this.responses = judgment.responses.map(response => new MatchedLikertResponse(response));
         }
 
     }

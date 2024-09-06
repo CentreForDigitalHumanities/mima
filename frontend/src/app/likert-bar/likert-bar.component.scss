@@ -1,0 +1,23 @@
+$segments: (
+    (var(--bulma-danger-soft), var(--bulma-danger-bold)),
+    (color-mix(in oklab, var(--bulma-danger-soft), var(--bulma-warning-soft)), color-mix(in oklab, var(--bulma-danger-bold), var(--bulma-warning-bold))),
+    (var(--bulma-warning-soft), var(--bulma-warning-bold)),
+    (color-mix(in oklab, var(--bulma-warning-soft), var(--bulma-success-soft)), color-mix(in oklab, var(--bulma-warning-bold), var(--bulma-success-bold))),
+    (var(--bulma-success-soft), var(--bulma-success-bold))
+);
+
+$n: 1;
+
+@each $back, $front in $segments {
+    g.segment-#{$n} {
+        rect {
+            fill: $back;
+        }
+
+        text {
+            fill: $front;
+        }
+    }
+
+    $n: $n + 1;
+}

@@ -6,7 +6,7 @@ import csv
 from dataclasses import dataclass, asdict
 
 @dataclass
-class JudgementItem:
+class JudgmentItem:
     main_question: str
     main_question_id: str
     sub_question: str
@@ -51,32 +51,32 @@ def get_questions_and_ids(item):
 def get_full_id(item):
     return item.split('.')[0]
 
-def get_judgement_items(line):
-    judgements = {}
+def get_judgment_items(line):
+    judgments = {}
     indices = []
     for index, item in enumerate(line):
         if 'Invulzin' in item:
             indices.append(index)
             main_question, sub_question, main_question_id, sub_question_id = get_questions_and_ids(item)
-            judgement_item = JudgementItem(main_question, main_question_id, sub_question, sub_question_id, [])
-            judgements["{}[{}]".format(main_question_id, sub_question_id)] = judgement_item
-    return judgements, indices
+            judgment_item = JudgmentItem(main_question, main_question_id, sub_question, sub_question_id, [])
+            judgments["{}[{}]".format(main_question_id, sub_question_id)] = judgment_item
+    return judgments, indices
 
-def get_responses(data, participant_dialects, indices, judgements):
+def get_responses(data, participant_dialects, indices, judgments):
     for line in data[1:]:
         participant_id = ''.join(line[0:2])
         for index in indices:
             score = line[index]
             question_id = get_full_id(data[0][index])
-            judgements[question_id].responses.append(
+            judgments[question_id].responses.append(
                 Response(participant_id, participant_dialects[participant_id], score)
             )
-    return judgements
+    return judgments
 
 
 # custom function to serialize data classes as dictionaries
 def serialize_classes(obj):
-    if isinstance(obj, JudgementItem) or isinstance(obj, Response):
+    if isinstance(obj, JudgmentItem) or isinstance(obj, Response):
         return asdict(obj)
     return obj.__dict__
 
@@ -92,9 +92,9 @@ def __main__():
     data = read_csv(DATA_PATH)
     participants_data = read_csv(PARTICIPANTS_PATH)
     participant_dialects = get_dialects(participants_data)
-    judgement_items, judgement_indices = get_judgement_items(data[0])
-    judgement_items = get_responses(data, participant_dialects, judgement_indices, judgement_items)
-    export_to_json(judgement_items)
+    judgment_items, judgment_indices = get_judgment_items(data[0])
+    judgment_items = get_responses(data, participant_dialects, judgment_indices, judgment_items)
+    export_to_json(judgment_items)
 
 
 if __name__ == "__main__":

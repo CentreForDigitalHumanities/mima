@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { LikertListPageComponent } from './likert-list-page.component';
 import { DarkModeToggleComponent } from '../dark-mode-toggle/dark-mode-toggle.component';
-import { initialState } from '../judgements.state';
+import { initialState } from '../judgments.state';
 import { provideMockStore } from '@ngrx/store/testing';
 
 

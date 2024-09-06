@@ -9,7 +9,7 @@ import { FilterService } from './filter.service';
 import { CacheService } from './cache.service';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { FilterWorkerService } from './filter-worker.service';
-import { MatchedJudgement } from '../models/judgement';
+import { MatchedJudgment } from '../models/judgment';
 
 
 @Injectable({
@@ -27,13 +27,13 @@ export class QuestionnaireService implements OnDestroy {
     /**
      * Emits an updated list of matches
      */
-    results$!: Observable<readonly MatchedQuestion[] | MatchedJudgement[]>;
+    results$!: Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
 
-    constructor(private http: HttpClient, private filterWorkerService: FilterWorkerService, private filterService: FilterService, private cacheService: CacheService, private ngZone: NgZone) {
+    constructor(private http: HttpClient, private filterWorkerService: FilterWorkerService) {
         this.subscriptions = [
             this.filterWorkerService.results$.subscribe(results => { this.updateVisible(results as Iterable<MatchedQuestion>) })
         ];
-        this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgement[]>;
+        this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
     }
 
     ngOnDestroy(): void {

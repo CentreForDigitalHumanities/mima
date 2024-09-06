@@ -1,10 +1,10 @@
-@if (!matchedJudgement) {
+@if (!matchedJudgment) {
     <p>loading</p>
 }
 @else {
     <div class="box mt-3" [ngClass]="{'is-loading': loading}">
         <div class="judgmement-header metadata" (click)="toggleQuestion()">
-            <h2 class="subtitle" [innerHTML]="formatQuestion(matchedJudgement.mainQuestion.text, matchedJudgement.subQuestion.text)"></h2>
+            <h2 class="subtitle" [innerHTML]="formatQuestion(matchedJudgment.mainQuestion.text, matchedJudgment.subQuestion.text)"></h2>
             <hr>
         </div>
         @if (questionExpanded) {
@@ -13,89 +13,27 @@
             </div>
         }
         @if (!questionExpanded) {
-            <div class="general-judgements">
+            <div class="general-judgments">
                 <div class="columns">
                     <div class="column is-three-quarters">
-                        <svg width="100%" height="100%" viewBox="0 0 800 30">
-                            @if (likertValuesGeneral['1'] !== 0) {
-                                <g>
-                                    <rect [attr.x]="xCoordinatesGeneral[0]" y="0" [attr.width]="widthsGeneral[0]" height="100%" fill="#cf5757"></rect>
-                                    <text [attr.x]="xCoordinatesNGeneral[0]" y="20" fill="white" text-anchor="middle">{{likertValuesGeneral['1']}}</text>
-                                </g>
-                            }
-                            @if (likertValuesGeneral['2'] !== 0) {
-                                <g>
-                                    <rect [attr.x]="xCoordinatesGeneral[1]" y="0" [attr.width]="widthsGeneral[1]" height="100%" fill="#FFA447"></rect>
-                                    <text [attr.x]="xCoordinatesNGeneral[1]" y="20" fill="white" text-anchor="middle">{{likertValuesGeneral['2']}}</text>
-                                </g>
-                            }
-                            @if (likertValuesGeneral['3'] !== 0) {
-                                <g>
-                                    <rect [attr.x]="xCoordinatesGeneral[2]" y="0" [attr.width]="widthsGeneral[2]" height="100%" fill="#FFFC9B"></rect>
-                                    <text [attr.x]="xCoordinatesNGeneral[2]" y="20" fill="#595956" text-anchor="middle">{{likertValuesGeneral['3']}}</text>
-                                </g>
-                            }
-                            @if (likertValuesGeneral['4'] !== 0) {
-                                <g>
-                                    <rect [attr.x]="xCoordinatesGeneral[3]" y="0" [attr.width]="widthsGeneral[3]" height="100%" fill="#B7E5B4"></rect>
-                                    <text [attr.x]="xCoordinatesNGeneral[3]" y="20" fill="#595956" text-anchor="middle">{{likertValuesGeneral['4']}}</text>
-                                </g>
-                            }
-                            @if (likertValuesGeneral['5'] !== 0) {
-                                <g>
-                                    <rect [attr.x]="xCoordinatesGeneral[4]" y="0" [attr.width]="widthsGeneral[4]" height="100%" fill="#4e8a5b"></rect>
-                                    <text [attr.x]="xCoordinatesNGeneral[4]" y="20" fill="white" text-anchor="middle">{{likertValuesGeneral['5']}}</text>
-                                </g>
-                            }
-                        </svg>
+                        <mima-likert-bar [counts]="likertValuesGeneral.counts" [total]="likertValuesGeneral.total"></mima-likert-bar>
                     </div>
                     <div class="column is-one-quarter">
-                        <p>Number of responses: {{ nResponsesGeneral }}</p>
+                        <p>Number of responses: {{ likertValuesGeneral.total }}</p>
                     </div>
                 </div>
             </div>
         }
         @else {
-            <div class="judgements">
+            <div class="judgments">
                 @for (dialect of dialectNames; track dialect) {
                     <h3 [innerHTML]="dialect"></h3>
                     <div class="columns">
                         <div class="column is-three-quarters">
-                            <svg width="100%" height="100%" viewBox="0 0 800 30">
-                                @if (likertValues[dialect]['1'] !== 0) {
-                                    <g>
-                                        <rect [attr.x]="xCoordinates[dialect][0]" y="0" [attr.width]="widths[dialect][0]" height="100%" fill="#cf5757"></rect>
-                                        <text [attr.x]="xCoordinatesN[dialect][0]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['1']}}</text>
-                                    </g>
-                                }
-                                @if (likertValues[dialect]['2'] !== 0) {
-                                    <g>
-                                        <rect [attr.x]="xCoordinates[dialect][1]" y="0" [attr.width]="widths[dialect][1]" height="100%" fill="#FFA447"></rect>
-                                        <text [attr.x]="xCoordinatesN[dialect][1]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['2']}}</text>
-                                    </g>
-                                }
-                                @if (likertValues[dialect]['3'] !== 0) {
-                                    <g>
-                                        <rect [attr.x]="xCoordinates[dialect][2]" y="0" [attr.width]="widths[dialect][2]" height="100%" fill="#FFFC9B"></rect>
-                                        <text [attr.x]="xCoordinatesN[dialect][2]" y="20" fill="#595956" text-anchor="middle">{{likertValues[dialect]['3']}}</text>
-                                    </g>
-                                }
-                                @if (likertValues[dialect]['4'] !== 0) {
-                                    <g>
-                                        <rect [attr.x]="xCoordinates[dialect][3]" y="0" [attr.width]="widths[dialect][3]" height="100%" fill="#B7E5B4"></rect>
-                                        <text [attr.x]="xCoordinatesN[dialect][3]" y="20" fill="#595956" text-anchor="middle">{{likertValues[dialect]['4']}}</text>
-                                    </g>
-                                }
-                                @if (likertValues[dialect]['5'] !== 0) {
-                                    <g>
-                                        <rect [attr.x]="xCoordinates[dialect][4]" y="0" [attr.width]="widths[dialect][4]" height="100%" fill="#4e8a5b"></rect>
-                                        <text [attr.x]="xCoordinatesN[dialect][4]" y="20" fill="white" text-anchor="middle">{{likertValues[dialect]['5']}}</text>
-                                    </g>
-                                }
-                            </svg>
+                            <mima-likert-bar [counts]="likertValues[dialect].counts" [total]="likertValues[dialect].total"></mima-likert-bar>
                         </div>
                         <div class="column is-one-quarter">
-                            <p>Number of responses: {{ n_responses[dialect] }}</p>
+                            <p>Number of responses: {{ likertValues[dialect].total }}</p>
                         </div>
                     </div>
                 }

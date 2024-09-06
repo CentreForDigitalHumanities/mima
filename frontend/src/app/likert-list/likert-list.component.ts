@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, Input, NgZone, OnChanges, OnDestroy, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
 import { LikertComponent } from '../likert/likert.component';
-import { Judgement, MatchedJudgement } from '../models/judgement';
+import { Judgment, MatchedJudgment } from '../models/judgment';
 import { Subject, Subscription, throttleTime } from 'rxjs';
-import { JudgementsService } from '../services/judgements.service';
+import { JudgmentsService } from '../services/judgments.service';
 
 
 @Component({
@@ -16,12 +16,12 @@ export class LikertListComponent implements AfterViewInit, OnChanges, OnDestroy 
     private subscriptions: Subscription[];
 
     @Input()
-    matchedJudgements: ReadonlyMap<string, MatchedJudgement>;
+    matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
 
     /**
-     * Tracks which judgements have become visible or hidden
+     * Tracks which judgments have become visible or hidden
      */
-    private judgementsObserver: IntersectionObserver;
+    private judgmentsObserver: IntersectionObserver;
 
     /**
      * A render should be triggered
@@ -30,25 +30,25 @@ export class LikertListComponent implements AfterViewInit, OnChanges, OnDestroy 
 
 
     @ViewChildren(LikertComponent)
-    judgementComponents!: QueryList<LikertComponent>;
+    judgmentComponents!: QueryList<LikertComponent>;
 
-    constructor(private judgementsService: JudgementsService, private ngZone: NgZone) {
-        this.judgementsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(entries, observer));
-        this.subscriptions = [this.triggerRender.pipe(throttleTime(50, undefined, { trailing: true })).subscribe(() => this.renderJudgements())];
+    constructor(private judgmentsService: JudgmentsService, private ngZone: NgZone) {
+        this.judgmentsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(entries, observer));
+        this.subscriptions = [this.triggerRender.pipe(throttleTime(50, undefined, { trailing: true })).subscribe(() => this.renderJudgments())];
     }
 
     ngAfterViewInit(): void {
         this.triggerRender.next();
         this.subscriptions.push(
-            this.judgementComponents.changes.subscribe(() => {
+            this.judgmentComponents.changes.subscribe(() => {
                 this.triggerRender.next();
             }));
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.matchedJudgements && !changes.matchedJudgements.firstChange) {
+        if (changes.matchedJudgments && !changes.matchedJudgments.firstChange) {
             // when the list of results isn't changed, but the content of the
-            // judgements themselves could still have been changed
+            // judgments themselves could still have been changed
             this.triggerRender.next();
         }
     }
@@ -60,21 +60,21 @@ export class LikertListComponent implements AfterViewInit, OnChanges, OnDestroy 
     }
 
     /**
-     * Called by the intersection observer when judgements scroll in or out of the viewport
+     * Called by the intersection observer when judgments scroll in or out of the viewport
      */
     private intersectionObserverCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
         for (const entry of entries) {
             const id = (<HTMLElement>entry.target).dataset['id'];
             if (entry.isIntersecting) {
                 // scrolled into view
-                this.judgementsService.addVisibleId(id);
+                this.judgmentsService.addVisibleId(id);
             } else {
                 // scrolled out of view
-                this.judgementsService.deleteVisibleId(id);
+                this.judgmentsService.deleteVisibleId(id);
             }
         }
 
-        this.renderVisibleJudgements();
+        this.renderVisibleJudgments();
     }
 
     /**
@@ -92,22 +92,22 @@ export class LikertListComponent implements AfterViewInit, OnChanges, OnDestroy 
      *   The complete rendering of all the matches is only done
      *   if the user would scroll through the entire page.
      */
-    private renderJudgements(): void {
-        if (!this.judgementComponents) {
+    private renderJudgments(): void {
+        if (!this.judgmentComponents) {
             return;
         }
 
-        for (const component of this.judgementComponents) {
-            this.judgementsObserver.observe(component.nativeElement);
+        for (const component of this.judgmentComponents) {
+            this.judgmentsObserver.observe(component.nativeElement);
             component.loading = true;
         }
 
-        this.renderVisibleJudgements();
+        this.renderVisibleJudgments();
     }
 
-    private renderVisibleJudgements() {
+    private renderVisibleJudgments() {
         const renderQueue: LikertComponent[] = [];
-        for (const component of this.judgementsService.visibleComponents()) {
+        for (const component of this.judgmentsService.visibleComponents()) {
             if (component?.loading) {
                 renderQueue.push(component);
             }
@@ -116,7 +116,7 @@ export class LikertListComponent implements AfterViewInit, OnChanges, OnDestroy 
         if (renderQueue.length === 0) { return; }
         this.ngZone.run(() => {
             for (const component of renderQueue) {
-                component.judgement = this.matchedJudgements.get(component.id);
+                component.judgment = this.matchedJudgments.get(component.id);
                 component.loading = false;
             }
         });

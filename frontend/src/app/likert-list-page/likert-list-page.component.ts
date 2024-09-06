@@ -1,13 +1,13 @@
 import { Component, NgZone, Input } from '@angular/core';
 import { LikertListComponent } from '../likert-list/likert-list.component';
-import { JudgementsService } from '../services/judgements.service';
+import { JudgmentsService } from '../services/judgments.service';
 import { FilterManagementService } from '../services/filter-management.service';
 import { Store } from '@ngrx/store';
-import { State } from '../judgements.state';
+import { State } from '../judgments.state';
 import { ProgressService } from '../services/progress.service';
 import { Subscription } from 'rxjs';
-import { loadJudgements } from '../judgements.actions';
-import { Judgement, MatchedJudgement } from '../models/judgement';
+import { loadJudgments } from '../judgments.actions';
+import { Judgment, MatchedJudgment } from '../models/judgment';
 
 @Component({
     selector: 'mima-likert-list-page',
@@ -18,16 +18,16 @@ import { Judgement, MatchedJudgement } from '../models/judgement';
 })
 export class LikertListPageComponent {
     private subscriptions: Subscription[];
-    private judgements$ = this.store.select('judgements', 'judgements');
-    private matchedJudgements$ = this.store.select('judgements', 'matchedJudgements');
+    private judgments$ = this.store.select('judgments', 'judgments');
+    private matchedJudgments$ = this.store.select('judgments', 'matchedJudgments');
 
     @Input() filterSelect: Map<string, string[]>;
 
-    constructor(private judgementsService: JudgementsService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
+    constructor(private judgmentsService: JudgmentsService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
     }
 
-    judgements: ReadonlyMap<string, Judgement>;
-    matchedJudgements: ReadonlyMap<string, MatchedJudgement>;
+    judgments: ReadonlyMap<string, Judgment>;
+    matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
     matchedAnswerCount = 0;
     matchedDialects = new Set<string>();
     matchedParticipants = new Set<string>();
@@ -35,27 +35,27 @@ export class LikertListPageComponent {
     ngOnInit() {
         const progress = this.progressService.start(true);
 
-        this.store.dispatch(loadJudgements());
+        this.store.dispatch(loadJudgments());
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
-            this.judgements$.subscribe(judgements => {
-                if (judgements) {
-                    if (judgements.size) {
+            this.judgments$.subscribe(judgments => {
+                if (judgments) {
+                    if (judgments.size) {
                         progress.complete();
-                        this.judgements = judgements;
-                        // const answers = [...this.judgementsService.getAnswers(this.judgements.values())];
-                        // this.dialects = [...this.judgementsService.getDialects(answers)];
-                        // this.participantIds = this.judgementsService.getParticipants(answers).map(p => p.participantId);
+                        this.judgments = judgments;
+                        // const answers = [...this.judgmentsService.getAnswers(this.judgments.values())];
+                        // this.dialects = [...this.judgmentsService.getDialects(answers)];
+                        // this.participantIds = this.judgmentsService.getParticipants(answers).map(p => p.participantId);
                     }
                 }
             }),
-            this.matchedJudgements$.subscribe(judgements => {
-                this.matchedJudgements = judgements;
+            this.matchedJudgments$.subscribe(judgments => {
+                this.matchedJudgments = judgments;
 
                 this.matchedAnswerCount = 0;
                 this.matchedDialects = new Set<string>();
                 this.matchedParticipants = new Set<string>();
-                // for (const question of this.matchedJudgements.values()) {
+                // for (const question of this.matchedJudgments.values()) {
                 //     this.matchedAnswerCount += question.matchedAnswerCount;
                 //     for (const dialect of question.matchedDialectNames) {
                 //         this.matchedDialects.add(dialect);
