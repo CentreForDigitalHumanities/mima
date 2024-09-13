@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 interface BarSegment {
     /**
@@ -17,6 +17,7 @@ interface BarSegment {
      * Percentage with % sign
      */
     percentage: string,
+    percentageRound: string;
     count: number
 }
 
@@ -31,10 +32,16 @@ export class LikertBarComponent implements OnChanges {
     segments: BarSegment[];
 
     @Input()
+    show: 'count' | 'percentage' = 'count';
+
+    @Input()
     counts: number[];
 
     @Input()
     total: number;
+
+    @Output()
+    toggleShow = new EventEmitter();
 
     ngOnChanges(changes: SimpleChanges): void {
         this.segments = [];
@@ -50,7 +57,9 @@ export class LikertBarComponent implements OnChanges {
                 n: i + 1,
                 count,
                 middle: `${x + percentage * 0.5}%`,
-                percentage: `${percentage.toFixed(2)}%`
+                percentage: `${percentage.toFixed(2)}%`,
+                // not enough room for a %
+                percentageRound: percentage.toFixed(0) + (percentage < 3 ? '' : '%'),
             });
             x += percentage;
         }

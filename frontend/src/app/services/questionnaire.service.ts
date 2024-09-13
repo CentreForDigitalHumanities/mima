@@ -1,43 +1,35 @@
-import { Injectable, NgZone, OnDestroy } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, lastValueFrom } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 import { MatchedQuestion, Question } from '../models/question';
 import { Answer } from '../models/answer';
 import { Participant } from '../models/participant';
 import { Filter, FilterOperator } from '../models/filter';
-import { FilterService } from './filter.service';
-import { CacheService } from './cache.service';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { FilterWorkerService } from './filter-worker.service';
 import { MatchedJudgment } from '../models/judgment';
+import { VisibilityService } from './visibility.service';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class QuestionnaireService implements OnDestroy {
-    /**
-     * components displaying questions, using the question ID as key
-     */
-    private components: { [id: string]: QuestionnaireItemComponent } = {};
-
-    private visibleQuestionIds: Set<string> = new Set<string>();
-    private subscriptions!: Subscription[];
-
+export class QuestionnaireService extends VisibilityService<QuestionnaireItemComponent, MatchedQuestion> {
     /**
      * Emits an updated list of matches
      */
     results$!: Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
 
-    constructor(private http: HttpClient, private filterWorkerService: FilterWorkerService) {
+    constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, ngZone: NgZone) {
+        super(filterWorkerService, ngZone);
         this.subscriptions = [
             this.filterWorkerService.results$.subscribe(results => { this.updateVisible(results as Iterable<MatchedQuestion>) })
         ];
         this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
     }
 
-    ngOnDestroy(): void {
-        this.subscriptions.forEach(s => s.unsubscribe());
+    protected getId(model: MatchedQuestion): string {
+        return model.id.text;
     }
 
     async save(items: Iterable<Question>): Promise<{ success: boolean }> {
@@ -60,42 +52,6 @@ export class QuestionnaireService implements OnDestroy {
         const questionnaire = this.convertToQuestionnaire(data);
         this.filterWorkerService.setData(questionnaire);
         return Promise.resolve(questionnaire);
-    }
-
-    /**
-     * Registers a question component so it can be updated directly during a search.
-     */
-    registerComponent(component: QuestionnaireItemComponent) {
-        this.components[component.id] = component;
-    }
-
-    /**
-     * Removes the registration for a component on clean-up.
-     */
-    unregisterComponent(component: QuestionnaireItemComponent) {
-        delete this.components[component.id];
-    }
-
-    /**
-     * Gets all the visible components
-     */
-    *visibleComponents(): Iterable<QuestionnaireItemComponent> {
-        for (const questionId of this.visibleQuestionIds) {
-            const component = this.components[questionId];
-            if (component) {
-                yield component;
-            }
-        }
-    }
-
-    addVisibleId(id: string): void {
-        this.visibleQuestionIds.add(id);
-        this.filterWorkerService.setVisible(this.visibleQuestionIds);
-    }
-
-    deleteVisibleId(id: string): void {
-        this.visibleQuestionIds.delete(id);
-        this.filterWorkerService.setVisible(this.visibleQuestionIds);
     }
 
     /**
@@ -202,38 +158,5 @@ export class QuestionnaireService implements OnDestroy {
      */
     filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): void {
         this.filterWorkerService.setFilters(filters, operator);
-    }
-
-
-    /**
-     * Directly triggers the visible components to have their content updated.
-     * @param matches results which should at least apply to all the visible questions
-     */
-    private updateVisible(matches: Iterable<MatchedQuestion>) {
-        // make a copy, so we can remove all matching question IDs
-        const visibleIds = [...this.visibleQuestionIds];
-        for (const question of matches) {
-            if (visibleIds.length === 0) {
-                break;
-            }
-
-            const index = visibleIds.indexOf(question.id.text);
-            if (index !== -1) {
-                const [questionId] = visibleIds.splice(index, 1);
-                const component = this.components[questionId];
-                if (component) {
-                    // immediately set the question to update rendering
-                    component.question = question;
-                }
-            }
-        }
-
-        // these weren't in the matches, so we know they should be hidden
-        for (const questionId of visibleIds) {
-            const component = this.components[questionId];
-            if (component) {
-                component.question = undefined;
-            }
-        }
     }
 }

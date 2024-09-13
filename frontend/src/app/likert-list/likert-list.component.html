@@ -1,8 +1,7 @@
 @if(matchedJudgments) {
     @for (judgmentId of matchedJudgments.keys(); track judgmentId) {
         @if (matchedJudgments.has(judgmentId)) {
-            <!-- <p [innerHTML]="judgmentId"></p> -->
-            <mima-likert [judgments]="matchedJudgments" [id]="judgmentId"></mima-likert>
+            <mima-likert [judgments]="matchedJudgments" [id]="judgmentId" [show]="show" (toggleShow)="toggleShow()"></mima-likert>
         }
     }
 }

@@ -9,6 +9,7 @@ import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
 import { MatchedParts } from '../models/matched-parts';
+import { IntersectableComponent } from '../services/visibility.service';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -36,7 +37,7 @@ interface MatchedAnswerGrouped {
     imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule],
     standalone: true
 })
-export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
+export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion>{
     /**
      * Did the user manually expand this question? Don't automatically close it.
      */
@@ -55,7 +56,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
     dialectsCount = 0;
-    matchedQuestion: MatchedQuestion;
+    value: MatchedQuestion;
     matchedAnswerCount = 0;
     matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
     matchedDialectNames: string[] = [];
@@ -68,11 +69,14 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     nativeElement: HTMLElement;
 
     @Input()
-    set question(value: MatchedQuestion) {
-        this.matchedQuestion = value;
+    set model(value: MatchedQuestion) {
+        this.value = value;
         if (value) {
             this.updateCounts();
         }
+    }
+    get model() {
+        return this.value;
     }
 
     /**
@@ -100,18 +104,18 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
 
     private updateCounts() {
-        if (!this.matchedQuestion?.answers) {
+        if (!this.model?.answers) {
             // once the question is hidden - reset the state
             this.manuallyExpanded = false;
             this.questionExpanded = false;
             return;
         }
 
-        this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
-        this.matchedDialects = this.groupAnswers(this.matchedQuestion.matchedDialects);
-        this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
-        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
-        this.dialectsCount = this.matchedQuestion.dialectsCount;
+        this.matchedAnswerCount = this.model.matchedAnswerCount;
+        this.matchedDialects = this.groupAnswers(this.model.matchedDialects);
+        this.matchedDialectsCount = this.model.matchedDialectsCount;
+        this.matchedDialectNames = this.model.matchedDialectNames;
+        this.dialectsCount = this.model.dialectsCount;
         if (!this.manuallyExpanded) {
             this.questionExpanded = this.onlyQuestion ||
                 this.matchedDialectsCount <= autoExpandDialectCount ||

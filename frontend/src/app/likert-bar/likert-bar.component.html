@@ -1,10 +1,18 @@
 @if (segments) {
-<svg width="100%" height="100%" viewBox="0 0 800 30">
+<svg width="100%" height="100%" viewBox="0 0 800 30" (click)="toggleShow.emit()">
     @for (segment of segments; track segment.n) {
     <g [attr.class]="'segment-' + segment.n">
         <rect [attr.x]="segment.x" y="0" [attr.width]="segment.percentage" height="100%"></rect>
+    </g>
+    }
+    <!-- make sure the texts can overlap the rectangles -->
+    @for (segment of segments; track segment.n) {
+    <g [attr.class]="'segment-' + segment.n">
         @if (segment.count > 0) {
-        <text [attr.x]="segment.middle" y="20" text-anchor="middle">{{segment.count}}</text>
+        <text [attr.x]="segment.middle" y="20" [attr.class]="show==='count' ? 'show'  : 'hide-count'"
+            text-anchor="middle">{{segment.count}}</text>
+        <text [attr.x]="segment.middle" y="20" [attr.class]="show==='percentage' ? 'show'  : 'hide-percentage'"
+            text-anchor="middle">{{segment.percentageRound}}</text>
         }
     </g>
     }

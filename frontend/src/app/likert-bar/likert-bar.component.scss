@@ -8,8 +8,29 @@ $segments: (
 
 $n: 1;
 
+%segment-text {
+    text {
+        transition: baseline-shift .4s ease;
+    }
+
+    text.show-count,
+    text.show-percentage {
+        baseline-shift: 0px;
+    }
+
+    text.hide-count {
+        baseline-shift: 40px;
+    }
+
+    text.hide-percentage {
+        baseline-shift: -40px;
+    }
+}
+
 @each $back, $front in $segments {
     g.segment-#{$n} {
+        @extend %segment-text;
+
         rect {
             fill: $back;
         }
@@ -20,4 +41,8 @@ $n: 1;
     }
 
     $n: $n + 1;
+}
+
+svg {
+    cursor: pointer;
 }

@@ -1,9 +1,6 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, lastValueFrom } from 'rxjs';
-import { Answer } from '../models/answer';
-import { Participant } from '../models/participant';
-import { Filter, FilterOperator } from '../models/filter';
+import { Observable, lastValueFrom } from 'rxjs';
 import { FilterService } from './filter.service';
 import { CacheService } from './cache.service';
 import { FilterWorkerService } from './filter-worker.service';
@@ -11,36 +8,33 @@ import { Judgment, MatchedJudgment as MatchedJudgment } from '../models/judgment
 import { LikertComponent } from '../likert/likert.component';
 import { LikertResponse } from '../models/likert-response';
 import { MatchedQuestion } from '../models/question';
-
-
+import { VisibilityService } from './visibility.service';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class JudgmentsService implements OnDestroy {
-    /**
-     * components displaying judgments, using the judgment ID as key
-     */
-    private components: { [id: string]: LikertComponent } = {};
-
-    private visibleJudgmentIds: Set<string> = new Set<string>();
-    private subscriptions!: Subscription[];
-
+export class JudgmentsService extends VisibilityService<LikertComponent, MatchedJudgment> implements OnDestroy {
     /**
      * Emits an updated list of matches
      */
     results$!: Observable<readonly (MatchedQuestion | MatchedJudgment)[]>;
 
-    constructor(private http: HttpClient, private filterWorkerService: FilterWorkerService, private filterService: FilterService, private cacheService: CacheService, private ngZone: NgZone) {
+    constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, private filterService: FilterService, private cacheService: CacheService, ngZone: NgZone) {
+        super(filterWorkerService, ngZone);
         this.subscriptions = [
             this.filterWorkerService.results$.subscribe((results => {
-                this.updateVisible(results as Iterable<MatchedJudgment>)}))
+                this.updateVisible(results as Iterable<MatchedJudgment>)
+            }))
         ];
         this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
     }
 
     ngOnDestroy(): void {
         this.subscriptions.forEach(s => s.unsubscribe());
+    }
+
+    protected getId(model: MatchedJudgment): string {
+        return model.judgmentId.text;
     }
 
     async save(items: Iterable<Judgment>): Promise<{ success: boolean }> {
@@ -74,16 +68,16 @@ export class JudgmentsService implements OnDestroy {
         for (const [tag, entry] of Object.entries(response)) {
             const responses: LikertResponse[] = [];
             for (const subentry of entry['responses']) {
-                    const response: LikertResponse = {
-                        participantId: subentry['participant_id'],
-                        dialect: subentry['dialect'],
-                        score: subentry['score']
-                    }
-                    responses.push(response);
+                const response: LikertResponse = {
+                    participantId: subentry['participant_id'],
+                    dialect: subentry['dialect'],
+                    score: subentry['score']
+                }
+                responses.push(response);
             }
 
             const judgment: Judgment = {
-                judgmentId: entry['main_question_id']+entry['sub_question_id'],
+                judgmentId: entry['main_question_id'] + entry['sub_question_id'],
                 mainQuestion: entry['main_question'],
                 mainQuestionId: entry['main_question_id'],
                 subQuestion: entry['sub_question'],
@@ -93,70 +87,5 @@ export class JudgmentsService implements OnDestroy {
             judgments.push(judgment);
         }
         return judgments
-    }
-
-    /**
-     * Directly triggers the visible components to have their content updated.
-     * @param matches results which should at least apply to all the visible judgments
-     */
-    private updateVisible(matches: Iterable<MatchedJudgment>) {
-        // make a copy, so we can remove all matching judgment IDs
-        const visibleIds = [...this.visibleJudgmentIds];
-        for (const judgment of matches) {
-            if (visibleIds.length === 0) {
-                break;
-            }
-
-            const index = visibleIds.indexOf(judgment.judgmentId.text);
-            if (index !== -1) {
-                const [judgmentId] = visibleIds.splice(index, 1);
-                const component = this.components[judgmentId];
-                if (component) {
-                    // immediately set the judgment to update rendering
-                    component.matchedJudgment = judgment;
-                }
-            }
-        }
-
-        // these weren't in the matches, so we know they should be hidden
-        for (const judgmentId of visibleIds) {
-            const component = this.components[judgmentId];
-            if (component) {
-                component.matchedJudgment = undefined;
-            }
-        }
-    }
-
-    registerComponent(component: LikertComponent) {
-        this.components[component.id] = component;
-    }
-
-    /**
-     * Removes the registration for a component on clean-up.
-     */
-    unregisterComponent(component: LikertComponent) {
-        delete this.components[component.id];
-    }
-
-    /**
-     * Gets all the visible components
-     */
-    *visibleComponents(): Iterable<LikertComponent> {
-        for (const judgmentId of this.visibleJudgmentIds) {
-            const component = this.components[judgmentId];
-            if (component) {
-                yield component;
-            }
-        }
-    }
-
-    addVisibleId(id: string): void {
-        this.visibleJudgmentIds.add(id);
-        this.filterWorkerService.setVisible(this.visibleJudgmentIds);
-    }
-
-    deleteVisibleId(id: string): void {
-        this.visibleJudgmentIds.delete(id);
-        this.filterWorkerService.setVisible(this.visibleJudgmentIds);
     }
 }

@@ -1,4 +1,4 @@
-@if (!matchedQuestion) {
+@if (!model) {
 <div class="content has-text-centered has-text-light">
     <span class="icon is-large">
         <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
@@ -14,7 +14,7 @@
                     <span class="icon">
                         <fa-icon [icon]="faChevronDown"></fa-icon>
                     </span>
-                    <span [innerHTML]="matchedQuestion.prompt | highlight"></span>
+                    <span [innerHTML]="model.prompt | highlight"></span>
                 </span>
             </div>
             <div class="level-right question-filters">
@@ -43,9 +43,9 @@
 <div class="box metadata" [ngClass]="{'is-loading': loading}">
     @if (questionExpanded) {
     <luu-view>
-        <luu-line type="example" [value]="matchedQuestion.prompt.highlightedText"></luu-line>
-        <luu-line type="gloss" [value]="matchedQuestion.gloss.highlightedText"></luu-line>
-        <luu-translation [innerHTML]="matchedQuestion.en_translation | highlight"></luu-translation>
+        <luu-line type="example" [value]="model.prompt.highlightedText"></luu-line>
+        <luu-line type="gloss" [value]="model.gloss.highlightedText"></luu-line>
+        <luu-translation [innerHTML]="model.en_translation | highlight"></luu-translation>
     </luu-view>
     <hr class="mt-2 mb-2" />
     }
@@ -58,7 +58,7 @@
             </div>
             <div class="cell is-col-span-3">
                 <span i18n>
-                    {{ matchedAnswerCount }} of {{ matchedQuestion.answers.length }} answers matched
+                    {{ matchedAnswerCount }} of {{ model.answers.length }} answers matched
                 </span>
             </div>
             <div class="cell is-col-span-5">
@@ -66,15 +66,15 @@
                     <div class="control">
                         <div class="tags has-addons is-flex-wrap-nowrap">
                             <div class="tag filterable"
-                                (click)="onFilterSelected($event, 'chapter', matchedQuestion.chapter.text)">
-                                <span [innerHTML]="matchedQuestion.chapter | highlight"></span>
+                                (click)="onFilterSelected($event, 'chapter', model.chapter.text)">
+                                <span [innerHTML]="model.chapter | highlight"></span>
                             </div>
                             <a class="tag is-delete"
-                                (click)="onExcludeFilter($event, 'chapter', matchedQuestion.chapter.text)"
+                                (click)="onExcludeFilter($event, 'chapter', model.chapter.text)"
                                 i18n-aria-label aria-label="exclude"></a>
                         </div>
                     </div>
-                    @for (subtag of matchedQuestion.subtags; track subtag.text) {
+                    @for (subtag of model.subtags; track subtag.text) {
                     <div class="control">
                         <div class="tags has-addons is-flex-wrap-nowrap">
                             <div class="tag filterable" (click)="onFilterSelected($event, 'subtags', subtag.text)">

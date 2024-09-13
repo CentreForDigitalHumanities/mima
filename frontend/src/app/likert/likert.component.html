@@ -1,43 +1,45 @@
-@if (!matchedJudgment) {
-    <p>loading</p>
+@if (!model) {
+<p>loading</p>
 }
 @else {
-    <div class="box mt-3" [ngClass]="{'is-loading': loading}">
-        <div class="judgmement-header metadata" (click)="toggleQuestion()">
-            <h2 class="subtitle" [innerHTML]="formatQuestion(matchedJudgment.mainQuestion.text, matchedJudgment.subQuestion.text)"></h2>
-            <hr>
+<div class="box mt-3" [ngClass]="{'is-loading': loading}">
+    <div class="judgmement-header metadata" (click)="toggleQuestion()">
+        <h2 class="subtitle" [innerHTML]="formatQuestion(model.mainQuestion.text, model.subQuestion.text)"></h2>
+        <hr>
+    </div>
+    @if (questionExpanded) {
+    <div class="box gloss">
+        <p>gloss and stuff</p>
+    </div>
+    }
+    @if (!questionExpanded) {
+    <div class="general-judgments">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <mima-likert-bar [counts]="likertValuesGeneral.counts" [total]="likertValuesGeneral.total" [show]="show"
+                    (toggleShow)="toggleShow.emit()"></mima-likert-bar>
+            </div>
+            <div class="column is-one-quarter">
+                <p>Number of responses: {{ likertValuesGeneral.total }}</p>
+            </div>
         </div>
-        @if (questionExpanded) {
-            <div class="box gloss">
-                <p>gloss and stuff</p>
+    </div>
+    }
+    @else {
+    <div class="judgments">
+        @for (dialect of dialectNames; track dialect) {
+        <h3 [innerHTML]="dialect"></h3>
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <mima-likert-bar [counts]="likertValues[dialect].counts" [total]="likertValues[dialect].total"
+                    [show]="show" (toggleShow)="toggleShow.emit()"></mima-likert-bar>
             </div>
-        }
-        @if (!questionExpanded) {
-            <div class="general-judgments">
-                <div class="columns">
-                    <div class="column is-three-quarters">
-                        <mima-likert-bar [counts]="likertValuesGeneral.counts" [total]="likertValuesGeneral.total"></mima-likert-bar>
-                    </div>
-                    <div class="column is-one-quarter">
-                        <p>Number of responses: {{ likertValuesGeneral.total }}</p>
-                    </div>
-                </div>
+            <div class="column is-one-quarter">
+                <p>Number of responses: {{ likertValues[dialect].total }}</p>
             </div>
-        }
-        @else {
-            <div class="judgments">
-                @for (dialect of dialectNames; track dialect) {
-                    <h3 [innerHTML]="dialect"></h3>
-                    <div class="columns">
-                        <div class="column is-three-quarters">
-                            <mima-likert-bar [counts]="likertValues[dialect].counts" [total]="likertValues[dialect].total"></mima-likert-bar>
-                        </div>
-                        <div class="column is-one-quarter">
-                            <p>Number of responses: {{ likertValues[dialect].total }}</p>
-                        </div>
-                    </div>
-                }
-            </div>
+        </div>
         }
     </div>
+    }
+</div>
 }
