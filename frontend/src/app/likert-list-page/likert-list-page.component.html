@@ -1,6 +1,23 @@
 <h1 class="title" i18n>Grammaticality Judgements</h1>
 <h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
 
-<div>
-    <mima-likert-list [matchedJudgments]="matchedJudgments"></mima-likert-list>
+<div class="box">
+    <mima-likert-filters></mima-likert-filters>
 </div>
+@if (judgments && matchedJudgments && matchedJudgments.size) {
+<div>
+    <div class="level">
+        <div class="level-left">
+            <h1 class="subtitle" i18n>Results: {{matchedJudgments.size}} judgments &middot; {{matchedParticipants.size}}
+                respondents &middot; {{matchedDialects.size}}
+                dialects &middot; {{matchedResponseCount | transitionNumbers}} responses</h1>
+        </div>
+        <div class="level-right">
+            <mima-likert-count-toggle [show]="show$ | async" (toggleShow)="toggleShow()"></mima-likert-count-toggle>
+            <mima-manual-button id="judgment"></mima-manual-button>
+        </div>
+    </div>
+    <mima-likert-list [show]="show$ | async" (toggleShow)="toggleShow()" [matchedJudgments]="matchedJudgments"
+        [judgments]="judgments"></mima-likert-list>
+</div>
+}

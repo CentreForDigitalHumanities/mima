@@ -31,7 +31,7 @@ export class QuestionnaireEffects implements OnDestroy {
     }
 
     private subscriptions!: Subscription[];
-    private currentFilters: readonly Filter[] = [];
+    private currentFilters: readonly Filter<'question'>[] = [];
     private currentFilterOperator: FilterOperator = initialState.questionnaire.operator;
 
     loadQuestionnaire$ = createEffect(() => this.actions$.pipe(

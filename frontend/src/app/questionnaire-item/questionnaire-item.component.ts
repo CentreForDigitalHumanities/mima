@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronDown, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { LuupzigModule } from 'luupzig';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
@@ -10,12 +10,13 @@ import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
 import { MatchedParts } from '../models/matched-parts';
 import { IntersectableComponent } from '../services/visibility.service';
+import { LoadingComponent } from "../loading/loading.component";
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
 
 export interface FilterEvent {
-    field: FilterField;
+    field: FilterField<'question'>;
     content: string;
 }
 
@@ -34,10 +35,10 @@ interface MatchedAnswerGrouped {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent],
     standalone: true
 })
-export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion>{
+export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion> {
     /**
      * Did the user manually expand this question? Don't automatically close it.
      */
@@ -45,12 +46,11 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
 
     faCheck = faCheck;
     faChevronDown = faChevronDown;
-    faCircleNotch = faCircleNotch;
     faTimes = faTimes;
     faUser = faUser;
 
     @Input() id: string;
-    @Input() questions: Map<string, Question>;
+    @Input() questions: ReadonlyMap<string, Question>;
     @Input() loading = false;
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
@@ -159,7 +159,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
      * emits a filter to be the only filter to the parent component
      * this filter always contains a single filter, i.e. one dialect, one question, or one participant
      */
-    onFilterSelected(event: MouseEvent, field: FilterField, content: string) {
+    onFilterSelected(event: MouseEvent, field: FilterField<'question'>, content: string) {
         this.includeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
@@ -168,7 +168,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
      * emits a filter to be excluded to the parent component
      * params same as for onFilterSelected
      */
-    onExcludeFilter(event: MouseEvent, field: FilterField, content: string) {
+    onExcludeFilter(event: MouseEvent, field: FilterField<'question'>, content: string) {
         this.excludeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }

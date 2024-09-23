@@ -1,6 +1,7 @@
 import { Injectable, NgZone, OnDestroy, QueryList } from '@angular/core';
 import { FilterWorkerService } from './filter-worker.service';
 import { Subject, Subscription, throttleTime } from 'rxjs';
+import { FilterObjectName } from '../models/filter';
 
 /**
  * A component which will only be fully rendered once it is scrolled into view
@@ -121,22 +122,22 @@ export abstract class VisibilityService<TComponent extends IntersectableComponen
         }
     }
 
-    addVisibleId(id: string): void {
+    addVisibleId(type: FilterObjectName, id: string): void {
         this.visibleIds.add(id);
-        this.filterWorkerService.setVisible(this.visibleIds);
+        this.filterWorkerService.setVisible(type, this.visibleIds);
     }
 
-    deleteVisibleId(id: string): void {
+    deleteVisibleId(type: FilterObjectName, id: string): void {
         this.visibleIds.delete(id);
-        this.filterWorkerService.setVisible(this.visibleIds);
+        this.filterWorkerService.setVisible(type, this.visibleIds);
     }
 
     /**
      * Initialize the list containing the components
      */
-    initialize(componentQueryList: QueryList<TComponent>) {
+    initialize(type: FilterObjectName, componentQueryList: QueryList<TComponent>) {
         this.componentQueryList = componentQueryList;
-        this.componentsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(entries, observer));
+        this.componentsObserver = new IntersectionObserver((entries, observer) => this.intersectionObserverCallback(type, entries, observer));
         this.subscriptions.push(
             this.componentQueryList.changes.subscribe(() => {
                 this.triggerRender.next();
@@ -153,15 +154,15 @@ export abstract class VisibilityService<TComponent extends IntersectableComponen
     /**
      * Called by the intersection observer when components scroll in or out of the viewport
      */
-    private intersectionObserverCallback(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
+    private intersectionObserverCallback(type: FilterObjectName, entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
         for (const entry of entries) {
             const id = (<HTMLElement>entry.target).dataset['id'];
             if (entry.isIntersecting) {
                 // scrolled into view
-                this.addVisibleId(id);
+                this.addVisibleId(type, id);
             } else {
                 // scrolled out of view
-                this.deleteVisibleId(id);
+                this.deleteVisibleId(type, id);
             }
         }
 

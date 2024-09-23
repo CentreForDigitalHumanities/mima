@@ -3,7 +3,8 @@
  */
 export type MatchedPart = {
     text: string,
-    match: boolean
+    match: boolean,
+    bold?: boolean
 };
 
 export type MatchedPartsProperties = { [T in keyof Omit<MatchedParts, 'text' | 'highlightedText'>]: MatchedParts[T] };

@@ -1,76 +1,85 @@
-import { Component, NgZone, Input } from '@angular/core';
-import { LikertListComponent } from '../likert-list/likert-list.component';
-import { JudgmentsService } from '../services/judgments.service';
-import { FilterManagementService } from '../services/filter-management.service';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { State } from '../judgments.state';
-import { ProgressService } from '../services/progress.service';
 import { Subscription } from 'rxjs';
-import { loadJudgments } from '../judgments.actions';
+import { State } from '../judgments.state';
+import { ProgressService, ProgressSession } from '../services/progress.service';
+import { loadJudgments, toggleShow } from '../judgments.actions';
 import { Judgment, MatchedJudgment } from '../models/judgment';
+import { LikertListComponent } from '../likert-list/likert-list.component';
+import { LikertFiltersComponent } from '../likert-filters/likert-filters.component';
+import { ManualButtonComponent } from '../manual-button/manual-button.component';
+import { TransitionNumbersPipe } from '../transition-numbers.pipe';
+import { LikertCountToggleComponent } from '../likert-count-toggle/likert-count-toggle.component';
 
 @Component({
     selector: 'mima-likert-list-page',
     standalone: true,
-    imports: [LikertListComponent],
+    imports: [CommonModule, LikertListComponent, LikertFiltersComponent, ManualButtonComponent, LikertCountToggleComponent, TransitionNumbersPipe],
     templateUrl: './likert-list-page.component.html',
     styleUrl: './likert-list-page.component.scss'
 })
-export class LikertListPageComponent {
+export class LikertListPageComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private judgments$ = this.store.select('judgments', 'judgments');
     private matchedJudgments$ = this.store.select('judgments', 'matchedJudgments');
 
+    show$ = this.store.select('judgments', 'show');
+
+    progress: ProgressSession;
+
     @Input() filterSelect: Map<string, string[]>;
 
-    constructor(private judgmentsService: JudgmentsService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
+    constructor(private store: Store<State>, private progressService: ProgressService) {
+        this.progress = this.progressService.start(true);
     }
 
     judgments: ReadonlyMap<string, Judgment>;
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
-    matchedAnswerCount = 0;
+    matchedResponseCount = 0;
     matchedDialects = new Set<string>();
     matchedParticipants = new Set<string>();
 
     ngOnInit() {
-        const progress = this.progressService.start(true);
-
         this.store.dispatch(loadJudgments());
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.judgments$.subscribe(judgments => {
                 if (judgments) {
                     if (judgments.size) {
-                        progress.complete();
+                        this.progress.complete();
                         this.judgments = judgments;
-                        // const answers = [...this.judgmentsService.getAnswers(this.judgments.values())];
-                        // this.dialects = [...this.judgmentsService.getDialects(answers)];
-                        // this.participantIds = this.judgmentsService.getParticipants(answers).map(p => p.participantId);
                     }
                 }
             }),
             this.matchedJudgments$.subscribe(judgments => {
                 this.matchedJudgments = judgments;
 
-                this.matchedAnswerCount = 0;
+                this.matchedResponseCount = 0;
                 this.matchedDialects = new Set<string>();
                 this.matchedParticipants = new Set<string>();
-                // for (const question of this.matchedJudgments.values()) {
-                //     this.matchedAnswerCount += question.matchedAnswerCount;
-                //     for (const dialect of question.matchedDialectNames) {
-                //         this.matchedDialects.add(dialect);
-                //     }
-                //     for (const participantId of question.matchedParticipants) {
-                //         this.matchedParticipants.add(participantId);
-                //     }
-                // }
+                for (const judgment of this.matchedJudgments.values()) {
+                    this.matchedResponseCount += judgment.matchedResponseCount;
+                    for (const dialect of judgment.matchedDialectNames) {
+                        this.matchedDialects.add(dialect);
+                    }
+                    for (const participantId of judgment.matchedParticipants) {
+                        this.matchedParticipants.add(participantId);
+                    }
+                }
             })]
     }
 
     ngOnDestroy(): void {
+        this.progress.hide();
+
         for (const subscription of this.subscriptions) {
             subscription.unsubscribe();
         }
+    }
+
+    toggleShow() {
+        this.store.dispatch(toggleShow({}));
     }
 
 }

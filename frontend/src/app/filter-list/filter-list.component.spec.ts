@@ -7,8 +7,8 @@ import { initialState } from '../questionnaire.state';
 import { FilterListComponent } from './filter-list.component';
 
 describe('FilterListComponent', () => {
-    let component: FilterListComponent;
-    let fixture: ComponentFixture<FilterListComponent>;
+    let component: FilterListComponent<'question'>;
+    let fixture: ComponentFixture<FilterListComponent<'question'>>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('FilterListComponent', () => {
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(FilterListComponent);
+        fixture = TestBed.createComponent(FilterListComponent<'question'>);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

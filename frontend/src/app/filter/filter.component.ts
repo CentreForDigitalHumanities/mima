@@ -3,36 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
-    faAsterisk,
     faTimesCircle,
-    faComment,
-    faGlobeEurope,
-    faLanguage,
-    faTrash,
-    IconDefinition,
-    faUser,
-    faCommentDots
+    faTrash
 } from '@fortawesome/free-solid-svg-icons';
-import { Store } from '@ngrx/store';
 import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
-import { combineLatestWith, map, throttleTime, withLatestFrom } from 'rxjs/operators';
+import { map, throttleTime, withLatestFrom } from 'rxjs/operators';
 import { MultiSelectModule } from 'primeng/multiselect';
 
-import { removeFilter } from '../questionnaire.actions';
-import { State } from '../questionnaire.state';
-import { Filter } from '../models/filter';
-import { QuestionnaireService } from '../services/questionnaire.service';
-import { DropdownOption, FilterManagementService } from '../services/filter-management.service';
+import { Filter, FilterField, FilterObjectName, FilterType } from '../models/filter';
+import { DropdownOption, FilterFieldOptions } from '../services/filter-management.service';
 import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 
 
-type FilterType = {
-    name: string,
-    field: Filter['field'],
-    icon: IconDefinition,
-    dropdown: boolean,
-    placeholder: string
-}
 
 @Component({
     selector: 'mima-filter',
@@ -41,9 +23,10 @@ type FilterType = {
     standalone: true,
     imports: [CommonModule, FontAwesomeModule, FormsModule, MultiSelectModule, FilterTagsComponent]
 })
-export class FilterComponent implements OnInit, OnDestroy {
+export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
-    private filters$ = this.store.select('questionnaire', 'filters');
+    private filterSubject = new BehaviorSubject<readonly Filter<T>[]>([]);
+    private filters$ = this.filterSubject.asObservable(); // this.store.select('questionnaire', 'filters');
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -55,16 +38,30 @@ export class FilterComponent implements OnInit, OnDestroy {
     textField: ElementRef<HTMLInputElement>;
 
     @Input()
+    set filters(filters: readonly Filter<T>[]) {
+        this.filterSubject.next(filters);
+    }
+
+    @Input()
+    filterTypes: FilterType<T>[];
+
+    @Input()
+    getFilterFieldOptions: (field: FilterField<T>) => FilterFieldOptions;
+
+    @Input()
     set index(value: number) {
         this.index$.next(value);
     }
 
     @Output()
-    filterChange = new EventEmitter<Filter>();
+    remove = new EventEmitter<number>();
 
-    selectedType$ = new BehaviorSubject<FilterType>(null);
+    @Output()
+    filterChange = new EventEmitter<Filter<T>>();
 
-    set selectedType(value: FilterType) {
+    selectedType$ = new BehaviorSubject<FilterType<T>>(null);
+
+    set selectedType(value: FilterType<T>) {
         this.selectedType$.next(value);
     }
 
@@ -72,84 +69,13 @@ export class FilterComponent implements OnInit, OnDestroy {
         return this.selectedType$.value;
     }
 
-    filter: Filter;
-
-    filterTypes: FilterType[] = [{
-        name: '',
-        field: '*',
-        icon: faAsterisk,
-        dropdown: false,
-        placeholder: $localize`Search in all Fields`
-    }, {
-        name: $localize`Question`,
-        field: 'id',
-        icon: faComment,
-        dropdown: true,
-        placeholder: $localize`Select Question(s)`
-    }, {
-        name: $localize`Question Text`,
-        field: 'prompt',
-        icon: faCommentDots,
-        dropdown: false,
-        placeholder: ''
-    }, {
-        name: $localize`Translation`,
-        field: 'answer',
-        icon: faGlobeEurope,
-        dropdown: false,
-        placeholder: ''
-    }, {
-        name: $localize`Dialect`,
-        field: 'dialect',
-        icon: faLanguage,
-        dropdown: true,
-        placeholder: $localize`Select Dialect(s)`
-    }, {
-        name: $localize`Participant`,
-        field: 'participantId',
-        icon: faUser,
-        dropdown: true,
-        placeholder: $localize`Select Participant(s)`
-    }, {
-        name: $localize`Attestation`,
-        field: 'attestation',
-        icon: faUser,
-        dropdown: true,
-        placeholder: $localize`Select Attested or Unattested`
-    }, {
-        name: $localize`Gloss`,
-        field: 'gloss',
-        icon: faUser,
-        dropdown: false,
-        placeholder: ''
-    }, {
-        name: $localize`English Translation`,
-        field: 'en_translation',
-        icon: faUser,
-        dropdown: false,
-        placeholder: ''
-    }, {
-        name: $localize`Chapter`,
-        field: 'chapter',
-        icon: faUser,
-        dropdown: true,
-        placeholder: $localize`Select Chapter(s)`
-    }, {
-        name: `Subtags`,
-        field: 'subtags',
-        icon: faUser,
-        dropdown: true,
-        placeholder: $localize`Select Tag(s)`
-    }];
+    filter: Filter<T>;
 
     textFieldContent: string;
-    dropdownOptions$: Observable<DropdownOption[]> = this.store.select('questionnaire', 'questions').pipe(
-        combineLatestWith(this.selectedType$),
-        map(([questions, selectedType]) => {
+    dropdownOptions$: Observable<DropdownOption[]> = this.selectedType$.pipe(
+        map((selectedType) => {
             if (selectedType.dropdown) {
-                const { labels, options } = this.filterManagementService.filterFieldOptions(
-                    selectedType.field,
-                    questions);
+                const { labels, options } = this.getFilterFieldOptions(selectedType.field);
 
                 this.dropdownLabels = labels;
                 return options;
@@ -162,11 +88,10 @@ export class FilterComponent implements OnInit, OnDestroy {
 
     dropdownLabels: { [value: string]: string };
 
-    constructor(private store: Store<State>, private filterManagementService: FilterManagementService, private questionnaireService: QuestionnaireService) {
-        this.selectedType = this.filterTypes[0];
-    }
-
     ngOnInit(): void {
+        if (this.filterTypes) {
+            this.selectedType = this.filterTypes[0];
+        }
         this.subscriptions = [
             // rate limit the keyboard input
             this.keyup$.pipe(
@@ -214,22 +139,22 @@ export class FilterComponent implements OnInit, OnDestroy {
     }
 
     emit(): void {
+        let content = this.filter.content;
         if (!this.selectedType.dropdown) {
-            this.filter.content = [this.textFieldContent];
+            content = [this.textFieldContent];
         } else if (this.filter.field !== this.selectedType.field) {
             // changed to a (different) dropdown?
             // remove the current content to prevent ghost values
             // influencing the filtering
-            this.filter.content = [];
+            content = [];
             this.textFieldContent = '';
         }
 
-        this.filter.field = this.selectedType.field;
-        this.filterChange.emit(this.filter);
-    }
-
-    delete(): void {
-        this.store.dispatch(removeFilter({ filterIndex: this.index$.value }));
+        this.filterChange.emit({
+            ...this.filter,
+            field: this.selectedType.field,
+            content
+        });
     }
 
     clearFilter(): void {
@@ -238,8 +163,8 @@ export class FilterComponent implements OnInit, OnDestroy {
         this.textField.nativeElement.focus();
     }
 
-    private getSelectedType(filter: Filter | undefined): FilterType {
-        let selectedType: FilterType;
+    private getSelectedType(filter: Filter<T> | undefined): FilterType<T> {
+        let selectedType: FilterType<T>;
         if (filter === undefined) {
             // default type
             selectedType = this.filterTypes[0];

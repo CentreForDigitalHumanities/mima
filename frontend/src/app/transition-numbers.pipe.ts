@@ -54,13 +54,13 @@ export class TransitionNumbersPipe implements PipeTransform {
     }
 }
 
-export function transitionValue<T>(start: number, end: number, duration: number, endWithOther: T): Observable<number | T> {
+export function transitionValue<T = number>(start: number, end: number, duration: number, endWithOther?: T): Observable<number | T> {
     const diff = end - start;
     return animationFrames().pipe(
         // from 0 to 1
         map(({ elapsed }) => elapsed / duration),
         takeWhile(v => v < 1),
-        endWith(endWithOther),
+        endWith(endWithOther ?? end),
         map(v => v === endWithOther ? endWithOther : easing(<number>v) * diff + start)
     );
 }

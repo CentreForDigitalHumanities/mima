@@ -1,14 +1,13 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, lastValueFrom } from 'rxjs';
-import { FilterService } from './filter.service';
-import { CacheService } from './cache.service';
 import { FilterWorkerService } from './filter-worker.service';
 import { Judgment, MatchedJudgment as MatchedJudgment } from '../models/judgment';
 import { LikertComponent } from '../likert/likert.component';
 import { LikertResponse } from '../models/likert-response';
-import { MatchedQuestion } from '../models/question';
 import { VisibilityService } from './visibility.service';
+import { Filter, FilterOperator } from '../models/filter';
+import { Participant } from '../models/participant';
 
 @Injectable({
     providedIn: 'root'
@@ -17,16 +16,14 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
     /**
      * Emits an updated list of matches
      */
-    results$!: Observable<readonly (MatchedQuestion | MatchedJudgment)[]>;
+    results$!: Observable<readonly MatchedJudgment[]>;
 
-    constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, private filterService: FilterService, private cacheService: CacheService, ngZone: NgZone) {
+    constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, ngZone: NgZone) {
         super(filterWorkerService, ngZone);
+        this.results$ = this.filterWorkerService.results$.judgment;
         this.subscriptions = [
-            this.filterWorkerService.results$.subscribe((results => {
-                this.updateVisible(results as Iterable<MatchedJudgment>)
-            }))
+            this.results$.subscribe((results => { this.updateVisible(results); }))
         ];
-        this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
     }
 
     ngOnDestroy(): void {
@@ -34,13 +31,13 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
     }
 
     protected getId(model: MatchedJudgment): string {
-        return model.judgmentId.text;
+        return model.judgmentId?.text;
     }
 
     async save(items: Iterable<Judgment>): Promise<{ success: boolean }> {
         const data = [...items];
         // if it has already been loaded, override it
-        this.filterWorkerService.setData(data);
+        this.filterWorkerService.setData('judgment', data);
 
         // async to allow modifying this method when saving it to an actual external database
         return Promise.resolve({ success: true });
@@ -54,7 +51,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
         const response = lastValueFrom(this.http.get('assets/likert_scales_test.json'));
         const data = await response.then(res => res);
         const judgments = this.convertToJudgments(data);
-        this.filterWorkerService.setData(judgments);
+        this.filterWorkerService.setData('judgment', judgments);
         return Promise.resolve(judgments);
     }
 
@@ -65,7 +62,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
      */
     convertToJudgments(response: Object) {
         const judgments: Judgment[] = [];
-        for (const [tag, entry] of Object.entries(response)) {
+        for (const [, entry] of Object.entries(response)) {
             const responses: LikertResponse[] = [];
             for (const subentry of entry['responses']) {
                 const response: LikertResponse = {
@@ -82,10 +79,40 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
                 mainQuestionId: entry['main_question_id'],
                 subQuestion: entry['sub_question'],
                 subQuestionId: entry['sub_question_id'],
-                responses: entry['responses'],
+                responses,
             };
             judgments.push(judgment);
         }
+
         return judgments
+    }
+
+    /**
+     * Derives the participants from a Map containing answers
+     * @param responses Map of a list of answers per dialect
+     * @returns An array of Participant objects
+     */
+    getParticipants(responses: Iterable<LikertResponse>): Participant[] {
+        const participants: { [id: string]: Participant } = {};
+
+        for (const response of responses) {
+            const participant: Participant = {
+                participantId: response.participantId,
+                dialect: response.dialect
+            };
+
+            participants[participant.participantId] = participant;
+        }
+
+        return Object.values(participants);
+    }
+
+    /**
+     * Searches the database for matching questions.
+     * @param filters filters to apply
+     * @param operator conjunction operator to use
+     */
+    filter(filters: ReadonlyArray<Filter<'judgment'>>, operator: FilterOperator): void {
+        this.filterWorkerService.setFilters('judgment', filters, operator);
     }
 }

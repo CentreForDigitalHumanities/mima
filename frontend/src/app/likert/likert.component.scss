@@ -35,3 +35,35 @@ svg:hover text {
     opacity: 1;
     transition: opacity .2s ease-in-out;
 }
+
+.animate-down {
+    animation: append-animate-down .3s ease-in-out;
+}
+
+.animate-up {
+    animation: append-animate-up .15s ease-in-out;
+}
+
+@keyframes append-animate-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes append-animate-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

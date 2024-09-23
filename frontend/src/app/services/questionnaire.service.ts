@@ -7,7 +7,6 @@ import { Participant } from '../models/participant';
 import { Filter, FilterOperator } from '../models/filter';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { FilterWorkerService } from './filter-worker.service';
-import { MatchedJudgment } from '../models/judgment';
 import { VisibilityService } from './visibility.service';
 
 
@@ -18,24 +17,24 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
     /**
      * Emits an updated list of matches
      */
-    results$!: Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
+    results$!: Observable<readonly MatchedQuestion[]>;
 
     constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, ngZone: NgZone) {
         super(filterWorkerService, ngZone);
+        this.results$ = this.filterWorkerService.results$.question;
         this.subscriptions = [
-            this.filterWorkerService.results$.subscribe(results => { this.updateVisible(results as Iterable<MatchedQuestion>) })
+            this.results$.subscribe(results => { this.updateVisible(results); })
         ];
-        this.results$ = this.filterWorkerService.results$ as Observable<readonly MatchedQuestion[] | MatchedJudgment[]>;
     }
 
     protected getId(model: MatchedQuestion): string {
-        return model.id.text;
+        return model.id?.text;
     }
 
     async save(items: Iterable<Question>): Promise<{ success: boolean }> {
         const data = [...items];
         // if it has already been loaded, override it
-        this.filterWorkerService.setData(data);
+        this.filterWorkerService.setData('question', data);
 
         // async to allow modifying this method when saving it to an actual external database
         return Promise.resolve({ success: true });
@@ -50,7 +49,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
 
         const data = await response.then(res => res);
         const questionnaire = this.convertToQuestionnaire(data);
-        this.filterWorkerService.setData(questionnaire);
+        this.filterWorkerService.setData('question', questionnaire);
         return Promise.resolve(questionnaire);
     }
 
@@ -156,7 +155,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
      * @param filters filters to apply
      * @param operator conjunction operator to use
      */
-    filter(filters: ReadonlyArray<Filter>, operator: FilterOperator): void {
-        this.filterWorkerService.setFilters(filters, operator);
+    filter(filters: ReadonlyArray<Filter<'question'>>, operator: FilterOperator): void {
+        this.filterWorkerService.setFilters('question', filters, operator);
     }
 }

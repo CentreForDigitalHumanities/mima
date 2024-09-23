@@ -1,9 +1,5 @@
 @if (!model) {
-<div class="content has-text-centered has-text-light">
-    <span class="icon is-large">
-        <fa-icon [icon]="faCircleNotch" [spin]="true" size="4x"></fa-icon>
-    </span>
-</div>
+    <mima-loading></mima-loading>
 }
 @else {
 <div class="question-header" (click)="toggleQuestion()" [ngClass]="{'is-loading': loading}">

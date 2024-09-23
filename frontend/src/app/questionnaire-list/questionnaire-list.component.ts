@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, EventEmitter, Input, NgZone, OnChanges, OnDestroy, Output, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, QueryList, ViewChildren } from '@angular/core';
 import { FilterEvent, QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
-import { Subject, Subscription, throttleTime } from 'rxjs';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { MatchedQuestion, Question } from '../models/question';
 import { TypedChanges } from '../models/typed-changes';
@@ -17,10 +16,10 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges {
     questionComponents!: QueryList<QuestionnaireItemComponent>;
 
     @Input()
-    questions: Map<string, Question>;
+    questions: ReadonlyMap<string, Question>;
 
     @Input()
-    matchedQuestions: Map<string, MatchedQuestion> | ReadonlyMap<string, MatchedQuestion>;
+    matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
 
     @Output()
     includeFilter = new EventEmitter<FilterEvent>();
@@ -28,11 +27,11 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges {
     @Output()
     excludeFilter = new EventEmitter<FilterEvent>();
 
-    constructor(private questionnaireService: QuestionnaireService, private ngZone: NgZone) {
+    constructor(private questionnaireService: QuestionnaireService) {
     }
 
     ngAfterViewInit(): void {
-        this.questionnaireService.initialize(this.questionComponents);
+        this.questionnaireService.initialize('question', this.questionComponents);
     }
 
     ngOnChanges(changes: TypedChanges<QuestionnaireListComponent>): void {

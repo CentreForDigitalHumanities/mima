@@ -1,22 +1,33 @@
 import { Injectable } from '@angular/core';
 import { MatchedParts } from '../models/matched-parts';
-import { Filter, FilterField, FilterOperator } from '../models/filter';
-import { MatchedQuestion, Question } from '../models/question';
-import { Answer, MatchedAnswer } from '../models/answer';
+import { Filter, FilterField, FilterMatchedObject, FilterObject, FilterObjectName, FilterOperator } from '../models/filter';
+import { MatchedQuestion, MatchedQuestionDeserialized, MatchedQuestionProperties, Question } from '../models/question';
+import { Answer, MatchedAnswer, MatchedAnswerDeserializedProperties, MatchedAnswerProperties } from '../models/answer';
 import { SearchExpression, ignoreCharactersExp } from '../models/search-expression';
+import { Judgment, MatchedJudgment, MatchedJudgmentDeserialized, MatchedJudgmentProperties } from '../models/judgment';
+import { LikertResponse, MatchedLikertResponse } from '../models/likert-response';
 
-function isQuestion(object: object): object is Question {
-    return (object as Question).question !== undefined;
+
+export function isAnswer(object: any): object is Answer | MatchedAnswer | MatchedAnswerProperties | MatchedAnswerDeserializedProperties {
+    return (object as Answer).answerId !== undefined;
 }
 
-export function isDefaultFilter(filter: Filter) {
+export function isQuestion(object: any): object is Question | MatchedQuestion | MatchedQuestionProperties | MatchedQuestionDeserialized {
+    return (object as Question).id !== undefined;
+}
+
+export function isJudgment(object: any): object is Judgment | MatchedJudgment | MatchedJudgmentProperties | MatchedJudgmentDeserialized {
+    return (object as Judgment).judgmentId !== undefined;
+}
+
+export function isDefaultFilter(filter: Filter<any>) {
     return filter &&
         filter.field === '*' &&
         filter.content.length <= 1 &&
         !filter.content[0]?.trim()
 }
 
-export function isEmptyFilter(filter: Filter) {
+export function isEmptyFilter(filter: Filter<any>) {
     return filter && !filter.content.find(val => !!val.trim());
 }
 
@@ -26,42 +37,69 @@ export function isEmptyFilter(filter: Filter) {
 export class FilterService {
 
     /**
-     * @returns MatchedQuestion, or undefined if it doesn't match
+     * @returns MatchedQuestion or MatchedJudgment, or undefined if it doesn't match
      */
-    public applyFilters(item: Question, filters: ReadonlyArray<Filter>, operator: FilterOperator): MatchedQuestion {
-        let anyMatch = false;
+    public applyFilters<T extends FilterObjectName>(item: FilterObject<T>, filters: ReadonlyArray<Filter<T>>, operator: FilterOperator): FilterMatchedObject<T> {
+        let subMatch = false;
         let itemMatch = false;
-        let keys: (keyof Question)[] = [];
-        const matchingFilters: Filter[] = [];
-        const result = new MatchedQuestion();
-        keys = [
-            'id',
-            'prompt',
-            'split_item',
-            'answers',
-            'chapter',
-            'subtags',
-            'gloss',
-            'en_translation',
-        ];
-        for (const key of keys) {
-            [itemMatch, anyMatch] = this.detectMatches(item, result, filters, key, itemMatch, anyMatch, matchingFilters, operator);
+        let keys: (keyof FilterObject<T>)[] = [];
+        const matchingFilters: Filter<T>[] = [];
+        let result: FilterMatchedObject<T>;
+
+        if (isJudgment(item)) {
+            result = <FilterMatchedObject<T>>new MatchedJudgment();
+            keys = <(keyof FilterObject<T>)[]><(keyof Judgment)[]>[
+                'judgmentId',
+                'mainQuestion',
+                'mainQuestionId',
+                'responses',
+                'subQuestion',
+                'subQuestionId'
+            ];
+        } else if (isQuestion(item)) {
+            result = <FilterMatchedObject<T>>new MatchedQuestion();
+            keys = <(keyof FilterObject<T>)[]><(keyof Question)[]>[
+                'id',
+                'prompt',
+                'split_item',
+                'answers',
+                'chapter',
+                'subtags',
+                'gloss',
+                'en_translation',
+            ];
         }
-        if (anyMatch) {
+
+        for (const key of keys) {
+            [itemMatch, subMatch] = this.detectMatches(item, result, filters, key, itemMatch, subMatch, matchingFilters, operator);
+        }
+        if (itemMatch || subMatch) {
             if (operator === 'and') {
                 // check whether all the filters matched
                 if (filters.length !== new Set(matchingFilters).size) {
                     return undefined;
                 }
-            } else if (itemMatch && isQuestion(item)) {
-                // if the question itself matches,
-                // that means ALL answers should be shown
-                for (const answer of result.answers) {
-                    answer.match = true;
+            }
+
+            if (itemMatch) {
+                if (isQuestion(item)) {
+                    // if the question itself matches,
+                    // that means ALL answers should be shown
+                    for (const answer of (<MatchedQuestion>result).answers) {
+                        answer.match = true;
+                    }
+                } else if (isJudgment(item)) {
+                    // if the judgment itself matches,
+                    // that means ALL responses should be shown
+                    for (const response of (<MatchedJudgment>result).responses) {
+                        response.match = true;
+                    }
+
                 }
             }
 
             result.updateCounts();
+
             return result;
         }
 
@@ -75,7 +113,7 @@ export class FilterService {
      * @param updated updated filters
      * @returns true if the filters differ
      */
-    public differ(current: readonly Filter[], updated: readonly Filter[]): boolean {
+    public differ(current: readonly Filter<any>[], updated: readonly Filter<any>[]): boolean {
         if (current.length !== updated.length) {
             return true;
         }
@@ -109,7 +147,7 @@ export class FilterService {
     /**
      * Checks if a filter is empty.
      */
-    private empty(filter: Filter): boolean {
+    private empty(filter: Filter<any>): boolean {
         return !(filter.content[0] ?? '').trim();
     }
 
@@ -119,20 +157,20 @@ export class FilterService {
      * @param result MatchedAdverbial object in which to update the matches
      * @param filters filters to apply
      * @param key name of the field
-     * @param itemMatch boolean, if any match is present on the adverbial or question itself
-     * @param anyMatch boolean, if any match is present, including on underlying answers
+     * @param itemMatch boolean, if any match is present on the question or judgment itself
+     * @param subMatch boolean, if any match is present on underlying answers, tags or responses
      * @param matchingFilters List of matching filters
      * @param operator should ALL or ANY of the filters match?
      * @returns itemMatch (boolean), anyMatch (boolean)
      */
-    private detectMatches(
-        object: Question,
-        result: MatchedQuestion,
-        filters: ReadonlyArray<Filter>,
-        key: keyof Question,
+    private detectMatches<T extends FilterObjectName>(
+        object: FilterObject<T>,
+        result: FilterMatchedObject<T>,
+        filters: ReadonlyArray<Filter<T>>,
+        key: keyof FilterObject<T>,
         itemMatch: boolean,
-        anyMatch: boolean,
-        matchingFilters: Filter[],
+        subMatch: boolean,
+        matchingFilters: Filter<T>[],
         operator: FilterOperator)
         : [boolean, boolean] {
         switch (key) {
@@ -144,34 +182,40 @@ export class FilterService {
             case 'gloss':
             case 'en_translation':
             case 'split_item':
+            case 'judgmentId':
+            case 'mainQuestion':
+            case 'mainQuestionId':
+            case 'subQuestion':
+            case 'subQuestionId':
                 {
                     const value = object[key];
-                    const [parts, partFilters] = this.searchField(value, key, filters);
-                    result[key] = parts;
+                    const [parts, partFilters] = this.searchField<T>(<string>value, <any>key, filters);
+                    result[<any>key] = parts;
                     itemMatch ||= parts.match;
-                    anyMatch ||= itemMatch;
-                    matchingFilters.push(...partFilters);
+                    matchingFilters.push(...<any>partFilters);
                 }
                 break;
             case 'subtags':
                 {
-                    result[key] = [];
-                    const subtags = object.subtags;
+                    result[<any>key] = [];
+                    const subtags = (<Question>object).subtags;
                     if (subtags) {
                         for (const subtag of subtags) {
-                            const [parts, partFilters] = this.searchField(subtag, key, filters);
-                            anyMatch ||= parts.match;
-                            result[key].push(parts);
-                            matchingFilters.push(...partFilters);
+                            const [parts, partFilters] = this.searchField(subtag, <any>key, filters);
+                            // matching subtags also count as matching the entire question
+                            itemMatch ||= parts.match;
+                            subMatch ||= parts.match;
+                            result[<any>key].push(parts);
+                            matchingFilters.push(...<any>partFilters);
                         }
                     }
                 }
                 break;
             case 'answers':
                 {
-                    result[key] = [];
+                    result[<any>key] = [];
                     const question = object;
-                    const answers = question.answers;
+                    const answers = (<Question>question).answers;
 
                     const answerKeys: (keyof Answer)[] = [
                         'answer',
@@ -182,54 +226,72 @@ export class FilterService {
                     const answerFilters = filters.filter(
                         filter => ['*', ...answerKeys].includes(filter.field));
                     for (const answer of answers) {
-                        const [matchedAnswer, matchingAnswerFilters] = this.searchAnswer(answer, answerKeys, answerFilters, operator);
-                        anyMatch ||= matchedAnswer.match;
-                        result[key].push(matchedAnswer);
-                        matchingFilters.push(...matchingAnswerFilters);
+                        const [matchedAnswer, matchingAnswerFilters] = this.searchSub(answer, answerKeys, answerFilters, operator);
+                        subMatch ||= matchedAnswer.match;
+                        result[<any>key].push(matchedAnswer);
+                        matchingFilters.push(...<any>matchingAnswerFilters);
+                    }
+                }
+                break;
+
+            case 'responses':
+                {
+                    result[<any>key] = [];
+                    const judgment = object;
+                    const responses = (<Judgment>judgment).responses;
+
+                    const responseKeys: (keyof LikertResponse)[] = [
+                        'participantId',
+                        'dialect',
+                        'score'
+                    ];
+                    const responseFilters = filters.filter(
+                        filter => ['*', ...responseKeys].includes(filter.field));
+                    for (const response of responses) {
+                        const [matchedResponse, matchingResponseFilters] = this.searchSub(response, responseKeys, responseFilters, operator);
+                        subMatch ||= matchedResponse.match;
+                        result[<any>key].push(matchedResponse);
+                        matchingFilters.push(...<any>matchingResponseFilters);
                     }
                 }
                 break;
         }
 
-        return [itemMatch, anyMatch];
+        return [itemMatch, subMatch];
     }
 
     /**
-     * Searches an answer for matches on the passed filters.
-     * @param answer answer containing the fields to search through
-     * @param answerKeys keys of the fields to search
-     * @param answerFilters filters to use
+     * Searches an answer or response for matches on the passed filters.
+     * @param item item containing the fields to search through
+     * @param itemKeys keys of the fields to search
+     * @param itemFilters filters to use
      * @param operator whether ALL or ANY of the filters should match
-     * @returns the MatchedAnswer containing information about the matches (if any), and the matching filters
+     * @returns the MatchedAnswer or MatchedLikertResponse containing information about the matches (if any), and the matching filters
      */
-    private searchAnswer(answer: Answer, answerKeys: (keyof Answer)[], answerFilters: Filter[], operator: FilterOperator): [MatchedAnswer, Set<Filter>] {
-        const matchedAnswer = new MatchedAnswer(answer);
-        let matchingFilters = new Set<Filter>();
-        for (const answerKey of answerKeys) {
-            const [parts, partFilters] = this.searchField(answer[answerKey], answerKey, answerFilters);
-            matchedAnswer[answerKey] = parts;
+    private searchSub<T extends FilterObjectName, TSub extends Answer | LikertResponse>(item: TSub, itemKeys: (keyof TSub)[], itemFilters: Filter<T>[], operator: FilterOperator): [TSub extends Answer ? MatchedAnswer : MatchedLikertResponse, Set<Filter<T>>] {
+        const matchedSub = isAnswer(item) ? new MatchedAnswer(item) : new MatchedLikertResponse(item);
+        let matchingFilters = new Set<Filter<T>>();
+        for (const itemKey of itemKeys) {
+            const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString(), itemKey, itemFilters);
+            matchedSub[<any>itemKey] = parts;
             for (const filter of partFilters) {
                 matchingFilters.add(filter);
             }
         }
 
-        if (answerFilters.length) {
+        if (itemFilters.length) {
             if (operator === 'or') {
-                matchedAnswer.match = matchingFilters.size > 0;
+                matchedSub.match = matchingFilters.size > 0;
             } else {
                 // AND operator: all filters should match
-                matchedAnswer.match = matchingFilters.size === answerFilters.length;
-                if (!matchedAnswer.match) {
-                    matchingFilters = new Set<Filter>();
+                matchedSub.match = matchingFilters.size === itemFilters.length;
+                if (!matchedSub.match) {
+                    matchingFilters = new Set<Filter<T>>();
                 }
             }
         }
-        else {
-            // no filters should match everything
-            matchedAnswer.match = true;
-        }
 
-        return [matchedAnswer, matchingFilters];
+        return [<any>matchedSub, matchingFilters];
     }
 
     /**
@@ -239,9 +301,9 @@ export class FilterService {
      * @param filters filters to apply
      * @returns [MatchedParts, Set<Filter>] matched parts and the matching filter
      */
-    private searchField(text: string, field: FilterField, filters: ReadonlyArray<Filter>): [MatchedParts, Set<Filter>] {
+    private searchField<T extends FilterObjectName>(text: string, field: FilterField<T>, filters: ReadonlyArray<Filter<T>>): [MatchedParts, Set<Filter<T>>] {
         const matches: [number, number][] = [];
-        const matchingFilters = new Set<Filter>();
+        const matchingFilters = new Set<Filter<T>>();
         let emptyFilter = false;
         let anythingMatched = false;
         if (filters?.length) {

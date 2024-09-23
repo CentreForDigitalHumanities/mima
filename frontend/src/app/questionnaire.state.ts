@@ -5,8 +5,8 @@ import { Filter, FilterOperator } from './models/filter';
 export interface State {
     questionnaire: {
         operator: FilterOperator;
-        filters: ReadonlyArray<Filter>;
-        questions: Map<string, Question>;
+        filters: ReadonlyArray<Filter<'question'>>;
+        questions: ReadonlyMap<string, Question>;
         questionsCount: number;
         matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     }

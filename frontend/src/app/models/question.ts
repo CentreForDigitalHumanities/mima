@@ -1,7 +1,8 @@
 import { MatchedParts, MatchedPartsProperties } from './matched-parts';
 import { Answer, MatchedAnswer, MatchedAnswerProperties } from './answer';
+import { Filterable } from './filter';
 
-export interface Question {
+export interface Question extends Filterable {
     id: string;
     type: string;
     question: string;

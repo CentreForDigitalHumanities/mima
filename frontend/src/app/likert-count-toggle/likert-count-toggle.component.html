@@ -1,0 +1,18 @@
+<div class="field has-addons">
+    <p class="control">
+        <button class="button" (click)="toggleShow.emit()" [ngClass]="{'is-primary': show==='count'}">
+            <span class="icon">
+                <fa-icon [icon]="faChartSimple"></fa-icon>
+            </span>
+            <span i18n>Counts</span>
+        </button>
+    </p>
+    <p class="control">
+        <button class="button" (click)="toggleShow.emit()" [ngClass]="{'is-primary': show==='percentage'}">
+            <span class="icon">
+                <fa-icon [icon]="faPercent"></fa-icon>
+            </span>
+            <span i18n>Percentages</span>
+        </button>
+    </p>
+</div>

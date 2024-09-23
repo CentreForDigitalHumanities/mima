@@ -1,21 +1,22 @@
 <h1 class="title" i18n>Questionnaires</h1>
 <h2 class="subtitle" i18n>Eerste Nederlandse Questionnaire</h2>
 <div class="box">
-    <mima-filter-list></mima-filter-list>
+    <mima-questionnaire-filters></mima-questionnaire-filters>
 </div>
-<div *ngIf="!loading && questions && matchedQuestions">
-    @if (matchedQuestions.size) {
-        <div class="level">
-            <div class="level-left">
-                <h1 class="subtitle" i18n>Results: {{matchedQuestions.size}} questions &middot; {{matchedParticipants.size}} respondents &middot; {{matchedDialects.size}}
-                    dialects &middot; {{matchedAnswerCount | transitionNumbers}} answers</h1>
-            </div>
-            <div class="level-right">
-                <mima-manual-button id="query"></mima-manual-button>
-                <mima-download-button [matchedQuestions]="matchedQuestions"></mima-download-button>
-            </div>
+@if (questions && matchedQuestions && matchedQuestions.size) {
+<div>
+    <div class="level">
+        <div class="level-left">
+            <h1 class="subtitle" i18n>Results: {{matchedQuestions.size}} questions &middot; {{matchedParticipants.size}}
+                respondents &middot; {{matchedDialects.size}}
+                dialects &middot; {{matchedAnswerCount | transitionNumbers}} answers</h1>
         </div>
-        <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [questions]="questions"
-            (includeFilter)="onIncludeFilter($event)" (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-list>
-    }
+        <div class="level-right">
+            <mima-manual-button id="query"></mima-manual-button>
+            <mima-download-button [matchedQuestions]="matchedQuestions"></mima-download-button>
+        </div>
+    </div>
+    <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [questions]="questions"
+        (includeFilter)="onIncludeFilter($event)" (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-list>
 </div>
+}

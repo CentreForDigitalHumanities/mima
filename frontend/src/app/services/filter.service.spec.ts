@@ -121,7 +121,7 @@ describe('FilterService', () => {
             expected: Question,
             input: Question,
             filters: {
-                field: Filter['field'],
+                field: Filter<'question'>['field'],
                 content: string[],
                 onlyFullMatch: boolean
             }[],
@@ -161,7 +161,7 @@ describe('FilterService', () => {
         }];
 
         for (const { expected, input, filters, operator } of testData) {
-            const indexedFilters: Filter[] = [];
+            const indexedFilters: Filter<'question'>[] = [];
             let index = 0;
             let emptyFilters = true;
             for (let filter of filters) {

@@ -6,19 +6,19 @@ import { initialState } from '../questionnaire.state';
 import { FilterComponent } from './filter.component';
 
 describe('FilterComponent', () => {
-    let component: FilterComponent;
-    let fixture: ComponentFixture<FilterComponent>;
+    let component: FilterComponent<'question'>;
+    let fixture: ComponentFixture<FilterComponent<'question'>>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [],
-            imports: [FilterComponent, HttpClientTestingModule],
+            imports: [FilterComponent<'question'>, HttpClientTestingModule],
             providers: [provideMockStore({ initialState })]
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(FilterComponent);
+        fixture = TestBed.createComponent(FilterComponent<'question'>);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

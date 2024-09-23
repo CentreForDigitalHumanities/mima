@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, NgZone, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
 import { Judgment, MatchedJudgment as MatchedJudgment } from '../models/judgment';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -7,6 +7,10 @@ import { LuupzigModule } from 'luupzig';
 import { JudgmentsService } from '../services/judgments.service';
 import { LikertBarComponent } from '../likert-bar/likert-bar.component';
 import { IntersectableComponent } from '../services/visibility.service';
+import { MatchedPart, MatchedParts } from '../models/matched-parts';
+import { LoadingComponent } from "../loading/loading.component";
+
+export type LikertShow = 'count' | 'percentage';
 
 interface LikertValues {
     counts: number[],
@@ -15,7 +19,7 @@ interface LikertValues {
 @Component({
     selector: 'mima-likert',
     standalone: true,
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LikertBarComponent],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LikertBarComponent, LoadingComponent],
     templateUrl: './likert.component.html',
     styleUrl: './likert.component.scss'
 })
@@ -23,7 +27,7 @@ interface LikertValues {
 export class LikertComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedJudgment> {
     value: MatchedJudgment;
     @Input() id: string;
-    @Input() judgments: ReadonlyMap<string, MatchedJudgment>;
+    @Input() judgments: ReadonlyMap<string, Judgment>;
     @Input()
     set model(value: MatchedJudgment) {
         this.value = value;
@@ -33,7 +37,7 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
         return this.value;
     }
     @Input() loading: boolean = false;
-    @Input() show: 'count' | 'percentage' = 'count';
+    @Input() show: LikertShow = 'count';
 
     @Output()
     toggleShow = new EventEmitter();
@@ -45,6 +49,17 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     private manuallyExpanded = false;
 
     /**
+     * First show the totals when opening the bars, this way they will animate
+     * into their specific numbers
+     */
+    showTotal = true;
+
+    /**
+     * After collapsing the list of likert bars, the total should be animated up
+     */
+    animateUp = false;
+
+    /**
      * Native element used to render this component.
      */
     nativeElement: HTMLElement;
@@ -53,9 +68,9 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     likertValuesGeneral: LikertValues;
 
     dialectNames: string[] = [];
+    matchedDialects = new Set<string>();
 
-
-    constructor(private judgmentsService: JudgmentsService, element: ElementRef) {
+    constructor(private judgmentsService: JudgmentsService, element: ElementRef, private ngZone: NgZone) {
         this.nativeElement = element.nativeElement;
     }
 
@@ -78,6 +93,8 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
      */
     initializeLikertValues() {
         if (this.model) {
+            this.matchedDialects = new Set();
+            this.likertValues = {};
             for (const response of this.model.responses) {
                 const dialect = response.dialect.text;
                 if (!this.likertValues[dialect]) {
@@ -103,31 +120,90 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
 
     updateLikertValues() {
         this.initializeLikertValues();
-        for (let response of this.model.responses) {
-            const index = Number.parseInt(response.score.text) - 1;
-            this.likertValues[response.dialect.text].counts[index]++;
-            this.likertValues[response.dialect.text].total++;
-            this.likertValuesGeneral.counts[index]++;
-            this.likertValuesGeneral.total++;
+        if (this.model?.responses) {
+            for (const response of this.model.responses) {
+                if (!response.match) {
+                    continue;
+                }
+                const index = Number.parseInt(response.score.text) - 1;
+                const dialect = response.dialect.text;
+                this.likertValues[dialect].counts[index]++;
+                this.likertValues[dialect].total++;
+                this.likertValuesGeneral.counts[index]++;
+                this.likertValuesGeneral.total++;
+                this.matchedDialects.add(dialect);
+            }
         }
         this.updateDialectNames();
     }
-
 
     updateDialectNames() {
         this.dialectNames = Object.keys(this.likertValues);
     }
 
-    formatQuestion(mainQuestion, subQuestion) {
-        if (mainQuestion.includes('…')) {
-            return mainQuestion.replace('…', `<strong>${subQuestion}</strong>`);
-        } else {
-            return `${mainQuestion} <strong>${subQuestion}</strong>`;
+    formatQuestion(mainQuestion: MatchedParts, subQuestion: MatchedParts): MatchedParts {
+        const parts: MatchedPart[] = [...mainQuestion.parts];
+
+        let inserted = false;
+
+        for (let i = 0; i < parts.length; i++) {
+            let targetIndex = parts[i].text.indexOf('…');
+            const part = parts[i];
+            if (targetIndex < 0) {
+                continue;
+            }
+
+            // split after this?
+            if (part.text.length > targetIndex + 1) {
+                parts.splice(i + 1, 0, {
+                    text: part.text.substring(targetIndex + 1),
+                    match: part.match
+                });
+            }
+            parts.splice(i, 1, ...[
+                {
+                    // split before
+                    text: part.text.substring(0, targetIndex),
+                    match: part.match
+                },
+                ...subQuestion.parts.map(p => ({ ...p, bold: true }))]);
+
+            inserted = true;
+            break;
         }
+
+        if (!inserted) {
+            parts.push(
+                { match: false, text: ' ', bold: false },
+                ...subQuestion.parts.map(p => ({ ...p, bold: true })));
+        }
+
+        const result = new MatchedParts({
+            parts,
+            empty: false,
+            emptyFilters: mainQuestion.emptyFilters,
+            fullMatch: mainQuestion.fullMatch && subQuestion.fullMatch,
+            match: mainQuestion.match || subQuestion.match
+        });
+
+        return result;
     }
 
     toggleQuestion(): void {
         this.questionExpanded = !this.questionExpanded;
         this.manuallyExpanded = this.questionExpanded;
+
+        this.showTotal = true;
+
+        if (this.questionExpanded) {
+            this.animateUp = false;
+            setTimeout(() => {
+                this.ngZone.run(() => {
+                    this.showTotal = false;
+                });
+            }, 50);
+        } else {
+            this.animateUp = true;
+        }
     }
 }

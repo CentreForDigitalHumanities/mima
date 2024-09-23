@@ -1,22 +1,21 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { MatchedQuestion, MatchedQuestionDeserialized, Question } from '../models/question';
-import { Filter, FilterOperator } from '../models/filter';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { distinct, map, throttleTime } from 'rxjs/operators';
+import { MatchedQuestion } from '../models/question';
+import { Filter, FilterMatchedObject, FilterObject, FilterObjectName, FilterOperator } from '../models/filter';
 import { CacheService } from './cache.service';
-import { FilterService, isEmptyFilter } from './filter.service';
+import { FilterService, isEmptyFilter, isQuestion } from './filter.service';
 import { ProgressService } from './progress.service';
 import { WorkerReceiver } from './filter.worker-receiver';
-import { environment } from 'src/environments/environment';
-import { Judgment, MatchedJudgment } from '../models/judgment';
+import { environment } from '../../environments/environment';
+import { MatchedJudgment } from '../models/judgment';
 
 
-export type FilterWorkerMessage = {
+export type FilterWorkerMessage<T extends FilterObjectName> = {
     command: 'startCalc',
     value: {
-        questions: Question[],
-        judgments: Judgment[],
-        filters: ReadonlyArray<Filter>,
+        items: FilterObject<T>[],
+        filters: ReadonlyArray<Filter<T>>,
         operator: FilterOperator,
         visibleIds: string[]
     }
@@ -28,21 +27,21 @@ export type FilterWorkerMessage = {
 } | {
     command: 'results',
     value: {
-        matched: MatchedQuestionDeserialized[],
+        matched: FilterMatchedObject<T>[],
         unmatched: string[]
     }
 } | {
     command: 'done' | 'pause' | 'resume'
 };
 
-class Result {
+class Result<T extends FilterObjectName> {
     match: boolean;
-    value: MatchedQuestion | MatchedJudgment;
+    value: FilterMatchedObject<T>;
 }
 
-class FakeWorker {
+class FakeWorker<T extends FilterObjectName> {
     private subscription!: Subscription;
-    constructor(private workerReceiver: WorkerReceiver) {
+    constructor(private workerReceiver: WorkerReceiver<T>) {
         this.subscription = workerReceiver.message$.subscribe(msg => {
             this.onmessage({
                 data: msg
@@ -50,7 +49,7 @@ class FakeWorker {
         });
     }
 
-    onmessage: ((this: FakeWorker, ev: { data: any }) => any) | null;
+    onmessage: ((this: FakeWorker<T>, ev: { data: any }) => any) | null;
 
     terminate() {
         this.subscription?.unsubscribe();
@@ -70,16 +69,16 @@ class FakeWorker {
  * Wraps the communication with a web worker doing the calculations
  * or if web workers aren't available, do the calculations directly.
  */
-class CalculatorWorker {
-    private worker!: Worker | FakeWorker;
-    private results!: BehaviorSubject<{ [id: string]: Result }>;
+class CalculatorWorker<T extends FilterObjectName> {
+    private worker!: Worker | FakeWorker<T>;
+    private results!: BehaviorSubject<{ [id: string]: Result<T> }>;
     private complete = new BehaviorSubject(false);
     private active = new BehaviorSubject<boolean>(true);
 
     /**
      * List of matches
      */
-    results$!: Observable<readonly (MatchedQuestion|MatchedJudgment)[]>;
+    results$!: Observable<readonly FilterMatchedObject<T>[]>;
 
     /**
      * Whether the calculations are done
@@ -91,14 +90,14 @@ class CalculatorWorker {
      */
     active$ = this.active.asObservable();
 
-    constructor(filterService: FilterService,
-        filters: readonly Filter[],
+    constructor(public objectType: T,
+        filterService: FilterService,
+        filters: readonly Filter<T>[],
         operator: FilterOperator,
-        questions: Question[] = [],
-        judgments: Judgment[] = [],
+        items: FilterObject<T>[] = [],
         visibleIds: string[],
-        previous?: CalculatorWorker) {
-        this.results = new BehaviorSubject<{ [id: string]: Result }>(
+        previous?: CalculatorWorker<T>) {
+        this.results = new BehaviorSubject<{ [id: string]: Result<T> }>(
             previous ? { ...previous.results.value } : {});
         this.results$ = this.results.pipe(
             map((result) => Object.values(result).filter(r => r.match).map(r => r.value)));
@@ -107,7 +106,7 @@ class CalculatorWorker {
             // Create a new web worker
             this.worker = new Worker(new URL('./filter.worker', import.meta.url));
             this.worker.onmessage = (event: { data: any }) => {
-                const data: FilterWorkerMessage = {
+                const data: FilterWorkerMessage<T> = {
                     command: event.data.command,
                     value: event.data.value ? JSON.parse(event.data.value) : undefined
                 };
@@ -117,7 +116,7 @@ class CalculatorWorker {
         } else {
             // Fallback for when web workers aren't supported (emulate in a single-threaded mode)
             this.worker = new FakeWorker(new WorkerReceiver(filterService));
-            this.worker.onmessage = (event: { data: FilterWorkerMessage }) => {
+            this.worker.onmessage = (event: { data: FilterWorkerMessage<T> }) => {
                 this.handleMessage(event.data);
             };
         }
@@ -127,8 +126,7 @@ class CalculatorWorker {
             value: {
                 filters,
                 operator,
-                questions,
-                judgments,
+                items,
                 visibleIds
             }
         });
@@ -174,7 +172,7 @@ class CalculatorWorker {
         this.complete.next(this.complete.value);
     }
 
-    private handleMessage(data: FilterWorkerMessage) {
+    private handleMessage(data: FilterWorkerMessage<T>) {
         switch (data.command) {
             case 'results':
                 {
@@ -185,8 +183,18 @@ class CalculatorWorker {
                     }
 
                     for (const match of data.value.matched) {
-                        const restored = MatchedQuestion.restore(match);
-                        updated[restored.id.text] = {
+                        let restored: FilterMatchedObject<T>;
+                        let key: string;
+                        if (isQuestion(match)) {
+                            const question = MatchedQuestion.restore(<any>match);
+                            key = question.id.text;
+                            restored = <any>question;
+                        } else {
+                            const judgment = MatchedJudgment.restore(match);
+                            key = judgment.judgmentId.text;
+                            restored = <any>judgment;
+                        }
+                        updated[key] = {
                             match: true,
                             value: restored
                         }
@@ -209,7 +217,7 @@ class CalculatorWorker {
         }
     }
 
-    private postMessage(data: FilterWorkerMessage) {
+    private postMessage(data: FilterWorkerMessage<T>) {
         this.worker.postMessage({
             command: data.command,
             value: 'value' in data ? JSON.stringify(data.value) : undefined
@@ -224,33 +232,62 @@ export class FilterWorkerService implements OnDestroy {
     private static emptyFilterKey = 'EMPTY';
 
     private subscription: Subscription[] = [];
-    private visibleIds = new BehaviorSubject<string[]>([]);
-    private workers: { [key: string]: CalculatorWorker } = {};
-    private questions: Question[];
-    private judgments: Judgment[];
-    private current: CalculatorWorker = undefined;
-    private currentKey: string = undefined;
+
+    /**
+     * Data for each filterable result set
+     */
+    private data: {
+        [T in FilterObjectName]: {
+            current: CalculatorWorker<T>,
+            currentKey: string,
+            items: FilterObject<T>[],
+            visibleIds: BehaviorSubject<string[]>,
+            workers: { [key: string]: CalculatorWorker<T> },
+            results: BehaviorSubject<readonly FilterMatchedObject<T>[]>
+        }
+    } = {
+            question: {
+                current: undefined,
+                currentKey: undefined,
+                items: undefined,
+                visibleIds: new BehaviorSubject([]),
+                workers: {},
+                results: new BehaviorSubject<readonly MatchedQuestion[]>([])
+            },
+            judgment: {
+                current: undefined,
+                currentKey: undefined,
+                items: undefined,
+                visibleIds: new BehaviorSubject([]),
+                workers: {},
+                results: new BehaviorSubject<readonly MatchedJudgment[]>([])
+            }
+        };
 
     /**
      * Subscriptions on the current worker
      */
     private workerSubscriptions: Subscription[] = [];
 
-    private results = new BehaviorSubject<readonly (MatchedQuestion|MatchedJudgment)[]>([]);
-
     /**
      * List of matches
      */
-    results$ = this.results.asObservable();
+    results$: {
+        [T in FilterObjectName]: Observable<FilterMatchedObject<T>[]>
+    } = Object.assign({},
+        ...Object.entries(this.data).map(([type, { results }]) => ({
+            [type]: results.asObservable()
+        })));
 
     constructor(private cacheService: CacheService, private filterService: FilterService, private progressService: ProgressService) {
-        this.subscription = [
-            // throttle the visible IDs to prevent the worker from dealing with many signals
-            this.visibleIds.pipe(
-                throttleTime(10, undefined, { leading: true, trailing: true }),
-                distinct(ids => ids.join('-'))).subscribe(ids => {
-                    this.current?.setVisible(ids);
-                })];
+        // throttle the visible IDs to prevent the worker from dealing with many signals
+        this.subscription = Object.values(this.data)
+            .map(data => data.visibleIds
+                .pipe(
+                    throttleTime(10, undefined, { leading: true, trailing: true }),
+                    distinct(ids => ids.join('-'))).subscribe(ids => {
+                        data.current?.setVisible(ids);
+                    }));
 
     }
 
@@ -258,98 +295,98 @@ export class FilterWorkerService implements OnDestroy {
         this.subscription.forEach(s => s.unsubscribe());
     }
 
-    private createWorker(key: string, filters: readonly Filter[], operator: FilterOperator) {
-        this.workers[key] = new CalculatorWorker(
+    private createWorker<T extends FilterObjectName>(objectType: T, key: string, filters: readonly Filter<T>[], operator: FilterOperator) {
+        const objectData = this.data[objectType];
+        objectData.workers[key] = new CalculatorWorker<T>(
+            objectType,
             this.filterService,
             filters,
             operator,
-            this.questions,
-            this.judgments,
-            this.visibleIds.value,
-            this.current);
-        this.activateWorker(key);
+            objectData.items,
+            objectData.visibleIds.value,
+            objectData.current);
+        this.activateWorker(objectType, key);
     }
 
-    private activateWorker(key: string) {
-        if (key === this.currentKey) {
+    private activateWorker<T extends FilterObjectName>(objectType: T, key: string) {
+        const objectData = this.data[objectType];
+        if (key === objectData.currentKey) {
             // already active!
             return;
         }
 
         // pause the current worker
-        this.current?.pause();
+        objectData.current?.pause();
 
         this.workerSubscriptions.forEach(s => s.unsubscribe());
-        this.current = this.workers[key];
-        this.currentKey = key;
-        this.current.resume();
+        objectData.current = objectData.workers[key];
+        objectData.currentKey = key;
+        objectData.current.resume();
         const progress = this.progressService.start(true);
 
         this.workerSubscriptions = [
-            this.current.results$.subscribe(results => {
-                console.log('results', results)
-                this.results.next(results);
+            objectData.current.results$.subscribe(items => {
+                objectData.results.next(items);
             }),
-            this.current.complete$.subscribe(done => {
+            objectData.current.complete$.subscribe(done => {
                 if (done) {
                     progress.complete();
                 }
             }),
-            this.current.active$.subscribe(active => {
+            objectData.current.active$.subscribe(active => {
                 if (!active) {
                     // remove the progress for this one
                     progress.hide();
                 }
             })
         ];
-        this.current.emitResults();
+        objectData.current.emitResults();
     }
 
-    // pass questions
-    setData(questions: (Question | Judgment)[]) {
+    /**
+     * Pass questions or judgments
+     */
+    setData<T extends FilterObjectName>(objectType: T, objects: FilterObject<T>[]) {
         this.workerSubscriptions.forEach(s => s.unsubscribe());
-        Object.values(this.workers).forEach(worker => worker.terminate());
-        this.workers = {};
+        Object.values(this.data).forEach(data => {
+            Object.values(data.workers).forEach(worker => worker.terminate());
+            data.workers = {};
+        });
 
-        if (questions.length > 0 && this.isQuestion(questions[0])) {
-            this.questions = questions as Question[];
-            this.current = undefined;
-            this.currentKey = undefined;
-            this.createWorker(FilterWorkerService.emptyFilterKey, [], 'and');
-        } else if (questions.length > 0 && this.isJudgment(questions[0])) {
-            this.judgments = questions as Judgment[];
-            // Perform the desired action for Judgment objects
-        } else {
-            // Handle the case when the input is neither Question nor Judgment objects
+        const objectData = this.data[objectType];
+
+        if (objects.length > 0) {
+            objectData.items = objects;
+            objectData.current = undefined;
+            objectData.currentKey = undefined;
+            this.createWorker(objectType, FilterWorkerService.emptyFilterKey, [], 'and');
         }
     }
 
-    // set filters
-    setFilters(filters: readonly Filter[], operator: FilterOperator) {
+    /**
+     * Set filters
+     * @param type
+     * @param filters
+     * @param operator
+     */
+    setFilters<T extends FilterObjectName>(type: T, filters: readonly Filter<T>[], operator: FilterOperator) {
         const key = filters.length > 0 && filters.find(filter => !isEmptyFilter(filter))
-            ? this.cacheService.key({ filters, operator })
+            ? this.cacheService.key({ type, filters, operator })
             : FilterWorkerService.emptyFilterKey;
 
-        const worker = this.workers[key];
+        const worker = this.data[type].workers[key];
 
         if (worker) {
-            this.activateWorker(key);
+            this.activateWorker(type, key);
         } else {
-            this.createWorker(key, filters, operator);
+            this.createWorker(type, key, filters, operator);
         }
     }
 
-    // set visible questions
-    setVisible(ids: Set<string>) {
-        this.visibleIds.next(Array.from(ids.values()));
+    /**
+     * Set visible questions or judgments
+     */
+    setVisible(type: FilterObjectName, ids: Set<string>) {
+        this.data[type].visibleIds.next(Array.from(ids.values()));
     }
-
-    isQuestion(obj: any): obj is Question {
-        return 'question' in obj && 'answers' in obj;
-    }
-
-    isJudgment(obj: any): obj is Judgment {
-        return 'judgmentId' in obj && 'responses' in obj;
-    }
-
 }

@@ -1,7 +1,9 @@
 @if (!!filterIndexes) {
 @for (index of filterIndexes; track index) {
 <div class="block">
-    <mima-filter [index]="index" (filterChange)="filterChange($event)"></mima-filter>
+    <mima-filter [index]="index" [getFilterFieldOptions]="getFilterFieldOptions" [filters]="filters"
+        [filterTypes]="filterTypes" (remove)="remove.emit(index)"
+        (filterChange)="filterChange.emit($event)"></mima-filter>
 </div>
 }
 }
@@ -9,13 +11,13 @@
 <div class="level">
     <div class="level-left">
         <div class="buttons">
-            <button class="button is-primary" (click)="add()">
+            <button class="button is-primary" (click)="add.emit()">
                 <span class="icon is-small">
                     <fa-icon [icon]="faPlus"></fa-icon>
                 </span>
                 <span i18n>Add Filter</span>
             </button>
-            <button class="button" (click)="clear()">
+            <button class="button" (click)="clearable=false;clear.emit()">
                 <span class="icon is-small">
                     <fa-icon [icon]="faTimes"></fa-icon>
                 </span>
@@ -28,12 +30,12 @@
         <ng-container i18n>Combine:</ng-container> &nbsp;
         <div class="field has-addons">
             <p class="control">
-                <button class="button" [ngClass]="{'is-primary':operator==='and'}" (click)="setOperator('and')">
+                <button class="button" [ngClass]="{'is-primary':operator==='and'}" (click)="setOperator.emit('and')">
                     <span i18n>And</span>
                 </button>
             </p>
             <p class="control">
-                <button class="button" [ngClass]="{'is-primary':operator==='or'}" (click)="setOperator('or')">
+                <button class="button" [ngClass]="{'is-primary':operator==='or'}" (click)="setOperator.emit('or')">
                     <span i18n>Or</span>
                 </button>
             </p>

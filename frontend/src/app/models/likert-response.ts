@@ -35,8 +35,23 @@ export class MatchedLikertResponse implements MatchedLikertResponseProperties {
     constructor(likertResponse: LikertResponse) {
         this.participantId = this.unmatchedValue(likertResponse.participantId)
         this.dialect = this.unmatchedValue(likertResponse.dialect)
-        this.score = this.unmatchedValue(likertResponse.score.toString());
-        this.match = false;
+        this.score = this.unmatchedValue(likertResponse.score?.toString());
+    }
+
+    /**
+     * Reconstructs an object from the deserialized value.
+     * @param value deserialized value
+     * @returns
+     */
+    static restore(value: MatchedLikertResponseDeserializedProperties): MatchedLikertResponse {
+        const properties: Omit<MatchedLikertResponse, 'unmatchedValue'> = {
+            participantId: MatchedParts.restore(value.participantId),
+            dialect: MatchedParts.restore(value.dialect),
+            score: MatchedParts.restore(value.score),
+            match: value.match
+        };
+
+        return Object.setPrototypeOf(properties, MatchedLikertResponse.prototype);
     }
 
     private unmatchedValue(text: string): MatchedParts {

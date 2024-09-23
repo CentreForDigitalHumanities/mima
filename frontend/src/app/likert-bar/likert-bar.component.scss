@@ -10,7 +10,7 @@ $n: 1;
 
 %segment-text {
     text {
-        transition: baseline-shift .4s ease;
+        transition: baseline-shift .4s ease, transform .4s;
     }
 
     text.show-count,
@@ -33,6 +33,7 @@ $n: 1;
 
         rect {
             fill: $back;
+            transition: width .4s, x .4s;
         }
 
         text {

@@ -9,9 +9,10 @@
     @for (segment of segments; track segment.n) {
     <g [attr.class]="'segment-' + segment.n">
         @if (segment.count > 0) {
-        <text [attr.x]="segment.middle" y="20" [attr.class]="show==='count' ? 'show'  : 'hide-count'"
-            text-anchor="middle">{{segment.count}}</text>
-        <text [attr.x]="segment.middle" y="20" [attr.class]="show==='percentage' ? 'show'  : 'hide-percentage'"
+        <text [attr.style]="'transform: translate(' + segment.middle + ')'" y="20"
+            [attr.class]="show==='count' ? 'show'  : 'hide-count'" text-anchor="middle">{{segment.count}}</text>
+        <text [attr.style]="'transform: translate(' + segment.middle + ')'" y="20"
+            [attr.class]="show==='percentage' ? 'show'  : 'hide-percentage'"
             text-anchor="middle">{{segment.percentageRound}}</text>
         }
     </g>

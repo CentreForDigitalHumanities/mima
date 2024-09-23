@@ -1,21 +1,28 @@
-import { AfterViewInit, Component, Input, OnChanges, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
-import { LikertComponent } from '../likert/likert.component';
-import { MatchedJudgment } from '../models/judgment';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LikertComponent, LikertShow } from '../likert/likert.component';
+import { Judgment, MatchedJudgment } from '../models/judgment';
 import { JudgmentsService } from '../services/judgments.service';
-
 
 @Component({
     selector: 'mima-likert-list',
     standalone: true,
-    imports: [LikertComponent],
+    imports: [CommonModule, LikertComponent],
     templateUrl: './likert-list.component.html',
     styleUrl: './likert-list.component.scss'
 })
 export class LikertListComponent implements AfterViewInit, OnChanges {
-    show: 'count' | 'percentage' = 'count';
+    @Input()
+    show: LikertShow;
+
+    @Input()
+    judgments: ReadonlyMap<string, Judgment>;
 
     @Input()
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
+
+    @Output()
+    toggleShow = new EventEmitter<{}>();
 
     @ViewChildren(LikertComponent)
     judgmentComponents!: QueryList<LikertComponent>;
@@ -24,18 +31,14 @@ export class LikertListComponent implements AfterViewInit, OnChanges {
     }
 
     ngAfterViewInit(): void {
-        this.judgmentsService.initialize(this.judgmentComponents);
+        this.judgmentsService.initialize('judgment', this.judgmentComponents);
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes.matchedJudgments && !changes.matchedJudgments.firstChange) {
+        if (changes.matchedJudgments) {
             // when the list of results isn't changed, but the content of the
             // judgments themselves could still have been changed
             this.judgmentsService.setModels(this.matchedJudgments);
         }
-    }
-
-    toggleShow() {
-        this.show = this.show == 'count' ? 'percentage' : 'count';
     }
 }

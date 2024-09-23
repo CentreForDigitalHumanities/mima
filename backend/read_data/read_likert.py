@@ -36,12 +36,12 @@ def get_dialects(data):
             dialect = 'Geen Dialect'
         else:
             dialect = participant[29]
-        participants[''.join(participant[0:2])] = dialect
+        participants[''.join(participant[0:2])] = dialect.strip()
     return participants
 
 def get_questions_and_ids(item):
     line = item.replace('...', 'XXX')
-    sub_question = re.findall(r'\[(.*?)\]', line.split('.')[-1])[0]
+    sub_question = re.findall(r'\[(.*?)\]', line.split('.')[-1])[0].strip()
     main_question = line.split('.')[1].replace('Invulzin', '').strip().replace('XXX', '...')
     ids = item.split('Invulzin')[0]
     main_question_id = ids.split('[')[0]

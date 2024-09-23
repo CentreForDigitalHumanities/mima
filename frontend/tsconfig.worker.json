@@ -14,6 +14,7 @@
         "src/polyfills.ts"
     ],
     "include": [
-        "src/**/*.worker.ts"
+        "src/**/*.worker.ts",
+        "src/**/*.worker.d.ts",
     ]
 }
