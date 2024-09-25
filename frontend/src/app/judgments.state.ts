@@ -1,8 +1,9 @@
+import { FilterState } from './filter.state';
 import { LikertShow } from './likert/likert.component';
 import { Filter, FilterOperator } from './models/filter';
 import { Judgment, MatchedJudgment } from './models/judgment';
 
-export interface State {
+export interface State extends FilterState<'judgments', 'judgment'> {
     judgments: {
         operator: FilterOperator;
         filters: ReadonlyArray<Filter<'judgment'>>;

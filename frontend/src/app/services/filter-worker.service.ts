@@ -5,7 +5,7 @@ import { MatchedQuestion } from '../models/question';
 import { Filter, FilterMatchedObject, FilterObject, FilterObjectName, FilterOperator } from '../models/filter';
 import { CacheService } from './cache.service';
 import { FilterService, isEmptyFilter, isQuestion } from './filter.service';
-import { ProgressService } from './progress.service';
+import { ProgressService, ProgressSession } from './progress.service';
 import { WorkerReceiver } from './filter.worker-receiver';
 import { environment } from '../../environments/environment';
 import { MatchedJudgment } from '../models/judgment';
@@ -269,6 +269,8 @@ export class FilterWorkerService implements OnDestroy {
      */
     private workerSubscriptions: Subscription[] = [];
 
+    private activeProgress?: ProgressSession;
+
     /**
      * List of matches
      */
@@ -318,12 +320,13 @@ export class FilterWorkerService implements OnDestroy {
         // pause the current worker
         objectData.current?.pause();
 
+        this.activeProgress?.hide();
         this.workerSubscriptions.forEach(s => s.unsubscribe());
         objectData.current = objectData.workers[key];
         objectData.currentKey = key;
         objectData.current.resume();
         const progress = this.progressService.start(true);
-
+        this.activeProgress = progress;
         this.workerSubscriptions = [
             objectData.current.results$.subscribe(items => {
                 objectData.results.next(items);
@@ -347,6 +350,7 @@ export class FilterWorkerService implements OnDestroy {
      * Pass questions or judgments
      */
     setData<T extends FilterObjectName>(objectType: T, objects: FilterObject<T>[]) {
+        this.activeProgress?.hide();
         this.workerSubscriptions.forEach(s => s.unsubscribe());
         Object.values(this.data).forEach(data => {
             Object.values(data.workers).forEach(worker => worker.terminate());

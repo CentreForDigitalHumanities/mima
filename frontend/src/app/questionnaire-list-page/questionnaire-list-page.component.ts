@@ -124,7 +124,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                 break;
 
             default:
-                include = this.filterManagementService.filterFieldOptions(filterData.field, this.questions).options.map(({ value }) => value);
+                include = this.filterManagementService.filterFieldOptions('question', filterData.field, this.questions).options.map(({ value }) => value);
                 break;
         }
         this.store.dispatch(setExcludingFilter({

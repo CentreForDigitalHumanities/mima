@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FilterListComponent } from "../filter-list/filter-list.component";
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { State } from '../judgments.state';
-import { Filter, FilterField, FilterOperator, FilterType } from '../models/filter';
+import { BehaviorSubject, combineLatestWith, map, Observable, Subscription } from 'rxjs';
 import {
     faAsterisk,
     faComment,
@@ -10,9 +9,10 @@ import {
     faUser,
     faCommentDots
 } from '@fortawesome/free-solid-svg-icons';
+import { FilterListComponent } from "../filter-list/filter-list.component";
+import { State } from '../judgments.state';
+import { Filter, FilterField, FilterOperator, FilterType } from '../models/filter';
 import { addFilter, clearFilters, removeFilter, setFilters, setFiltersOperator, updateFilter } from '../judgments.actions';
-import { BehaviorSubject, combineLatestWith, Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 import { FilterFieldOptions, FilterManagementService } from '../services/filter-management.service';
 import { Judgment } from '../models/judgment';
 
@@ -27,8 +27,8 @@ import { Judgment } from '../models/judgment';
 export class LikertFiltersComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private judgments: BehaviorSubject<ReadonlyMap<string, Judgment>> = new BehaviorSubject(new Map());
-    private filterFieldOptions: { [TField in FilterField<'judgment'>]?: FilterFieldOptions } = {};
 
+    loading = true;
     filters: readonly Filter<'judgment'>[];
     operator: FilterOperator;
 
@@ -99,19 +99,23 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         this.subscriptions = [
             this.store.select('judgments', 'judgments').subscribe(
                 judgments => {
-                    this.judgments.next(judgments);
-                    this.filterFieldOptions = {};
+                        this.judgments.next(judgments);
+                        this.loading = false;
                 }),
             this.activatedRoute.queryParamMap.pipe(
                 combineLatestWith(this.judgments)
             ).subscribe(([queryParams, judgments]) => {
-                const [operator, filters] = this.filterManagementService.fromQueryParamsJudgments(queryParams, judgments);
+                if (this.loading) {
+                    // do not update state until everything is available
+                    return;
+                }
+                const [operator, filters] = this.filterManagementService.fromQueryParams('judgment', queryParams, judgments);
                 if (filters.length) {
                     this.store.dispatch(setFilters({ filters }));
                     this.store.dispatch(setFiltersOperator({ operator }));
                 }
             }),
-            this.filterManagementService.queryParams$.subscribe(queryParams => {
+            this.filterManagementService.queryParams$.judgment.subscribe(queryParams => {
                 this.router.navigate(
                     [],
                     {
@@ -155,15 +159,11 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         this.store.dispatch(setFiltersOperator({ operator }));
     }
 
-    getFilterFieldOptions: (field: FilterField<'judgment'>) => FilterFieldOptions = (field) => {
-        var options = this.filterFieldOptions[field];
-        if (!options) {
-            options = this.filterManagementService.filterFieldOptionsJudgments(
+    getFilterFieldOptions: (field: FilterField<'judgment'>) => Observable<FilterFieldOptions> = (field) => {
+        return this.judgments.pipe(
+            map(judgments => this.filterManagementService.filterFieldOptions(
+                'judgment',
                 field,
-                this.judgments.value);
-            this.filterFieldOptions[field] = options;
-        }
-
-        return options;
+                judgments)));
     }
 }

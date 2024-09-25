@@ -1,8 +1,9 @@
 import { Question, MatchedQuestion } from "./models/question";
 import { Filter, FilterOperator } from './models/filter';
+import { FilterState } from "./filter.state";
 
 
-export interface State {
+export interface State extends FilterState<'questionnaire', 'question'> {
     questionnaire: {
         operator: FilterOperator;
         filters: ReadonlyArray<Filter<'question'>>;

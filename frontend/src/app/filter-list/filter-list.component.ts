@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Filter, FilterField, FilterObjectName, FilterOperator, FilterType } from '../models/filter';
@@ -27,7 +28,7 @@ export class FilterListComponent<T extends FilterObjectName> {
     filterTypes: FilterType<T>[];
 
     @Input()
-    getFilterFieldOptions: (field: FilterField<T>) => FilterFieldOptions;
+    getFilterFieldOptions: (field: FilterField<T>) => Observable<FilterFieldOptions>;
 
     @Input()
     operator: FilterOperator;

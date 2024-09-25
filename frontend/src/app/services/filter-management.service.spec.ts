@@ -36,6 +36,7 @@ describe('FilterManagementService', () => {
 
     it('should convert to query params', () => {
         const queryParams = service.toQueryParams(
+            'question',
             'and',
             [{
                 field: '*',

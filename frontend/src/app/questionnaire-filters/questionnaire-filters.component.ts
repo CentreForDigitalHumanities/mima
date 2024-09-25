@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FilterListComponent } from "../filter-list/filter-list.component";
+import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { State } from '../questionnaire.state';
-import { Filter, FilterField, FilterOperator, FilterType } from '../models/filter';
+import { BehaviorSubject, combineLatestWith, map, Observable, Subscription } from 'rxjs';
 import {
     faAsterisk,
     faComment,
@@ -11,9 +10,10 @@ import {
     faUser,
     faCommentDots
 } from '@fortawesome/free-solid-svg-icons';
+import { FilterListComponent } from "../filter-list/filter-list.component";
+import { State } from '../questionnaire.state';
+import { Filter, FilterField, FilterOperator, FilterType } from '../models/filter';
 import { addFilter, clearFilters, removeFilter, setFilters, setFiltersOperator, updateFilter } from '../questionnaire.actions';
-import { BehaviorSubject, combineLatestWith, Subscription } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
 import { FilterFieldOptions, FilterManagementService } from '../services/filter-management.service';
 import { Question } from '../models/question';
 
@@ -27,8 +27,8 @@ import { Question } from '../models/question';
 export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private questions: BehaviorSubject<ReadonlyMap<string, Question>> = new BehaviorSubject(new Map());
-    private filterFieldOptions: { [TField in FilterField<'question'>]?: FilterFieldOptions } = {};
 
+    loading = true;
     filters: readonly Filter<'question'>[];
     operator: FilterOperator;
 
@@ -112,18 +112,22 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
             this.store.select('questionnaire', 'questions').subscribe(
                 questions => {
                     this.questions.next(questions);
-                    this.filterFieldOptions = {};
+                    this.loading = false;
                 }),
             this.activatedRoute.queryParamMap.pipe(
-                combineLatestWith(this.questions)
+                combineLatestWith(this.questions),
             ).subscribe(([queryParams, questions]) => {
-                const [operator, filters] = this.filterManagementService.fromQueryParams(queryParams, questions);
+                if (this.loading) {
+                    // do not update state until everything is available
+                    return;
+                }
+                const [operator, filters] = this.filterManagementService.fromQueryParams('question', queryParams, questions);
                 if (filters.length) {
                     this.store.dispatch(setFilters({ filters }));
                     this.store.dispatch(setFiltersOperator({ operator }));
                 }
             }),
-            this.filterManagementService.queryParams$.subscribe(queryParams => {
+            this.filterManagementService.queryParams$.question.subscribe(queryParams => {
                 this.router.navigate(
                     [],
                     {
@@ -167,15 +171,11 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
         this.store.dispatch(setFiltersOperator({ operator }));
     }
 
-    getFilterFieldOptions: (field: FilterField<'question'>) => FilterFieldOptions = (field) => {
-        var options = this.filterFieldOptions[field];
-        if (!options) {
-            options = this.filterManagementService.filterFieldOptions(
+    getFilterFieldOptions: (field: FilterField<'question'>) => Observable<FilterFieldOptions> = (field) => {
+        return this.questions.pipe(
+            map(questions => this.filterManagementService.filterFieldOptions(
+                'question',
                 field,
-                this.questions.value);
-            this.filterFieldOptions[field] = options;
-        }
-
-        return options;
+                questions)));
     }
 }

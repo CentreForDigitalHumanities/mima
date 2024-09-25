@@ -1,13 +1,13 @@
 import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs';
+import { map, switchMap, throttleTime, withLatestFrom } from 'rxjs/operators';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
     faTimesCircle,
     faTrash
 } from '@fortawesome/free-solid-svg-icons';
-import { BehaviorSubject, Observable, Subject, Subscription } from 'rxjs';
-import { map, throttleTime, withLatestFrom } from 'rxjs/operators';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 import { Filter, FilterField, FilterObjectName, FilterType } from '../models/filter';
@@ -26,7 +26,7 @@ import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
     private filterSubject = new BehaviorSubject<readonly Filter<T>[]>([]);
-    private filters$ = this.filterSubject.asObservable(); // this.store.select('questionnaire', 'filters');
+    private filters$ = this.filterSubject.asObservable();
     private index$ = new BehaviorSubject<number>(0);
 
     faTimesCircle = faTimesCircle;
@@ -46,7 +46,7 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
     filterTypes: FilterType<T>[];
 
     @Input()
-    getFilterFieldOptions: (field: FilterField<T>) => FilterFieldOptions;
+    getFilterFieldOptions: (field: FilterField<T>) => Observable<FilterFieldOptions>;
 
     @Input()
     set index(value: number) {
@@ -73,9 +73,16 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
 
     textFieldContent: string;
     dropdownOptions$: Observable<DropdownOption[]> = this.selectedType$.pipe(
-        map((selectedType) => {
+        switchMap((selectedType) => {
             if (selectedType.dropdown) {
-                const { labels, options } = this.getFilterFieldOptions(selectedType.field);
+                return this.getFilterFieldOptions(selectedType.field);
+            }
+
+            return of(null);
+        }),
+        map((fieldOptions) => {
+            if (fieldOptions) {
+                const { labels, options } = fieldOptions;
 
                 this.dropdownLabels = labels;
                 return options;
