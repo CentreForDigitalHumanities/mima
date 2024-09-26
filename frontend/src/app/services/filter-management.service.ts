@@ -378,6 +378,7 @@ export class FilterManagementService implements OnDestroy {
      */
     private filterFieldOptionsJudgments(field: FilterField<'judgment'>, judgments: ReadonlyMap<string, Judgment>) {
         let labels: { [value: string]: string } = {};
+        let subQuestions: { [id: string]: Set<string> } = {};
         for (const [id, judgment] of judgments) {
             switch (field) {
                 case '*':
@@ -401,11 +402,15 @@ export class FilterManagementService implements OnDestroy {
                     break;
 
                 case 'mainQuestionId':
-                    labels[judgment.mainQuestionId] = judgment.mainQuestion;
+                    labels[judgment.mainQuestionId] = `[${judgment.mainQuestionId}] ${judgment.mainQuestion}`;
                     break;
 
                 case 'subQuestionId':
-                    labels[judgment.subQuestionId] = judgment.subQuestion;
+                    if (subQuestions[judgment.subQuestionId]) {
+                        subQuestions[judgment.subQuestionId].add(judgment.subQuestion);
+                    } else {
+                        subQuestions[judgment.subQuestionId] = new Set([judgment.subQuestion]);
+                    }
                     break;
 
                 case 'responses':
@@ -418,6 +423,10 @@ export class FilterManagementService implements OnDestroy {
                     }
                     break;
             }
+        }
+
+        for (let [id, texts] of Object.entries(subQuestions)) {
+            labels[id] = `[${id}] ` + [...texts].join(',');
         }
 
         return labels;
