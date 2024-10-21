@@ -37,7 +37,8 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
         field: '*',
         icon: faAsterisk,
         dropdown: false,
-        placeholder: $localize`Search in all Fields`
+        placeholder: $localize`Search in all Fields`,
+        manual: 'query'
     }, {
         name: $localize`Question`,
         field: 'id',
@@ -73,7 +74,8 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
         field: 'attestation',
         icon: faUser,
         dropdown: true,
-        placeholder: $localize`Select Attested or Unattested`
+        placeholder: $localize`Select Attested or Unattested`,
+        manual: 'attestation'
     }, {
         name: $localize`Gloss`,
         field: 'gloss',
@@ -91,7 +93,8 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
         field: 'chapter',
         icon: faUser,
         dropdown: true,
-        placeholder: $localize`Select Chapter(s)`
+        placeholder: $localize`Select Chapter(s)`,
+        manual: 'chapters'
     }, {
         name: `Subtags`,
         field: 'subtags',

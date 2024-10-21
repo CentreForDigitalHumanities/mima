@@ -49,7 +49,11 @@ export type FilterType<T extends FilterObjectName> = {
     field: FilterField<T>,
     icon: IconDefinition,
     placeholder: string,
-    dropdown: boolean
+    dropdown: boolean,
+    /**
+     * ID of the manual page
+     */
+    manual?: string
 };
 
 export type FilterObject<T extends FilterObjectName> = FilterManifest[T]['type'];

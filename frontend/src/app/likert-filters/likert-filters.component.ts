@@ -37,7 +37,8 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         field: '*',
         icon: faAsterisk,
         dropdown: false,
-        placeholder: $localize`Search in all Fields`
+        placeholder: $localize`Search in all Fields`,
+        manual: 'query'
     }, {
         name: $localize`Question`,
         field: 'mainQuestionId',
