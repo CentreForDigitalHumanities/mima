@@ -7,7 +7,10 @@ export interface Judgment extends Filterable {
     mainQuestion: string;
     mainQuestionId: string;
     subQuestion: string;
-    subQuestionId: string;
+    /**
+     * UID for each distinct sub-question text
+     */
+    subQuestionTextId: string;
     responses: LikertResponse[];
 }
 
@@ -45,7 +48,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
     mainQuestion: MatchedParts
     mainQuestionId: MatchedParts
     subQuestion: MatchedParts
-    subQuestionId: MatchedParts
+    subQuestionTextId: MatchedParts
     responses: MatchedLikertResponse[]
 
     dialectsCount = 0;
@@ -64,7 +67,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             this.mainQuestion = this.unmatchedValue(judgment.mainQuestion);
             this.mainQuestionId = this.unmatchedValue(judgment.mainQuestionId);
             this.subQuestion = this.unmatchedValue(judgment.subQuestion);
-            this.subQuestionId = this.unmatchedValue(judgment.subQuestionId);
+            this.subQuestionTextId = this.unmatchedValue(judgment.subQuestionTextId);
             this.responses = judgment.responses.map(response => new MatchedLikertResponse(response));
         }
     }
@@ -80,7 +83,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             mainQuestion: MatchedParts.restore(value.mainQuestion),
             mainQuestionId: MatchedParts.restore(value.mainQuestionId),
             subQuestion: MatchedParts.restore(value.subQuestion),
-            subQuestionId: MatchedParts.restore(value.subQuestionId),
+            subQuestionTextId: MatchedParts.restore(value.subQuestionTextId),
             responses: value.responses.map(answer => MatchedLikertResponse.restore(answer)),
             dialectsCount: value.dialectsCount,
             matchedResponseCount: value.matchedResponseCount,

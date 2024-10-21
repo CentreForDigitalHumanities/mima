@@ -4,6 +4,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zachter",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST001",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -837,6 +838,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zachtjeser",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST002",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -1670,6 +1672,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zachieser",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST003",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -2503,6 +2506,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zachiesder",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST004",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -3336,6 +3340,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zachtertjes",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST005",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -4169,6 +4174,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zuitjeser",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST006",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -5002,6 +5008,7 @@
         "main_question_id": "V11Z1",
         "sub_question": "zuitjesder",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST007",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -5835,6 +5842,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijver",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST008",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -6668,6 +6676,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijfjeser",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST009",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -7501,6 +7510,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijfieser",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST010",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -8334,6 +8344,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijfkeser",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST011",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -9167,6 +9178,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijfejeser",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST012",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -10000,6 +10012,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "STIJF+mer",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST013",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -10833,6 +10846,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijverjes",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST014",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -11666,6 +11680,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijvertjes",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST015",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -12499,6 +12514,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "stijverkes",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST016",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -13332,6 +13348,7 @@
         "main_question_id": "V11Z2",
         "sub_question": "STIJF+erm",
         "sub_question_id": "SQ010",
+        "sub_question_text_id": "ST017",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -14165,6 +14182,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lomper",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST018",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -14998,6 +15016,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lompjeser",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST019",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -15831,6 +15850,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "LOMP+mer",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST020",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -16664,6 +16684,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lompeser",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST021",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -17497,6 +17518,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lompejeser",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST022",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -18330,6 +18352,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lompertjes",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST023",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -19163,6 +19186,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "LOMP+erm",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST024",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -19996,6 +20020,7 @@
         "main_question_id": "V11Z3",
         "sub_question": "lomperes",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST025",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -20829,6 +20854,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilst",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST026",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -21662,6 +21688,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilste",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST027",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -22495,6 +22522,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilletjest",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST028",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -23328,6 +23356,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stillekest",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST029",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -24161,6 +24190,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilnst",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST030",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -24994,6 +25024,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilnest",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST031",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -25827,6 +25858,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilstn",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST032",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -26660,6 +26692,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilsten",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST033",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -27493,6 +27526,7 @@
         "main_question_id": "V11Z4",
         "sub_question": "stilliest",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST034",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -28326,6 +28360,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachtst",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST035",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -29159,6 +29194,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachtste",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST036",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -29992,6 +30028,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachtjest",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST037",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -30825,6 +30862,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachtjeste",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST038",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -31658,6 +31696,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachiest",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST039",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -32491,6 +32530,7 @@
         "main_question_id": "V11Z5a",
         "sub_question": "zachieste",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST040",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -33324,6 +33364,7 @@
         "main_question_id": "V11Z5b",
         "sub_question": "zuitjest",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST041",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -34157,6 +34198,7 @@
         "main_question_id": "V11Z5b",
         "sub_question": "zuitjeste",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST042",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -34990,6 +35032,7 @@
         "main_question_id": "V11Z5b",
         "sub_question": "zachtstjes",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST043",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -35823,6 +35866,7 @@
         "main_question_id": "V11Z5b",
         "sub_question": "zachtsties",
         "sub_question_id": "SQ010",
+        "sub_question_text_id": "ST044",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -36656,6 +36700,7 @@
         "main_question_id": "V11Z5b",
         "sub_question": "zuitstjes",
         "sub_question_id": "SQ011",
+        "sub_question_text_id": "ST045",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -37489,6 +37534,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfst",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST046",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -38322,6 +38368,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfste",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST047",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -39155,6 +39202,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfjest",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST048",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -39988,6 +40036,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfjeste",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST049",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -40821,6 +40870,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfiest",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST050",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -41654,6 +41704,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfieste",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST051",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -42487,6 +42538,7 @@
         "main_question_id": "V11Z6a",
         "sub_question": "stijfkest",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST052",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -43320,6 +43372,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "stijfkeste",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST053",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -44153,6 +44206,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "STIJF+mst",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST054",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -44986,6 +45040,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "STIJF+mste",
         "sub_question_id": "SQ010",
+        "sub_question_text_id": "ST055",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -45819,6 +45874,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "stijfstjes",
         "sub_question_id": "SQ011",
+        "sub_question_text_id": "ST056",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -46652,6 +46708,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "stijfsties",
         "sub_question_id": "SQ012",
+        "sub_question_text_id": "ST057",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -47485,6 +47542,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "stijfstkes",
         "sub_question_id": "SQ013",
+        "sub_question_text_id": "ST058",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -48318,6 +48376,7 @@
         "main_question_id": "V11Z6b",
         "sub_question": "STIJF+stm",
         "sub_question_id": "SQ014",
+        "sub_question_text_id": "ST059",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -49151,6 +49210,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "lompst",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST060",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -49984,6 +50044,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "lompste",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST061",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -50817,6 +50878,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "lompjest",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST062",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -51650,6 +51712,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "lompjeste",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST063",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -52483,6 +52546,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "LOMP+mst",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST064",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -53316,6 +53380,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "LOMP+mste",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST065",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -54149,6 +54214,7 @@
         "main_question_id": "V11Z7a",
         "sub_question": "lompest",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST066",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -54982,6 +55048,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "lompeste",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST067",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -55815,6 +55882,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "lompejest",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST068",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -56648,6 +56716,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "lompejeste",
         "sub_question_id": "SQ010",
+        "sub_question_text_id": "ST069",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -57481,6 +57550,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "lompstjes",
         "sub_question_id": "SQ011",
+        "sub_question_text_id": "ST070",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -58314,6 +58384,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "LOMP+stm",
         "sub_question_id": "SQ012",
+        "sub_question_text_id": "ST071",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -59147,6 +59218,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "LOMP+stem",
         "sub_question_id": "SQ013",
+        "sub_question_text_id": "ST072",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -59980,6 +60052,7 @@
         "main_question_id": "V11Z7b",
         "sub_question": "lompstes",
         "sub_question_id": "SQ014",
+        "sub_question_text_id": "ST073",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -60813,6 +60886,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "harder",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST074",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -61646,6 +61720,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "harderop",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST075",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -62479,6 +62554,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "hardopper",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST076",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -63312,6 +63388,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "op hard",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST077",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -64145,6 +64222,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "opper hard",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST078",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -64978,6 +65056,7 @@
         "main_question_id": "VA4Z1",
         "sub_question": "op hardere toon",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST079",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -65811,6 +65890,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hardst",
         "sub_question_id": "SQ001",
+        "sub_question_text_id": "ST080",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -66644,6 +66724,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hardste",
         "sub_question_id": "SQ002",
+        "sub_question_text_id": "ST081",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -67477,6 +67558,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hardst op",
         "sub_question_id": "SQ003",
+        "sub_question_text_id": "ST082",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -68310,6 +68392,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hardste op",
         "sub_question_id": "SQ004",
+        "sub_question_text_id": "ST083",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -69143,6 +69226,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hard opst",
         "sub_question_id": "SQ005",
+        "sub_question_text_id": "ST084",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -69976,6 +70060,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "hard opste",
         "sub_question_id": "SQ006",
+        "sub_question_text_id": "ST085",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -70809,6 +70894,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "op hardst",
         "sub_question_id": "SQ007",
+        "sub_question_text_id": "ST086",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -71642,6 +71728,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "op hardste",
         "sub_question_id": "SQ008",
+        "sub_question_text_id": "ST087",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -72475,6 +72562,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "opst hard",
         "sub_question_id": "SQ009",
+        "sub_question_text_id": "ST088",
         "responses": [
             {
                 "participant_id": "1533732",
@@ -73308,6 +73396,7 @@
         "main_question_id": "VA4Z2",
         "sub_question": "opste hard",
         "sub_question_id": "SQ010",
+        "sub_question_text_id": "ST089",
         "responses": [
             {
                 "participant_id": "1533732",

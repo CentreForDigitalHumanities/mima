@@ -52,7 +52,7 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         placeholder: ''
     }, {
         name: $localize`Sub-Question`,
-        field: 'subQuestionId',
+        field: 'subQuestionTextId',
         icon: faComment,
         dropdown: true,
         placeholder: $localize`Select Sub-Question(s)`

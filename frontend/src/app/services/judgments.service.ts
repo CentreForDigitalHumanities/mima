@@ -78,7 +78,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
                 mainQuestion: entry['main_question'],
                 mainQuestionId: entry['main_question_id'],
                 subQuestion: entry['sub_question'],
-                subQuestionId: entry['sub_question_id'],
+                subQuestionTextId: entry['sub_question_text_id'],
                 responses,
             };
             judgments.push(judgment);
