@@ -39,6 +39,9 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
     textField: ElementRef<HTMLInputElement>;
 
     @Input()
+    clearable: boolean;
+
+    @Input()
     set filters(filters: readonly Filter<T>[]) {
         this.filterSubject.next(filters);
     }

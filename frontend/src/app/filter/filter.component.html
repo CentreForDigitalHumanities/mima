@@ -12,7 +12,8 @@
         </div>
         @if (selectedType.manual) {
         <p class="control">
-            <mima-manual-button [id]="selectedType.manual" [showLabel]="false" tooltip="Show manual for this filter" i18n-tooltip></mima-manual-button>
+            <mima-manual-button [id]="selectedType.manual" [showLabel]="false" tooltip="Show manual for this filter"
+                i18n-tooltip></mima-manual-button>
         </p>
         }
     </div>
@@ -37,6 +38,7 @@
             </span>
         </p>
     </ng-template>
+    @if (clearable) {
     <p class="control">
         <button class="button" i18n-title title="Delete filter" (click)="remove.emit()">
             <span class="icon is-small">
@@ -44,4 +46,5 @@
             </span>
         </button>
     </p>
+    }
 </div>

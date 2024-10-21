@@ -54,7 +54,6 @@ export class ManualService {
             const response = await fetch(path);
             if (response.ok) {
                 result = await response.json();
-                console.log(result);
             } else {
                 console.error(response);
             }

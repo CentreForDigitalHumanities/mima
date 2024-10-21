@@ -1,8 +1,8 @@
 @if (!!filterIndexes) {
 @for (index of filterIndexes; track index) {
 <div class="block">
-    <mima-filter [index]="index" [getFilterFieldOptions]="getFilterFieldOptions" [filters]="filters"
-        [filterTypes]="filterTypes" (remove)="remove.emit(index)"
+    <mima-filter [index]="index" [getFilterFieldOptions]="getFilterFieldOptions" [clearable]="clearable"
+        [filters]="filters" [filterTypes]="filterTypes" (remove)="remove.emit(index)"
         (filterChange)="filterChange.emit($event)"></mima-filter>
 </div>
 }
