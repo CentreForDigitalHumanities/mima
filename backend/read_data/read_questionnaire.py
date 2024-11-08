@@ -194,6 +194,16 @@ def complement_questionnaire_with_additional_data(cleaned_translation_questions:
 
     return cleaned_translation_questions
 
+def generate_questionnaire_dict(data_path, participants_path, additional_data_path):
+    questionnaire_data = read_csv(data_path)
+    participants_data = read_csv(participants_path)
+    additional_data = read_csv(additional_data_path)
+    questionnaire_dict = extract_questions(questionnaire_data[0])
+    participant_dialect_dict = match_ids_to_dialects(participants_data)
+    cleaned_translation_questions = extract_answers(questionnaire_data, questionnaire_dict, participant_dialect_dict)
+    cleaned_translation_questions = complement_questionnaire_with_additional_data(cleaned_translation_questions, additional_data)
+    return cleaned_translation_questions
+
 # Define a custom function to serialize data classes as dictionaries
 def serialize_classes(obj):
     if isinstance(obj, Question) or isinstance(obj, Answer):
@@ -202,16 +212,10 @@ def serialize_classes(obj):
 
 def main():
     ## Read data files
-    questionnaire_data = read_csv(DATA_PATH)
-    participants_data = read_csv(PARTICIPANTS_PATH)
-    additional_data = read_csv(ADDITIONAL_DATA_PATH)
-    questionnaire_dict = extract_questions(questionnaire_data[0])
-    participant_dialect_dict = match_ids_to_dialects(participants_data)
-    cleaned_translation_questions = extract_answers(questionnaire_data, questionnaire_dict, participant_dialect_dict)
-    cleaned_translation_questions = complement_questionnaire_with_additional_data(cleaned_translation_questions, additional_data)
+    cleaned_translation_questions_meertens_1 = generate_questionnaire_dict(DATA_PATH, PARTICIPANTS_PATH, ADDITIONAL_DATA_PATH)
     ## dump as json
     with open(os.path.join(OUTPUT_PATH, 'cleaned_translation_questions.json'), 'w') as file:
-        json.dump(cleaned_translation_questions, file, default=serialize_classes, indent=4)
+        json.dump(cleaned_translation_questions_meertens_1, file, default=serialize_classes, indent=4)
 
 if __name__ == "__main__":
     main()
