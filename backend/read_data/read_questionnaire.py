@@ -42,18 +42,41 @@ class Question:
 class Answer:
     tag: str
     answer: str
+    country: str
     dialect: str
+    local_dialect: str
+    additional_dialect_info: str
     participant_id: str
 
-@dataclass
-class Dialect:
-    dialect: str
-    speakers: list = None
-    translations: dict = None
+def get_dialects(combined_string):
+    split_string = combined_string.split(';')
+    country = None
+    dialect = None
+    local_dialect = None
+    additional_dialect_info = None
+    if len(split_string) == 1:
+        country = split_string[0].strip()
+        dialect = split_string[0].strip()
+    elif len(split_string) == 2:
+        country = split_string[0].strip()
+        dialect = split_string[1].strip()
+    elif len(split_string) == 3:
+        country = split_string[0].strip()
+        dialect = split_string[1].strip()
+        local_dialect = split_string[2].strip()
+    elif len(split_string) > 3:
+        country = split_string[0].strip()
+        dialect = split_string[1].strip()
+        local_dialect = split_string[2].strip()
+        additional_dialect_info = '; '.join(split_string[3:])
+
+    return country, dialect, local_dialect, additional_dialect_info
+
 
 def match_ids_to_dialects(participants_data):
     """
-    Matches dialects to participant IDs based on the provided participants data.
+    Matches dialects (column AM, index 38) to participant IDs (columns A & B, index 0 & 1)
+    based on the provided participants data.
 
     Args:
         participants_data (list): A list of participant data from the csv file.
@@ -63,13 +86,8 @@ def match_ids_to_dialects(participants_data):
     """
     participant_dialect_dict = {}
     for participant in participants_data[1:]:
-        if participant[29] == 'Het dialect van …':
-            dialect = ' '.join(participant[29:31])
-        elif participant[29] == '':
-            dialect = 'Geen Dialect'
-        else:
-            dialect = participant[29]
-        participant_dialect_dict[''.join(participant[0:2])] = dialect
+        country, dialect, local_dialect, additional_dialect_info = get_dialects(participant[38])
+        participant_dialect_dict[''.join(participant[0:2])] = (country, dialect, local_dialect, additional_dialect_info)
     return participant_dialect_dict
 
 def get_prompt(question: str):
@@ -136,7 +154,15 @@ def extract_answers(questionnaire_data: list, questionnaire_dict: dict, particip
                 # mark unattested answers for empty cells
                 # empty cleaned cells are skipped
                 if cell == '' and not questionnaire_dict[index].cleaned:
-                    answer = Answer(question.tag, answer='unattested', dialect=participant_dialect_dict[participant], participant_id=participant)
+                    answer = Answer(
+                        question.tag,
+                        answer='unattested',
+                        country=participant_dialect_dict[participant][0] if participant_dialect_dict[participant][0] else None,
+                        dialect=participant_dialect_dict[participant][1] if participant_dialect_dict[participant][1] else None,
+                        local_dialect=participant_dialect_dict[participant][2] if participant_dialect_dict[participant][2] else None,
+                        additional_dialect_info=participant_dialect_dict[participant][3] if participant_dialect_dict[participant][3] else None,
+                        participant_id=participant
+                    )
                     if question.answers:
                         question.answers.append(answer)
                     else:
@@ -146,15 +172,22 @@ def extract_answers(questionnaire_data: list, questionnaire_dict: dict, particip
                     if questionnaire_dict[index+1].cleaned and row[index+1] != '':
                         pass
                     else:
-                        answer = Answer(question.tag, answer=cell, dialect=participant_dialect_dict[participant], participant_id=participant)
+                        answer = Answer(
+                            question.tag,
+                            answer=cell,
+                            country=participant_dialect_dict[participant][0] if participant_dialect_dict[participant][0] else None,
+                            dialect=participant_dialect_dict[participant][1] if participant_dialect_dict[participant][1] else None,
+                            local_dialect=participant_dialect_dict[participant][2] if participant_dialect_dict[participant][2] else None,
+                            additional_dialect_info=participant_dialect_dict[participant][3] if participant_dialect_dict[participant][3] else None,
+                            participant_id=participant)
                         if question.answers:
                             question.answers.append(answer)
                         else:
                             question.answers = [answer]
 
 
-        ## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
-        ## and save it in a cleaned_translation_questions_dict
+    ## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
+    ## and save it in a cleaned_translation_questions_dict
     cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
     for index in questionnaire_dict:
         question = questionnaire_dict[index]
