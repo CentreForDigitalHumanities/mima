@@ -28,7 +28,6 @@ class Question:
     prompt: str = 'NA'
     cleaned: bool = False
     split_item: str = 'NA'  # same as the question but split morphologically with punctuation
-    comment: str = None,
     chapter: str = 'NA'
     subtags: list = None
     en_translation: str = 'NA'
@@ -45,9 +44,6 @@ class Answer:
     answer: str
     dialect: str
     participant_id: str
-    ma: str = 'NA'
-    prompt: str = "NA"
-    prompt_ma: str = 'NA'
 
 @dataclass
 class Dialect:
@@ -119,8 +115,6 @@ def extract_questions(headers_row):
                 type = 'translation'
             )
             questionnaire_item.prompt = get_prompt(questionnaire_item.question)
-        elif first_word == 'COMMENT':
-            questionnaire_dict[index].comment = remove_periods(' '.join(cell.split()[1:]))
         else:
             questionnaire_item = Question(
                 tag = remove_periods(first_word),
@@ -158,23 +152,24 @@ def extract_answers(questionnaire_data: list, questionnaire_dict: dict, particip
                         else:
                             question.answers = [answer]
 
+
         ## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
         ## and save it in a cleaned_translation_questions_dict
-        cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
-        for index in questionnaire_dict:
-            question = questionnaire_dict[index]
-            if question.answers and question.type == 'translation' and not question.cleaned:
-                if questionnaire_dict[index+1].cleaned:
-                    if questionnaire_dict[index+1].answers:
-                        questionnaire_dict[index+1].answers += question.answers
-                    else:
-                        questionnaire_dict[index+1].answers = question.answers
-                else: #if there is no CLEANED column, the answers of this question are added
-                    cleaned_translation_questions[question.tag] = question
-            if question.cleaned:
+    cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
+    for index in questionnaire_dict:
+        question = questionnaire_dict[index]
+        if question.answers and question.type == 'translation' and not question.cleaned:
+            if questionnaire_dict[index+1].cleaned:
+                if questionnaire_dict[index+1].answers:
+                    questionnaire_dict[index+1].answers += question.answers
+                else:
+                    questionnaire_dict[index+1].answers = question.answers
+            else: #if there is no CLEANED column, the answers of this question are added
                 cleaned_translation_questions[question.tag] = question
+        if question.cleaned:
+            cleaned_translation_questions[question.tag] = question
 
-        return cleaned_translation_questions
+    return cleaned_translation_questions
 
 def complement_questionnaire_with_additional_data(cleaned_translation_questions: dict, additional_data: list):
     ## Go through the additional data of chapters, subtags, etc.
@@ -210,7 +205,7 @@ def main():
     questionnaire_data = read_csv(DATA_PATH)
     participants_data = read_csv(PARTICIPANTS_PATH)
     additional_data = read_csv(ADDITIONAL_DATA_PATH)
-    questionnaire_dict = extract_questions(questionnaire_data)
+    questionnaire_dict = extract_questions(questionnaire_data[0])
     participant_dialect_dict = match_ids_to_dialects(participants_data)
     cleaned_translation_questions = extract_answers(questionnaire_data, questionnaire_dict, participant_dialect_dict)
     cleaned_translation_questions = complement_questionnaire_with_additional_data(cleaned_translation_questions, additional_data)
