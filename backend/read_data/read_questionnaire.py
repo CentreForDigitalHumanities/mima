@@ -49,6 +49,11 @@ class Answer:
     participant_id: str
 
 def get_dialects(combined_string):
+    """
+    Gets the country, main dialect, and subdialect from a string
+    that contains the contents of the 'CLEANED combined
+    hierarchical dialect data' cell
+    """
     split_string = combined_string.split(';')
     country = None
     dialect = None
@@ -56,7 +61,6 @@ def get_dialects(combined_string):
     additional_dialect_info = None
     if len(split_string) == 1:
         country = split_string[0].strip()
-        dialect = split_string[0].strip()
     elif len(split_string) == 2:
         country = split_string[0].strip()
         dialect = split_string[1].strip()
@@ -68,29 +72,38 @@ def get_dialects(combined_string):
         country = split_string[0].strip()
         dialect = split_string[1].strip()
         local_dialect = split_string[2].strip()
-        additional_dialect_info = '; '.join(split_string[3:])
+        additional_dialect_info = '; '.join(split_string[3:]).strip()
 
     return country, dialect, local_dialect, additional_dialect_info
 
 
-def match_ids_to_dialects(participants_data):
+def match_ids_to_dialects(participants_data: list):
     """
-    Matches dialects (column AM, index 38) to participant IDs (columns A & B, index 0 & 1)
-    based on the provided participants data.
+    Matches dialects (column AM, index 38) to participant IDs (columns A & B,
+    index 0 & 1) based on the provided participants data.
 
     Args:
         participants_data (list): A list of participant data from the csv file.
 
     Returns:
-        participant_dialect_dict (dict): A dictionary mapping participant IDs to their corresponding dialects.
+        participant_dialect_dict (dict): A dictionary mapping participant IDs
+        to their corresponding dialects.
+
+    NOTE: currently, this script does not assign several dialects to a single
+    participant, it simply assigns the last dialect found. Awaiting input from
+    the team on how to deal with several/combined dialects.
     """
     participant_dialect_dict = {}
     for participant in participants_data[1:]:
-        country, dialect, local_dialect, additional_dialect_info = get_dialects(participant[38])
+        for combined_string in participant[38].split(' + '):
+            country, dialect, local_dialect, additional_dialect_info = get_dialects(combined_string)
         participant_dialect_dict[''.join(participant[0:2])] = (country, dialect, local_dialect, additional_dialect_info)
     return participant_dialect_dict
 
 def get_prompt(question: str):
+    """
+    Gets the translation prompt from a question string
+    """
     prompt_pattern = r'\[(.*?)\]'
     match = re.search(prompt_pattern, question)
     if match:
@@ -144,10 +157,12 @@ def extract_questions(headers_row):
 
     return questionnaire_dict
 
-def extract_answers(questionnaire_data: list, questionnaire_dict: dict, participant_dialect_dict: dict):
+def extract_answers(questionnaire_data: list, questionnaire_dict: dict, participant_dialect_dict: dict, exclude_list: list=[]):
     ## Fill the answers for each question
     for row in questionnaire_data[1:]:
         participant = ''.join(row[0:2])
+        if participant in exclude_list:
+            pass
         for index, cell in enumerate(row):
             question = questionnaire_dict[index]
             if question.type == 'translation':
