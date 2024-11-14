@@ -2,5 +2,23 @@
     {
         "id": "query",
         "title": "Search Query"
+    },
+    {
+        "id": "questionnaires",
+        "title": "Questionnaires",
+        "subPages": [
+            {
+                "id": "attestation",
+                "title": "Attestation"
+            },
+            {
+                "id": "chapters",
+                "title": "Chapters"
+            }
+        ]
+    },
+    {
+        "id": "judgment",
+        "title": "Grammaticality Judgments"
     }
 ]

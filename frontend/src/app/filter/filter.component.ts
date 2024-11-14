@@ -13,6 +13,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { Filter, FilterField, FilterObjectName, FilterType } from '../models/filter';
 import { DropdownOption, FilterFieldOptions } from '../services/filter-management.service';
 import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
+import { ManualButtonComponent } from '../manual-button/manual-button.component';
 
 
 
@@ -21,7 +22,7 @@ import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss'],
     standalone: true,
-    imports: [CommonModule, FontAwesomeModule, FormsModule, MultiSelectModule, FilterTagsComponent]
+    imports: [CommonModule, FontAwesomeModule, FormsModule, ManualButtonComponent, MultiSelectModule, FilterTagsComponent]
 })
 export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
@@ -36,6 +37,9 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
 
     @ViewChild('textField')
     textField: ElementRef<HTMLInputElement>;
+
+    @Input()
+    clearable: boolean;
 
     @Input()
     set filters(filters: readonly Filter<T>[]) {

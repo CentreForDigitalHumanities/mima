@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,7 +13,7 @@ import { ManualService } from '../services/manual.service';
     templateUrl: './manual-button.component.html',
     styleUrl: './manual-button.component.scss'
 })
-export class ManualButtonComponent {
+export class ManualButtonComponent implements OnChanges {
     isOpen = false;
     faBook = faBook;
 
@@ -22,8 +22,18 @@ export class ManualButtonComponent {
     @Input()
     id: string;
 
+    @Input()
+    tooltip: string;
+
+    @Input()
+    showLabel = true;
+
     constructor(private manualService: ManualService) {
 
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        this.title$ = undefined;
     }
 
     open() {

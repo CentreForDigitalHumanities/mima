@@ -37,7 +37,8 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         field: '*',
         icon: faAsterisk,
         dropdown: false,
-        placeholder: $localize`Search in all Fields`
+        placeholder: $localize`Search in all Fields`,
+        manual: 'query'
     }, {
         name: $localize`Question`,
         field: 'mainQuestionId',
@@ -52,7 +53,7 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         placeholder: ''
     }, {
         name: $localize`Sub-Question`,
-        field: 'subQuestionId',
+        field: 'subQuestionTextId',
         icon: faComment,
         dropdown: true,
         placeholder: $localize`Select Sub-Question(s)`

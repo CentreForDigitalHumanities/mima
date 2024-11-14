@@ -1,12 +1,24 @@
 <aside class="menu" *ngIf="pages">
-    <span i18n>Manual Topics</span>
+    <p class="menu-label">
+        <span i18n>Manual Topics</span>
+    </p>
     <ul class="menu-list">
         @for (page of pages; track page.id) {
         <li>
             <a [routerLink]="['/manual', page.id]" routerLinkActive="is-active">
-                <fa-icon [icon]="faBook"></fa-icon>
                 {{page.title}}
             </a>
+            @if (page.subPages) {
+            <ul>
+                @for (subPage of page.subPages; track subPage.id) {
+                <li>
+                    <a [routerLink]="['/manual', subPage.id]" routerLinkActive="is-active">
+                        {{subPage.title}}
+                    </a>
+                </li>
+                }
+            </ul>
+            }
         </li>
         }
     </ul>

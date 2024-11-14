@@ -1,13 +1,21 @@
 <div class="field is-grouped is-flex-direction-row" *ngIf="filter">
-    <div class="control has-icons-left">
-        <div class="select">
-            <select [(ngModel)]="selectedType" (change)="emit()">
-                <option *ngFor="let filterType of filterTypes" [ngValue]="filterType">{{filterType.name}}</option>
-            </select>
+    <div class="field has-addons">
+        <div class="control has-icons-left">
+            <div class="select">
+                <select [(ngModel)]="selectedType" (change)="emit()">
+                    <option *ngFor="let filterType of filterTypes" [ngValue]="filterType">{{filterType.name}}</option>
+                </select>
+            </div>
+            <span class="icon is-left">
+                <fa-icon [icon]="selectedType.icon"></fa-icon>
+            </span>
         </div>
-        <span class="icon is-left">
-            <fa-icon [icon]="selectedType.icon"></fa-icon>
-        </span>
+        @if (selectedType.manual) {
+        <p class="control">
+            <mima-manual-button [id]="selectedType.manual" [showLabel]="false" tooltip="Show manual for this filter"
+                i18n-tooltip></mima-manual-button>
+        </p>
+        }
     </div>
     <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
         <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
@@ -30,6 +38,7 @@
             </span>
         </p>
     </ng-template>
+    @if (clearable) {
     <p class="control">
         <button class="button" i18n-title title="Delete filter" (click)="remove.emit()">
             <span class="icon is-small">
@@ -37,4 +46,5 @@
             </span>
         </button>
     </p>
+    }
 </div>
