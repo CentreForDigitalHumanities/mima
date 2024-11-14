@@ -135,7 +135,6 @@ export class ProgressSession {
     }
 
     constructor(private _value: ProgressValue, private service: IProgressService) {
-
     }
 
     next(count: number, total: number) {

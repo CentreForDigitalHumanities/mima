@@ -1,8 +1,10 @@
-<button class="button" (click)="open()">
+<button class="button" (click)="open()" [attr.title]="tooltip">
     <span class="icon">
         <fa-icon [icon]="faBook"></fa-icon>
     </span>
+    @if (showLabel) {
     <span i18n>Manual</span>
+    }
 </button>
 @if (isOpen) {
 <dialog open class="modal is-active">

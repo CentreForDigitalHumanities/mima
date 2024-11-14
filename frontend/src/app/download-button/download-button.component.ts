@@ -10,7 +10,7 @@ import { DownloadService } from '../services/download.service';
 import { State } from '../questionnaire.state';
 
 const FilterFieldNames: {
-    [T in FilterField]?: string
+    [T in FilterField<'question'>]?: string
 } = {
     '*': $localize`any`,
     id: $localize`question`,
@@ -29,7 +29,7 @@ const FilterFieldNames: {
 })
 export class DownloadButtonComponent implements OnInit, OnDestroy {
     faDownload = faDownload;
-    filters: readonly Filter[] = [];
+    filters: readonly Filter<'question'>[] = [];
 
     subscription = new Subscription();
 

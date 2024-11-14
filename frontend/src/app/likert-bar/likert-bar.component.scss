@@ -1,0 +1,49 @@
+$segments: (
+    (var(--bulma-danger-soft), var(--bulma-danger-bold)),
+    (color-mix(in oklab, var(--bulma-danger-soft), var(--bulma-warning-soft)), color-mix(in oklab, var(--bulma-danger-bold), var(--bulma-warning-bold))),
+    (var(--bulma-warning-soft), var(--bulma-warning-bold)),
+    (color-mix(in oklab, var(--bulma-warning-soft), var(--bulma-success-soft)), color-mix(in oklab, var(--bulma-warning-bold), var(--bulma-success-bold))),
+    (var(--bulma-success-soft), var(--bulma-success-bold))
+);
+
+$n: 1;
+
+%segment-text {
+    text {
+        transition: baseline-shift .4s ease, transform .4s;
+    }
+
+    text.show-count,
+    text.show-percentage {
+        baseline-shift: 0px;
+    }
+
+    text.hide-count {
+        baseline-shift: 40px;
+    }
+
+    text.hide-percentage {
+        baseline-shift: -40px;
+    }
+}
+
+@each $back, $front in $segments {
+    g.segment-#{$n} {
+        @extend %segment-text;
+
+        rect {
+            fill: $back;
+            transition: width .4s, x .4s;
+        }
+
+        text {
+            fill: $front;
+        }
+    }
+
+    $n: $n + 1;
+}
+
+svg {
+    cursor: pointer;
+}

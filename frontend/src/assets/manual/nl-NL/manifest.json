@@ -2,5 +2,23 @@
     {
         "id": "query",
         "title": "Zoekopdracht"
+    },
+    {
+        "id": "questionnaires",
+        "title": "Vragenlijsten",
+        "subPages": [
+            {
+                "id": "attestation",
+                "title": "Bevestiging"
+            },
+            {
+                "id": "chapters",
+                "title": "Hoofdstukken"
+            }
+        ]
+    },
+    {
+        "id": "judgment",
+        "title": "Grammaticale oordelen"
     }
 ]

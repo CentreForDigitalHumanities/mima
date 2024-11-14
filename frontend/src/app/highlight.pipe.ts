@@ -20,8 +20,10 @@ export class HighlightPipe implements PipeTransform {
 
     transform(text: MatchedParts, skipFullMatch = false): SafeHtml {
         const highlightedText = text.parts.map(part => {
-            const sanitizedText = this.sanitizedLineBreaks(part.text);
-
+            let sanitizedText = this.sanitizedLineBreaks(part.text);
+            if (part.bold) {
+                sanitizedText = `<strong>${sanitizedText}</strong>`;
+            }
             return part.match && (!skipFullMatch || !text.fullMatch) ? `<span class="highlight">${sanitizedText}</span>` : sanitizedText;
         }).join('');
 

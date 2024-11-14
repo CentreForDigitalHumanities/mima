@@ -9,15 +9,16 @@ import { environment } from '../../environments/environment';
 
 import { FilterService } from "./filter.service";
 import { WorkerReceiver } from './filter.worker-receiver';
+import { FilterField, FilterObjectName } from '../models/filter';
 
 @NgModule({
     imports: [BrowserModule],
 })
-export class WorkerModule implements DoBootstrap {
-    private receiver!: WorkerReceiver;
+export class WorkerModule<T extends FilterObjectName> implements DoBootstrap {
+    private receiver!: WorkerReceiver<T>;
 
     constructor(filterService: FilterService) {
-        this.receiver = new WorkerReceiver(filterService);
+        this.receiver = new WorkerReceiver<T>(filterService);
     }
 
     ngDoBootstrap() {

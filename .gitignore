@@ -31,8 +31,10 @@ ENV/
 env.bak/
 venv.bak/
 
-# Node
+# Node & Yarn
 node_modules/
+yarn.lock
+package-lock.json
 frontend/src/environments/version.ts
 
 # local settings

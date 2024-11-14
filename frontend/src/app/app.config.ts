@@ -11,6 +11,10 @@ import { routes } from './app.routes';
 import { questionnaireReducer } from './questionnaire.reducer';
 import { QuestionnaireEffects } from './questionnaire.effects';
 
+import { JudgmentsEffects } from './judgments.effects';
+import { judgmentsReducer } from './judgments.reducer';
+
+
 export const appConfig: ApplicationConfig = {
     providers: [
         provideAnimations(),
@@ -28,9 +32,10 @@ export const appConfig: ApplicationConfig = {
         // The server should then switch index.html based on a language
         // cookie with a fallback to Dutch e.g. /nl/static/index.html
         { provide: APP_BASE_HREF, useValue: '/' },
-        provideEffects(QuestionnaireEffects),
+        provideEffects([QuestionnaireEffects, JudgmentsEffects]),
         provideStore({
-            questionnaire: questionnaireReducer
+            questionnaire: questionnaireReducer,
+            judgments: judgmentsReducer
         }, {
             runtimeChecks: {
                 strictStateImmutability: true,

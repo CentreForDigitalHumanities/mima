@@ -1,15 +1,11 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { Subscription, combineLatestWith } from 'rxjs';
-import { addFilter, clearFilters, setFilters, setFiltersOperator, updateFilter } from '../questionnaire.actions';
-import { State } from '../questionnaire.state';
-import { Filter, FilterOperator } from '../models/filter';
+import { Filter, FilterField, FilterObjectName, FilterOperator, FilterType } from '../models/filter';
 import { isEmptyFilter } from '../services/filter.service';
-import { FilterManagementService } from '../services/filter-management.service';
+import { FilterFieldOptions } from '../services/filter-management.service';
 import { FilterComponent } from '../filter/filter.component';
 
 @Component({
@@ -19,82 +15,52 @@ import { FilterComponent } from '../filter/filter.component';
     standalone: true,
     imports: [CommonModule, FilterComponent, FontAwesomeModule]
 })
-export class FilterListComponent implements OnInit, OnDestroy {
+export class FilterListComponent<T extends FilterObjectName> {
+    private _filters: readonly Filter<T>[] = [];
+
     faPlus = faPlus;
     faTimes = faTimes;
 
     clearable = false;
     filterIndexes: number[] = [];
+
+    @Input()
+    filterTypes: FilterType<T>[];
+
+    @Input()
+    getFilterFieldOptions: (field: FilterField<T>) => Observable<FilterFieldOptions>;
+
+    @Input()
     operator: FilterOperator;
 
-    private subscriptions: Subscription[];
-
-    @Output()
-    filtersChange = new EventEmitter<Filter[]>();
-
-    constructor(
-        private activatedRoute: ActivatedRoute,
-        private router: Router,
-        private filterManagementService: FilterManagementService,
-        private store: Store<State>) {
-    }
-
-    ngOnInit(): void {
-        this.subscriptions = [
-            this.activatedRoute.queryParamMap.pipe(
-                combineLatestWith(this.store.select('questionnaire', 'questions'))
-            ).subscribe(([queryParams, questions]) => {
-                const [operator, filters] = this.filterManagementService.fromQueryParams(queryParams, questions);
-                if (filters.length) {
-                    this.store.dispatch(setFilters({ filters }));
-                    this.store.dispatch(setFiltersOperator({ operator }));
-                }
-            }),
-            this.filterManagementService.queryParams$.subscribe(queryParams => {
-                this.router.navigate(
-                    [],
-                    {
-                        relativeTo: this.activatedRoute,
-                        queryParams,
-                        replaceUrl: true
-                    })
-            }),
-            this.store.select('questionnaire', 'filters').subscribe(filters => {
-                this.clearable = !!filters.find(filter => !isEmptyFilter(filter));
-
-                if (this.filterIndexes.length !== filters.length) {
-                    this.filterIndexes = [];
-                    for (let i = 0; i < filters.length; i++) {
-                        this.filterIndexes[i] = i;
-                    }
-                }
-            }),
-            this.store.select('questionnaire', 'operator').subscribe(operator => {
-                this.operator = operator;
-            })
-        ];
-    }
-
-    ngOnDestroy(): void {
-        for (const subscription of this.subscriptions) {
-            subscription.unsubscribe();
+    @Input()
+    set filters(filters: readonly Filter<T>[]) {
+        this._filters = filters;
+        this.clearable = !!filters.find(filter => !isEmptyFilter(filter));
+        if (this.filterIndexes.length !== filters.length) {
+            this.filterIndexes = [];
+            for (let i = 0; i < filters.length; i++) {
+                this.filterIndexes[i] = i;
+            }
         }
     }
 
-    filterChange(updated: Filter): void {
-        this.store.dispatch(updateFilter({ filter: updated }));
+    get filters() {
+        return this._filters;
     }
 
-    add(): void {
-        this.store.dispatch(addFilter());
-    }
+    @Output()
+    filterChange = new EventEmitter<Filter<T>>();
 
-    clear(): void {
-        this.clearable = false;
-        this.store.dispatch(clearFilters());
-    }
+    @Output()
+    add = new EventEmitter<void>();
 
-    setOperator(operator: FilterOperator): void {
-        this.store.dispatch(setFiltersOperator({ operator }));
-    }
+    @Output()
+    clear = new EventEmitter<void>();
+
+    @Output()
+    remove = new EventEmitter<number>();
+
+    @Output()
+    setOperator = new EventEmitter<FilterOperator>();
 }

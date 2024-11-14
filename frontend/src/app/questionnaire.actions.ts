@@ -36,16 +36,16 @@ export const addFilter = createAction('[Questionnaire] Add Filter');
 /**
  * Adds or updates a filter to search for the field matching a specific content
  */
-export const setIncludingFilter = createAction('[Questionnaire Add Singular Filter', props<{
-    field: FilterField,
+export const setIncludingFilter = createAction('[Questionnaire] Add Singular Filter', props<{
+    field: FilterField<'question'>,
     content: string
 }>());
 
 /**
  * Adds or updates a filter to search for a field NOT matching a specific content
  */
-export const setExcludingFilter = createAction('[Questionnaire Add Excluding Filter', props<{
-    field: FilterField,
+export const setExcludingFilter = createAction('[Questionnaire] Add Excluding Filter', props<{
+    field: FilterField<'question'>,
     /**
      * This is the content which should NOT be shown
      */
@@ -60,7 +60,7 @@ export const setExcludingFilter = createAction('[Questionnaire Add Excluding Fil
  * Replaces all filters
  */
 export const setFilters = createAction('[Questionnaire] Set Filters', props<{
-    filters: ReadonlyArray<Filter>
+    filters: ReadonlyArray<Filter<'question'>>
 }>());
 
 export const setFiltersOperator = createAction('[Questionnaire] Set Filters Operator', props<{
@@ -71,7 +71,7 @@ export const setFiltersOperator = createAction('[Questionnaire] Set Filters Oper
  * Update specific filter
  */
 export const updateFilter = createAction('[Questionnaire] Update Filter', props<{
-    filter: Readonly<Filter>
+    filter: Readonly<Filter<'question'>>
 }>());
 
 /**

@@ -1,4 +1,4 @@
-import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
@@ -14,6 +14,7 @@ import { ManualButtonComponent } from '../manual-button/manual-button.component'
 import { DownloadButtonComponent } from '../download-button/download-button.component';
 import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
+import { QuestionnaireFiltersComponent } from "../questionnaire-filters/questionnaire-filters.component";
 
 @Component({
     selector: 'mima-questionnaire-list-page',
@@ -26,7 +27,9 @@ import { TransitionNumbersPipe } from '../transition-numbers.pipe';
         ManualButtonComponent,
         DownloadButtonComponent,
         QuestionnaireListComponent,
-        TransitionNumbersPipe]
+        TransitionNumbersPipe,
+        QuestionnaireFiltersComponent
+    ]
 })
 export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     private subscriptions: Subscription[];
@@ -40,14 +43,13 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     matchedDialects = new Set<string>();
     matchedParticipants = new Set<string>();
 
-    loading = false;
-    questions: Map<string, Question>;
+    questions: ReadonlyMap<string, Question>;
     dialects: string[] = [];
 
     participantIds: string[];
     progress: ProgressSession;
 
-    constructor(private questionnaireService: QuestionnaireService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService, private ngZone: NgZone) {
+    constructor(private questionnaireService: QuestionnaireService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService) {
         this.progress = this.progressService.start(true);
     }
 
@@ -122,7 +124,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                 break;
 
             default:
-                include = this.filterManagementService.filterFieldOptions(filterData.field, this.questions).options.map(({ value }) => value);
+                include = this.filterManagementService.filterFieldOptions('question', filterData.field, this.questions).options.map(({ value }) => value);
                 break;
         }
         this.store.dispatch(setExcludingFilter({

@@ -34,8 +34,8 @@ export class ManualService {
                 const response = await fetch(path);
                 const html = await this.parseResponse(response);
                 const manifest = await this.getManifest();
-                const title = manifest.find(page => page.id === id)?.title;
-                return { id, html, title };
+                const title = manifest.flatMap(item => [item].concat(item.subPages ?? [])).find(page => page.id === id)?.title;
+                return { id, html, title, subPages: [] };
             }
             finally {
                 progress.complete();
@@ -81,7 +81,8 @@ export class ManualService {
             id,
             html,
             title,
-            status: 'show'
+            status: 'show',
+            subPages: []
         });
     }
 
@@ -108,6 +109,7 @@ export type ManualPageEvent =
 export interface ManualPageMetadata {
     title: string;
     id: string;
+    subPages: ManualPageMetadata[]
 }
 
 export interface ManualPage extends ManualPageMetadata {

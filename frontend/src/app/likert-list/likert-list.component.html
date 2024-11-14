@@ -1,0 +1,16 @@
+@if (judgments) {
+    @for (judgmentId of judgments.keys(); track judgmentId) {
+        @if (matchedJudgments.has(judgmentId)) {
+            <mima-likert
+                [judgments]="judgments"
+                [id]="judgmentId"
+                [show]="show"
+                (toggleShow)="toggleShow.emit()"></mima-likert>
+        }
+    }
+    @empty {
+        <div class="notification is-warning" i18n>
+            No matches found!
+        </div>
+    }
+}

@@ -1,0 +1,69 @@
+@use "bulma/sass/utilities/mixins";
+@import '../../variables.scss';
+
+.tag:not(body).is-delete:hover,
+.tag:not(body).is-delete:focus {
+    background-color: var(--bulma-danger);
+    color: var(--bulma-danger-invert);
+}
+
+.judgment-header {
+    animation: append-animate .3s ease-in-out;
+    display: block;
+}
+
+.metadata {
+    padding-top: .5rem;
+}
+
+
+:host:hover .metadata {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    background-color: var(--bulma-background);
+
+}
+
+svg text {
+    display: block;
+    opacity: 0;
+}
+
+svg:hover text {
+    display: block;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+.animate-down {
+    animation: append-animate-down .3s ease-in-out;
+}
+
+.animate-up {
+    animation: append-animate-up .15s ease-in-out;
+}
+
+@keyframes append-animate-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes append-animate-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

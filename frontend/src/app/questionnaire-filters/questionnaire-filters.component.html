@@ -1,0 +1,5 @@
+@if (!loading) {
+<mima-filter-list [filters]="filters" [filterTypes]="filterTypes" [getFilterFieldOptions]="getFilterFieldOptions"
+    [operator]="operator" (add)="add()" (remove)="remove($event)" (clear)="clear()"
+    (filterChange)="filterChange($event)" (setOperator)="setOperator($event)"></mima-filter-list>
+}

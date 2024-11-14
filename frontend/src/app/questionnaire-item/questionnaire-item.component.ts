@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCheck, faChevronDown, faCircleNotch, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faChevronDown, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { LuupzigModule } from 'luupzig';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
@@ -9,12 +9,14 @@ import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
 import { MatchedParts } from '../models/matched-parts';
+import { IntersectableComponent } from '../services/visibility.service';
+import { LoadingComponent } from "../loading/loading.component";
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
 
 export interface FilterEvent {
-    field: FilterField;
+    field: FilterField<'question'>;
     content: string;
 }
 
@@ -33,10 +35,10 @@ interface MatchedAnswerGrouped {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent],
     standalone: true
 })
-export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
+export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion> {
     /**
      * Did the user manually expand this question? Don't automatically close it.
      */
@@ -44,18 +46,17 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
     faCheck = faCheck;
     faChevronDown = faChevronDown;
-    faCircleNotch = faCircleNotch;
     faTimes = faTimes;
     faUser = faUser;
 
     @Input() id: string;
-    @Input() questions: Map<string, Question>;
+    @Input() questions: ReadonlyMap<string, Question>;
     @Input() loading = false;
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
     dialectsCount = 0;
-    matchedQuestion: MatchedQuestion;
+    value: MatchedQuestion;
     matchedAnswerCount = 0;
     matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
     matchedDialectNames: string[] = [];
@@ -68,11 +69,14 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
     nativeElement: HTMLElement;
 
     @Input()
-    set question(value: MatchedQuestion) {
-        this.matchedQuestion = value;
+    set model(value: MatchedQuestion) {
+        this.value = value;
         if (value) {
             this.updateCounts();
         }
+    }
+    get model() {
+        return this.value;
     }
 
     /**
@@ -100,18 +104,18 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
 
 
     private updateCounts() {
-        if (!this.matchedQuestion?.answers) {
+        if (!this.model?.answers) {
             // once the question is hidden - reset the state
             this.manuallyExpanded = false;
             this.questionExpanded = false;
             return;
         }
 
-        this.matchedAnswerCount = this.matchedQuestion.matchedAnswerCount;
-        this.matchedDialects = this.groupAnswers(this.matchedQuestion.matchedDialects);
-        this.matchedDialectsCount = this.matchedQuestion.matchedDialectsCount;
-        this.matchedDialectNames = this.matchedQuestion.matchedDialectNames;
-        this.dialectsCount = this.matchedQuestion.dialectsCount;
+        this.matchedAnswerCount = this.model.matchedAnswerCount;
+        this.matchedDialects = this.groupAnswers(this.model.matchedDialects);
+        this.matchedDialectsCount = this.model.matchedDialectsCount;
+        this.matchedDialectNames = this.model.matchedDialectNames;
+        this.dialectsCount = this.model.dialectsCount;
         if (!this.manuallyExpanded) {
             this.questionExpanded = this.onlyQuestion ||
                 this.matchedDialectsCount <= autoExpandDialectCount ||
@@ -155,7 +159,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
      * emits a filter to be the only filter to the parent component
      * this filter always contains a single filter, i.e. one dialect, one question, or one participant
      */
-    onFilterSelected(event: MouseEvent, field: FilterField, content: string) {
+    onFilterSelected(event: MouseEvent, field: FilterField<'question'>, content: string) {
         this.includeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }
@@ -164,7 +168,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy {
      * emits a filter to be excluded to the parent component
      * params same as for onFilterSelected
      */
-    onExcludeFilter(event: MouseEvent, field: FilterField, content: string) {
+    onExcludeFilter(event: MouseEvent, field: FilterField<'question'>, content: string) {
         this.excludeFilter.emit({ field, content });
         event.stopPropagation();  // to ensure that the panel does not collapse or expand
     }

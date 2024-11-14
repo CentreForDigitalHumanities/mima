@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { ManualPageMetadata, ManualService } from '../services/manual.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -14,7 +13,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class ManualMenuComponent {
     pages: ManualPageMetadata[];
-    faBook = faBook;
 
     constructor(private manualService: ManualService) {
         this.init();

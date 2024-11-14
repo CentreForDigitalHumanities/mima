@@ -1,0 +1,48 @@
+@if (!model) {
+<mima-loading></mima-loading>
+}
+@else {
+<div class="box mt-3 animate-down" [ngClass]="{'is-loading': loading}">
+    <div class="judgmement-header metadata" (click)="toggleQuestion()">
+        <h2 class="subtitle" [innerHTML]="formatQuestion(model.mainQuestion, model.subQuestion) | highlight"></h2>
+        <hr>
+    </div>
+    @if (questionExpanded) {
+    <div class="box gloss">
+        <p>gloss and stuff</p>
+    </div>
+    }
+    @if (!questionExpanded) {
+    <div class="general-judgments" [ngClass]="{'animate-up': animateUp, 'animate-down': !animateUp}">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <mima-likert-bar [counts]="likertValuesGeneral.counts" [total]="likertValuesGeneral.total" [show]="show"
+                    (toggleShow)="toggleShow.emit()"></mima-likert-bar>
+            </div>
+            <div class="column is-one-quarter">
+                <p i18n>Number of responses: {{ likertValuesGeneral.total }}</p>
+            </div>
+        </div>
+    </div>
+    }
+    @else {
+    <div class="judgments">
+        @for (dialect of dialectNames; track dialect) {
+        @if (matchedDialects.has(dialect)) {
+        <h3 [innerHTML]="dialect" class="animate-down"></h3>
+        <div class="columns animate-down">
+            <div class="column is-three-quarters">
+                <mima-likert-bar [counts]="showTotal ? likertValuesGeneral.counts : likertValues[dialect].counts"
+                    [total]="showTotal ? likertValuesGeneral.total : likertValues[dialect].total" [show]="show"
+                    (toggleShow)="toggleShow.emit()"></mima-likert-bar>
+            </div>
+            <div class="column is-one-quarter">
+                <p i18n>Number of responses: {{ likertValues[dialect].total }}</p>
+            </div>
+        </div>
+        }
+        }
+    </div>
+    }
+</div>
+}

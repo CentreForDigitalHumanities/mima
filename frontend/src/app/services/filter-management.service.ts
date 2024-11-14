@@ -1,21 +1,28 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable, combineLatestWith, map, skip } from 'rxjs';
-import { State } from '../questionnaire.state';
-import { Filter, FilterField, FilterOperator } from '../models/filter';
+import { BehaviorSubject, Observable, Subscription, combineLatestWith, map, skip } from 'rxjs';
+import { State as QuestionnaireState } from '../questionnaire.state';
+import { State as JudgmentsState } from '../judgments.state';
+import { Filter, FilterField, FilterObject, FilterObjectName, FilterOperator } from '../models/filter';
 import { Question } from '../models/question';
 import { QuestionnaireService } from './questionnaire.service';
+import { Judgment } from '../models/judgment';
+import { JudgmentsService } from './judgments.service';
 
 export interface DropdownOption {
     label: string;
     value: string;
 }
 
-interface FilterFieldOptions {
+export interface FilterFieldOptions {
     labels: { [value: string]: string },
     options: DropdownOption[]
 }
+
+type FieldCache<T extends FilterObjectName> = {
+    [key in FilterField<T>]?: FilterFieldOptions
+};
 
 const fullMatchPrefix = '$';
 const negativePrefix = '-';
@@ -26,27 +33,64 @@ const valueQuote = '"';
 @Injectable({
     providedIn: 'root'
 })
-export class FilterManagementService {
-    queryParams$: Observable<any>;
+export class FilterManagementService implements OnDestroy {
+    private subscription: Subscription;
 
-    private filterFieldOptionsCache: {
-        [key in FilterField]?: FilterFieldOptions
+    queryParams$: {
+        [T in FilterObjectName]: Observable<{ [fieldName: string]: string }>
     };
 
-    /**
-     * Used to check whether the current cache content is still current.
-     */
-    private filterFieldQuestions: Map<string, Question>;
+    private data: {
+        [T in FilterObjectName]: {
+            fieldCache?: FieldCache<T>,
+            /**
+             * Used to check whether the current cache content is still current.
+             */
+            objects?: ReadonlyMap<string, FilterObject<T>>
+        }
+    } = {
+            question: {},
+            judgment: {}
+        };
 
-    constructor(private store: Store<State>, private questionnaireService: QuestionnaireService) {
-        this.queryParams$ = this.store.select('questionnaire', 'filters').pipe(
-            skip(1), // skip emitting the initial filters
-            combineLatestWith(
-                this.store.select('questionnaire', 'operator'),
-                this.store.select('questionnaire', 'questions')),
-            map(([filters, operator, questions]) => this.toQueryParams(operator, filters, questions)));
+    constructor(private store: Store<QuestionnaireState & JudgmentsState>, private questionnaireService: QuestionnaireService, private judgmentsService: JudgmentsService) {
+        this.subscription = new Subscription();
+        this.queryParams$ = {
+            question: this.selectQueryParams(this.subscription, 'question', 'questionnaire', 'questions'),
+            judgment: this.selectQueryParams(this.subscription, 'judgment', 'judgments', 'judgments')
+        };
     }
 
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
+
+    private selectQueryParams<
+        TKey extends keyof (QuestionnaireState & JudgmentsState),
+        TItemsKey extends keyof (QuestionnaireState & JudgmentsState)[TKey],
+        TType extends FilterObjectName
+    >(subscription: Subscription, type: TType, key: TKey, itemsKey: TItemsKey) {
+        // make sure it always emits a value when subscribed (e.g. when entering the page)
+        const subject = new BehaviorSubject({});
+        subscription.add(this.store.select(key, 'filters').pipe(
+            skip(1),
+            combineLatestWith(
+                this.store.select(key, 'operator'),
+                this.store.select(key, itemsKey).pipe(
+                    // skip the initial empty set and wait for actual results
+                    skip(1)
+                )),
+            map(([filters, operator, objects]) => this.toQueryParams(
+                type,
+                operator,
+                <Filter<TType>[]>filters,
+                <ReadonlyMap<string, FilterObject<TType>>>objects)))
+            .subscribe(values => {
+                subject.next(values);
+            }));
+
+        return subject.asObservable();
+    }
     /**
      * Encodes the filters for placement in the URL
      * @param operator operator used for combining the filters
@@ -54,7 +98,7 @@ export class FilterManagementService {
      * @param questions questions database
      * @returns querystring parameters
      */
-    toQueryParams(operator: FilterOperator, filters: readonly Filter[], questions: Map<string, Question>): { [fieldName: string]: string } {
+    toQueryParams<T extends FilterObjectName>(type: T, operator: FilterOperator, filters: readonly Filter<T>[], questions: ReadonlyMap<string, FilterObject<T>>): { [fieldName: string]: string } {
         if (!filters) {
             return {};
         }
@@ -67,7 +111,7 @@ export class FilterManagementService {
                 empty = false;
             }
 
-            const { negative, content } = this.negativeFilter(filter, questions);
+            const { negative, content } = this.negativeFilter(type, filter, questions);
 
             queryParams[this.toParamKey(filter, negative, queryParams)] = this.toParamValue(content);
         }
@@ -86,12 +130,12 @@ export class FilterManagementService {
     /**
      * Decodes the filters from the URL
      * @param queryParams querystring parameters
-     * @param questions questions database
+     * @param objects objects database
      * @returns list of filters and operator
      */
-    fromQueryParams(queryParams: ParamMap, questions: Map<string, Question>): [FilterOperator, Filter[]] {
+    fromQueryParams<T extends FilterObjectName>(type: T, queryParams: ParamMap, objects: ReadonlyMap<string, FilterObject<T>>): [FilterOperator, Filter<T>[]] {
         let operator: FilterOperator = 'and';
-        const filters: Filter[] = [];
+        const filters: Filter<T>[] = [];
         for (const key of queryParams.keys) {
             if (key === operatorField) {
                 operator = <FilterOperator>queryParams.get(key);
@@ -105,7 +149,7 @@ export class FilterManagementService {
 
                 if (negative) {
                     // the value contains the content which should be excluded
-                    const included = new Set(this.filterFieldOptions(field, questions).options.map(option => option.value));
+                    const included = new Set(this.filterFieldOptions(type, field, objects).options.map(option => option.value));
                     for (const excluded of content) {
                         included.delete(excluded);
                     }
@@ -124,7 +168,7 @@ export class FilterManagementService {
         return [operator, filters];
     }
 
-    private fromParamKey(key: string): { field: FilterField, onlyFullMatch: boolean, negative: boolean } {
+    private fromParamKey<T extends FilterObjectName = any>(key: string): { field: FilterField<T>, onlyFullMatch: boolean, negative: boolean } {
         let onlyFullMatch = false;
         let negative = false;
         if (key.startsWith(fullMatchPrefix)) {
@@ -135,13 +179,13 @@ export class FilterManagementService {
         }
 
         return {
-            field: <FilterField>key.substring((onlyFullMatch ? 1 : 0) + (negative ? 1 : 0)).replace(/\d+$/, ''),
+            field: <FilterField<T>>key.substring((onlyFullMatch ? 1 : 0) + (negative ? 1 : 0)).replace(/\d+$/, ''),
             onlyFullMatch,
             negative
         };
     }
 
-    private toParamKey(filter: Filter, negative: boolean, queryParams: { [fieldName: string]: string }): string {
+    private toParamKey(filter: Filter<any>, negative: boolean, queryParams: { [fieldName: string]: string }): string {
         const fieldName = `${filter.onlyFullMatch ? fullMatchPrefix : ''}${negative ? negativePrefix : ''}${filter.field}`;
 
         let suffix = '';
@@ -159,9 +203,9 @@ export class FilterManagementService {
      * @param questions questions, used to look for the options
      * @returns whether this filter could be more compactly written as excluding values instead of including them
      */
-    private negativeFilter(filter: Filter, questions: Map<string, Question>): { negative: boolean, content: string[] } {
+    private negativeFilter<T extends FilterObjectName>(type: T, filter: Filter<T>, questions: ReadonlyMap<string, FilterObject<T>>): { negative: boolean, content: string[] } {
         if (filter.onlyFullMatch && filter.field !== '*') {
-            const options = this.filterFieldOptions(filter.field, questions);
+            const options = this.filterFieldOptions(type, filter.field, questions);
             if (options.options.length - filter.content.length < filter.content.length) {
                 return { negative: true, content: Array.from(this.excludeFrom(options.options.map(o => o.value), filter.content)) };
             }
@@ -240,19 +284,46 @@ export class FilterManagementService {
     /**
      * Gets the options which can be selected for a filter on a field.
      * @param field field to filter
+     * @param objects the objects to filter, mapped by ID
+     * @returns drop down options for a value selector
+     */
+    filterFieldOptions<T extends FilterObjectName>(type: T, field: FilterField<T>, objects: ReadonlyMap<string, FilterObject<T>>): FilterFieldOptions {
+        if (this.data[type].objects !== objects) {
+            this.data[type].objects = objects;
+            this.data[type].fieldCache = {};
+        }
+
+        if (field in this.data[type].fieldCache) {
+            return this.data[type].fieldCache[field];
+        }
+
+        let labels: { [value: string]: string } = {};
+        switch (type) {
+            case 'question':
+                labels = this.filterFieldOptionsQuestion(<FilterField<'question'>>field, <ReadonlyMap<string, Question>>objects);
+                break;
+
+            case 'judgment':
+                labels = this.filterFieldOptionsJudgments(<FilterField<'judgment'>>field, <ReadonlyMap<string, Judgment>>objects);
+                break;
+
+            default:
+                throw `Missing implementation for ${type}`;
+        }
+        const options = this.labelsToOptions(labels);
+
+        this.data[type].fieldCache[field] = options;
+
+        return options;
+    }
+
+    /**
+     * Gets the options for judgments which can be selected for a filter on a field.
+     * @param field field to filter
      * @param questions the questions to filter, mapped by ID
      * @returns drop down options for a value selector
      */
-    filterFieldOptions(field: FilterField, questions: Map<string, Question>): FilterFieldOptions {
-        if (this.filterFieldQuestions !== questions) {
-            this.filterFieldQuestions = questions;
-            this.filterFieldOptionsCache = {};
-        }
-
-        if (field in this.filterFieldOptionsCache) {
-            return this.filterFieldOptionsCache[field];
-        }
-
+    private filterFieldOptionsQuestion(field: FilterField<'question'>, questions: ReadonlyMap<string, Question>) {
         let labels: { [value: string]: string } = {};
         if (field == 'attestation') {
             labels = { 'unattested': $localize`unattested`, 'attested': $localize`attested` }
@@ -296,8 +367,69 @@ export class FilterManagementService {
             }
         }
 
+        return labels;
+    }
 
-        const result = {
+    /**
+     * Gets the options for judgments which can be selected for a filter on a field.
+     * @param field field to filter
+     * @param judgments the judgments to filter, mapped by ID
+     * @returns drop down options for a value selector
+     */
+    private filterFieldOptionsJudgments(field: FilterField<'judgment'>, judgments: ReadonlyMap<string, Judgment>) {
+        let labels: { [value: string]: string } = {};
+        let subQuestions: { [id: string]: string } = {};
+        for (const [id, judgment] of judgments) {
+            switch (field) {
+                case '*':
+                    break;
+
+                case 'dialect':
+                    for (let response of judgment.responses) {
+                        labels[response[field]] = response[field];
+                    }
+                    break;
+
+                case 'judgmentId':
+                    labels[id] = judgment.mainQuestion + ' - ' + judgment.subQuestion;
+                    break;
+
+                case 'participantId':
+                    for (let participant of this.judgmentsService.getParticipants(judgment.responses)) {
+                        labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                    }
+
+                    break;
+
+                case 'mainQuestionId':
+                    labels[judgment.mainQuestionId] = `[${judgment.mainQuestionId}] ${judgment.mainQuestion}`;
+                    break;
+
+                case 'subQuestionTextId':
+                    subQuestions[judgment.subQuestionTextId] = judgment.subQuestion;
+                    break;
+
+                case 'responses':
+                    // not used
+                    break;
+
+                default:
+                    for (let score = 1; score <= 5; score++) {
+                        labels[`${score}`] = `${score}`;
+                    }
+                    break;
+            }
+        }
+
+        for (let [id, text] of Object.entries(subQuestions)) {
+            labels[id] = `[${id}] ${text}`;
+        }
+
+        return labels;
+    }
+
+    private labelsToOptions(labels: { [value: string]: string }): FilterFieldOptions {
+        return {
             labels,
             options: Object.entries(labels).sort(([x, a], [y, b]) => {
                 if (a < b) {
@@ -311,9 +443,5 @@ export class FilterManagementService {
                 label
             }))
         };
-
-        this.filterFieldOptionsCache[field] = result;
-
-        return result;
     }
 }
