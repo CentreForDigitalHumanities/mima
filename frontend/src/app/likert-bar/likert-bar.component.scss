@@ -10,20 +10,20 @@ $n: 1;
 
 %segment-text {
     text {
-        transition: baseline-shift .4s ease, transform .4s;
+        transition: transform .4s ease, transform .4s;
     }
 
     text.show-count,
     text.show-percentage {
-        baseline-shift: 0px;
+        transform: none;
     }
 
     text.hide-count {
-        baseline-shift: 40px;
+        transform: translateY(40px);
     }
 
     text.hide-percentage {
-        baseline-shift: -40px;
+        transform: translateY(-40px);
     }
 }
 

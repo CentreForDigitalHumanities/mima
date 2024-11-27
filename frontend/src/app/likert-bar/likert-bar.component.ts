@@ -10,9 +10,9 @@ interface BarSegment {
      */
     x: string,
     /**
-     * Offset x percentage to the center of the bar with % sign
+     * Offset x to the center of the bar with % sign
      */
-    middle: string,
+    middle: number,
     /**
      * Percentage with % sign
      */
@@ -30,6 +30,7 @@ interface BarSegment {
 })
 export class LikertBarComponent implements OnChanges {
     segments: BarSegment[];
+    totalWidth = 800;
 
     @Input()
     show: 'count' | 'percentage' = 'count';
@@ -56,7 +57,7 @@ export class LikertBarComponent implements OnChanges {
                 x: `${x.toFixed(2)}%`,
                 n: i + 1,
                 count,
-                middle: `${x + percentage * 0.5}%`,
+                middle: ((x + percentage * 0.5) / 100) * this.totalWidth,
                 percentage: `${percentage.toFixed(2)}%`,
                 // not enough room for a %
                 percentageRound: percentage.toFixed(0) + (percentage < 3 ? '' : '%'),

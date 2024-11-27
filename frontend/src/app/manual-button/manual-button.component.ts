@@ -1,23 +1,18 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
-import { ManualComponent } from '../manual/manual.component';
 import { ManualService } from '../services/manual.service';
 
 @Component({
     selector: 'mima-manual-button',
     standalone: true,
-    imports: [CommonModule, RouterLink, FontAwesomeModule, ManualComponent],
+    imports: [CommonModule,  FontAwesomeModule],
     templateUrl: './manual-button.component.html',
     styleUrl: './manual-button.component.scss'
 })
-export class ManualButtonComponent implements OnChanges {
-    isOpen = false;
+export class ManualButtonComponent {
     faBook = faBook;
-
-    title$: Promise<string>;
 
     @Input()
     id: string;
@@ -32,18 +27,7 @@ export class ManualButtonComponent implements OnChanges {
 
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        this.title$ = undefined;
-    }
-
     open() {
-        if (!this.title$) {
-            this.title$ = this.manualService.getManualPage(this.id).then(page => page.title);
-        }
-        this.isOpen = true;
-    }
-
-    close() {
-        this.isOpen = false;
+        this.manualService.showManualPage(this.id);
     }
 }

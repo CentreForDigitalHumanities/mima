@@ -5,11 +5,12 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { DarkModeService } from './services/dark-mode.service';
 import { ProgressComponent } from './progress/progress.component';
+import { ManualDialogComponent } from "./manual-dialog/manual-dialog.component";
 
 @Component({
     selector: 'mima-root',
     standalone: true,
-    imports: [RouterOutlet, MenuComponent, FooterComponent, ProgressComponent],
+    imports: [RouterOutlet, MenuComponent, FooterComponent, ProgressComponent, ManualDialogComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
