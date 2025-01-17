@@ -63,16 +63,13 @@ additional_data = read_csv(ADDITIONAL_DATA_PATH)
 ## Match dialects to participant IDs
 participants = {}
 for participant in participants_data[1:]:
-    if participant[29] == 'Het dialect van …':
-        dialect = ' '.join(participant[29:31])
-    elif participant[29] == '':
-        dialect = 'Geen Dialect'
-    else:
-        dialect = participant[29]
+    separators = [';', '&', '+']
+    pattern = '|'.join(map(re.escape, separators))
+    dialect = [subdialect.strip() for subdialect in re.split(pattern, participant[32])]
     participants[''.join(participant[0:2])] = dialect
 
 ## Create a Question for each question and save it as an instance
-questionnaire_items = {} #keys: question index!
+questionnaire_items = {} #keys: question index
 for index, cell in enumerate(data[0]):
     first_word = cell.split()[0]
     if first_word == 'CLEANED':
