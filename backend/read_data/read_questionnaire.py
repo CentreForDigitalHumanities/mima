@@ -66,7 +66,7 @@ for participant in participants_data[1:]:
     separators = [';', '&', '+']
     pattern = '|'.join(map(re.escape, separators))
     dialect = [subdialect.strip() for subdialect in re.split(pattern, participant[32])]
-    participants[''.join(participant[0:2])] = dialect
+    participants[''.join(participant[0:2])] = dialect if dialect[0] != '' else ['SKIP']
 
 ## Create a Question for each question and save it as an instance
 questionnaire_items = {} #keys: question index
