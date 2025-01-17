@@ -96,14 +96,15 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
             this.matchedDialects = new Set();
             this.likertValues = {};
             for (const response of this.model.responses) {
-                const dialect = response.dialect.text;
-                if (!this.likertValues[dialect]) {
-                    this.likertValues[dialect] = {
-                        counts: [],
-                        total: 0
-                    };
-                    for (let i = 0; i < 5; i++) {
-                        this.likertValues[dialect].counts[i] = 0;
+                for (const dialect of response.dialects) {
+                    if (!this.likertValues[dialect.text]) {
+                        this.likertValues[dialect.text] = {
+                            counts: [],
+                            total: 0
+                        };
+                        for (let i = 0; i < 5; i++) {
+                            this.likertValues[dialect.text].counts[i] = 0;
+                        }
                     }
                 }
             }
@@ -126,12 +127,14 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
                     continue;
                 }
                 const index = Number.parseInt(response.score.text) - 1;
-                const dialect = response.dialect.text;
-                this.likertValues[dialect].counts[index]++;
-                this.likertValues[dialect].total++;
-                this.likertValuesGeneral.counts[index]++;
-                this.likertValuesGeneral.total++;
-                this.matchedDialects.add(dialect);
+                const dialects = response.dialects;
+                for (const dialect of dialects) {
+                    this.likertValues[dialect.text].counts[index]++;
+                    this.likertValues[dialect.text].total++;
+                    this.likertValuesGeneral.counts[index]++;
+                    this.likertValuesGeneral.total++;
+                    this.matchedDialects.add(dialect.text);
+                }
             }
         }
         this.updateDialectNames();

@@ -104,18 +104,19 @@ export class MatchedQuestion implements MatchedQuestionProperties {
 
         this.matchedAnswerCount = 0;
         this.matchedDialects = {};
-
         for (const answer of this.answers) {
-            dialects.add(answer.dialect.text);
+            for (const dialectPart of answer.dialects) {
+                dialects.add(dialectPart.text);
 
-            if (answer.match) {
-                this.matchedAnswerCount++;
-                participants.add(answer.participantId.text);
-                if (answer.dialect.text in this.matchedDialects) {
-                    this.matchedDialects[answer.dialect.text].push(answer);
-                } else {
-                    this.matchedDialects[answer.dialect.text] = [answer];
-                }
+                if (answer.match) {
+                    this.matchedAnswerCount++;
+                    participants.add(answer.participantId.text);
+                    if (dialectPart.text in this.matchedDialects) {
+                        this.matchedDialects[dialectPart.text].push(answer);
+                    } else {
+                        this.matchedDialects[dialectPart.text] = [answer];
+                        }
+                    }
             }
         }
 

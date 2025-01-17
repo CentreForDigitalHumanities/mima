@@ -67,7 +67,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
             for (const subentry of entry['responses']) {
                 const response: LikertResponse = {
                     participantId: subentry['participant_id'],
-                    dialect: subentry['dialect'],
+                    dialects: subentry['dialects'],
                     score: subentry['score']
                 }
                 responses.push(response);
@@ -98,7 +98,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
         for (const response of responses) {
             const participant: Participant = {
                 participantId: response.participantId,
-                dialect: response.dialect
+                dialects: response.dialects
             };
 
             participants[participant.participantId] = participant;

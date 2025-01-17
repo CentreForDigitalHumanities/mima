@@ -106,15 +106,17 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
         this.matchedDialects = {};
 
         for (const response of this.responses) {
-            dialects.add(response.dialect.text);
+            for (const dialect of response.dialects) {
+                dialects.add(dialect.text);
 
-            if (response.match) {
-                this.matchedResponseCount++;
-                participants.add(response.participantId.text);
-                if (response.dialect.text in this.matchedDialects) {
-                    this.matchedDialects[response.dialect.text].push(response);
-                } else {
-                    this.matchedDialects[response.dialect.text] = [response];
+                if (response.match) {
+                    this.matchedResponseCount++;
+                    participants.add(response.participantId.text);
+                    if (dialect.text in this.matchedDialects) {
+                        this.matchedDialects[dialect.text].push(response);
+                    } else {
+                        this.matchedDialects[dialect.text] = [response];
+                    }   
                 }
             }
         }

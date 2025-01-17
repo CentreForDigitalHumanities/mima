@@ -94,9 +94,11 @@
             <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect" [ngClass]="{'is-last': last}">
                 <h3 class="subtitle mb-1">
                     <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
-                            (click)="onFilterSelected($event, 'dialect', dialect)"></div>
-                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)" i18n-aria-label
+                        <!-- unsure about this implementation still! is .dialects[0] the way to go? I kinda doubt it -->
+                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialects[0] | highlight" 
+
+                            (click)="onFilterSelected($event, 'dialects', dialect)"></div>
+                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', dialect)" i18n-aria-label
                             aria-label="exclude"></a>
                     </div>
                 </h3>

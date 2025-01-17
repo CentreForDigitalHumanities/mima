@@ -65,7 +65,7 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         placeholder: ''
     }, {
         name: $localize`Dialect`,
-        field: 'dialect',
+        field: 'dialects',
         icon: faLanguage,
         dropdown: true,
         placeholder: $localize`Select Dialect(s)`

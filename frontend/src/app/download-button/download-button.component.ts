@@ -16,7 +16,7 @@ const FilterFieldNames: {
     id: $localize`question`,
     prompt: $localize`question`,
     answer: $localize`translation`,
-    dialect: $localize`dialect`,
+    dialects: $localize`dialect`,
     participantId: $localize`participant`
 };
 

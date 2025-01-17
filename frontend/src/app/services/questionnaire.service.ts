@@ -83,7 +83,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
                         answer: example,
                         answerId: '',
                         participantId: subentry['participant_id'],
-                        dialect: subentry['dialect'],
+                        dialects: subentry['dialect'],
                         attestation: 'attested'
                     }
                     if (example === 'unattested') {
@@ -124,7 +124,9 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
     getDialects(answers: Iterable<Answer>): Set<string> {
         const dialects = new Set<string>();
         for (const answer of answers) {
-            dialects.add(answer.dialect);
+            for (const dialect of answer.dialects) {
+                dialects.add(dialect);
+            }
         }
         return dialects;
     }
@@ -141,7 +143,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
         for (const answer of answers) {
             const participant: Participant = {
                 participantId: answer.participantId,
-                dialect: answer.dialect
+                dialects: answer.dialects
             };
 
             participants[participant.participantId] = participant;

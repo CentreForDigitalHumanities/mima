@@ -111,7 +111,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                 include = [... this.questions.keys()];
                 break;
 
-            case 'dialect':
+            case 'dialects':
                 include = this.dialects;
                 break;
 

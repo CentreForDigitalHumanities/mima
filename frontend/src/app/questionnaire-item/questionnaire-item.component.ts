@@ -27,7 +27,7 @@ interface MatchedAnswerGrouped {
     text: string;
     answer: MatchedParts;
     attestation: MatchedParts;
-    dialect: MatchedParts;
+    dialects: MatchedParts[];
     participantIds: MatchedParts[];
 }
 
@@ -147,7 +147,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 text,
                 answer: answers[0].answer,
                 attestation: answers[0].attestation,
-                dialect: answers[0].dialect,
+                dialects: answers[0].dialects,
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }

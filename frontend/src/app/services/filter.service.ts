@@ -219,7 +219,7 @@ export class FilterService {
 
                     const answerKeys: (keyof Answer)[] = [
                         'answer',
-                        'dialect',
+                        'dialects',
                         'participantId',
                         'attestation'
                     ];
@@ -242,7 +242,7 @@ export class FilterService {
 
                     const responseKeys: (keyof LikertResponse)[] = [
                         'participantId',
-                        'dialect',
+                        'dialects',
                         'score'
                     ];
                     const responseFilters = filters.filter(
@@ -272,11 +272,23 @@ export class FilterService {
         const matchedSub = isAnswer(item) ? new MatchedAnswer(item) : new MatchedLikertResponse(item);
         let matchingFilters = new Set<Filter<T>>();
         for (const itemKey of itemKeys) {
-            const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString(), itemKey, itemFilters);
-            matchedSub[<any>itemKey] = parts;
-            for (const filter of partFilters) {
-                matchingFilters.add(filter);
+            if (itemKey === 'dialects') {
+                for (const dialect of item.dialects) {
+                    const [parts, partFilters] = this.searchField<any>(dialect, itemKey, itemFilters);
+                    matchedSub.dialects.push(parts);
+                    for (const filter of partFilters) {
+                        matchingFilters.add(filter);
+                    }
+                }
+            } else {
+                const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString(), itemKey, itemFilters);
+                matchedSub[<any>itemKey] = parts;
+                for (const filter of partFilters) {
+                    matchingFilters.add(filter);
+                }
             }
+            
+            
         }
 
         if (itemFilters.length) {
@@ -290,7 +302,6 @@ export class FilterService {
                 }
             }
         }
-
         return [<any>matchedSub, matchingFilters];
     }
 

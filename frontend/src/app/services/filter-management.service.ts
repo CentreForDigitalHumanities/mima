@@ -333,9 +333,11 @@ export class FilterManagementService implements OnDestroy {
                     case '*':
                         break;
 
-                    case 'dialect':
+                    case 'dialects':
                         for (let answer of question.answers) {
-                            labels[answer[field]] = answer[field];
+                            for (const value of answer[field]) {
+                                labels[value] = value;
+                            }
                         }
                         break;
 
@@ -345,7 +347,7 @@ export class FilterManagementService implements OnDestroy {
 
                     case 'participantId':
                         for (let participant of this.questionnaireService.getParticipants(question.answers)) {
-                            labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                            labels[participant.participantId] = `${participant.participantId} ${participant.dialects[0]}`; // just using the first one for now
                         }
 
                         break;
@@ -384,10 +386,11 @@ export class FilterManagementService implements OnDestroy {
                 case '*':
                     break;
 
-                case 'dialect':
+                case 'dialects':
                     for (let response of judgment.responses) {
-                        labels[response[field]] = response[field];
-                    }
+                        for (const value of response[field]) {
+                            labels[value] = value;
+                        }                    }
                     break;
 
                 case 'judgmentId':
@@ -396,7 +399,7 @@ export class FilterManagementService implements OnDestroy {
 
                 case 'participantId':
                     for (let participant of this.judgmentsService.getParticipants(judgment.responses)) {
-                        labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                        labels[participant.participantId] = `${participant.participantId} ${participant.dialects[0]}`; // just using the first one for now
                     }
 
                     break;
