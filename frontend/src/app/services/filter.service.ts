@@ -276,6 +276,7 @@ export class FilterService {
                 for (const dialect of item.dialects) {
                     const [parts, partFilters] = this.searchField<any>(dialect, itemKey, itemFilters);
                     matchedSub.dialects.push(parts);
+                    matchedSub.dialects = matchedSub.dialects.filter(item => item.match);
                     for (const filter of partFilters) {
                         matchingFilters.add(filter);
                     }

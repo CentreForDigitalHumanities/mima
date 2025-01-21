@@ -94,10 +94,12 @@
             <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect" [ngClass]="{'is-last': last}">
                 <h3 class="subtitle mb-1">
                     <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                        <!-- unsure about this implementation still! is .dialects[0] the way to go? I kinda doubt it -->
-                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialects[0] | highlight" 
-
-                            (click)="onFilterSelected($event, 'dialects', dialect)"></div>
+                        <!-- it is okay to take the first item from the matchedDialects array, because the .dialects -->
+                        <!-- array is the same for all items in the matchedDialects array -->
+                        @for (item of matchedDialects[dialect][0].dialects; track item) {
+                            <div class="tag filterable" [innerHTML]="item | highlight" 
+                                (click)="onFilterSelected($event, 'dialects', dialect)"></div>
+                         }
                         <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', dialect)" i18n-aria-label
                             aria-label="exclude"></a>
                     </div>

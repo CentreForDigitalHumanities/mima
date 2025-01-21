@@ -151,7 +151,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }
-
+        console.log('grouped', grouped);
         return grouped;
     }
 
