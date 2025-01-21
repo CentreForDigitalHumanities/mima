@@ -169,11 +169,36 @@ def print_hierarchy(tree: dict, indent: int = 0):
             print(key)
         print_hierarchy(tree[key], indent + 1)
 
+def create_roadmap(hierarchy, incoming_path="", roadmap={}):
+    """
+    roadmap is a dict with dialect names as keys and paths as values
+    """
+    for key in hierarchy.keys():
+        if not incoming_path:
+            path = key
+            roadmap[key] = path #=key
+        else:
+            path = incoming_path + ">" + key
+            roadmap[key] = path
+
+        if len(hierarchy[key]) > 0:  # if there are children
+            roadmap = create_roadmap(hierarchy[key], path, roadmap)
+        else:
+            roadmap[key] = path
+    
+    return roadmap
+        
+
 
 # Hierarchy contains the information using the dialect names (as string)
 # Use this name in the lookup to retrieve the Dialect object
 hierarchy = construct_hierarchy(lookup.values())
 hierarchy = transition_dialects(hierarchy)
+roadmap = create_roadmap(hierarchy)
+
+with open("dialect_roadmap.json", "w") as f:
+    f.write(json.dumps(roadmap, indent=4))
+
 with open("dialect_hierarchy.json", "w") as f:
     f.write(json.dumps(hierarchy, indent=4))
 print_hierarchy(hierarchy)
