@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 from typing import Dict, Iterable, List, Optional
 import re
+import json
 
 TRANSITION_MARKER = "Overgangsdialect"
 
@@ -163,7 +164,7 @@ def transition_dialects(hierarchy: Hierarchy) -> Hierarchy:
 def print_hierarchy(tree: dict, indent: int = 0):
     for key in sorted(tree.keys()):
         if indent > 0:
-            print(indent * 2 * "─" + key)
+            print(indent * 2 * " ─ " + key)
         else:
             print(key)
         print_hierarchy(tree[key], indent + 1)
@@ -173,4 +174,6 @@ def print_hierarchy(tree: dict, indent: int = 0):
 # Use this name in the lookup to retrieve the Dialect object
 hierarchy = construct_hierarchy(lookup.values())
 hierarchy = transition_dialects(hierarchy)
+with open("dialect_hierarchy.json", "w") as f:
+    f.write(json.dumps(hierarchy, indent=4))
 print_hierarchy(hierarchy)
