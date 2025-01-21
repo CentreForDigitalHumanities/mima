@@ -133,7 +133,7 @@ for row in data[1:]:
             # mark unattested answers for empty cells
             # cleaned cells are skipped
             if cell == '' and not questionnaire_items[index].cleaned:
-                answer = Answer(question.tag, answer='unattested', country=participant_countries[participant], dialect=participant_dialects[participant][1:], participant_id=participant)
+                answer = Answer(question.tag, answer='unattested', country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
                 if question.answers:
                     question.answers.append(answer)
                 else:
@@ -143,7 +143,7 @@ for row in data[1:]:
                 if questionnaire_items[index+1].cleaned and row[index+1] != '':
                     pass
                 else:
-                    answer = Answer(question.tag, answer=cell, country=participant_countries[participant], dialect=participant_dialects[participant][1:], participant_id=participant)
+                    answer = Answer(question.tag, answer=cell, country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
                     if question.answers:
                         question.answers.append(answer)
                     else:
