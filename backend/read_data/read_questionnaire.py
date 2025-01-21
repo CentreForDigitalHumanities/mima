@@ -45,6 +45,7 @@ class Answer:
     tag: str
     answer: str
     dialect: str
+    country: str
     participant_id: str
     ma: str = 'NA'
     prompt: str = "NA"
@@ -61,12 +62,22 @@ participants_data = read_csv(PARTICIPANTS_PATH)
 additional_data = read_csv(ADDITIONAL_DATA_PATH)
 
 ## Match dialects to participant IDs
-participants = {}
+participant_dialects = {}
+participant_countries = {}
+
 for participant in participants_data[1:]:
     separators = [';', '&', '+']
     pattern = '|'.join(map(re.escape, separators))
-    dialect = [subdialect.strip() for subdialect in re.split(pattern, participant[32])]
-    participants[''.join(participant[0:2])] = dialect if dialect[0] != '' else ['SKIP']
+    lang_tokens = [subdialect.strip() for subdialect in re.split(pattern, participant[32])]
+    country = []
+    dialect = []
+    for token in lang_tokens:
+        if 'Nederland' in token or 'België' in token:
+            country.append(token)
+        else:
+            dialect.append(token)
+    participant_countries[''.join(participant[0:2])] = country if country else ['NO COUNTRY']
+    participant_dialects[''.join(participant[0:2])] = dialect if dialect[0] != '' else ['SKIP']
 
 ## Create a Question for each question and save it as an instance
 questionnaire_items = {} #keys: question index
@@ -122,7 +133,7 @@ for row in data[1:]:
             # mark unattested answers for empty cells
             # cleaned cells are skipped
             if cell == '' and not questionnaire_items[index].cleaned:
-                answer = Answer(question.tag, answer='unattested', dialect=participants[participant], participant_id=participant)
+                answer = Answer(question.tag, answer='unattested', country=participant_countries[participant], dialect=participant_dialects[participant][1:], participant_id=participant)
                 if question.answers:
                     question.answers.append(answer)
                 else:
@@ -132,7 +143,7 @@ for row in data[1:]:
                 if questionnaire_items[index+1].cleaned and row[index+1] != '':
                     pass
                 else:
-                    answer = Answer(question.tag, answer=cell, dialect=participants[participant], participant_id=participant)
+                    answer = Answer(question.tag, answer=cell, country=participant_countries[participant], dialect=participant_dialects[participant][1:], participant_id=participant)
                     if question.answers:
                         question.answers.append(answer)
                     else:
