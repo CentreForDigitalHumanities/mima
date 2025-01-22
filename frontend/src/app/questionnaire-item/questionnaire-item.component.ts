@@ -27,7 +27,8 @@ interface MatchedAnswerGrouped {
     text: string;
     answer: MatchedParts;
     attestation: MatchedParts;
-    dialects: MatchedParts[];
+    dialectPath: string;
+    dialectPathParts: MatchedParts[];
     participantIds: MatchedParts[];
 }
 
@@ -52,6 +53,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     @Input() id: string;
     @Input() questions: ReadonlyMap<string, Question>;
     @Input() loading = false;
+    @Input() dialectRoadmap: { [dialect: string]: string };
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
@@ -121,10 +123,11 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 this.matchedDialectsCount <= autoExpandDialectCount ||
                 this.matchedAnswerCount <= autoExpandAnswerCount;
         }
+        console.log('matchedDialects', this.matchedDialects);
     }
 
     private groupAnswers(matchedDialects: MatchedQuestion['matchedDialects']): { [dialect: string]: MatchedAnswerGrouped[] } {
-        const grouped: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+        const grouped: { [dialectPath: string]: MatchedAnswerGrouped[] } = {};
         for (const [dialect, answers] of Object.entries(matchedDialects)) {
             const dialectGroup: { [text: string]: MatchedAnswer[] } = {};
             for (const answer of answers) {
@@ -135,7 +138,8 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                     dialectGroup[text] = [answer];
                 }
             }
-
+            const dialectPath = this.dialectRoadmap[dialect]
+            const dialectPathParts = this.get_parts_from_path(dialectPath);
             // sort by text; put unattested last
             grouped[dialect] = [...Object.entries(dialectGroup)].sort(([textA], [textB]) =>
                 textA === ''
@@ -147,12 +151,26 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 text,
                 answer: answers[0].answer,
                 attestation: answers[0].attestation,
+                dialectPath: dialectPath,
+                dialectPathParts: dialectPathParts,
                 dialects: answers[0].dialects,
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }
-        console.log('grouped', grouped);
+        // console.log('grouped', grouped);
         return grouped;
+    }
+
+    private get_parts_from_path(path: string): MatchedParts[] {
+        // TODO temporary ai solution, will be replace
+        const parts = path.split('>');
+        return parts.map(part => new MatchedParts({
+            empty: false,
+            match: true,
+            fullMatch: true,
+            emptyFilters: false,
+            parts: [{ text: part, match: true }]
+        }));
     }
 
     /**

@@ -35,6 +35,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
     private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions');
+    public dialectRoadmap: { [dialect: string]: string };
 
     @Input() filterSelect: Map<string, string[]>;
 
@@ -53,10 +54,16 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
         this.progress = this.progressService.start(true);
     }
 
+    async getDialectRoadmap() {
+        this.dialectRoadmap = await this.questionnaireService.getDialectRoadmap();
+        console.log('roadmap loaded!', this.dialectRoadmap);
+    }
+
     ngOnInit() {
         if (!this.questions) {
             this.store.dispatch(loadQuestionnaire());
         }
+        this.getDialectRoadmap();
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.questions$.subscribe(questions => {

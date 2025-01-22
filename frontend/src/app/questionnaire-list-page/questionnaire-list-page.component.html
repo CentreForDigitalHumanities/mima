@@ -16,7 +16,7 @@
             <mima-download-button [matchedQuestions]="matchedQuestions"></mima-download-button>
         </div>
     </div>
-    <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [questions]="questions"
+    <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [dialectRoadmap]="dialectRoadmap" [questions]="questions"
         (includeFilter)="onIncludeFilter($event)" (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-list>
 </div>
 }

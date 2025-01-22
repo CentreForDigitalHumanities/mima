@@ -131,6 +131,23 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
         return dialects;
     }
 
+    async getDialectRoadmap() {
+        const response = lastValueFrom(this.http.get('assets/dialect_roadmap.json'));
+
+        const data = await response.then(res => res);
+        const dialectRoadmap = this.convertToRoadmap(data);
+        return Promise.resolve(dialectRoadmap);
+    }
+
+    convertToRoadmap(response: Object) {
+        const roadmap: { [dialect: string]: string } = {};
+
+        for (const [dialect, entry] of Object.entries(response)) {
+            roadmap[dialect] = entry;
+        }
+
+        return roadmap;
+    }
 
     /**
      * Derives the participants from a Map containing answers

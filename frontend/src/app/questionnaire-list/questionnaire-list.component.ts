@@ -16,6 +16,9 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges {
     questionComponents!: QueryList<QuestionnaireItemComponent>;
 
     @Input()
+    dialectRoadmap: { [dialect: string]: string };
+
+    @Input()
     questions: ReadonlyMap<string, Question>;
 
     @Input()

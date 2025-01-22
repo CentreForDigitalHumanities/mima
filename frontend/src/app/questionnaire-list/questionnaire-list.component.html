@@ -3,6 +3,7 @@
         @if (matchedQuestions.has(questionId)) {
             <mima-questionnaire-item
                 [questions]="questions"
+                [dialectRoadmap]="dialectRoadmap"
                 [id]="questionId"
                 [onlyQuestion]="matchedQuestions.size === 1"
                 (includeFilter)="includeFilter.next($event)"
