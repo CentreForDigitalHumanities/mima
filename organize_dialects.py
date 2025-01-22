@@ -48,9 +48,9 @@ def validate_parent(child: Dialect, parent: Dialect) -> bool:
 
 def parse_dialect(text: str) -> Dialect:
     len_text = len(text)
-    text = text.replace("UNDERSPECIFIED", "").replace(":", "")
-    if len(text) != len_text:
-        print("WARNING! Underspecified in text; this is ignored.")
+    # text = text.replace("UNDERSPECIFIED", "").replace(":", "")
+    # if len(text) != len_text:
+    #     print("WARNING! Underspecified in text; this is ignored.")
     levels = [part.strip() for part in text.split(";")]
     parent: Optional[Dialect] = None
     dialect: Optional[Dialect]
@@ -176,15 +176,13 @@ def create_roadmap(hierarchy, incoming_path="", roadmap={}):
     for key in hierarchy.keys():
         if not incoming_path:
             path = key
-            roadmap[key] = path #=key
         else:
             path = incoming_path + ">" + key
-            roadmap[key] = path
 
         if len(hierarchy[key]) > 0:  # if there are children
             roadmap = create_roadmap(hierarchy[key], path, roadmap)
-        else:
-            roadmap[key] = path
+        
+        roadmap[key] = path
     
     return roadmap
         
@@ -193,7 +191,7 @@ def create_roadmap(hierarchy, incoming_path="", roadmap={}):
 # Hierarchy contains the information using the dialect names (as string)
 # Use this name in the lookup to retrieve the Dialect object
 hierarchy = construct_hierarchy(lookup.values())
-hierarchy = transition_dialects(hierarchy)
+# hierarchy = transition_dialects(hierarchy)
 roadmap = create_roadmap(hierarchy)
 
 with open("dialect_roadmap.json", "w") as f:
