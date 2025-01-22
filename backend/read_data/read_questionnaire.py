@@ -64,11 +64,15 @@ additional_data = read_csv(ADDITIONAL_DATA_PATH)
 ## Match dialects to participant IDs
 participant_dialects = {}
 participant_countries = {}
+skip_list = []
 
 for participant in participants_data[1:]:
-    separators = [';', '&', '+']
+    separators = [';', '&', '+', ':']
     pattern = '|'.join(map(re.escape, separators))
-    lang_tokens = [subdialect.strip() for subdialect in re.split(pattern, participant[32])]
+    lang_tokens = [subdialect.strip() for subdialect in re.split(pattern, participant[39])]
+    if 'UNDERSPECIFIED' in lang_tokens:
+        skip_list.append(''.join(participant[0:2]))
+        continue  # skip participants with underspecified dialects
     country = []
     dialect = []
     for token in lang_tokens:
@@ -127,6 +131,8 @@ for ti in translation_indices:
 ## Fill the answers for each question
 for row in data[1:]:
     participant = ''.join(row[0:2])
+    if participant in skip_list:
+        continue
     for index, cell in enumerate(row):
         question = questionnaire_items[index]
         if index in translation_indices:
@@ -164,6 +170,8 @@ for index in questionnaire_items:
             cleaned_translation_questions[question.tag] = question
     if question.cleaned:
         cleaned_translation_questions[question.tag] = question
+    if not question.answers:
+        question.answers = []
 
 
 ## Go through the additional data and attach the necessary information to the cleaned_translation_questions
