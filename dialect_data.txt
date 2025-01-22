@@ -74,6 +74,7 @@ Nedersaksisch; Twents
 Nedersaksisch; Twents; Rijssens
 Nedersaksisch; Veluws
 Nedersaksisch; Veluws; West-Veluws
+Overgangsdialect Nedersaksisch/Nederfrankisch
 Overgangsdialect Nedersaksisch/Nederfrankisch; Urks
 Standaardnederlands
 Fries
@@ -193,3 +194,6 @@ Nedersaksisch; Maastrichts
 Nedersaksisch; Rijssens
 Nedersaksisch; Twents
 Nedersaksisch; West-Veluwe
+Nedersaksisch; Zuid-Gelders; Nijmegen
+SKIP
+UNDERSPECIFIED
