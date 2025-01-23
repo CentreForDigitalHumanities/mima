@@ -99,7 +99,7 @@
                                 <!-- array is the same for all items in the matchedDialects array -->
                                 @for (item of matchedDialects[dialect.key][0].dialectPathParts; track item) {
                                     <div class="tag filterable" [innerHTML]="item | highlight" 
-                                        (click)="onFilterSelected($event, 'dialects', dialect.key)"></div>
+                                        (click)="onFilterSelected($event, 'dialects', item.text)"></div>
                                 }
                                 <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', dialect.key)" i18n-aria-label
                                     aria-label="exclude"></a>
