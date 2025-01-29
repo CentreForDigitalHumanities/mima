@@ -5,6 +5,7 @@ import { Filter, FilterOperator } from '../models/filter';
 import { MatchedQuestion, MatchedQuestionProperties, Question } from '../models/question';
 import { SearchExpression } from '../models/search-expression';
 import { FilterService } from './filter.service';
+import { Answer } from '../models/answer';
 
 function getMatchedParts(text: string, emptyFilters: boolean): MatchedParts {
     // no match
@@ -91,6 +92,7 @@ function getMatchedQuestion(adverbial: Question, emptyFilters: boolean): Matched
     }
 
     result['dialectsCount'] = 0;
+    result['matchedAnswers'] = [];
     result['matchedAnswerCount'] = 0;
     result['matchedDialects'] = {};
     result['matchedDialectsCount'] = 0;
@@ -176,10 +178,10 @@ describe('FilterService', () => {
             }
 
             const output = service.applyFilters(input, indexedFilters, operator);
-            const properties = <MatchedQuestionProperties>({ ...output });
+            const properties = <MatchedQuestionProperties>{ ...output };
 
             const expectedQuestion = getMatchedQuestion(expected, emptyFilters);
-            expect(expectedQuestion).toEqual(properties);
+            expect(properties).toEqual(expectedQuestion);
         }
 
     });
@@ -268,4 +270,91 @@ actual:   ${actual}`;
             expect(matchIndex).withContext(description).toEqual(actual.length);
         }
     });
+
+    it('should match dialects', () => {
+        // mock questions
+        const tests: {
+            filter: string[],
+            // should this question match?
+            match: boolean,
+            matchedDialectNames: string[],
+            answers: {
+                dialects: string[],
+                match: boolean
+            }[]
+        }[] = [
+                // search for a filter and define mock answers which should or should not match
+                {
+                    filter: ['Zuid-Brabants'],
+                    match: true,
+                    // match itself
+                    matchedDialectNames: ['Zuid-Brabants'],
+                    answers: [{
+                        dialects: ['Nederfrankisch', 'Brabants', 'Zuid-Brabants', 'Antwerps'],
+                        match: true
+                    }, {
+                        dialects: ['Fries', 'West-Fries'],
+                        match: false
+                    }]
+                },
+                {
+                    filter: ['Antwerps'],
+                    match: true,
+                    // also just match end nodes without children
+                    matchedDialectNames: ['Antwerps'],
+                    answers: [{
+                        dialects: ['Nederfrankisch', 'Brabants', 'Zuid-Brabants', 'Antwerps'],
+                        match: true
+                    }]
+                },
+                {
+                    filter: ['Brabants'],
+                    match: false,
+                    matchedDialectNames: [],
+                    answers: [{
+                        dialects: ['Nedersaksisch', 'Achterhoeks'],
+                        match: false
+                    }]
+                }
+            ];
+
+        for (const test of tests) {
+            const filter = {
+                content: test.filter,
+                field: 'dialects',
+                index: 0,
+                onlyFullMatch: true
+            };
+
+            const answers: Answer[] = <any>test.answers.map((item, n) => ({ answerId: `${n}-${item.match}`, ...item }));
+            const question: Question = {
+                id: 'id',
+                type: 'type',
+                question: 'question',
+                prompt: '',
+                split_item: '',
+                chapter: '',
+                subtags: [],
+                gloss: '',
+                en_translation: '',
+                answers
+            };
+
+            const actual = <MatchedQuestion>service.applyFilters(question, [<any>filter], 'and');
+            expect(!!actual).toEqual(test.match, `Question should not match: ${test.filter}`);
+            if (!test.match) {
+                // don't test the underlying answers; the object
+                // should not exist so there is nothing to check
+                continue;
+            }
+
+            expect(new Set(actual.matchedDialectNames)).toEqual(new Set(test.matchedDialectNames));
+            for (const matchedAnswer of actual.answers) {
+                const pass = matchedAnswer.match === (matchedAnswer.answerId.text.split('-')[1] === 'true');
+                if (!pass) {
+                    fail(`Searching for ${test.filter} in ${matchedAnswer.answerId.text}.`);
+                }
+            }
+        }
+    })
 });

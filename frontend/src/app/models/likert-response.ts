@@ -11,14 +11,14 @@ type MatchedLikertResponseValue<T> =
     ? MatchedParts
     : T extends number
     ? MatchedParts
-    : T extends string[] // Figure out what to do with Answer[] and answerMap
+    : T extends string[]
     ? MatchedParts[]
     : never;
 
 type MatchedLikertResponseDeserializedValue<T> =
     T extends MatchedParts
     ? MatchedPartsProperties
-    
+
     : T;
 
 export type MatchedLikertResponseProperties = {

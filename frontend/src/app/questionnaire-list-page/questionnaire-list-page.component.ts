@@ -15,6 +15,7 @@ import { DownloadButtonComponent } from '../download-button/download-button.comp
 import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 import { QuestionnaireFiltersComponent } from "../questionnaire-filters/questionnaire-filters.component";
+import { Dialect, DialectLookup, EndDialects } from '../models/dialect';
 
 @Component({
     selector: 'mima-questionnaire-list-page',
@@ -35,7 +36,12 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
     private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions');
-    public dialectRoadmap: { [dialect: string]: string };
+    private initDone: () => void;
+    private initDonePromise = new Promise<void>((resolve) => {
+        this.initDone = resolve;
+    })
+
+    public dialectLookup: DialectLookup;
 
     @Input() filterSelect: Map<string, string[]>;
 
@@ -44,7 +50,10 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     matchedDialects = new Set<string>();
     matchedParticipants = new Set<string>();
 
+    listMatchedDialects = false;
+
     questions: ReadonlyMap<string, Question>;
+    endDialects: EndDialects;
     dialects: string[] = [];
 
     participantIds: string[];
@@ -54,16 +63,11 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
         this.progress = this.progressService.start(true);
     }
 
-    async getDialectRoadmap() {
-        this.dialectRoadmap = await this.questionnaireService.getDialectRoadmap();
-        console.log('roadmap loaded!', this.dialectRoadmap);
-    }
-
-    ngOnInit() {
+    async ngOnInit() {
         if (!this.questions) {
             this.store.dispatch(loadQuestionnaire());
         }
-        this.getDialectRoadmap();
+        this.dialectLookup = await this.questionnaireService.dialectLookup;
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.questions$.subscribe(questions => {
@@ -72,8 +76,10 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                         this.progress.complete();
                         this.questions = questions;
                         const answers = [...this.questionnaireService.getAnswers(this.questions.values())];
+                        const participants = this.questionnaireService.getParticipants(answers);
                         this.dialects = [...this.questionnaireService.getDialects(answers)];
-                        this.participantIds = this.questionnaireService.getParticipants(answers).map(p => p.participantId);
+                        this.endDialects = this.questionnaireService.determineParticipantEndDialects(answers, this.dialectLookup);
+                        this.participantIds = participants.map(p => p.participantId);
                     }
                 }
             }),
@@ -94,12 +100,13 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                     }
                 }
             })
-        ]
+        ];
+        this.initDone();
     }
 
-    ngOnDestroy(): void {
+    async ngOnDestroy(): Promise<void> {
         this.progress.hide();
-
+        await this.initDonePromise;
         for (const subscription of this.subscriptions) {
             subscription.unsubscribe();
         }

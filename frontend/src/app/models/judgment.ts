@@ -31,7 +31,7 @@ export type MatchedJudgmentProperties = {
 type MatchedJudgmentDeserializedValue<T> =
     T extends MatchedParts
     ? MatchedPartsProperties
-    : T extends MatchedParts[] // Figure out what to do with Answer[] and answerMap
+    : T extends MatchedParts[]
     ? MatchedPartsProperties[]
     : T extends MatchedLikertResponse[]
     ? MatchedLikertResponseProperties[]
@@ -116,7 +116,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
                         this.matchedDialects[dialect.text].push(response);
                     } else {
                         this.matchedDialects[dialect.text] = [response];
-                    }   
+                    }
                 }
             }
         }

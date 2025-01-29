@@ -3,6 +3,7 @@ import { FilterEvent, QuestionnaireItemComponent } from '../questionnaire-item/q
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { MatchedQuestion, Question } from '../models/question';
 import { TypedChanges } from '../models/typed-changes';
+import { DialectLookup, EndDialects } from '../models/dialect';
 
 @Component({
     selector: 'mima-questionnaire-list',
@@ -16,7 +17,10 @@ export class QuestionnaireListComponent implements AfterViewInit, OnChanges {
     questionComponents!: QueryList<QuestionnaireItemComponent>;
 
     @Input()
-    dialectRoadmap: { [dialect: string]: string };
+    endDialects: EndDialects;
+
+    @Input()
+    dialectLookup: DialectLookup;
 
     @Input()
     questions: ReadonlyMap<string, Question>;

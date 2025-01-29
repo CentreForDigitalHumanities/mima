@@ -18,7 +18,7 @@ export interface Answer {
 type MatchedAnswerValue<T> =
     T extends string
     ? MatchedParts
-    : T extends string[] // Figure out what to do with Answer[] and answerMap
+    : T extends string[]
     ? MatchedParts[]
     : never;
 

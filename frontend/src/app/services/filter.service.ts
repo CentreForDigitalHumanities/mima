@@ -189,7 +189,7 @@ export class FilterService {
             case 'subQuestionTextId':
                 {
                     const value = object[key];
-                    const [parts, partFilters] = this.searchField<T>(<string>value, <any>key, filters);
+                    const [parts, partFilters] = this.searchField<T>(<string>value || '', <any>key, filters);
                     result[<any>key] = parts;
                     itemMatch ||= parts.match;
                     matchingFilters.push(...<any>partFilters);
@@ -273,23 +273,24 @@ export class FilterService {
         let matchingFilters = new Set<Filter<T>>();
         for (const itemKey of itemKeys) {
             if (itemKey === 'dialects') {
+                // remove the initialization of unmatched dialect parts
+                matchedSub.dialects = [];
                 for (const dialect of item.dialects) {
-                    const [parts, partFilters] = this.searchField<any>(dialect, itemKey, itemFilters);
+                    const [parts, matchingDialectFilters] = this.searchField<any>(dialect, itemKey, itemFilters);
                     matchedSub.dialects.push(parts);
-                    matchedSub.dialects = matchedSub.dialects.filter(item => item.match);
-                    for (const filter of partFilters) {
+                    for (const filter of matchingDialectFilters) {
                         matchingFilters.add(filter);
                     }
                 }
             } else {
-                const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString(), itemKey, itemFilters);
+                const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString() || '', itemKey, itemFilters);
                 matchedSub[<any>itemKey] = parts;
                 for (const filter of partFilters) {
                     matchingFilters.add(filter);
                 }
             }
-            
-            
+
+
         }
 
         if (itemFilters.length) {

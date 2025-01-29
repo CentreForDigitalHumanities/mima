@@ -8,6 +8,7 @@ import { Filter, FilterOperator } from '../models/filter';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { FilterWorkerService } from './filter-worker.service';
 import { VisibilityService } from './visibility.service';
+import { Dialect, DialectLookup, DialectPath, EndDialects } from '../models/dialect';
 
 
 @Injectable({
@@ -18,6 +19,15 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
      * Emits an updated list of matches
      */
     results$!: Observable<readonly MatchedQuestion[]>;
+
+    private _dialectLookup: Promise<DialectLookup>;
+    get dialectLookup(): Promise<DialectLookup> {
+        if (!this._dialectLookup) {
+            this._dialectLookup = this.getDialectLookup();
+        }
+
+        return this._dialectLookup;
+    }
 
     constructor(private http: HttpClient, filterWorkerService: FilterWorkerService, ngZone: NgZone) {
         super(filterWorkerService, ngZone);
@@ -64,6 +74,25 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
             questionIds.push(question.id);
         }
         return questionIds;
+    }
+
+    anyDialectInPaths(dialects: string[], paths: DialectPath[]) : boolean{
+        for (const path of paths) {
+            for (const step of path.path) {
+                for (const dialect of dialects) {
+                    if (dialect === step) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    async getDialectPaths(dialect: string): Promise<DialectPath[]> {
+        const lookup = await this.dialectLookup;
+        return lookup.paths[dialect];
     }
 
     /**
@@ -115,9 +144,8 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
             if (!question.answers) {
                 continue;
             }
-            for (const answer of question.answers) {
-                yield answer;
-            }
+
+            yield* question.answers;
         }
     }
 
@@ -131,22 +159,70 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
         return dialects;
     }
 
-    async getDialectRoadmap() {
-        const response = lastValueFrom(this.http.get('assets/dialect_roadmap.json'));
-
-        const data = await response.then(res => res);
-        const dialectRoadmap = this.convertToRoadmap(data);
-        return Promise.resolve(dialectRoadmap);
-    }
-
-    convertToRoadmap(response: Object) {
-        const roadmap: { [dialect: string]: string } = {};
-
-        for (const [dialect, entry] of Object.entries(response)) {
-            roadmap[dialect] = entry;
+    /**
+     * Determines for each participant which are the most
+     * salient dialects (the dialect path) with the most steps.
+     * TODO: this should ideally be pre-determined on the server,
+     * because this information is static.
+     * @param participants participants to parse
+     * @param dialectLookup lookup describing the dialect structure
+     */
+    determineParticipantEndDialects(participants: Participant[], dialectLookup: DialectLookup) {
+        const endDialects: EndDialects = {};
+        for (const participant of participants) {
+            const participantEndDialects: string[] = [];
+            for (const name of participant.dialects) {
+                if (dialectLookup.isEndDialect(name, participant.dialects)) {
+                    participantEndDialects.push(name);
+                }
+            }
+            endDialects[participant.participantId] = participantEndDialects;
         }
 
-        return roadmap;
+        return endDialects;
+    }
+
+    /**
+     * Gets a lookup of all the dialects
+     * @returns the top most dialects and a lookup with all the dialects
+     */
+    private async getDialectLookup(): Promise<DialectLookup> {
+        const response = lastValueFrom(this.http.get('assets/dialect_hierarchy.json'));
+
+        const data = await response.then(res => res);
+        const hierarchy: DialectLookup['hierarchy'] = {};
+        const root = this.fillDialectLookup(data, hierarchy);
+        return new DialectLookup(root, hierarchy);
+    }
+
+    fillDialectLookup(data: Object, hierarchy: DialectLookup['hierarchy'], parentName: string = undefined): Dialect[] {
+        // dialects found at this level
+        const dialects: Dialect[] = [];
+        const parent: Dialect = parentName !== undefined ? hierarchy[parentName] : undefined;
+
+        for (const [name, children] of Object.entries(data)) {
+            let dialect: Dialect;
+            if (dialect = hierarchy[name]) {
+                // has multiple parents, append this parent
+                if (parent) {
+                    dialect.parents.push(parent);
+                }
+            } else {
+                dialect = {
+                    name,
+                    children: [],
+                    parents: parent !== undefined ? [parent] : []
+                };
+
+                hierarchy[name] = dialect;
+                // the parent must exist in the hierarchy, before its children can be created
+                hierarchy[name].children = this.fillDialectLookup(children, hierarchy, name)
+            }
+
+            dialects.push(dialect);
+        }
+
+        return dialects.sort((a, b) => a.name.localeCompare(b.name));
     }
 
     /**

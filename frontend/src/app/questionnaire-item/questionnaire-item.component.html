@@ -90,21 +90,20 @@
 <div class="box mt-3" [ngClass]="{'is-loading': loading}">
     <div class="fixed-grid has-5-cols-tablet">
         <div class="grid is-column-gap-0">
-            @for (dialect of dialectRoadmap | keyvalue; track dialect; let last = $last) {
-                @if (matchedDialects[dialect.key] && matchedDialects[dialect.key].length) {
-                    <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect.value" [ngClass]="{'is-last': last}">
-                        <h3 class="subtitle mb-1">
-                            <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                                <!-- it is okay to take the first item from the matchedDialects array, because the .dialectPathParts -->
-                                <!-- array is the same for all items in the matchedDialects array -->
-                                @for (item of matchedDialects[dialect.key][0].dialectPathParts; track item) {
-                                    <div class="tag filterable" [innerHTML]="item | highlight" 
-                                        (click)="onFilterSelected($event, 'dialects', item.text)"></div>
-                                }
-                                <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', dialect.key)" i18n-aria-label
-                                    aria-label="exclude"></a>
-                            </div>
-                        </h3>
+            @for (dialect of dialectLookup.flattened; track dialect.pathFlat) {
+                @if (matchedDialects[dialect.name] && matchedDialects[dialect.name].length) {
+                    <div class="cell expanded dialect-header py-3 pb-5">
+                        @for (item of dialect.path; track item) {
+                            <h3 class="subtitle mb-1">
+                                <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                                    <!-- it is okay to take the first item from the matchedDialects array, because the .dialectPathParts -->
+                                    <!-- array is the same for all items in the matchedDialects array -->
+                                    <div class="tag filterable" (click)="onFilterSelected($event, 'dialects', item)">{{item}}</div>
+                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', item)" i18n-aria-label
+                                        aria-label="exclude"></a>
+                                </div>
+                            </h3>
+                        }
                         <ng-template #answerCountTag let-answerCount="answerCount">
                             <div class="tag" i18n>
                                 {answerCount, plural,
@@ -114,10 +113,10 @@
                             </div>
                         </ng-template>
                         <ng-container [ngTemplateOutlet]="answerCountTag"
-                            [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect.key].length }"></ng-container>
+                            [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect.name].length }"></ng-container>
                     </div>
-                    <div class="cell is-col-span-4 expanded dialect-answers pb-4" [ngClass]="{'is-last': last}">
-                        @for (group of matchedDialects[dialect.key]; track group.text) {
+                    <div class="cell is-col-span-4 expanded dialect-answers pb-4">
+                        @for (group of matchedDialects[dialect.name]; track group.text) {
                         <div class="is-flex my-3">
                             <div>
                                 @if (group.attestation.text === 'unattested') {
