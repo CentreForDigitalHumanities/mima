@@ -83,8 +83,11 @@ hr {
 
 // border to separate dialects
 @mixin border-bottom {
-    &:not(.is-last) {
-        border-bottom: 1px solid var(--bulma-grey-light);
+    border-bottom: 1px solid var(--bulma-grey-light);
+
+    div:has(+ &:last-child),
+    &:last-child {
+        border-bottom: none;
     }
 }
 

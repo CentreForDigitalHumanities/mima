@@ -36,56 +36,56 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         name: '',
         field: '*',
         icon: faAsterisk,
-        dropdown: false,
+        mode: 'text',
         placeholder: $localize`Search in all Fields`,
         manual: 'query'
     }, {
         name: $localize`Question`,
         field: 'mainQuestionId',
         icon: faComment,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Question(s)`
     }, {
         name: $localize`Question Text`,
         field: 'mainQuestion',
         icon: faCommentDots,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Sub-Question`,
         field: 'subQuestionTextId',
         icon: faComment,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Sub-Question(s)`
     }, {
         name: $localize`Sub-Question Text`,
         field: 'subQuestion',
         icon: faCommentDots,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Dialect`,
         field: 'dialects',
         icon: faLanguage,
-        dropdown: true,
+        mode: 'dialect',
         placeholder: $localize`Select Dialect(s)`
     }, {
         name: $localize`Participant`,
         field: 'participantId',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Participant(s)`
     }, {
         name: $localize`Score`,
         field: 'score',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Score`
     }, {
         name: `Judgment`,
         field: 'judgmentId',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Judgement ID`
     }];
 

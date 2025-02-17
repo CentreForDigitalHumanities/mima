@@ -12,6 +12,7 @@ import { MatchedParts } from '../models/matched-parts';
 import { IntersectableComponent } from '../services/visibility.service';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
+import { DialectService } from '../services/dialect.service';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -28,8 +29,6 @@ interface MatchedAnswerGrouped {
     text: string;
     answer: MatchedParts;
     attestation: MatchedParts;
-    // dialectPath: string;
-    // dialectPathParts: MatchedParts[];
     participantIds: MatchedParts[];
 }
 
@@ -94,7 +93,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     @Input()
     onlyQuestion = false;
 
-    constructor(private questionnaireService: QuestionnaireService, element: ElementRef) {
+    constructor(private questionnaireService: QuestionnaireService, private dialectService: DialectService, element: ElementRef) {
         this.nativeElement = element.nativeElement;
     }
 
@@ -114,7 +113,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     }
 
 
-    private async updateCounts() {
+    private updateCounts() {
         if (!this.valueDirty || !this.endDialects) {
             return;
         }
@@ -129,7 +128,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
-        this.matchedDialects = await this.groupAnswers(this.model.matchedAnswers);
+        this.matchedDialects = this.groupAnswers(this.model.matchedAnswers);
         this.matchedDialectsCount = this.model.matchedDialectsCount;
         this.matchedDialectNames = this.model.matchedDialectNames;
         this.dialectsCount = this.model.dialectsCount;
@@ -140,15 +139,15 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
     }
 
-    private async groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): Promise<{ [dialect: string]: MatchedAnswerGrouped[] }> {
+    private groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): { [dialect: string]: MatchedAnswerGrouped[] } {
         // group answers by their dialect
         const matchedDialects: { [endDialects: string]: MatchedAnswer[] } = {};
 
         for (const answer of matchedAnswers) {
             for (const dialect of this.endDialects[answer.participantId.text]) {
-                if (this.questionnaireService.anyDialectInPaths(
+                if (this.dialectService.anyDialectInPaths(
                     answer.dialects.filter(x => x.match).map(x => x.text),
-                    await this.questionnaireService.getDialectPaths(dialect))) {
+                    this.dialectService.getDialectPaths(dialect))) {
                     matchedDialects[dialect] = [...matchedDialects[dialect] ?? [], answer];
                 }
             }
@@ -167,8 +166,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                     dialectGroup[text] = [answer];
                 }
             }
-            // const dialectPath = this.dialectLookup.hierarchy[dialect].
-            // const dialectPathParts = this.get_parts_from_path(dialectPath);
+
             // sort by text; put unattested last
             grouped[dialect] = [...Object.entries(dialectGroup)].sort(([textA], [textB]) =>
                 textA === ''
@@ -180,26 +178,12 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 text,
                 answer: answers[0].answer,
                 attestation: answers[0].attestation,
-                // dialectPath: dialectPath,
-                // dialectPathParts: dialectPathParts,
                 dialects: answers[0].dialects,
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }
         return grouped;
     }
-
-    // private get_parts_from_path(path: string): MatchedParts[] {
-    //     // TODO temporary ai solution, will be replace
-    //     const parts = path.split('>');
-    //     return parts.map(part => new MatchedParts({
-    //         empty: false,
-    //         match: true,
-    //         fullMatch: true,
-    //         emptyFilters: false,
-    //         parts: [{ text: part, match: true }]
-    //     }));
-    // }
 
     /**
      * emits a filter to be the only filter to the parent component

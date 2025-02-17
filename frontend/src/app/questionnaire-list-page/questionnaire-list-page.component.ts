@@ -2,11 +2,13 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
+import { DialectLookup, EndDialects } from '../models/dialect';
 import { Question, MatchedQuestion } from '../models/question';
 import { State } from '../questionnaire.state';
 import { QuestionnaireService } from '../services/questionnaire.service';
 import { loadQuestionnaire, setIncludingFilter, setExcludingFilter } from '../questionnaire.actions';
 import { FilterEvent as FilterEventData } from '../questionnaire-item/questionnaire-item.component';
+import { DialectService } from '../services/dialect.service';
 import { ProgressService, ProgressSession } from '../services/progress.service';
 import { FilterManagementService } from '../services/filter-management.service';
 import { FilterListComponent } from '../filter-list/filter-list.component';
@@ -15,7 +17,6 @@ import { DownloadButtonComponent } from '../download-button/download-button.comp
 import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 import { QuestionnaireFiltersComponent } from "../questionnaire-filters/questionnaire-filters.component";
-import { Dialect, DialectLookup, EndDialects } from '../models/dialect';
 
 @Component({
     selector: 'mima-questionnaire-list-page',
@@ -59,15 +60,15 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     participantIds: string[];
     progress: ProgressSession;
 
-    constructor(private questionnaireService: QuestionnaireService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService) {
+    constructor(private questionnaireService: QuestionnaireService, private dialectService: DialectService, private filterManagementService: FilterManagementService, private store: Store<State>, private progressService: ProgressService) {
         this.progress = this.progressService.start(true);
     }
 
-    async ngOnInit() {
+    ngOnInit() {
         if (!this.questions) {
             this.store.dispatch(loadQuestionnaire());
         }
-        this.dialectLookup = await this.questionnaireService.dialectLookup;
+        this.dialectLookup = this.dialectService.dialectLookup;
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.questions$.subscribe(questions => {
@@ -113,13 +114,23 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     }
 
     onIncludeFilter(filterData: FilterEventData) {
-        this.store.dispatch(setIncludingFilter({
-            ...filterData
-        }));
+        if (filterData.field === 'dialects') {
+            const content = [filterData.content, ...this.dialectService.getAllSubDialects(filterData.content)];
+            this.store.dispatch(setIncludingFilter({
+                ...filterData,
+                content
+            }));
+        } else {
+            this.store.dispatch(setIncludingFilter({
+                ...filterData,
+                content: [filterData.content]
+            }));
+        }
     }
 
     onExcludeFilter(filterData: FilterEventData) {
         let include: string[];
+        let exclude = [filterData.content];
         switch (filterData.field) {
             case 'id':
                 include = [... this.questions.keys()];
@@ -127,6 +138,8 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
 
             case 'dialects':
                 include = this.dialects;
+                // removes all the sub dialects as well
+                exclude = [filterData.content, ...this.dialectService.getAllSubDialects(filterData.content)];
                 break;
 
             case 'participantId':
@@ -143,7 +156,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
         }
         this.store.dispatch(setExcludingFilter({
             ...filterData,
-            exclude: filterData.content,
+            exclude,
             include
         }));
     }

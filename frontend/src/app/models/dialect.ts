@@ -12,11 +12,18 @@ export interface DialectPath {
      */
     name: string;
     /**
-     * Full path including itself
+     * Full path including itself. A dialect can have multiple parents,
+     * it would then have multiple *paths* for each of those parents!
      */
     path: string[];
-
+    /**
+     * Flattened full path
+     */
     pathFlat: string;
+    /**
+     * Flattened full path to the parent
+     */
+    parentsPathFlat: string;
 }
 
 export class DialectLookup {
@@ -64,7 +71,6 @@ export class DialectLookup {
             // missing dialect (might be the "Overgangsdialect"?)
             return false;
         }
-        let noChildren = true;
 
         // are any of the dialects children (if any) present?
         // only if they aren't present (or there are no
@@ -72,15 +78,14 @@ export class DialectLookup {
         // then this dialect is an end dialect
         for (const childDialect of this.findChildren(dialect)) {
             if (dialects.indexOf(childDialect.name) >= 0) {
-                noChildren = false;
-                break;
+                return false;
             }
         }
 
-        return noChildren;
+        return true;
     }
 
-    private *findChildren(dialect: Dialect): Iterable<Dialect> {
+    *findChildren(dialect: Dialect): Iterable<Dialect> {
         yield* dialect.children;
         for (const child of dialect.children) {
             yield* this.findChildren(child);
@@ -93,7 +98,8 @@ export class DialectLookup {
             yield {
                 name: dialect.name,
                 path: dialectPath,
-                pathFlat: dialectPath.join('>')
+                pathFlat: dialectPath.join('>'),
+                parentsPathFlat: path.join('>')
             };
 
             yield* this.flatten(dialect.children, dialectPath);

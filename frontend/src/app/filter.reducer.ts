@@ -8,7 +8,13 @@ export function handleIncludeFilter<TIn extends FilterObjectName, TOut extends {
     state: TOut,
     action: {
         field: FilterField<TIn>,
-        content: string
+        /**
+         * The first item should be the parent content, for example when filtering on dialects
+         * the first item is the one which the user clicked on. The following items
+         * are the subdialects. The main item is determined whether it should be interpreted
+         * as toggle (adding it versus toggling)
+         */
+        content: string[]
     }): TOut {
     // remove default filter
     const filters = state.filters.filter(filter => !isDefaultFilter(filter));
@@ -31,14 +37,14 @@ export function handleIncludeFilter<TIn extends FilterObjectName, TOut extends {
         }
     }
 
-    if (existing.indexOf(action.content) >= 0) {
+    if (existing.indexOf(action.content[0]) >= 0) {
         // if it was already included, make it exclusive
         existing = [];
     }
 
     const newFilter: Filter<TIn> = {
         field: action.field,
-        content: [...new Set([...existing, action.content])],
+        content: [...new Set([...existing, ...action.content])],
         index: filterIndex === -1 ? filters.length : filterIndex,
         onlyFullMatch: true
     };
@@ -65,7 +71,7 @@ export function handleExcludeFilter<TIn extends FilterObjectName, TOut extends {
     action: {
         field: FilterField<TIn>,
         include: string[],
-        exclude: string
+        exclude: string[]
     }): TOut {
     // remove default filter
     const filters = state.filters.filter(filter => !isDefaultFilter(filter));
@@ -76,7 +82,7 @@ export function handleExcludeFilter<TIn extends FilterObjectName, TOut extends {
         for (let i = filterIndex; i < filters.length;) {
             if (filters[i].field === action.field) {
                 // remove this item from existing filters
-                const content = filters[i].content.filter(c => c !== action.exclude);
+                const content = filters[i].content.filter(c => action.exclude.indexOf(c) < 0);
                 if (content.length === 0) {
                     filters.splice(i, 1);
                 } else {
@@ -94,7 +100,7 @@ export function handleExcludeFilter<TIn extends FilterObjectName, TOut extends {
     if (filterIndex === -1) {
         const newFilter: Filter<TIn> = {
             field: action.field,
-            content: action.include.filter(c => c !== action.exclude),
+            content: action.include.filter(c => action.exclude.indexOf(c) < 0),
             index: filters.length,
             onlyFullMatch: true
         };

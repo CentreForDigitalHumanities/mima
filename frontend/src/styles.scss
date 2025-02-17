@@ -1,11 +1,9 @@
-@use 'variables' with (
-    // University Brand Colors
+@use 'variables' with ( // University Brand Colors
     $primary: #FFCD00,
     $green: #24A793,
     $red: #C00A35,
     $yellow: #FFCD00,
-    $blue: #5287C6
-);
+    $blue: #5287C6);
 @use 'bulma/bulma';
 @import 'primeicons/primeicons.css';
 
@@ -27,18 +25,42 @@ p-multiselectitem li {
     padding: revert-layer;
 }
 
+%select {
+    background: none;
+    border: none;
+    width: 100%;
+
+    &.p-focus {
+        box-shadow: none;
+    }
+}
+
+%select-label {
+    padding: 0;
+}
+
 p-multiselect.input {
     height: fit-content;
 
     // use the border styling of bulma
     .p-multiselect {
-        background: none;
-        border: none;
-        width: 100%;
+        @extend %select;
 
         .p-multiselect-label {
-            padding: 0;
+            @extend %select-label;
         }
+    }
+}
+
+.p-treeselect {
+    @extend %select;
+
+    .p-treeselect-label {
+        @extend %select-label;
+    }
+
+    li li {
+        padding-left: 1rem;
     }
 }
 

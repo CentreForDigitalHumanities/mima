@@ -38,7 +38,13 @@ export const addFilter = createAction('[Questionnaire] Add Filter');
  */
 export const setIncludingFilter = createAction('[Questionnaire] Add Singular Filter', props<{
     field: FilterField<'question'>,
-    content: string
+    /**
+     * The first item should be the parent content, for example when filtering on dialects
+     * the first item is the one which the user clicked on. The following items
+     * are the subdialects. The main item is determined whether it should be interpreted
+     * as toggle (adding it versus toggling)
+     */
+    content: string[]
 }>());
 
 /**
@@ -49,7 +55,7 @@ export const setExcludingFilter = createAction('[Questionnaire] Add Excluding Fi
     /**
      * This is the content which should NOT be shown
      */
-    exclude: string,
+    exclude: string[],
     /**
      * This is the content which should be shown
      */

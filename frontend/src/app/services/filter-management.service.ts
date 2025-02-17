@@ -390,7 +390,8 @@ export class FilterManagementService implements OnDestroy {
                     for (let response of judgment.responses) {
                         for (const value of response[field]) {
                             labels[value] = value;
-                        }                    }
+                        }
+                    }
                     break;
 
                 case 'judgmentId':

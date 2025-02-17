@@ -6,6 +6,7 @@ import { Answer, MatchedAnswer, MatchedAnswerDeserializedProperties, MatchedAnsw
 import { SearchExpression, ignoreCharactersExp } from '../models/search-expression';
 import { Judgment, MatchedJudgment, MatchedJudgmentDeserialized, MatchedJudgmentProperties } from '../models/judgment';
 import { LikertResponse, MatchedLikertResponse } from '../models/likert-response';
+import { DialectService } from './dialect.service';
 
 
 export function isAnswer(object: any): object is Answer | MatchedAnswer | MatchedAnswerProperties | MatchedAnswerDeserializedProperties {
@@ -35,7 +36,8 @@ export function isEmptyFilter(filter: Filter<any>) {
     providedIn: 'root'
 })
 export class FilterService {
-
+    constructor(private dialectService: DialectService) {
+    }
     /**
      * @returns MatchedQuestion or MatchedJudgment, or undefined if it doesn't match
      */
@@ -276,6 +278,14 @@ export class FilterService {
                 // remove the initialization of unmatched dialect parts
                 matchedSub.dialects = [];
                 for (const dialect of item.dialects) {
+                    // only search through end dialects
+                    // this way searching for "Brabants" but excluding the sub-dialect "Noord-Brabants"
+                    // will work: only if someone has "Brabants" without any underlying dialects
+                    // it will be allowed to match
+                    if (!this.dialectService.dialectLookup.isEndDialect(dialect, item.dialects)) {
+                        continue;
+                    }
+
                     const [parts, matchingDialectFilters] = this.searchField<any>(dialect, itemKey, itemFilters);
                     matchedSub.dialects.push(parts);
                     for (const filter of matchingDialectFilters) {

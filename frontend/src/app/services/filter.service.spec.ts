@@ -291,6 +291,10 @@ actual:   ${actual}`;
                     matchedDialectNames: ['Zuid-Brabants'],
                     answers: [{
                         dialects: ['Nederfrankisch', 'Brabants', 'Zuid-Brabants', 'Antwerps'],
+                        // should only match end nodes (Antwerps is a sub-dialect of Zuid-Brabants)
+                        match: false
+                    }, {
+                        dialects: ['Nederfrankisch', 'Brabants', 'Zuid-Brabants'],
                         match: true
                     }, {
                         dialects: ['Fries', 'West-Fries'],
