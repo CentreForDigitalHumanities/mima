@@ -9,6 +9,7 @@ import { Question } from '../models/question';
 import { QuestionnaireService } from './questionnaire.service';
 import { Judgment } from '../models/judgment';
 import { JudgmentsService } from './judgments.service';
+import { DialectService } from './dialect.service';
 
 export interface DropdownOption {
     label: string;
@@ -53,7 +54,7 @@ export class FilterManagementService implements OnDestroy {
             judgment: {}
         };
 
-    constructor(private store: Store<QuestionnaireState & JudgmentsState>, private questionnaireService: QuestionnaireService, private judgmentsService: JudgmentsService) {
+    constructor(private store: Store<QuestionnaireState & JudgmentsState>, private questionnaireService: QuestionnaireService, private judgmentsService: JudgmentsService, private dialectService: DialectService) {
         this.subscription = new Subscription();
         this.queryParams$ = {
             question: this.selectQueryParams(this.subscription, 'question', 'questionnaire', 'questions'),
@@ -334,11 +335,16 @@ export class FilterManagementService implements OnDestroy {
                         break;
 
                     case 'dialects':
-                        for (let answer of question.answers) {
-                            for (const value of answer[field]) {
-                                labels[value] = value;
-                            }
+                        // TODO: these should be synchronized: the dialect hierarchy and the data
+                        // in the answers should be the same
+                        for (const dialect of this.dialectService.dialectLookup.flattened) {
+                            labels[dialect.name] = dialect.name;
                         }
+                        // for (let answer of question.answers) {
+                        //     for (const value of answer[field]) {
+                        //         labels[value] = value;
+                        //     }
+                        // }
                         break;
 
                     case 'id':
