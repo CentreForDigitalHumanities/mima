@@ -45,7 +45,7 @@
         <source>Delete filter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5743446572871974801" datatype="html">
@@ -472,14 +472,14 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
@@ -504,14 +504,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list/questionnaire-list.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3575576256728575513" datatype="html">
-        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="INTERPOLATION_2" equiv-text="{{matchedDialects.size}}"/> dialects · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
@@ -642,15 +635,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">103</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">130</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">152</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5707780993008694763" datatype="html">
@@ -678,7 +671,7 @@
         <source> unattested </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4608015944298801142" datatype="html">
@@ -713,7 +706,7 @@
         <source>en-GB</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/manual.service.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8054614372970301403" datatype="html">
@@ -726,8 +719,8 @@
       <trans-unit id="8653786565693391704" datatype="html">
         <source>View in Manual</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/manual-button/manual-button.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="sourcefile">src/app/manual-dialog/manual-dialog.component.html</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2709140321180243306" datatype="html">
@@ -844,6 +837,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
           <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4588063035415577343" datatype="html">
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="ts.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7951007374151921228" datatype="html">
+        <source>Matched Dialects</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
     </body>

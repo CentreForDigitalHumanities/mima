@@ -20,11 +20,7 @@
     <div class="box">
         <h1 class="subtitle" i18n>Matched Dialects</h1>
         <div class="content">
-            <ul>
-                @for (dialect of matchedDialects; track dialect){
-                <li>{{dialect}}</li>
-                }
-            </ul>
+            <mima-dialect-tree [root]="matchedRootDialects" [dialects]="matchedDialects"></mima-dialect-tree>
         </div>
     </div>
     }

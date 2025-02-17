@@ -59,6 +59,33 @@ export class DialectLookup {
     }
 
     /**
+     * Is the given dialect the lowest level of specificity in
+     * the passed list of dialects?
+     * @param name
+     * @param dialects
+     * @returns
+     */
+    isRootDialect(name: string, dialects: string[]): boolean {
+        const dialect = this.hierarchy[name];
+        if (!dialect) {
+            // missing dialect (might be the "Overgangsdialect"?)
+            return false;
+        }
+
+        // are any of the dialects parent (if any) present?
+        // only if they aren't present (or there are no
+        // parent of the dialect to begin with)
+        // then this dialect is an end dialect
+        for (const parentDialect of this.findParents(dialect)) {
+            if (dialects.indexOf(parentDialect.name) >= 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * Is the given dialect the final level of specificity in
      * the passed list of dialects?
      * @param name
@@ -85,10 +112,36 @@ export class DialectLookup {
         return true;
     }
 
+    /**
+     * Checks whether any of the passed children belong to this parent
+     * @param parent dialect to check
+     * @param children if any of these children are the parent
+     * @returns
+     */
+    hasChild(parent: Dialect, children: Set<string>) {
+        for (const child of this.findChildren(parent)) {
+            if (children.has(child.name)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Recursively finds all the children of a dialect
+     */
     *findChildren(dialect: Dialect): Iterable<Dialect> {
         yield* dialect.children;
         for (const child of dialect.children) {
             yield* this.findChildren(child);
+        }
+    }
+
+    *findParents(dialect: Dialect): Iterable<Dialect> {
+        yield* dialect.parents;
+        for (const child of dialect.parents) {
+            yield* this.findParents(child);
         }
     }
 

@@ -11,12 +11,12 @@ import { FilterEvent as FilterEventData } from '../questionnaire-item/questionna
 import { DialectService } from '../services/dialect.service';
 import { ProgressService, ProgressSession } from '../services/progress.service';
 import { FilterManagementService } from '../services/filter-management.service';
-import { FilterListComponent } from '../filter-list/filter-list.component';
 import { ManualButtonComponent } from '../manual-button/manual-button.component';
 import { DownloadButtonComponent } from '../download-button/download-button.component';
 import { QuestionnaireListComponent } from '../questionnaire-list/questionnaire-list.component';
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 import { QuestionnaireFiltersComponent } from "../questionnaire-filters/questionnaire-filters.component";
+import { DialectTreeComponent } from '../dialect-tree/dialect-tree.component';
 
 @Component({
     selector: 'mima-questionnaire-list-page',
@@ -25,7 +25,7 @@ import { QuestionnaireFiltersComponent } from "../questionnaire-filters/question
     standalone: true,
     imports: [
         CommonModule,
-        FilterListComponent,
+        DialectTreeComponent,
         ManualButtonComponent,
         DownloadButtonComponent,
         QuestionnaireListComponent,
@@ -49,6 +49,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     matchedQuestions: ReadonlyMap<string, MatchedQuestion>;
     matchedAnswerCount = 0;
     matchedDialects = new Set<string>();
+    matchedRootDialects = new Set<string>();
     matchedParticipants = new Set<string>();
 
     listMatchedDialects = false;
@@ -89,15 +90,28 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                 this.matchedQuestions = questions;
 
                 this.matchedAnswerCount = 0;
-                this.matchedDialects = new Set<string>();
+                const matchedDialects: string[] = [];
                 this.matchedParticipants = new Set<string>();
                 for (const question of this.matchedQuestions.values()) {
                     this.matchedAnswerCount += question.matchedAnswerCount;
                     for (const dialect of question.matchedDialectNames) {
-                        this.matchedDialects.add(dialect);
+                        matchedDialects.push(dialect);
                     }
                     for (const participantId of question.matchedParticipants) {
                         this.matchedParticipants.add(participantId);
+                    }
+                }
+
+                this.matchedDialects = new Set<string>(matchedDialects);
+
+                this.matchedRootDialects = new Set<string>();
+                // add all the roots with matched children
+                for (const root of this.dialectLookup.root) {
+                    for (const child of this.dialectLookup.findChildren(root)) {
+                        if (this.matchedDialects.has(child.name)) {
+                            this.matchedRootDialects.add(root.name);
+                            break;
+                        }
                     }
                 }
             })
