@@ -119,14 +119,20 @@ export class MatchedQuestion implements MatchedQuestionProperties {
             if (answer.match) {
                 // count matched answers only once
                 this.matchedAnswers.push(answer);
-            }
+                participants.add(answer.participantId.text);
 
-            for (const dialectPart of answer.dialects) {
-                const dialect = dialectPart.text;
-                dialects.add(dialect);
+                // did we filter on dialects or on something else?
+                let matchedDialectParts = answer.dialects.filter(part => part.match);
+                if (matchedDialectParts.length === 0) {
+                    // we did not filter on dialects, mark all dialects of this answer
+                    // as matched
+                    matchedDialectParts = answer.dialects;
+                }
 
-                if (dialectPart.match) {
-                    participants.add(answer.participantId.text);
+                for (const dialectPart of matchedDialectParts) {
+                    const dialect = dialectPart.text;
+                    dialects.add(dialect);
+
                     if (dialect in this.matchedDialects) {
                         this.matchedDialects[dialect].push(answer);
                     } else {

@@ -98,7 +98,7 @@
                                 <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
                                     <!-- it is okay to take the first item from the matchedDialects array, because the .dialectPathParts -->
                                     <!-- array is the same for all items in the matchedDialects array -->
-                                    <div class="tag filterable" (click)="onFilterSelected($event, 'dialects', item)">{{item}}</div>
+                                    <div class="tag filterable" [ngClass]="{'is-match': matchedDialectParts[item].fullMatch}" (click)="onFilterSelected($event, 'dialects', item)" [innerHTML]="matchedDialectParts[item] | highlight"></div>
                                     <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', item)" i18n-aria-label
                                         aria-label="exclude"></a>
                                 </div>

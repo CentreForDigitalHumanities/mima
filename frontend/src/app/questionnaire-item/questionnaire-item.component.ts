@@ -66,6 +66,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     valueDirty = true;
     matchedAnswerCount = 0;
     matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+    matchedDialectParts: { [dialect: string]: MatchedParts } = {};
     matchedDialectNames: string[] = [];
     matchedDialectsCount = 0;
     questionExpanded: boolean = false;
@@ -92,6 +93,18 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
      */
     @Input()
     onlyQuestion = false;
+
+    /**
+     * All the dialect parts
+     */
+    private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
+    private get unmatchedDialectParts() {
+        if (!this._unmatchedDialectParts) {
+            this._unmatchedDialectParts = this.initializeDialectTextParts();
+        }
+
+        return this._unmatchedDialectParts;
+    }
 
     constructor(private questionnaireService: QuestionnaireService, private dialectService: DialectService, element: ElementRef) {
         this.nativeElement = element.nativeElement;
@@ -128,7 +141,12 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
-        this.matchedDialects = this.groupAnswers(this.model.matchedAnswers);
+        let [matchedDialects, matchedDialectParts] = this.groupAnswers(this.model.matchedAnswers);
+        this.matchedDialects = matchedDialects;
+        this.matchedDialectParts = {
+            ...this.unmatchedDialectParts,
+            ...matchedDialectParts
+        };
         this.matchedDialectsCount = this.model.matchedDialectsCount;
         this.matchedDialectNames = this.model.matchedDialectNames;
         this.dialectsCount = this.model.dialectsCount;
@@ -139,15 +157,50 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
     }
 
-    private groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): { [dialect: string]: MatchedAnswerGrouped[] } {
+    private initializeDialectTextParts() {
+        const dialectTextParts: { [dialect: string]: MatchedParts } = {};
+        for (const dialect of this.dialectLookup.flattened) {
+            dialectTextParts[dialect.name] = new MatchedParts({
+                empty: false,
+                emptyFilters: false,
+                fullMatch: false,
+                match: false,
+                parts: [{
+                    match: false,
+                    text: dialect.name,
+                    bold: false
+                }]
+            });
+        }
+
+        return dialectTextParts;
+    }
+
+    private groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): [
+        { [dialect: string]: MatchedAnswerGrouped[] },
+        { [dialect: string]: MatchedParts }
+    ] {
         // group answers by their dialect
         const matchedDialects: { [endDialects: string]: MatchedAnswer[] } = {};
+        const matchedDialectParts: { [dialect: string]: MatchedParts } = {};
 
         for (const answer of matchedAnswers) {
+            // did the answer match the filter on dialect?
+            const answerMatchedDialects: MatchedParts[] = [];
+            for (const parts of answer.dialects) {
+                if (parts.match) {
+                    matchedDialectParts[parts.text] = parts;
+                    answerMatchedDialects.push(parts);
+                }
+            }
+
             for (const dialect of this.endDialects[answer.participantId.text]) {
-                if (this.dialectService.anyDialectInPaths(
-                    answer.dialects.filter(x => x.match).map(x => x.text),
-                    this.dialectService.getDialectPaths(dialect))) {
+                if ( // not matching on dialects: mark all the end dialects as matched
+                    answerMatchedDialects.length == 0
+                    // only mark the dialects which were matched by the filters
+                    || (this.dialectService.anyDialectInPaths(
+                        answerMatchedDialects.map(x => x.text),
+                        this.dialectService.getDialectPaths(dialect)))) {
                     matchedDialects[dialect] = [...matchedDialects[dialect] ?? [], answer];
                 }
             }
@@ -182,7 +235,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }
-        return grouped;
+        return [grouped, matchedDialectParts];
     }
 
     /**

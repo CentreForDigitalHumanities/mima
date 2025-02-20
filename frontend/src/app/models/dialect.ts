@@ -6,6 +6,9 @@ export interface Dialect {
 
 export type EndDialects = { [participantId: string]: string[] };
 
+/**
+ * Describes a path of hierarchial ancestors for a dialect
+ */
 export interface DialectPath {
     /**
      * Name of the final dialect
@@ -34,9 +37,9 @@ export class DialectLookup {
     public flattened!: DialectPath[];
 
     /**
-     * Gets all the end dialects with their paths
+     * Gets all the dialects with their paths
      */
-    public paths!: { [endDialect: string]: DialectPath[] };
+    public paths!: { [dialect: string]: DialectPath[] };
 
     constructor(
         /**
