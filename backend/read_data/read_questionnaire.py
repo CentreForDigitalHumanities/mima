@@ -21,6 +21,21 @@ def remove_periods(text):
     stripped_text = text.translate(translator)
     return stripped_text
 
+def extract_prompt(question_string):
+    ## Collect the prompts for a given string
+    prompt_pattern = r'\[(.*?)\]'
+    match = re.search(prompt_pattern, question_string)
+    if match:
+        return match.group(1)
+    else:
+        return 'No prompt found'
+
+# Define a custom function to serialize data classes as dictionaries
+def serialize_classes(obj):
+    if isinstance(obj, Question) or isinstance(obj, Answer):
+        return asdict(obj)
+    return obj.__dict__
+
 @dataclass
 class Question:
     tag: str
@@ -57,150 +72,164 @@ class Dialect:
     speakers: list = None
     translations: dict = None
 
-data = read_csv(DATA_PATH)
-participants_data = read_csv(PARTICIPANTS_PATH)
-additional_data = read_csv(ADDITIONAL_DATA_PATH)
 
-## Match dialects to participant IDs
-participant_dialects = {}
-participant_countries = {}
-skip_list = []
+def create_questionnaire_items(data):
+    ## Create a Question object for each question and save them in a dictionary
+    questionnaire_items = {} #keys: question index
+    translation_indices = []
 
-for participant in participants_data[1:]:
+    for index, cell in enumerate(data[0]):
+        first_word = cell.split()[0]
+        if cell.endswith('[Vertaling]') and first_word == 'CLEANED':
+            question = remove_periods(' '.join(cell.split()[2:]))
+            questionnaire_item = Question(
+                tag = remove_periods(cell.split()[1]),
+                index = index,
+                question = question,
+                type = 'Translation',
+                prompt = extract_prompt(question),
+                cleaned = True
+            )
+            translation_indices.append(questionnaire_item.index)
+        elif cell.endswith('[Vertaling]') and first_word not in ['COMMENT', 'DEVIATION']:
+            question = remove_periods(' '.join(cell.split()[1:]))
+            questionnaire_item = Question(
+                tag = remove_periods(first_word),
+                index = index,
+                question = question,
+                type = 'Translation',
+                prompt = extract_prompt(question)
+            )
+            translation_indices.append(questionnaire_item.index)
+        else:
+            # currently unused, since we are only interested in translation questions
+            # likert questions are read in read_likert.py
+            questionnaire_item = Question(
+                tag = remove_periods(first_word),
+                index = index,
+                question = remove_periods(' '.join(cell.split()[1:]))
+            )
+
+        questionnaire_items[questionnaire_item.index] = questionnaire_item
+
+    return questionnaire_items, translation_indices
+
+
+def extract_participant_metadata(participants_data):
+    ## Create a dictionary with participant IDs as keys and their dialects as values
+    participant_countries = {}
+    participant_dialects = {}
+    skip_list = []
+    dialect_index = next((x for x in range(len(participants_data[0])) if participants_data[0][x] == '[metadata:dialect]'), None)
+    if dialect_index is None:
+        raise ValueError("Couldn't find column header with '[metadata:dialect]' in the participants data")
     separators = [';', '&', '+', ':']
     pattern = '|'.join(map(re.escape, separators))
-    lang_tokens = [subdialect.strip() for subdialect in re.split(pattern, participant[39])]
-    if 'UNDERSPECIFIED' in lang_tokens:
-        skip_list.append(''.join(participant[0:2]))
-        continue  # skip participants with underspecified dialects
-    country = []
-    dialect = []
-    for token in lang_tokens:
-        if 'Nederland' in token or 'België' in token:
-            country.append(token)
-        else:
-            dialect.append(token)
-    participant_countries[''.join(participant[0:2])] = country if country else ['NO COUNTRY']
-    participant_dialects[''.join(participant[0:2])] = dialect if dialect[0] != '' else ['SKIP']
 
-## Create a Question for each question and save it as an instance
-questionnaire_items = {} #keys: question index
-for index, cell in enumerate(data[0]):
-    first_word = cell.split()[0]
-    if first_word == 'CLEANED':
-        questionnaire_item = Question(
-            tag = remove_periods(cell.split()[1]),
-            index = index,
-            question = remove_periods(' '.join(cell.split()[2:])),
-            type = 'Translation',
-            cleaned = True
-        )
-    elif cell.endswith('[Vertaling]') and first_word not in ['COMMENT', 'DEVIATION']:
-        questionnaire_item = Question(
-            tag = remove_periods(first_word),
-            index = index,
-            question = remove_periods(' '.join(cell.split()[1:])),
-            type = 'Translation'
-        )
-    else:
-        questionnaire_item = Question(
-            tag = remove_periods(first_word),
-            index = index,
-            question = remove_periods(' '.join(cell.split()[1:]))
-        )
 
-    questionnaire_items[questionnaire_item.index] = questionnaire_item
+    for participant in participants_data[1:]:
+        participant_id = ''.join(participant[0:2])
+        lang_tokens = [subdialect.strip() for subdialect in re.split(pattern, participant[dialect_index])]
 
-## Find the translations in the questionnaire
-## Save the indices of those questions
-translation_indices = []  # indices of translation questions
-for item in questionnaire_items:
-    if questionnaire_items[item].type == 'Translation':
-        translation_indices.append(questionnaire_items[item].index)
-print('N of questions: {}\nN of translation questions: {}'.format(len(questionnaire_items), len(translation_indices)))
+        if 'UNDERSPECIFIED' in lang_tokens:
+            skip_list.append(participant_id)
+            continue  # skip participants with underspecified dialects
+        country = []
+        dialect = []
+        for token in lang_tokens:
+            if 'Nederland' in token or 'België' in token:
+                country.append(token)
+            else:
+                dialect.append(token)
+        participant_countries[participant_id] = country if country else ['NO COUNTRY']
+        participant_dialects[participant_id] = dialect if dialect[0] != '' else ['SKIP']
+    return participant_countries, participant_dialects, skip_list
 
-## Collect the prompts for the translation questions
-prompt_pattern = r'\[(.*?)\]'
-for ti in translation_indices:
-    match = re.search(prompt_pattern, questionnaire_items[ti].question)
-    if match:
-        questionnaire_items[ti].prompt = match.group(1)
-    else:
-        questionnaire_items[ti].prompt = 'No prompt found'
 
-## Fill the answers for each question
-for row in data[1:]:
-    participant = ''.join(row[0:2])
-    if participant in skip_list:
-        continue
-    for index, cell in enumerate(row):
-        question = questionnaire_items[index]
-        if index in translation_indices:
-            # mark unattested answers for empty cells
-            # cleaned cells are skipped
-            if cell == '' and not questionnaire_items[index].cleaned:
-                answer = Answer(question.tag, answer='unattested', country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
-                if question.answers:
-                    question.answers.append(answer)
-                else:
-                    question.answers = [answer]
-            elif cell != '':
-                # skip cells that have cleaned versions of them in the next line
-                if questionnaire_items[index+1].cleaned and row[index+1] != '':
-                    pass
-                else:
-                    answer = Answer(question.tag, answer=cell, country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
+def extract_answers(data, questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list):
+        ## Fill the answers for each question
+    for row in data[1:]:
+        participant = ''.join(row[0:2])
+        if participant in skip_list:
+            continue
+        for index, cell in enumerate(row):
+            question = questionnaire_items[index]
+            if index in translation_indices:
+                # mark unattested answers for empty cells
+                # cleaned cells are skipped
+                if cell == '' and not questionnaire_items[index].cleaned:
+                    answer = Answer(question.tag, answer='unattested', country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
                     if question.answers:
                         question.answers.append(answer)
                     else:
                         question.answers = [answer]
+                elif cell != '':
+                    # skip cells that have cleaned versions of them in the next line
+                    if questionnaire_items[index+1].cleaned and row[index+1] != '':
+                        pass
+                    else:
+                        answer = Answer(question.tag, answer=cell, country=participant_countries[participant], dialect=participant_dialects[participant], participant_id=participant)
+                        if question.answers:
+                            question.answers.append(answer)
+                        else:
+                            question.answers = [answer]
 
-## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
-## and save it in a cleaned_translation_questions_dict
-cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
-for index in questionnaire_items:
-    question = questionnaire_items[index]
-    if question.answers and question.type == 'Translation' and not question.cleaned:
-        if questionnaire_items[index+1].cleaned:
-            if questionnaire_items[index+1].answers:
-                questionnaire_items[index+1].answers += question.answers
-            else:
-                questionnaire_items[index+1].answers = question.answers
-        else: #if there is no CLEANED column, the answers of this question are added
+    ## Merge all the answers from the cleaned and uncleaned translation questions under a single cleaned translation question
+    ## and save it in a cleaned_translation_questions_dict
+    cleaned_translation_questions = {} ## dict where the keys are the question tag (e.g. 'D7Z3[SQ004]')
+    for index in questionnaire_items:
+        question = questionnaire_items[index]
+        if question.answers and question.type == 'Translation' and not question.cleaned:
+            if questionnaire_items[index+1].cleaned:
+                if questionnaire_items[index+1].answers:
+                    questionnaire_items[index+1].answers += question.answers
+                else:
+                    questionnaire_items[index+1].answers = question.answers
+            else: #if there is no CLEANED column, the answers of this question are added
+                cleaned_translation_questions[question.tag] = question
+        if question.cleaned:
             cleaned_translation_questions[question.tag] = question
-    if question.cleaned:
-        cleaned_translation_questions[question.tag] = question
-    if not question.answers:
-        question.answers = []
+        if not question.answers:
+            question.answers = []
+
+    return cleaned_translation_questions
 
 
-## Go through the additional data and attach the necessary information to the cleaned_translation_questions
-for entry in additional_data[1:]:
-    ids = entry[0].split(';')
-    split_item = entry[1]
-    chapter = entry[2]
-    subtags = entry[3].split(';')
-    en_translation = entry[4]
-    gloss = entry[5]
-    for id in ids:
-        try:
-            question = cleaned_translation_questions[id]
-            question.split_item = split_item
-            question.chapter = chapter
-            question.subtags = subtags
-            question.en_translation = en_translation
-            question.gloss = gloss
-        except:
-            pass
+def enrich_translation_questions(cleaned_translation_questions, additional_data):
+    ## Go through the additional data and attach the necessary information to the cleaned_translation_questions
+    for entry in additional_data[1:]:
+        ids = entry[0].split(';')
+        split_item = entry[1]
+        chapter = entry[2]
+        subtags = entry[3].split(';')
+        en_translation = entry[4]
+        gloss = entry[5]
+        for id in ids:
+            try:
+                question = cleaned_translation_questions[id]
+                question.split_item = split_item
+                question.chapter = chapter
+                question.subtags = subtags
+                question.en_translation = en_translation
+                question.gloss = gloss
+            except:
+                pass
+    return cleaned_translation_questions
 
 
-# Define a custom function to serialize data classes as dictionaries
-def serialize_classes(obj):
-    if isinstance(obj, Question) or isinstance(obj, Answer):
-        return asdict(obj)
-    return obj.__dict__
+def __main__():
+    data = read_csv(DATA_PATH)
+    participants_data = read_csv(PARTICIPANTS_PATH)
+    additional_data = read_csv(ADDITIONAL_DATA_PATH)
+    questionnaire_items, translation_indices = create_questionnaire_items(data)
+    participant_countries, participant_dialects, skip_list = extract_participant_metadata(participants_data)
+    cleaned_translation_questions = extract_answers(data, questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list)
+    enriched_cleaned_translation_questions = enrich_translation_questions(cleaned_translation_questions, additional_data)
+    ## dump as json
+    with open(os.path.join(OUTPUT_PATH, 'cleaned_translation_questions.json'), 'w') as file:
+        json.dump(enriched_cleaned_translation_questions, file, default=serialize_classes, indent=4)
 
-## dump as json
-with open(os.path.join(OUTPUT_PATH, 'cleaned_translation_questions.json'), 'w') as file:
-    json.dump(cleaned_translation_questions, file, default=serialize_classes, indent=4)
+    return questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list
 
+if __name__ == "__main__":
+    __main__()
