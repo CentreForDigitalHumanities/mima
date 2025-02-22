@@ -4,24 +4,7 @@ import json
 import os
 from dataclasses import dataclass, asdict
 
-from mima.settings import DATA_PATH, ADDITIONAL_DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
-# SIGH DEBUGGER DOESNT RECOGNIZE THE PYTHONPATH CANT BE BOTHERED
-## Path to the output folder
-OUTPUT_PATH = "/Users/Stiph002/Projects/mima/frontend/src/assets"
-
-## Path to the Meertens data in csv format
-DATA_PATH = "/Users/Stiph002/Projects/mima_materials/meertens_q1_nederlands.csv"
-
-## Path to the additional data, i.e. chapters, tags, glosses, and translations
-ADDITIONAL_DATA_PATH = "/Users/Stiph002/Projects/mima_materials/additional_data_meertens_q1_nederlands.csv"
-
-## Path to the participants' data in csv format
-PARTICIPANTS_PATH = "/Users/Stiph002/Projects/mima_materials/participants_meertens_q1_nederlands.csv"
-
-
-# DATA_PATH = "/Users/Stiph002/Projects/mima_materials/meertens_q2_nederlands.csv"
-# PARTICIPANTS_PATH = "/Users/Stiph002/Projects/mima_materials/participants_meertens_q2_nederlands.csv"
-
+from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, OUTPUT_PATH
 
 def read_csv(filepath):
     data = []
@@ -230,20 +213,40 @@ def enrich_translation_questions(cleaned_translation_questions, additional_data)
                 pass
     return cleaned_translation_questions
 
-
-def __main__():
-    data = read_csv(DATA_PATH)
-    participants_data = read_csv(PARTICIPANTS_PATH)
-    additional_data = read_csv(ADDITIONAL_DATA_PATH)
+def extract_enriched_cleaned_questionnaire(data_path, participants_data_path, additional_data_path):
+    data = read_csv(data_path)
+    participants_data = read_csv(participants_data_path)
+    additional_data = read_csv(additional_data_path)
     questionnaire_items, translation_indices = create_questionnaire_items(data)
     participant_countries, participant_dialects, skip_list = extract_participant_metadata(participants_data)
     cleaned_translation_questions = extract_answers(data, questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list)
     enriched_cleaned_translation_questions = enrich_translation_questions(cleaned_translation_questions, additional_data)
+    return enriched_cleaned_translation_questions
+
+
+def merge_questionnaires(q1, q2):
+    merged_questionnaires = {}
+    for key in q1:
+        if key in q2:
+            print('Whoah overlap')
+            print(key)
+        else:
+            merged_questionnaires[key] = q1[key]
+    for key in q2:
+        if key in q1:
+            pass
+        else:
+            merged_questionnaires[key] = q2[key]
+    return merged_questionnaires
+
+def __main__():
+    enriched_cleaned_translation_questions_q1 = extract_enriched_cleaned_questionnaire(DATA_PATH_Q1, PARTICIPANTS_PATH_Q1, ADDITIONAL_DATA_PATH_Q1)
+    enriched_cleaned_translation_questions_q2 = extract_enriched_cleaned_questionnaire(DATA_PATH_Q2, PARTICIPANTS_PATH_Q2, ADDITIONAL_DATA_PATH_Q2)
+    merged_questionnaires = merge_questionnaires(enriched_cleaned_translation_questions_q1, enriched_cleaned_translation_questions_q2)
+
     ## dump as json
     with open(os.path.join(OUTPUT_PATH, 'cleaned_translation_questions.json'), 'w') as file:
-        json.dump(enriched_cleaned_translation_questions, file, default=serialize_classes, indent=4)
-
-    return questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list
+        json.dump(merged_questionnaires, file, default=serialize_classes, indent=4)
 
 if __name__ == "__main__":
     __main__()
