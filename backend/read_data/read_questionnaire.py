@@ -5,6 +5,23 @@ import os
 from dataclasses import dataclass, asdict
 
 from mima.settings import DATA_PATH, ADDITIONAL_DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+# SIGH DEBUGGER DOESNT RECOGNIZE THE PYTHONPATH CANT BE BOTHERED
+## Path to the output folder
+OUTPUT_PATH = "/Users/Stiph002/Projects/mima/frontend/src/assets"
+
+## Path to the Meertens data in csv format
+DATA_PATH = "/Users/Stiph002/Projects/mima_materials/meertens_q1_nederlands.csv"
+
+## Path to the additional data, i.e. chapters, tags, glosses, and translations
+ADDITIONAL_DATA_PATH = "/Users/Stiph002/Projects/mima_materials/additional_data_meertens_q1_nederlands.csv"
+
+## Path to the participants' data in csv format
+PARTICIPANTS_PATH = "/Users/Stiph002/Projects/mima_materials/participants_meertens_q1_nederlands.csv"
+
+
+# DATA_PATH = "/Users/Stiph002/Projects/mima_materials/meertens_q2_nederlands.csv"
+# PARTICIPANTS_PATH = "/Users/Stiph002/Projects/mima_materials/participants_meertens_q2_nederlands.csv"
+
 
 def read_csv(filepath):
     data = []
@@ -62,9 +79,6 @@ class Answer:
     dialect: str
     country: str
     participant_id: str
-    ma: str = 'NA'
-    prompt: str = "NA"
-    prompt_ma: str = 'NA'
 
 @dataclass
 class Dialect:
