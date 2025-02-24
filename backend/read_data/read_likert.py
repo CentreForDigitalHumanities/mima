@@ -1,4 +1,6 @@
 from mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+
+from read_questionnaire import extract_participant_metadata
 import re
 import os
 import json
@@ -20,7 +22,8 @@ class JudgmentItem:
 @dataclass
 class Response:
     participant_id: str
-    dialect: str
+    dialects: str
+    country: str
     score: int
 
 
@@ -97,14 +100,17 @@ def get_judgment_items(line):
     return judgments, indices
 
 
-def get_responses(data, participant_dialects, indices, judgments):
+def get_responses(data, participant_dialects, participant_countries, indices, judgments, skip_list):
     for line in data[1:]:
         participant_id = "".join(line[0:2])
+        if participant_id in skip_list:
+            print('skip', participant_id)
+            continue
         for index in indices:
             score = line[index]
             question_id = get_full_id(data[0][index])
             judgments[question_id].responses.append(
-                Response(participant_id, participant_dialects[participant_id], score)
+                Response(participant_id, participant_dialects[participant_id], participant_countries[participant_id], score)
             )
     return judgments
 
@@ -125,10 +131,10 @@ def export_to_json(dictionary):
 def __main__():
     data = read_csv(DATA_PATH)
     participants_data = read_csv(PARTICIPANTS_PATH)
-    participant_dialects = get_dialects(participants_data)
+    participant_countries, participant_dialects, skip_list = extract_participant_metadata(participants_data)
     judgment_items, judgment_indices = get_judgment_items(data[0])
     judgment_items = get_responses(
-        data, participant_dialects, judgment_indices, judgment_items
+        data, participant_dialects, participant_countries, judgment_indices, judgment_items, skip_list
     )
     export_to_json(judgment_items)
 
