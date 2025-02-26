@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LikertComponent, LikertShow } from '../likert/likert.component';
 import { Judgment, MatchedJudgment } from '../models/judgment';
 import { JudgmentsService } from '../services/judgments.service';
+import { DialectLookup } from '../models/dialect';
+
 
 @Component({
     selector: 'mima-likert-list',
@@ -20,6 +22,9 @@ export class LikertListComponent implements AfterViewInit, OnChanges {
 
     @Input()
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
+
+     @Input()
+    dialectLookup: DialectLookup;
 
     @Output()
     toggleShow = new EventEmitter<{}>();

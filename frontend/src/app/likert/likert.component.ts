@@ -9,6 +9,7 @@ import { LikertBarComponent } from '../likert-bar/likert-bar.component';
 import { IntersectableComponent } from '../services/visibility.service';
 import { MatchedPart, MatchedParts } from '../models/matched-parts';
 import { LoadingComponent } from "../loading/loading.component";
+import { DialectLookup } from '../models/dialect';
 
 export type LikertShow = 'count' | 'percentage';
 
@@ -38,6 +39,8 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     }
     @Input() loading: boolean = false;
     @Input() show: LikertShow = 'count';
+    @Input() dialectLookup: DialectLookup;
+
 
     @Output()
     toggleShow = new EventEmitter();

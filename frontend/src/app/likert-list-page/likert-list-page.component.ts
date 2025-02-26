@@ -11,6 +11,8 @@ import { LikertFiltersComponent } from '../likert-filters/likert-filters.compone
 import { ManualButtonComponent } from '../manual-button/manual-button.component';
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 import { LikertCountToggleComponent } from '../likert-count-toggle/likert-count-toggle.component';
+import { DialectService } from '../services/dialect.service';
+import { DialectLookup } from '../models/dialect';
 
 @Component({
     selector: 'mima-likert-list-page',
@@ -25,12 +27,14 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
     private matchedJudgments$ = this.store.select('judgments', 'matchedJudgments');
 
     show$ = this.store.select('judgments', 'show');
+    public dialectLookup: DialectLookup;
+    
 
     progress: ProgressSession;
 
     @Input() filterSelect: Map<string, string[]>;
 
-    constructor(private store: Store<State>, private progressService: ProgressService) {
+    constructor(private store: Store<State>, private progressService: ProgressService, private dialectService: DialectService) {
         this.progress = this.progressService.start(true);
     }
 
@@ -42,6 +46,7 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.store.dispatch(loadJudgments());
+        this.dialectLookup = this.dialectService.dialectLookup;
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.judgments$.subscribe(judgments => {

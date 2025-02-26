@@ -17,7 +17,11 @@
             <mima-manual-button id="judgment"></mima-manual-button>
         </div>
     </div>
-    <mima-likert-list [show]="show$ | async" (toggleShow)="toggleShow()" [matchedJudgments]="matchedJudgments"
-        [judgments]="judgments"></mima-likert-list>
+    <mima-likert-list 
+        [show]="show$ | async" 
+        (toggleShow)="toggleShow()" 
+        [matchedJudgments]="matchedJudgments"
+        [judgments]="judgments"
+        [dialectLookup]="dialectLookup"></mima-likert-list>
 </div>
 }
