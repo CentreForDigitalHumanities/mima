@@ -353,7 +353,7 @@ export class FilterManagementService implements OnDestroy {
 
                     case 'participantId':
                         for (let participant of this.questionnaireService.getParticipants(question.answers)) {
-                            labels[participant.participantId] = `${participant.participantId} ${participant.dialects[0]}`; // just using the first one for now
+                            labels[participant.participantId] = `${participant.participantId} ${participant.dialects.join(', ')}`; // concatenating all items
                         }
 
                         break;
@@ -406,7 +406,7 @@ export class FilterManagementService implements OnDestroy {
 
                 case 'participantId':
                     for (let participant of this.judgmentsService.getParticipants(judgment.responses)) {
-                        labels[participant.participantId] = `${participant.participantId} ${participant.dialects[0]}`; // just using the first one for now
+                        labels[participant.participantId] = `${participant.participantId} ${participant.dialects.join(', ')}`; // just using the first one for now
                     }
 
                     break;
