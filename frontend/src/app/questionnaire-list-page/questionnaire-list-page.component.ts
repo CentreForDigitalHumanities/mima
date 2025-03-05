@@ -37,10 +37,6 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     private subscriptions: Subscription[];
     private questions$ = this.store.select('questionnaire', 'questions');
     private matchedQuestions$ = this.store.select('questionnaire', 'matchedQuestions');
-    private initDone: () => void;
-    private initDonePromise = new Promise<void>((resolve) => {
-        this.initDone = resolve;
-    })
 
     public dialectLookup: DialectLookup;
 
@@ -66,9 +62,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
     }
 
     ngOnInit() {
-        if (!this.questions) {
-            this.store.dispatch(loadQuestionnaire());
-        }
+        this.store.dispatch(loadQuestionnaire());
         this.dialectLookup = this.dialectService.dialectLookup;
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
@@ -103,25 +97,13 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                 }
 
                 this.matchedDialects = new Set<string>(matchedDialects);
-
-                this.matchedRootDialects = new Set<string>();
-                // add all the roots with matched children
-                for (const root of this.dialectLookup.root) {
-                    for (const child of this.dialectLookup.findChildren(root)) {
-                        if (this.matchedDialects.has(child.name)) {
-                            this.matchedRootDialects.add(root.name);
-                            break;
-                        }
-                    }
-                }
+                this.matchedRootDialects = this.dialectLookup.getRootDialects(this.matchedDialects);
             })
         ];
-        this.initDone();
     }
 
-    async ngOnDestroy(): Promise<void> {
+    ngOnDestroy(): void {
         this.progress.hide();
-        await this.initDonePromise;
         for (const subscription of this.subscriptions) {
             subscription.unsubscribe();
         }

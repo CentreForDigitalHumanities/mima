@@ -61,6 +61,21 @@ export class DialectLookup {
         }
     }
 
+    getRootDialects(dialects: Set<string>) {
+        const matchedRootDialects = new Set<string>();
+        // add all the roots with matched children
+        for (const root of this.root) {
+            for (const child of this.findChildren(root)) {
+                if (dialects.has(child.name)) {
+                    matchedRootDialects.add(root.name);
+                    break;
+                }
+            }
+        }
+
+        return matchedRootDialects;
+    }
+
     /**
      * Is the given dialect the lowest level of specificity in
      * the passed list of dialects?

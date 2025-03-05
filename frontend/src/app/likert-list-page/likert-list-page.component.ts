@@ -15,11 +15,12 @@ import { DialectService } from '../services/dialect.service';
 import { DialectLookup, EndDialects } from '../models/dialect';
 import { JudgmentsService } from '../services/judgments.service';
 import { Participant } from '../models/participant';
+import { DialectTreeComponent } from '../dialect-tree/dialect-tree.component';
 
 @Component({
     selector: 'mima-likert-list-page',
     standalone: true,
-    imports: [CommonModule, LikertListComponent, LikertFiltersComponent, ManualButtonComponent, LikertCountToggleComponent, TransitionNumbersPipe],
+    imports: [CommonModule, LikertListComponent, LikertFiltersComponent, ManualButtonComponent, LikertCountToggleComponent, TransitionNumbersPipe, DialectTreeComponent],
     templateUrl: './likert-list-page.component.html',
     styleUrl: './likert-list-page.component.scss'
 })
@@ -40,11 +41,13 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
         this.progress = this.progressService.start(true);
     }
 
+    listMatchedDialects = false;
     judgments: ReadonlyMap<string, Judgment>;
     endDialects: EndDialects;
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
     matchedResponseCount = 0;
     matchedDialects = new Set<string>();
+    matchedRootDialects = new Set<string>();
     matchedParticipants = new Set<string>();
 
     ngOnInit() {
@@ -66,17 +69,20 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
                 this.matchedJudgments = judgments;
 
                 this.matchedResponseCount = 0;
-                this.matchedDialects = new Set<string>();
+                const matchedDialects: string[] = [];
                 this.matchedParticipants = new Set<string>();
                 for (const judgment of this.matchedJudgments.values()) {
                     this.matchedResponseCount += judgment.matchedResponseCount;
                     for (const dialect of judgment.matchedDialectNames) {
-                        this.matchedDialects.add(dialect);
+                        matchedDialects.push(dialect);
                     }
                     for (const participantId of judgment.matchedParticipants) {
                         this.matchedParticipants.add(participantId);
                     }
                 }
+
+                this.matchedDialects = new Set<string>(matchedDialects);
+                this.matchedRootDialects = this.dialectLookup.getRootDialects(this.matchedDialects);
             })]
     }
 

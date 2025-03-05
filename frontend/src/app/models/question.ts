@@ -116,6 +116,10 @@ export class MatchedQuestion implements MatchedQuestionProperties {
         this.matchedAnswers = [];
         this.matchedDialects = {};
         for (const answer of this.answers) {
+            for (const dialect of answer.dialects) {
+                dialects.add(dialect.text);
+            }
+
             if (answer.match) {
                 // count matched answers only once
                 this.matchedAnswers.push(answer);
@@ -131,7 +135,6 @@ export class MatchedQuestion implements MatchedQuestionProperties {
 
                 for (const dialectPart of matchedDialectParts) {
                     const dialect = dialectPart.text;
-                    dialects.add(dialect);
 
                     if (dialect in this.matchedDialects) {
                         this.matchedDialects[dialect].push(answer);
