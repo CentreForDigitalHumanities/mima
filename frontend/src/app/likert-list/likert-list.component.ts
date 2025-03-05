@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LikertComponent, LikertShow } from '../likert/likert.component';
 import { Judgment, MatchedJudgment } from '../models/judgment';
 import { JudgmentsService } from '../services/judgments.service';
-import { DialectLookup } from '../models/dialect';
+import { DialectLookup, EndDialects } from '../models/dialect';
 
 
 @Component({
@@ -23,7 +23,10 @@ export class LikertListComponent implements AfterViewInit, OnChanges {
     @Input()
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
 
-     @Input()
+    @Input()
+    endDialects: EndDialects;
+
+    @Input()
     dialectLookup: DialectLookup;
 
     @Output()

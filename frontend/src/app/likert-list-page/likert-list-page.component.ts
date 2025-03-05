@@ -12,7 +12,9 @@ import { ManualButtonComponent } from '../manual-button/manual-button.component'
 import { TransitionNumbersPipe } from '../transition-numbers.pipe';
 import { LikertCountToggleComponent } from '../likert-count-toggle/likert-count-toggle.component';
 import { DialectService } from '../services/dialect.service';
-import { DialectLookup } from '../models/dialect';
+import { DialectLookup, EndDialects } from '../models/dialect';
+import { JudgmentsService } from '../services/judgments.service';
+import { Participant } from '../models/participant';
 
 @Component({
     selector: 'mima-likert-list-page',
@@ -28,17 +30,18 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
 
     show$ = this.store.select('judgments', 'show');
     public dialectLookup: DialectLookup;
-    
+
 
     progress: ProgressSession;
 
     @Input() filterSelect: Map<string, string[]>;
 
-    constructor(private store: Store<State>, private progressService: ProgressService, private dialectService: DialectService) {
+    constructor(private store: Store<State>, private progressService: ProgressService, private dialectService: DialectService, private judgmentsService: JudgmentsService) {
         this.progress = this.progressService.start(true);
     }
 
     judgments: ReadonlyMap<string, Judgment>;
+    endDialects: EndDialects;
     matchedJudgments: ReadonlyMap<string, MatchedJudgment>;
     matchedResponseCount = 0;
     matchedDialects = new Set<string>();
@@ -54,6 +57,8 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
                     if (judgments.size) {
                         this.progress.complete();
                         this.judgments = judgments;
+                        const participants = [...this.getParticipants(judgments.values())];
+                        this.endDialects = this.dialectService.determineParticipantEndDialects(participants, this.dialectLookup);
                     }
                 }
             }),
@@ -85,6 +90,21 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
 
     toggleShow() {
         this.store.dispatch(toggleShow({}));
+    }
+
+    /**
+     * Gets all the unique participants
+     */
+    private *getParticipants(judgments: Iterable<Judgment>): Iterable<Participant> {
+        const seenParticipants = new Set<string>();
+        for (const judgment of judgments) {
+            for (const participant of this.judgmentsService.getParticipants(judgment.responses)) {
+                if (!seenParticipants.has(participant.participantId)) {
+                    seenParticipants.add(participant.participantId);
+                    yield participant;
+                }
+            }
+        }
     }
 
 }

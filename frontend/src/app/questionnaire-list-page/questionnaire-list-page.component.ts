@@ -80,7 +80,7 @@ export class QuestionnaireListPageComponent implements OnDestroy, OnInit {
                         const answers = [...this.questionnaireService.getAnswers(this.questions.values())];
                         const participants = this.questionnaireService.getParticipants(answers);
                         this.dialects = [...this.questionnaireService.getDialects(answers)];
-                        this.endDialects = this.questionnaireService.determineParticipantEndDialects(answers, this.dialectLookup);
+                        this.endDialects = this.dialectService.determineParticipantEndDialects(answers, this.dialectLookup);
                         this.participantIds = participants.map(p => p.participantId);
                     }
                 }

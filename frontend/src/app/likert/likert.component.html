@@ -7,11 +7,6 @@
         <h2 class="subtitle" [innerHTML]="formatQuestion(model.mainQuestion, model.subQuestion) | highlight"></h2>
         <hr>
     </div>
-    @if (questionExpanded) {
-    <div class="box gloss">
-        <p>gloss and stuff</p>
-    </div>
-    }
     @if (!questionExpanded) {
     <div class="general-judgments" [ngClass]="{'animate-up': animateUp, 'animate-down': !animateUp}">
         <div class="columns">
@@ -27,10 +22,9 @@
     }
     @else {
     <div class="judgments">
-        <!-- @for (dialect of dialectNames; track dialect) { -->
         @for (dialect of dialectLookup.flattened; track dialect.pathFlat) {
-        @if (matchedDialects.has(dialect.name)) {
-        <h3 [innerHTML]="dialect.name" class="animate-down"></h3>
+        @if (matchedDialects[dialect.name]) {
+        <h3 class="animate-down">{{matchedDialects[dialect.name]}}</h3>
         <div class="columns animate-down">
             <div class="column is-three-quarters">
                 <mima-likert-bar [counts]="showTotal ? likertValuesGeneral.counts : likertValues[dialect.name].counts"

@@ -132,29 +132,6 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
     }
 
     /**
-     * Determines for each participant which are the most
-     * salient dialects (the dialect path) with the most steps.
-     * TODO: this should ideally be pre-determined on the server,
-     * because this information is static.
-     * @param participants participants to parse
-     * @param dialectLookup lookup describing the dialect structure
-     */
-    determineParticipantEndDialects(participants: Participant[], dialectLookup: DialectLookup) {
-        const endDialects: EndDialects = {};
-        for (const participant of participants) {
-            const participantEndDialects: string[] = [];
-            for (const name of participant.dialects) {
-                if (dialectLookup.isEndDialect(name, participant.dialects)) {
-                    participantEndDialects.push(name);
-                }
-            }
-            endDialects[participant.participantId] = participantEndDialects;
-        }
-
-        return endDialects;
-    }
-
-    /**
      * Derives the participants from a Map containing answers
      * @param answers Map of a list of answers per dialect
      * @returns An array of Participant objects
