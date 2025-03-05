@@ -42,7 +42,13 @@ export const addFilter = createAction('[Judgments] Add Filter');
  */
 export const setIncludingFilter = createAction('[Judgments] Add Singular Filter', props<{
     field: FilterField<'judgment'>,
-    content: string
+    /**
+     * The first item should be the parent content, for example when filtering on dialects
+     * the first item is the one which the user clicked on. The following items
+     * are the subdialects. The main item is determined whether it should be interpreted
+     * as toggle (adding it versus toggling)
+     */
+    content: string[]
 }>());
 
 /**
@@ -53,7 +59,7 @@ export const setExcludingFilter = createAction('[Judgments] Add Excluding Filter
     /**
      * This is the content which should NOT be shown
      */
-    exclude: string,
+    exclude: string[],
     /**
      * This is the content which should be shown
      */

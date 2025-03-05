@@ -1,0 +1,199 @@
+Fries
+Fries; West-Fries
+Nederfrankisch; Brabants
+Nederfrankisch; Brabants; Noord-Brabants
+Nederfrankisch; Brabants; Noord-Brabants; Bosch
+Nederfrankisch; Brabants; Noord-Brabants; Kempisch; Valkenswaards
+Nederfrankisch; Brabants; Noord-Brabants; Maas-en-Waals
+Nederfrankisch; Brabants; Noordoost-Brabants
+Nederfrankisch; Brabants; Oost-Brabants
+Nederfrankisch; Brabants; Zuid-Brabants
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps; Kempisch
+Nederfrankisch; Brabants; Zuid-Brabants; Retie
+Nederfrankisch; Brabants; Zuid-Brabants; Verkavelingsvlaams
+Nederfrankisch; Flevoland; Flakkees
+Nederfrankisch; Hollands; Leids
+Nederfrankisch; Hollands; Westlands
+Nederfrankisch; Hollands; Zuid-Hollands; Hoeksche Waard
+Nederfrankisch; Hollands; Zuid-Hollands; Hoeksche Waard; Goudswaard
+Nederfrankisch; Hollands; Zuid-Hollands; Katwijks
+Nederfrankisch; Kleverlands
+Nederfrankisch; Kleverlands; Kleefs
+Nederfrankisch; Limburgs
+Nederfrankisch; Limburgs; Banholt
+Nederfrankisch; Limburgs; Gronsveld
+Nederfrankisch; Limburgs; Heel
+Nederfrankisch; Limburgs; Kempens
+Nederfrankisch; Limburgs; Kerkrade
+Nederfrankisch; Limburgs; Klimmens
+Nederfrankisch; Limburgs; Maasbracht
+Nederfrankisch; Limburgs; Maaslands
+Nederfrankisch; Limburgs; Maastricht
+Nederfrankisch; Limburgs; Meerssens
+Nederfrankisch; Limburgs; Midden-Limburgs
+Nederfrankisch; Limburgs; Neer
+Nederfrankisch; Limburgs; Noord-Limburgs
+Nederfrankisch; Limburgs; Noord-Limburgs; Overpelt
+Nederfrankisch; Limburgs; Sevenums
+Nederfrankisch; Limburgs; Spekholzers
+Nederfrankisch; Limburgs; Tegelen
+Nederfrankisch; Limburgs; Valkenburgs
+Nederfrankisch; Limburgs; Venloos
+Nederfrankisch; Limburgs; Zuid-Limburgs
+Nederfrankisch; Noord-Brabants
+Nederfrankisch; Noord-Brabants; Borkel en Schaft
+Nederfrankisch; Noord-Brabants; Bosch
+Nederfrankisch; Noord-Brabants; Tilburg
+Nederfrankisch; Noord-Brabants; Valkenswaard
+Nederfrankisch; Noord-Hollands; Waterlands; Volendams
+Nederfrankisch; Noord-Hollands; Zaans
+Nederfrankisch; Noord-Limburgs; Kleverlands; Cuijks
+Nederfrankisch; Noordwest-Brabants; Etten-Leur
+Nederfrankisch; Vlaams; Oost-Vlaams
+Nederfrankisch; Vlaams; West-Vlaams
+Nederfrankisch; Vlaams; West-Vlaams; Nieuwpoort
+Nederfrankisch; Vlaams; West-Vlaams; Oostends
+Nederfrankisch; Zeeuws
+Nederfrankisch; Zeeuws; Flakkees
+Nederfrankisch; Zuid-Gelders; Arnhems
+Nederfrankisch; Zuid-Gelders; Groesbeeks
+Nederfrankisch; Zuid-Gelders; Nijmeegs
+Nederfrankisch; Zuid-Gelders; Overbetuws
+Nedersaksisch
+Nedersaksisch; Achterhoeks
+Nedersaksisch; Achterhoeks; Zutphens
+Nedersaksisch; Betuws
+Nedersaksisch; Drents
+Nedersaksisch; Drents; Midden-Drents
+Nedersaksisch; Drents; Noord-Drents
+Nedersaksisch; Drents; Zuid-Drents
+Nedersaksisch; Gronings
+Nedersaksisch; Maastrichts
+Nedersaksisch; Twents
+Nedersaksisch; Twents; Rijssens
+Nedersaksisch; Veluws
+Nedersaksisch; Veluws; West-Veluws
+Overgangsdialect Nedersaksisch/Nederfrankisch
+Overgangsdialect Nedersaksisch/Nederfrankisch; Urks
+Standaardnederlands
+Fries
+Nederfrankisch; Brabants; Noord-Brabants
+Nederfrankisch; Brabants; Noord-Brabants; Bosch
+Nederfrankisch; Brabants; Noord-Brabants; Kempisch; Valkenswaards
+Nederfrankisch; Brabants; Noord-Brabants; Maas-en-Waals
+Nederfrankisch; Brabants; Noord-Oost Brabants
+Nederfrankisch; Brabants; Oost-Brabants
+Nederfrankisch; Brabants; Zuid-Brabants
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps; Kempisch
+Nederfrankisch; Brabants; Zuid-Brabants; Retie
+Nederfrankisch; Brabants; Zuid-Brabants; Verkavelingsvlaams
+Nederfrankisch; Hollands; Noord-Hollands; Volendams
+Nederfrankisch; Hollands; Zuid-Hollands; Hoeksche Waard
+Nederfrankisch; Hollands; Zuid-Hollands; Katwijks
+Nederfrankisch; Hollands; Zuid-Hollands; Leiden
+Nederfrankisch; Hollands; Zuid-Hollands; Westlands
+Nederfrankisch; Kleefs
+Nederfrankisch; Noord-Limburgs; Kleverlands; Cuijks
+Nederfrankisch; Limburgs
+Nederfrankisch; Limburgs; Banholt
+Nederfrankisch; Limburgs; Gronsveld
+Nederfrankisch; Limburgs; Heel
+Nederfrankisch; Limburgs; Kempens
+Nederfrankisch; Limburgs; Kerkrade
+Nederfrankisch; Limburgs; Maasbracht
+Nederfrankisch; Limburgs; Maaslands
+Nederfrankisch; Limburgs; Maastricht
+Nederfrankisch; Limburgs; Meerssens
+Nederfrankisch; Limburgs; Midden-Limburgs
+Nederfrankisch; Limburgs; Noord-Limburgs
+Nederfrankisch; Limburgs; Noord-Limburgs; Kleverlands
+Nederfrankisch; Limburgs; Sevenums
+Nederfrankisch; Limburgs; Tegelen
+Nederfrankisch; Limburgs; Venlo
+Nederfrankisch; Limburgs; Zuid-Limburgs
+Nederfrankisch; Noord-Brabants; Tilburg
+Nederfrankisch; Vlaams; Oost-Vlaams
+Nederfrankisch; Vlaams; West-Vlaams; Nieuwpoort
+Nederfrankisch; West-Vlaams
+Nederfrankisch; Zeeuws
+Nederfrankisch; Zeeuws; Flakkees
+Nederfrankisch; Zuid-Gelders; Arnhems
+Nederfrankisch; Zuid-Gelders; Groesbeeks
+Nederfrankisch; Zuid-Gelders; Nijmeegs
+Nederfrankisch; Zuid-Gelders; Overbetuws
+Nedersaksisch
+Nedersaksisch; Achterhoeks
+Nedersaksisch; Drents
+Nedersaksisch; Drents; Midden-Drents
+Nedersaksisch; Drents; Noord-Drents
+Nedersaksisch; Drents; Zuid-Drents
+Nedersaksisch; Gronings
+Nedersaksisch; Twents; Rijssens
+Nedersaksisch; West-Veluwe
+Overgangsdialect Nedersaksisch/Nederfrankisch; Urks
+Standaardnederlands
+Fries; West-Fries
+Nederfrankisch; Brabants
+Nederfrankisch; Brabants; Oost-Brabants
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps
+Nederfrankisch; Brabants; Zuid-Brabants; Antwerps
+Nederfrankisch; Flevoland; Flakkees
+Nederfrankisch; Hollands; Leids
+Nederfrankisch; Hollands; Westlands
+Nederfrankisch; Hollands; Zuid-Hollands; Hoeksche Waard; Goudswaard
+Nederfrankisch; Limburgs
+Nederfrankisch; Limburgs
+Nederfrankisch; Limburgs; Banholt
+Nederfrankisch; Limburgs; Gronsveld
+Nederfrankisch; Limburgs; Heel
+Nederfrankisch; Limburgs; Klimmens
+Nederfrankisch; Limburgs; Maasbracht
+Nederfrankisch; Limburgs; Neer
+Nederfrankisch; Limburgs; Noord-Limburgs
+Nederfrankisch; Limburgs; Noord-Limburgs; Kleverlands
+Nederfrankisch; Limburgs; Noord-Limburgs; Overpelt
+Nederfrankisch; Limburgs; Spekholzers
+Nederfrankisch; Limburgs; Tegelen
+Nederfrankisch; Limburgs; Valkenburgs
+Nederfrankisch; Limburgs; Venloos
+Nederfrankisch; Noord-Brabants
+Nederfrankisch; Noord-Brabants
+Nederfrankisch; Noord-Brabants
+Nederfrankisch; Noord-Brabants
+Nederfrankisch; Noord-Brabants; Borkel en Schaft
+Nederfrankisch; Noord-Brabants; Bosch
+Nederfrankisch; Noord-Brabants; Tilburg
+Nederfrankisch; Noord-Brabants; Valkenswaard
+Nederfrankisch; Noord-Hollands; Waterlands; Volendams
+Nederfrankisch; Noord-Hollands; Zaans
+Nederfrankisch; Noordwest-Brabants; Etten-Leur
+Nederfrankisch; Vlaams; Oost-Vlaams
+Nederfrankisch; Vlaams; Oost-Vlaams
+Nederfrankisch; West-Vlaams
+Nederfrankisch; West-Vlaams
+Nederfrankisch; West-Vlaams; Nieuwpoort
+Nederfrankisch; West-Vlaams; Oostends
+Nederfrankisch; Zeeuws
+Nederfrankisch; Zeeuws
+Nederfrankisch; Zuid-Gelders; Nijmeegs
+Nederfrankisch; Zuid-Gelders; Nijmeegs
+Nedersaksisch
+Nedersaksisch
+Nedersaksisch; Achterhoeks
+Nedersaksisch; Achterhoeks
+Nedersaksisch; Achterhoeks; Zutphens
+Nedersaksisch; Betuws
+Nedersaksisch; Drents; Noord-Drents
+Nedersaksisch; Gelderland; Veluwe
+Nedersaksisch; Gelders; Zuid-Gelders; Overbetuws
+Nedersaksisch; Groesbeek
+Nedersaksisch; Gronings
+Nedersaksisch; Maastrichts
+Nedersaksisch; Rijssens
+Nedersaksisch; Twents
+Nedersaksisch; West-Veluwe
+Nedersaksisch; Zuid-Gelders; Nijmegen
+SKIP
+UNDERSPECIFIED

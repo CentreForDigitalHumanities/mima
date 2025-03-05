@@ -49,7 +49,7 @@ export type FilterType<T extends FilterObjectName> = {
     field: FilterField<T>,
     icon: IconDefinition,
     placeholder: string,
-    dropdown: boolean,
+    mode: 'text' | 'dropdown' | 'dialect',
     /**
      * ID of the manual page
      */

@@ -7,7 +7,6 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from django.core.files.uploadedfile import UploadedFile
 from .models import Adverbial
-from mima.settings import PILOT_DATA_PATH, QUESTIONNAIRE_DATA_PATH, ABRIDGED_QUESIONNAIRE_DATA_PATH
 
 # Create your views here.
 
@@ -25,33 +24,3 @@ def upload_view(request: Request):
             Adverbial.from_csv_row(row).as_dict())
 
     return Response(result)
-
-@api_view(['POST'])
-def upload_pilot_view(body):  # Temporary view to help with quickly uploading data to view in frontend
-    filepath = PILOT_DATA_PATH
-    print(filepath)
-    with open(filepath, 'r') as file:
-        reader = csv.DictReader(file, delimiter=',', quotechar='"')
-        result: List[Adverbial] = []
-        errors = Adverbial.validate_fieldnames(reader.fieldnames)
-        if errors:
-            return Response(errors, status=500)
-
-        for row in reader:
-            result.append(
-                Adverbial.from_csv_row(row).as_dict())
-
-    return Response(result)
-
-@api_view(['POST'])
-def upload_questionnaire_view(abridged=False):
-    filepath = ABRIDGED_QUESIONNAIRE_DATA_PATH if abridged else QUESTIONNAIRE_DATA_PATH
-    with open(filepath, 'r') as file:
-        data = json.load(file)
-        result: List[Adverbial] = []
-    for row in data:
-        result.append(
-            Adverbial.from_csv_row(row).as_dict()
-        )
-    return Response(result)
-

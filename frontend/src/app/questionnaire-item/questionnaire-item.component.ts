@@ -11,6 +11,8 @@ import { HighlightPipe } from '../highlight.pipe';
 import { MatchedParts } from '../models/matched-parts';
 import { IntersectableComponent } from '../services/visibility.service';
 import { LoadingComponent } from "../loading/loading.component";
+import { DialectLookup, EndDialects } from '../models/dialect';
+import { DialectService } from '../services/dialect.service';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -27,7 +29,6 @@ interface MatchedAnswerGrouped {
     text: string;
     answer: MatchedParts;
     attestation: MatchedParts;
-    dialect: MatchedParts;
     participantIds: MatchedParts[];
 }
 
@@ -52,13 +53,20 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     @Input() id: string;
     @Input() questions: ReadonlyMap<string, Question>;
     @Input() loading = false;
+    @Input() endDialects: EndDialects;
+    @Input() dialectLookup: DialectLookup;
     @Output() includeFilter = new EventEmitter<FilterEvent>();
     @Output() excludeFilter = new EventEmitter<FilterEvent>();
 
     dialectsCount = 0;
     value: MatchedQuestion;
+    /**
+     * Should the counts be updated?
+     */
+    valueDirty = true;
     matchedAnswerCount = 0;
     matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+    matchedDialectParts: { [dialect: string]: MatchedParts } = {};
     matchedDialectNames: string[] = [];
     matchedDialectsCount = 0;
     questionExpanded: boolean = false;
@@ -72,6 +80,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     set model(value: MatchedQuestion) {
         this.value = value;
         if (value) {
+            this.valueDirty = true;
             this.updateCounts();
         }
     }
@@ -85,7 +94,19 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     @Input()
     onlyQuestion = false;
 
-    constructor(private questionnaireService: QuestionnaireService, element: ElementRef) {
+    /**
+     * All the dialect parts
+     */
+    private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
+    private get unmatchedDialectParts() {
+        if (!this._unmatchedDialectParts) {
+            this._unmatchedDialectParts = this.initializeDialectTextParts();
+        }
+
+        return this._unmatchedDialectParts;
+    }
+
+    constructor(private questionnaireService: QuestionnaireService, private dialectService: DialectService, element: ElementRef) {
         this.nativeElement = element.nativeElement;
     }
 
@@ -96,6 +117,8 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
             this.nativeElement.dataset['id'] = this.id;
             this.questionnaireService.registerComponent(this);
         }
+
+        this.updateCounts();
     }
 
     ngOnDestroy(): void {
@@ -104,6 +127,12 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
 
 
     private updateCounts() {
+        if (!this.valueDirty || !this.endDialects) {
+            return;
+        }
+
+        this.valueDirty = false;
+
         if (!this.model?.answers) {
             // once the question is hidden - reset the state
             this.manuallyExpanded = false;
@@ -112,7 +141,12 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
-        this.matchedDialects = this.groupAnswers(this.model.matchedDialects);
+        let [matchedDialects, matchedDialectParts] = this.groupAnswers(this.model.matchedAnswers);
+        this.matchedDialects = matchedDialects;
+        this.matchedDialectParts = {
+            ...this.unmatchedDialectParts,
+            ...matchedDialectParts
+        };
         this.matchedDialectsCount = this.model.matchedDialectsCount;
         this.matchedDialectNames = this.model.matchedDialectNames;
         this.dialectsCount = this.model.dialectsCount;
@@ -123,8 +157,58 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
     }
 
-    private groupAnswers(matchedDialects: MatchedQuestion['matchedDialects']): { [dialect: string]: MatchedAnswerGrouped[] } {
-        const grouped: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+    private initializeDialectTextParts() {
+        const dialectTextParts: { [dialect: string]: MatchedParts } = {};
+        for (const dialect of this.dialectLookup.flattened) {
+            dialectTextParts[dialect.name] = new MatchedParts({
+                empty: false,
+                emptyFilters: false,
+                fullMatch: false,
+                match: false,
+                parts: [{
+                    match: false,
+                    text: dialect.name,
+                    bold: false
+                }]
+            });
+        }
+
+        return dialectTextParts;
+    }
+
+    private groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): [
+        { [dialect: string]: MatchedAnswerGrouped[] },
+        { [dialect: string]: MatchedParts }
+    ] {
+        // group answers by their dialect
+        const matchedDialects: { [endDialects: string]: MatchedAnswer[] } = {};
+        const matchedDialectParts: { [dialect: string]: MatchedParts } = {};
+
+        for (const answer of matchedAnswers) {
+            // did the answer match the filter on dialect?
+            const answerMatchedDialects: MatchedParts[] = [];
+            for (const parts of answer.dialects) {
+                if (parts.match) {
+                    matchedDialectParts[parts.text] = parts;
+                    answerMatchedDialects.push(parts);
+                }
+            }
+
+            for (const dialect of this.endDialects[answer.participantId.text]) {
+                if ( // not matching on dialects: mark all the end dialects as matched
+                    answerMatchedDialects.length == 0
+                    // only mark the dialects which were matched by the filters
+                    || (this.dialectService.anyDialectInPaths(
+                        answerMatchedDialects.map(x => x.text),
+                        this.dialectService.getDialectPaths(dialect)))) {
+                    matchedDialects[dialect] = [...matchedDialects[dialect] ?? [], answer];
+                }
+            }
+        }
+
+        // then group them by their text
+        const grouped: { [endDialects: string]: MatchedAnswerGrouped[] } = {};
+
         for (const [dialect, answers] of Object.entries(matchedDialects)) {
             const dialectGroup: { [text: string]: MatchedAnswer[] } = {};
             for (const answer of answers) {
@@ -147,12 +231,11 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 text,
                 answer: answers[0].answer,
                 attestation: answers[0].attestation,
-                dialect: answers[0].dialect,
+                dialects: answers[0].dialects,
                 participantIds: answers.map(answer => answer.participantId)
             }));
         }
-
-        return grouped;
+        return [grouped, matchedDialectParts];
     }
 
     /**

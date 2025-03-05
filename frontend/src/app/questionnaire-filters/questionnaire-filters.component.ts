@@ -36,70 +36,70 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
         name: '',
         field: '*',
         icon: faAsterisk,
-        dropdown: false,
+        mode: 'text',
         placeholder: $localize`Search in all Fields`,
         manual: 'query'
     }, {
         name: $localize`Question`,
         field: 'id',
         icon: faComment,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Question(s)`
     }, {
         name: $localize`Question Text`,
         field: 'prompt',
         icon: faCommentDots,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Translation`,
         field: 'answer',
         icon: faGlobeEurope,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Dialect`,
-        field: 'dialect',
+        field: 'dialects',
         icon: faLanguage,
-        dropdown: true,
+        mode: 'dialect',
         placeholder: $localize`Select Dialect(s)`
     }, {
         name: $localize`Participant`,
         field: 'participantId',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Participant(s)`
     }, {
         name: $localize`Attestation`,
         field: 'attestation',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Attested or Unattested`,
         manual: 'attestation'
     }, {
         name: $localize`Gloss`,
         field: 'gloss',
         icon: faUser,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`English Translation`,
         field: 'en_translation',
         icon: faUser,
-        dropdown: false,
+        mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Chapter`,
         field: 'chapter',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Chapter(s)`,
         manual: 'chapters'
     }, {
         name: `Subtags`,
         field: 'subtags',
         icon: faUser,
-        dropdown: true,
+        mode: 'dropdown',
         placeholder: $localize`Select Tag(s)`
     }];
 

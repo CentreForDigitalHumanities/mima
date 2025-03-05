@@ -5,7 +5,7 @@ export interface Answer {
     answer: string;
     answerId: string;
     participantId: string;
-    dialect: string;
+    dialects: string[];
     attestation: string;  // using a string instead of a boolean to fit into the existing structure
     ma?: string;
     prompt?: string;
@@ -18,11 +18,15 @@ export interface Answer {
 type MatchedAnswerValue<T> =
     T extends string
     ? MatchedParts
+    : T extends string[]
+    ? MatchedParts[]
     : never;
 
 type MatchedAnswerDeserializedValue<T> =
     T extends MatchedParts
     ? MatchedPartsProperties
+    : T extends MatchedParts[]
+    ? MatchedPartsProperties[]
     : T;
 
 export type MatchedAnswerProperties = {
@@ -38,7 +42,7 @@ export class MatchedAnswer implements MatchedAnswerProperties {
     answer: MatchedParts;
     answerId: MatchedParts;
     participantId: MatchedParts;
-    dialect: MatchedParts;
+    dialects: MatchedParts[];
     attestation: MatchedParts;
     ma?: MatchedParts;
     prompt?: MatchedParts;
@@ -50,7 +54,7 @@ export class MatchedAnswer implements MatchedAnswerProperties {
         this.answer = this.unmatchedValue(answer.answer);
         this.answerId = this.unmatchedValue(answer.answerId);
         this.participantId = this.unmatchedValue(answer.participantId);
-        this.dialect = this.unmatchedValue(answer.dialect);
+        this.dialects = answer.dialects.map(dialect => this.unmatchedValue(dialect));
         this.attestation = this.unmatchedValue(answer.attestation);
         this.ma = this.unmatchedValue(answer.ma);
         this.prompt = this.unmatchedValue(answer.prompt);
@@ -68,14 +72,13 @@ export class MatchedAnswer implements MatchedAnswerProperties {
             answer: MatchedParts.restore(value.answer),
             answerId: MatchedParts.restore(value.answerId),
             participantId: MatchedParts.restore(value.participantId),
-            dialect: MatchedParts.restore(value.dialect),
+            dialects: value.dialects.map(dialect => MatchedParts.restore(dialect)),
             attestation: MatchedParts.restore(value.attestation),
             ma: MatchedParts.restore(value.ma),
             prompt: MatchedParts.restore(value.prompt),
             promptMa: MatchedParts.restore(value.promptMa),
             match: value.match
         };
-
         return Object.setPrototypeOf(properties, MatchedAnswer.prototype);
     }
 

@@ -93,21 +93,19 @@ STATICFILES_DIRS = []
 PROXY_FRONTEND = None
 
 ## Path to the Meertens data in csv format
-DATA_PATH = ""
+DATA_PATH_Q1 = ""
+DATA_PATH_Q2 = ""
 
 ## Path to the additional data, i.e. chapters, tags, glosses, and translations
-ADDITIONAL_DATA_PATH = ""
+ADDITIONAL_DATA_PATH_Q1 = ""
+ADDITIONAL_DATA_PATH_Q2 = ""
 
 ## Path to the participants' data in csv format
-PARTICIPANTS_PATH = ""
+PARTICIPANTS_PATH_Q1 = ""
+PARTICIPANTS_PATH_Q2 = ""
 
 ## Path to the output folder
 OUTPUT_PATH = ""
-
-PILOT_DATA_PATH = ""
-QUESTIONNAIRE_DATA_PATH = ""
-ABRIDGED_QUESIONNAIRE_DATA_PATH =  ""
-
 
 if os.path.exists(os.path.join(BASE_DIR, 'mima/local_settings.py')):
     from mima.local_settings import *

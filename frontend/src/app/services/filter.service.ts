@@ -6,6 +6,7 @@ import { Answer, MatchedAnswer, MatchedAnswerDeserializedProperties, MatchedAnsw
 import { SearchExpression, ignoreCharactersExp } from '../models/search-expression';
 import { Judgment, MatchedJudgment, MatchedJudgmentDeserialized, MatchedJudgmentProperties } from '../models/judgment';
 import { LikertResponse, MatchedLikertResponse } from '../models/likert-response';
+import { DialectService } from './dialect.service';
 
 
 export function isAnswer(object: any): object is Answer | MatchedAnswer | MatchedAnswerProperties | MatchedAnswerDeserializedProperties {
@@ -35,7 +36,8 @@ export function isEmptyFilter(filter: Filter<any>) {
     providedIn: 'root'
 })
 export class FilterService {
-
+    constructor(private dialectService: DialectService) {
+    }
     /**
      * @returns MatchedQuestion or MatchedJudgment, or undefined if it doesn't match
      */
@@ -83,18 +85,13 @@ export class FilterService {
 
             if (itemMatch) {
                 if (isQuestion(item)) {
-                    // if the question itself matches,
+                    // if the question itself matches but none of its answers,
                     // that means ALL answers should be shown
-                    for (const answer of (<MatchedQuestion>result).answers) {
-                        answer.match = true;
-                    }
+                    this.matchAllItemsIfNoneMatch((<MatchedQuestion>result).answers);
                 } else if (isJudgment(item)) {
-                    // if the judgment itself matches,
+                    // if the judgment itself matches but none of its responses,
                     // that means ALL responses should be shown
-                    for (const response of (<MatchedJudgment>result).responses) {
-                        response.match = true;
-                    }
-
+                    this.matchAllItemsIfNoneMatch((<MatchedJudgment>result).responses);
                 }
             }
 
@@ -105,6 +102,26 @@ export class FilterService {
 
 
         return undefined;
+    }
+
+    /**
+     * If the filter matches the items itself, then that filtering
+     * should be untouched.
+     * If the filter did not match any of the items, but it did match the parent,
+     * then we should match all the items.
+     * @param items
+     * @returns
+     */
+    private matchAllItemsIfNoneMatch(items: { match: boolean }[]) {
+        for (const item of items) {
+            if (item.match) {
+                return;
+            }
+        }
+
+        for (const item of items) {
+            item.match = true;
+        }
     }
 
     /**
@@ -189,7 +206,7 @@ export class FilterService {
             case 'subQuestionTextId':
                 {
                     const value = object[key];
-                    const [parts, partFilters] = this.searchField<T>(<string>value, <any>key, filters);
+                    const [parts, partFilters] = this.searchField<T>(<string>value || '', <any>key, filters);
                     result[<any>key] = parts;
                     itemMatch ||= parts.match;
                     matchingFilters.push(...<any>partFilters);
@@ -219,7 +236,7 @@ export class FilterService {
 
                     const answerKeys: (keyof Answer)[] = [
                         'answer',
-                        'dialect',
+                        'dialects',
                         'participantId',
                         'attestation'
                     ];
@@ -242,7 +259,7 @@ export class FilterService {
 
                     const responseKeys: (keyof LikertResponse)[] = [
                         'participantId',
-                        'dialect',
+                        'dialects',
                         'score'
                     ];
                     const responseFilters = filters.filter(
@@ -272,11 +289,44 @@ export class FilterService {
         const matchedSub = isAnswer(item) ? new MatchedAnswer(item) : new MatchedLikertResponse(item);
         let matchingFilters = new Set<Filter<T>>();
         for (const itemKey of itemKeys) {
-            const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString(), itemKey, itemFilters);
-            matchedSub[<any>itemKey] = parts;
-            for (const filter of partFilters) {
-                matchingFilters.add(filter);
+            if (itemKey === 'dialects') {
+                // remove the initialization of unmatched dialect parts
+                matchedSub.dialects = [];
+                for (const dialect of item.dialects) {
+
+                    const [parts, matchingDialectFilters] = this.searchField<any>(
+                        dialect,
+                        itemKey,
+                        itemFilters,
+                        (field, filter) => {
+                            if (field !== 'dialects' || filter.field !== 'dialects') {
+                                return true;
+                            }
+
+                            // only search through end dialects
+                            // this way searching for "Brabants" but excluding the sub-dialect "Noord-Brabants"
+                            // will work: only if someone has "Brabants" without any underlying dialects
+                            // it will be allowed to match
+                            if (!this.dialectService.dialectLookup.isEndDialect(dialect, item.dialects)) {
+                                return false;
+                            }
+
+                            return true;
+                        });
+                    matchedSub.dialects.push(parts);
+                    for (const filter of matchingDialectFilters) {
+                        matchingFilters.add(filter);
+                    }
+                }
+            } else {
+                const [parts, partFilters] = this.searchField<any>(item[itemKey]?.toString() || '', itemKey, itemFilters);
+                matchedSub[<any>itemKey] = parts;
+                for (const filter of partFilters) {
+                    matchingFilters.add(filter);
+                }
             }
+
+
         }
 
         if (itemFilters.length) {
@@ -290,7 +340,6 @@ export class FilterService {
                 }
             }
         }
-
         return [<any>matchedSub, matchingFilters];
     }
 
@@ -299,9 +348,14 @@ export class FilterService {
      * @param text field text to search
      * @param field name of the field
      * @param filters filters to apply
+     * @param condition check to see if a specific filter should be applied
      * @returns [MatchedParts, Set<Filter>] matched parts and the matching filter
      */
-    private searchField<T extends FilterObjectName>(text: string, field: FilterField<T>, filters: ReadonlyArray<Filter<T>>): [MatchedParts, Set<Filter<T>>] {
+    private searchField<T extends FilterObjectName>(
+        text: string,
+        field: FilterField<T>,
+        filters: ReadonlyArray<Filter<T>>,
+        condition?: (field: FilterField<T>, filter: Filter<T>) => boolean): [MatchedParts, Set<Filter<T>>] {
         const matches: [number, number][] = [];
         const matchingFilters = new Set<Filter<T>>();
         let emptyFilter = false;
@@ -309,6 +363,10 @@ export class FilterService {
         if (filters?.length) {
             for (const filter of filters) {
                 if (filter.field === '*' || filter.field === field) {
+                    if (condition && !condition(field, filter)) {
+                        continue;
+                    }
+
                     const filterMatches = this.searchMultiple(text, filter.content, filter.onlyFullMatch);
                     matches.push(...filterMatches);
                     if (this.empty(filter)) {

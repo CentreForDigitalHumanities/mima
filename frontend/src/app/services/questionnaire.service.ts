@@ -8,6 +8,7 @@ import { Filter, FilterOperator } from '../models/filter';
 import { QuestionnaireItemComponent } from '../questionnaire-item/questionnaire-item.component';
 import { FilterWorkerService } from './filter-worker.service';
 import { VisibilityService } from './visibility.service';
+import { DialectLookup, EndDialects } from '../models/dialect';
 
 
 @Injectable({
@@ -83,7 +84,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
                         answer: example,
                         answerId: '',
                         participantId: subentry['participant_id'],
-                        dialect: subentry['dialect'],
+                        dialects: subentry['dialect'],
                         attestation: 'attested'
                     }
                     if (example === 'unattested') {
@@ -115,20 +116,20 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
             if (!question.answers) {
                 continue;
             }
-            for (const answer of question.answers) {
-                yield answer;
-            }
+
+            yield* question.answers;
         }
     }
 
     getDialects(answers: Iterable<Answer>): Set<string> {
         const dialects = new Set<string>();
         for (const answer of answers) {
-            dialects.add(answer.dialect);
+            for (const dialect of answer.dialects) {
+                dialects.add(dialect);
+            }
         }
         return dialects;
     }
-
 
     /**
      * Derives the participants from a Map containing answers
@@ -141,7 +142,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
         for (const answer of answers) {
             const participant: Participant = {
                 participantId: answer.participantId,
-                dialect: answer.dialect
+                dialects: answer.dialects
             };
 
             participants[participant.participantId] = participant;

@@ -1,0 +1,120 @@
+{
+    "Fries": {
+        "West-Fries": {}
+    },
+    "Nederfrankisch": {
+        "Brabants": {
+            "Noord-Brabants": {
+                "Bosch": {},
+                "Kempisch": {
+                    "Valkenswaards": {}
+                },
+                "Maas-en-Waals": {},
+                "Borkel en Schaft": {},
+                "Tilburg": {},
+                "Valkenswaard": {}
+            },
+            "Noordoost-Brabants": {},
+            "Oost-Brabants": {},
+            "Zuid-Brabants": {
+                "Antwerps": {},
+                "Retie": {},
+                "Verkavelingsvlaams": {}
+            },
+            "Noord-Oost Brabants": {}
+        },
+        "Flevoland": {
+            "Flakkees": {}
+        },
+        "Hollands": {
+            "Leids": {},
+            "Westlands": {},
+            "Zuid-Hollands": {
+                "Hoeksche Waard": {
+                    "Goudswaard": {}
+                },
+                "Katwijks": {},
+                "Leiden": {}
+            }
+        },
+        "Kleverlands": {
+            "Kleefs": {},
+            "Cuijks": {}
+        },
+        "Limburgs": {
+            "Banholt": {},
+            "Gronsveld": {},
+            "Heel": {},
+            "Kempens": {},
+            "Kerkrade": {},
+            "Klimmens": {},
+            "Maasbracht": {},
+            "Maaslands": {},
+            "Maastricht": {},
+            "Meerssens": {},
+            "Midden-Limburgs": {},
+            "Neer": {},
+            "Noord-Limburgs": {
+                "Overpelt": {}
+            },
+            "Sevenums": {},
+            "Spekholzers": {},
+            "Tegelen": {},
+            "Valkenburgs": {},
+            "Venloos": {},
+            "Zuid-Limburgs": {},
+            "Venlo": {}
+        },
+        "Noord-Hollands": {
+            "Waterlands": {
+                "Volendams": {}
+            },
+            "Zaans": {}
+        },
+        "Noordwest-Brabants": {
+            "Etten-Leur": {}
+        },
+        "Vlaams": {
+            "Oost-Vlaams": {},
+            "West-Vlaams": {
+                "Nieuwpoort": {},
+                "Oostends": {}
+            }
+        },
+        "Zeeuws": {},
+        "Zuid-Gelders": {
+            "Arnhems": {},
+            "Groesbeeks": {},
+            "Nijmeegs": {},
+            "Overbetuws": {}
+        },
+        "Urks": {}
+    },
+    "Nedersaksisch": {
+        "Achterhoeks": {
+            "Zutphens": {}
+        },
+        "Betuws": {},
+        "Drents": {
+            "Midden-Drents": {},
+            "Noord-Drents": {},
+            "Zuid-Drents": {}
+        },
+        "Gronings": {},
+        "Maastrichts": {},
+        "Twents": {
+            "Rijssens": {}
+        },
+        "Veluws": {
+            "West-Veluws": {}
+        },
+        "West-Veluwe": {},
+        "Gelderland": {
+            "Veluwe": {}
+        },
+        "Gelders": {},
+        "Groesbeek": {},
+        "Urks": {}
+    },
+    "Standaardnederlands": {}
+}

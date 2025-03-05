@@ -9,6 +9,7 @@ import { Question } from '../models/question';
 import { QuestionnaireService } from './questionnaire.service';
 import { Judgment } from '../models/judgment';
 import { JudgmentsService } from './judgments.service';
+import { DialectService } from './dialect.service';
 
 export interface DropdownOption {
     label: string;
@@ -53,7 +54,7 @@ export class FilterManagementService implements OnDestroy {
             judgment: {}
         };
 
-    constructor(private store: Store<QuestionnaireState & JudgmentsState>, private questionnaireService: QuestionnaireService, private judgmentsService: JudgmentsService) {
+    constructor(private store: Store<QuestionnaireState & JudgmentsState>, private questionnaireService: QuestionnaireService, private judgmentsService: JudgmentsService, private dialectService: DialectService) {
         this.subscription = new Subscription();
         this.queryParams$ = {
             question: this.selectQueryParams(this.subscription, 'question', 'questionnaire', 'questions'),
@@ -333,10 +334,17 @@ export class FilterManagementService implements OnDestroy {
                     case '*':
                         break;
 
-                    case 'dialect':
-                        for (let answer of question.answers) {
-                            labels[answer[field]] = answer[field];
+                    case 'dialects':
+                        // TODO: these should be synchronized: the dialect hierarchy and the data
+                        // in the answers should be the same
+                        for (const dialect of this.dialectService.dialectLookup.flattened) {
+                            labels[dialect.name] = dialect.name;
                         }
+                        // for (let answer of question.answers) {
+                        //     for (const value of answer[field]) {
+                        //         labels[value] = value;
+                        //     }
+                        // }
                         break;
 
                     case 'id':
@@ -345,7 +353,7 @@ export class FilterManagementService implements OnDestroy {
 
                     case 'participantId':
                         for (let participant of this.questionnaireService.getParticipants(question.answers)) {
-                            labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                            labels[participant.participantId] = `${participant.participantId} ${participant.dialects.join(', ')}`; // concatenating all items
                         }
 
                         break;
@@ -384,9 +392,11 @@ export class FilterManagementService implements OnDestroy {
                 case '*':
                     break;
 
-                case 'dialect':
+                case 'dialects':
                     for (let response of judgment.responses) {
-                        labels[response[field]] = response[field];
+                        for (const value of response[field]) {
+                            labels[value] = value;
+                        }
                     }
                     break;
 
@@ -396,7 +406,7 @@ export class FilterManagementService implements OnDestroy {
 
                 case 'participantId':
                     for (let participant of this.judgmentsService.getParticipants(judgment.responses)) {
-                        labels[participant.participantId] = `${participant.participantId} ${participant.dialect}`;
+                        labels[participant.participantId] = `${participant.participantId} ${participant.dialects.join(', ')}`; // just using the first one for now
                     }
 
                     break;

@@ -21,7 +21,7 @@ export interface Question extends Filterable {
 type MatchedQuestionValue<T> =
     T extends string
     ? MatchedParts
-    : T extends string[] // Figure out what to do with Answer[] and answerMap
+    : T extends string[]
     ? MatchedParts[]
     : T extends Answer[]
     ? MatchedAnswer[]
@@ -46,8 +46,18 @@ export class MatchedQuestion implements MatchedQuestionProperties {
     en_translation: MatchedParts;
 
     dialectsCount = 0;
+    matchedAnswers: MatchedAnswer[] = [];
     matchedAnswerCount = 0;
+
+    /**
+     * TODO: still relevant?
+     * This only includes the direct matches, not any potential children.
+     */
     matchedDialects: { [dialect: string]: MatchedAnswer[] } = {};
+
+    /**
+     * This only counts the direct matches, not any potential children.
+     */
     matchedDialectsCount = 0;
     matchedDialectNames: string[] = [];
     /**
@@ -86,6 +96,7 @@ export class MatchedQuestion implements MatchedQuestionProperties {
             gloss: MatchedParts.restore(value.gloss),
             en_translation: MatchedParts.restore(value.en_translation),
             dialectsCount: value.dialectsCount,
+            matchedAnswers: value.matchedAnswers.map(a => MatchedAnswer.restore(a)),
             matchedAnswerCount: value.matchedAnswerCount,
             matchedDialects: Object.fromEntries(
                 Object.entries(value.matchedDialects)
@@ -102,22 +113,36 @@ export class MatchedQuestion implements MatchedQuestionProperties {
         const dialects = new Set<string>();
         const participants = new Set<string>();
 
-        this.matchedAnswerCount = 0;
+        this.matchedAnswers = [];
         this.matchedDialects = {};
-
         for (const answer of this.answers) {
-            dialects.add(answer.dialect.text);
-
             if (answer.match) {
-                this.matchedAnswerCount++;
+                // count matched answers only once
+                this.matchedAnswers.push(answer);
                 participants.add(answer.participantId.text);
-                if (answer.dialect.text in this.matchedDialects) {
-                    this.matchedDialects[answer.dialect.text].push(answer);
-                } else {
-                    this.matchedDialects[answer.dialect.text] = [answer];
+
+                // did we filter on dialects or on something else?
+                let matchedDialectParts = answer.dialects.filter(part => part.match);
+                if (matchedDialectParts.length === 0) {
+                    // we did not filter on dialects, mark all dialects of this answer
+                    // as matched
+                    matchedDialectParts = answer.dialects;
+                }
+
+                for (const dialectPart of matchedDialectParts) {
+                    const dialect = dialectPart.text;
+                    dialects.add(dialect);
+
+                    if (dialect in this.matchedDialects) {
+                        this.matchedDialects[dialect].push(answer);
+                    } else {
+                        this.matchedDialects[dialect] = [answer];
+                    }
                 }
             }
         }
+
+        this.matchedAnswerCount = this.matchedAnswers.length;
 
         this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
         this.matchedDialectsCount = this.matchedDialectNames.length;
@@ -145,7 +170,7 @@ export class MatchedQuestion implements MatchedQuestionProperties {
 type MatchedQuestionDeserializedValue<T> =
     T extends MatchedParts
     ? MatchedPartsProperties
-    : T extends MatchedParts[] // Figure out what to do with Answer[] and answerMap
+    : T extends MatchedParts[]
     ? MatchedPartsProperties[]
     : T extends MatchedAnswer[]
     ? MatchedAnswerProperties[]

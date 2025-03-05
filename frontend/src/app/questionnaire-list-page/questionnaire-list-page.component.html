@@ -8,15 +8,24 @@
     <div class="level">
         <div class="level-left">
             <h1 class="subtitle" i18n>Results: {{matchedQuestions.size}} questions &middot; {{matchedParticipants.size}}
-                respondents &middot; {{matchedDialects.size}}
-                dialects &middot; {{matchedAnswerCount | transitionNumbers}} answers</h1>
+                respondents &middot; <a (click)="listMatchedDialects=!listMatchedDialects">{{matchedDialects.size}}
+                    dialects</a> &middot; {{matchedAnswerCount | transitionNumbers}} answers</h1>
         </div>
         <div class="level-right">
             <mima-manual-button id="questionnaires"></mima-manual-button>
             <mima-download-button [matchedQuestions]="matchedQuestions"></mima-download-button>
         </div>
     </div>
-    <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [questions]="questions"
-        (includeFilter)="onIncludeFilter($event)" (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-list>
+    @if (listMatchedDialects) {
+    <div class="box">
+        <h1 class="subtitle" i18n>Matched Dialects</h1>
+        <div class="content">
+            <mima-dialect-tree [root]="matchedRootDialects" [dialects]="matchedDialects"></mima-dialect-tree>
+        </div>
+    </div>
+    }
+    <mima-questionnaire-list [matchedQuestions]="matchedQuestions" [endDialects]="endDialects"
+        [dialectLookup]="dialectLookup" [questions]="questions" (includeFilter)="onIncludeFilter($event)"
+        (excludeFilter)="onExcludeFilter($event)"></mima-questionnaire-list>
 </div>
 }

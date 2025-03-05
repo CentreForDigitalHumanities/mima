@@ -17,7 +17,9 @@
         </p>
         }
     </div>
-    <div class="control is-expanded" *ngIf="selectedType.dropdown; else noDropdown">
+    @switch (selectedType.mode) {
+    @case ("dropdown") {
+    <div class="control is-expanded">
         <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
             [panelStyle]="{'width':'min(800px,50vw)'}" [placeholder]="selectedType.placeholder" i18n-placeholder
             (onChange)="emit()">
@@ -29,15 +31,22 @@
             </ng-template>
         </p-multiSelect>
     </div>
-    <ng-template #noDropdown>
-        <p class="control is-expanded" [ngClass]="{'has-icons-right': filter.content}">
-            <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent"
-                (keyup)="keyup$.next(1)" [placeholder]="selectedType.placeholder">
-            <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
-                <fa-icon [icon]="faTimesCircle"></fa-icon>
-            </span>
-        </p>
-    </ng-template>
+    }
+    @case ("dialect") {
+    <div class="control is-expanded">
+        <mima-dialect-selection [placeholder]="selectedType.placeholder" [content]="filter.content" (contentChange)="emit($event)"></mima-dialect-selection>
+    </div>
+    }
+    @default {
+    <p class="control is-expanded" [ngClass]="{'has-icons-right': filter.content}">
+        <input #textField class="input" type="text" name="text" [(ngModel)]="textFieldContent" (keyup)="keyup$.next(1)"
+            [placeholder]="selectedType.placeholder">
+        <span class="icon is-right is-clickable" (click)="clearFilter()" *ngIf="textFieldContent">
+            <fa-icon [icon]="faTimesCircle"></fa-icon>
+        </span>
+    </p>
+    }
+    }
     @if (clearable) {
     <p class="control">
         <button class="button" i18n-title title="Delete filter" (click)="remove.emit()">

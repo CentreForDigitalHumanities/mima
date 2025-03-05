@@ -8,7 +8,7 @@ type QuestionRow = {
     questionId?: MatchedParts,
     answer?: MatchedParts,
     participantId?: MatchedParts,
-    dialect?: MatchedParts
+    dialects?: MatchedParts[]
 }
 
 const QuestionColumnNames: {
@@ -18,7 +18,7 @@ const QuestionColumnNames: {
     questionId: $localize`Question ID`,
     answer: $localize`Translation`,
     participantId: $localize`Participant`,
-    dialect: $localize`Dialect`
+    dialects: $localize`Dialect`
 };
 
 const QuestionColumnOrder: (keyof QuestionRow)[] =
@@ -27,7 +27,7 @@ const QuestionColumnOrder: (keyof QuestionRow)[] =
         'questionPrompt',
         'answer',
         'participantId',
-        'dialect'
+        'dialects'
     ];
 
 @Injectable({
@@ -54,7 +54,13 @@ export class DownloadService {
 
     private *formatRows(rows: Iterable<QuestionRow>): Iterable<string> {
         for (const row of rows) {
-            yield QuestionColumnOrder.map(column => this.formatParts(row[column])).join(',');
+            yield QuestionColumnOrder.map(column => {
+                const cell = row[column];
+                if (Array.isArray(cell)) {
+                    return cell.map(part => this.formatParts(part)).join('; ');
+                }
+                return this.formatParts(cell);
+            }).join(',');
         }
     }
 
@@ -82,7 +88,7 @@ export class DownloadService {
                 questionId: question.id,
                 answer: answer.answer,
                 participantId: answer.participantId,
-                dialect: answer.dialect
+                dialects: answer.dialects
             };
         }
     }

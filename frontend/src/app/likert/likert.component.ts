@@ -9,6 +9,8 @@ import { LikertBarComponent } from '../likert-bar/likert-bar.component';
 import { IntersectableComponent } from '../services/visibility.service';
 import { MatchedPart, MatchedParts } from '../models/matched-parts';
 import { LoadingComponent } from "../loading/loading.component";
+import { DialectLookup, EndDialects } from '../models/dialect';
+import { DialectService } from '../services/dialect.service';
 
 export type LikertShow = 'count' | 'percentage';
 
@@ -38,6 +40,9 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     }
     @Input() loading: boolean = false;
     @Input() show: LikertShow = 'count';
+    @Input() endDialects: EndDialects;
+    @Input() dialectLookup: DialectLookup;
+
 
     @Output()
     toggleShow = new EventEmitter();
@@ -68,9 +73,12 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     likertValuesGeneral: LikertValues;
 
     dialectNames: string[] = [];
-    matchedDialects = new Set<string>();
+    /**
+     * Matched dialects and their path to display
+     */
+    matchedDialects: { [dialect: string]: string } = {};
 
-    constructor(private judgmentsService: JudgmentsService, element: ElementRef, private ngZone: NgZone) {
+    constructor(private judgmentsService: JudgmentsService, private dialectService: DialectService, element: ElementRef, private ngZone: NgZone) {
         this.nativeElement = element.nativeElement;
     }
 
@@ -93,17 +101,18 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
      */
     initializeLikertValues() {
         if (this.model) {
-            this.matchedDialects = new Set();
+            this.matchedDialects = {};
             this.likertValues = {};
             for (const response of this.model.responses) {
-                const dialect = response.dialect.text;
-                if (!this.likertValues[dialect]) {
-                    this.likertValues[dialect] = {
-                        counts: [],
-                        total: 0
-                    };
-                    for (let i = 0; i < 5; i++) {
-                        this.likertValues[dialect].counts[i] = 0;
+                for (const dialect of response.dialects) {
+                    if (!this.likertValues[dialect.text]) {
+                        this.likertValues[dialect.text] = {
+                            counts: [],
+                            total: 0
+                        };
+                        for (let i = 0; i < 5; i++) {
+                            this.likertValues[dialect.text].counts[i] = 0;
+                        }
                     }
                 }
             }
@@ -126,12 +135,31 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
                     continue;
                 }
                 const index = Number.parseInt(response.score.text) - 1;
-                const dialect = response.dialect.text;
-                this.likertValues[dialect].counts[index]++;
-                this.likertValues[dialect].total++;
-                this.likertValuesGeneral.counts[index]++;
-                this.likertValuesGeneral.total++;
-                this.matchedDialects.add(dialect);
+                const matchedDialectParts: { [dialect: string]: MatchedParts } = {};
+
+                // did the response match the filter on dialect?
+                const responseMatchedDialects: MatchedParts[] = [];
+                for (const parts of response.dialects) {
+                    if (parts.match) {
+                        matchedDialectParts[parts.text] = parts;
+                        responseMatchedDialects.push(parts);
+                    }
+                };
+
+                for (const dialect of this.endDialects[response.participantId.text]) {
+                    if ( // not matching on dialects: mark all the end dialects as matched
+                        responseMatchedDialects.length == 0
+                        // only mark the dialects which were matched by the filters
+                        || (this.dialectService.anyDialectInPaths(
+                            responseMatchedDialects.map(x => x.text),
+                            this.dialectService.getDialectPaths(dialect)))) {
+                        this.likertValues[dialect].counts[index]++;
+                        this.likertValues[dialect].total++;
+                        this.likertValuesGeneral.counts[index]++;
+                        this.likertValuesGeneral.total++;
+                        this.matchedDialects[dialect] = this.dialectLookup.paths[dialect].map(path => path.pathFlat).join('; ');
+                    }
+                }
             }
         }
         this.updateDialectNames();

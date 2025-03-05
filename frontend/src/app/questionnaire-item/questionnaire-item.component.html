@@ -90,70 +90,74 @@
 <div class="box mt-3" [ngClass]="{'is-loading': loading}">
     <div class="fixed-grid has-5-cols-tablet">
         <div class="grid is-column-gap-0">
-            @for (dialect of matchedDialectNames; track dialect; let last = $last) {
-            <div class="cell expanded dialect-header py-3 pb-5" [id]="dialect" [ngClass]="{'is-last': last}">
-                <h3 class="subtitle mb-1">
-                    <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
-                        <div class="tag filterable" [innerHTML]="matchedDialects[dialect][0].dialect | highlight"
-                            (click)="onFilterSelected($event, 'dialect', dialect)"></div>
-                        <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialect', dialect)" i18n-aria-label
-                            aria-label="exclude"></a>
-                    </div>
-                </h3>
-                <ng-template #answerCountTag let-answerCount="answerCount">
-                    <div class="tag" i18n>
-                        {answerCount, plural,
-                        =0 {no answers}
-                        =1 {1 answer}
-                        other {{{answerCount}} answers}}
-                    </div>
-                </ng-template>
-                <ng-container [ngTemplateOutlet]="answerCountTag"
-                    [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect].length }"></ng-container>
-            </div>
-            <div class="cell is-col-span-4 expanded dialect-answers pb-4" [ngClass]="{'is-last': last}">
-                @for (group of matchedDialects[dialect]; track group.text) {
-                <div class="is-flex my-3">
-                    <div>
-                        @if (group.attestation.text === 'unattested') {
-                        <div class="tags has-addons is-flex-wrap-nowrap">
-                            <div i18n class="unattested tag filterable"
-                                [ngClass]="{'is-match': group.attestation.fullMatch}"
-                                (click)="onFilterSelected($event, 'attestation', 'unattested')">
-                                unattested
-                            </div>
-                            <a class="tag is-delete" (click)="onExcludeFilter($event, 'attestation', 'unattested')"
-                                i18n-aria-label aria-label="exclude"></a>
-                        </div>
-                        }
-                        @else {
-                        <span [innerHTML]="group.answer | highlight"></span>
-                        }
-                    </div>
-                    <div class="field ml-3 is-grouped is-grouped-multiline">
-                        @for (participantId of group.participantIds; track participantId.text) {
-                        <div class="control">
-                            <div class="tags has-addons is-flex-wrap-nowrap">
-                                <div class="tag filterable" [ngClass]="{'is-match': participantId.fullMatch}"
-                                    (click)="onFilterSelected($event, 'participantId', participantId.text)">
-                                    <span class="icon-text">
-                                        <span class="icon">
-                                            <fa-icon [icon]="faUser"></fa-icon>
-                                        </span>
-                                        <span [innerHTML]="participantId | highlight"></span>
-                                    </span>
+            @for (dialect of dialectLookup.flattened; track dialect.pathFlat) {
+                @if (matchedDialects[dialect.name] && matchedDialects[dialect.name].length) {
+                    <div class="cell expanded dialect-header py-3 pb-5">
+                        @for (item of dialect.path; track item) {
+                            <h3 class="subtitle mb-1">
+                                <div class="tags has-addons are-large dialect-tag is-flex-wrap-nowrap">
+                                    <!-- it is okay to take the first item from the matchedDialects array, because the .dialectPathParts -->
+                                    <!-- array is the same for all items in the matchedDialects array -->
+                                    <div class="tag filterable" [ngClass]="{'is-match': matchedDialectParts[item].fullMatch}" (click)="onFilterSelected($event, 'dialects', item)" [innerHTML]="matchedDialectParts[item] | highlight"></div>
+                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'dialects', item)" i18n-aria-label
+                                        aria-label="exclude"></a>
                                 </div>
-                                <a class="tag is-delete"
-                                    (click)="onExcludeFilter($event, 'participantId', participantId.text)"
-                                    i18n-aria-label aria-label="exclude"></a>
+                            </h3>
+                        }
+                        <ng-template #answerCountTag let-answerCount="answerCount">
+                            <div class="tag" i18n>
+                                {answerCount, plural,
+                                =0 {no answers}
+                                =1 {1 answer}
+                                other {{{answerCount}} answers}}
+                            </div>
+                        </ng-template>
+                        <ng-container [ngTemplateOutlet]="answerCountTag"
+                            [ngTemplateOutletContext]="{ answerCount: matchedDialects[dialect.name].length }"></ng-container>
+                    </div>
+                    <div class="cell is-col-span-4 expanded dialect-answers pb-4">
+                        @for (group of matchedDialects[dialect.name]; track group.text) {
+                        <div class="is-flex my-3">
+                            <div>
+                                @if (group.attestation.text === 'unattested') {
+                                <div class="tags has-addons is-flex-wrap-nowrap">
+                                    <div i18n class="unattested tag filterable"
+                                        [ngClass]="{'is-match': group.attestation.fullMatch}"
+                                        (click)="onFilterSelected($event, 'attestation', 'unattested')">
+                                        unattested
+                                    </div>
+                                    <a class="tag is-delete" (click)="onExcludeFilter($event, 'attestation', 'unattested')"
+                                        i18n-aria-label aria-label="exclude"></a>
+                                </div>
+                                }
+                                @else {
+                                <span [innerHTML]="group.answer | highlight"></span>
+                                }
+                            </div>
+                            <div class="field ml-3 is-grouped is-grouped-multiline">
+                                @for (participantId of group.participantIds; track participantId.text) {
+                                <div class="control">
+                                    <div class="tags has-addons is-flex-wrap-nowrap">
+                                        <div class="tag filterable" [ngClass]="{'is-match': participantId.fullMatch}"
+                                            (click)="onFilterSelected($event, 'participantId', participantId.text)">
+                                            <span class="icon-text">
+                                                <span class="icon">
+                                                    <fa-icon [icon]="faUser"></fa-icon>
+                                                </span>
+                                                <span [innerHTML]="participantId | highlight"></span>
+                                            </span>
+                                        </div>
+                                        <a class="tag is-delete"
+                                            (click)="onExcludeFilter($event, 'participantId', participantId.text)"
+                                            i18n-aria-label aria-label="exclude"></a>
+                                    </div>
+                                </div>
+                                }
                             </div>
                         </div>
                         }
                     </div>
-                </div>
-                }
-            </div>
-            }
+                }}
         </div>
     </div>
 </div>

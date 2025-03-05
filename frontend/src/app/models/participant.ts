@@ -1,4 +1,4 @@
 export interface Participant {
     participantId: string;
-    dialect: string;
+    dialects: string[];
 }

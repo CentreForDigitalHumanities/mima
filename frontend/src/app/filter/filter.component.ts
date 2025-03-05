@@ -14,15 +14,14 @@ import { Filter, FilterField, FilterObjectName, FilterType } from '../models/fil
 import { DropdownOption, FilterFieldOptions } from '../services/filter-management.service';
 import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 import { ManualButtonComponent } from '../manual-button/manual-button.component';
-
-
+import { DialectSelectionComponent } from '../dialect-selection/dialect-selection.component';
 
 @Component({
     selector: 'mima-filter',
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss'],
     standalone: true,
-    imports: [CommonModule, FontAwesomeModule, FormsModule, ManualButtonComponent, MultiSelectModule, FilterTagsComponent]
+    imports: [CommonModule, FontAwesomeModule, FormsModule, ManualButtonComponent, MultiSelectModule, FilterTagsComponent, DialectSelectionComponent]
 })
 export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
@@ -78,7 +77,7 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
     textFieldContent: string;
     dropdownOptions$: Observable<DropdownOption[]> = this.selectedType$.pipe(
         switchMap((selectedType) => {
-            if (selectedType.dropdown) {
+            if (selectedType.mode !== 'text') {
                 return this.getFilterFieldOptions(selectedType.field);
             }
 
@@ -125,7 +124,7 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
                     }
 
                     let content: string[];
-                    if (!this.selectedType.dropdown) {
+                    if (selectedType.mode === 'text') {
                         content = [this.textFieldContent];
                         this.textFieldContent = filter.content[0] ?? '';
                     } else {
@@ -137,7 +136,7 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
                     this.filter = {
                         ...filter,
                         content,
-                        onlyFullMatch: this.selectedType.dropdown
+                        onlyFullMatch: selectedType.mode !== 'text'
                     };
                 })).subscribe()
         ];
@@ -149,9 +148,18 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
         }
     }
 
-    emit(): void {
-        let content = this.filter.content;
-        if (!this.selectedType.dropdown) {
+    /**
+     * Emits the updated filter
+     * @param content updated filter content (or undefined if unchanged)
+     */
+    emit(content?: string[]): void {
+        if (!content) {
+            content = this.filter.content;
+        } else {
+            this.filter.content = content;
+        }
+
+        if (this.selectedType.mode === 'text') {
             content = [this.textFieldContent];
         } else if (this.filter.field !== this.selectedType.field) {
             // changed to a (different) dropdown?

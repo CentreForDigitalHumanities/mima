@@ -2,7 +2,7 @@ import { MatchedParts, MatchedPartsProperties } from "./matched-parts";
 
 export interface LikertResponse {
     participantId: string;
-    dialect: string;
+    dialects: string[];
     score: number;
 }
 
@@ -11,11 +11,14 @@ type MatchedLikertResponseValue<T> =
     ? MatchedParts
     : T extends number
     ? MatchedParts
+    : T extends string[]
+    ? MatchedParts[]
     : never;
 
 type MatchedLikertResponseDeserializedValue<T> =
     T extends MatchedParts
     ? MatchedPartsProperties
+
     : T;
 
 export type MatchedLikertResponseProperties = {
@@ -28,13 +31,13 @@ export type MatchedLikertResponseDeserializedProperties = {
 
 export class MatchedLikertResponse implements MatchedLikertResponseProperties {
     participantId: MatchedParts;
-    dialect: MatchedParts;
+    dialects: MatchedParts[];
     score: MatchedParts;
     match = false;
 
     constructor(likertResponse: LikertResponse) {
         this.participantId = this.unmatchedValue(likertResponse.participantId)
-        this.dialect = this.unmatchedValue(likertResponse.dialect)
+        this.dialects = likertResponse.dialects.map(dialectTag => this.unmatchedValue(dialectTag));
         this.score = this.unmatchedValue(likertResponse.score?.toString());
     }
 
@@ -46,7 +49,7 @@ export class MatchedLikertResponse implements MatchedLikertResponseProperties {
     static restore(value: MatchedLikertResponseDeserializedProperties): MatchedLikertResponse {
         const properties: Omit<MatchedLikertResponse, 'unmatchedValue'> = {
             participantId: MatchedParts.restore(value.participantId),
-            dialect: MatchedParts.restore(value.dialect),
+            dialects: value.dialects.map(dialectTag => MatchedParts.restore(dialectTag)),
             score: MatchedParts.restore(value.score),
             match: value.match
         };
