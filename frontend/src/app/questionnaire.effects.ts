@@ -60,6 +60,7 @@ export class QuestionnaireEffects implements OnDestroy {
             if (action.type === '[Questionnaire] Set Questions' && !action.applyFilters) {
                 // match everything
                 matchedQuestions = Array.from(action.questions.values()).map(question => new MatchedQuestion(question));
+                this.currentFilters = [];
                 this.currentFilterOperator = operator;
 
                 return setMatchedQuestions({

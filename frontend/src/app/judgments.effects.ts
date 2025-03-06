@@ -59,6 +59,7 @@ export class JudgmentsEffects implements OnDestroy {
             if (action.type === '[Judgments] Set Judgments' && !action.applyFilters) {
                 // match everything
                 matchedJudgments = Array.from(action.judgments.values()).map(judgment => new MatchedJudgment(judgment));
+                this.currentFilters = [];
                 this.currentFilterOperator = operator;
 
                 return setMatchedJudgments({
