@@ -1,7 +1,7 @@
 {
     "name": "mima",
     "version": "0.0.0",
-    "description": "MiMA will humanize all your digits!",
+    "description": "Search interface for manner adverbials",
     "author": "Research Software Lab, Centre for Digital Humanities, Utrecht University",
     "license": "BSD-3-Clause",
     "repository": "github:CentreForDigitalHumanities/mima",

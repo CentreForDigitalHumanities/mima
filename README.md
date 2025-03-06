@@ -2,6 +2,11 @@
 
 [![Actions Status](https://github.com/UUDigitalHumanitieslab/mima/workflows/Unit%20tests/badge.svg)](https://github.com/UUDigitalHumanitieslab/mima/actions)
 
+This is the software used by the [MiMA database website](https://mima.hum.uu.nl), which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University ([ILS, formerly UiL-OTS](https://www.uu.nl/en/research/institute-for-language-sciences)). The research project is funded by the Dutch Research Council ([NWO](https://www.nwo.nl/)).
+
+One of the main aims of the research project is to map the cross-linguistic variation in the (morpho)syntax of manner adverbials. In pursuing this, we are interested in the internal structure (i.e., the internal make-up of complex words and groups of words) of these adverbials, their external structure (i.e., the way in which they distribute in the larger sentence), and the way in which these two variables interact. Part of building towards this goal consists of collecting the data contained in this database, and compiling and making them available in the database.
+
+As one look at the database reveals, there is a lot of variation in the way in which languages form and use manner adverbials. This rich variation is found between unrelated, but also (closely) related languages/language varieties, and has not been studied on a large scale and in detail before. The MiMA project contributes to the study of the (morpho)syntax of manner adverbials by systematic collection and study of data from languages/language varieties that exhibit different degrees of relatedness: the Dutch dialects are very closely related languages/language varieties, the Germanic languages are less closely related, and the non-Germanic languages are even further removed/unrelated. By studying the differences and similarities in the structure of the manner adverbials, we can relate these to the differences and similarities between the languages/language varieties. The sample of languages/language varieties in our database allows us to do this at different levels of fine-grainedness.
 
 ## Before you start
 

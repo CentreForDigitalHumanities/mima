@@ -227,13 +227,6 @@
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3423148240695254048" datatype="html">
-        <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). The research project is funded by the Dutch Research Council (NWO).</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/home/home.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="3660086085587815253" datatype="html">
         <source>One of the main aims of the research project is to map the cross-linguistic variation in the (morpho)syntax of manner adverbials. In pursuing this, we are interested in the internal structure (i.e., the internal make-up of complex words and groups of words) of these adverbials, their external structure (i.e., the way in which they distribute in the larger sentence), and the way in which these two variables interact. Part of building towards this goal consists of collecting the data contained in this database, and compiling and making them available in the database.</source>
         <context-group purpose="location">
@@ -500,7 +493,7 @@
         <source> No matches found! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-list/likert-list.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list/questionnaire-list.component.html</context>
@@ -585,7 +578,7 @@
         <source>attested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">329</context>
+          <context context-type="linenumber">330</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2946765255271348390" datatype="html">
@@ -599,7 +592,7 @@
         <source>unattested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">329</context>
+          <context context-type="linenumber">330</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4009088558739680278" datatype="html">
@@ -821,26 +814,19 @@
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8069956724772040089" datatype="html">
-        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedJudgments.size}}"/> judgments · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="INTERPOLATION_2" equiv-text="{{matchedDialects.size}}"/> dialects · <x id="INTERPOLATION_3" equiv-text="{{matchedResponseCount | transitionNumbers}}"/> responses</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="7772651244468486534" datatype="html">
         <source>Number of responses: <x id="INTERPOLATION" equiv-text="{{ likertValuesGeneral.total }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4588063035415577343" datatype="html">
-        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="ts.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="{{matchedDialects.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
           <context context-type="linenumber">10</context>
@@ -849,8 +835,26 @@
       <trans-unit id="7951007374151921228" datatype="html">
         <source>Matched Dialects</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
           <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4229744130830672951" datatype="html">
+        <source>Welcome to the MiMA database website, which is a product of the Mind your Manner Adverbials! research project run by linguists of Utrecht University (<x id="START_LINK" ctype="x-a" equiv-text="&lt;a i18n-href href=&quot;https://www.uu.nl/en/research/institute-for-language-sciences&quot;&gt;"/>ILS, formerly UiL-OTS<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>). The research project is funded by the Dutch Research Council (<x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://nwo.nl&quot;&gt;"/>NWO<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>).</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4738460171859555496" datatype="html">
+        <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedJudgments.size}}"/> judgments · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="ts.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedResponseCount | transitionNumbers}}"/> responses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
     </body>
