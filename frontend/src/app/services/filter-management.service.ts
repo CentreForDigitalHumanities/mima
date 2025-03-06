@@ -193,6 +193,7 @@ export class FilterManagementService implements OnDestroy {
         let i = 0;
         while ((fieldName + suffix) in queryParams) {
             suffix = `${i}`;
+            i++;
         }
 
         return fieldName + suffix;
