@@ -2,6 +2,7 @@ import { Component, ElementRef, EventEmitter, Input, NgZone, OnChanges, OnDestro
 import { Judgment, MatchedJudgment as MatchedJudgment } from '../models/judgment';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { HighlightPipe } from '../highlight.pipe';
 import { LuupzigModule } from 'luupzig';
 import { JudgmentsService } from '../services/judgments.service';
@@ -10,7 +11,7 @@ import { IntersectableComponent } from '../services/visibility.service';
 import { MatchedPart, MatchedParts } from '../models/matched-parts';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
-import { DialectService } from '../services/dialect.service';
+import { DialectService, MatchedSubItemGrouped } from '../services/dialect.service';
 
 export type LikertShow = 'count' | 'percentage';
 
@@ -27,6 +28,7 @@ interface LikertValues {
 })
 
 export class LikertComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedJudgment> {
+    faTimes = faTimes;
     value: MatchedJudgment;
     @Input() id: string;
     @Input() judgments: ReadonlyMap<string, Judgment>;
@@ -73,10 +75,20 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     likertValuesGeneral: LikertValues;
 
     dialectNames: string[] = [];
+    matchedDialects: { [dialect: string]: MatchedSubItemGrouped<'participantId'>[] } = {};
+    matchedDialectParts: { [dialect: string]: MatchedParts } = {};
+
     /**
-     * Matched dialects and their path to display
+     * All the dialect parts
      */
-    matchedDialects: { [dialect: string]: string } = {};
+    private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
+    private get unmatchedDialectParts() {
+        if (!this._unmatchedDialectParts) {
+            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts();
+        }
+
+        return this._unmatchedDialectParts;
+    }
 
     constructor(private judgmentsService: JudgmentsService, private dialectService: DialectService, element: ElementRef, private ngZone: NgZone) {
         this.nativeElement = element.nativeElement;
@@ -130,37 +142,23 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     updateLikertValues() {
         this.initializeLikertValues();
         if (this.model?.responses) {
-            for (const response of this.model.responses) {
-                if (!response.match) {
-                    continue;
-                }
-                const index = Number.parseInt(response.score.text) - 1;
-                const matchedDialectParts: { [dialect: string]: MatchedParts } = {};
+            let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
+                this.model.matchedResponses,
+                ['participantId'],
+                this.endDialects,
+                (response, dialect) => {
+                    const index = Number.parseInt(response.score.text) - 1;
+                    this.likertValues[dialect].counts[index]++;
+                    this.likertValues[dialect].total++;
+                    this.likertValuesGeneral.counts[index]++;
+                    this.likertValuesGeneral.total++;
+                });
 
-                // did the response match the filter on dialect?
-                const responseMatchedDialects: MatchedParts[] = [];
-                for (const parts of response.dialects) {
-                    if (parts.match) {
-                        matchedDialectParts[parts.text] = parts;
-                        responseMatchedDialects.push(parts);
-                    }
-                };
-
-                for (const dialect of this.endDialects[response.participantId.text]) {
-                    if ( // not matching on dialects: mark all the end dialects as matched
-                        responseMatchedDialects.length == 0
-                        // only mark the dialects which were matched by the filters
-                        || (this.dialectService.anyDialectInPaths(
-                            responseMatchedDialects.map(x => x.text),
-                            this.dialectService.getDialectPaths(dialect)))) {
-                        this.likertValues[dialect].counts[index]++;
-                        this.likertValues[dialect].total++;
-                        this.likertValuesGeneral.counts[index]++;
-                        this.likertValuesGeneral.total++;
-                        this.matchedDialects[dialect] = this.dialectLookup.paths[dialect].map(path => path.pathFlat).join('; ');
-                    }
-                }
-            }
+            this.matchedDialects = matchedDialects;
+            this.matchedDialectParts = {
+                ...this.unmatchedDialectParts,
+                ...matchedDialectParts
+            };
         }
         this.updateDialectNames();
     }
@@ -175,23 +173,25 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
         let inserted = false;
 
         for (let i = 0; i < parts.length; i++) {
-            let targetIndex = parts[i].text.indexOf('…');
+            // normalize ellipses
+            const text = parts[i].text.replace('...', '…');
+            let targetIndex = text.indexOf('…');
             const part = parts[i];
             if (targetIndex < 0) {
                 continue;
             }
 
             // split after this?
-            if (part.text.length > targetIndex + 1) {
+            if (text.length > targetIndex + 1) {
                 parts.splice(i + 1, 0, {
-                    text: part.text.substring(targetIndex + 1),
+                    text: text.substring(targetIndex + 1),
                     match: part.match
                 });
             }
             parts.splice(i, 1, ...[
                 {
                     // split before
-                    text: part.text.substring(0, targetIndex),
+                    text: text.substring(0, targetIndex),
                     match: part.match
                 },
                 ...subQuestion.parts.map(p => ({ ...p, bold: true }))]);
