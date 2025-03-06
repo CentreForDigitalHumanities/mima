@@ -419,17 +419,6 @@
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9041172628832548089" datatype="html">
-        <source>Eerste Nederlandse Questionnaire</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="920567845139554152" datatype="html">
         <source>Question Text</source>
         <context-group purpose="location">
@@ -772,14 +761,14 @@
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3453514898926559787" datatype="html">
+      <trans-unit id="6254550136298647802" datatype="html">
         <source>Judgment ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
           <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="37609944060001191" datatype="html">
+      <trans-unit id="1667436121606140648" datatype="html">
         <source> Judgments </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
@@ -793,7 +782,7 @@
           <context context-type="linenumber">83</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5031625883293898740" datatype="html">
+      <trans-unit id="2421202444912860594" datatype="html">
         <source>Grammaticality Judgments</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
@@ -822,25 +811,25 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4588063035415577343" datatype="html">
         <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedQuestions.size}}"/> questions · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="{{matchedDialects.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedAnswerCount | transitionNumbers}}"/> answers</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7951007374151921228" datatype="html">
         <source>Matched Dialects</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-list-page/questionnaire-list-page.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4229744130830672951" datatype="html">
@@ -854,7 +843,7 @@
         <source>Results: <x id="INTERPOLATION" equiv-text="{{matchedJudgments.size}}"/> judgments · <x id="INTERPOLATION_1" equiv-text="{{matchedParticipants.size}}"/> respondents · <x id="START_LINK" ctype="x-a" equiv-text="&lt;a (click)=&quot;listMatchedDialects=!listMatchedDialects&quot;&gt;"/><x id="INTERPOLATION_2" equiv-text="ts.size}}"/> dialects<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> · <x id="INTERPOLATION_3" equiv-text="{{matchedResponseCount | transitionNumbers}}"/> responses</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
     </body>
