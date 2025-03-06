@@ -773,14 +773,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3453514898926559787" datatype="html">
-        <source>Judgement ID</source>
+        <source>Judgment ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
           <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="37609944060001191" datatype="html">
-        <source> Judgements </source>
+        <source> Judgments </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/menu/menu.component.html</context>
           <context context-type="linenumber">26</context>
@@ -794,7 +794,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5031625883293898740" datatype="html">
-        <source>Grammaticality Judgements</source>
+        <source>Grammaticality Judgments</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-list-page/likert-list-page.component.html</context>
           <context context-type="linenumber">1</context>

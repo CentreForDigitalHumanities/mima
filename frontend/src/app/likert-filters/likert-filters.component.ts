@@ -86,7 +86,7 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         field: 'judgmentId',
         icon: faUser,
         mode: 'dropdown',
-        placeholder: $localize`Judgement ID`
+        placeholder: $localize`Judgment ID`
     }];
 
     constructor(

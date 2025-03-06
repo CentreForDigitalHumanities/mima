@@ -1,6 +1,6 @@
-from mima.settings import DATA_PATH, PARTICIPANTS_PATH, OUTPUT_PATH
+from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, OUTPUT_PATH
 
-from read_questionnaire import extract_participant_metadata
+from read_questionnaire import extract_participant_metadata, merge_questionnaires
 import re
 import os
 import json
@@ -62,9 +62,11 @@ def get_dialects(data):
 
 def get_questions_and_ids(item):
     line = item.replace("...", "XXX")
+    line = item.replace("\u2026", "XXX")
+    line = item.replace("…", "XXX")
     sub_question = re.findall(r"\[(.*?)\]", line.split(".")[-1])[0].strip()
     main_question = (
-        line.split(".")[1].replace("Invulzin", "").strip().replace("XXX", "...")
+        line.split(".")[1].replace("Invulzin", "").strip().replace("XXX", "\u2026")
     )
     ids = item.split("Invulzin")[0]
     main_question_id = ids.split("[")[0]
@@ -80,7 +82,7 @@ def get_judgment_items(line):
     judgments = {}
     indices = []
     for index, item in enumerate(line):
-        if "Invulzin" in item:
+        if "Invulzin" in item and "CLEANED" not in item:
             indices.append(index)
             main_question, sub_question, main_question_id, sub_question_id = (
                 get_questions_and_ids(item)
@@ -121,22 +123,22 @@ def serialize_classes(obj):
         return asdict(obj)
     return obj.__dict__
 
-
-def export_to_json(dictionary):
-    ## dump as json
-    with open(os.path.join(OUTPUT_PATH, "likert_scales_test.json"), "w") as file:
-        json.dump(dictionary, file, default=serialize_classes, indent=4)
-
-
-def __main__():
-    data = read_csv(DATA_PATH)
-    participants_data = read_csv(PARTICIPANTS_PATH)
+def extract_likert_and_participant_data(data_path, participants_path):
+    data = read_csv(data_path)
+    participants_data = read_csv(participants_path)
     participant_countries, participant_dialects, skip_list = extract_participant_metadata(participants_data)
     judgment_items, judgment_indices = get_judgment_items(data[0])
     judgment_items = get_responses(
         data, participant_dialects, participant_countries, judgment_indices, judgment_items, skip_list
     )
-    export_to_json(judgment_items)
+    return judgment_items
+
+def __main__():
+    judgment_items_q1 = extract_likert_and_participant_data(DATA_PATH_Q1, PARTICIPANTS_PATH_Q1)
+    judgment_items_q2 = extract_likert_and_participant_data(DATA_PATH_Q2, PARTICIPANTS_PATH_Q2)
+    merged_judgment_items = merge_questionnaires(judgment_items_q1, judgment_items_q2)
+    with open(os.path.join(OUTPUT_PATH, "likert_scales_test.json"), "w") as file:
+        json.dump(merged_judgment_items, file, default=serialize_classes, indent=4)
 
 
 if __name__ == "__main__":
