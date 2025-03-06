@@ -24,7 +24,19 @@
     <div class="judgments">
         @for (dialect of dialectLookup.flattened; track dialect.pathFlat) {
         @if (matchedDialects[dialect.name]) {
-        <h3 class="animate-down">{{matchedDialects[dialect.name]}}</h3>
+        <h3 class="animate-down">
+            <div class="breadcrumb has-succeeds-separator mb-2">
+                <ul>
+                    @for (item of dialect.path; track item) {
+                    <li>
+                        <span [ngClass]="{'is-match': matchedDialectParts[item].fullMatch}"
+                            [innerHTML]="matchedDialectParts[item] | highlight">
+                        </span>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </h3>
         <div class="columns animate-down">
             <div class="column is-three-quarters">
                 <mima-likert-bar [counts]="showTotal ? likertValuesGeneral.counts : likertValues[dialect.name].counts"
