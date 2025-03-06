@@ -52,6 +52,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
     responses: MatchedLikertResponse[]
 
     dialectsCount = 0;
+    matchedResponses: MatchedLikertResponse[] = [];
     matchedResponseCount = 0;
     matchedDialects: { [dialect: string]: MatchedLikertResponse[] } = {};
     matchedDialectsCount = 0;
@@ -86,6 +87,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             subQuestionTextId: MatchedParts.restore(value.subQuestionTextId),
             responses: value.responses.map(answer => MatchedLikertResponse.restore(answer)),
             dialectsCount: value.dialectsCount,
+            matchedResponses: value.matchedResponses.map(r => MatchedLikertResponse.restore(r)),
             matchedResponseCount: value.matchedResponseCount,
             matchedDialects: Object.fromEntries(
                 Object.entries(value.matchedDialects)
@@ -102,7 +104,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
         const dialects = new Set<string>();
         const participants = new Set<string>();
 
-        this.matchedResponseCount = 0;
+        this.matchedResponses = [];
         this.matchedDialects = {};
 
         for (const response of this.responses) {
@@ -111,7 +113,8 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             }
 
             if (response.match) {
-                this.matchedResponseCount++;
+                // count matched responses only once
+                this.matchedResponses.push(response);
                 participants.add(response.participantId.text);
 
                 // did we filter on dialects or on something else?
@@ -133,6 +136,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
                 }
             }
         }
+        this.matchedResponseCount = this.matchedResponses.length;
 
         this.matchedDialectNames = Object.keys(this.matchedDialects).sort((a, b) => a.localeCompare(b));
         this.matchedDialectsCount = this.matchedDialectNames.length;

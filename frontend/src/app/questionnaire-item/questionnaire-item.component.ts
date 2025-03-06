@@ -5,14 +5,13 @@ import { faCheck, faChevronDown, faTimes, faUser } from '@fortawesome/free-solid
 import { LuupzigModule } from 'luupzig';
 import { QuestionnaireService } from '../services/questionnaire.service'
 import { Question, MatchedQuestion } from '../models/question';
-import { MatchedAnswer } from '../models/answer';
 import { FilterField } from '../models/filter';
 import { HighlightPipe } from '../highlight.pipe';
 import { MatchedParts } from '../models/matched-parts';
 import { IntersectableComponent } from '../services/visibility.service';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
-import { DialectService } from '../services/dialect.service';
+import { DialectService, MatchedSubItemGrouped } from '../services/dialect.service';
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -22,15 +21,6 @@ export interface FilterEvent {
     content: string;
 }
 
-/**
- * Matched answers grouped by their text
- */
-interface MatchedAnswerGrouped {
-    text: string;
-    answer: MatchedParts;
-    attestation: MatchedParts;
-    participantIds: MatchedParts[];
-}
 
 @Component({
     selector: 'mima-questionnaire-item',
@@ -65,7 +55,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
      */
     valueDirty = true;
     matchedAnswerCount = 0;
-    matchedDialects: { [dialect: string]: MatchedAnswerGrouped[] } = {};
+    matchedDialects: { [dialect: string]: MatchedSubItemGrouped<'answer' | 'attestation'>[] } = {};
     matchedDialectParts: { [dialect: string]: MatchedParts } = {};
     matchedDialectNames: string[] = [];
     matchedDialectsCount = 0;
@@ -100,7 +90,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
     private get unmatchedDialectParts() {
         if (!this._unmatchedDialectParts) {
-            this._unmatchedDialectParts = this.initializeDialectTextParts();
+            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts();
         }
 
         return this._unmatchedDialectParts;
@@ -141,7 +131,10 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
         }
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
-        let [matchedDialects, matchedDialectParts] = this.groupAnswers(this.model.matchedAnswers);
+        let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
+            this.model.matchedAnswers,
+            ['answer', 'attestation'],
+            this.endDialects);
         this.matchedDialects = matchedDialects;
         this.matchedDialectParts = {
             ...this.unmatchedDialectParts,
@@ -155,87 +148,6 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
                 this.matchedDialectsCount <= autoExpandDialectCount ||
                 this.matchedAnswerCount <= autoExpandAnswerCount;
         }
-    }
-
-    private initializeDialectTextParts() {
-        const dialectTextParts: { [dialect: string]: MatchedParts } = {};
-        for (const dialect of this.dialectLookup.flattened) {
-            dialectTextParts[dialect.name] = new MatchedParts({
-                empty: false,
-                emptyFilters: false,
-                fullMatch: false,
-                match: false,
-                parts: [{
-                    match: false,
-                    text: dialect.name,
-                    bold: false
-                }]
-            });
-        }
-
-        return dialectTextParts;
-    }
-
-    private groupAnswers(matchedAnswers: MatchedQuestion['matchedAnswers']): [
-        { [dialect: string]: MatchedAnswerGrouped[] },
-        { [dialect: string]: MatchedParts }
-    ] {
-        // group answers by their dialect
-        const matchedDialects: { [endDialects: string]: MatchedAnswer[] } = {};
-        const matchedDialectParts: { [dialect: string]: MatchedParts } = {};
-
-        for (const answer of matchedAnswers) {
-            // did the answer match the filter on dialect?
-            const answerMatchedDialects: MatchedParts[] = [];
-            for (const parts of answer.dialects) {
-                if (parts.match) {
-                    matchedDialectParts[parts.text] = parts;
-                    answerMatchedDialects.push(parts);
-                }
-            }
-
-            for (const dialect of this.endDialects[answer.participantId.text]) {
-                if ( // not matching on dialects: mark all the end dialects as matched
-                    answerMatchedDialects.length == 0
-                    // only mark the dialects which were matched by the filters
-                    || (this.dialectService.anyDialectInPaths(
-                        answerMatchedDialects.map(x => x.text),
-                        this.dialectService.getDialectPaths(dialect)))) {
-                    matchedDialects[dialect] = [...matchedDialects[dialect] ?? [], answer];
-                }
-            }
-        }
-
-        // then group them by their text
-        const grouped: { [endDialects: string]: MatchedAnswerGrouped[] } = {};
-
-        for (const [dialect, answers] of Object.entries(matchedDialects)) {
-            const dialectGroup: { [text: string]: MatchedAnswer[] } = {};
-            for (const answer of answers) {
-                const text = answer.answer.text;
-                if (text in dialectGroup) {
-                    dialectGroup[text].push(answer);
-                } else {
-                    dialectGroup[text] = [answer];
-                }
-            }
-
-            // sort by text; put unattested last
-            grouped[dialect] = [...Object.entries(dialectGroup)].sort(([textA], [textB]) =>
-                textA === ''
-                    ? 1
-                    : textB === ''
-                        ? -1
-                        : textA.localeCompare(textB)
-            ).map(([text, answers]) => ({
-                text,
-                answer: answers[0].answer,
-                attestation: answers[0].attestation,
-                dialects: answers[0].dialects,
-                participantIds: answers.map(answer => answer.participantId)
-            }));
-        }
-        return [grouped, matchedDialectParts];
     }
 
     /**
