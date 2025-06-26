@@ -44,8 +44,3 @@ for item in judgment_items:
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_german_1.json"), "w") as file:
         json.dump(merged_judgment_items, file, default=serialize_classes, indent=4)
-
-
-
-
-

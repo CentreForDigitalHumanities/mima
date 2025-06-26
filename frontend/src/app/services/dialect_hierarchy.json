@@ -122,5 +122,10 @@
         "German (Ostmittelbairisch)": {},
         "German (Westmittelbairisch)": {},
         "German (Ödingsch Platt)": {}
+    },
+    "English": {
+        "British": {},
+        "American": {},
+        "South African": {}
     }
 }
