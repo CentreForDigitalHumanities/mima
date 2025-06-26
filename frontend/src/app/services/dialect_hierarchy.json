@@ -116,5 +116,11 @@
         "Groesbeek": {},
         "Urks": {}
     },
-    "Standaardnederlands": {}
+    "Standaardnederlands": {},
+    "German": {
+        "Standard German": {},
+        "German (Ostmittelbairisch)": {},
+        "German (Westmittelbairisch)": {},
+        "German (Ödingsch Platt)": {}
+    }
 }
