@@ -1,6 +1,6 @@
 from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, OUTPUT_PATH
 
-from read_questionnaire import extract_participant_metadata, merge_questionnaires
+from read_data.read_questionnaire_meertens import extract_participant_metadata, merge_questionnaires
 import re
 import os
 import json
@@ -22,7 +22,7 @@ class JudgmentItem:
 @dataclass
 class Response:
     participant_id: str
-    dialects: str
+    dialects: list
     country: str
     score: int
 
