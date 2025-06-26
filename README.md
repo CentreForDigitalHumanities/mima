@@ -13,7 +13,7 @@ As one look at the database reveals, there is a lot of variation in the way in w
 You need to install the following software:
 
  - PostgreSQL >= 10, client, server and C libraries
- - Python >= 3.8, <= 3.10
+ - Python >= 3.8, <= 3.9
  - virtualenv
  - WSGI-compatible webserver (deployment only)
  - [Visual C++ for Python][1] (Windows only)
