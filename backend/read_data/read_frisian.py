@@ -37,7 +37,7 @@ def get_likert_items_and_indices(header):
 
     return indices, items
 
-def get_responses(line, indices, judgment_items):
+def get_likert_responses(line, indices, judgment_items):
     participant_id = line[0]
     for index in indices:
         score = line[index]
@@ -53,7 +53,7 @@ def get_responses(line, indices, judgment_items):
 
 likert_indices, judgment_items = get_likert_items_and_indices(frisian_data[0])
 for line in frisian_data[1:]:
-    judgment_items = get_responses(line, likert_indices, judgment_items)
+    judgment_items = get_likert_responses(line, likert_indices, judgment_items)
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_frisian.json"), "w") as file:
         json.dump(judgment_items, file, default=serialize_classes, indent=4)
