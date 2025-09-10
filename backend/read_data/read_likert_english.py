@@ -1,19 +1,19 @@
-from mima.settings import OUTPUT_PATH, LIKERT_PATH_EN
+from mima.settings import OUTPUT_PATH, LIKERT_PATH_EN, META_PATH_EN
 from read_data.read_likert_meertens import JudgmentItem, Response, serialize_classes
 
 import csv
 import os
 import json
 
-likert_data_german = []
+likert_data_english = []
 with open(LIKERT_PATH_EN, encoding="utf8") as file:
     reader = csv.reader(file)
     for line in reader:
-        likert_data_german.append(line)
+        likert_data_english.append(line)
 
-# Read the likert data - 1
+# Read the likert data
 judgment_items = []
-for line in likert_data_german[1:]:
+for line in likert_data_english[1:]:
     participant_id = line[0]
     main_question_id = line[4]
     main_question = line[7]
@@ -51,6 +51,14 @@ for item in judgment_items:
         merged_judgment_items[item.main_question_id] = item
     else:
         merged_judgment_items[item.main_question_id].responses += item.responses
+
+with open(META_PATH_EN, encoding='utf8') as file:
+    reader = csv.reader(file)
+    next(reader)
+    for line in reader:
+        question_id = line[0]
+        merged_judgment_items[question_id].chapters = line[2].split(';')
+        merged_judgment_items[question_id].tags = line[3].split(';')
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_english.json"), "w") as file:
         json.dump(merged_judgment_items, file, default=serialize_classes, indent=4)

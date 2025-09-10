@@ -49,7 +49,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -101,7 +110,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -153,7 +171,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -205,7 +233,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow5": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -257,7 +295,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -309,7 +357,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -361,7 +418,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -413,7 +480,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -454,7 +530,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick5": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -506,7 +592,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -558,7 +654,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -610,7 +715,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -662,7 +776,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -714,7 +837,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -766,7 +898,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "diminutive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -818,7 +960,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "V"
+        ],
+        "tags": [
+            "preposition",
+            "participle",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -870,7 +1023,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -922,7 +1084,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -974,7 +1145,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow9": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1026,7 +1207,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow10": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1078,7 +1269,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1130,7 +1331,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "participle"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1182,7 +1392,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1234,7 +1454,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick9": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1286,7 +1515,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick10": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1338,7 +1577,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast3": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1390,7 +1639,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast4": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1442,7 +1700,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast5": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1484,7 +1751,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast6": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1536,7 +1813,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishFast7": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1588,7 +1875,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried5": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1640,7 +1937,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1692,7 +1998,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1744,7 +2059,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "diminutive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurried8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1796,7 +2121,18 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "V"
+        ],
+        "tags": [
+            "preposition",
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot1": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -1848,7 +2184,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot2": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -1900,7 +2244,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot3": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -1952,7 +2304,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot4": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -2004,7 +2364,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "N"
+        ],
+        "tags": [
+            "preposition",
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot5": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2056,7 +2426,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot6": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2108,7 +2486,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot7": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2160,7 +2546,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "N"
+        ],
+        "tags": [
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishBarefoot8": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2212,7 +2606,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "N"
+        ],
+        "tags": [
+            "preposition",
+            "modifiednoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud1": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2264,7 +2668,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud2": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2316,7 +2731,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud3": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2368,7 +2794,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud4": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2420,7 +2857,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper1": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2472,7 +2920,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper2": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2524,7 +2981,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud5": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2576,7 +3042,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud6": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2628,7 +3103,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud7": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2680,7 +3164,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud8": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2732,7 +3227,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud9": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2784,7 +3290,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud10": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2836,7 +3353,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud11": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2888,7 +3416,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper3": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2940,7 +3479,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper4": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -2992,7 +3540,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P"
+        ],
+        "tags": [
+            "preposition",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper5": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3044,7 +3601,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P"
+        ],
+        "tags": [
+            "preposition",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper6": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3096,7 +3662,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud12": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3148,7 +3723,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud13": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3200,7 +3784,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud14": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3252,7 +3845,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud15": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3304,7 +3908,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud16": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -3356,7 +3971,18 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud17": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -3408,7 +4034,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper7": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3460,7 +4097,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper8": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3512,7 +4158,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "P"
+        ],
+        "tags": [
+            "preposition",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper9": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3564,7 +4219,16 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "P"
+        ],
+        "tags": [
+            "preposition",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishWhisper10": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3616,7 +4280,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud18": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -3668,7 +4341,18 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoud19": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -3720,7 +4404,18 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick11": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -3772,7 +4467,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCareful1": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -3824,7 +4528,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick12": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -3876,7 +4589,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCareful2": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -3928,7 +4650,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord1": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -3980,7 +4711,17 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord2": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4032,7 +4773,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord3": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4084,7 +4835,17 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord4": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4136,7 +4897,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord5": {
         "main_question": "Alex pulled off the bandage careful and quicky.",
@@ -4188,7 +4959,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord6": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4240,7 +5021,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "postverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick13": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4292,7 +5083,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCareful3": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4344,7 +5144,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick14": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4396,7 +5205,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCareful4": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4448,7 +5266,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord7": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4500,7 +5327,17 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord8": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4552,7 +5389,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord9": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4604,7 +5451,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord10": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4656,7 +5513,17 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord11": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4708,7 +5575,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishCoord12": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -4760,7 +5637,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "preverbal",
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick15": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -4812,7 +5699,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuick16": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -4864,7 +5759,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow11": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -4916,7 +5820,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlow12": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -4968,7 +5880,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "positive",
+            "diminutive"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickComp1": {
         "main_question": "The \u2026 bus will not arrive at the same time as the other busses.",
@@ -5020,7 +5941,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowComp1": {
         "main_question": "The \u2026 bus will not arrive at the same time as the other busses.",
@@ -5072,7 +6002,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup1": {
         "main_question": "That is the \u2026 bus I have ever seen.",
@@ -5124,7 +6063,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSUP1": {
         "main_question": "That is the \u2026 bus I have ever seen.",
@@ -5176,7 +6124,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5228,7 +6185,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickComp3": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5280,7 +6246,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickComp4": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5332,7 +6307,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickComp5": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5384,7 +6368,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5436,7 +6431,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowComp3": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5488,7 +6492,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowComp4": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5540,7 +6553,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowComp5": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5592,7 +6614,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedComp1": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5644,7 +6677,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -5696,7 +6739,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -5748,7 +6801,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -5800,7 +6862,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -5852,7 +6923,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup5": {
         "main_question": "John runs \u2026 of all.",
@@ -5904,7 +6984,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -5956,7 +7047,16 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -6008,7 +7108,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -6060,7 +7169,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedSup1": {
         "main_question": "John runs \u2026 of all.",
@@ -6112,7 +7230,17 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -6164,7 +7292,17 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "V"
+        ],
+        "tags": [
+            "participle",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup6": {
         "main_question": "John runs \u2026 of all.",
@@ -6216,7 +7354,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup7": {
         "main_question": "John runs \u2026 of all.",
@@ -6268,7 +7415,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup8": {
         "main_question": "John runs \u2026 of all.",
@@ -6320,7 +7476,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishQuickSup9": {
         "main_question": "John runs \u2026 of all.",
@@ -6372,7 +7537,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup5": {
         "main_question": "John runs \u2026 of all.",
@@ -6424,7 +7600,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup6": {
         "main_question": "John runs \u2026 of all.",
@@ -6476,7 +7661,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSlowSup7": {
         "main_question": "John runs \u2026 of all.",
@@ -6528,7 +7722,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -6580,7 +7783,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishHurriedSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -6632,7 +7844,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp1": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6684,7 +7905,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp2": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6736,7 +7966,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp3": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6788,7 +8027,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp4": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6840,7 +8090,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp5": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6892,7 +8153,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp6": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6944,7 +8216,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp7": {
         "main_question": "James talks \u2026 than Elly.",
@@ -6996,7 +8279,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudComp8": {
         "main_question": "James talks \u2026 than Elly.",
@@ -7048,7 +8340,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup1": {
         "main_question": "James talks \u2026 of all.",
@@ -7100,7 +8401,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup2": {
         "main_question": "James talks \u2026 of all.",
@@ -7152,7 +8462,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup3": {
         "main_question": "James talks \u2026 of all.",
@@ -7204,7 +8523,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup4": {
         "main_question": "James talks \u2026 of all.",
@@ -7256,7 +8586,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup5": {
         "main_question": "James talks \u2026 of all.",
@@ -7308,7 +8649,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup6": {
         "main_question": "James talks \u2026 of all.",
@@ -7360,7 +8712,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup7": {
         "main_question": "James talks \u2026 of all.",
@@ -7412,7 +8775,16 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup8": {
         "main_question": "James talks \u2026 of all.",
@@ -7464,7 +8836,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup9": {
         "main_question": "James talks \u2026 of all.",
@@ -7516,7 +8897,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup10": {
         "main_question": "James talks \u2026 of all.",
@@ -7568,7 +8958,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup11": {
         "main_question": "James talks \u2026 of all.",
@@ -7620,7 +9019,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup12": {
         "main_question": "James talks \u2026 of all.",
@@ -7672,7 +9082,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup13": {
         "main_question": "James talks \u2026 of all.",
@@ -7724,7 +9145,18 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "P",
+            "A"
+        ],
+        "tags": [
+            "preposition",
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup14": {
         "main_question": "James talks \u2026 of all.",
@@ -7776,7 +9208,16 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishLoudSup15": {
         "main_question": "James talks \u2026 of all.",
@@ -7828,7 +9269,16 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "A"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishEasyMiddle1": {
         "main_question": "This book reads \u2026.",
@@ -7880,7 +9330,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishEasyMiddle2": {
         "main_question": "This book reads \u2026 for children.",
@@ -7932,7 +9390,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishEasyMiddle3": {
         "main_question": "This boek \u2026 reads.",
@@ -7984,7 +9450,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishEasyMiddle4": {
         "main_question": "This book \u2026 reads for children.",
@@ -8036,7 +9510,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishComfortablyMiddle1": {
         "main_question": "That chair sits \u2026.",
@@ -8088,7 +9570,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishComfortablyMiddle2": {
         "main_question": "That chair sits \u2026 for grandma.",
@@ -8140,7 +9630,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishComfortablyMiddle3": {
         "main_question": "The chair \u2026 sits.",
@@ -8192,7 +9690,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishComfortablyMiddle4": {
         "main_question": "The chair \u2026 sits for grandma.",
@@ -8244,7 +9750,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishPoorlyMiddle1": {
         "main_question": "The hard cheese cuts \u2026.",
@@ -8296,7 +9810,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishPoorlyMiddle2": {
         "main_question": "The hard cheese cuts \u2026 for an amateur chef.",
@@ -8348,7 +9870,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishPoorlyMiddle3": {
         "main_question": "The hard cheese \u2026 cuts.",
@@ -8400,7 +9930,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishPoorlyMiddle4": {
         "main_question": "The hard cheese \u2026 cuts for an amateur chef.",
@@ -8452,7 +9990,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "middle"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance1": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8504,7 +10050,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance2": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8556,7 +10110,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance3": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8608,7 +10170,15 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance4": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8660,7 +10230,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance5": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8712,7 +10290,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance6": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8764,7 +10350,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance7": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8816,7 +10410,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance8": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8868,7 +10470,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance9": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -8920,7 +10530,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook1": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -8972,7 +10590,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook2": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -9024,7 +10650,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook3": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -9076,7 +10710,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook4": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -9128,7 +10770,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook5": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -9180,7 +10830,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilLook6": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -9232,7 +10890,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance10": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026s\u2026o\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
@@ -9284,7 +10950,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance11": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026s\u2026o\u2026.\u2026",
@@ -9336,7 +11010,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance12": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026 \u2026s\u2026o\u2026.\u2026",
@@ -9388,7 +11070,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance13": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026i\u2026d\u2026 \u2026b\u2026e\u2026a\u2026u\u2026t\u2026i\u2026f\u2026u\u2026l\u2026l\u2026y\u2026.\u2026",
@@ -9440,7 +11130,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "gap"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance14": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026y\u2026o\u2026u\u2026 \u2026m\u2026e\u2026n\u2026t\u2026i\u2026o\u2026n\u2026e\u2026d\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
@@ -9492,7 +11190,15 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "longdistancemovement"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance15": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026c\u2026l\u2026a\u2026i\u2026m\u2026e\u2026d\u2026 \u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026.\u2026",
@@ -9544,7 +11250,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "longdistancemovement"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance16": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026h\u2026e\u2026a\u2026r\u2026d\u2026 \u2026t\u2026h\u2026e\u2026 \u2026s\u2026t\u2026o\u2026r\u2026y\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
@@ -9639,7 +11353,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance17": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026a\u2026s\u2026k\u2026e\u2026d\u2026 \u2026m\u2026y\u2026s\u2026e\u2026l\u2026f\u2026 \u2026w\u2026h\u2026o\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
@@ -9691,7 +11413,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "whisland"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance18": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026n\u2026'\u2026t\u2026.\u2026",
@@ -9743,7 +11474,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "innerisland"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance19": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026w\u2026a\u2026s\u2026 \u2026t\u2026o\u2026u\u2026c\u2026h\u2026e\u2026d\u2026 \u2026b\u2026e\u2026c\u2026a\u2026u\u2026s\u2026e\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
@@ -9795,7 +11535,16 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "adjunctisland"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance20": {
         "main_question": "\u2026W\u2026h\u2026a\u2026t\u2026 \u2026d\u2026i\u2026d\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026 \u2026l\u2026i\u2026k\u2026e\u2026?\u2026",
@@ -9847,7 +11596,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "miscellaneous"
+        ],
+        "tags": [
+            "wh"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance21": {
         "main_question": "\u2026H\u2026o\u2026w\u2026 \u2026d\u2026i\u2026d\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026 \u2026l\u2026i\u2026k\u2026e\u2026?\u2026",
@@ -9899,7 +11656,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "miscellaneous"
+        ],
+        "tags": [
+            "wh"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance22": {
         "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026t\u2026h\u2026i\u2026s\u2026 \u2026w\u2026a\u2026y\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026w\u2026a\u2026y\u2026)\u2026.\u2026",
@@ -9951,7 +11716,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "miscellaneous"
+        ],
+        "tags": [
+            "cleft"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance23": {
         "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026s\u2026o\u2026 \u2026*\u2026p\u2026o\u2026i\u2026n\u2026t\u2026i\u2026n\u2026g\u2026 \u2026g\u2026e\u2026s\u2026t\u2026u\u2026r\u2026e\u2026*\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026s\u2026o\u2026)\u2026.\u2026",
@@ -10003,7 +11776,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "miscellaneous"
+        ],
+        "tags": [
+            "cleft"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance24": {
         "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026m\u2026o\u2026t\u2026h\u2026e\u2026r\u2026)\u2026.\u2026",
@@ -10055,7 +11836,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "cleft"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilSound1": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026l\u2026i\u2026k\u2026e\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -10107,7 +11896,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilSound2": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -10159,7 +11956,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilSound3": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026l\u2026i\u2026k\u2026e\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -10211,7 +12016,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilSound4": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -10263,7 +12076,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance25": {
         "main_question": "\u2026A\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
@@ -10315,7 +12136,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance26": {
         "main_question": "\u2026E\u2026x\u2026a\u2026c\u2026t\u2026l\u2026y\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
@@ -10367,7 +12196,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance27": {
         "main_question": "\u2026S\u2026o\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
@@ -10419,7 +12256,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilDance28": {
         "main_question": "\u2026J\u2026u\u2026s\u2026t\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
@@ -10471,7 +12316,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance1": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10523,7 +12376,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance2": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10575,7 +12436,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance3": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10627,7 +12496,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance4": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10679,7 +12556,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance5": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10731,7 +12616,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance6": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10783,7 +12676,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance7": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10835,7 +12736,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance8": {
         "main_question": "Hannah danced how it were her birthday.",
@@ -10887,7 +12796,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance9": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10939,7 +12856,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance10": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -10991,7 +12916,15 @@
                 ],
                 "score": "4"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance11": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -11043,7 +12976,15 @@
                 ],
                 "score": "2"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance12": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026a\u2026t\u2026e\u2026 \u2026t\u2026h\u2026e\u2026 \u2026w\u2026h\u2026o\u2026l\u2026e\u2026 \u2026m\u2026e\u2026a\u2026t\u2026 \u2026p\u2026i\u2026e\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026c\u2026h\u2026e\u2026e\u2026s\u2026e\u2026.\u2026",
@@ -11095,7 +13036,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance13": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026b\u2026i\u2026r\u2026d\u2026.\u2026",
@@ -11147,7 +13096,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance14": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026t\u2026o\u2026 \u2026f\u2026l\u2026y\u2026.\u2026",
@@ -11199,7 +13156,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimulDance15": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026f\u2026l\u2026y\u2026i\u2026n\u2026g\u2026.\u2026",
@@ -11251,7 +13216,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EngishSimulSound1": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -11303,7 +13276,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EngishSimulSound2": {
         "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
@@ -11355,7 +13336,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "modifyingnoun"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilBehave1": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026f\u2026a\u2026t\u2026h\u2026e\u2026r\u2026 \u2026t\u2026o\u2026l\u2026d\u2026 \u2026h\u2026i\u2026m\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026m\u2026o\u2026t\u2026h\u2026e\u2026r\u2026 \u2026t\u2026a\u2026u\u2026g\u2026h\u2026t\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
@@ -11407,7 +13396,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilWalk1": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
@@ -11459,7 +13456,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilWalk2": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
@@ -11511,7 +13516,15 @@
                 ],
                 "score": "1"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilWalk3": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
@@ -11563,7 +13576,15 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilBehave2": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026b\u2026e\u2026i\u2026n\u2026g\u2026 \u2026w\u2026a\u2026t\u2026c\u2026h\u2026e\u2026d\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026e\u2026 \u2026w\u2026a\u2026s\u2026 \u2026o\u2026b\u2026l\u2026i\u2026g\u2026e\u2026d\u2026 \u2026t\u2026o\u2026.\u2026",
@@ -11615,7 +13636,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause",
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilBehave3": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026e\u2026 \u2026w\u2026a\u2026s\u2026 \u2026o\u2026b\u2026l\u2026i\u2026g\u2026e\u2026d\u2026 \u2026t\u2026o\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026b\u2026e\u2026i\u2026n\u2026g\u2026 \u2026w\u2026a\u2026t\u2026c\u2026h\u2026e\u2026d\u2026.\u2026",
@@ -11667,7 +13697,16 @@
                 ],
                 "score": "3"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause",
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     },
     "EnglishSimilWalk4": {
         "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026t\u2026h\u2026e\u2026 \u2026w\u2026a\u2026y\u2026 \u2026h\u2026e\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026i\u2026d\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026h\u2026a\u2026d\u2026 \u2026a\u2026 \u2026s\u2026t\u2026o\u2026n\u2026e\u2026 \u2026i\u2026n\u2026 \u2026h\u2026i\u2026s\u2026 \u2026s\u2026h\u2026o\u2026e\u2026.\u2026",
@@ -11719,6 +13758,15 @@
                 ],
                 "score": "5"
             }
-        ]
+        ],
+        "chapters": [
+            "similativeclause",
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "",
+        "gloss": ""
     }
 }
