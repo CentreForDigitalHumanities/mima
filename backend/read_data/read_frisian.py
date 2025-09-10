@@ -24,6 +24,7 @@ def get_likert_items_and_indices(header):
             main_question_id = remove_periods(item.split('Invulzin: ')[1].split('[')[0])
             sub_question = main_question.split('[')[1].split(']')[0]
             sub_question_id = main_question_id + "_" + sub_question
+            main_question = main_question.replace('['+sub_question+']', "\u2026")
             responses = []
             judgment_item = JudgmentItem(
                 main_question,
