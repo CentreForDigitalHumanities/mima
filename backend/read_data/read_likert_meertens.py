@@ -5,7 +5,7 @@ import re
 import os
 import json
 import csv
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Dict
 
 
@@ -17,6 +17,10 @@ class JudgmentItem:
     sub_question_id: str
     sub_question_text_id: str
     responses: list
+    chapters: list = field(default_factory=list)
+    tags: list = field(default_factory=list)
+    translation: str = ""
+    gloss: str = ""
 
 
 @dataclass
