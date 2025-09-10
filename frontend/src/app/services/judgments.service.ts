@@ -48,7 +48,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
      * @returns a Promise of an Array of Judgment objects
      */
     async get(): Promise<ReadonlyArray<Judgment>> {
-        const response = lastValueFrom(this.http.get('assets/likert_scales_meertens.json'));
+        const response = lastValueFrom(this.http.get('assets/likert_scales_dutch.json'));
         const data = await response.then(res => res);
         const judgments = this.convertToJudgments(data);
         this.filterWorkerService.setData('judgment', judgments);
