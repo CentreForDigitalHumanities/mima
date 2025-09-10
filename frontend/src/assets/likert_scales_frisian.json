@@ -1,6 +1,6 @@
 {
     "7": {
-        "main_question": "Se kniep him [s\u00eaft] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaft",
         "sub_question_id": "Se kniep him _s\u00eaft",
@@ -42,7 +42,7 @@
         ]
     },
     "8": {
-        "main_question": "Se kniep him [s\u00eaftjes] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaftjes",
         "sub_question_id": "Se kniep him _s\u00eaftjes",
@@ -84,7 +84,7 @@
         ]
     },
     "9": {
-        "main_question": "Se kniep him [s\u00eafterwize] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eafterwize",
         "sub_question_id": "Se kniep him _s\u00eafterwize",
@@ -126,7 +126,7 @@
         ]
     },
     "10": {
-        "main_question": "Se kniep him [s\u00eaftjeserwize] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaftjeserwize",
         "sub_question_id": "Se kniep him _s\u00eaftjeserwize",
@@ -168,7 +168,7 @@
         ]
     },
     "11": {
-        "main_question": "Se kniep him [s\u00fantsjes] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00fantsjes",
         "sub_question_id": "Se kniep him _s\u00fantsjes",
@@ -210,7 +210,7 @@
         ]
     },
     "12": {
-        "main_question": "Se kniep him [s\u00fantsjeserwize] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00fantsjeserwize",
         "sub_question_id": "Se kniep him _s\u00fantsjeserwize",
@@ -252,7 +252,7 @@
         ]
     },
     "13": {
-        "main_question": "Se kniep him [sachtjes] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "sachtjes",
         "sub_question_id": "Se kniep him _sachtjes",
@@ -294,7 +294,7 @@
         ]
     },
     "14": {
-        "main_question": "Se kniep him [sachtjeserwize] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "sachtjeserwize",
         "sub_question_id": "Se kniep him _sachtjeserwize",
@@ -336,7 +336,7 @@
         ]
     },
     "15": {
-        "main_question": "Se kniep him [foarsichtichjes] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "foarsichtichjes",
         "sub_question_id": "Se kniep him _foarsichtichjes",
@@ -378,7 +378,7 @@
         ]
     },
     "16": {
-        "main_question": "Se kniep him [foarsicherwize] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "foarsicherwize",
         "sub_question_id": "Se kniep him _foarsicherwize",
@@ -420,7 +420,7 @@
         ]
     },
     "18": {
-        "main_question": "Jeske praat [d\u00fadlik]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlik",
         "sub_question_id": "Jeske praat _d\u00fadlik",
@@ -462,7 +462,7 @@
         ]
     },
     "19": {
-        "main_question": "Jeske praat [d\u00fadliks]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadliks",
         "sub_question_id": "Jeske praat _d\u00fadliks",
@@ -504,7 +504,7 @@
         ]
     },
     "20": {
-        "main_question": "Jeske praat [d\u00fadlikerwize]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlikerwize",
         "sub_question_id": "Jeske praat _d\u00fadlikerwize",
@@ -546,7 +546,7 @@
         ]
     },
     "21": {
-        "main_question": "Jeske praat [d\u00fadlikserwize]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlikserwize",
         "sub_question_id": "Jeske praat _d\u00fadlikserwize",
@@ -588,7 +588,7 @@
         ]
     },
     "22": {
-        "main_question": "Jeske praat [d\u00fadlikwei]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlikwei",
         "sub_question_id": "Jeske praat _d\u00fadlikwei",
@@ -630,7 +630,7 @@
         ]
     },
     "23": {
-        "main_question": "Jeske praat [d\u00fadlikerwei]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlikerwei",
         "sub_question_id": "Jeske praat _d\u00fadlikerwei",
@@ -672,7 +672,7 @@
         ]
     },
     "24": {
-        "main_question": "Jeske praat [d\u00fadlikjes]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadlikjes",
         "sub_question_id": "Jeske praat _d\u00fadlikjes",
@@ -714,7 +714,7 @@
         ]
     },
     "25": {
-        "main_question": "Jeske praat [d\u00fadliksjes]",
+        "main_question": "Jeske praat \u2026",
         "main_question_id": "Jeske praat ",
         "sub_question": "d\u00fadliksjes",
         "sub_question_id": "Jeske praat _d\u00fadliksjes",
@@ -756,7 +756,7 @@
         ]
     },
     "27": {
-        "main_question": "Jetske praat [d\u00fadlik] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlik",
         "sub_question_id": "Jetske praat _d\u00fadlik",
@@ -798,7 +798,7 @@
         ]
     },
     "28": {
-        "main_question": "Jetske praat [d\u00fadliks] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadliks",
         "sub_question_id": "Jetske praat _d\u00fadliks",
@@ -840,7 +840,7 @@
         ]
     },
     "29": {
-        "main_question": "Jetske praat [d\u00fadlikerwize] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikerwize",
         "sub_question_id": "Jetske praat _d\u00fadlikerwize",
@@ -882,7 +882,7 @@
         ]
     },
     "30": {
-        "main_question": "Jetske praat [d\u00fadlikserwize] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikserwize",
         "sub_question_id": "Jetske praat _d\u00fadlikserwize",
@@ -924,7 +924,7 @@
         ]
     },
     "31": {
-        "main_question": "Jetske praat [d\u00fadlikwei] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikwei",
         "sub_question_id": "Jetske praat _d\u00fadlikwei",
@@ -966,7 +966,7 @@
         ]
     },
     "32": {
-        "main_question": "Jetske praat [d\u00fadlikerwei] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikerwei",
         "sub_question_id": "Jetske praat _d\u00fadlikerwei",
@@ -1008,7 +1008,7 @@
         ]
     },
     "33": {
-        "main_question": "Jetske praat [d\u00fadlikjes] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikjes",
         "sub_question_id": "Jetske praat _d\u00fadlikjes",
@@ -1050,7 +1050,7 @@
         ]
     },
     "34": {
-        "main_question": "Jetske praat [d\u00fadliksjes] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadliksjes",
         "sub_question_id": "Jetske praat _d\u00fadliksjes",
@@ -1092,7 +1092,7 @@
         ]
     },
     "36": {
-        "main_question": "Lieuwe rint [fluch] nei h\u00fbs ta ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluch",
         "sub_question_id": "Lieuwe rint _fluch",
@@ -1134,7 +1134,7 @@
         ]
     },
     "37": {
-        "main_question": "Lieuwe rint [fluchjes] nei h\u00fbs ta ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluchjes",
         "sub_question_id": "Lieuwe rint _fluchjes",
@@ -1176,7 +1176,7 @@
         ]
     },
     "38": {
-        "main_question": "Lieuwe rint [flucherwize] nei h\u00fbs ta ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "flucherwize",
         "sub_question_id": "Lieuwe rint _flucherwize",
@@ -1218,7 +1218,7 @@
         ]
     },
     "39": {
-        "main_question": "Lieuwe rint [fluchwei] nei h\u00fbs ta ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluchwei",
         "sub_question_id": "Lieuwe rint _fluchwei",
@@ -1260,7 +1260,7 @@
         ]
     },
     "41": {
-        "main_question": "Imke rint [stil] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stil",
         "sub_question_id": "Imke rint _stil",
@@ -1302,7 +1302,7 @@
         ]
     },
     "42": {
-        "main_question": "Imke rint [stiltsjes] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltsjes",
         "sub_question_id": "Imke rint _stiltsjes",
@@ -1344,7 +1344,7 @@
         ]
     },
     "43": {
-        "main_question": "Imke rint [stillerwize] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stillerwize",
         "sub_question_id": "Imke rint _stillerwize",
@@ -1386,7 +1386,7 @@
         ]
     },
     "44": {
-        "main_question": "Imke rint [stiltsjeserzie] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltsjeserzie",
         "sub_question_id": "Imke rint _stiltsjeserzie",
@@ -1428,7 +1428,7 @@
         ]
     },
     "45": {
-        "main_question": "Imke rint [stilwei] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stilwei",
         "sub_question_id": "Imke rint _stilwei",
@@ -1470,7 +1470,7 @@
         ]
     },
     "46": {
-        "main_question": "Imke rint [stiltsjerwei] de trep op ",
+        "main_question": "Imke rint \u2026 de trep op ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltsjerwei",
         "sub_question_id": "Imke rint _stiltsjerwei",
@@ -1512,7 +1512,7 @@
         ]
     },
     "48": {
-        "main_question": "Rinske giet [fytsend] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "fytsend",
         "sub_question_id": "Rinske giet _fytsend",
@@ -1554,7 +1554,7 @@
         ]
     },
     "49": {
-        "main_question": "Rinske giet [fytsenderwize] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "fytsenderwize",
         "sub_question_id": "Rinske giet _fytsenderwize",
@@ -1596,7 +1596,7 @@
         ]
     },
     "50": {
-        "main_question": "Rinske giet [fytsens] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "fytsens",
         "sub_question_id": "Rinske giet _fytsens",
@@ -1638,7 +1638,7 @@
         ]
     },
     "51": {
-        "main_question": "Rinske giet [stadich] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "stadich",
         "sub_question_id": "Rinske giet _stadich",
@@ -1680,7 +1680,7 @@
         ]
     },
     "52": {
-        "main_question": "Rinske giet [stadicherwize] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "stadicherwize",
         "sub_question_id": "Rinske giet _stadicherwize",
@@ -1722,7 +1722,7 @@
         ]
     },
     "53": {
-        "main_question": "Rinske giet [stadicherwei] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "stadicherwei",
         "sub_question_id": "Rinske giet _stadicherwei",
@@ -1764,7 +1764,7 @@
         ]
     },
     "54": {
-        "main_question": "Rinske giet [stadichjes] nei h\u00fbs ta",
+        "main_question": "Rinske giet \u2026 nei h\u00fbs ta",
         "main_question_id": "Rinske giet ",
         "sub_question": "stadichjes",
         "sub_question_id": "Rinske giet _stadichjes",
@@ -1806,7 +1806,7 @@
         ]
     },
     "56": {
-        "main_question": "De bern leare [boartsjend] rekkenjen",
+        "main_question": "De bern leare \u2026 rekkenjen",
         "main_question_id": "De bern leare ",
         "sub_question": "boartsjend",
         "sub_question_id": "De bern leare _boartsjend",
@@ -1848,7 +1848,7 @@
         ]
     },
     "57": {
-        "main_question": "De bern leare [boartsjende] rekkenjen",
+        "main_question": "De bern leare \u2026 rekkenjen",
         "main_question_id": "De bern leare ",
         "sub_question": "boartsjende",
         "sub_question_id": "De bern leare _boartsjende",
@@ -1890,7 +1890,7 @@
         ]
     },
     "58": {
-        "main_question": "De bern leare [boartsjenderwize] rekkenjen",
+        "main_question": "De bern leare \u2026 rekkenjen",
         "main_question_id": "De bern leare ",
         "sub_question": "boartsjenderwize",
         "sub_question_id": "De bern leare _boartsjenderwize",
@@ -1932,7 +1932,7 @@
         ]
     },
     "60": {
-        "main_question": "Mare laket [l\u00fbd] om'e grap ",
+        "main_question": "Mare laket \u2026 om'e grap ",
         "main_question_id": "Mare laket ",
         "sub_question": "l\u00fbd",
         "sub_question_id": "Mare laket _l\u00fbd",
@@ -1974,7 +1974,7 @@
         ]
     },
     "61": {
-        "main_question": "Mare laket [l\u00fbdop] om'e grap ",
+        "main_question": "Mare laket \u2026 om'e grap ",
         "main_question_id": "Mare laket ",
         "sub_question": "l\u00fbdop",
         "sub_question_id": "Mare laket _l\u00fbdop",
@@ -2016,7 +2016,7 @@
         ]
     },
     "62": {
-        "main_question": "Mare laket [op l\u00fbd] om'e grap ",
+        "main_question": "Mare laket \u2026 om'e grap ",
         "main_question_id": "Mare laket ",
         "sub_question": "op l\u00fbd",
         "sub_question_id": "Mare laket _op l\u00fbd",
@@ -2058,7 +2058,7 @@
         ]
     },
     "63": {
-        "main_question": "Mare laket [op l\u00fbde toan] om'e grap ",
+        "main_question": "Mare laket \u2026 om'e grap ",
         "main_question_id": "Mare laket ",
         "sub_question": "op l\u00fbde toan",
         "sub_question_id": "Mare laket _op l\u00fbde toan",
@@ -2100,7 +2100,7 @@
         ]
     },
     "65": {
-        "main_question": "Jetske praat [d\u00fadliker] as Auke",
+        "main_question": "Jetske praat \u2026 as Auke",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadliker",
         "sub_question_id": "Jetske praat _d\u00fadliker",
@@ -2142,7 +2142,7 @@
         ]
     },
     "66": {
-        "main_question": "Jetske praat [d\u00fadlikerwizer] as Auke",
+        "main_question": "Jetske praat \u2026 as Auke",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikerwizer",
         "sub_question_id": "Jetske praat _d\u00fadlikerwizer",
@@ -2184,7 +2184,7 @@
         ]
     },
     "67": {
-        "main_question": "Jetske praat [d\u00fadlikerwei] as Auke",
+        "main_question": "Jetske praat \u2026 as Auke",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikerwei",
         "sub_question_id": "Jetske praat _d\u00fadlikerwei",
@@ -2226,7 +2226,7 @@
         ]
     },
     "68": {
-        "main_question": "Jetske praat [d\u00fadlikweier] as Auke",
+        "main_question": "Jetske praat \u2026 as Auke",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikweier",
         "sub_question_id": "Jetske praat _d\u00fadlikweier",
@@ -2268,7 +2268,7 @@
         ]
     },
     "70": {
-        "main_question": "Lieuwe rint [flucher] nei h\u00fbs ta as Hidde",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta as Hidde",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "flucher",
         "sub_question_id": "Lieuwe rint _flucher",
@@ -2310,7 +2310,7 @@
         ]
     },
     "71": {
-        "main_question": "Lieuwe rint [fluchjeser] nei h\u00fbs ta as Hidde",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta as Hidde",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluchjeser",
         "sub_question_id": "Lieuwe rint _fluchjeser",
@@ -2352,7 +2352,7 @@
         ]
     },
     "72": {
-        "main_question": "Lieuwe rint [fluchertsjes] nei h\u00fbs ta as Hidde",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta as Hidde",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluchertsjes",
         "sub_question_id": "Lieuwe rint _fluchertsjes",
@@ -2394,7 +2394,7 @@
         ]
     },
     "73": {
-        "main_question": "Lieuwe rint [flucherwizer] nei h\u00fbs ta as Hidde",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta as Hidde",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "flucherwizer",
         "sub_question_id": "Lieuwe rint _flucherwizer",
@@ -2436,7 +2436,7 @@
         ]
     },
     "74": {
-        "main_question": "Lieuwe rint [fluchweier] nei h\u00fbs ta as Hidde",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta as Hidde",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "fluchweier",
         "sub_question_id": "Lieuwe rint _fluchweier",
@@ -2478,7 +2478,7 @@
         ]
     },
     "76": {
-        "main_question": "Imke rint [stiller] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiller",
         "sub_question_id": "Imke rint _stiller",
@@ -2520,7 +2520,7 @@
         ]
     },
     "77": {
-        "main_question": "Imke rint [stiltsjeser] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltsjeser",
         "sub_question_id": "Imke rint _stiltsjeser",
@@ -2562,7 +2562,7 @@
         ]
     },
     "78": {
-        "main_question": "Imke rint [stillertsjes] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stillertsjes",
         "sub_question_id": "Imke rint _stillertsjes",
@@ -2604,7 +2604,7 @@
         ]
     },
     "79": {
-        "main_question": "Imke rint [stillerwize] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stillerwize",
         "sub_question_id": "Imke rint _stillerwize",
@@ -2646,7 +2646,7 @@
         ]
     },
     "80": {
-        "main_question": "Imke rint [stiltjeserwize] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltjeserwize",
         "sub_question_id": "Imke rint _stiltjeserwize",
@@ -2688,7 +2688,7 @@
         ]
     },
     "81": {
-        "main_question": "Imke rint [stiltjeserwizer] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltjeserwizer",
         "sub_question_id": "Imke rint _stiltjeserwizer",
@@ -2730,7 +2730,7 @@
         ]
     },
     "82": {
-        "main_question": "Imke rint [stilweier] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "stilweier",
         "sub_question_id": "Imke rint _stilweier",
@@ -2772,7 +2772,7 @@
         ]
     },
     "83": {
-        "main_question": "Imke rint [meer stil] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "meer stil",
         "sub_question_id": "Imke rint _meer stil",
@@ -2814,7 +2814,7 @@
         ]
     },
     "84": {
-        "main_question": "Imke rint [meer stiltsjes] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "meer stiltsjes",
         "sub_question_id": "Imke rint _meer stiltsjes",
@@ -2856,7 +2856,7 @@
         ]
     },
     "85": {
-        "main_question": "Imke rint [minder stil] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "minder stil",
         "sub_question_id": "Imke rint _minder stil",
@@ -2898,7 +2898,7 @@
         ]
     },
     "86": {
-        "main_question": "Imke rint [minder stiltsjes] de trep op as har suster ",
+        "main_question": "Imke rint \u2026 de trep op as har suster ",
         "main_question_id": "Imke rint ",
         "sub_question": "minder stiltsjes",
         "sub_question_id": "Imke rint _minder stiltsjes",
@@ -2940,7 +2940,7 @@
         ]
     },
     "88": {
-        "main_question": "Jan praat [stadicher] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadicher",
         "sub_question_id": "Jan praat _stadicher",
@@ -2982,7 +2982,7 @@
         ]
     },
     "89": {
-        "main_question": "Jan praat [stadichser] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadichser",
         "sub_question_id": "Jan praat _stadichser",
@@ -3024,7 +3024,7 @@
         ]
     },
     "90": {
-        "main_question": "Jan praat [stadichjeser] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadichjeser",
         "sub_question_id": "Jan praat _stadichjeser",
@@ -3066,7 +3066,7 @@
         ]
     },
     "91": {
-        "main_question": "Jan praat [stadichsjeser] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadichsjeser",
         "sub_question_id": "Jan praat _stadichsjeser",
@@ -3108,7 +3108,7 @@
         ]
     },
     "92": {
-        "main_question": "Jan praat [stadichertsjes] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadichertsjes",
         "sub_question_id": "Jan praat _stadichertsjes",
@@ -3150,7 +3150,7 @@
         ]
     },
     "93": {
-        "main_question": "Jan praat [stadichsertsjes] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "stadichsertsjes",
         "sub_question_id": "Jan praat _stadichsertsjes",
@@ -3192,7 +3192,7 @@
         ]
     },
     "94": {
-        "main_question": "Jan praat [meer stadich] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "meer stadich",
         "sub_question_id": "Jan praat _meer stadich",
@@ -3234,7 +3234,7 @@
         ]
     },
     "95": {
-        "main_question": "Jan praat [meer stadichjes] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "meer stadichjes",
         "sub_question_id": "Jan praat _meer stadichjes",
@@ -3276,7 +3276,7 @@
         ]
     },
     "96": {
-        "main_question": "Jan praat [minder stadich] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "minder stadich",
         "sub_question_id": "Jan praat _minder stadich",
@@ -3318,7 +3318,7 @@
         ]
     },
     "97": {
-        "main_question": "Jan praat [minder stadichjes] as Marie ",
+        "main_question": "Jan praat \u2026 as Marie ",
         "main_question_id": "Jan praat ",
         "sub_question": "minder stadichjes",
         "sub_question_id": "Jan praat _minder stadichjes",
@@ -3360,7 +3360,7 @@
         ]
     },
     "99": {
-        "main_question": "Mare laket [l\u00fbder] as Anne",
+        "main_question": "Mare laket \u2026 as Anne",
         "main_question_id": "Mare laket ",
         "sub_question": "l\u00fbder",
         "sub_question_id": "Mare laket _l\u00fbder",
@@ -3402,7 +3402,7 @@
         ]
     },
     "100": {
-        "main_question": "Mare laket [l\u00fbderop] as Anne",
+        "main_question": "Mare laket \u2026 as Anne",
         "main_question_id": "Mare laket ",
         "sub_question": "l\u00fbderop",
         "sub_question_id": "Mare laket _l\u00fbderop",
@@ -3444,7 +3444,7 @@
         ]
     },
     "101": {
-        "main_question": "Mare laket [l\u00fbdopper] as Anne",
+        "main_question": "Mare laket \u2026 as Anne",
         "main_question_id": "Mare laket ",
         "sub_question": "l\u00fbdopper",
         "sub_question_id": "Mare laket _l\u00fbdopper",
@@ -3486,7 +3486,7 @@
         ]
     },
     "102": {
-        "main_question": "Mare laket [op l\u00fbdere toan] as Anne",
+        "main_question": "Mare laket \u2026 as Anne",
         "main_question_id": "Mare laket ",
         "sub_question": "op l\u00fbdere toan",
         "sub_question_id": "Mare laket _op l\u00fbdere toan",
@@ -3528,7 +3528,7 @@
         ]
     },
     "104": {
-        "main_question": "Jan sl\u00fbpt [stiller] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stiller",
         "sub_question_id": "Jan sl\u00fbpt _stiller",
@@ -3570,7 +3570,7 @@
         ]
     },
     "105": {
-        "main_question": "Jan sl\u00fbpt [stillerder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stillerder",
         "sub_question_id": "Jan sl\u00fbpt _stillerder",
@@ -3612,7 +3612,7 @@
         ]
     },
     "106": {
-        "main_question": "Jan sl\u00fbpt [s\u00eafter] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "s\u00eafter",
         "sub_question_id": "Jan sl\u00fbpt _s\u00eafter",
@@ -3654,7 +3654,7 @@
         ]
     },
     "107": {
-        "main_question": "Jan sl\u00fbpt [s\u00eafterder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "s\u00eafterder",
         "sub_question_id": "Jan sl\u00fbpt _s\u00eafterder",
@@ -3696,7 +3696,7 @@
         ]
     },
     "108": {
-        "main_question": "Jan sl\u00fbpt [flucher] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "flucher",
         "sub_question_id": "Jan sl\u00fbpt _flucher",
@@ -3738,7 +3738,7 @@
         ]
     },
     "109": {
-        "main_question": "Jan sl\u00fbpt [flucherder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "flucherder",
         "sub_question_id": "Jan sl\u00fbpt _flucherder",
@@ -3780,7 +3780,7 @@
         ]
     },
     "110": {
-        "main_question": "Jan sl\u00fbpt [stadicher] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stadicher",
         "sub_question_id": "Jan sl\u00fbpt _stadicher",
@@ -3822,7 +3822,7 @@
         ]
     },
     "111": {
-        "main_question": "Jan sl\u00fbpt [stadicherder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stadicherder",
         "sub_question_id": "Jan sl\u00fbpt _stadicherder",
@@ -3864,7 +3864,7 @@
         ]
     },
     "112": {
-        "main_question": "Jan sl\u00fbpt [stikemer] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stikemer",
         "sub_question_id": "Jan sl\u00fbpt _stikemer",
@@ -3906,7 +3906,7 @@
         ]
     },
     "113": {
-        "main_question": "Jan sl\u00fbpt [stikemerder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "stikemerder",
         "sub_question_id": "Jan sl\u00fbpt _stikemerder",
@@ -3948,7 +3948,7 @@
         ]
     },
     "114": {
-        "main_question": "Jan sl\u00fbpt [foarsichticher] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "foarsichticher",
         "sub_question_id": "Jan sl\u00fbpt _foarsichticher",
@@ -3990,7 +3990,7 @@
         ]
     },
     "115": {
-        "main_question": "Jan sl\u00fbpt [foarsichticherder] an it h\u00fbs foarby as Marie ",
+        "main_question": "Jan sl\u00fbpt \u2026 an it h\u00fbs foarby as Marie ",
         "main_question_id": "Jan sl\u00fbpt ",
         "sub_question": "foarsichticherder",
         "sub_question_id": "Jan sl\u00fbpt _foarsichticherder",
@@ -4032,7 +4032,7 @@
         ]
     },
     "117": {
-        "main_question": "Marie docht har wurk [better] as Jan ",
+        "main_question": "Marie docht har wurk \u2026 as Jan ",
         "main_question_id": "Marie docht har wurk ",
         "sub_question": "better",
         "sub_question_id": "Marie docht har wurk _better",
@@ -4074,7 +4074,7 @@
         ]
     },
     "118": {
-        "main_question": "Marie docht har wurk [betterder] as Jan ",
+        "main_question": "Marie docht har wurk \u2026 as Jan ",
         "main_question_id": "Marie docht har wurk ",
         "sub_question": "betterder",
         "sub_question_id": "Marie docht har wurk _betterder",
@@ -4116,7 +4116,7 @@
         ]
     },
     "120": {
-        "main_question": "Marie klaget altyd [minder] oer har wurk as Jan ",
+        "main_question": "Marie klaget altyd \u2026 oer har wurk as Jan ",
         "main_question_id": "Marie klaget altyd ",
         "sub_question": "minder",
         "sub_question_id": "Marie klaget altyd _minder",
@@ -4158,7 +4158,7 @@
         ]
     },
     "121": {
-        "main_question": "Marie klaget altyd [minderder] oer har wurk as Jan ",
+        "main_question": "Marie klaget altyd \u2026 oer har wurk as Jan ",
         "main_question_id": "Marie klaget altyd ",
         "sub_question": "minderder",
         "sub_question_id": "Marie klaget altyd _minderder",
@@ -4200,7 +4200,7 @@
         ]
     },
     "125": {
-        "main_question": "Mare laket [it hurdste] fan allegearre ",
+        "main_question": "Mare laket \u2026 fan allegearre ",
         "main_question_id": "Mare laket ",
         "sub_question": "it hurdste",
         "sub_question_id": "Mare laket _it hurdste",
@@ -4242,7 +4242,7 @@
         ]
     },
     "126": {
-        "main_question": "Mare laket [it hurdopst] fan allegearre ",
+        "main_question": "Mare laket \u2026 fan allegearre ",
         "main_question_id": "Mare laket ",
         "sub_question": "it hurdopst",
         "sub_question_id": "Mare laket _it hurdopst",
@@ -4284,7 +4284,7 @@
         ]
     },
     "127": {
-        "main_question": "Mare laket [it hurdopste] fan allegearre ",
+        "main_question": "Mare laket \u2026 fan allegearre ",
         "main_question_id": "Mare laket ",
         "sub_question": "it hurdopste",
         "sub_question_id": "Mare laket _it hurdopste",
@@ -4326,7 +4326,7 @@
         ]
     },
     "128": {
-        "main_question": "Mare laket [it hurdst op] fan allegearre ",
+        "main_question": "Mare laket \u2026 fan allegearre ",
         "main_question_id": "Mare laket ",
         "sub_question": "it hurdst op",
         "sub_question_id": "Mare laket _it hurdst op",
@@ -4368,7 +4368,7 @@
         ]
     },
     "129": {
-        "main_question": "Mare laket [it hurdste op] fan allegearre ",
+        "main_question": "Mare laket \u2026 fan allegearre ",
         "main_question_id": "Mare laket ",
         "sub_question": "it hurdste op",
         "sub_question_id": "Mare laket _it hurdste op",
@@ -4410,7 +4410,7 @@
         ]
     },
     "131": {
-        "main_question": "Lieuwe rint [it hurderwisest] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurderwisest",
         "sub_question_id": "Lieuwe rint _it hurderwisest",
@@ -4452,7 +4452,7 @@
         ]
     },
     "132": {
-        "main_question": "Lieuwe rint [it hurderwiseste] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurderwiseste",
         "sub_question_id": "Lieuwe rint _it hurderwiseste",
@@ -4494,7 +4494,7 @@
         ]
     },
     "133": {
-        "main_question": "Lieuwe rint [it hurdstwei] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurdstwei",
         "sub_question_id": "Lieuwe rint _it hurdstwei",
@@ -4536,7 +4536,7 @@
         ]
     },
     "134": {
-        "main_question": "Lieuwe rint [it hurdstewei] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurdstewei",
         "sub_question_id": "Lieuwe rint _it hurdstewei",
@@ -4578,7 +4578,7 @@
         ]
     },
     "135": {
-        "main_question": "Lieuwe rint [it hurdweist] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurdweist",
         "sub_question_id": "Lieuwe rint _it hurdweist",
@@ -4620,7 +4620,7 @@
         ]
     },
     "136": {
-        "main_question": "Lieuwe rint [it hurdweiste] nei h\u00fbs ta fan allegearre ",
+        "main_question": "Lieuwe rint \u2026 nei h\u00fbs ta fan allegearre ",
         "main_question_id": "Lieuwe rint ",
         "sub_question": "it hurdweiste",
         "sub_question_id": "Lieuwe rint _it hurdweiste",
@@ -4662,7 +4662,7 @@
         ]
     },
     "138": {
-        "main_question": "Jetske praat [it d\u00fadlikst] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikst",
         "sub_question_id": "Jetske praat _it d\u00fadlikst",
@@ -4704,7 +4704,7 @@
         ]
     },
     "139": {
-        "main_question": "Jetske praat [it d\u00fadlikste] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikste",
         "sub_question_id": "Jetske praat _it d\u00fadlikste",
@@ -4746,7 +4746,7 @@
         ]
     },
     "140": {
-        "main_question": "Jetske praat [it d\u00fadliksterwize] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadliksterwize",
         "sub_question_id": "Jetske praat _it d\u00fadliksterwize",
@@ -4788,7 +4788,7 @@
         ]
     },
     "141": {
-        "main_question": "Jetske praat [it d\u00fadlikerwizest] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikerwizest",
         "sub_question_id": "Jetske praat _it d\u00fadlikerwizest",
@@ -4830,7 +4830,7 @@
         ]
     },
     "142": {
-        "main_question": "Jetske praat [it d\u00fadlikerwizeste] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikerwizeste",
         "sub_question_id": "Jetske praat _it d\u00fadlikerwizeste",
@@ -4872,7 +4872,7 @@
         ]
     },
     "143": {
-        "main_question": "Jetske praat [it d\u00fadlikstwei] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikstwei",
         "sub_question_id": "Jetske praat _it d\u00fadlikstwei",
@@ -4914,7 +4914,7 @@
         ]
     },
     "144": {
-        "main_question": "Jetske praat [it d\u00fadlikstewei] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikstewei",
         "sub_question_id": "Jetske praat _it d\u00fadlikstewei",
@@ -4956,7 +4956,7 @@
         ]
     },
     "145": {
-        "main_question": "Jetske praat [it d\u00fadlikweist] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikweist",
         "sub_question_id": "Jetske praat _it d\u00fadlikweist",
@@ -4998,7 +4998,7 @@
         ]
     },
     "146": {
-        "main_question": "Jetske praat [it d\u00fadlikweiste] fan allegearre ",
+        "main_question": "Jetske praat \u2026 fan allegearre ",
         "main_question_id": "Jetske praat ",
         "sub_question": "it d\u00fadlikweiste",
         "sub_question_id": "Jetske praat _it d\u00fadlikweiste",
@@ -5040,7 +5040,7 @@
         ]
     },
     "148": {
-        "main_question": "Jetske praat [it stadichts] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichts",
         "sub_question_id": "Jetske praat _it stadichts",
@@ -5082,7 +5082,7 @@
         ]
     },
     "149": {
-        "main_question": "Jetske praat [it stadichtse] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichtse",
         "sub_question_id": "Jetske praat _it stadichtse",
@@ -5124,7 +5124,7 @@
         ]
     },
     "150": {
-        "main_question": "Jetske praat [it stadichjest] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichjest",
         "sub_question_id": "Jetske praat _it stadichjest",
@@ -5166,7 +5166,7 @@
         ]
     },
     "151": {
-        "main_question": "Jetske praat [it stadichjeste] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichjeste",
         "sub_question_id": "Jetske praat _it stadichjeste",
@@ -5208,7 +5208,7 @@
         ]
     },
     "152": {
-        "main_question": "Jetske praat [it stadichstjes] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichstjes",
         "sub_question_id": "Jetske praat _it stadichstjes",
@@ -5250,7 +5250,7 @@
         ]
     },
     "153": {
-        "main_question": "Jetske praat [it stadichstekes] fan allegaerre",
+        "main_question": "Jetske praat \u2026 fan allegaerre",
         "main_question_id": "Jetske praat ",
         "sub_question": "it stadichstekes",
         "sub_question_id": "Jetske praat _it stadichstekes",
@@ -5292,7 +5292,7 @@
         ]
     },
     "155": {
-        "main_question": "Imke rint [it stilst] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilst",
         "sub_question_id": "Imke rint _it stilst",
@@ -5334,7 +5334,7 @@
         ]
     },
     "156": {
-        "main_question": "Imke rint [it stilste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilste",
         "sub_question_id": "Imke rint _it stilste",
@@ -5376,7 +5376,7 @@
         ]
     },
     "157": {
-        "main_question": "Imke rint [it stilstjest] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstjest",
         "sub_question_id": "Imke rint _it stilstjest",
@@ -5418,7 +5418,7 @@
         ]
     },
     "158": {
-        "main_question": "Imke rint [it stilstjeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstjeste",
         "sub_question_id": "Imke rint _it stilstjeste",
@@ -5460,7 +5460,7 @@
         ]
     },
     "159": {
-        "main_question": "Imke rint [it stilweist] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilweist",
         "sub_question_id": "Imke rint _it stilweist",
@@ -5502,7 +5502,7 @@
         ]
     },
     "160": {
-        "main_question": "Imke rint [it stilweiste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilweiste",
         "sub_question_id": "Imke rint _it stilweiste",
@@ -5544,7 +5544,7 @@
         ]
     },
     "161": {
-        "main_question": "Imke rint [it stilstwei] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstwei",
         "sub_question_id": "Imke rint _it stilstwei",
@@ -5586,7 +5586,7 @@
         ]
     },
     "162": {
-        "main_question": "Imke rint [it stilstewei] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstewei",
         "sub_question_id": "Imke rint _it stilstewei",
@@ -5628,7 +5628,7 @@
         ]
     },
     "163": {
-        "main_question": "Imke rint [it stillerwizest] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stillerwizest",
         "sub_question_id": "Imke rint _it stillerwizest",
@@ -5670,7 +5670,7 @@
         ]
     },
     "164": {
-        "main_question": "Imke rint [it stillerwizeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stillerwizeste",
         "sub_question_id": "Imke rint _it stillerwizeste",
@@ -5712,7 +5712,7 @@
         ]
     },
     "165": {
-        "main_question": "Imke rint [it stilsterwize] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilsterwize",
         "sub_question_id": "Imke rint _it stilsterwize",
@@ -5754,7 +5754,7 @@
         ]
     },
     "166": {
-        "main_question": "Imke rint [it stilstwize] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstwize",
         "sub_question_id": "Imke rint _it stilstwize",
@@ -5796,7 +5796,7 @@
         ]
     },
     "167": {
-        "main_question": "Imke rint [it stilstewize] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilstewize",
         "sub_question_id": "Imke rint _it stilstewize",
@@ -5838,7 +5838,7 @@
         ]
     },
     "168": {
-        "main_question": "Imke rint [it stilwizest] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilwizest",
         "sub_question_id": "Imke rint _it stilwizest",
@@ -5880,7 +5880,7 @@
         ]
     },
     "169": {
-        "main_question": "Imke rint [it stilwizeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it stilwizeste",
         "sub_question_id": "Imke rint _it stilwizeste",
@@ -5922,7 +5922,7 @@
         ]
     },
     "171": {
-        "main_question": "Imke rint [it sachtst] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtst",
         "sub_question_id": "Imke rint _it sachtst",
@@ -5964,7 +5964,7 @@
         ]
     },
     "172": {
-        "main_question": "Imke rint [it sachtste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtste",
         "sub_question_id": "Imke rint _it sachtste",
@@ -6006,7 +6006,7 @@
         ]
     },
     "173": {
-        "main_question": "Imke rint [it sachtstjest] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstjest",
         "sub_question_id": "Imke rint _it sachtstjest",
@@ -6048,7 +6048,7 @@
         ]
     },
     "174": {
-        "main_question": "Imke rint [it sachtstjeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstjeste",
         "sub_question_id": "Imke rint _it sachtstjeste",
@@ -6090,7 +6090,7 @@
         ]
     },
     "175": {
-        "main_question": "Imke rint [it sachtstsjeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstsjeste",
         "sub_question_id": "Imke rint _it sachtstsjeste",
@@ -6132,7 +6132,7 @@
         ]
     },
     "176": {
-        "main_question": "Imke rint [it sachtstekes] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstekes",
         "sub_question_id": "Imke rint _it sachtstekes",
@@ -6174,7 +6174,7 @@
         ]
     },
     "177": {
-        "main_question": "Imke rint [it sachtweist] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtweist",
         "sub_question_id": "Imke rint _it sachtweist",
@@ -6216,7 +6216,7 @@
         ]
     },
     "178": {
-        "main_question": "Imke rint [it sachtweiste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtweiste",
         "sub_question_id": "Imke rint _it sachtweiste",
@@ -6258,7 +6258,7 @@
         ]
     },
     "179": {
-        "main_question": "Imke rint [it sachtstwei] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstwei",
         "sub_question_id": "Imke rint _it sachtstwei",
@@ -6300,7 +6300,7 @@
         ]
     },
     "180": {
-        "main_question": "Imke rint [it sachtstewei] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstewei",
         "sub_question_id": "Imke rint _it sachtstewei",
@@ -6342,7 +6342,7 @@
         ]
     },
     "181": {
-        "main_question": "Imke rint [it sachterwizest] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachterwizest",
         "sub_question_id": "Imke rint _it sachterwizest",
@@ -6384,7 +6384,7 @@
         ]
     },
     "182": {
-        "main_question": "Imke rint [it sachterwizeste] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachterwizeste",
         "sub_question_id": "Imke rint _it sachterwizeste",
@@ -6426,7 +6426,7 @@
         ]
     },
     "183": {
-        "main_question": "Imke rint [it sachtstwize] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtstwize",
         "sub_question_id": "Imke rint _it sachtstwize",
@@ -6468,7 +6468,7 @@
         ]
     },
     "184": {
-        "main_question": "Imke rint [it sachtsterwize] de trep op fan al har broerkes en suskes ",
+        "main_question": "Imke rint \u2026 de trep op fan al har broerkes en suskes ",
         "main_question_id": "Imke rint ",
         "sub_question": "it sachtsterwize",
         "sub_question_id": "Imke rint _it sachtsterwize",
@@ -6510,7 +6510,7 @@
         ]
     },
     "187": {
-        "main_question": "Se kniep him [s\u00eaftsjesern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaftsjesern\u00f4ch",
         "sub_question_id": "Se kniep him _s\u00eaftsjesern\u00f4ch",
@@ -6552,7 +6552,7 @@
         ]
     },
     "188": {
-        "main_question": "Se kniep him [s\u00eaftern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaftern\u00f4ch",
         "sub_question_id": "Se kniep him _s\u00eaftern\u00f4ch",
@@ -6594,7 +6594,7 @@
         ]
     },
     "189": {
-        "main_question": "Se kniep him [s\u00fantsjesern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00fantsjesern\u00f4ch",
         "sub_question_id": "Se kniep him _s\u00fantsjesern\u00f4ch",
@@ -6636,7 +6636,7 @@
         ]
     },
     "190": {
-        "main_question": "Se kniep him [s\u00fantsern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00fantsern\u00f4ch",
         "sub_question_id": "Se kniep him _s\u00fantsern\u00f4ch",
@@ -6678,7 +6678,7 @@
         ]
     },
     "191": {
-        "main_question": "Se kniep him [foarsichtichjesern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "foarsichtichjesern\u00f4ch",
         "sub_question_id": "Se kniep him _foarsichtichjesern\u00f4ch",
@@ -6720,7 +6720,7 @@
         ]
     },
     "192": {
-        "main_question": "Se kniep him [foarsichtichern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "foarsichtichern\u00f4ch",
         "sub_question_id": "Se kniep him _foarsichtichern\u00f4ch",
@@ -6762,7 +6762,7 @@
         ]
     },
     "193": {
-        "main_question": "Se kniep him [s\u00eaftwizern\u00f4ch] yn \u2018e h\u00e2n ",
+        "main_question": "Se kniep him \u2026 yn \u2018e h\u00e2n ",
         "main_question_id": "Se kniep him ",
         "sub_question": "s\u00eaftwizern\u00f4ch",
         "sub_question_id": "Se kniep him _s\u00eaftwizern\u00f4ch",
@@ -6804,7 +6804,7 @@
         ]
     },
     "195": {
-        "main_question": "Jetske praat [d\u00fadlikern\u00f4ch] ",
+        "main_question": "Jetske praat \u2026 ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikern\u00f4ch",
@@ -6846,7 +6846,7 @@
         ]
     },
     "196": {
-        "main_question": "Jetske praat [d\u00fadlikwizern\u00f4ch] ",
+        "main_question": "Jetske praat \u2026 ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikwizern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikwizern\u00f4ch",
@@ -6888,7 +6888,7 @@
         ]
     },
     "197": {
-        "main_question": "Jetske praat [d\u00fadlikweiern\u00f4ch] ",
+        "main_question": "Jetske praat \u2026 ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikweiern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikweiern\u00f4ch",
@@ -6930,7 +6930,7 @@
         ]
     },
     "199": {
-        "main_question": "Jetske praat [d\u00fadlikern\u00f4ch] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikern\u00f4ch",
@@ -6972,7 +6972,7 @@
         ]
     },
     "200": {
-        "main_question": "Jetske praat [d\u00fadlikwizern\u00f4ch] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikwizern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikwizern\u00f4ch",
@@ -7014,7 +7014,7 @@
         ]
     },
     "201": {
-        "main_question": "Jetske praat [d\u00fadlikweiern\u00f4ch] mei de buorman ",
+        "main_question": "Jetske praat \u2026 mei de buorman ",
         "main_question_id": "Jetske praat ",
         "sub_question": "d\u00fadlikweiern\u00f4ch",
         "sub_question_id": "Jetske praat _d\u00fadlikweiern\u00f4ch",
@@ -7056,7 +7056,7 @@
         ]
     },
     "203": {
-        "main_question": "Imke rint [stillern\u00f4ch] de trep op",
+        "main_question": "Imke rint \u2026 de trep op",
         "main_question_id": "Imke rint ",
         "sub_question": "stillern\u00f4ch",
         "sub_question_id": "Imke rint _stillern\u00f4ch",
@@ -7098,7 +7098,7 @@
         ]
     },
     "204": {
-        "main_question": "Imke rint [stillerwizern\u00f4ch] de trep op",
+        "main_question": "Imke rint \u2026 de trep op",
         "main_question_id": "Imke rint ",
         "sub_question": "stillerwizern\u00f4ch",
         "sub_question_id": "Imke rint _stillerwizern\u00f4ch",
@@ -7140,7 +7140,7 @@
         ]
     },
     "205": {
-        "main_question": "Imke rint [stillerweiern\u00f4ch] de trep op",
+        "main_question": "Imke rint \u2026 de trep op",
         "main_question_id": "Imke rint ",
         "sub_question": "stillerweiern\u00f4ch",
         "sub_question_id": "Imke rint _stillerweiern\u00f4ch",
@@ -7182,7 +7182,7 @@
         ]
     },
     "206": {
-        "main_question": "Imke rint [stiltsjesern\u00f4ch] de trep op",
+        "main_question": "Imke rint \u2026 de trep op",
         "main_question_id": "Imke rint ",
         "sub_question": "stiltsjesern\u00f4ch",
         "sub_question_id": "Imke rint _stiltsjesern\u00f4ch",
@@ -7224,7 +7224,7 @@
         ]
     },
     "322": {
-        "main_question": "Femke song it liet [lykas] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "lykas",
         "sub_question_id": "Femke song it liet _lykas",
@@ -7266,7 +7266,7 @@
         ]
     },
     "323": {
-        "main_question": "Femke song it liet [sa as] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "sa as",
         "sub_question_id": "Femke song it liet _sa as",
@@ -7308,7 +7308,7 @@
         ]
     },
     "324": {
-        "main_question": "Femke song it liet [as] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "as",
         "sub_question_id": "Femke song it liet _as",
@@ -7350,7 +7350,7 @@
         ]
     },
     "325": {
-        "main_question": "Femke song it liet [hoe] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "hoe",
         "sub_question_id": "Femke song it liet _hoe",
@@ -7392,7 +7392,7 @@
         ]
     },
     "326": {
-        "main_question": "Femke song it liet [hoe't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "hoe't",
         "sub_question_id": "Femke song it liet _hoe't",
@@ -7434,7 +7434,7 @@
         ]
     },
     "327": {
-        "main_question": "Femke song it liet [lykas hoe] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "lykas hoe",
         "sub_question_id": "Femke song it liet _lykas hoe",
@@ -7476,7 +7476,7 @@
         ]
     },
     "328": {
-        "main_question": "Femke song it liet [lykas hoe't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "lykas hoe't",
         "sub_question_id": "Femke song it liet _lykas hoe't",
@@ -7518,7 +7518,7 @@
         ]
     },
     "329": {
-        "main_question": "Femke song it liet [as hoe] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "as hoe",
         "sub_question_id": "Femke song it liet _as hoe",
@@ -7560,7 +7560,7 @@
         ]
     },
     "330": {
-        "main_question": "Femke song it liet [as hoe't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "as hoe't",
         "sub_question_id": "Femke song it liet _as hoe't",
@@ -7602,7 +7602,7 @@
         ]
     },
     "331": {
-        "main_question": "Femke song it liet [sa as hoe] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "sa as hoe",
         "sub_question_id": "Femke song it liet _sa as hoe",
@@ -7644,7 +7644,7 @@
         ]
     },
     "332": {
-        "main_question": "Femke song it liet [sa as hoe't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "sa as hoe't",
         "sub_question_id": "Femke song it liet _sa as hoe't",
@@ -7686,7 +7686,7 @@
         ]
     },
     "333": {
-        "main_question": "Femke song it liet [krekt as] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "krekt as",
         "sub_question_id": "Femke song it liet _krekt as",
@@ -7728,7 +7728,7 @@
         ]
     },
     "334": {
-        "main_question": "Femke song it liet [gelyk] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk",
         "sub_question_id": "Femke song it liet _gelyk",
@@ -7770,7 +7770,7 @@
         ]
     },
     "335": {
-        "main_question": "Femke song it liet [gelyk as] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk as",
         "sub_question_id": "Femke song it liet _gelyk as",
@@ -7812,7 +7812,7 @@
         ]
     },
     "336": {
-        "main_question": "Femke song it liet [gelyk sa't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk sa't",
         "sub_question_id": "Femke song it liet _gelyk sa't",
@@ -7854,7 +7854,7 @@
         ]
     },
     "337": {
-        "main_question": "Femke song it liet [gelyk sa as] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk sa as",
         "sub_question_id": "Femke song it liet _gelyk sa as",
@@ -7896,7 +7896,7 @@
         ]
     },
     "338": {
-        "main_question": "Femke song it liet [gelyk as hoe] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk as hoe",
         "sub_question_id": "Femke song it liet _gelyk as hoe",
@@ -7938,7 +7938,7 @@
         ]
     },
     "339": {
-        "main_question": "Femke song it liet [gelyk as hoe't] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "gelyk as hoe't",
         "sub_question_id": "Femke song it liet _gelyk as hoe't",
@@ -7980,7 +7980,7 @@
         ]
     },
     "340": {
-        "main_question": "Femke song it liet [as gelyk] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "as gelyk",
         "sub_question_id": "Femke song it liet _as gelyk",
@@ -8022,7 +8022,7 @@
         ]
     },
     "341": {
-        "main_question": "Femke song it liet [sa as gelyk] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "sa as gelyk",
         "sub_question_id": "Femke song it liet _sa as gelyk",
@@ -8064,7 +8064,7 @@
         ]
     },
     "342": {
-        "main_question": "Femke song it liet [anders ] har mem it earder song",
+        "main_question": "Femke song it liet \u2026 har mem it earder song",
         "main_question_id": "Femke song it liet ",
         "sub_question": "anders ",
         "sub_question_id": "Femke song it liet _anders ",
@@ -8106,7 +8106,7 @@
         ]
     },
     "345": {
-        "main_question": "Jan d\u00fbnset [asof] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "asof",
         "sub_question_id": "Jan d\u00fbnset _asof",
@@ -8148,7 +8148,7 @@
         ]
     },
     "346": {
-        "main_question": "Jan d\u00fbnset [as oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "as oft",
         "sub_question_id": "Jan d\u00fbnset _as oft",
@@ -8190,7 +8190,7 @@
         ]
     },
     "347": {
-        "main_question": "Jan d\u00fbnset [as oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "as oft",
         "sub_question_id": "Jan d\u00fbnset _as oft",
@@ -8232,7 +8232,7 @@
         ]
     },
     "348": {
-        "main_question": "Jan d\u00fbnset [of] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "of",
         "sub_question_id": "Jan d\u00fbnset _of",
@@ -8274,7 +8274,7 @@
         ]
     },
     "349": {
-        "main_question": "Jan d\u00fbnset [oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "oft",
         "sub_question_id": "Jan d\u00fbnset _oft",
@@ -8316,7 +8316,7 @@
         ]
     },
     "350": {
-        "main_question": "Jan d\u00fbnset [krekt of] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "krekt of",
         "sub_question_id": "Jan d\u00fbnset _krekt of",
@@ -8358,7 +8358,7 @@
         ]
     },
     "351": {
-        "main_question": "Jan d\u00fbnset [krekt oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "krekt oft",
         "sub_question_id": "Jan d\u00fbnset _krekt oft",
@@ -8400,7 +8400,7 @@
         ]
     },
     "352": {
-        "main_question": "Jan d\u00fbnset [krekt oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "krekt oft",
         "sub_question_id": "Jan d\u00fbnset _krekt oft",
@@ -8442,7 +8442,7 @@
         ]
     },
     "353": {
-        "main_question": "Jan d\u00fbnset [sa] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "sa",
         "sub_question_id": "Jan d\u00fbnset _sa",
@@ -8484,7 +8484,7 @@
         ]
     },
     "354": {
-        "main_question": "Jan d\u00fbnset [sa't] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "sa't",
         "sub_question_id": "Jan d\u00fbnset _sa't",
@@ -8526,7 +8526,7 @@
         ]
     },
     "355": {
-        "main_question": "Jan d\u00fbnset [sa as] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "sa as",
         "sub_question_id": "Jan d\u00fbnset _sa as",
@@ -8568,7 +8568,7 @@
         ]
     },
     "356": {
-        "main_question": "Jan d\u00fbnset [lykas] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "lykas",
         "sub_question_id": "Jan d\u00fbnset _lykas",
@@ -8610,7 +8610,7 @@
         ]
     },
     "357": {
-        "main_question": "Jan d\u00fbnset [lykas oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "lykas oft",
         "sub_question_id": "Jan d\u00fbnset _lykas oft",
@@ -8652,7 +8652,7 @@
         ]
     },
     "358": {
-        "main_question": "Jan d\u00fbnset [lykas oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "lykas oft",
         "sub_question_id": "Jan d\u00fbnset _lykas oft",
@@ -8694,7 +8694,7 @@
         ]
     },
     "359": {
-        "main_question": "Jan d\u00fbnset [as hoe] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "as hoe",
         "sub_question_id": "Jan d\u00fbnset _as hoe",
@@ -8736,7 +8736,7 @@
         ]
     },
     "360": {
-        "main_question": "Jan d\u00fbnset [as hoe't] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "as hoe't",
         "sub_question_id": "Jan d\u00fbnset _as hoe't",
@@ -8778,7 +8778,7 @@
         ]
     },
     "361": {
-        "main_question": "Jan d\u00fbnset [oft hoe] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "oft hoe",
         "sub_question_id": "Jan d\u00fbnset _oft hoe",
@@ -8820,7 +8820,7 @@
         ]
     },
     "362": {
-        "main_question": "Jan d\u00fbnset [as oft hoe] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "as oft hoe",
         "sub_question_id": "Jan d\u00fbnset _as oft hoe",
@@ -8862,7 +8862,7 @@
         ]
     },
     "363": {
-        "main_question": "Jan d\u00fbnset [hoe as oft] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "hoe as oft",
         "sub_question_id": "Jan d\u00fbnset _hoe as oft",
@@ -8904,7 +8904,7 @@
         ]
     },
     "364": {
-        "main_question": "Jan d\u00fbnset [anders ] wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
         "main_question_id": "Jan d\u00fbnset ",
         "sub_question": "anders ",
         "sub_question_id": "Jan d\u00fbnset _anders ",
