@@ -1,6 +1,7 @@
 {
     "Fries": {
-        "West-Fries": {}
+        "West-Fries": {},
+        "Klaaifrysk" : {}
     },
     "Nederfrankisch": {
         "Brabants": {
@@ -127,9 +128,6 @@
         "British": {},
         "American": {},
         "South African": {}
-    },
-    "Frisian": {
-        "Klaaifrysk": {}
     },
     "Swedish": {
         "Stockholm": {},
