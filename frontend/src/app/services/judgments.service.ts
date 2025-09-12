@@ -48,7 +48,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
      * @returns a Promise of an Array of Judgment objects
      */
     async get(): Promise<ReadonlyArray<Judgment>> {
-        const response = lastValueFrom(this.http.get('assets/likert_scales_dutch.json'));
+        const response = lastValueFrom(this.http.get('assets/likert_scales_merged.json'));
         const data = await response.then(res => res);
         const judgments = this.convertToJudgments(data);
         this.filterWorkerService.setData('judgment', judgments);
@@ -79,6 +79,8 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
                 mainQuestionId: entry['main_question_id'],
                 subQuestion: entry['sub_question'],
                 subQuestionTextId: entry['sub_question_text_id'],
+                gloss: entry['gloss'],
+                translation: entry['translation'],
                 responses,
             };
             judgments.push(judgment);

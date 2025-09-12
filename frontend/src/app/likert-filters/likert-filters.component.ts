@@ -4,10 +4,14 @@ import { Store } from '@ngrx/store';
 import { BehaviorSubject, combineLatestWith, map, Observable, Subscription } from 'rxjs';
 import {
     faAsterisk,
+    faBars,
     faComment,
+    faCommentDots,
+    faGlobe,
     faLanguage,
-    faUser,
-    faCommentDots
+    faRankingStar,
+    faThumbtack,
+    faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { FilterListComponent } from "../filter-list/filter-list.component";
 import { State } from '../judgments.state';
@@ -64,6 +68,18 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         mode: 'text',
         placeholder: ''
     }, {
+        name: $localize`Gloss`,
+        field: 'gloss',
+        icon: faBars,
+        mode: 'text',
+        placeholder: ''
+    }, {
+        name: $localize`English Translation`,
+        field: 'translation',
+        icon: faGlobe,
+        mode: 'text',
+        placeholder: ''
+    }, {
         name: $localize`Dialect`,
         field: 'dialects',
         icon: faLanguage,
@@ -78,13 +94,13 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
     }, {
         name: $localize`Score`,
         field: 'score',
-        icon: faUser,
+        icon: faRankingStar,
         mode: 'dropdown',
         placeholder: $localize`Select Score`
     }, {
         name: `Judgment`,
         field: 'judgmentId',
-        icon: faUser,
+        icon: faThumbtack,
         mode: 'dropdown',
         placeholder: $localize`Judgment ID`
     }];

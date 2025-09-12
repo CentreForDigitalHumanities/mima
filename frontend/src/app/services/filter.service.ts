@@ -56,7 +56,9 @@ export class FilterService {
                 'mainQuestionId',
                 'responses',
                 'subQuestion',
-                'subQuestionTextId'
+                'subQuestionTextId',
+                'gloss',
+                'translation'
             ];
         } else if (isQuestion(item)) {
             result = <FilterMatchedObject<T>>new MatchedQuestion();
@@ -197,6 +199,7 @@ export class FilterService {
             case 'type':
             case 'chapter':
             case 'gloss':
+            case 'translation':
             case 'en_translation':
             case 'split_item':
             case 'judgmentId':

@@ -4,7 +4,7 @@
 @else {
 <div class="box mt-3 animate-down" [ngClass]="{'is-loading': loading}">
     <div class="judgmement-header metadata" (click)="toggleQuestion()">
-        <h2 class="subtitle" [innerHTML]="formatQuestion(model.mainQuestion, model.subQuestion) | highlight"></h2>
+        <h2 class="subtitle" [innerHTML]="question | highlight"></h2>
         <hr>
     </div>
     @if (!questionExpanded) {
@@ -21,6 +21,19 @@
     </div>
     }
     @else {
+    @if (!model.gloss.empty && !model.translation.empty) {
+    <div class="notification">
+        <luu-view>
+            <luu-line type="example" [value]="question.highlightedText"></luu-line>
+            @if (!model.gloss.empty) {
+            <luu-line type="gloss" [value]="model.gloss.highlightedText"></luu-line>
+            }
+            @if (!model.translation.empty) {
+            <luu-translation [innerHTML]="model.translation | highlight"></luu-translation>
+            }
+        </luu-view>
+    </div>
+    }
     <div class="judgments">
         @for (dialect of dialectLookup.flattened; track dialect.pathFlat) {
         @if (matchedDialects[dialect.name]) {

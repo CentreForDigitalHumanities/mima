@@ -49,6 +49,7 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     @Output()
     toggleShow = new EventEmitter();
 
+    question: MatchedParts;
     questionExpanded: boolean = false;
     /**
      * Did the user manually expand this question? Don't automatically close it.
@@ -141,6 +142,9 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
 
     updateLikertValues() {
         this.initializeLikertValues();
+        if (this.model) {
+            this.question = this.formatQuestion(this.model.mainQuestion, this.model.subQuestion);
+        }
         if (this.model?.responses) {
             let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
                 this.model.matchedResponses,
@@ -167,7 +171,7 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
         this.dialectNames = Object.keys(this.likertValues);
     }
 
-    formatQuestion(mainQuestion: MatchedParts, subQuestion: MatchedParts): MatchedParts {
+    private formatQuestion(mainQuestion: MatchedParts, subQuestion: MatchedParts): MatchedParts {
         const parts: MatchedPart[] = [...mainQuestion.parts];
 
         let inserted = false;
