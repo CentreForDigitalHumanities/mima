@@ -212,7 +212,7 @@ def enrich_translation_questions(cleaned_translation_questions, additional_data)
         split_item = entry[1]
         chapter = entry[2]
         subtags = entry[3].split(';')
-        en_translation = entry[4]
+        en_translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', entry[4])
         gloss = entry[5]
         for id in ids:
             try:

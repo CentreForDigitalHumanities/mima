@@ -29,7 +29,9 @@
             <luu-line type="gloss" [value]="model.gloss.highlightedText"></luu-line>
             }
             @if (!model.translation.empty) {
-            <luu-translation [innerHTML]="model.translation | highlight"></luu-translation>
+            <luu-translation>
+                <em [innerHtml]="model.translation | highlight"></em>
+            </luu-translation>
             }
         </luu-view>
     </div>

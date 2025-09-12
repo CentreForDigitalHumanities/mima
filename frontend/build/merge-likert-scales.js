@@ -6,7 +6,7 @@ const files = fs.readdirSync(assetsDir);
 let merged = {};
 
 for (const file of files) {
-    if (file.startsWith('likert_scales')) {
+    if (file.startsWith('likert_scales') && !file.endsWith('merged.json')) {
         Object.assign(merged, JSON.parse(fs.readFileSync(`${assetsDir}/${file}`)));
     }
 }

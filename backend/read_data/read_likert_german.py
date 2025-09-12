@@ -6,6 +6,7 @@ from read_data.read_questionnaire_meertens import remove_periods
 import csv
 import os
 import json
+import re
 
 likert_data_german_1 = []
 with open(LIKERT_PATH_DE_1, encoding="utf8") as file:
@@ -72,7 +73,7 @@ for line in meta_data[2:]:
     question_id = line[0]
     judgment_items[question_id].chapters = line[2].split(';')
     judgment_items[question_id].tags = line[3].split(';')
-    judgment_items[question_id].translation = line[4]
+    judgment_items[question_id].translation = re.sub('(^(Intended: )?[\u201c"]|[\u201c\u201d"]$)', '', line[4])
     judgment_items[question_id].gloss = line[5]
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_german.json"), "w") as file:
