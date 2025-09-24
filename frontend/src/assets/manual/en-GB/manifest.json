@@ -23,6 +23,10 @@
             {
                 "id": "chapters",
                 "title": "Chapters"
+            },
+            {
+                "id": "subtags",
+                "title": "Subtags"
             }
         ]
     },
@@ -33,5 +37,9 @@
     {
         "id": "query",
         "title": "Using the search bar"
+    },
+    {
+        "id": "glossary",
+        "title": "Glossary of terms"
     }
 ]
