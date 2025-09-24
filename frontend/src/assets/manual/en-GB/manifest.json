@@ -1,8 +1,5 @@
 [
-    {
-        "id": "query",
-        "title": "Search Query"
-    },
+    
     {
         "id": "questionnaires",
         "title": "Questionnaires",
@@ -32,5 +29,9 @@
     {
         "id": "judgment",
         "title": "Grammaticality Judgments"
+    },
+    {
+        "id": "query",
+        "title": "Using the search bar"
     }
 ]
