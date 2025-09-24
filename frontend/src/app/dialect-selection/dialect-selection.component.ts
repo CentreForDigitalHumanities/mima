@@ -6,6 +6,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { Dialect } from '../models/dialect';
 import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 import { DialectService } from '../services/dialect.service';
+import { FilterObjectName } from '../models/filter';
 
 @Component({
     selector: 'mima-dialect-selection',
@@ -33,6 +34,11 @@ export class DialectSelectionComponent {
     }
 
     @Input()
+    set objectName(name: FilterObjectName) {
+        this.fillNodes(name);
+    }
+
+    @Input()
     placeholder: string;
 
     @Input()
@@ -44,7 +50,6 @@ export class DialectSelectionComponent {
     contentChange = new EventEmitter<string[]>();
 
     constructor(private dialectService: DialectService) {
-        this.fillNodes();
     }
 
     onNodeUnselect(event: TreeNodeUnSelectEvent) {
@@ -86,8 +91,8 @@ export class DialectSelectionComponent {
         this.selectedNodes = selectedNodes;
     }
 
-    private fillNodes() {
-        const lookup = this.dialectService.dialectLookup;
+    private fillNodes(name: FilterObjectName) {
+        const lookup = this.dialectService.getDialectLookup(name);
         const nodes: TreeNode<Dialect>[] = [];
         const nodesByPath: { [path: string]: TreeNode<Dialect> } = {};
         const nodesByName: { [path: string]: TreeNode<Dialect>[] } = {};

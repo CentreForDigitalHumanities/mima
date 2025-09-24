@@ -52,7 +52,7 @@ export class LikertListPageComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.store.dispatch(loadJudgments());
-        this.dialectLookup = this.dialectService.dialectLookup;
+        this.dialectLookup = this.dialectService.getDialectLookup('judgment');
         this.subscriptions = [
             // Fires when a new questionnaire dataset is loaded
             this.judgments$.subscribe(judgments => {

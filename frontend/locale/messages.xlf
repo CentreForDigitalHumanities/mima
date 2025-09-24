@@ -30,33 +30,33 @@
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8300886767108503684" datatype="html">
-        <source>Select Dialect(s)</source>
+      <trans-unit id="3187779963504096148" datatype="html">
+        <source>Select Language+Dialect(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">87</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4607479538666247502" datatype="html">
         <source>Delete filter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5743446572871974801" datatype="html">
-        <source>Dialect</source>
+      <trans-unit id="3701954963274172628" datatype="html">
+        <source>Language+Dialect</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -67,7 +67,7 @@
         <source>Translation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -343,11 +343,11 @@
         <source>Participant</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">89</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -358,22 +358,22 @@
         <source>Search in all Fields</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434304467944125566" datatype="html">
         <source>Select Participant(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1434327601231025030" datatype="html">
@@ -394,22 +394,22 @@
         <source>Select Question(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5320870651003627043" datatype="html">
         <source>Question</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="674321618652063659" datatype="html">
@@ -423,11 +423,11 @@
         <source>Question Text</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -454,28 +454,28 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no answers} =1 {1 answer} other {<x id="INTERPOLATION"/> answers}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ model.answers.length }}"/> answers matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> of <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialects matched </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
@@ -567,93 +567,101 @@
         <source>attested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">330</context>
+          <context context-type="linenumber">331</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2946765255271348390" datatype="html">
         <source>English Translation</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3690478070680374141" datatype="html">
         <source>unattested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">330</context>
+          <context context-type="linenumber">331</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4009088558739680278" datatype="html">
         <source>Attestation</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4979758064528998175" datatype="html">
         <source>Gloss</source>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5322922947143379212" datatype="html">
         <source>Chapter</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5676206059994743921" datatype="html">
         <source>exclude</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">82</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">132</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">154</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5707780993008694763" datatype="html">
         <source>Select Chapter(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">101</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6616264141636110160" datatype="html">
         <source>Select Tag(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7226628024978874949" datatype="html">
         <source>Select Attested or Unattested</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1911323071896446751" datatype="html">
         <source> unattested </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4608015944298801142" datatype="html">
@@ -730,7 +738,7 @@
         <source>Select Sub-Question(s)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1222614670569640499" datatype="html">
@@ -744,7 +752,7 @@
         <source>Sub-Question</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2567868871918748923" datatype="html">
@@ -765,7 +773,7 @@
         <source>Judgment ID</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1667436121606140648" datatype="html">
@@ -779,7 +787,7 @@
         <source>Select Score</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2421202444912860594" datatype="html">
@@ -793,14 +801,14 @@
         <source>Sub-Question Text</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7123653594948067002" datatype="html">
         <source>Score</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7772651244468486534" datatype="html">
@@ -811,7 +819,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4588063035415577343" datatype="html">

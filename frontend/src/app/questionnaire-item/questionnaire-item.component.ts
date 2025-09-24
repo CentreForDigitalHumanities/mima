@@ -90,7 +90,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
     private get unmatchedDialectParts() {
         if (!this._unmatchedDialectParts) {
-            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts();
+            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts('question');
         }
 
         return this._unmatchedDialectParts;
@@ -132,6 +132,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
         let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
+            'question',
             this.model.matchedAnswers,
             ['answer', 'attestation'],
             this.endDialects);

@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DialectService } from '../services/dialect.service';
+import { FilterObjectName } from '../models/filter';
 
 @Component({
     selector: 'mima-dialect-tree',
@@ -10,6 +11,9 @@ import { DialectService } from '../services/dialect.service';
     styleUrl: './dialect-tree.component.scss'
 })
 export class DialectTreeComponent implements OnChanges {
+    @Input()
+    objectName: FilterObjectName;
+
     @Input()
     root: Set<string>;
 
@@ -26,14 +30,20 @@ export class DialectTreeComponent implements OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        if (!this.objectName) {
+            delete this.children;
+            return;
+        }
+
         const children: DialectTreeComponent['children'] = {};
+        const dialectLookup = this.dialectService.getDialectLookup(this.objectName);
 
         for (const name of this.root) {
-            const dialect = this.dialectService.dialectLookup.hierarchy[name];
+            const dialect = dialectLookup.hierarchy[name];
             const dialectChildren = dialect.children
                 // show the subdialect if it matched directly
                 // or if a (...)(sub)subdialect matched
-                .filter(child => this.dialects.has(child.name) || this.dialectService.dialectLookup.hasChild(child, this.dialects))
+                .filter(child => this.dialects.has(child.name) || dialectLookup.hasChild(child, this.dialects))
                 .map(child => child.name);
 
             if (dialectChildren.length) {

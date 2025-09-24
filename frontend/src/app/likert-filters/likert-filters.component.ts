@@ -80,11 +80,11 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         mode: 'text',
         placeholder: ''
     }, {
-        name: $localize`Dialect`,
+        name: $localize`Language+Dialect`,
         field: 'dialects',
         icon: faLanguage,
         mode: 'dialect',
-        placeholder: $localize`Select Dialect(s)`
+        placeholder: $localize`Select Language+Dialect(s)`
     }, {
         name: $localize`Participant`,
         field: 'participantId',

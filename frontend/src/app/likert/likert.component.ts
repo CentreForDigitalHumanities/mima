@@ -85,7 +85,7 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
     private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
     private get unmatchedDialectParts() {
         if (!this._unmatchedDialectParts) {
-            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts();
+            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts('judgment');
         }
 
         return this._unmatchedDialectParts;
@@ -147,6 +147,7 @@ export class LikertComponent implements OnChanges, OnDestroy, IntersectableCompo
         }
         if (this.model?.responses) {
             let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
+                'judgment',
                 this.model.matchedResponses,
                 ['participantId'],
                 this.endDialects,
