@@ -8,6 +8,18 @@
         "title": "Questionnaires",
         "subPages": [
             {
+                "id": "data-presentation",
+                "title": "How are data presented?"
+            },
+            {
+                "id": "participants",
+                "title": "Participants"
+            },
+            {
+                "id": "languages",
+                "title": "Languages & Dialects"
+            },
+            {
                 "id": "attestation",
                 "title": "Attestation"
             },

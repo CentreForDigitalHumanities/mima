@@ -1,1 +1,3 @@
-Information about attestation.
+In the MiMA-database, you can search for both attested and unattested patterns of manner adverbial constructions. The unattested patterns refer to those manner adverbial constructions that are not available in a certain variety and/or for certain speakers. 
+
+Importantly, if a manner adverbial construction is labeled as ‘unattested’ in the database, it does not mean that it is an impossible/unacceptable/ungrammatical pattern, necessarily. In fact, there could be variation among different individuals belonging to the same linguistic community and speaking the same language (variety), to the extent that one construction is not available to all speakers, but is to some. The ‘unattested’ label is used in the current database to signal that the construction in question has been judged as ungrammatical by our informants. Therefore, when searching the database, make sure to double-check whether a pattern is (un)attested across the board.
