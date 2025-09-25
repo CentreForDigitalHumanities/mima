@@ -12,6 +12,7 @@ import { IntersectableComponent } from '../services/visibility.service';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
 import { DialectService, MatchedSubItemGrouped } from '../services/dialect.service';
+import { LocalizeDialectPipe } from "../localize-dialect.pipe";
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -26,7 +27,7 @@ export interface FilterEvent {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent, LocalizeDialectPipe],
     standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion> {

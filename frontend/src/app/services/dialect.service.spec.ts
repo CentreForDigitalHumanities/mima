@@ -17,8 +17,9 @@ describe('DialectService', () => {
 
     it('should fill the dialect lookup as expected', () => {
         // manually construct a simplified tree of dialects
-        const dialects: Dialect[] = ['Fries', 'West-Fries', 'Nederfrankisch', 'Brabants', 'Urks', 'Nedersaksisch', 'Achterhoeks', 'Zutphens'].map(name => ({
+        const dialects: Dialect[] = ['Frisian', 'West-Fries', 'Nederfrankisch', 'Brabants', 'Urks', 'Nedersaksisch', 'Achterhoeks', 'Zutphens'].map(name => ({
             name,
+            label: name,
             children: [],
             parents: []
         }));
@@ -29,8 +30,8 @@ describe('DialectService', () => {
             hierarchy[dialect.name] = dialect;
         }
 
-        hierarchy['West-Fries'].parents = [hierarchy['Fries']];
-        hierarchy['Fries'].children = [hierarchy['West-Fries']];
+        hierarchy['West-Fries'].parents = [hierarchy['Frisian']];
+        hierarchy['Frisian'].children = [hierarchy['West-Fries']];
 
         hierarchy['Nederfrankisch'].children = [
             hierarchy['Brabants'],
@@ -55,7 +56,7 @@ describe('DialectService', () => {
 
         const expectedRoot =
             [
-                hierarchy['Fries'],
+                hierarchy['Frisian'],
                 hierarchy['Nederfrankisch'],
                 hierarchy['Nedersaksisch']
             ];
@@ -65,7 +66,7 @@ describe('DialectService', () => {
         const actualHierarchy: DialectLookup['hierarchy'] = {};
         const actualRoot = service.fillDialectLookup(
             {
-                "Fries": {
+                "Frisian": {
                     "West-Fries": {}
                 },
                 "Nederfrankisch": {

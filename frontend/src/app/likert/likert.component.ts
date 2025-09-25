@@ -12,6 +12,7 @@ import { MatchedPart, MatchedParts } from '../models/matched-parts';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
 import { DialectService, MatchedSubItemGrouped } from '../services/dialect.service';
+import { LocalizeDialectPipe } from "../localize-dialect.pipe";
 
 export type LikertShow = 'count' | 'percentage';
 
@@ -22,7 +23,7 @@ interface LikertValues {
 @Component({
     selector: 'mima-likert',
     standalone: true,
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LikertBarComponent, LoadingComponent],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LikertBarComponent, LoadingComponent, LocalizeDialectPipe],
     templateUrl: './likert.component.html',
     styleUrl: './likert.component.scss'
 })

@@ -27,8 +27,28 @@ export type MatchedSubItemGrouped<K extends string> = {
     providedIn: 'root'
 })
 export class DialectService {
+    private readonly localizedDialects = {
+        'Dutch': $localize`Dutch`,
+        'Standaardnederlands': $localize`Standard Dutch`,
+        'English': $localize`English`,
+        'American': $localize`American`,
+        'British': $localize`British`,
+        'South African': $localize`South African`,
+        'Frisian': $localize`Frisian`,
+        'German': $localize`German`,
+        'German (Ödingsch Platt)': $localize`Ödingsch Platt`,
+        'German (Ostmittelbairisch)': $localize`Ostmittelbairisch`,
+        'German (Westmittelbairisch)': $localize`Westmittelbairisch`,
+        'Standard German': $localize`Standard German`,
+        'Swedish': $localize`Swedish`,
+        'South Swedish': $localize`South Swedish`,
+    };
 
     private _dialectLookup: { [T in FilterObjectName]?: DialectLookup } = {};
+
+    localize(name: string) {
+        return this.localizedDialects[name] ?? name;
+    }
 
     /**
      * Gets a lookup of all the dialects
@@ -58,6 +78,7 @@ export class DialectService {
             } else {
                 dialect = {
                     name,
+                    label: this.localize(name),
                     children: [],
                     parents: parent !== undefined ? [parent] : []
                 };

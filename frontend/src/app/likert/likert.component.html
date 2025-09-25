@@ -45,7 +45,7 @@
                     @for (item of dialect.path; track item) {
                     <li>
                         <span [ngClass]="{'is-match': matchedDialectParts[item].fullMatch}"
-                            [innerHTML]="matchedDialectParts[item] | highlight">
+                            [innerHTML]="matchedDialectParts[item] | localizeDialect | highlight">
                         </span>
                     </li>
                     }

@@ -2,11 +2,12 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DialectService } from '../services/dialect.service';
 import { FilterObjectName } from '../models/filter';
+import { LocalizeDialectPipe } from "../localize-dialect.pipe";
 
 @Component({
     selector: 'mima-dialect-tree',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, LocalizeDialectPipe],
     templateUrl: './dialect-tree.component.html',
     styleUrl: './dialect-tree.component.scss'
 })

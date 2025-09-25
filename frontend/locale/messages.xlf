@@ -854,6 +854,104 @@
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1070881834404692429" datatype="html">
+        <source>Standard German</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1858110241312746425" datatype="html">
+        <source>German</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1996939568788539620" datatype="html">
+        <source>South African</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3071065188816255493" datatype="html">
+        <source>Dutch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="409298505374052426" datatype="html">
+        <source>American</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="499386805970351976" datatype="html">
+        <source>Swedish</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="524293429930684822" datatype="html">
+        <source>South Swedish</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5532915461292975480" datatype="html">
+        <source>Standard Dutch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5866254605255506989" datatype="html">
+        <source>English</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6027647473143901973" datatype="html">
+        <source>Ostmittelbairisch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="677280358339565618" datatype="html">
+        <source>Frisian</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="694200334045179271" datatype="html">
+        <source>Westmittelbairisch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7974847015337003670" datatype="html">
+        <source>British</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8504115954127508487" datatype="html">
+        <source>Ödingsch Platt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
