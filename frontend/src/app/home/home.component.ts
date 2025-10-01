@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { BackendService } from './../services/backend.service';
-import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/router';
-
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
     selector: 'mima-home',
@@ -11,6 +9,6 @@ import { IsActiveMatchOptions, RouterLink, RouterLinkActive } from '@angular/rou
     standalone: true
 })
 export class HomeComponent {
-    constructor(private backend: BackendService) { }
+    constructor() { }
 
 }
