@@ -25,6 +25,9 @@ export class FilterListComponent<T extends FilterObjectName> {
     filterIndexes: number[] = [];
 
     @Input()
+    objectName: FilterObjectName;
+
+    @Input()
     filterTypes: FilterType<T>[];
 
     @Input()

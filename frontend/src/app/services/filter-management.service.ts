@@ -336,16 +336,9 @@ export class FilterManagementService implements OnDestroy {
                         break;
 
                     case 'dialects':
-                        // TODO: these should be synchronized: the dialect hierarchy and the data
-                        // in the answers should be the same
-                        for (const dialect of this.dialectService.dialectLookup.flattened) {
+                        for (const dialect of this.dialectService.getDialectLookup('question').flattened) {
                             labels[dialect.name] = dialect.name;
                         }
-                        // for (let answer of question.answers) {
-                        //     for (const value of answer[field]) {
-                        //         labels[value] = value;
-                        //     }
-                        // }
                         break;
 
                     case 'id':
@@ -394,10 +387,8 @@ export class FilterManagementService implements OnDestroy {
                     break;
 
                 case 'dialects':
-                    for (let response of judgment.responses) {
-                        for (const value of response[field]) {
-                            labels[value] = value;
-                        }
+                    for (const dialect of this.dialectService.getDialectLookup('judgment').flattened) {
+                        labels[dialect.name] = dialect.name;
                     }
                     break;
 

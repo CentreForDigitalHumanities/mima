@@ -1,0 +1,3684 @@
+{
+    "SwedishSva\u030aro\u0308versatt1": {
+        "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-o\u0308versatt.",
+        "main_question_id": "SwedishSva\u030aro\u0308versatt1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "This text is difficult to translate/This text doesn't translate easily.",
+        "gloss": "this here text-ART.DEF be.PRS difficult-translate.PST.PTCP"
+    },
+    "SwedishSva\u030aro\u0308versatt2": {
+        "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-ar-o\u0308versatt \u00e4n denna text.",
+        "main_question_id": "SwedishSva\u030aro\u0308versatt2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "This text is more difficult to translate than this text/this text doesn't translate as easily as this text.",
+        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text"
+    },
+    "SwedishSva\u030aro\u0308versatt3": {
+        "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-are-o\u0308versatt \u00e4n denna text.",
+        "main_question_id": "SwedishSva\u030aro\u0308versatt3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "This text is more difficult to translate than this text/this text doesn't translate as easily as this text.",
+        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text"
+    },
+    "SwedishSva\u030aro\u0308versatt4": {
+        "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-ast-o\u0308versatt.",
+        "main_question_id": "SwedishSva\u030aro\u0308versatt4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "This text is the most difficult to translate.",
+        "gloss": "this here text-ART.DEF be.PRS difficult-SUP-translate.PST.PTCP"
+    },
+    "SwedishForto\u0308versatt1": {
+        "main_question": "Den ha\u0308r text-en a\u0308r fort-o\u0308versatt.",
+        "main_question_id": "SwedishForto\u0308versatt1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "This text can be translated quickly/this text translates quickly.",
+        "gloss": "this here text-ART.DEF be.PRS quickly-translate.PST.PTCP"
+    },
+    "SwedishForto\u0308versatt2": {
+        "main_question": "Den ha\u0308r text-en a\u0308r fort-ar-o\u0308versatt \u00e4n denna text.",
+        "main_question_id": "SwedishForto\u0308versatt2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "This text can be translated more quickly than this text/this text translates more quickly than this text.",
+        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text"
+    },
+    "SwedishForto\u0308versatt3": {
+        "main_question": "Den ha\u0308r text-en a\u0308r fort-are-o\u0308versatt \u00e4n denna text.",
+        "main_question_id": "SwedishForto\u0308versatt3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "This text can be translated more quickly than this text/this text translates more quickly than this text.",
+        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text"
+    },
+    "SwedishForto\u0308versatt4": {
+        "main_question": "Den ha\u0308r text-en a\u0308r fort-ast-o\u0308versatt.",
+        "main_question_id": "SwedishForto\u0308versatt4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "This text translates the most quickly/this text can be translated the most quickly (of all).",
+        "gloss": "this here text-ART.DEF be.PRS quickly-SUP-translate.PST.PTCP"
+    },
+    "SwedishLa\u0308ttla\u0308st1": {
+        "main_question": "Bok-en a\u0308r la\u0308tt-la\u0308st.",
+        "main_question_id": "SwedishLa\u0308ttla\u0308st1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "The book reads easily.",
+        "gloss": "book-ART.DEF be.PRS easy-read.PST.PTCP"
+    },
+    "SwedishLa\u0308ttla\u0308st2": {
+        "main_question": "Bok-en \u00e4r l\u00e4tt-ar-l\u00e4st \u00e4n den bok-en.",
+        "main_question_id": "SwedishLa\u0308ttla\u0308st2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "The book reads more easily than that book.",
+        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PTCP than that book-ART.DEF"
+    },
+    "SwedishLa\u0308ttla\u0308st3": {
+        "main_question": "Bok-en \u00e4r l\u00e4tt-are-l\u00e4st \u00e4n den bok-en.",
+        "main_question_id": "SwedishLa\u0308ttla\u0308st3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "The book reads more easily than that book.",
+        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PST.PTCP than that book-ART.DEF"
+    },
+    "SwedishLa\u0308ttla\u0308st4": {
+        "main_question": "Bok-en \u00e4r l\u00e4tt-ast-l\u00e4st \u00e4n den bok-en.",
+        "main_question_id": "SwedishLa\u0308ttla\u0308st4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "The book reads the easiest.",
+        "gloss": "book-ART.DEF be.PRS easy-SUP-read.PST.PTCP than that book-ART.DEF"
+    },
+    "SwedishBral\u00e4st1": {
+        "main_question": "Bok-en \u00e4r bra-l\u00e4st.",
+        "main_question_id": "SwedishBral\u00e4st1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "positive"
+        ],
+        "translation": "The book reads well.",
+        "gloss": "book-ART.DEF be.PRS good-read.PST.PTCP"
+    },
+    "SwedishBral\u00e4st2": {
+        "main_question": "Bok-en \u00e4r b\u00e4ttre-l\u00e4st \u00e4n den bok-en.",
+        "main_question_id": "SwedishBral\u00e4st2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "The book reads better than that book.",
+        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF"
+    },
+    "SwedishBral\u00e4st3": {
+        "main_question": "Bok-en \u00e4r b\u00e4ttr-l\u00e4st \u00e4n den bok-en.",
+        "main_question_id": "SwedishBral\u00e4st3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "comparative"
+        ],
+        "translation": "The book reads better than that book.",
+        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF"
+    },
+    "SwedishBral\u00e4st4": {
+        "main_question": "Bok-en \u00e4r b\u00e4st-l\u00e4st.",
+        "main_question_id": "SwedishBral\u00e4st4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "A",
+            "middle"
+        ],
+        "tags": [
+            "degreeofcomparison",
+            "superlative"
+        ],
+        "translation": "The book reads the best.",
+        "gloss": "book-ART.DEF be.PRS good.SUP-read.PST.PTCP"
+    },
+    "SwedishDansarPappa1": {
+        "main_question": "Jan dansa-r som hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS as his dad dance-PRS"
+    },
+    "SwedishDansarPappa2": {
+        "main_question": "Jan dansa-r s\u00e5 hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS so his dad dance-PRS"
+    },
+    "SwedishDansarPappa3": {
+        "main_question": "Jan dansa-r s\u00e5-h\u00e4r som hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS so-here as his dad dance-PRS"
+    },
+    "SwedishDansarPappa4": {
+        "main_question": "Jan dansa-r s\u00e5-d\u00e4r som hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS so-there as his dad dance-PRS"
+    },
+    "SwedishDansarPappa5": {
+        "main_question": "Jan dansa-r lik-som hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa5",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS like-as his dad dance-PRS"
+    },
+    "SwedishDansarPappa6": {
+        "main_question": "Jan dansa-r lika hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa6",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS same his dad dance-PRS"
+    },
+    "SwedishDansarPappa7": {
+        "main_question": "Jan dansa-r som-s\u00e5 hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa7",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS as-so his dad dance-PRS"
+    },
+    "SwedishDansarPappa8": {
+        "main_question": "Jan dansa-r s\u00e5-som att hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa8",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS so-as that his dad dance-PRS"
+    },
+    "SwedishDansarPappa9": {
+        "main_question": "Jan dansa-r som att hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa9",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS as that his dad dance-PRS"
+    },
+    "SwedishDansarPappa10": {
+        "main_question": "Jan dansa-r lik-som att hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa10",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS like-as that his dad dance-PRS"
+    },
+    "SwedishDansarPappa11": {
+        "main_question": "Jan dansa-r hur hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa11",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS how his dad dance-PRS"
+    },
+    "SwedishDansarPappa12": {
+        "main_question": "Jan dansa-r hur-som hans pappa dansa-r.",
+        "main_question_id": "SwedishDansarPappa12",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as his father dances.",
+        "gloss": "Jan dance-PRS how-as his dad dance-PRS"
+    },
+    "SwedishDansarMaria1": {
+        "main_question": "Jan dansa-de som Maria ocks\u00e5 dansa-de.",
+        "main_question_id": "SwedishDansarMaria1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John danced as Mary (also) danced.",
+        "gloss": "Jan dance-PST as Maria also dance-PST"
+    },
+    "SwedishDansarMaria2": {
+        "main_question": "Jan dansa-de s\u00e5-som Maria ocks\u00e5 dansa-de.",
+        "main_question_id": "SwedishDansarMaria2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John danced as Mary (also) danced.",
+        "gloss": "Jan dance-PST so-as Maria also dance-PST"
+    },
+    "SwedishDansarMaria3": {
+        "main_question": "Jan har s\u00e5 dansa-t som Maria har dansa-t.",
+        "main_question_id": "SwedishDansarMaria3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "extraposition"
+        ],
+        "translation": "John danced as Mary danced.",
+        "gloss": "Jan have.PRS so dance-PTCP as Maria have.PRS dance-PTCP"
+    },
+    "SwedishDansarMaria4": {
+        "main_question": "S\u00e5 har Jan dansa-t som Maria har dansa-t.",
+        "main_question_id": "SwedishDansarMaria4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "frontedso"
+        ],
+        "translation": "So as John danced, Mary danced.",
+        "gloss": "so have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+    },
+    "SwedishDansarMaria5": {
+        "main_question": "S\u00e5-h\u00e4r har Jan dansa-t som Maria har dansa-t.",
+        "main_question_id": "SwedishDansarMaria5",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "frontedso"
+        ],
+        "translation": "So as John danced, Mary danced.",
+        "gloss": "so-here have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+    },
+    "SwedishDansarMaria6": {
+        "main_question": "S\u00e5-d\u00e4r har Jan dansa-t som Maria har dansa-t.",
+        "main_question_id": "SwedishDansarMaria6",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "frontedso"
+        ],
+        "translation": "So as John danced, Mary danced.",
+        "gloss": "so-there have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+    },
+    "SwedishDansarMaria7": {
+        "main_question": "Som Maria har dansa-t, s\u00e5 har Jan dansa-t.",
+        "main_question_id": "SwedishDansarMaria7",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "As Mary danced, so danced John.",
+        "gloss": "as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP"
+    },
+    "SwedishDansarMaria8": {
+        "main_question": "S\u00e5-som Maria har dansa-t, har Jan dansa-t",
+        "main_question_id": "SwedishDansarMaria8",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "As Mary danced, danced John.",
+        "gloss": "so-as Maria have.PRS dance-PTCP have.PRS Jan dance-PTCP"
+    },
+    "SwedishDansarMaria9": {
+        "main_question": "S\u00e5-som Maria har dansa-t, s\u00e5 har Jan dansa-t.",
+        "main_question_id": "SwedishDansarMaria9",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "As Mary danced, so danced John.",
+        "gloss": "so-as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP"
+    },
+    "SwedishDansarMaria10": {
+        "main_question": "Jan dansa-de s\u00e5-som Maria har gjor-t vacker-t.",
+        "main_question_id": "SwedishDansarMaria10",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "gap"
+        ],
+        "translation": "John danced as Mary did beautifully.",
+        "gloss": "Jan dance-PST so-as Maria have.PRS do-PTCP beautiful-ly"
+    },
+    "SwedishDansarMaria11": {
+        "main_question": "Jan dansa-de s\u00e5-som du sa-de att Maria gjor-de.",
+        "main_question_id": "SwedishDansarMaria11",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "longdistancemovement"
+        ],
+        "translation": "John danced as you said that Mary did.",
+        "gloss": "Jan dance-PST so-as you say-PST that Maria do-PST"
+    },
+    "SwedishDansarMaria12": {
+        "main_question": "Jan dansa-de s\u00e5-som jag h\u00f6r-de histori-en att Maria gjor-de.",
+        "main_question_id": "SwedishDansarMaria12",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "complexNPisland"
+        ],
+        "translation": "John danced as I heard the story that Mary did.",
+        "gloss": "Jan dance-PST so-as I hear-PST story-ART.DEF that Maria do-PST"
+    },
+    "SwedishDansarMaria13": {
+        "main_question": "Jan dansa-de s\u00e5-som jag fr\u00e5ga-de mig vem gjor-de.",
+        "main_question_id": "SwedishDansarMaria13",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "whisland"
+        ],
+        "translation": "John danced as I ask myself who did.",
+        "gloss": "Jan dance-PST so-as I ask-PST SE.1 who do-PST"
+    },
+    "SwedishDansarMaria14": {
+        "main_question": "Jan dansa-de s\u00e5-som Maria inte gjor-de.",
+        "main_question_id": "SwedishDansarMaria14",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "innerisland"
+        ],
+        "translation": "John danced as Mary didn't.",
+        "gloss": "Jan dance-PST so-as Maria not do-PST"
+    },
+    "SwedishDansarMaria15": {
+        "main_question": "Jan dansa-de s\u00e5-som jag var r\u00f6rd d\u00e4rf\u00f6r att Maria gjor-de.",
+        "main_question_id": "SwedishDansarMaria15",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "similativeclause"
+        ],
+        "tags": [
+            "island",
+            "adjunctisland"
+        ],
+        "translation": "John danced as I was moved because Mary did.",
+        "gloss": "Jan dance-PST so-as I be.PST moved because that Maria do-PST"
+    },
+    "SwedishDansarVore1": {
+        "main_question": "Jan dansa-r som han vore berusad.",
+        "main_question_id": "SwedishDansarVore1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS as he be.SBJV drunk"
+    },
+    "SwedishDansarVore2": {
+        "main_question": "Jan dansa-r som vore han berusad.",
+        "main_question_id": "SwedishDansarVore2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS as be.SBJV he drunk"
+    },
+    "SwedishDansarVore3": {
+        "main_question": "Jan dansa-r s\u00e5-som om han vore berusad.",
+        "main_question_id": "SwedishDansarVore3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS so-as if he be.SBJV drunk"
+    },
+    "SwedishDansarVore4": {
+        "main_question": "Jan dansa-r s\u00e5-som han vore berusad.",
+        "main_question_id": "SwedishDansarVore4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS so-as he be.SBJV drunk"
+    },
+    "SwedishDansarVore5": {
+        "main_question": "Jan dansa-r s\u00e5-som vore han berusad.",
+        "main_question_id": "SwedishDansarVore5",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS so-as be.SBJV he drunk"
+    },
+    "SwedishDansarVore6": {
+        "main_question": "Jan dansa-r om han vore berusad.",
+        "main_question_id": "SwedishDansarVore6",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS if he be.SBJV drunk"
+    },
+    "SwedishDansarVore7": {
+        "main_question": "Jan dansa-r lik-som han vore berusad.",
+        "main_question_id": "SwedishDansarVore7",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS like-as he be.SBJV drunk"
+    },
+    "SwedishDansarVore8": {
+        "main_question": "Jan dansa-r lik-som vore han berusad.",
+        "main_question_id": "SwedishDansarVore8",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS like-as be.SBJV he drunk"
+    },
+    "SwedishDansarVore9": {
+        "main_question": "Jan dansa-r lik-som om han vore berusad.",
+        "main_question_id": "SwedishDansarVore9",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John dances as if he were drunk.",
+        "gloss": "Jan dance-PRS like-as if he be.SBJV drunk"
+    },
+    "SwedishUppf\u00f6rde1": {
+        "main_question": "Jan uppf\u00f6r-de sig som om han var berusad.",
+        "main_question_id": "SwedishUppf\u00f6rde1",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John behaved as if he were drunk.",
+        "gloss": "Jan behave-PST SE.3 as if he be.PST drunk"
+    },
+    "SwedishUppf\u00f6rde2": {
+        "main_question": "Jan uppf\u00f6r-de sig som var han berusad.",
+        "main_question_id": "SwedishUppf\u00f6rde2",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John behaved as if he were drunk.",
+        "gloss": "Jan behave-PST SE.3 as be.PST he drunk"
+    },
+    "SwedishUppf\u00f6rde3": {
+        "main_question": "Jan uppf\u00f6r sig s\u00e5 som om han vore berusad.",
+        "main_question_id": "SwedishUppf\u00f6rde3",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John behaved as if he were drunk.",
+        "gloss": "Jan behave.PRS SE.3 so as if he be.SBJV drunk"
+    },
+    "SwedishUppf\u00f6rde4": {
+        "main_question": "Som om han vore berusad, uppf\u00f6r sig Jan.",
+        "main_question_id": "SwedishUppf\u00f6rde4",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "As if he were drunk, behaved John.",
+        "gloss": "as if he be.SBJV drunk behave.PRS SE.3 Jan"
+    },
+    "SwedishUppf\u00f6rde5": {
+        "main_question": "Som om han vore berusad, s\u00e5 uppf\u00f6r sig Jan.",
+        "main_question_id": "SwedishUppf\u00f6rde5",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "As if he were drunk, so behaved John.",
+        "gloss": "as if he be.SBJV drunk so behave.PRS SE.3 Jan"
+    },
+    "SwedishUppf\u00f6rde6": {
+        "main_question": "S\u00e5 som om han vore berusad uppf\u00f6r sig Jan.",
+        "main_question_id": "SwedishUppf\u00f6rde6",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "topicalization"
+        ],
+        "translation": "So, as if he were drunk, behaved John.",
+        "gloss": "so as if he be.SBJV drunk behave.PRS SE.3 Jan"
+    },
+    "SwedishUppf\u00f6rde7": {
+        "main_question": "Jan uppf\u00f6r sig som om han vore berusad och som om han vore dum.",
+        "main_question_id": "SwedishUppf\u00f6rde7",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as if he were drunk and as if he were stupid.",
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as if he be.SBJV stupid"
+    },
+    "SwedishUppf\u00f6rde8": {
+        "main_question": "Jan uppf\u00f6r sig som om han vore berusad och om han vore dum.",
+        "main_question_id": "SwedishUppf\u00f6rde8",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as if he were drunk and as if he were stupid.",
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and if he be.SBJV stupid"
+    },
+    "SwedishUppf\u00f6rde9": {
+        "main_question": "Jan uppf\u00f6r sig om han vore berusad och som om han vore dum.",
+        "main_question_id": "SwedishUppf\u00f6rde9",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as if he were drunk and as if he were stupid.",
+        "gloss": "Jan behave.PRS SE.3 if he be.SBJV drunk and as if he be.SBJV stupid"
+    },
+    "SwedishUppf\u00f6rde10": {
+        "main_question": "Jan uppf\u00f6r sig som om han vore berusad och som vore han dum.",
+        "main_question_id": "SwedishUppf\u00f6rde10",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as if he were drunk and as if he were stupid.",
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as be.SBJV he stupid"
+    },
+    "SwedishUppf\u00f6rde11": {
+        "main_question": "Jan uppf\u00f6r sig som om han vore berusad och s\u00e5-som han vanligt-vis uppf\u00f6r sig.",
+        "main_question_id": "SwedishUppf\u00f6rde11",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "similativeclause",
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as he usually behaves and as if he were drunk.",
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and so-as he usual-ly behave.PRS SE.3"
+    },
+    "SwedishUppf\u00f6rde12": {
+        "main_question": "Jan uppf\u00f6r sig s\u00e5-som han vanligt-vis uppf\u00f6r sig och som om han vore berusad",
+        "main_question_id": "SwedishUppf\u00f6rde12",
+        "sub_question": "",
+        "sub_question_id": "",
+        "sub_question_text_id": "",
+        "responses": [
+            {
+                "participant_id": "SwedishInf1",
+                "dialects": [
+                    "South Swedish"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf2",
+                "dialects": [
+                    "UNDERSPECIFIED"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf3",
+                "dialects": [
+                    "Mostly standard, slightly Western Swedish (V\u00e4sterg\u00f6tland)."
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "SwedishInf4",
+                "dialects": [
+                    "Stockholm"
+                ],
+                "country": [
+                    "Sweden"
+                ],
+                "score": "4"
+            }
+        ],
+        "chapters": [
+            "similativeclause",
+            "simulativeclause"
+        ],
+        "tags": [
+            "coordination"
+        ],
+        "translation": "John behaves as he usually behaves and as if he were drunk.",
+        "gloss": "Jan behave.PRS SE.3 so-as he usual-ly behave.PRS SE.3 and as if he be.SBJV drunk"
+    }
+}

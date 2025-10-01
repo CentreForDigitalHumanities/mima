@@ -56,7 +56,9 @@ export class FilterService {
                 'mainQuestionId',
                 'responses',
                 'subQuestion',
-                'subQuestionTextId'
+                'subQuestionTextId',
+                'gloss',
+                'translation'
             ];
         } else if (isQuestion(item)) {
             result = <FilterMatchedObject<T>>new MatchedQuestion();
@@ -197,6 +199,7 @@ export class FilterService {
             case 'type':
             case 'chapter':
             case 'gloss':
+            case 'translation':
             case 'en_translation':
             case 'split_item':
             case 'judgmentId':
@@ -240,10 +243,10 @@ export class FilterService {
                         'participantId',
                         'attestation'
                     ];
-                    const answerFilters = filters.filter(
+                    const answerFilters = <Filter<'question'>[]>filters.filter(
                         filter => ['*', ...answerKeys].includes(filter.field));
                     for (const answer of answers) {
-                        const [matchedAnswer, matchingAnswerFilters] = this.searchSub(answer, answerKeys, answerFilters, operator);
+                        const [matchedAnswer, matchingAnswerFilters] = this.searchSub(answer, answerKeys, answerFilters, operator, 'question');
                         subMatch ||= matchedAnswer.match;
                         result[<any>key].push(matchedAnswer);
                         matchingFilters.push(...<any>matchingAnswerFilters);
@@ -262,10 +265,10 @@ export class FilterService {
                         'dialects',
                         'score'
                     ];
-                    const responseFilters = filters.filter(
+                    const responseFilters = <Filter<'judgment'>[]>filters.filter(
                         filter => ['*', ...responseKeys].includes(filter.field));
                     for (const response of responses) {
-                        const [matchedResponse, matchingResponseFilters] = this.searchSub(response, responseKeys, responseFilters, operator);
+                        const [matchedResponse, matchingResponseFilters] = this.searchSub(response, responseKeys, responseFilters, operator, 'judgment');
                         subMatch ||= matchedResponse.match;
                         result[<any>key].push(matchedResponse);
                         matchingFilters.push(...<any>matchingResponseFilters);
@@ -283,9 +286,16 @@ export class FilterService {
      * @param itemKeys keys of the fields to search
      * @param itemFilters filters to use
      * @param operator whether ALL or ANY of the filters should match
+     * @param objectName type name of the main filter object
      * @returns the MatchedAnswer or MatchedLikertResponse containing information about the matches (if any), and the matching filters
      */
-    private searchSub<T extends FilterObjectName, TSub extends Answer | LikertResponse>(item: TSub, itemKeys: (keyof TSub)[], itemFilters: Filter<T>[], operator: FilterOperator): [TSub extends Answer ? MatchedAnswer : MatchedLikertResponse, Set<Filter<T>>] {
+    private searchSub<T extends FilterObjectName, TSub extends Answer | LikertResponse>(
+        item: TSub,
+        itemKeys: (keyof TSub)[],
+        itemFilters: Filter<T>[],
+        operator: FilterOperator,
+        objectName: T
+    ): [TSub extends Answer ? MatchedAnswer : MatchedLikertResponse, Set<Filter<T>>] {
         const matchedSub = isAnswer(item) ? new MatchedAnswer(item) : new MatchedLikertResponse(item);
         let matchingFilters = new Set<Filter<T>>();
         for (const itemKey of itemKeys) {
@@ -307,7 +317,7 @@ export class FilterService {
                             // this way searching for "Brabants" but excluding the sub-dialect "Noord-Brabants"
                             // will work: only if someone has "Brabants" without any underlying dialects
                             // it will be allowed to match
-                            if (!this.dialectService.dialectLookup.isEndDialect(dialect, item.dialects)) {
+                            if (!this.dialectService.getDialectLookup(objectName).isEndDialect(dialect, item.dialects)) {
                                 return false;
                             }
 

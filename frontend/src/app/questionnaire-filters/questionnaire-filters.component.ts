@@ -4,11 +4,16 @@ import { Store } from '@ngrx/store';
 import { BehaviorSubject, combineLatestWith, map, Observable, Subscription } from 'rxjs';
 import {
     faAsterisk,
+    faBars,
+    faBookmark,
     faComment,
+    faCommentDots,
     faGlobeEurope,
     faLanguage,
-    faUser,
-    faCommentDots
+    faPenSquare,
+    faTag,
+    faThumbsUp,
+    faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { FilterListComponent } from "../filter-list/filter-list.component";
 import { State } from '../questionnaire.state';
@@ -54,15 +59,15 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
     }, {
         name: $localize`Translation`,
         field: 'answer',
-        icon: faGlobeEurope,
+        icon: faPenSquare,
         mode: 'text',
         placeholder: ''
     }, {
-        name: $localize`Dialect`,
+        name: $localize`Language+Dialect`,
         field: 'dialects',
         icon: faLanguage,
         mode: 'dialect',
-        placeholder: $localize`Select Dialect(s)`
+        placeholder: $localize`Select Language+Dialect(s)`
     }, {
         name: $localize`Participant`,
         field: 'participantId',
@@ -72,33 +77,33 @@ export class QuestionnaireFiltersComponent implements OnInit, OnDestroy {
     }, {
         name: $localize`Attestation`,
         field: 'attestation',
-        icon: faUser,
+        icon: faThumbsUp,
         mode: 'dropdown',
         placeholder: $localize`Select Attested or Unattested`,
         manual: 'attestation'
     }, {
         name: $localize`Gloss`,
         field: 'gloss',
-        icon: faUser,
+        icon: faBars,
         mode: 'text',
         placeholder: ''
     }, {
         name: $localize`English Translation`,
         field: 'en_translation',
-        icon: faUser,
+        icon: faGlobeEurope,
         mode: 'text',
         placeholder: ''
     }, {
         name: $localize`Chapter`,
         field: 'chapter',
-        icon: faUser,
+        icon: faBookmark,
         mode: 'dropdown',
         placeholder: $localize`Select Chapter(s)`,
         manual: 'chapters'
     }, {
         name: `Subtags`,
         field: 'subtags',
-        icon: faUser,
+        icon: faTag,
         mode: 'dropdown',
         placeholder: $localize`Select Tag(s)`
     }];

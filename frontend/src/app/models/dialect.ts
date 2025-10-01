@@ -1,5 +1,12 @@
 export interface Dialect {
+    /**
+     * name of the dialect in the dataset
+     */
     name: string,
+    /**
+     * localized label of this dialect
+     */
+    label: string,
     parents: Dialect[],
     children: Dialect[]
 }
@@ -14,6 +21,10 @@ export interface DialectPath {
      * Name of the final dialect
      */
     name: string;
+    /**
+     * Localized label of the final dialect
+     */
+    label: string;
     /**
      * Full path including itself. A dialect can have multiple parents,
      * it would then have multiple *paths* for each of those parents!
@@ -168,6 +179,7 @@ export class DialectLookup {
             const dialectPath = [...path, dialect.name];
             yield {
                 name: dialect.name,
+                label: dialect.label,
                 path: dialectPath,
                 pathFlat: dialectPath.join('>'),
                 parentsPathFlat: path.join('>')

@@ -38,6 +38,9 @@ export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDe
     textField: ElementRef<HTMLInputElement>;
 
     @Input()
+    objectName: FilterObjectName;
+
+    @Input()
     clearable: boolean;
 
     @Input()
