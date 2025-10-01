@@ -4,6 +4,7 @@ import 'zone.js';
 import { DoBootstrap, enableProdMode, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import '@angular/localize/init';
 
 import { environment } from '../../environments/environment';
 

@@ -1,12 +1,21 @@
 [
-    {
-        "id": "query",
-        "title": "Search Query"
-    },
+    
     {
         "id": "questionnaires",
         "title": "Questionnaires",
         "subPages": [
+            {
+                "id": "data-presentation",
+                "title": "How are data presented?"
+            },
+            {
+                "id": "participants",
+                "title": "Participants"
+            },
+            {
+                "id": "languages",
+                "title": "Languages & Dialects"
+            },
             {
                 "id": "attestation",
                 "title": "Attestation"
@@ -14,11 +23,23 @@
             {
                 "id": "chapters",
                 "title": "Chapters"
+            },
+            {
+                "id": "subtags",
+                "title": "Subtags"
             }
         ]
     },
     {
         "id": "judgment",
         "title": "Grammaticality Judgments"
+    },
+    {
+        "id": "query",
+        "title": "Using the search bar"
+    },
+    {
+        "id": "glossary",
+        "title": "Glossary of terms"
     }
 ]
