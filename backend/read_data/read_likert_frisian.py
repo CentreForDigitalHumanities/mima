@@ -2,6 +2,7 @@ from mima.settings import FRISIAN_PATH, FRISIAN_META, OUTPUT_PATH
 import csv
 import os
 import json
+import re
 
 from read_data.read_likert_meertens import JudgmentItem, Response, serialize_classes
 from read_data.read_questionnaire_meertens import remove_periods
@@ -63,7 +64,7 @@ with open(FRISIAN_META, encoding='utf8') as file:
         if question_id in judgment_items.keys():
             judgment_items[question_id].chapters = line[2].split(';')
             judgment_items[question_id].tags = line[3].split(';')
-            judgment_items[question_id].translation = line[4]
+            judgment_items[question_id].translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', line[4])
             judgment_items[question_id].gloss = line[5]
 
 

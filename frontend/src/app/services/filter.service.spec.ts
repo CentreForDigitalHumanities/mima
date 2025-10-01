@@ -297,7 +297,7 @@ actual:   ${actual}`;
                         dialects: ['Nederfrankisch', 'Brabants', 'Zuid-Brabants'],
                         match: true
                     }, {
-                        dialects: ['Fries', 'West-Fries'],
+                        dialects: ['Frisian', 'West-Fries'],
                         match: false
                     }]
                 },

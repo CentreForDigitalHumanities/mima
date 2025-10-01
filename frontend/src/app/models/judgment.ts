@@ -12,6 +12,8 @@ export interface Judgment extends Filterable {
      */
     subQuestionTextId: string;
     responses: LikertResponse[];
+    gloss: string;
+    translation: string;
 }
 
 type MatchedJudgmentValue<T> =
@@ -45,11 +47,13 @@ export type MatchedJudgmentDeserialized = {
 
 export class MatchedJudgment implements MatchedJudgmentProperties {
     judgmentId: MatchedParts;
-    mainQuestion: MatchedParts
-    mainQuestionId: MatchedParts
-    subQuestion: MatchedParts
-    subQuestionTextId: MatchedParts
-    responses: MatchedLikertResponse[]
+    mainQuestion: MatchedParts;
+    mainQuestionId: MatchedParts;
+    subQuestion: MatchedParts;
+    subQuestionTextId: MatchedParts;
+    responses: MatchedLikertResponse[];
+    gloss: MatchedParts;
+    translation: MatchedParts;
 
     dialectsCount = 0;
     matchedResponses: MatchedLikertResponse[] = [];
@@ -69,6 +73,8 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             this.mainQuestionId = this.unmatchedValue(judgment.mainQuestionId);
             this.subQuestion = this.unmatchedValue(judgment.subQuestion);
             this.subQuestionTextId = this.unmatchedValue(judgment.subQuestionTextId);
+            this.gloss = this.unmatchedValue(judgment.gloss);
+            this.translation = this.unmatchedValue(judgment.translation);
             this.responses = judgment.responses.map(response => new MatchedLikertResponse(response));
         }
     }
@@ -86,6 +92,8 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             subQuestion: MatchedParts.restore(value.subQuestion),
             subQuestionTextId: MatchedParts.restore(value.subQuestionTextId),
             responses: value.responses.map(answer => MatchedLikertResponse.restore(answer)),
+            gloss: MatchedParts.restore(value.gloss),
+            translation: MatchedParts.restore(value.translation),
             dialectsCount: value.dialectsCount,
             matchedResponses: value.matchedResponses.map(r => MatchedLikertResponse.restore(r)),
             matchedResponseCount: value.matchedResponseCount,

@@ -2,6 +2,7 @@ from mima.settings import LIKERT_PATH_SE, META_PATH_SE, PARTICIPANTS_SE, OUTPUT_
 import csv
 import os
 import json
+import re
 
 from read_data.read_likert_meertens import JudgmentItem, Response, serialize_classes
 from read_data.read_questionnaire_meertens import remove_periods
@@ -12,7 +13,7 @@ def get_judgment_items():
         meta_data = []
         for line in reader:
             meta_data.append(line)
-    
+
     judgment_items = {}
     for line in meta_data[1:]:
         main_question_id = line[0]
@@ -22,7 +23,7 @@ def get_judgment_items():
         responses = []
         chapters = line[2].split(';')
         tags = line[3].split(';')
-        translation = line[4]
+        translation = re.sub('(^(Intended: )?[\u201c"]|[\u201c\u201d"]$)', '', line[4])
         gloss = line[5]
         judgment_item = JudgmentItem(
             main_question,
@@ -37,7 +38,7 @@ def get_judgment_items():
             gloss
         )
         judgment_items[main_question_id] = judgment_item
-    
+
     return judgment_items
 
 def get_dialects():
@@ -47,7 +48,7 @@ def get_dialects():
         for line in reader:
             dialects[line[0]] = line[2]
 
-    return dialects    
+    return dialects
 
 def get_likert_responses(judgment_items, dialects):
     with open(LIKERT_PATH_SE, encoding="utf8") as file:
@@ -64,7 +65,7 @@ def get_likert_responses(judgment_items, dialects):
     for line in swedish_data[1:]:
         participant_id = line[0]
         dialect = dialects[participant_id]
-        for index in likert_indices:    
+        for index in likert_indices:
             score = line[index]
             judgment_items[swedish_data[0][index]].responses.append(
                 Response(

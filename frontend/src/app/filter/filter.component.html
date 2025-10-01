@@ -34,7 +34,8 @@
     }
     @case ("dialect") {
     <div class="control is-expanded">
-        <mima-dialect-selection [placeholder]="selectedType.placeholder" [content]="filter.content" (contentChange)="emit($event)"></mima-dialect-selection>
+        <mima-dialect-selection [objectName]="objectName" [placeholder]="selectedType.placeholder"
+            [content]="filter.content" (contentChange)="emit($event)"></mima-dialect-selection>
     </div>
     }
     @default {

@@ -1,9 +1,9 @@
 <ul>
     @for(dialect of root; track dialect) {
     <li>
-        <span [ngClass]="{'not-matched-directly': !dialects.has(dialect)}">{{dialect}}</span>
+        <span [ngClass]="{'not-matched-directly': !dialects.has(dialect)}">{{dialect | localizeDialect}}</span>
         @if (children[dialect]) {
-        <mima-dialect-tree [root]="children[dialect]" [dialects]="dialects"></mima-dialect-tree>
+        <mima-dialect-tree [objectName]="objectName" [root]="children[dialect]" [dialects]="dialects"></mima-dialect-tree>
         }
     </li>
     }

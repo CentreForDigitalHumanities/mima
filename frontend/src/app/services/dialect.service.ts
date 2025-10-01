@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Dialect, DialectLookup, DialectPath, EndDialects } from '../models/dialect';
-import data from './dialect_hierarchy.json';
+import hierarchyFiltered from './dialect_hierarchy_filtered.json';
 import { Participant } from '../models/participant';
 import { MatchedParts } from '../models/matched-parts';
+import { FilterObjectName } from '../models/filter';
 
 export type MatchedSubItem<T, K extends keyof T> = {
     // passthrough a selection of properties
@@ -26,24 +27,40 @@ export type MatchedSubItemGrouped<K extends string> = {
     providedIn: 'root'
 })
 export class DialectService {
+    private readonly localizedDialects = {
+        'Dutch': $localize`Dutch`,
+        'Standaardnederlands': $localize`Standard Dutch`,
+        'English': $localize`English`,
+        'American': $localize`American`,
+        'British': $localize`British`,
+        'South African': $localize`South African`,
+        'Frisian': $localize`Frisian`,
+        'German': $localize`German`,
+        'German (Ödingsch Platt)': $localize`Ödingsch Platt`,
+        'German (Ostmittelbairisch)': $localize`Ostmittelbairisch`,
+        'German (Westmittelbairisch)': $localize`Westmittelbairisch`,
+        'Standard German': $localize`Standard German`,
+        'Swedish': $localize`Swedish`,
+        'South Swedish': $localize`South Swedish`,
+    };
 
-    private _dialectLookup: DialectLookup;
-    get dialectLookup(): DialectLookup {
-        if (!this._dialectLookup) {
-            this._dialectLookup = this.getDialectLookup();
-        }
+    private _dialectLookup: { [T in FilterObjectName]?: DialectLookup } = {};
 
-        return this._dialectLookup;
+    localize(name: string) {
+        return this.localizedDialects[name] ?? name;
     }
 
     /**
      * Gets a lookup of all the dialects
      * @returns the top most dialects and a lookup with all the dialects
      */
-    private getDialectLookup(): DialectLookup {
+    getDialectLookup(name: FilterObjectName): DialectLookup {
+        if (this._dialectLookup[name]) {
+            return this._dialectLookup[name];
+        }
         const hierarchy: DialectLookup['hierarchy'] = {};
-        const root = this.fillDialectLookup(data, hierarchy);
-        return new DialectLookup(root, hierarchy);
+        const root = this.fillDialectLookup(hierarchyFiltered[name], hierarchy);
+        return this._dialectLookup[name] = new DialectLookup(root, hierarchy);
     }
 
     fillDialectLookup(data: Object, hierarchy: DialectLookup['hierarchy'], parentName: string = undefined): Dialect[] {
@@ -61,6 +78,7 @@ export class DialectService {
             } else {
                 dialect = {
                     name,
+                    label: this.localize(name),
                     children: [],
                     parents: parent !== undefined ? [parent] : []
                 };
@@ -90,14 +108,14 @@ export class DialectService {
         return false;
     }
 
-    getDialectPaths(dialect: string): DialectPath[] {
-        const lookup = this.dialectLookup;
+    getDialectPaths(objectName: FilterObjectName, dialect: string): DialectPath[] {
+        const lookup = this.getDialectLookup(objectName);
         return lookup.paths[dialect];
     }
 
-    initializeDialectTextParts() {
+    initializeDialectTextParts(objectName: FilterObjectName) {
         const dialectTextParts: { [dialect: string]: MatchedParts } = {};
-        for (const dialect of this.dialectLookup.flattened) {
+        for (const dialect of this.getDialectLookup(objectName).flattened) {
             dialectTextParts[dialect.name] = new MatchedParts({
                 empty: false,
                 emptyFilters: false,
@@ -139,11 +157,12 @@ export class DialectService {
 
     /**
      * Recursively gets all the names of all the sub-dialects
+     * @param objectName name of the filter object
      * @param name name of the parent dialect, not included in the output
      */
-    *getAllSubDialects(name: string): Iterable<string> {
-        const dialect = this.dialectLookup.hierarchy[name];
-        for (const child of this.dialectLookup.findChildren(dialect)) {
+    *getAllSubDialects(objectName: FilterObjectName, name: string): Iterable<string> {
+        const dialect = this.getDialectLookup(objectName).hierarchy[name];
+        for (const child of this.getDialectLookup(objectName).findChildren(dialect)) {
             yield child.name;
         }
     }
@@ -151,6 +170,7 @@ export class DialectService {
     groupSubItems<T extends MatchedSubItem<T, K>,
         K extends keyof T & string,
         U extends keyof T & string>(
+            objectName: FilterObjectName,
             matchedSubItems: T[],
             keys: [K, ...U[]],
             endDialects: EndDialects,
@@ -178,7 +198,7 @@ export class DialectService {
                     // only mark the dialects which were matched by the filters
                     || (this.anyDialectInPaths(
                         subItemMatchedDialects.map(x => x.text),
-                        this.getDialectPaths(dialect)))) {
+                        this.getDialectPaths(objectName, dialect)))) {
                     if (countDialectMatch) {
                         countDialectMatch(subItem, dialect);
                     }
