@@ -18,7 +18,7 @@ const QuestionColumnNames: {
     questionId: $localize`Question ID`,
     answer: $localize`Translation`,
     participantId: $localize`Participant`,
-    dialects: $localize`Dialect`
+    dialects: $localize`Language+Dialect`
 };
 
 const QuestionColumnOrder: (keyof QuestionRow)[] =

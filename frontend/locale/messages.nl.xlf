@@ -39,19 +39,19 @@
         <target state="translated">Verwijder filter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/filter/filter.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5743446572871974801" datatype="html">
-        <source>Dialect</source>
-        <target state="translated">Dialect</target>
+      <trans-unit id="3701954963274172628" datatype="html">
+        <source>Language+Dialect</source>
+        <target state="translated">Taal+Dialect</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">66</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -63,7 +63,7 @@
         <target state="translated">Vertaling</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">60</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -242,16 +242,16 @@
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8300886767108503684" datatype="html">
-        <source>Select Dialect(s)</source>
-        <target state="translated">Kies dialect(en)</target>
+      <trans-unit id="3187779963504096148" datatype="html">
+        <source>Select Language+Dialect(s)</source>
+        <target state="translated">Kies taal+dialect(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">87</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5846168834347158335" datatype="html">
@@ -403,11 +403,11 @@
         <target state="translated">Zoek in alle velden</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5320870651003627043" datatype="html">
@@ -415,11 +415,11 @@
         <target state="translated">Vraag</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5129980223571446304" datatype="html">
@@ -427,11 +427,11 @@
         <target state="translated">Kies vraag(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">51</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="920567845139554152" datatype="html">
@@ -439,11 +439,11 @@
         <target state="translated">Vraagtekst</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">54</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -455,11 +455,11 @@
         <target state="translated">Participant</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">89</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/download.service.ts</context>
@@ -471,11 +471,11 @@
         <target state="translated">Kies participant(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="674321618652063659" datatype="html">
@@ -519,7 +519,7 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
         </context-group>
       </trans-unit>
       <trans-unit id="906232868136769061" datatype="html">
@@ -527,7 +527,7 @@
         <target state="translated">{VAR_PLURAL, plural, =0 {geen antwoorden} =1 {1 antwoord} other {<x id="INTERPOLATION"/> antwoorden}}</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7775219266550892224" datatype="html">
@@ -535,7 +535,7 @@
         <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedDialectsCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ dialectsCount }}"/> dialecten matchen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5486058096582576529" datatype="html">
@@ -543,7 +543,7 @@
         <target state="translated"> <x id="INTERPOLATION" equiv-text="{{ matchedAnswerCount }}"/> van <x id="INTERPOLATION_1" equiv-text="{{ model.answers.length }}"/> antwoorden matchen </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1280221140510194500" datatype="html">
@@ -667,7 +667,7 @@
         <target state="translated">Bevestiging</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7226628024978874949" datatype="html">
@@ -675,23 +675,31 @@
         <target state="translated">Kies bevestigd of onbevestigd</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4979758064528998175" datatype="html">
         <source>Gloss</source>
         <target state="translated">Glos</target>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2946765255271348390" datatype="html">
         <source>English Translation</source>
         <target state="translated">Engelse vertaling</target>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5322922947143379212" datatype="html">
@@ -699,7 +707,7 @@
         <target state="translated">Hoofdstuk</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5707780993008694763" datatype="html">
@@ -707,7 +715,7 @@
         <target state="translated">Kies hoofdstuk(ken)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">101</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6616264141636110160" datatype="html">
@@ -715,7 +723,7 @@
         <target state="translated">Kies tag(s)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-filters/questionnaire-filters.component.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5676206059994743921" datatype="html">
@@ -723,23 +731,23 @@
         <target state="translated">uitsluiten</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">72</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">82</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">132</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">154</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3690478070680374141" datatype="html">
@@ -747,7 +755,7 @@
         <target state="translated">onbevestigd</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">330</context>
+          <context context-type="linenumber">331</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1672281619854157401" datatype="html">
@@ -755,7 +763,7 @@
         <target state="translated">bevestigd</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/services/filter-management.service.ts</context>
-          <context context-type="linenumber">330</context>
+          <context context-type="linenumber">331</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4608015944298801142" datatype="html">
@@ -779,7 +787,7 @@
         <target state="translated"> onbevestigd </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/questionnaire-item/questionnaire-item.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2233560223291461480" datatype="html">
@@ -875,7 +883,7 @@
         <target state="translated">Subvraag</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="118961246972176837" datatype="html">
@@ -883,7 +891,7 @@
         <target state="translated">Kies subvraag(en)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6149798157993427054" datatype="html">
@@ -891,7 +899,7 @@
         <target state="translated">Subvraagtekst</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7123653594948067002" datatype="html">
@@ -899,7 +907,7 @@
         <target state="translated">Score</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3925802969809219693" datatype="html">
@@ -907,7 +915,7 @@
         <target state="translated">Kies score</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6254550136298647802" datatype="html">
@@ -915,7 +923,7 @@
         <target state="translated">Oordeel ID</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert-filters/likert-filters.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2421202444912860594" datatype="html">
@@ -951,7 +959,119 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/likert/likert.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3071065188816255493" datatype="html">
+        <source>Dutch</source>
+        <target state="translated">Nederlands</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5532915461292975480" datatype="html">
+        <source>Standard Dutch</source>
+        <target state="translated">Standaardnederlands</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5866254605255506989" datatype="html">
+        <source>English</source>
+        <target state="translated">Engels</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="409298505374052426" datatype="html">
+        <source>American</source>
+        <target state="translated">Amerikaans</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7974847015337003670" datatype="html">
+        <source>British</source>
+        <target state="translated">Brits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1996939568788539620" datatype="html">
+        <source>South African</source>
+        <target state="translated">Zuid-Afrikaans</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="677280358339565618" datatype="html">
+        <source>Frisian</source>
+        <target state="translated">Fries</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1858110241312746425" datatype="html">
+        <source>German</source>
+        <target state="translated">Duits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8504115954127508487" datatype="html">
+        <source>Ödingsch Platt</source>
+        <target state="translated">Ödingsch Platt</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6027647473143901973" datatype="html">
+        <source>Ostmittelbairisch</source>
+        <target state="translated">Ostmittelbairisch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="694200334045179271" datatype="html">
+        <source>Westmittelbairisch</source>
+        <target state="translated">Westmittelbairisch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1070881834404692429" datatype="html">
+        <source>Standard German</source>
+        <target state="translated">Standaardduits</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="499386805970351976" datatype="html">
+        <source>Swedish</source>
+        <target state="translated">Zweeds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="524293429930684822" datatype="html">
+        <source>South Swedish</source>
+        <target state="translated">Zuid-Zweeds</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/services/dialect.service.ts</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
     </body>

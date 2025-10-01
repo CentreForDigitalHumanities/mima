@@ -12,6 +12,7 @@ import { IntersectableComponent } from '../services/visibility.service';
 import { LoadingComponent } from "../loading/loading.component";
 import { DialectLookup, EndDialects } from '../models/dialect';
 import { DialectService, MatchedSubItemGrouped } from '../services/dialect.service';
+import { LocalizeDialectPipe } from "../localize-dialect.pipe";
 
 const autoExpandDialectCount = 3;
 const autoExpandAnswerCount = 10;
@@ -26,7 +27,7 @@ export interface FilterEvent {
     selector: 'mima-questionnaire-item',
     templateUrl: './questionnaire-item.component.html',
     styleUrls: ['./questionnaire-item.component.scss'],
-    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent],
+    imports: [CommonModule, FontAwesomeModule, HighlightPipe, LuupzigModule, LoadingComponent, LocalizeDialectPipe],
     standalone: true
 })
 export class QuestionnaireItemComponent implements OnChanges, OnDestroy, IntersectableComponent<MatchedQuestion> {
@@ -90,7 +91,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
     private _unmatchedDialectParts: { [dialect: string]: MatchedParts };
     private get unmatchedDialectParts() {
         if (!this._unmatchedDialectParts) {
-            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts();
+            this._unmatchedDialectParts = this.dialectService.initializeDialectTextParts('question');
         }
 
         return this._unmatchedDialectParts;
@@ -132,6 +133,7 @@ export class QuestionnaireItemComponent implements OnChanges, OnDestroy, Interse
 
         this.matchedAnswerCount = this.model.matchedAnswerCount;
         let [matchedDialects, matchedDialectParts] = this.dialectService.groupSubItems(
+            'question',
             this.model.matchedAnswers,
             ['answer', 'attestation'],
             this.endDialects);

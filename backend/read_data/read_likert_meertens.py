@@ -1,11 +1,11 @@
-from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, OUTPUT_PATH
+from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2, OUTPUT_PATH
 
-from read_questionnaire import extract_participant_metadata, merge_questionnaires
+from read_data.read_questionnaire_meertens import extract_participant_metadata, merge_questionnaires
 import re
 import os
 import json
 import csv
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 from typing import Dict
 
 
@@ -17,12 +17,16 @@ class JudgmentItem:
     sub_question_id: str
     sub_question_text_id: str
     responses: list
+    chapters: list = field(default_factory=list)
+    tags: list = field(default_factory=list)
+    translation: str = ""
+    gloss: str = ""
 
 
 @dataclass
 class Response:
     participant_id: str
-    dialects: str
+    dialects: list
     country: str
     score: int
 
@@ -133,12 +137,27 @@ def extract_likert_and_participant_data(data_path, participants_path):
     )
     return judgment_items
 
+def enrich_with_metadata(paths, items):
+    for path in paths:
+        with open(path, encoding='utf8') as file:
+            reader = csv.reader(file)
+            for line in reader:
+                question_id = line[0]
+                if question_id in items.keys():
+                    items[question_id].chapters = line[2].split(';')
+                    items[question_id].tags = line[3].split(';')
+                    items[question_id].translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', line[4])
+                    items[question_id].gloss = line[5]
+    return items
+
+
 def __main__():
     judgment_items_q1 = extract_likert_and_participant_data(DATA_PATH_Q1, PARTICIPANTS_PATH_Q1)
     judgment_items_q2 = extract_likert_and_participant_data(DATA_PATH_Q2, PARTICIPANTS_PATH_Q2)
     merged_judgment_items = merge_questionnaires(judgment_items_q1, judgment_items_q2)
-    with open(os.path.join(OUTPUT_PATH, "likert_scales_test.json"), "w") as file:
-        json.dump(merged_judgment_items, file, default=serialize_classes, indent=4)
+    merged_enriched_judgment_items = enrich_with_metadata([ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2], merged_judgment_items)
+    with open(os.path.join(OUTPUT_PATH, "likert_scales_dutch.json"), "w") as file:
+        json.dump(merged_enriched_judgment_items, file, default=serialize_classes, indent=4)
 
 
 if __name__ == "__main__":

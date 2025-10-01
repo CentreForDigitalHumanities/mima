@@ -4,7 +4,7 @@ import json
 import os
 from dataclasses import dataclass, asdict
 
-from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, OUTPUT_PATH
+from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, FRISIAN_PATH, FRISIAN_META, OUTPUT_PATH
 
 def read_csv(filepath):
     data = []
@@ -21,12 +21,24 @@ def remove_periods(text):
     stripped_text = text.translate(translator)
     return stripped_text
 
-def extract_prompt(question_string):
+def create_frisian_question_dict(path):
+    with open(path, encoding='utf8)') as file:
+        reader = csv.reader(file)
+        row = next(reader)
+    frisian_question_dict = {}
+    for index, cell in enumerate(row):
+        if 'Vertaling' in cell:
+            frisian_question_dict[cell] = row[index-1].split('.')[1].strip('[]')
+    return frisian_question_dict
+
+def extract_prompt(question_string, frisian_question_dict={}):
     ## Collect the prompts for a given string
     prompt_pattern = r'\[(.*?)\]'
     match = re.search(prompt_pattern, question_string)
     if match:
         return match.group(1)
+    elif question_string in frisian_question_dict.keys():
+        return frisian_question_dict[question_string]
     else:
         return 'No prompt found'
 
@@ -70,14 +82,14 @@ class Dialect:
     translations: dict = None
 
 
-def create_questionnaire_items(data):
+def create_questionnaire_items(data, frisian_question_dict={}):
     ## Create a Question object for each question and save them in a dictionary
     questionnaire_items = {} #keys: question index
     translation_indices = []
 
     for index, cell in enumerate(data[0]):
-        first_word = cell.split()[0]
-        if cell.endswith('[Vertaling]') and first_word == 'CLEANED':
+        first_word = cell.split()[0] if cell else ''
+        if 'Vertaling' in cell and first_word == 'CLEANED':
             question = remove_periods(' '.join(cell.split()[2:]))
             questionnaire_item = Question(
                 tag = remove_periods(cell.split()[1]),
@@ -88,7 +100,7 @@ def create_questionnaire_items(data):
                 cleaned = True
             )
             translation_indices.append(questionnaire_item.index)
-        elif cell.endswith('[Vertaling]') and first_word not in ['COMMENT', 'DEVIATION']:
+        elif 'Vertaling' in cell and first_word not in ['COMMENT', 'DEVIATION']:
             question = remove_periods(' '.join(cell.split()[1:]))
             questionnaire_item = Question(
                 tag = remove_periods(first_word),
@@ -106,7 +118,8 @@ def create_questionnaire_items(data):
                 index = index,
                 question = remove_periods(' '.join(cell.split()[1:]))
             )
-
+        if questionnaire_item.prompt == "No prompt found" and cell in frisian_question_dict.keys():
+            questionnaire_item.prompt = frisian_question_dict[cell]
         questionnaire_items[questionnaire_item.index] = questionnaire_item
 
     return questionnaire_items, translation_indices
@@ -199,7 +212,7 @@ def enrich_translation_questions(cleaned_translation_questions, additional_data)
         split_item = entry[1]
         chapter = entry[2]
         subtags = entry[3].split(';')
-        en_translation = entry[4]
+        en_translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', entry[4])
         gloss = entry[5]
         for id in ids:
             try:
@@ -213,11 +226,11 @@ def enrich_translation_questions(cleaned_translation_questions, additional_data)
                 pass
     return cleaned_translation_questions
 
-def extract_enriched_cleaned_questionnaire(data_path, participants_data_path, additional_data_path):
+def extract_enriched_cleaned_questionnaire(data_path, participants_data_path, additional_data_path, frisian_question_dict={}):
     data = read_csv(data_path)
     participants_data = read_csv(participants_data_path)
     additional_data = read_csv(additional_data_path)
-    questionnaire_items, translation_indices = create_questionnaire_items(data)
+    questionnaire_items, translation_indices = create_questionnaire_items(data, frisian_question_dict)
     participant_countries, participant_dialects, skip_list = extract_participant_metadata(participants_data)
     cleaned_translation_questions = extract_answers(data, questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list)
     enriched_cleaned_translation_questions = enrich_translation_questions(cleaned_translation_questions, additional_data)
@@ -242,8 +255,10 @@ def merge_questionnaires(q1, q2):
 def __main__():
     enriched_cleaned_translation_questions_q1 = extract_enriched_cleaned_questionnaire(DATA_PATH_Q1, PARTICIPANTS_PATH_Q1, ADDITIONAL_DATA_PATH_Q1)
     enriched_cleaned_translation_questions_q2 = extract_enriched_cleaned_questionnaire(DATA_PATH_Q2, PARTICIPANTS_PATH_Q2, ADDITIONAL_DATA_PATH_Q2)
+    frisian_question_dict = create_frisian_question_dict(FRISIAN_PATH)
+    enriched_cleaned_translation_questions_frisian = extract_enriched_cleaned_questionnaire(FRISIAN_PATH, FRISIAN_PATH, FRISIAN_META, frisian_question_dict)
     merged_questionnaires = merge_questionnaires(enriched_cleaned_translation_questions_q1, enriched_cleaned_translation_questions_q2)
-
+    merged_questionnaires = merge_questionnaires(merged_questionnaires, enriched_cleaned_translation_questions_frisian)
     ## dump as json
     with open(os.path.join(OUTPUT_PATH, 'cleaned_translation_questions.json'), 'w') as file:
         json.dump(merged_questionnaires, file, default=serialize_classes, indent=4)
