@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatchedQuestion } from '../models/question';
 import { MatchedParts } from '../models/matched-parts';
 import { ProgressService } from './progress.service';
+import { MatchedJudgment } from '../models/judgment';
 
 type QuestionRow = {
     questionPrompt?: MatchedParts,
@@ -9,6 +10,12 @@ type QuestionRow = {
     answer?: MatchedParts,
     participantId?: MatchedParts,
     dialects?: MatchedParts[]
+}
+
+type JudgmentRow = {
+    participantId?: MatchedParts,
+    dialects?: MatchedParts[],
+    score: MatchedParts
 }
 
 const QuestionColumnNames: {
@@ -30,18 +37,48 @@ const QuestionColumnOrder: (keyof QuestionRow)[] =
         'dialects'
     ];
 
+const JudgmentColumnNames: {
+    [T in keyof JudgmentRow]: string
+} = {
+    participantId: $localize`Participant`,
+    dialects: $localize`Language+Dialect`,
+    score: $localize`Score`
+};
+
+const JudgmentColumnOrder: (keyof JudgmentRow)[] =
+    [
+        'score',
+        'participantId',
+        'dialects'
+    ];
+
 @Injectable({
     providedIn: 'root'
 })
 export class DownloadService {
     constructor(private progressService: ProgressService) { }
 
+    downloadJudgments(matchedJudgments: Iterable<MatchedJudgment>, filename: string): void {
+        const progress = this.progressService.start(true);
+        try {
+            const rows: string[] = [JudgmentColumnOrder.map(key => JudgmentColumnNames[key]).join(',')];
+            for (const judgment of matchedJudgments) {
+                rows.push(...this.formatRows(JudgmentColumnOrder, this.judgmentsRow(judgment)));
+            }
+
+            this.download(rows.join('\n'), filename);
+        }
+        finally {
+            progress.complete();
+        }
+    }
+
     downloadQuestions(matchedQuestions: Iterable<MatchedQuestion>, filename: string): void {
         const progress = this.progressService.start(true);
         try {
             const rows: string[] = [QuestionColumnOrder.map(key => QuestionColumnNames[key]).join(',')];
             for (const question of matchedQuestions) {
-                rows.push(...this.formatRows(this.questionsRow(question)));
+                rows.push(...this.formatRows(QuestionColumnOrder, this.questionsRow(question)));
             }
 
             this.download(rows.join('\n'), filename);
@@ -52,14 +89,14 @@ export class DownloadService {
     }
 
 
-    private *formatRows(rows: Iterable<QuestionRow>): Iterable<string> {
+    private *formatRows<T extends (QuestionRow|JudgmentRow)>(order: (keyof T)[], rows: Iterable<T>): Iterable<string> {
         for (const row of rows) {
-            yield QuestionColumnOrder.map(column => {
+            yield order.map(column => {
                 const cell = row[column];
                 if (Array.isArray(cell)) {
                     return cell.map(part => this.formatParts(part)).join('; ');
                 }
-                return this.formatParts(cell);
+                return this.formatParts(<MatchedParts>cell);
             }).join(',');
         }
     }
@@ -75,6 +112,20 @@ export class DownloadService {
         }
 
         return cell;
+    }
+
+    private *judgmentsRow(judgment: MatchedJudgment): Iterable<JudgmentRow> {
+        for (const response of judgment.responses) {
+            if (!response.match) {
+                continue;
+            }
+
+            yield {
+                participantId: response.participantId,
+                dialects: response.dialects,
+                score: response.score
+            };
+        }
     }
 
     private *questionsRow(question: MatchedQuestion): Iterable<QuestionRow> {

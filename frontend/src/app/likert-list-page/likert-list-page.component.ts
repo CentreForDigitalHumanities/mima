@@ -16,11 +16,12 @@ import { DialectLookup, EndDialects } from '../models/dialect';
 import { JudgmentsService } from '../services/judgments.service';
 import { Participant } from '../models/participant';
 import { DialectTreeComponent } from '../dialect-tree/dialect-tree.component';
+import { DownloadButtonComponent } from "../download-button/download-button.component";
 
 @Component({
     selector: 'mima-likert-list-page',
     standalone: true,
-    imports: [CommonModule, LikertListComponent, LikertFiltersComponent, ManualButtonComponent, LikertCountToggleComponent, TransitionNumbersPipe, DialectTreeComponent],
+    imports: [CommonModule, LikertListComponent, LikertFiltersComponent, ManualButtonComponent, LikertCountToggleComponent, TransitionNumbersPipe, DialectTreeComponent, DownloadButtonComponent],
     templateUrl: './likert-list-page.component.html',
     styleUrl: './likert-list-page.component.scss'
 })

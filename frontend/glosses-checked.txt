@@ -1,0 +1,887 @@
+Checking question glosses...
+{
+  prompt: 'De trein vertrekt langzaam vanaf het station',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone'
+}
+{
+  prompt: 'Marie praat hard op',
+  gloss: 'Marie speak.3.SG.PRS loudly-up'
+}
+{ prompt: 'Altijd als ik praat, begrijpt niemand me', gloss: 'NA' }
+{ prompt: 'Telkens als ik praat, begrijpt niemand me', gloss: 'NA' }
+{
+  prompt: 'Iedere keer als ik praat, begrijpt niemand me',
+  gloss: 'NA'
+}
+{
+  prompt: 'Iedere keer dat ik praat, begrijpt niemand me',
+  gloss: 'NA'
+}
+{ prompt: 'Als ik praat, begrijpt nooit iemand me', gloss: 'NA' }
+{ prompt: ' Jan is oan it hurddraven', gloss: '' }
+{ prompt: ' Jan is oan it hurdsjesdraven', gloss: '' }
+{ prompt: ' Jan is oan it hurderdraven as Marie', gloss: '' }
+{ prompt: ' Jan is oan it hurdstdraven fan allegearre', gloss: '' }
+{ prompt: ' Marie is oan it stillêzen', gloss: '' }
+{ prompt: ' Marie is oan it stilsjeslêzen', gloss: '' }
+{ prompt: ' Marie is oan it stillerlêzen as Jan', gloss: '' }
+{ prompt: ' Marie is oan it stilstlêzen fan allegearre', gloss: 'NA' }
+{ prompt: ' De trein rydt [stadich] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichs] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichjes] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichsjes] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichoan] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichsoan] by it stasjon wei', gloss: '' }
+{
+  prompt: ' De trein rydt [stadichjesoan] by it stasjon wei',
+  gloss: ''
+}
+{
+  prompt: ' De trein rydt [stadichsjesoan] by it stasjon wei',
+  gloss: ''
+}
+{ prompt: ' De trein rydt [stadichwei] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichswei] by it stasjon wei', gloss: '' }
+{
+  prompt: ' De trein rydt [stadichjeswei] by it stasjon wei',
+  gloss: ''
+}
+{
+  prompt: ' De trein rydt [stadichsjeswei] by it stasjon wei',
+  gloss: ''
+}
+{ prompt: ' De trein rydt [stadich] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichs] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichjes] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichsjes] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichoan] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichsoan] by it stasjon wei', gloss: '' }
+{
+  prompt: ' De trein rydt [stadichjesoan] by it stasjon wei',
+  gloss: ''
+}
+{
+  prompt: ' De trein rydt [stadichsjesoan] by it stasjon wei',
+  gloss: ''
+}
+{ prompt: ' De trein rydt [stadichwei] by it stasjon wei', gloss: '' }
+{ prompt: ' De trein rydt [stadichswei] by it stasjon wei', gloss: '' }
+{
+  prompt: ' De trein rydt [stadichjeswei] by it stasjon wei',
+  gloss: ''
+}
+{
+  prompt: ' De trein rydt [stadichsjeswei] by it stasjon wei',
+  gloss: ''
+}
+{ prompt: ' Piet zingt op z’n Madonna’s', gloss: '' }
+{ prompt: ' Piet zingt op z’n eigen Madonna’s', gloss: '' }
+{ prompt: ' Piet zingt op zich Madonna’s', gloss: '' }
+{ prompt: " Marie zingt op z'n Madonna’s", gloss: '' }
+{ prompt: ' Marie zingt op haar Madonna’s', gloss: '' }
+{ prompt: " Marie zingt op d'r Madonna’s", gloss: '' }
+{ prompt: " Marie zingt op z'n eigen Madonna’s", gloss: '' }
+{ prompt: ' Marie zingt op d’r eigen Madonna’s', gloss: '' }
+{ prompt: ' Marie zingt op zich Madonna’s', gloss: '' }
+{ prompt: ' Piet en Marie zingen op hun Madonna’s', gloss: '' }
+{ prompt: ' Piet en Marie zingen op hun eigen Madonna’s', gloss: '' }
+{ prompt: ' Piet en Marie zingen op zich Madonna’s', gloss: '' }
+51 errors found!
+Checking judgment glosses...
+{ prompt: 'Jan praat het [zachtjeste] van iedereen', gloss: '' }
+{
+  prompt: 'Jan danst het stijfst',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP of everyone'
+}
+{
+  prompt: 'Jan danst het stijfste',
+  gloss: 'Jan dance-3.SG.PRS the siffly-SUP-E of everyone'
+}
+{
+  prompt: 'Jan danst het stijfjest',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone'
+}
+{
+  prompt: 'Jan danst het stijfjeste',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone'
+}
+{
+  prompt: 'Jan danst het stijfiest',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone'
+}
+{
+  prompt: 'Jan danst het stijfieste',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone'
+}
+{
+  prompt: 'Jan danst het stijfkest',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone'
+}
+{
+  prompt: 'Jan danst het stijfkeste',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone'
+}
+{
+  prompt: 'Jan danst het STIJF+mst',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-SUP of everyone'
+}
+{
+  prompt: 'Jan danst het STIJF+mste',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-DIM-SUP-E of everyone'
+}
+{
+  prompt: 'Jan danst het stijfstjes',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone'
+}
+{
+  prompt: 'Jan danst het stijfsties',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone'
+}
+{
+  prompt: 'Jan danst het stijfstkes',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone'
+}
+{
+  prompt: 'Jan danst het STIJF+stm',
+  gloss: 'Jan dance-3.SG.PRS the stiffly-SUP-DIM of everyone'
+}
+{
+  prompt: 'Marie praat harder',
+  gloss: 'Marie speak.3.SG.PRS loudly-COMP than Jan'
+}
+{
+  prompt: 'Marie praat harderop',
+  gloss: 'Marie speak.3.SG.PRS loudly-COMP-up than Jan'
+}
+{
+  prompt: 'Marie praat hardopper',
+  gloss: 'Marie speak.3.SG.PRS loudly-up-COMP than Jan'
+}
+{
+  prompt: 'Marie praat op hard',
+  gloss: 'Marie speak.3.SG.PRS up loudly than Jan'
+}
+{
+  prompt: 'Marie praat opper hard',
+  gloss: 'Marie speak.3.SG.PRS up-COMP loudly than Jan'
+}
+{
+  prompt: 'Marie praat op hardere toon',
+  gloss: 'Marie speak.3.SG.PRS up loudly-COMP-E than Jan'
+}
+{
+  prompt: 'Marie praat het hardst',
+  gloss: 'Marie speak.3.SG.PRS the loudly-SUP of everyone'
+}
+{
+  prompt: 'Marie praat het hardste',
+  gloss: 'Marie speak.3.SG.PRS the loudly-SUP-E of everyone'
+}
+{
+  prompt: 'Marie praat het hardst op',
+  gloss: 'Marie speak.3.SG.PRS the loudly-SUP up of everyone'
+}
+{
+  prompt: 'Marie praat het hardste op',
+  gloss: 'Marie speak.3.SG.PRS the loudly-SUP-E up of everyone'
+}
+{
+  prompt: 'Marie praat het hard opst',
+  gloss: 'Marie speak.3.SG.PRS the loudly up-SUP of everyone'
+}
+{
+  prompt: 'Marie praat het hard opste',
+  gloss: 'Marie speak.3.SG.PRS the loudly up-SUP-E of everyone'
+}
+{
+  prompt: 'Marie praat het op hardst',
+  gloss: 'Marie speak.3.SG.PRS the up loudly-SUP of everyone'
+}
+{
+  prompt: 'Marie praat het op hardste',
+  gloss: 'Marie speak.3.SG.PRS the up loudly-SUP-E of everyone'
+}
+{
+  prompt: 'Marie praat het opst hard',
+  gloss: 'Marie speak.3.SG.PRS the up-SUP loudly of everyone'
+}
+{
+  prompt: 'Marie praat het opste hard',
+  gloss: 'Marie speak.3.SG.PRS the up-SUP-E loudly of everyone'
+}
+{
+  prompt: 'Jan praat zacht',
+  gloss: 'Jan speak.3SG.PRS softly than Marie'
+}
+{
+  prompt: 'Jan praat zachter',
+  gloss: 'Jan speak.3SG.PRS softly-COMP than Marie '
+}
+{
+  prompt: 'Jan praat zachtjes',
+  gloss: 'Jan speak.3SG.PRS softly-DIM-S than Marie'
+}
+{
+  prompt: 'Jan praat zachtjeser',
+  gloss: 'Jan speak.3SG.PRS softly-DIM-S-COMP than Marie'
+}
+{
+  prompt: 'Jan praat meer zacht',
+  gloss: 'Jan speak.3SG.PRS more softly than Marie'
+}
+{
+  prompt: 'Jan praat meer zachtjes',
+  gloss: 'Jan speak.3SG.PRS more softly-DIM-S than Marie '
+}
+{
+  prompt: 'Jan praat minder zacht',
+  gloss: 'Jan speak.3SG.PRS less softly than Marie'
+}
+{
+  prompt: 'Jan praat minder zachtjes',
+  gloss: 'Jan speak.3SG.PRS less softly-DIM-S than Marie '
+}
+{
+  prompt: 'Marie doet haar werk beter',
+  gloss: 'Marie do-3SG.PRS her work good.COMP than Jan'
+}
+{
+  prompt: 'Marie doet haar werk beterder',
+  gloss: 'Marie do-3SG.PRS her work good.COMP-D-COMP than Jan'
+}
+{
+  prompt: 'Iris gaat lopend',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP to house'
+}
+{
+  prompt: 'Iris gaat lopende',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-E to house'
+}
+{
+  prompt: 'Iris gaat lopens',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-S to house'
+}
+{
+  prompt: 'Iris gaat lopes',
+  gloss: 'Iris go-3SG.PRS walk.PRS.PTCP-ES to house'
+}
+{
+  prompt: 'Iris gaat lopends',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-S to house'
+}
+{
+  prompt: 'Iris gaat lopender',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-ER to house'
+}
+{
+  prompt: 'Iris gaat lopendere',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-ERE to house'
+}
+{
+  prompt: 'Iris gaat al lopend',
+  gloss: 'Iris go-3SG.PRS while walk-PRS.PTCP to house'
+}
+{
+  prompt: 'Iris gaat al lopende',
+  gloss: 'Iris go-3SG.PRS while walk-PRS.PTCP-E to house'
+}
+{
+  prompt: 'Iris gaat al lopens',
+  gloss: 'Iris go-3SG.PRS while walk-PRS.PTCP-S to house'
+}
+{
+  prompt: 'Iris gaat al lopes',
+  gloss: 'Iris go-3SG.PRS while walk.PRS.PTCP-ES to house'
+}
+{
+  prompt: 'Iris gaat al lopends',
+  gloss: 'Iris go-3SG.PRS while walk-PRS.PTCP-S to house'
+}
+{
+  prompt: 'Iris gaat al lopender',
+  gloss: 'Iris go-3SG.PRS walk-PRS.PTCP-ER to house'
+}
+{
+  prompt: 'Iris gaat al lopendere',
+  gloss: 'Iris go-3SG.PRS while walk-PRS.PTCP-ERE to house'
+}
+{ prompt: 'Andrew [slow] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [slowly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [slowish] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [slowishly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [slowlyish] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [quick] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [quickish] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [quickly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [quickishly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [quicklyish] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [fast] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [fastly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [hurriedly] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [hurried] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [hurriedlyish] packed his bag.', gloss: '' }
+{ prompt: 'Andrew [in a hurried way] packed his bag.', gloss: '' }
+{ prompt: 'Andrew packed his bag [slow].', gloss: '' }
+{ prompt: 'Andrew packed his bag [slowly].', gloss: '' }
+{ prompt: 'Andrew packed his bag [slowish].', gloss: '' }
+{ prompt: 'Andrew packed his bag [slowishly].', gloss: '' }
+{ prompt: 'Andrew packed his bag [slowlyish].', gloss: '' }
+{ prompt: 'Andrew packed his bag [quick].', gloss: '' }
+{ prompt: 'Andrew packed his bag [quickish].', gloss: '' }
+{ prompt: 'Andrew packed his bag [quickly].', gloss: '' }
+{ prompt: 'Andrew packed his bag [quickishly].', gloss: '' }
+{ prompt: 'Andrew packed his bag [quicklyish].', gloss: '' }
+{ prompt: 'Andrew packed his bag [fast].', gloss: '' }
+{ prompt: 'Andrew packed his bag [fastly].', gloss: '' }
+{ prompt: 'Andrew packed his bag fastly. fastish', gloss: '' }
+{ prompt: 'Andrew packed his bag fastly. fastishly', gloss: '' }
+{ prompt: 'Andrew packed his bag fastly. fastlyish', gloss: '' }
+{ prompt: 'Andrew packed his bag [hurriedly].', gloss: '' }
+{ prompt: 'Andrew packed his bag [hurried].', gloss: '' }
+{ prompt: 'Andrew packed his bag [hurriedlyish].', gloss: '' }
+{ prompt: 'Andrew packed his bag [in a hurried way].', gloss: '' }
+{ prompt: 'Toby walks [barefoot] on the beach.', gloss: '' }
+{ prompt: 'Toby walks [barefooted] on the beach.', gloss: '' }
+{ prompt: 'Toby walks [barefootedly] on the beach.', gloss: '' }
+{ prompt: 'Toby walks [with bare feet] on the beach.', gloss: '' }
+{ prompt: 'Toby walks on the beach [barefoot].', gloss: '' }
+{ prompt: 'Toby walks on the beach [barefooted].', gloss: '' }
+{ prompt: 'Toby walks on the beach [barefootedly].', gloss: '' }
+{ prompt: 'Toby walks on the beach [with bare feet].', gloss: '' }
+{
+  prompt: 'Elly [out loud] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [out loudly] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [aloud] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [aloudly] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [whispering] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [whisperingly] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [loud] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [loudly] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly [aloudly] talks about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [out loud] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [out loudly] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [aloud] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [aloudly] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [whispering] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [in a whisper] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [in whispers] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [whisperingly] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [loud] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks [loudly] about her annoying roommates.',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [out loud].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [out loudly].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates out [aloud].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates out [aloudly].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [whispering].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [in a whisper].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [in whispers].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates [whisperingly].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates out [loud].',
+  gloss: ''
+}
+{
+  prompt: 'Elly talks about her annoying roommates out [loudly].',
+  gloss: ''
+}
+{ prompt: 'Alex pulled off the bandage [quick].', gloss: '' }
+{ prompt: 'Alex pulled off the bandage [careful].', gloss: '' }
+{ prompt: 'Alex pulled off the bandage [quickly].', gloss: '' }
+{ prompt: 'Alex pulled off the bandage [carefully].', gloss: '' }
+{
+  prompt: 'Alex pulled off the bandage [quick and carefully].',
+  gloss: ''
+}
+{
+  prompt: 'Alex pulled off the bandage [quickly and careful].',
+  gloss: ''
+}
+{
+  prompt: 'Alex pulled off the bandage [quick and careful].',
+  gloss: ''
+}
+{
+  prompt: 'Alex pulled off the bandage [carefully and quick].',
+  gloss: ''
+}
+{
+  prompt: 'Alex pulled off the bandage careful and quicky. careful and quickly',
+  gloss: ''
+}
+{
+  prompt: 'Alex pulled off the bandage [careful and quick].',
+  gloss: ''
+}
+{ prompt: 'Alex [quick] pulled off the bandage.', gloss: '' }
+{ prompt: 'Alex [careful] pulled off the bandage.', gloss: '' }
+{ prompt: 'Alex [quickly] pulled off the bandage.', gloss: '' }
+{ prompt: 'Alex [carefully] pulled off the bandage.', gloss: '' }
+{
+  prompt: 'Alex [quick and carefully] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'Alex [quickly and careful] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'Alex [quick and careful] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'Alex [carefully and quick] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'Alex [careful and quickly] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'Alex [careful and quick] pulled off the bandage.',
+  gloss: ''
+}
+{
+  prompt: 'I do not know when the [quick] bus will arrive.',
+  gloss: ''
+}
+{
+  prompt: 'I do not know when the [quickish] bus will arrive.',
+  gloss: ''
+}
+{ prompt: 'I do not know when the [slow] bus will arrive.', gloss: '' }
+{
+  prompt: 'I do not know when the [slowish] bus will arrive.',
+  gloss: ''
+}
+{
+  prompt: 'The [quicker] bus will not arrive at the same time as the other busses.',
+  gloss: ''
+}
+{
+  prompt: 'The [slower] bus will not arrive at the same time as the other busses.',
+  gloss: ''
+}
+{ prompt: 'That is the [quickest] bus I have ever seen.', gloss: '' }
+{ prompt: 'That is the [slowest] bus I have ever seen.', gloss: '' }
+{ prompt: 'John runs [quicker] than Mary.', gloss: '' }
+{ prompt: 'John runs [more quickly] than Mary.', gloss: '' }
+{ prompt: 'John runs [quicklier] than Mary.', gloss: '' }
+{ prompt: 'John runs [in a quicker way] than Mary.', gloss: '' }
+{ prompt: 'John runs [slower] than Mary.', gloss: '' }
+{ prompt: 'John runs [more slowly] than Mary.', gloss: '' }
+{ prompt: 'John runs [slowlier] than Mary.', gloss: '' }
+{ prompt: 'John runs [in a slower way] than Mary.', gloss: '' }
+{ prompt: 'John runs [more hurried] than Mary.', gloss: '' }
+{ prompt: 'John runs [more hurriedly] than Mary.', gloss: '' }
+{ prompt: 'John runs [quickest] of all.', gloss: '' }
+{ prompt: 'John runs [most quickly] of all.', gloss: '' }
+{ prompt: 'John runs [quickliest] of all.', gloss: '' }
+{ prompt: 'John runs [in the quickest way] of all.', gloss: '' }
+{ prompt: 'John runs [slowest] of all.', gloss: '' }
+{ prompt: 'John runs [most slowly] of all.', gloss: '' }
+{ prompt: 'John runs [slowliest] of all.', gloss: '' }
+{ prompt: 'John runs [most hurried] of all.', gloss: '' }
+{ prompt: 'John runs [most hurriedly] of all.', gloss: '' }
+{ prompt: 'John runs [the quickest] of all.', gloss: '' }
+{ prompt: 'John runs [the most quickly] of all.', gloss: '' }
+{ prompt: 'John runs [the quickliest] of all.', gloss: '' }
+{ prompt: 'John runs [the in the quickest way] of all.', gloss: '' }
+{ prompt: 'John runs [the slowest] of all.', gloss: '' }
+{ prompt: 'John runs [the most slowly] of all.', gloss: '' }
+{ prompt: 'John runs [the slowliest] of all.', gloss: '' }
+{ prompt: 'John runs [the most hurried] of all.', gloss: '' }
+{ prompt: 'John runs [the most hurriedly] of all.', gloss: '' }
+{ prompt: 'James talks [louder] than Elly.', gloss: '' }
+{ prompt: 'James talks [more loud] than Elly.', gloss: '' }
+{ prompt: 'James talks [in a louder way] than Elly.', gloss: '' }
+{ prompt: 'James talks [out louder] than Elly.', gloss: '' }
+{ prompt: 'James talks [alouder] than Elly.', gloss: '' }
+{ prompt: 'James talks [more out loud] than Elly.', gloss: '' }
+{ prompt: 'James talks [more loudly] than Elly.', gloss: '' }
+{ prompt: 'James talks [loudlier] than Elly.', gloss: '' }
+{ prompt: 'James talks [loudest] of all.', gloss: '' }
+{ prompt: 'James talks [most loud] of all.', gloss: '' }
+{ prompt: 'James talks [in the loudest way] of all.', gloss: '' }
+{ prompt: 'James talks [out loudest] of all.', gloss: '' }
+{ prompt: 'James talks [aloudest] of all.', gloss: '' }
+{ prompt: 'James talks [most out loud] of all.', gloss: '' }
+{ prompt: 'James talks [most loudly] of all.', gloss: '' }
+{ prompt: 'James talks [loudliest] of all.', gloss: '' }
+{ prompt: 'James talks [the loudest] of all.', gloss: '' }
+{ prompt: 'James talks [the most loud] of all.', gloss: '' }
+{ prompt: 'James talks [the in the loudest way] of all.', gloss: '' }
+{ prompt: 'James talks [the out loudest] of all.', gloss: '' }
+{ prompt: 'James talks [the most out loud] of all.', gloss: '' }
+{ prompt: 'James talks [the most loudly] of all.', gloss: '' }
+{ prompt: 'James talks [the loudliest] of all.', gloss: '' }
+{ prompt: 'This book reads [easily].', gloss: '' }
+{ prompt: 'This book reads [easily] for children.', gloss: '' }
+{ prompt: 'This boek [easily] reads.', gloss: '' }
+{ prompt: 'This book [easily] reads for children.', gloss: '' }
+{ prompt: 'That chair sits [comfortably].', gloss: '' }
+{ prompt: 'That chair sits [comfortably] for grandma.', gloss: '' }
+{ prompt: 'The chair [comfortably] sits.', gloss: '' }
+{ prompt: 'The chair [comfortably] sits for grandma.', gloss: '' }
+{ prompt: 'The hard cheese cuts [poorly].', gloss: '' }
+{
+  prompt: 'The hard cheese cuts [poorly] for an amateur chef.',
+  gloss: ''
+}
+{ prompt: 'The hard cheese [poorly] cuts.', gloss: '' }
+{
+  prompt: 'The hard cheese [poorly] cuts for an amateur chef.',
+  gloss: ''
+}
+{ prompt: 'Emily danced [how] her mother always danced.', gloss: '' }
+{
+  prompt: 'Emily danced [like how] her mother always danced.',
+  gloss: ''
+}
+{
+  prompt: 'Emily danced [just how] her mother always danced.',
+  gloss: ''
+}
+{ prompt: 'Emily danced [as] her mother always danced.', gloss: '' }
+{
+  prompt: 'Emily danced [as how] her mother always danced.',
+  gloss: ''
+}
+{ prompt: 'Emily danced [so] her mother always danced.', gloss: '' }
+{ prompt: 'Emily danced [so as] her mother always danced.', gloss: '' }
+{
+  prompt: 'Emily danced [like as] her mother always danced.',
+  gloss: ''
+}
+{
+  prompt: 'Emily danced [like as how] her mother always danced.',
+  gloss: ''
+}
+{ prompt: 'Emily looked [exactly like] her mother looked.', gloss: '' }
+{ prompt: 'Emily looked [just like] her mother looked.', gloss: '' }
+{ prompt: 'Emily looked [exactly as] her mother looked.', gloss: '' }
+{ prompt: 'Emily looked [just as] her mother looked.', gloss: '' }
+{
+  prompt: 'Emily looked [exactly the way] her mother looked.',
+  gloss: ''
+}
+{ prompt: 'Emily looked [just the way] her mother looked.', gloss: '' }
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …E…m…i…l…y… …a…l…s…o… …d…a…n…c…e…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …E…m…i…l…y… …d…a…n…c…e…d… …s…o….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …E…m…i…l…y… …d…i…d… …s…o….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …E…m…i…l…y… …a…l…w…a…y…s… …d…i…d… …b…e…a…u…t…i…f…u…l…l…y….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …y…o…u… …m…e…n…t…i…o…n…e…d… …t…h…a…t… …E…m…i…l…y… …d…i…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …I… …c…l…a…i…m…e…d… …h…e… …w…o…u…l…d… …d…a…n…c…e….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …I… …h…e…a…r…d… …t…h…e… …s…t…o…r…y… …t…h…a…t… …E…m…i…l…y… …d…i…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …I… …a…s…k…e…d… …m…y…s…e…l…f… …w…h…o… …d…i…d….…',
+  gloss: ''
+}
+{
+  prompt: "…J…o…h…n… …d…a…n…c…e…d… …a…s… …E…m…i…l…y… …d…i…d…n…'…t….…",
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …I… …w…a…s… …t…o…u…c…h…e…d… …b…e…c…a…u…s…e… …E…m…i…l…y… …d…i…d….…',
+  gloss: ''
+}
+{
+  prompt: '…W…h…a…t… …d…i…d… …J…o…h…n… …d…a…n…c…e… …l…i…k…e…?…',
+  gloss: ''
+}
+{
+  prompt: '…H…o…w… …d…i…d… …J…o…h…n… …d…a…n…c…e… …l…i…k…e…?…',
+  gloss: ''
+}
+{
+  prompt: "…I…t…'…s… …t…h…i…s… …w…a…y… …t…h…a…t… …J…o…h…n… …d…a…n…c…e…d… …(…a…n…d… …n…o…t… …t…h…a…t… …w…a…y…)….…",
+  gloss: ''
+}
+{
+  prompt: "…I…t…'…s… …s…o… …*…p…o…i…n…t…i…n…g… …g…e…s…t…u…r…e…*… …t…h…a…t… …J…o…h…n… …d…a…n…c…e…d… …(…a…n…d… …n…o…t… …s…o…)….…",
+  gloss: ''
+}
+{
+  prompt: "…I…t…'…s… …a…s… …E…m…i…l…y… …a…l…w…a…y…s… …d…a…n…c…e…d… …t…h…a…t… …J…o…h…n… …d…a…n…c…e…d… …(…a…n…d… …n…o…t… …a…s… …h…i…s… …m…o…t…h…e…r…)….…",
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …l…i…k…e… …s…o…m…e…o…n…e… …t…r…y…i…n…g… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …a…s… …s…o…m…e…o…n…e… …t…r…y…i…n…g… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …l…i…k…e… …s…o…m…e…o…n…e… …t…r…i…e…d… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …a…s… …s…o…m…e…o…n…e… …t…r…i…e…d… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…A…s… …I… …s…a…i…d… …s…h…e… …w…o…u…l…d… …d…a…n…c…e…,… …s…h…e… …a…c…t…u…a…l…l…y… …d…a…n…c…e…d….…',
+  gloss: ''
+}
+{
+  prompt: '…E…x…a…c…t…l…y… …a…s… …I… …s…a…i…d… …s…h…e… …w…o…u…l…d… …d…a…n…c…e…,… …s…h…e… …a…c…t…u…a…l…l…y… …d…a…n…c…e…d….…',
+  gloss: ''
+}
+{
+  prompt: '…S…o… …a…s… …I… …s…a…i…d… …s…h…e… …w…o…u…l…d… …d…a…n…c…e…,… …s…h…e… …a…c…t…u…a…l…l…y… …d…a…n…c…e…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…u…s…t… …a…s… …I… …s…a…i…d… …s…h…e… …w…o…u…l…d… …d…a…n…c…e…,… …s…h…e… …a…c…t…u…a…l…l…y… …d…a…n…c…e…d….…',
+  gloss: ''
+}
+{ prompt: 'Hannah danced [if as] it were her birthday.', gloss: '' }
+{ prompt: 'Hannah danced [like if] it were her birthday.', gloss: '' }
+{
+  prompt: 'Hannah danced [like as if] it were her birthday.',
+  gloss: ''
+}
+{ prompt: 'Hannah danced [if like] it were her birthday.', gloss: '' }
+{ prompt: 'Hannah danced [like] it were her birthday.', gloss: '' }
+{ prompt: 'Hannah danced [so as if] it were her birthday.', gloss: '' }
+{ prompt: 'Hannah danced [if so] it were her birthday.', gloss: '' }
+{ prompt: 'Hannah danced how it were her birthday. how ', gloss: '' }
+{
+  prompt: 'Hannah danced [like as how] it were her birthday.',
+  gloss: ''
+}
+{
+  prompt: 'Hannah danced [as though] it were her birthday.',
+  gloss: ''
+}
+{
+  prompt: 'Hannah danced [as if though] it were her birthday.',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …a…t…e… …t…h…e… …w…h…o…l…e… …m…e…a…t… …p…i…e… …a…s… …i…f… …c…h…e…e…s…e….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …i…f… …a… …b…i…r…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …i…f… …t…o… …f…l…y….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …d…a…n…c…e…d… …a…s… …i…f… …f…l…y…i…n…g….…',
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …a…s… …i…f… …s…o…m…e…o…n…e… …t…r…i…e…d… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…A… …s…o…u…n…d… …a…s… …i…f… …s…o…m…e…o…n…e… …t…r…y…i…n…g… …n…o…t… …t…o… …m…a…k…e… …a… …s…o…u…n…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …b…e…h…a…v…e…d… …a…s… …h…i…s… …f…a…t…h…e…r… …t…o…l…d… …h…i…m… …a…n…d… …a…s… …h…i…s… …m…o…t…h…e…r… …t…a…u…g…h…t… …h…i…m….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …w…a…l…k…e…d… …a…s… …i…f… …h…e… …w…e…r…e… …d…r…u…n…k… …a…n…d… …a…s… …i…f… …a… …d…o…g… …c…h…a…s…e…d… …h…i…m….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …w…a…l…k…e…d… …a…s… …i…f… …h…e… …w…e…r…e… …d…r…u…n…k… …a…n…d… …i…f… …a… …d…o…g… …c…h…a…s…e…d… …h…i…m….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …w…a…l…k…e…d… …a…s… …i…f… …h…e… …w…e…r…e… …d…r…u…n…k… …a…n…d… …a… …d…o…g… …c…h…a…s…e…d… …h…i…m….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …b…e…h…a…v…e…d… …a…s… …i…f… …h…e… …w…e…r…e… …b…e…i…n…g… …w…a…t…c…h…e…d… …a…n…d… …a…s… …h…e… …w…a…s… …o…b…l…i…g…e…d… …t…o….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …b…e…h…a…v…e…d… …a…s… …h…e… …w…a…s… …o…b…l…i…g…e…d… …t…o… …a…n…d… …a…s… …i…f… …h…e… …w…e…r…e… …b…e…i…n…g… …w…a…t…c…h…e…d….…',
+  gloss: ''
+}
+{
+  prompt: '…J…o…h…n… …w…a…l…k…e…d… …t…h…e… …w…a…y… …h…e… …a…l…w…a…y…s… …d…i…d… …a…n…d… …a…s… …i…f… …h…e… …h…a…d… …a… …s…t…o…n…e… …i…n… …h…i…s… …s…h…o…e….…',
+  gloss: ''
+}
+{
+  prompt: "Mare laket [lûd] om'e grap ",
+  gloss: 'Mare laugh-3SG.PRS loudly at the joke'
+}
+{
+  prompt: "Mare laket [lûdop] om'e grap ",
+  gloss: 'Mare laugh-3SG.PRS aloud at the joke'
+}
+{
+  prompt: "Mare laket [op lûd] om'e grap ",
+  gloss: 'Mare laugh-3SG.PRS on loud at the joke'
+}
+{
+  prompt: "Mare laket [op lûde toan] om'e grap ",
+  gloss: 'Mare laugh-3SG.PRS on loud tone at the joke'
+}
+{
+  prompt: 'Imke rint [minder stiltsjes] de trep op as har suster ',
+  gloss: ''
+}
+{ prompt: 'Mare laket [lûder] as Anne', gloss: 'Mare laughs-3SG.PRS ' }
+{ prompt: 'Jan slûpt [flucher] an it hûs foarby as Marie ', gloss: '' }
+{ prompt: 'Jan dûnset [anders ] wie er dronken ', gloss: '' }
+{ prompt: 'Jan dûnset [lykas oft] wie er dronken ', gloss: '' }
+{
+  prompt: 'Das Kind rutscht bäuchlingsweise die Rutsche hinunter. bäuchlingweise',
+  gloss: 'the child slide-3SG.PRS belly-ly-wise the slide down'
+}
+{
+  prompt: 'Das Kind rutscht kopfübereweise die Rutsche hinunter. kopfüberweise',
+  gloss: 'the child slide-3SG.PRS head-over-E-wise the slide down'
+}
+{
+  prompt: 'Emma spricht flüsternderweise über ihre Probleme. flüsternderweise ',
+  gloss: 'Emma speak-3SG.PRS whisper-PRS.PTCP-wise about her-ACC.PL problem-ACC.PL'
+}
+{
+  prompt: 'Emma spricht [auf möglichst lautstarke Weise] über ihre Probleme.',
+  gloss: 'Karin speak-3SG.PRS possible-SUP loud-strong about her-ACC.F research'
+}
+{
+  prompt: 'Emma spricht [auf lautstärkst mögliche Weise] über ihre Probleme.',
+  gloss: 'Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research'
+}
+{
+  prompt: 'Emma spricht [auf möglichst flüsternde Weise] über ihre Probleme.',
+  gloss: 'Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research'
+}
+{
+  prompt: 'Emma spricht [auf flüsterndest mögliche Weise] über ihre Probleme.',
+  gloss: 'Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research'
+}
+{
+  prompt: 'Hans hat sein Zimmer gründlichserweise als Ingrid geputzt. gründlichserweiser',
+  gloss: 'Hans have.3SG.PRS his room thorough-S-wise than Ingrid clean.PTCP'
+}
+{
+  prompt: '',
+  gloss: 'Jan dance-3SG.PRS just.now as be.3SG.PRS he drunk '
+}
+{
+  prompt: '',
+  gloss: 'Jan dance-3SG.PRS just.now as if  he be.3SG.PRS drunk '
+}
+{
+  prompt: '',
+  gloss: 'Jan dance-3SG.PRS just.now as if  he be.3SG.PRS drunk '
+}
+{
+  prompt: '',
+  gloss: 'Jan dance-3SG.PRS just.now how if  he be.3SG.PRS drunk '
+}
+301 errors found!

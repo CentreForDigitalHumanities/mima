@@ -1,3 +1,4 @@
+@use "bulma/sass/components/breadcrumb";
 @use "bulma/sass/utilities/mixins";
 @import '../../variables.scss';
 
@@ -42,6 +43,24 @@ svg:hover text {
 
 .animate-up {
     animation: append-animate-up .15s ease-in-out;
+}
+
+.breadcrumb {
+    @extend .breadcrumb;
+
+    li+li::before {
+        font-weight: bold;
+        color: var(--bulma-success);
+    }
+
+    span {
+        @extend a;
+
+        &,
+        &:hover {
+            color: var(--bulma-box-color);
+        }
+    }
 }
 
 @keyframes append-animate-down {

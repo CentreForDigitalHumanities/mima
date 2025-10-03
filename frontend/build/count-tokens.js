@@ -11,6 +11,41 @@ const judgments = JSON.parse(fs.readFileSync(`${assetsDir}/likert_scales_merged.
 // * > main_question
 const judgmentQuestions = Object.values(judgments).map(judgment => judgment.main_question);
 
+console.log('Checking question glosses...');
+let errors = 0;
+for (const question of Object.values(questions)) {
+    errors += checkGloss(question.prompt, question.gloss);
+}
+console.log(`${errors} errors found!`);
+
+console.log('Checking judgment glosses...');
+errors = 0;
+function formatJudgmentQuestion(judgment) {
+    if (!judgment.sub_question) {
+        return judgment.main_question;
+    }
+
+    if (judgment.main_question.indexOf('…') === -1) {
+        return judgment.main_question + ' ' + judgment.sub_question;
+    }
+
+    return judgment.main_question.replace('…', `[${judgment.sub_question}]`);
+}
+
+for (const judgment of Object.values(judgments)) {
+    errors += checkGloss(formatJudgmentQuestion(judgment), judgment.gloss);
+}
+console.log(`${errors} errors found!`);
+
+function checkGloss(prompt, gloss) {
+    if (countTokens(prompt) != countTokens(gloss)) {
+        console.error({ prompt, gloss });
+        return 1;
+    }
+
+    return 0;
+}
+
 function countTokens(line) {
     if (line === 'unattested') {
         return 0;

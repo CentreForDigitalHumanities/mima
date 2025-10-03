@@ -14,6 +14,7 @@
         <div class="level-right">
             <mima-likert-count-toggle [show]="show$ | async" (toggleShow)="toggleShow()"></mima-likert-count-toggle>
             <mima-manual-button id="judgment"></mima-manual-button>
+            <mima-download-button [matchedJudgments]="matchedJudgments"></mima-download-button>
         </div>
     </div>
     @if (listMatchedDialects) {
