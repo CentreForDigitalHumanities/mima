@@ -14,6 +14,8 @@ type QuestionRow = {
 
 type JudgmentRow = {
     participantId?: MatchedParts,
+    question?: MatchedParts,
+    subquestion?: MatchedParts,
     dialects?: MatchedParts[],
     score: MatchedParts
 }
@@ -47,8 +49,10 @@ const JudgmentColumnNames: {
 
 const JudgmentColumnOrder: (keyof JudgmentRow)[] =
     [
-        'score',
         'participantId',
+        'question',
+        'subquestion',
+        'score',
         'dialects'
     ];
 
@@ -122,6 +126,8 @@ export class DownloadService {
 
             yield {
                 participantId: response.participantId,
+                question: judgment.mainQuestion,
+                subquestion: judgment.subQuestion,
                 dialects: response.dialects,
                 score: response.score
             };
