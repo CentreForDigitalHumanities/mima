@@ -6,7 +6,7 @@ Adjective/adjectival: a word typically serving as a modifier of a noun to denote
 
 Adverb/adverbial: An adverb is a word belonging to a class of words which modify any constituent class of words other than nouns, such as verbs, adjectives, and sentences, and typically expresses manner, place, time, or direction.
 
-Adjunct: Adjuncts are phrases or clauses that function as modifiers within a sentence, as in *John looked at me* ***in a strange way** *and *She behaved* ***as if she knew him for a very long time***. Adjuncts are islands (see entry 'Island' for definition) for extraction, as shown by the ungrammaticality of the following examples: (i) ****What way*** *did John look at me [in* ~~*what way*~~*]?*; (ii) ****Who*** *did she behave [as if she knew* ~~*who*~~ *for a long time]*? The symbol * is a so-called asterisk; it indicates that the sentence that follows is ungrammatical.
+Adjunct: Adjuncts are phrases or clauses that function as modifiers within a sentence, as in *John looked at me* ***in a strange way*** and *She behaved* ***as if she knew him for a very long time***. Adjuncts are islands (see entry 'Island' for definition) for extraction, as shown by the ungrammaticality of the following examples: (i) \****What way*** *did John look at me [in* ~~*what way*~~*]?*; (ii) ****Who*** *did she behave [as if she knew* ~~*who*~~ *for a long time]*? The symbol * is a so-called asterisk; it indicates that the sentence that follows is ungrammatical.
 
 Aspect: A cover term for those properties of a sentence that constitute the temporal structure of the event denoted by the verb and its arguments. Aspect denotes the nature of the action of a verb as to its beginning, duration, completion, and/or repetition and without reference to its position in time. For example, in English it is possible to make a distinction between a concluded and an in-progress activity by means of the perfective (*I have gone*), and the progressive aspect (*I am going*), respectively.
 
@@ -24,7 +24,7 @@ Degree: Degree words are words with meanings like (Dutch) *erg* 'very', *vreseli
 
 Demonstrative: A word like *this* and *that*, *here* and *there*, *so* and *such* pointing out the one entity/place/manner referred to and distinguishing it from others of the same class.
 
-Determiner: Closed-class element that functions as grounding predication in a noun phrase. The class of determiners includes articles (the, a), as well as demonstrative (this, that, these, those), possessive (my, your, his, her, its, our, their), and interrogative (which, whose, what) determiners.
+Determiner: A closed-class element that functions as grounding predication in a noun phrase. The class of determiners includes articles (the, a), as well as demonstrative (this, that, these, those), possessive (my, your, his, her, its, our, their), and interrogative (which, whose, what) determiners.
 
 Dialect: A variety of a language, most often defined in geographical terms.
 
@@ -32,7 +32,7 @@ Diminutive: A suffix that expresses the meaning 'small (in size)'. It normally c
 
 Double Comparative: When an adjective phrase includes two comparative markers, it is referred to as a 'double comparative'. Adjective phrases such as *meer afhankelijker* (more dependent-er, 'more dependent') and *minder duurder* (less expensive-er, 'less expensive') exemplify this phenomenon. The use of double comparatives is most commonly linked to specific dialects or colloquial language. Besides double comparatives of the type 'MORE/LESS + A + *-er*', there are also double comparatives of the type A+ *-er* + *-er*, as in *grot-er-der* (big-er-er, 'bigger'). See also 'Comparitive' entry.
 
-Extraposition: An operation that places a clause or a PP to the right periphery of the sentence. In Dutch, this right-peripheral (i.e., extraposed) position of the clause/PP corresponds to a postverbal position in Dutch. An example of PP-extraposition: *Jan heeft mij* geholpen***met mijn huiswerk*** (Jan has me helped with my homework, 'Jan helped me with my homework.'). An example of extraposition of a clause: *Jan zal* doen***alsof hij ziek is*** (Jan will act as.if he ill is, 'Jan will act as if he is ill.').
+Extraposition: An operation that places a clause or a PP to the right periphery of the sentence. In Dutch, this right-peripheral (i.e., extraposed) position of the clause/PP corresponds to a postverbal position in Dutch. An example of PP-extraposition: *Jan heeft mij* geholpen ***met mijn huiswerk*** (Jan has me helped with my homework, 'Jan helped me with my homework.'). An example of extraposition of a clause: *Jan zal* doen ***alsof hij ziek is*** (Jan will act as.if he ill is, 'Jan will act as if he is ill.').
 
 Gap: In syntax, a gap typically identifies the place within a sentence from which an element was displaced or elided. Among the syntactic constructions that famously contain a gap are interrogative clauses, whose gap is situated where the *wh*-phrase originated (as in ***How*** *did you believe [that Bill fixed the car* ~~*how*~~*]?*), and relative clauses, whose gap identifies the place from which the relative pronoun originated (as in *You can do [****what*** *you want* ~~*what*~~*]*).
 
@@ -78,7 +78,7 @@ Superlative: The form of an adjective or adverb that is used to describe an obje
 
 Syntax/syntactic: The set of rules and principles in a language according to which words, phrases, and clauses are arranged to create well-formed sentences. Also the analysis or study of such principles; the branch of grammar concerned with this.
 
-Topicalization: An operation that places a phrase into the clause-initial position of a main clause. The topicalized phrase functions as the topic of discourse, that is, what the ongoing discourse is about. For example, if person A asks the question *Do you happen to know where my keys are?*, person B may answer ***Your keys****, I saw lying on the table.* Topicalization can also be applied to (manner) adverbials: *Pour the sauce over the mushrooms and mix**carefully. ****This way**** you won't get**a mess!*
+Topicalization: An operation that places a phrase into the clause-initial position of a main clause. The topicalized phrase functions as the topic of discourse, that is, what the ongoing discourse is about. For example, if person A asks the question *Do you happen to know where my keys are?*, person B may answer ***Your keys****, I saw lying on the table.* Topicalization can also be applied to (manner) adverbials: *Pour the sauce over the mushrooms and mix carefully. ***This way*** you won't get a mess!*
 
 Unattested: See 'Attestation' entry.
 
