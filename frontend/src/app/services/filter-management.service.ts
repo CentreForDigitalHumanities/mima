@@ -407,9 +407,10 @@ export class FilterManagementService implements OnDestroy {
                     labels[judgment.mainQuestionId] = `[${judgment.mainQuestionId}] ${judgment.mainQuestion}`;
                     break;
 
-                case 'subQuestionTextId':
-                    subQuestions[judgment.subQuestionTextId] = judgment.subQuestion;
-                    break;
+                // DISABLING BECAUSE NOT USEFUL FOR USER
+                // case 'subQuestionTextId':
+                //     subQuestions[judgment.subQuestionTextId] = judgment.subQuestion;
+                //     break;
 
                 case 'responses':
                     // not used
@@ -423,9 +424,10 @@ export class FilterManagementService implements OnDestroy {
             }
         }
 
-        for (let [id, text] of Object.entries(subQuestions)) {
-            labels[id] = `[${id}] ${text}`;
-        }
+        // DISABLING BECAUSE NOT USEFUL FOR USER
+        // for (let [id, text] of Object.entries(subQuestions)) {
+        //     labels[id] = `[${id}] ${text}`;
+        // }
 
         return labels;
     }
