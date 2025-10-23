@@ -39,7 +39,7 @@
 <div class="box metadata" [ngClass]="{'is-loading': loading}">
     @if (questionExpanded) {
     <luu-view>
-        <luu-line type="example" [value]="model.prompt.highlightedText"></luu-line>
+        <luu-line type="example" [value]="model.split_item.highlightedText"></luu-line>
         <luu-line type="gloss" [value]="model.gloss.highlightedText"></luu-line>
         <luu-translation>
             <em [innerHTML]="model.en_translation | highlight"></em>
