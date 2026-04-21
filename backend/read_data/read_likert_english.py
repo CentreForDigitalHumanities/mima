@@ -17,7 +17,7 @@ for line in likert_data_english[1:]:
     participant_id = line[0]
     main_question_id = line[4]
     main_question = line[7]
-    sub_question = line[5]
+    sub_question = line[5] if line[5] not in ['', ' ', '   '] else 'clausal'
     sub_question_id = main_question_id + "_" + sub_question
     main_question = main_question.replace(sub_question, "\u2026")
     try:

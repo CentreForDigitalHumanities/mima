@@ -10901,11 +10901,11 @@
         "gloss": ""
     },
     "EnglishSimilDance10": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026s\u2026o\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
+        "main_question": "John danced as Emily also danced.",
         "main_question_id": "EnglishSimilDance10",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance10_",
-        "sub_question_text_id": "EnglishSimilDance10_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance10_clausal",
+        "sub_question_text_id": "EnglishSimilDance10_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -10961,11 +10961,11 @@
         "gloss": ""
     },
     "EnglishSimilDance11": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026s\u2026o\u2026.\u2026",
+        "main_question": "John danced as Emily danced so.",
         "main_question_id": "EnglishSimilDance11",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance11_",
-        "sub_question_text_id": "EnglishSimilDance11_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance11_clausal",
+        "sub_question_text_id": "EnglishSimilDance11_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11021,11 +11021,11 @@
         "gloss": ""
     },
     "EnglishSimilDance12": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026 \u2026s\u2026o\u2026.\u2026",
+        "main_question": "John danced as Emily did so.",
         "main_question_id": "EnglishSimilDance12",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance12_",
-        "sub_question_text_id": "EnglishSimilDance12_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance12_clausal",
+        "sub_question_text_id": "EnglishSimilDance12_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11081,11 +11081,11 @@
         "gloss": ""
     },
     "EnglishSimilDance13": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026i\u2026d\u2026 \u2026b\u2026e\u2026a\u2026u\u2026t\u2026i\u2026f\u2026u\u2026l\u2026l\u2026y\u2026.\u2026",
+        "main_question": "John danced as Emily always did beautifully.",
         "main_question_id": "EnglishSimilDance13",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance13_",
-        "sub_question_text_id": "EnglishSimilDance13_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance13_clausal",
+        "sub_question_text_id": "EnglishSimilDance13_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11141,11 +11141,11 @@
         "gloss": ""
     },
     "EnglishSimilDance14": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026y\u2026o\u2026u\u2026 \u2026m\u2026e\u2026n\u2026t\u2026i\u2026o\u2026n\u2026e\u2026d\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
+        "main_question": "John danced as you mentioned that Emily did.",
         "main_question_id": "EnglishSimilDance14",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance14_",
-        "sub_question_text_id": "EnglishSimilDance14_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance14_clausal",
+        "sub_question_text_id": "EnglishSimilDance14_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11201,11 +11201,11 @@
         "gloss": ""
     },
     "EnglishSimilDance15": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026c\u2026l\u2026a\u2026i\u2026m\u2026e\u2026d\u2026 \u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026.\u2026",
+        "main_question": "John danced as I claimed he would dance.",
         "main_question_id": "EnglishSimilDance15",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance15_",
-        "sub_question_text_id": "EnglishSimilDance15_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance15_clausal",
+        "sub_question_text_id": "EnglishSimilDance15_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11261,11 +11261,11 @@
         "gloss": ""
     },
     "EnglishSimilDance16": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026h\u2026e\u2026a\u2026r\u2026d\u2026 \u2026t\u2026h\u2026e\u2026 \u2026s\u2026t\u2026o\u2026r\u2026y\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
+        "main_question": "John danced as I heard the story that Emily did.",
         "main_question_id": "EnglishSimilDance16",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance16_",
-        "sub_question_text_id": "EnglishSimilDance16_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance16_clausal",
+        "sub_question_text_id": "EnglishSimilDance16_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11364,11 +11364,11 @@
         "gloss": ""
     },
     "EnglishSimilDance17": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026a\u2026s\u2026k\u2026e\u2026d\u2026 \u2026m\u2026y\u2026s\u2026e\u2026l\u2026f\u2026 \u2026w\u2026h\u2026o\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
+        "main_question": "John danced as I asked myself who did.",
         "main_question_id": "EnglishSimilDance17",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance17_",
-        "sub_question_text_id": "EnglishSimilDance17_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance17_clausal",
+        "sub_question_text_id": "EnglishSimilDance17_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11425,11 +11425,11 @@
         "gloss": ""
     },
     "EnglishSimilDance18": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026n\u2026'\u2026t\u2026.\u2026",
+        "main_question": "John danced as Emily didn't.",
         "main_question_id": "EnglishSimilDance18",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance18_",
-        "sub_question_text_id": "EnglishSimilDance18_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance18_clausal",
+        "sub_question_text_id": "EnglishSimilDance18_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11486,11 +11486,11 @@
         "gloss": ""
     },
     "EnglishSimilDance19": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026w\u2026a\u2026s\u2026 \u2026t\u2026o\u2026u\u2026c\u2026h\u2026e\u2026d\u2026 \u2026b\u2026e\u2026c\u2026a\u2026u\u2026s\u2026e\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026d\u2026i\u2026d\u2026.\u2026",
+        "main_question": "John danced as I was touched because Emily did.",
         "main_question_id": "EnglishSimilDance19",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance19_",
-        "sub_question_text_id": "EnglishSimilDance19_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance19_clausal",
+        "sub_question_text_id": "EnglishSimilDance19_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11547,11 +11547,11 @@
         "gloss": ""
     },
     "EnglishSimilDance20": {
-        "main_question": "\u2026W\u2026h\u2026a\u2026t\u2026 \u2026d\u2026i\u2026d\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026 \u2026l\u2026i\u2026k\u2026e\u2026?\u2026",
+        "main_question": "What did John dance like?",
         "main_question_id": "EnglishSimilDance20",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance20_",
-        "sub_question_text_id": "EnglishSimilDance20_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance20_clausal",
+        "sub_question_text_id": "EnglishSimilDance20_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11607,11 +11607,11 @@
         "gloss": ""
     },
     "EnglishSimilDance21": {
-        "main_question": "\u2026H\u2026o\u2026w\u2026 \u2026d\u2026i\u2026d\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026 \u2026l\u2026i\u2026k\u2026e\u2026?\u2026",
+        "main_question": "How did John dance like?",
         "main_question_id": "EnglishSimilDance21",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance21_",
-        "sub_question_text_id": "EnglishSimilDance21_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance21_clausal",
+        "sub_question_text_id": "EnglishSimilDance21_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11667,11 +11667,11 @@
         "gloss": ""
     },
     "EnglishSimilDance22": {
-        "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026t\u2026h\u2026i\u2026s\u2026 \u2026w\u2026a\u2026y\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026w\u2026a\u2026y\u2026)\u2026.\u2026",
+        "main_question": "It's this way that John danced (and not that way).",
         "main_question_id": "EnglishSimilDance22",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance22_",
-        "sub_question_text_id": "EnglishSimilDance22_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance22_clausal",
+        "sub_question_text_id": "EnglishSimilDance22_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11727,11 +11727,11 @@
         "gloss": ""
     },
     "EnglishSimilDance23": {
-        "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026s\u2026o\u2026 \u2026*\u2026p\u2026o\u2026i\u2026n\u2026t\u2026i\u2026n\u2026g\u2026 \u2026g\u2026e\u2026s\u2026t\u2026u\u2026r\u2026e\u2026*\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026s\u2026o\u2026)\u2026.\u2026",
+        "main_question": "It's so *pointing gesture* that John danced (and not so).",
         "main_question_id": "EnglishSimilDance23",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance23_",
-        "sub_question_text_id": "EnglishSimilDance23_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance23_clausal",
+        "sub_question_text_id": "EnglishSimilDance23_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11787,11 +11787,11 @@
         "gloss": ""
     },
     "EnglishSimilDance24": {
-        "main_question": "\u2026I\u2026t\u2026'\u2026s\u2026 \u2026a\u2026s\u2026 \u2026E\u2026m\u2026i\u2026l\u2026y\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026t\u2026h\u2026a\u2026t\u2026 \u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026(\u2026a\u2026n\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026m\u2026o\u2026t\u2026h\u2026e\u2026r\u2026)\u2026.\u2026",
+        "main_question": "It's as Emily always danced that John danced (and not as his mother).",
         "main_question_id": "EnglishSimilDance24",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance24_",
-        "sub_question_text_id": "EnglishSimilDance24_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance24_clausal",
+        "sub_question_text_id": "EnglishSimilDance24_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11847,11 +11847,11 @@
         "gloss": ""
     },
     "EnglishSimilSound1": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026l\u2026i\u2026k\u2026e\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound like someone trying not to make a sound.",
         "main_question_id": "EnglishSimilSound1",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilSound1_",
-        "sub_question_text_id": "EnglishSimilSound1_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilSound1_clausal",
+        "sub_question_text_id": "EnglishSimilSound1_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11907,11 +11907,11 @@
         "gloss": ""
     },
     "EnglishSimilSound2": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound as someone trying not to make a sound.",
         "main_question_id": "EnglishSimilSound2",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilSound2_",
-        "sub_question_text_id": "EnglishSimilSound2_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilSound2_clausal",
+        "sub_question_text_id": "EnglishSimilSound2_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -11967,11 +11967,11 @@
         "gloss": ""
     },
     "EnglishSimilSound3": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026l\u2026i\u2026k\u2026e\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound like someone tried not to make a sound.",
         "main_question_id": "EnglishSimilSound3",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilSound3_",
-        "sub_question_text_id": "EnglishSimilSound3_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilSound3_clausal",
+        "sub_question_text_id": "EnglishSimilSound3_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12027,11 +12027,11 @@
         "gloss": ""
     },
     "EnglishSimilSound4": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound as someone tried not to make a sound.",
         "main_question_id": "EnglishSimilSound4",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilSound4_",
-        "sub_question_text_id": "EnglishSimilSound4_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilSound4_clausal",
+        "sub_question_text_id": "EnglishSimilSound4_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12087,11 +12087,11 @@
         "gloss": ""
     },
     "EnglishSimilDance25": {
-        "main_question": "\u2026A\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
+        "main_question": "As I said she would dance, she actually danced.",
         "main_question_id": "EnglishSimilDance25",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance25_",
-        "sub_question_text_id": "EnglishSimilDance25_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance25_clausal",
+        "sub_question_text_id": "EnglishSimilDance25_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12147,11 +12147,11 @@
         "gloss": ""
     },
     "EnglishSimilDance26": {
-        "main_question": "\u2026E\u2026x\u2026a\u2026c\u2026t\u2026l\u2026y\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
+        "main_question": "Exactly as I said she would dance, she actually danced.",
         "main_question_id": "EnglishSimilDance26",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance26_",
-        "sub_question_text_id": "EnglishSimilDance26_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance26_clausal",
+        "sub_question_text_id": "EnglishSimilDance26_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12207,11 +12207,11 @@
         "gloss": ""
     },
     "EnglishSimilDance27": {
-        "main_question": "\u2026S\u2026o\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
+        "main_question": "So as I said she would dance, she actually danced.",
         "main_question_id": "EnglishSimilDance27",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance27_",
-        "sub_question_text_id": "EnglishSimilDance27_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance27_clausal",
+        "sub_question_text_id": "EnglishSimilDance27_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12267,11 +12267,11 @@
         "gloss": ""
     },
     "EnglishSimilDance28": {
-        "main_question": "\u2026J\u2026u\u2026s\u2026t\u2026 \u2026a\u2026s\u2026 \u2026I\u2026 \u2026s\u2026a\u2026i\u2026d\u2026 \u2026s\u2026h\u2026e\u2026 \u2026w\u2026o\u2026u\u2026l\u2026d\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026,\u2026 \u2026s\u2026h\u2026e\u2026 \u2026a\u2026c\u2026t\u2026u\u2026a\u2026l\u2026l\u2026y\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026.\u2026",
+        "main_question": "Just as I said she would dance, she actually danced.",
         "main_question_id": "EnglishSimilDance28",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilDance28_",
-        "sub_question_text_id": "EnglishSimilDance28_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilDance28_clausal",
+        "sub_question_text_id": "EnglishSimilDance28_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -12987,11 +12987,11 @@
         "gloss": ""
     },
     "EnglishSimulDance12": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026a\u2026t\u2026e\u2026 \u2026t\u2026h\u2026e\u2026 \u2026w\u2026h\u2026o\u2026l\u2026e\u2026 \u2026m\u2026e\u2026a\u2026t\u2026 \u2026p\u2026i\u2026e\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026c\u2026h\u2026e\u2026e\u2026s\u2026e\u2026.\u2026",
+        "main_question": "John ate the whole meat pie as if cheese.",
         "main_question_id": "EnglishSimulDance12",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimulDance12_",
-        "sub_question_text_id": "EnglishSimulDance12_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimulDance12_clausal",
+        "sub_question_text_id": "EnglishSimulDance12_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13047,11 +13047,11 @@
         "gloss": ""
     },
     "EnglishSimulDance13": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026b\u2026i\u2026r\u2026d\u2026.\u2026",
+        "main_question": "John danced as if a bird.",
         "main_question_id": "EnglishSimulDance13",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimulDance13_",
-        "sub_question_text_id": "EnglishSimulDance13_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimulDance13_clausal",
+        "sub_question_text_id": "EnglishSimulDance13_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13107,11 +13107,11 @@
         "gloss": ""
     },
     "EnglishSimulDance14": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026t\u2026o\u2026 \u2026f\u2026l\u2026y\u2026.\u2026",
+        "main_question": "John danced as if to fly.",
         "main_question_id": "EnglishSimulDance14",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimulDance14_",
-        "sub_question_text_id": "EnglishSimulDance14_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimulDance14_clausal",
+        "sub_question_text_id": "EnglishSimulDance14_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13167,11 +13167,11 @@
         "gloss": ""
     },
     "EnglishSimulDance15": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026d\u2026a\u2026n\u2026c\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026f\u2026l\u2026y\u2026i\u2026n\u2026g\u2026.\u2026",
+        "main_question": "John danced as if flying.",
         "main_question_id": "EnglishSimulDance15",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimulDance15_",
-        "sub_question_text_id": "EnglishSimulDance15_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimulDance15_clausal",
+        "sub_question_text_id": "EnglishSimulDance15_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13227,11 +13227,11 @@
         "gloss": ""
     },
     "EngishSimulSound1": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026i\u2026e\u2026d\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound as if someone tried not to make a sound.",
         "main_question_id": "EngishSimulSound1",
-        "sub_question": "",
-        "sub_question_id": "EngishSimulSound1_",
-        "sub_question_text_id": "EngishSimulSound1_",
+        "sub_question": "clausal",
+        "sub_question_id": "EngishSimulSound1_clausal",
+        "sub_question_text_id": "EngishSimulSound1_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13287,11 +13287,11 @@
         "gloss": ""
     },
     "EngishSimulSound2": {
-        "main_question": "\u2026A\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026s\u2026o\u2026m\u2026e\u2026o\u2026n\u2026e\u2026 \u2026t\u2026r\u2026y\u2026i\u2026n\u2026g\u2026 \u2026n\u2026o\u2026t\u2026 \u2026t\u2026o\u2026 \u2026m\u2026a\u2026k\u2026e\u2026 \u2026a\u2026 \u2026s\u2026o\u2026u\u2026n\u2026d\u2026.\u2026",
+        "main_question": "A sound as if someone trying not to make a sound.",
         "main_question_id": "EngishSimulSound2",
-        "sub_question": "",
-        "sub_question_id": "EngishSimulSound2_",
-        "sub_question_text_id": "EngishSimulSound2_",
+        "sub_question": "clausal",
+        "sub_question_id": "EngishSimulSound2_clausal",
+        "sub_question_text_id": "EngishSimulSound2_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13347,11 +13347,11 @@
         "gloss": ""
     },
     "EnglishSimilBehave1": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026f\u2026a\u2026t\u2026h\u2026e\u2026r\u2026 \u2026t\u2026o\u2026l\u2026d\u2026 \u2026h\u2026i\u2026m\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026i\u2026s\u2026 \u2026m\u2026o\u2026t\u2026h\u2026e\u2026r\u2026 \u2026t\u2026a\u2026u\u2026g\u2026h\u2026t\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
+        "main_question": "John behaved as his father told him and as his mother taught him.",
         "main_question_id": "EnglishSimilBehave1",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilBehave1_",
-        "sub_question_text_id": "EnglishSimilBehave1_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilBehave1_clausal",
+        "sub_question_text_id": "EnglishSimilBehave1_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13407,11 +13407,11 @@
         "gloss": ""
     },
     "EnglishSimilWalk1": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
+        "main_question": "John walked as if he were drunk and as if a dog chased him.",
         "main_question_id": "EnglishSimilWalk1",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilWalk1_",
-        "sub_question_text_id": "EnglishSimilWalk1_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilWalk1_clausal",
+        "sub_question_text_id": "EnglishSimilWalk1_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13467,11 +13467,11 @@
         "gloss": ""
     },
     "EnglishSimilWalk2": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026i\u2026f\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
+        "main_question": "John walked as if he were drunk and if a dog chased him.",
         "main_question_id": "EnglishSimilWalk2",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilWalk2_",
-        "sub_question_text_id": "EnglishSimilWalk2_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilWalk2_clausal",
+        "sub_question_text_id": "EnglishSimilWalk2_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13527,11 +13527,11 @@
         "gloss": ""
     },
     "EnglishSimilWalk3": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026d\u2026r\u2026u\u2026n\u2026k\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026 \u2026d\u2026o\u2026g\u2026 \u2026c\u2026h\u2026a\u2026s\u2026e\u2026d\u2026 \u2026h\u2026i\u2026m\u2026.\u2026",
+        "main_question": "John walked as if he were drunk and a dog chased him.",
         "main_question_id": "EnglishSimilWalk3",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilWalk3_",
-        "sub_question_text_id": "EnglishSimilWalk3_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilWalk3_clausal",
+        "sub_question_text_id": "EnglishSimilWalk3_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13587,11 +13587,11 @@
         "gloss": ""
     },
     "EnglishSimilBehave2": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026b\u2026e\u2026i\u2026n\u2026g\u2026 \u2026w\u2026a\u2026t\u2026c\u2026h\u2026e\u2026d\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026e\u2026 \u2026w\u2026a\u2026s\u2026 \u2026o\u2026b\u2026l\u2026i\u2026g\u2026e\u2026d\u2026 \u2026t\u2026o\u2026.\u2026",
+        "main_question": "John behaved as if he were being watched and as he was obliged to.",
         "main_question_id": "EnglishSimilBehave2",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilBehave2_",
-        "sub_question_text_id": "EnglishSimilBehave2_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilBehave2_clausal",
+        "sub_question_text_id": "EnglishSimilBehave2_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13648,11 +13648,11 @@
         "gloss": ""
     },
     "EnglishSimilBehave3": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026b\u2026e\u2026h\u2026a\u2026v\u2026e\u2026d\u2026 \u2026a\u2026s\u2026 \u2026h\u2026e\u2026 \u2026w\u2026a\u2026s\u2026 \u2026o\u2026b\u2026l\u2026i\u2026g\u2026e\u2026d\u2026 \u2026t\u2026o\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026w\u2026e\u2026r\u2026e\u2026 \u2026b\u2026e\u2026i\u2026n\u2026g\u2026 \u2026w\u2026a\u2026t\u2026c\u2026h\u2026e\u2026d\u2026.\u2026",
+        "main_question": "John behaved as he was obliged to and as if he were being watched.",
         "main_question_id": "EnglishSimilBehave3",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilBehave3_",
-        "sub_question_text_id": "EnglishSimilBehave3_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilBehave3_clausal",
+        "sub_question_text_id": "EnglishSimilBehave3_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",
@@ -13709,11 +13709,11 @@
         "gloss": ""
     },
     "EnglishSimilWalk4": {
-        "main_question": "\u2026J\u2026o\u2026h\u2026n\u2026 \u2026w\u2026a\u2026l\u2026k\u2026e\u2026d\u2026 \u2026t\u2026h\u2026e\u2026 \u2026w\u2026a\u2026y\u2026 \u2026h\u2026e\u2026 \u2026a\u2026l\u2026w\u2026a\u2026y\u2026s\u2026 \u2026d\u2026i\u2026d\u2026 \u2026a\u2026n\u2026d\u2026 \u2026a\u2026s\u2026 \u2026i\u2026f\u2026 \u2026h\u2026e\u2026 \u2026h\u2026a\u2026d\u2026 \u2026a\u2026 \u2026s\u2026t\u2026o\u2026n\u2026e\u2026 \u2026i\u2026n\u2026 \u2026h\u2026i\u2026s\u2026 \u2026s\u2026h\u2026o\u2026e\u2026.\u2026",
+        "main_question": "John walked the way he always did and as if he had a stone in his shoe.",
         "main_question_id": "EnglishSimilWalk4",
-        "sub_question": "",
-        "sub_question_id": "EnglishSimilWalk4_",
-        "sub_question_text_id": "EnglishSimilWalk4_",
+        "sub_question": "clausal",
+        "sub_question_id": "EnglishSimilWalk4_clausal",
+        "sub_question_text_id": "EnglishSimilWalk4_clausal",
         "responses": [
             {
                 "participant_id": "EnglishInf1",

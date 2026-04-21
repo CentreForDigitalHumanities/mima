@@ -102,7 +102,7 @@ export class QuestionnaireService extends VisibilityService<QuestionnaireItemCom
                 split_item: entry['split_item'],
                 chapter: entry['chapter'],
                 subtags: entry['subtags'],
-                gloss: entry['gloss'],
+                gloss: entry['gloss'].replace('  ', ' '),
                 en_translation: entry['en_translation'],
                 answers: answers
             };

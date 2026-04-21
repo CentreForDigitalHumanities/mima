@@ -43,26 +43,32 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         mode: 'text',
         placeholder: $localize`Search in all Fields`,
         manual: 'query'
-    }, {
-        name: $localize`Question`,
+    },  {
+        name: `Judgment`,
+        field: 'judgmentId',
+        icon: faThumbtack,
+        mode: 'dropdown',
+        placeholder: $localize`Judgment ID` 
+    },  {
+        name: $localize`Paradigm`,
         field: 'mainQuestionId',
         icon: faComment,
         mode: 'dropdown',
-        placeholder: $localize`Select Question(s)`
+        placeholder: $localize`Select Paradigm(s)`
     }, {
-        name: $localize`Question Text`,
+        name: $localize`Paradigm (Text search)`,
         field: 'mainQuestion',
         icon: faCommentDots,
         mode: 'text',
         placeholder: ''
     }, {
-        name: $localize`Sub-Question`,
-        field: 'subQuestionTextId',
-        icon: faComment,
-        mode: 'dropdown',
-        placeholder: $localize`Select Sub-Question(s)`
-    }, {
-        name: $localize`Sub-Question Text`,
+    //     name: $localize`Sub-Question`,
+    //     field: 'subQuestionTextId',
+    //     icon: faComment,
+    //     mode: 'dropdown',
+    //     placeholder: $localize`Select Sub-Question(s)`
+    // }, {
+        name: $localize`Manner Adverbial`,
         field: 'subQuestion',
         icon: faCommentDots,
         mode: 'text',
@@ -97,12 +103,6 @@ export class LikertFiltersComponent implements OnInit, OnDestroy {
         icon: faRankingStar,
         mode: 'dropdown',
         placeholder: $localize`Select Score`
-    }, {
-        name: `Judgment`,
-        field: 'judgmentId',
-        icon: faThumbtack,
-        mode: 'dropdown',
-        placeholder: $localize`Judgment ID`
     }];
 
     constructor(
