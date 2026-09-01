@@ -81,6 +81,7 @@ export class JudgmentsService extends VisibilityService<LikertComponent, Matched
                 subQuestionTextId: entry['sub_question_text_id'],
                 gloss: entry['gloss'].replace('  ', ' '),
                 translation: entry['translation'],
+                splitExample: entry['split_item'],
                 responses,
             };
             judgments.push(judgment);
