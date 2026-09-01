@@ -25,6 +25,7 @@ def get_judgment_items():
         tags = line[3].split(';')
         translation = re.sub('(^(Intended: )?[\u201c"]|[\u201c\u201d"]$)', '', line[4])
         gloss = line[5]
+        split_item = line[1]
         judgment_item = JudgmentItem(
             main_question,
             main_question_id,
@@ -35,7 +36,8 @@ def get_judgment_items():
             chapters,
             tags,
             translation,
-            gloss
+            gloss,
+            split_item
         )
         judgment_items[main_question_id] = judgment_item
 

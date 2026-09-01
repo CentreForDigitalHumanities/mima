@@ -55,7 +55,8 @@
             "positive"
         ],
         "translation": "This text is difficult to translate/This text doesn't translate easily.",
-        "gloss": "this here text-ART.DEF be.PRS difficult-translate.PST.PTCP"
+        "gloss": "this here text-ART.DEF be.PRS difficult-translate.PST.PTCP",
+        "split_item": "Den ha\u0308r text-en a\u0308r sva\u030ar-o\u0308versatt."
     },
     "SwedishSva\u030aro\u0308versatt2": {
         "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-ar-o\u0308versatt \u00e4n denna text.",
@@ -114,7 +115,8 @@
             "comparative"
         ],
         "translation": "This text is more difficult to translate than this text/this text doesn't translate as easily as this text.",
-        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text"
+        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text",
+        "split_item": "Den ha\u0308r text-en a\u0308r sva\u030ar-ar-o\u0308versatt \u00e4n denna text."
     },
     "SwedishSva\u030aro\u0308versatt3": {
         "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-are-o\u0308versatt \u00e4n denna text.",
@@ -173,7 +175,8 @@
             "comparative"
         ],
         "translation": "This text is more difficult to translate than this text/this text doesn't translate as easily as this text.",
-        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text"
+        "gloss": "this here text-ART.DEF be.PRS difficult-COMP-translate.PST.PTCP than this.ART.DEF text",
+        "split_item": "Den ha\u0308r text-en a\u0308r sva\u030ar-are-o\u0308versatt \u00e4n denna text."
     },
     "SwedishSva\u030aro\u0308versatt4": {
         "main_question": "Den ha\u0308r text-en a\u0308r sva\u030ar-ast-o\u0308versatt.",
@@ -232,7 +235,8 @@
             "superlative"
         ],
         "translation": "This text is the most difficult to translate.",
-        "gloss": "this here text-ART.DEF be.PRS difficult-SUP-translate.PST.PTCP"
+        "gloss": "this here text-ART.DEF be.PRS difficult-SUP-translate.PST.PTCP",
+        "split_item": "Den ha\u0308r text-en a\u0308r sva\u030ar-ast-o\u0308versatt."
     },
     "SwedishForto\u0308versatt1": {
         "main_question": "Den ha\u0308r text-en a\u0308r fort-o\u0308versatt.",
@@ -290,7 +294,8 @@
             "positive"
         ],
         "translation": "This text can be translated quickly/this text translates quickly.",
-        "gloss": "this here text-ART.DEF be.PRS quickly-translate.PST.PTCP"
+        "gloss": "this here text-ART.DEF be.PRS quickly-translate.PST.PTCP",
+        "split_item": "Den ha\u0308r text-en a\u0308r fort-o\u0308versatt."
     },
     "SwedishForto\u0308versatt2": {
         "main_question": "Den ha\u0308r text-en a\u0308r fort-ar-o\u0308versatt \u00e4n denna text.",
@@ -349,7 +354,8 @@
             "comparative"
         ],
         "translation": "This text can be translated more quickly than this text/this text translates more quickly than this text.",
-        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text"
+        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text",
+        "split_item": "Den ha\u0308r text-en a\u0308r fort-ar-o\u0308versatt \u00e4n denna text."
     },
     "SwedishForto\u0308versatt3": {
         "main_question": "Den ha\u0308r text-en a\u0308r fort-are-o\u0308versatt \u00e4n denna text.",
@@ -408,7 +414,8 @@
             "comparative"
         ],
         "translation": "This text can be translated more quickly than this text/this text translates more quickly than this text.",
-        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text"
+        "gloss": "this here text-ART.DEF be.PRS quickly-COMP-translate.PST.PTCP than this.ART.DEF text",
+        "split_item": "Den ha\u0308r text-en a\u0308r fort-are-o\u0308versatt \u00e4n denna text."
     },
     "SwedishForto\u0308versatt4": {
         "main_question": "Den ha\u0308r text-en a\u0308r fort-ast-o\u0308versatt.",
@@ -467,7 +474,8 @@
             "superlative"
         ],
         "translation": "This text translates the most quickly/this text can be translated the most quickly (of all).",
-        "gloss": "this here text-ART.DEF be.PRS quickly-SUP-translate.PST.PTCP"
+        "gloss": "this here text-ART.DEF be.PRS quickly-SUP-translate.PST.PTCP",
+        "split_item": "Den ha\u0308r text-en a\u0308r fort-ast-o\u0308versatt."
     },
     "SwedishLa\u0308ttla\u0308st1": {
         "main_question": "Bok-en a\u0308r la\u0308tt-la\u0308st.",
@@ -525,7 +533,8 @@
             "positive"
         ],
         "translation": "The book reads easily.",
-        "gloss": "book-ART.DEF be.PRS easy-read.PST.PTCP"
+        "gloss": "book-ART.DEF be.PRS easy-read.PST.PTCP",
+        "split_item": "Bok-en a\u0308r la\u0308tt-la\u0308st."
     },
     "SwedishLa\u0308ttla\u0308st2": {
         "main_question": "Bok-en \u00e4r l\u00e4tt-ar-l\u00e4st \u00e4n den bok-en.",
@@ -584,7 +593,8 @@
             "comparative"
         ],
         "translation": "The book reads more easily than that book.",
-        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PTCP than that book-ART.DEF"
+        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PTCP than that book-ART.DEF",
+        "split_item": "Bok-en \u00e4r l\u00e4tt-ar-l\u00e4st \u00e4n den bok-en."
     },
     "SwedishLa\u0308ttla\u0308st3": {
         "main_question": "Bok-en \u00e4r l\u00e4tt-are-l\u00e4st \u00e4n den bok-en.",
@@ -643,7 +653,8 @@
             "comparative"
         ],
         "translation": "The book reads more easily than that book.",
-        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PST.PTCP than that book-ART.DEF"
+        "gloss": "book-ART.DEF be.PRS easy-COMP-read.PST.PTCP than that book-ART.DEF",
+        "split_item": "Bok-en \u00e4r l\u00e4tt-are-l\u00e4st \u00e4n den bok-en."
     },
     "SwedishLa\u0308ttla\u0308st4": {
         "main_question": "Bok-en \u00e4r l\u00e4tt-ast-l\u00e4st \u00e4n den bok-en.",
@@ -702,7 +713,8 @@
             "superlative"
         ],
         "translation": "The book reads the easiest.",
-        "gloss": "book-ART.DEF be.PRS easy-SUP-read.PST.PTCP than that book-ART.DEF"
+        "gloss": "book-ART.DEF be.PRS easy-SUP-read.PST.PTCP than that book-ART.DEF",
+        "split_item": "Bok-en \u00e4r l\u00e4tt-ast-l\u00e4st \u00e4n den bok-en."
     },
     "SwedishBral\u00e4st1": {
         "main_question": "Bok-en \u00e4r bra-l\u00e4st.",
@@ -760,7 +772,8 @@
             "positive"
         ],
         "translation": "The book reads well.",
-        "gloss": "book-ART.DEF be.PRS good-read.PST.PTCP"
+        "gloss": "book-ART.DEF be.PRS good-read.PST.PTCP",
+        "split_item": "Bok-en \u00e4r bra-l\u00e4st."
     },
     "SwedishBral\u00e4st2": {
         "main_question": "Bok-en \u00e4r b\u00e4ttre-l\u00e4st \u00e4n den bok-en.",
@@ -819,7 +832,8 @@
             "comparative"
         ],
         "translation": "The book reads better than that book.",
-        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF"
+        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF",
+        "split_item": "Bok-en \u00e4r b\u00e4ttre-l\u00e4st \u00e4n den bok-en."
     },
     "SwedishBral\u00e4st3": {
         "main_question": "Bok-en \u00e4r b\u00e4ttr-l\u00e4st \u00e4n den bok-en.",
@@ -878,7 +892,8 @@
             "comparative"
         ],
         "translation": "The book reads better than that book.",
-        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF"
+        "gloss": "book-ART.DEF be.PRS good.COMP-read.PST.PTCP than that book-ART.DEF",
+        "split_item": "Bok-en \u00e4r b\u00e4ttr-l\u00e4st \u00e4n den bok-en."
     },
     "SwedishBral\u00e4st4": {
         "main_question": "Bok-en \u00e4r b\u00e4st-l\u00e4st.",
@@ -937,7 +952,8 @@
             "superlative"
         ],
         "translation": "The book reads the best.",
-        "gloss": "book-ART.DEF be.PRS good.SUP-read.PST.PTCP"
+        "gloss": "book-ART.DEF be.PRS good.SUP-read.PST.PTCP",
+        "split_item": "Bok-en \u00e4r b\u00e4st-l\u00e4st."
     },
     "SwedishDansarPappa1": {
         "main_question": "Jan dansa-r som hans pappa dansa-r.",
@@ -994,7 +1010,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS as his dad dance-PRS"
+        "gloss": "Jan dance-PRS as his dad dance-PRS",
+        "split_item": "Jan dansa-r som hans pappa dansa-r."
     },
     "SwedishDansarPappa2": {
         "main_question": "Jan dansa-r s\u00e5 hans pappa dansa-r.",
@@ -1051,7 +1068,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS so his dad dance-PRS"
+        "gloss": "Jan dance-PRS so his dad dance-PRS",
+        "split_item": "Jan dansa-r s\u00e5 hans pappa dansa-r."
     },
     "SwedishDansarPappa3": {
         "main_question": "Jan dansa-r s\u00e5-h\u00e4r som hans pappa dansa-r.",
@@ -1108,7 +1126,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS so-here as his dad dance-PRS"
+        "gloss": "Jan dance-PRS so-here as his dad dance-PRS",
+        "split_item": "Jan dansa-r s\u00e5-h\u00e4r som hans pappa dansa-r."
     },
     "SwedishDansarPappa4": {
         "main_question": "Jan dansa-r s\u00e5-d\u00e4r som hans pappa dansa-r.",
@@ -1165,7 +1184,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS so-there as his dad dance-PRS"
+        "gloss": "Jan dance-PRS so-there as his dad dance-PRS",
+        "split_item": "Jan dansa-r s\u00e5-d\u00e4r som hans pappa dansa-r."
     },
     "SwedishDansarPappa5": {
         "main_question": "Jan dansa-r lik-som hans pappa dansa-r.",
@@ -1222,7 +1242,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS like-as his dad dance-PRS"
+        "gloss": "Jan dance-PRS like-as his dad dance-PRS",
+        "split_item": "Jan dansa-r lik-som hans pappa dansa-r."
     },
     "SwedishDansarPappa6": {
         "main_question": "Jan dansa-r lika hans pappa dansa-r.",
@@ -1279,7 +1300,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS same his dad dance-PRS"
+        "gloss": "Jan dance-PRS same his dad dance-PRS",
+        "split_item": "Jan dansa-r lika hans pappa dansa-r."
     },
     "SwedishDansarPappa7": {
         "main_question": "Jan dansa-r som-s\u00e5 hans pappa dansa-r.",
@@ -1336,7 +1358,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS as-so his dad dance-PRS"
+        "gloss": "Jan dance-PRS as-so his dad dance-PRS",
+        "split_item": "Jan dansa-r som-s\u00e5 hans pappa dansa-r."
     },
     "SwedishDansarPappa8": {
         "main_question": "Jan dansa-r s\u00e5-som att hans pappa dansa-r.",
@@ -1393,7 +1416,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS so-as that his dad dance-PRS"
+        "gloss": "Jan dance-PRS so-as that his dad dance-PRS",
+        "split_item": "Jan dansa-r s\u00e5-som att hans pappa dansa-r."
     },
     "SwedishDansarPappa9": {
         "main_question": "Jan dansa-r som att hans pappa dansa-r.",
@@ -1450,7 +1474,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS as that his dad dance-PRS"
+        "gloss": "Jan dance-PRS as that his dad dance-PRS",
+        "split_item": "Jan dansa-r som att hans pappa dansa-r."
     },
     "SwedishDansarPappa10": {
         "main_question": "Jan dansa-r lik-som att hans pappa dansa-r.",
@@ -1507,7 +1532,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS like-as that his dad dance-PRS"
+        "gloss": "Jan dance-PRS like-as that his dad dance-PRS",
+        "split_item": "Jan dansa-r lik-som att hans pappa dansa-r."
     },
     "SwedishDansarPappa11": {
         "main_question": "Jan dansa-r hur hans pappa dansa-r.",
@@ -1564,7 +1590,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS how his dad dance-PRS"
+        "gloss": "Jan dance-PRS how his dad dance-PRS",
+        "split_item": "Jan dansa-r hur hans pappa dansa-r."
     },
     "SwedishDansarPappa12": {
         "main_question": "Jan dansa-r hur-som hans pappa dansa-r.",
@@ -1621,7 +1648,8 @@
             ""
         ],
         "translation": "John dances as his father dances.",
-        "gloss": "Jan dance-PRS how-as his dad dance-PRS"
+        "gloss": "Jan dance-PRS how-as his dad dance-PRS",
+        "split_item": "Jan dansa-r hur-som hans pappa dansa-r."
     },
     "SwedishDansarMaria1": {
         "main_question": "Jan dansa-de som Maria ocks\u00e5 dansa-de.",
@@ -1678,7 +1706,8 @@
             ""
         ],
         "translation": "John danced as Mary (also) danced.",
-        "gloss": "Jan dance-PST as Maria also dance-PST"
+        "gloss": "Jan dance-PST as Maria also dance-PST",
+        "split_item": "Jan dansa-de som Maria ocks\u00e5 dansa-de."
     },
     "SwedishDansarMaria2": {
         "main_question": "Jan dansa-de s\u00e5-som Maria ocks\u00e5 dansa-de.",
@@ -1735,7 +1764,8 @@
             ""
         ],
         "translation": "John danced as Mary (also) danced.",
-        "gloss": "Jan dance-PST so-as Maria also dance-PST"
+        "gloss": "Jan dance-PST so-as Maria also dance-PST",
+        "split_item": "Jan dansa-de s\u00e5-som Maria ocks\u00e5 dansa-de."
     },
     "SwedishDansarMaria3": {
         "main_question": "Jan har s\u00e5 dansa-t som Maria har dansa-t.",
@@ -1792,7 +1822,8 @@
             "extraposition"
         ],
         "translation": "John danced as Mary danced.",
-        "gloss": "Jan have.PRS so dance-PTCP as Maria have.PRS dance-PTCP"
+        "gloss": "Jan have.PRS so dance-PTCP as Maria have.PRS dance-PTCP",
+        "split_item": "Jan har s\u00e5 dansa-t som Maria har dansa-t."
     },
     "SwedishDansarMaria4": {
         "main_question": "S\u00e5 har Jan dansa-t som Maria har dansa-t.",
@@ -1849,7 +1880,8 @@
             "frontedso"
         ],
         "translation": "So as John danced, Mary danced.",
-        "gloss": "so have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+        "gloss": "so have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP",
+        "split_item": "S\u00e5 har Jan dansa-t som Maria har dansa-t."
     },
     "SwedishDansarMaria5": {
         "main_question": "S\u00e5-h\u00e4r har Jan dansa-t som Maria har dansa-t.",
@@ -1906,7 +1938,8 @@
             "frontedso"
         ],
         "translation": "So as John danced, Mary danced.",
-        "gloss": "so-here have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+        "gloss": "so-here have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP",
+        "split_item": "S\u00e5-h\u00e4r har Jan dansa-t som Maria har dansa-t."
     },
     "SwedishDansarMaria6": {
         "main_question": "S\u00e5-d\u00e4r har Jan dansa-t som Maria har dansa-t.",
@@ -1963,7 +1996,8 @@
             "frontedso"
         ],
         "translation": "So as John danced, Mary danced.",
-        "gloss": "so-there have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP"
+        "gloss": "so-there have.PRS Jan dance-PTCP as Maria have.PRS dance-PTCP",
+        "split_item": "S\u00e5-d\u00e4r har Jan dansa-t som Maria har dansa-t."
     },
     "SwedishDansarMaria7": {
         "main_question": "Som Maria har dansa-t, s\u00e5 har Jan dansa-t.",
@@ -2020,7 +2054,8 @@
             "topicalization"
         ],
         "translation": "As Mary danced, so danced John.",
-        "gloss": "as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP"
+        "gloss": "as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP",
+        "split_item": "Som Maria har dansa-t, s\u00e5 har Jan dansa-t."
     },
     "SwedishDansarMaria8": {
         "main_question": "S\u00e5-som Maria har dansa-t, har Jan dansa-t",
@@ -2077,7 +2112,8 @@
             "topicalization"
         ],
         "translation": "As Mary danced, danced John.",
-        "gloss": "so-as Maria have.PRS dance-PTCP have.PRS Jan dance-PTCP"
+        "gloss": "so-as Maria have.PRS dance-PTCP have.PRS Jan dance-PTCP",
+        "split_item": "S\u00e5-som Maria har dansa-t, har Jan dansa-t"
     },
     "SwedishDansarMaria9": {
         "main_question": "S\u00e5-som Maria har dansa-t, s\u00e5 har Jan dansa-t.",
@@ -2134,7 +2170,8 @@
             "topicalization"
         ],
         "translation": "As Mary danced, so danced John.",
-        "gloss": "so-as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP"
+        "gloss": "so-as Maria have.PRS dance-PTCP so have.PRS Jan dance-PTCP",
+        "split_item": "S\u00e5-som Maria har dansa-t, s\u00e5 har Jan dansa-t."
     },
     "SwedishDansarMaria10": {
         "main_question": "Jan dansa-de s\u00e5-som Maria har gjor-t vacker-t.",
@@ -2191,7 +2228,8 @@
             "gap"
         ],
         "translation": "John danced as Mary did beautifully.",
-        "gloss": "Jan dance-PST so-as Maria have.PRS do-PTCP beautiful-ly"
+        "gloss": "Jan dance-PST so-as Maria have.PRS do-PTCP beautiful-ly",
+        "split_item": "Jan dansa-de s\u00e5-som Maria har gjor-t vacker-t."
     },
     "SwedishDansarMaria11": {
         "main_question": "Jan dansa-de s\u00e5-som du sa-de att Maria gjor-de.",
@@ -2248,7 +2286,8 @@
             "longdistancemovement"
         ],
         "translation": "John danced as you said that Mary did.",
-        "gloss": "Jan dance-PST so-as you say-PST that Maria do-PST"
+        "gloss": "Jan dance-PST so-as you say-PST that Maria do-PST",
+        "split_item": "Jan dansa-de s\u00e5-som du sa-de att Maria gjor-de."
     },
     "SwedishDansarMaria12": {
         "main_question": "Jan dansa-de s\u00e5-som jag h\u00f6r-de histori-en att Maria gjor-de.",
@@ -2306,7 +2345,8 @@
             "complexNPisland"
         ],
         "translation": "John danced as I heard the story that Mary did.",
-        "gloss": "Jan dance-PST so-as I hear-PST story-ART.DEF that Maria do-PST"
+        "gloss": "Jan dance-PST so-as I hear-PST story-ART.DEF that Maria do-PST",
+        "split_item": "Jan dansa-de s\u00e5-som jag h\u00f6r-de histori-en att Maria gjor-de."
     },
     "SwedishDansarMaria13": {
         "main_question": "Jan dansa-de s\u00e5-som jag fr\u00e5ga-de mig vem gjor-de.",
@@ -2364,7 +2404,8 @@
             "whisland"
         ],
         "translation": "John danced as I ask myself who did.",
-        "gloss": "Jan dance-PST so-as I ask-PST SE.1 who do-PST"
+        "gloss": "Jan dance-PST so-as I ask-PST SE.1 who do-PST",
+        "split_item": "Jan dansa-de s\u00e5-som jag fr\u00e5ga-de mig vem gjor-de."
     },
     "SwedishDansarMaria14": {
         "main_question": "Jan dansa-de s\u00e5-som Maria inte gjor-de.",
@@ -2422,7 +2463,8 @@
             "innerisland"
         ],
         "translation": "John danced as Mary didn't.",
-        "gloss": "Jan dance-PST so-as Maria not do-PST"
+        "gloss": "Jan dance-PST so-as Maria not do-PST",
+        "split_item": "Jan dansa-de s\u00e5-som Maria inte gjor-de."
     },
     "SwedishDansarMaria15": {
         "main_question": "Jan dansa-de s\u00e5-som jag var r\u00f6rd d\u00e4rf\u00f6r att Maria gjor-de.",
@@ -2480,7 +2522,8 @@
             "adjunctisland"
         ],
         "translation": "John danced as I was moved because Mary did.",
-        "gloss": "Jan dance-PST so-as I be.PST moved because that Maria do-PST"
+        "gloss": "Jan dance-PST so-as I be.PST moved because that Maria do-PST",
+        "split_item": "Jan dansa-de s\u00e5-som jag var r\u00f6rd d\u00e4rf\u00f6r att Maria gjor-de."
     },
     "SwedishDansarVore1": {
         "main_question": "Jan dansa-r som han vore berusad.",
@@ -2537,7 +2580,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS as he be.SBJV drunk"
+        "gloss": "Jan dance-PRS as he be.SBJV drunk",
+        "split_item": "Jan dansa-r som han vore berusad."
     },
     "SwedishDansarVore2": {
         "main_question": "Jan dansa-r som vore han berusad.",
@@ -2594,7 +2638,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS as be.SBJV he drunk"
+        "gloss": "Jan dance-PRS as be.SBJV he drunk",
+        "split_item": "Jan dansa-r som vore han berusad."
     },
     "SwedishDansarVore3": {
         "main_question": "Jan dansa-r s\u00e5-som om han vore berusad.",
@@ -2651,7 +2696,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS so-as if he be.SBJV drunk"
+        "gloss": "Jan dance-PRS so-as if he be.SBJV drunk",
+        "split_item": "Jan dansa-r s\u00e5-som om han vore berusad."
     },
     "SwedishDansarVore4": {
         "main_question": "Jan dansa-r s\u00e5-som han vore berusad.",
@@ -2708,7 +2754,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS so-as he be.SBJV drunk"
+        "gloss": "Jan dance-PRS so-as he be.SBJV drunk",
+        "split_item": "Jan dansa-r s\u00e5-som han vore berusad."
     },
     "SwedishDansarVore5": {
         "main_question": "Jan dansa-r s\u00e5-som vore han berusad.",
@@ -2765,7 +2812,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS so-as be.SBJV he drunk"
+        "gloss": "Jan dance-PRS so-as be.SBJV he drunk",
+        "split_item": "Jan dansa-r s\u00e5-som vore han berusad."
     },
     "SwedishDansarVore6": {
         "main_question": "Jan dansa-r om han vore berusad.",
@@ -2822,7 +2870,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS if he be.SBJV drunk"
+        "gloss": "Jan dance-PRS if he be.SBJV drunk",
+        "split_item": "Jan dansa-r om han vore berusad."
     },
     "SwedishDansarVore7": {
         "main_question": "Jan dansa-r lik-som han vore berusad.",
@@ -2879,7 +2928,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS like-as he be.SBJV drunk"
+        "gloss": "Jan dance-PRS like-as he be.SBJV drunk",
+        "split_item": "Jan dansa-r lik-som han vore berusad."
     },
     "SwedishDansarVore8": {
         "main_question": "Jan dansa-r lik-som vore han berusad.",
@@ -2936,7 +2986,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS like-as be.SBJV he drunk"
+        "gloss": "Jan dance-PRS like-as be.SBJV he drunk",
+        "split_item": "Jan dansa-r lik-som vore han berusad."
     },
     "SwedishDansarVore9": {
         "main_question": "Jan dansa-r lik-som om han vore berusad.",
@@ -2993,7 +3044,8 @@
             ""
         ],
         "translation": "John dances as if he were drunk.",
-        "gloss": "Jan dance-PRS like-as if he be.SBJV drunk"
+        "gloss": "Jan dance-PRS like-as if he be.SBJV drunk",
+        "split_item": "Jan dansa-r lik-som om han vore berusad."
     },
     "SwedishUppf\u00f6rde1": {
         "main_question": "Jan uppf\u00f6r-de sig som om han var berusad.",
@@ -3050,7 +3102,8 @@
             ""
         ],
         "translation": "John behaved as if he were drunk.",
-        "gloss": "Jan behave-PST SE.3 as if he be.PST drunk"
+        "gloss": "Jan behave-PST SE.3 as if he be.PST drunk",
+        "split_item": "Jan uppf\u00f6r-de sig som om han var berusad."
     },
     "SwedishUppf\u00f6rde2": {
         "main_question": "Jan uppf\u00f6r-de sig som var han berusad.",
@@ -3107,7 +3160,8 @@
             ""
         ],
         "translation": "John behaved as if he were drunk.",
-        "gloss": "Jan behave-PST SE.3 as be.PST he drunk"
+        "gloss": "Jan behave-PST SE.3 as be.PST he drunk",
+        "split_item": "Jan uppf\u00f6r-de sig som var han berusad."
     },
     "SwedishUppf\u00f6rde3": {
         "main_question": "Jan uppf\u00f6r sig s\u00e5 som om han vore berusad.",
@@ -3164,7 +3218,8 @@
             ""
         ],
         "translation": "John behaved as if he were drunk.",
-        "gloss": "Jan behave.PRS SE.3 so as if he be.SBJV drunk"
+        "gloss": "Jan behave.PRS SE.3 so as if he be.SBJV drunk",
+        "split_item": "Jan uppf\u00f6r sig s\u00e5 som om han vore berusad."
     },
     "SwedishUppf\u00f6rde4": {
         "main_question": "Som om han vore berusad, uppf\u00f6r sig Jan.",
@@ -3221,7 +3276,8 @@
             "topicalization"
         ],
         "translation": "As if he were drunk, behaved John.",
-        "gloss": "as if he be.SBJV drunk behave.PRS SE.3 Jan"
+        "gloss": "as if he be.SBJV drunk behave.PRS SE.3 Jan",
+        "split_item": "Som om han vore berusad, uppf\u00f6r sig Jan."
     },
     "SwedishUppf\u00f6rde5": {
         "main_question": "Som om han vore berusad, s\u00e5 uppf\u00f6r sig Jan.",
@@ -3278,7 +3334,8 @@
             "topicalization"
         ],
         "translation": "As if he were drunk, so behaved John.",
-        "gloss": "as if he be.SBJV drunk so behave.PRS SE.3 Jan"
+        "gloss": "as if he be.SBJV drunk so behave.PRS SE.3 Jan",
+        "split_item": "Som om han vore berusad, s\u00e5 uppf\u00f6r sig Jan."
     },
     "SwedishUppf\u00f6rde6": {
         "main_question": "S\u00e5 som om han vore berusad uppf\u00f6r sig Jan.",
@@ -3335,7 +3392,8 @@
             "topicalization"
         ],
         "translation": "So, as if he were drunk, behaved John.",
-        "gloss": "so as if he be.SBJV drunk behave.PRS SE.3 Jan"
+        "gloss": "so as if he be.SBJV drunk behave.PRS SE.3 Jan",
+        "split_item": "S\u00e5 som om han vore berusad uppf\u00f6r sig Jan."
     },
     "SwedishUppf\u00f6rde7": {
         "main_question": "Jan uppf\u00f6r sig som om han vore berusad och som om han vore dum.",
@@ -3392,7 +3450,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were drunk and as if he were stupid.",
-        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as if he be.SBJV stupid"
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as if he be.SBJV stupid",
+        "split_item": "Jan uppf\u00f6r sig som om han vore berusad och som om han vore dum."
     },
     "SwedishUppf\u00f6rde8": {
         "main_question": "Jan uppf\u00f6r sig som om han vore berusad och om han vore dum.",
@@ -3449,7 +3508,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were drunk and as if he were stupid.",
-        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and if he be.SBJV stupid"
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and if he be.SBJV stupid",
+        "split_item": "Jan uppf\u00f6r sig som om han vore berusad och om han vore dum."
     },
     "SwedishUppf\u00f6rde9": {
         "main_question": "Jan uppf\u00f6r sig om han vore berusad och som om han vore dum.",
@@ -3506,7 +3566,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were drunk and as if he were stupid.",
-        "gloss": "Jan behave.PRS SE.3 if he be.SBJV drunk and as if he be.SBJV stupid"
+        "gloss": "Jan behave.PRS SE.3 if he be.SBJV drunk and as if he be.SBJV stupid",
+        "split_item": "Jan uppf\u00f6r sig om han vore berusad och som om han vore dum."
     },
     "SwedishUppf\u00f6rde10": {
         "main_question": "Jan uppf\u00f6r sig som om han vore berusad och som vore han dum.",
@@ -3563,7 +3624,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were drunk and as if he were stupid.",
-        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as be.SBJV he stupid"
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and as be.SBJV he stupid",
+        "split_item": "Jan uppf\u00f6r sig som om han vore berusad och som vore han dum."
     },
     "SwedishUppf\u00f6rde11": {
         "main_question": "Jan uppf\u00f6r sig som om han vore berusad och s\u00e5-som han vanligt-vis uppf\u00f6r sig.",
@@ -3621,7 +3683,8 @@
             "coordination"
         ],
         "translation": "John behaves as he usually behaves and as if he were drunk.",
-        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and so-as he usual-ly behave.PRS SE.3"
+        "gloss": "Jan behave.PRS SE.3 as if he be.SBJV drunk and so-as he usual-ly behave.PRS SE.3",
+        "split_item": "Jan uppf\u00f6r sig som om han vore berusad och s\u00e5-som han vanligt-vis uppf\u00f6r sig."
     },
     "SwedishUppf\u00f6rde12": {
         "main_question": "Jan uppf\u00f6r sig s\u00e5-som han vanligt-vis uppf\u00f6r sig och som om han vore berusad",
@@ -3679,6 +3742,7 @@
             "coordination"
         ],
         "translation": "John behaves as he usually behaves and as if he were drunk.",
-        "gloss": "Jan behave.PRS SE.3 so-as he usual-ly behave.PRS SE.3 and as if he be.SBJV drunk"
+        "gloss": "Jan behave.PRS SE.3 so-as he usual-ly behave.PRS SE.3 and as if he be.SBJV drunk",
+        "split_item": "Jan uppf\u00f6r sig s\u00e5-som han vanligt-vis uppf\u00f6r sig och som om han vore berusad"
     }
 }
