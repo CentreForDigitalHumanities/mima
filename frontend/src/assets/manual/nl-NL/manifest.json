@@ -1,24 +1,45 @@
 [
-    {
-        "id": "query",
-        "title": "Zoekopdracht"
-    },
+    
     {
         "id": "questionnaires",
-        "title": "Vragenlijsten",
+        "title": "Questionnaires",
         "subPages": [
             {
+                "id": "data-presentation",
+                "title": "Hoe worden data gepresenteerd?"
+            },
+            {
+                "id": "participants",
+                "title": "Participanten"
+            },
+            {
+                "id": "languages",
+                "title": "Talen en dialecten"
+            },
+            {
                 "id": "attestation",
-                "title": "Bevestiging"
+                "title": "Attestatie"
             },
             {
                 "id": "chapters",
                 "title": "Hoofdstukken"
+            },
+            {
+                "id": "subtags",
+                "title": "Subtags"
             }
         ]
     },
     {
         "id": "judgment",
-        "title": "Grammaticale oordelen"
+        "title": "Grammaticaliteitsoordelen"
+    },
+    {
+        "id": "query",
+        "title": "Zoeken"
+    },
+    {
+        "id": "glossary",
+        "title": "Glossarium"
     }
 ]
