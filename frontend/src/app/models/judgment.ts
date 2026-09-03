@@ -14,6 +14,7 @@ export interface Judgment extends Filterable {
     responses: LikertResponse[];
     gloss: string;
     translation: string;
+    splitExample: string;
 }
 
 type MatchedJudgmentValue<T> =
@@ -54,6 +55,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
     responses: MatchedLikertResponse[];
     gloss: MatchedParts;
     translation: MatchedParts;
+    splitExample: MatchedParts;
 
     dialectsCount = 0;
     matchedResponses: MatchedLikertResponse[] = [];
@@ -76,6 +78,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             this.gloss = this.unmatchedValue(judgment.gloss);
             this.translation = this.unmatchedValue(judgment.translation);
             this.responses = judgment.responses.map(response => new MatchedLikertResponse(response));
+            this.splitExample = this.unmatchedValue(judgment.splitExample);
         }
     }
 
@@ -94,6 +97,7 @@ export class MatchedJudgment implements MatchedJudgmentProperties {
             responses: value.responses.map(answer => MatchedLikertResponse.restore(answer)),
             gloss: MatchedParts.restore(value.gloss),
             translation: MatchedParts.restore(value.translation),
+            splitExample: MatchedParts.restore(value.splitExample),
             dialectsCount: value.dialectsCount,
             matchedResponses: value.matchedResponses.map(r => MatchedLikertResponse.restore(r)),
             matchedResponseCount: value.matchedResponseCount,
