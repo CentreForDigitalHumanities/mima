@@ -75,6 +75,8 @@ for line in meta_data[2:]:
     judgment_items[question_id].tags = line[3].split(';')
     judgment_items[question_id].translation = re.sub('(^(Intended: )?[\u201c"]|[\u201c\u201d"]$)', '', line[4])
     judgment_items[question_id].gloss = line[5]
+    judgment_items[question_id].split_item = line[1]
+
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_german.json"), "w") as file:
         json.dump(judgment_items, file, default=serialize_classes, indent=4)

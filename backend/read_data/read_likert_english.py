@@ -59,6 +59,8 @@ with open(META_PATH_EN, encoding='utf8') as file:
         question_id = line[0]
         merged_judgment_items[question_id].chapters = line[2].split(';')
         merged_judgment_items[question_id].tags = line[3].split(';')
+        merged_judgment_items[question_id].split_item = line[1]
+
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_english.json"), "w") as file:
         json.dump(merged_judgment_items, file, default=serialize_classes, indent=4)

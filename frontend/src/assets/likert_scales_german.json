@@ -21,7 +21,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -109,7 +109,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df nach Hause gekommen."
     },
     "GermanBarefeet2": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -133,7 +134,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -221,7 +222,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly to home come.PTCP",
+        "split_item": "Johan ist bar-f\u00fc\u00df-ig nach Hause gekommen."
     },
     "GermanBarefeet3": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -245,7 +247,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -333,7 +335,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df-lings nach Hause gekommen."
     },
     "GermanBarefeet4": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -357,7 +360,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -445,7 +448,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-wise to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df-weise nach Hause gekommen."
     },
     "GermanBarefeet5": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -469,7 +473,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -557,7 +561,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-wise to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df-erweise nach Hause gekommen."
     },
     "GermanBarefeet6": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -581,7 +586,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -669,7 +674,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df-lings-weise nach Hause gekommen."
     },
     "GermanBarefeet7": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -693,7 +699,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -781,7 +787,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP",
+        "split_item": "Johan ist bar-fu\u00df-lings-erweise nach Hause gekommen."
     },
     "GermanBarefeet8": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -805,7 +812,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -893,7 +900,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP",
+        "split_item": "Johan ist bar-f\u00fc\u00df-ig-weise nach Hause gekommen."
     },
     "GermanBarefeet9": {
         "main_question": "Johan ist \u2026 nach Hause gekommen.",
@@ -917,7 +925,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1005,7 +1013,8 @@
             "modifiednoun"
         ],
         "translation": "John came home barefeet.",
-        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP"
+        "gloss": "Johan be.3SG.PRS bare-foot-ly-wise to home come.PTCP",
+        "split_item": "Johan ist bar-f\u00fc\u00df-ig-erweise nach Hause gekommen."
     },
     "GermanStepwise1": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1029,7 +1038,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1117,7 +1126,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-weise."
     },
     "GermanStepwise2": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1141,7 +1151,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1229,7 +1239,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-ig."
     },
     "GermanStepwise3": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1253,7 +1264,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1341,7 +1352,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-lings."
     },
     "GermanStepwise4": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1365,7 +1377,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1453,7 +1465,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-lings-weise."
     },
     "GermanStepwise5": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1477,7 +1490,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1565,7 +1578,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-lings-erweise."
     },
     "GermanStepwise6": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1589,7 +1603,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1677,7 +1691,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-ig-weise."
     },
     "GermanStepwise7": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1701,7 +1716,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1789,7 +1804,8 @@
             ""
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n schritt-ig-erweise."
     },
     "GermanStepwise8": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1813,7 +1829,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -1901,7 +1917,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-weise."
     },
     "GermanStepwise9": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -1925,7 +1942,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2013,7 +2030,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-ig."
     },
     "GermanStepwise10": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -2037,7 +2055,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2125,7 +2143,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-ig-weise."
     },
     "GermanStepwise11": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -2149,7 +2168,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2237,7 +2256,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-ig-erweise."
     },
     "GermanStepwise12": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -2261,7 +2281,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2349,7 +2369,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-lings."
     },
     "GermanStepwise13": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -2373,7 +2394,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2461,7 +2482,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-lings-weise."
     },
     "GermanStepwise14": {
         "main_question": "Johan macht seine Hausaufgaben \u2026.",
@@ -2485,7 +2507,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2573,7 +2595,8 @@
             "modifiednoun"
         ],
         "translation": "John does his homework step by step.",
-        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise"
+        "gloss": "Johan make-3SG.PRS his-ACC.PL home-work-ACC.PL little-step-ly-wise",
+        "split_item": "Johan mach-t sein-e Haus-aufgabe-n klein-schritt-lings-erweise."
     },
     "GermanRutschen1": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -2597,7 +2620,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2685,7 +2708,8 @@
             "positive"
         ],
         "translation": "The child goes down the slide fast.",
-        "gloss": "the child slide-3SG.PRS fast the slide down"
+        "gloss": "the child slide-3SG.PRS fast the slide down",
+        "split_item": "Das Kind rutsch-t schnell die Rutsche hinunter."
     },
     "GermanRutschen2": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -2709,7 +2733,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2799,7 +2823,8 @@
             "preposition"
         ],
         "translation": "The child goes down the slide fast.",
-        "gloss": "the child slide-3SG.PRS in fast-ACC.F way the slide down"
+        "gloss": "the child slide-3SG.PRS in fast-ACC.F way the slide down",
+        "split_item": "Das Kind rutsch-t auf schnell-e Weise die Rutsche hinunter."
     },
     "GermanRutschen3": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -2823,7 +2848,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -2911,7 +2936,8 @@
             "positive"
         ],
         "translation": "The child goes down the slide fast.",
-        "gloss": "the child slide-3SG.PRS fast-wise the slide down"
+        "gloss": "the child slide-3SG.PRS fast-wise the slide down",
+        "split_item": "Das Kind rutsch-t schnell-weise die Rutsche hinunter."
     },
     "GermanRutschen4": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -2935,7 +2961,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3023,7 +3049,8 @@
             "positive"
         ],
         "translation": "The child goes down the slide fast.",
-        "gloss": "the child slide-3SG.PRS fast-wise the slide down"
+        "gloss": "the child slide-3SG.PRS fast-wise the slide down",
+        "split_item": "Das Kind rutsch-t schnell-erweise die Rutsche hinunter."
     },
     "GermanRutschen5": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3047,7 +3074,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3135,7 +3162,8 @@
             "positive"
         ],
         "translation": "The child goes down the slide a bit fast.",
-        "gloss": "the child slide-3SG.PRS a bit fast the slide down"
+        "gloss": "the child slide-3SG.PRS a bit fast the slide down",
+        "split_item": "Das Kind rutsch-t ein bisschen schnell die Rutsche hinunter."
     },
     "GermanRutschen6": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3159,7 +3187,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3247,7 +3275,8 @@
             "positive"
         ],
         "translation": "The child goes down the slide a bit fast.",
-        "gloss": "the child slide-3SG.PRS a bit fast the slide down"
+        "gloss": "the child slide-3SG.PRS a bit fast the slide down",
+        "split_item": "Das Kind rutsch-t ein wenig schnell die Rutsche hinunter."
     },
     "GermanRutschen7": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3271,7 +3300,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3359,7 +3388,8 @@
             ""
         ],
         "translation": "The child goes down the slide on his belly.",
-        "gloss": "the child slide-3SG.PRS belly-ly the slide down"
+        "gloss": "the child slide-3SG.PRS belly-ly the slide down",
+        "split_item": "Das Kind rutsch-t b\u00e4uch-lings die Rutsche hinunter."
     },
     "GermanRutschen8": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3383,7 +3413,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3472,7 +3502,8 @@
             "preposition"
         ],
         "translation": "The child goes down the slide on his belly.",
-        "gloss": "the child slide-3SG.PRS in belly-ly-ACC.F way the slide down"
+        "gloss": "the child slide-3SG.PRS in belly-ly-ACC.F way the slide down",
+        "split_item": "Das Kind rutsch-t auf b\u00e4uch-lings-e Weise die Rutsche hinunter."
     },
     "GermanRutschen9": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3496,7 +3527,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3584,7 +3615,8 @@
             ""
         ],
         "translation": "The child goes down the slide on his belly.",
-        "gloss": "the child slide-3SG.PRS belly-wise the slide down"
+        "gloss": "the child slide-3SG.PRS belly-wise the slide down",
+        "split_item": "Das Kind rutsch-t bauch-weise die Rutsche hinunter."
     },
     "GermanRutschen10": {
         "main_question": "Das Kind rutscht b\u00e4uchlingsweise die Rutsche hinunter.",
@@ -3608,7 +3640,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3696,7 +3728,8 @@
             ""
         ],
         "translation": "The child goes down the slide on his belly.",
-        "gloss": "the child slide-3SG.PRS belly-ly-wise the slide down"
+        "gloss": "the child slide-3SG.PRS belly-ly-wise the slide down",
+        "split_item": "Das Kind rutsch-t b\u00e4uch-lings-weise die Rutsche hinunter."
     },
     "GermanRutschen11": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3720,7 +3753,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3808,7 +3841,8 @@
             ""
         ],
         "translation": "The child goes down the slide on his belly.",
-        "gloss": "the child slide-3SG.PRS belly-ly-wise the slide down"
+        "gloss": "the child slide-3SG.PRS belly-ly-wise the slide down",
+        "split_item": "Das Kind rutsch-t b\u00e4uch-lings-erweise die Rutsche hinunter."
     },
     "GermanRutschen12": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -3832,7 +3866,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -3921,7 +3955,8 @@
             "postposition"
         ],
         "translation": "The child goes down the slide upside-down.",
-        "gloss": "the child slide-3SG.PRS head-over the slide down"
+        "gloss": "the child slide-3SG.PRS head-over the slide down",
+        "split_item": "Das Kind rutsch-t kopf-\u00fcber die Rutsche hinunter."
     },
     "GermanRutschen13": {
         "main_question": "Das Kind rutscht kopf\u00fcbereweise die Rutsche hinunter.",
@@ -3945,7 +3980,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4034,7 +4069,8 @@
             "postposition"
         ],
         "translation": "The child goes down the slide upside-down.",
-        "gloss": "the child slide-3SG.PRS head-over-E-wise the slide down"
+        "gloss": "the child slide-3SG.PRS head-over-E-wise the slide down",
+        "split_item": "Das Kind rutsch-t kopf-\u00fcber-e-weise die Rutsche hinunter."
     },
     "GermanRutschen14": {
         "main_question": "Das Kind rutscht \u2026 die Rutsche hinunter.",
@@ -4058,7 +4094,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4148,7 +4184,8 @@
             "postposition"
         ],
         "translation": "The child goes down the slide upside-down.",
-        "gloss": "the child slide-3SG.PRS in head-over-ACC.F way the slide down"
+        "gloss": "the child slide-3SG.PRS in head-over-ACC.F way the slide down",
+        "split_item": "Das Kind rutsch-t auf kopf-\u00fcber-e Weise die Rutsche hinunter."
     },
     "GermanQuickEnough1": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4172,7 +4209,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4261,7 +4298,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not fast enough to house"
+        "gloss": "Johan walk-3SG.PST not fast enough to house",
+        "split_item": "Johan lief nicht schnell genug nach Hause."
     },
     "GermanQuickEnough2": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4285,7 +4323,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4374,7 +4412,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not enough fast to house"
+        "gloss": "Johan walk-3SG.PST not enough fast to house",
+        "split_item": "Johan lief nicht genug schnell nach Hause."
     },
     "GermanQuickEnough3": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4398,7 +4437,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4487,7 +4526,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not fast-wise enough to house"
+        "gloss": "Johan walk-3SG.PST not fast-wise enough to house",
+        "split_item": "Johan lief nicht schnell-weise genug nach Hause."
     },
     "GermanQuickEnough4": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4511,7 +4551,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4600,7 +4640,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not fast-wise enough to house"
+        "gloss": "Johan walk-3SG.PST not fast-wise enough to house",
+        "split_item": "Johan lief nicht schnell-erweise genug nach Hause."
     },
     "GermanQuickEnough5": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4624,7 +4665,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4715,7 +4756,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not in fast-ACC.F way enough to house"
+        "gloss": "Johan walk-3SG.PST not in fast-ACC.F way enough to house",
+        "split_item": "Johan lief nicht auf schnell-e Weise genug nach Hause."
     },
     "GermanQuickEnough6": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4739,7 +4781,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4828,7 +4870,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not fast enough-ACC to house"
+        "gloss": "Johan walk-3SG.PST not fast enough-ACC to house",
+        "split_item": "Johan lief nicht schnell genug-e nach Hause."
     },
     "GermanQuickEnough7": {
         "main_question": "Johan lief nicht \u2026 nach Hause.",
@@ -4852,7 +4895,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -4941,7 +4984,8 @@
             "enough"
         ],
         "translation": "John did not walk home fast enough.",
-        "gloss": "Johan walk-3SG.PST not enough fast-ACC to house"
+        "gloss": "Johan walk-3SG.PST not enough fast-ACC to house",
+        "split_item": "Johan lief nicht genug schnell-e nach Hause."
     },
     "GermanQuickPossible1": {
         "main_question": "Johan lief \u2026 nach Hause.",
@@ -4965,7 +5009,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5054,7 +5098,8 @@
             "possible"
         ],
         "translation": "John walked home as fast as possible.",
-        "gloss": "Johan walk-3SG.PST possible-SUP fast to house"
+        "gloss": "Johan walk-3SG.PST possible-SUP fast to house",
+        "split_item": "Johan lief m\u00f6glich-st schnell nach Hause."
     },
     "GermanQuickPossible2": {
         "main_question": "Johan lief \u2026 nach Hause.",
@@ -5078,7 +5123,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5167,7 +5212,8 @@
             "possible"
         ],
         "translation": "John walked home as fast as possible.",
-        "gloss": "Johan walk-3SG.PST possible-SUP fast-wise to house"
+        "gloss": "Johan walk-3SG.PST possible-SUP fast-wise to house",
+        "split_item": "Johan lief m\u00f6glich-st schnell-weise nach Hause."
     },
     "GermanQuickPossible3": {
         "main_question": "Johan lief \u2026 nach Hause.",
@@ -5191,7 +5237,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5280,7 +5326,8 @@
             "possible"
         ],
         "translation": "John walked home as fast as possible.",
-        "gloss": "Johan walk-3SG.PST possible-SUP fast-wise to house"
+        "gloss": "Johan walk-3SG.PST possible-SUP fast-wise to house",
+        "split_item": "Johan lief m\u00f6glich-st schnell-erweise nach Hause."
     },
     "GermanQuickPossible4": {
         "main_question": "Johan lief \u2026 nach Hause.",
@@ -5304,7 +5351,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5395,7 +5442,8 @@
             "possible"
         ],
         "translation": "John walked home as fast as possible.",
-        "gloss": "Johan walk-3SG.PST in possible-SUP fast-ACC.F way to house"
+        "gloss": "Johan walk-3SG.PST in possible-SUP fast-ACC.F way to house",
+        "split_item": "Johan lief auf m\u00f6glich-st schnell-e Weise nach Hause."
     },
     "GermanQuickPossible5": {
         "main_question": "Johan lief \u2026 nach Hause.",
@@ -5419,7 +5467,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5510,7 +5558,8 @@
             "possible"
         ],
         "translation": "John walked home as fast as possible.",
-        "gloss": "Johan walk-3SG.PST in fast-SUP possible-ACC.F way to house"
+        "gloss": "Johan walk-3SG.PST in fast-SUP possible-ACC.F way to house",
+        "split_item": "Johan lief auf schnell-st m\u00f6glich-e Weise nach Hause."
     },
     "GermanSpeak1": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -5534,7 +5583,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5622,7 +5671,8 @@
             "positive"
         ],
         "translation": "Emma speaks loudly about her problems.",
-        "gloss": "Emma speak-3SG.PRS loud-strong about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak2": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -5646,7 +5696,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5736,7 +5786,8 @@
             "positive"
         ],
         "translation": "Emma speaks loudly about her problems.",
-        "gloss": "Emma speak-3SG.PRS in loud-strong-ACC.F way about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS in loud-strong-ACC.F way about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t auf laut-stark-e Weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak3": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -5760,7 +5811,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5848,7 +5899,8 @@
             "positive"
         ],
         "translation": "Emma speaks loudly about her problems.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark-weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak4": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -5872,7 +5924,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -5960,7 +6012,8 @@
             "positive"
         ],
         "translation": "Emma speaks loudly about her problems.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark-erweise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak5": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -5984,7 +6037,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6074,7 +6127,8 @@
             "positive"
         ],
         "translation": "Emma speaks freely about her problems.",
-        "gloss": "Emma speak-3SG.PRS free-out about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak6": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6098,7 +6152,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6189,7 +6243,8 @@
             "positive"
         ],
         "translation": "Emma speaks freely about her problems.",
-        "gloss": "Emma speak-3SG.PRS in free-out-ACC.F way about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS in free-out-ACC.F way about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t auf frei-heraus-e Weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak7": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6213,7 +6268,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6303,7 +6358,8 @@
             "positive"
         ],
         "translation": "Emma speaks freely about her problems.",
-        "gloss": "Emma speak-3SG.PRS free-out-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak8": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6327,7 +6383,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6417,7 +6473,8 @@
             "positive"
         ],
         "translation": "Emma speaks freely about her problems.",
-        "gloss": "Emma speak-3SG.PRS free-out-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-erweise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak9": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6441,7 +6498,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6529,7 +6586,8 @@
             "participle"
         ],
         "translation": "Emma speaks about her problems in whispers.",
-        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t fl\u00fcstern-d \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak10": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6553,7 +6611,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6643,7 +6701,8 @@
             "participle"
         ],
         "translation": "Emma speaks about her problems in whispers.",
-        "gloss": "Emma speak-3SG.PRS in whisper-PRS.PTCP-ACC.F way about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS in whisper-PRS.PTCP-ACC.F way about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t auf fl\u00fcstern-d-e Weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak11": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -6667,7 +6726,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6755,7 +6814,8 @@
             "participle"
         ],
         "translation": "Emma speaks about her problems in whispers.",
-        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t fl\u00fcstern-d-weise \u00fcber ihr-e Problem-e."
     },
     "GermanSpeak12": {
         "main_question": "Emma spricht fl\u00fcsternderweise \u00fcber ihre Probleme.",
@@ -6779,7 +6839,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6867,7 +6927,8 @@
             "participle"
         ],
         "translation": "Emma speaks about her problems in whispers.",
-        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP-wise about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS whisper-PRS.PTCP-wise about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t fl\u00fcstern-d-erweise \u00fcber ihr-e Problem-e."
     },
     "GermanLaugh1": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -6891,7 +6952,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -6979,7 +7040,8 @@
             "modifiednoun"
         ],
         "translation": "Lena laughed out loud the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit laut-hals gelacht."
     },
     "GermanLaugh2": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7003,7 +7065,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7093,7 +7155,8 @@
             "modifiednoun"
         ],
         "translation": "Lena laughed out loud the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in loud-throat-ACC.F way laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in loud-throat-ACC.F way laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit auf laut-hals-e Weise gelacht."
     },
     "GermanLaugh3": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7117,7 +7180,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7205,7 +7268,8 @@
             "modifiednoun"
         ],
         "translation": "Lena laughed out loud the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat-wise laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat-wise laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit laut-hals-weise gelacht."
     },
     "GermanLaugh4": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7229,7 +7293,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7317,7 +7381,8 @@
             "modifiednoun"
         ],
         "translation": "Lena laughed out loud the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat-wise laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time loud-throat-wise laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit laut-hals-erweise gelacht."
     },
     "GermanLaughPossible1": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7341,7 +7406,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7430,7 +7495,8 @@
             "possible"
         ],
         "translation": "Lena laughed as loudly as possible the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit m\u00f6glich-st laut-hals gelacht."
     },
     "GermanLaughPossible2": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7454,7 +7520,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7543,7 +7609,8 @@
             "possible"
         ],
         "translation": "Lena laughed as loudly as possible the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat-wise laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat-wise laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit m\u00f6glich-st laut-hals-weise gelacht."
     },
     "GermanLaughPossible3": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7567,7 +7634,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7656,7 +7723,8 @@
             "possible"
         ],
         "translation": "Lena laughed as loudly as possible the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat-wise laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time possible-SUP loud-throat-wise laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit m\u00f6glich-st laut-hals-erweise gelacht."
     },
     "GermanLaughPossible4": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7680,7 +7748,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7771,7 +7839,8 @@
             "possible"
         ],
         "translation": "Lena laughed as loudly as possible the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in possible-SUP loud-throat-wise-ACC.F way laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in possible-SUP loud-throat-wise-ACC.F way laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit auf m\u00f6glich-st laut-hals-e Weise gelacht."
     },
     "GermanLaughPossible5": {
         "main_question": "Lena hat die ganze Zeit \u2026 gelacht.",
@@ -7795,7 +7864,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7886,7 +7955,8 @@
             "possible"
         ],
         "translation": "Lena laughed as loudly as possible the whole time.",
-        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in loud-throat-ACC.F-SUP possible-ACC.F way laugh.PTCP"
+        "gloss": "Lena have.3SG.PRS the whole-ACC.F time in loud-throat-ACC.F-SUP possible-ACC.F way laugh.PTCP",
+        "split_item": "Lena hat die ganz-e Zeit auf laut-hals-e-st m\u00f6glich-e Weise gelacht."
     },
     "GermanSpeakPossible1": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -7921,7 +7991,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -7932,7 +8002,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8094,7 +8164,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as loudly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st laut-stark \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible2": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -8129,7 +8200,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8140,7 +8211,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8302,7 +8373,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as loudly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st laut-stark-weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible3": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -8337,7 +8409,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8348,7 +8420,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8510,7 +8582,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as loudly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st laut-stark-erweise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible4": {
         "main_question": "Emma spricht \u2026 \u00fcber ihre Probleme.",
@@ -8545,7 +8618,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8556,7 +8629,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8718,7 +8791,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as loudly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP loud-strong-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st laut-st\u00e4rk-erweise \u00fcber ihr-e Forschung."
     },
     "GermanSmart1": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -8742,7 +8816,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8832,7 +8906,8 @@
             "participle"
         ],
         "translation": "Karin speaks about her research in a learned way.",
-        "gloss": "Karin speak-3SG.PRS in learn.PST.PTCP-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in learn.PST.PTCP-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf gelehrt-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSmart2": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -8856,7 +8931,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -8944,7 +9019,8 @@
             "participle"
         ],
         "translation": "Karin speaks about her research in a learned way.",
-        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP about her-ACC.F research",
+        "split_item": "Karin sprich-t gelehrt \u00fcber ihr-e Forschung."
     },
     "GermanSmart3": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -8968,7 +9044,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9056,7 +9132,8 @@
             "participle"
         ],
         "translation": "Karin speaks about her research in a learned way.",
-        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t gelehrt-weise \u00fcber ihr-e Forschung."
     },
     "GermanSmart4": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -9080,7 +9157,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9168,7 +9245,8 @@
             "participle"
         ],
         "translation": "Karin speaks about her research in a learned way.",
-        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t gelehrt-erweise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough1": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9192,7 +9270,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9281,7 +9359,8 @@
             "enough"
         ],
         "translation": "Karin does not speak loudly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not loud-strong enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not loud-strong enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht laut-stark genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough2": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9305,7 +9384,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9394,7 +9473,8 @@
             "enough"
         ],
         "translation": "Karin does not speak loudly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht laut-stark-weise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough3": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9418,7 +9498,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9507,7 +9587,8 @@
             "enough"
         ],
         "translation": "Karin does not speak loudly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht laut-stark-erweise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough4": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9531,7 +9612,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9620,7 +9701,8 @@
             "enough"
         ],
         "translation": "Karin does not speak loudly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not loud-strong-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht laut-st\u00e4rk-erweise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough5": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9644,7 +9726,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9735,7 +9817,8 @@
             "enough"
         ],
         "translation": "Karin does not speak freely enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not free-out enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not free-out enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht frei-heraus genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough6": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9759,7 +9842,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9850,7 +9933,8 @@
             "enough"
         ],
         "translation": "Karin does not speak freely enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not free-out-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not free-out-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht frei-heraus-weise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough7": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9874,7 +9958,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -9965,7 +10049,8 @@
             "enough"
         ],
         "translation": "Karin does not speak freely enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not free-out-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not free-out-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht frei-heraus-erweise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough8": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -9989,7 +10074,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10077,8 +10162,9 @@
             "participle",
             "enough"
         ],
-        "translation": "\u201cKarin does not speak enough in whispers about her research.\u201d ",
-        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP enough about her-ACC.F research"
+        "translation": "Karin does not speak enough in whispers about her research.\u201d ",
+        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht fl\u00fcstern-d genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough9": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -10102,7 +10188,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10190,8 +10276,9 @@
             "participle",
             "enough"
         ],
-        "translation": "\u201cKarin does not speak enough in whispers about her research.\u201d ",
-        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP-wise enough about her-ACC.F research"
+        "translation": "Karin does not speak enough in whispers about her research.\u201d ",
+        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht fl\u00fcstern-d-weise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough10": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -10215,7 +10302,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10303,8 +10390,9 @@
             "participle",
             "enough"
         ],
-        "translation": "\u201cKarin does not speak enough in whispers about her research.\u201d ",
-        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP-wise enough about her-ACC.F research"
+        "translation": "Karin does not speak enough in whispers about her research.\u201d ",
+        "gloss": "Karin speak-3SG.PRS not whisper-PRS.PTCP-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht fl\u00fcstern-d-erweise genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough11": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -10328,7 +10416,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10417,7 +10505,8 @@
             "enough"
         ],
         "translation": "Karin does not speak scholarly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not learn.PST.PTCP enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not learn.PST.PTCP enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht gelehrt genug \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough12": {
         "main_question": "Karin spricht nicht \u2026 \u00fcber ihre Forschung.",
@@ -10441,7 +10530,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10530,7 +10619,8 @@
             "enough"
         ],
         "translation": "Karin does not speak scholarly enough about her research.",
-        "gloss": "Karin speak-3SG.PRS not learn.PST.PTCP-wise enough about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS not learn.PST.PTCP-wise enough about her-ACC.F research",
+        "split_item": "Karin sprich-t nicht gelehrt-weise genug \u00fcber ihr-e Forschung."
     },
     "GermanLaughEnough1": {
         "main_question": "Lena lacht nicht \u2026.",
@@ -10554,7 +10644,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10643,7 +10733,8 @@
             "enough"
         ],
         "translation": "Lena does not laugh loudly enough.",
-        "gloss": "Lena laugh-3SG.PRS not loud-throat enough"
+        "gloss": "Lena laugh-3SG.PRS not loud-throat enough",
+        "split_item": "Lena lach-t nicht laut-hals genug."
     },
     "GermanLaughEnough2": {
         "main_question": "Lena lacht nicht \u2026.",
@@ -10667,7 +10758,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10756,7 +10847,8 @@
             "enough"
         ],
         "translation": "Lena does not laugh loudly enough.",
-        "gloss": "Lena laugh-3SG.PRS not loud-throat-wise enough"
+        "gloss": "Lena laugh-3SG.PRS not loud-throat-wise enough",
+        "split_item": "Lena lach-t nicht laut-hals-weise genug."
     },
     "GermanLaughEnough3": {
         "main_question": "Lena lacht nicht \u2026.",
@@ -10780,7 +10872,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10869,7 +10961,8 @@
             "enough"
         ],
         "translation": "Lena does not laugh loudly enough.",
-        "gloss": "Lena laugh-3SG.PRS not loud-throat-wise enough"
+        "gloss": "Lena laugh-3SG.PRS not loud-throat-wise enough",
+        "split_item": "Lena lach-t nicht laut-hals-erweise genug."
     },
     "GermanSpeakEnough13": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -10893,7 +10986,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -10984,7 +11077,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research loudly enough.",
-        "gloss": "Karin speak-3SG.PRS in loud-strong enough-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in loud-strong enough-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf laut-stark genug-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough14": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11008,7 +11102,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11099,7 +11193,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research loudly enough.",
-        "gloss": "Karin speak-3SG.PRS in enough loud-strong-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in enough loud-strong-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf genug laut-stark-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough15": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11123,7 +11218,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11215,7 +11310,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research freely enough.",
-        "gloss": "Karin speak-3SG.PRS in free-out enough-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in free-out enough-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf frei-heraus genug-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough16": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11239,7 +11335,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11331,7 +11427,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research freely enough.",
-        "gloss": "Karin speak-3SG.PRS in enough free-out-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in enough free-out-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf genug frei-heraus-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough17": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11355,7 +11452,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11446,7 +11543,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research in whispers enough.",
-        "gloss": "Karin speak-3SG.PRS in whisper-PRS.PTCP enough-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in whisper-PRS.PTCP enough-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf fl\u00fcstern-d genug-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakEnough18": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11470,7 +11568,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11561,7 +11659,8 @@
             "enough"
         ],
         "translation": "Karin speaks about her research in whispers enough.",
-        "gloss": "Karin speak-3SG.PRS in enough whisper-PRS.PTCP-ACC.F way about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS in enough whisper-PRS.PTCP-ACC.F way about her-ACC.F research",
+        "split_item": "Karin sprich-t auf genug fl\u00fcstern-d-e Weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible5": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11585,7 +11684,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11676,7 +11775,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as freely as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP free-out about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP free-out about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st frei-heraus \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible6": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11700,7 +11800,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11791,7 +11891,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as freely as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP free-out-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP free-out-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st frei-heraus-weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible7": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11815,7 +11916,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -11906,7 +12007,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as freely as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP free-out-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP free-out-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st frei-heraus-erweise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible8": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -11930,7 +12032,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12019,7 +12121,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research in as much whispers as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st fl\u00fcstern-d \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible9": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -12043,7 +12146,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12132,7 +12235,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research in as much whispers as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st fl\u00fcstern-d-weise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible10": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -12156,7 +12260,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12245,7 +12349,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research in as much whispers as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP whisper-PRS.PTCP-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st fl\u00fcstern-d-erweise \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible11": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -12269,7 +12374,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12358,7 +12463,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as scholarly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP learn.PST.PTCP about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP learn.PST.PTCP about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st gelehrt \u00fcber ihr-e Forschung."
     },
     "GermanSpeakPossible12": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung.",
@@ -12382,7 +12488,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12471,7 +12577,8 @@
             "possible"
         ],
         "translation": "Karin speaks about her research as scholarly as possible.",
-        "gloss": "Karin speak-3SG.PRS possible-SUP learn-PST.PTCP-wise about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS possible-SUP learn-PST.PTCP-wise about her-ACC.F research",
+        "split_item": "Karin sprich-t m\u00f6glich-st gelehrt-weise \u00fcber ihr-e Forschung."
     },
     "GermanCleanComp1": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -12495,7 +12602,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12584,7 +12691,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room fast-COMP than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room fast-COMP than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer schnell-er als Ingrid geputzt."
     },
     "GermanCleanComp2": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -12608,7 +12716,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12697,7 +12805,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room more fast than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room more fast than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer mehr schnell als Ingrid geputzt."
     },
     "GermanCleanComp3": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -12721,7 +12830,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12812,7 +12921,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room in fast-COMP-ACC.F way than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room in fast-COMP-ACC.F way than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer auf schnell-er-e Weise als Ingrid geputzt."
     },
     "GermanCleanComp4": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -12836,7 +12946,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -12925,7 +13035,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room fast-wise-COMP than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room fast-wise-COMP than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer schnell-weise-r als Ingrid geputzt."
     },
     "GermanCleanComp5": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -12949,7 +13060,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13038,7 +13149,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room fast-COMP-wise than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room fast-COMP-wise than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer schnell-er-weise als Ingrid geputzt."
     },
     "GermanCleanComp6": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13062,7 +13174,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13151,7 +13263,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room fast-COMP-wise than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room fast-COMP-wise than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer schnell-er-erweise als Ingrid geputzt."
     },
     "GermanCleanComp7": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13175,7 +13288,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13264,7 +13377,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room faster than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room fast-wise-COMP than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room fast-wise-COMP than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer schnell-erweis-er als Ingrid geputzt."
     },
     "GermanCleanComp8": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13288,7 +13402,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13379,7 +13493,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room more thoroughly than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room in thorough-COMP-ACC.F way than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room in thorough-COMP-ACC.F way than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer auf gr\u00fcndlich-er-e Weise als Ingrid geputzt."
     },
     "GermanCleanComp9": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13403,7 +13518,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13492,7 +13607,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room more thoroughly than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room thorough-COMP than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room thorough-COMP than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer gr\u00fcndlich-er als Ingrid geputzt."
     },
     "GermanCleanComp10": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13516,7 +13632,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13605,7 +13721,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room more thoroughly than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room thorough-wise-COMP than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room thorough-wise-COMP than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer gr\u00fcndlich-erweise-r als Ingrid geputzt."
     },
     "GermanCleanComp11": {
         "main_question": "Hans hat sein Zimmer \u2026 als Ingrid geputzt.",
@@ -13629,7 +13746,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13718,7 +13835,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room more thoroughly than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room thorough-wise-ACC.F than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room thorough-wise-ACC.F than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer gr\u00fcndlich-erweis-e als Ingrid geputzt."
     },
     "GermanCleanComp12": {
         "main_question": "Hans hat sein Zimmer gr\u00fcndlichserweise als Ingrid geputzt.",
@@ -13742,7 +13860,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13831,7 +13949,8 @@
             "comparative"
         ],
         "translation": "Hans cleaned his room more thoroughly than Ingrid.",
-        "gloss": "Hans have.3SG.PRS his room thorough-S-wise than Ingrid clean.PTCP"
+        "gloss": "Hans have.3SG.PRS his room thorough-S-wise than Ingrid clean.PTCP",
+        "split_item": "Hans hat sein Zimmer gr\u00fcndlich-s-erweise als Ingrid geputzt."
     },
     "GermanQuickSup1": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -13855,7 +13974,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -13944,7 +14063,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the fastest of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am schnell-st-en von all-en."
     },
     "GermanQuickSup2": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -13968,7 +14088,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14057,7 +14177,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the fastest of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am schnell-weise-st-en von all-en."
     },
     "GermanQuickSup3": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -14081,7 +14202,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14170,7 +14291,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the fastest of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG fast-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am schnell-erweise-st-en von all-en."
     },
     "GermanQuickSup4": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -14194,7 +14316,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14283,7 +14405,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the most politely of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am h\u00f6flich-st-en von all-en."
     },
     "GermanQuickSup5": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -14307,7 +14430,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14396,7 +14519,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the most politely of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am h\u00f6flich-weise-st-en von all-en."
     },
     "GermanQuickSup6": {
         "main_question": "Hans spricht \u2026 von allen.",
@@ -14420,7 +14544,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14509,7 +14633,8 @@
             "superlative"
         ],
         "translation": "Hans speaks the most politely of all.",
-        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Hans speak-3SG.PRS on.the.DAT.SG polite-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Hans sprich-t am h\u00f6flich-erweise-st-en von all-en."
     },
     "GermanSpeakComp1": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -14533,7 +14658,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14622,7 +14747,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-st\u00e4rk-er als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp2": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -14646,7 +14772,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14735,7 +14861,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark-weise-r als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp3": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -14759,7 +14886,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14848,7 +14975,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark-erweise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp4": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -14872,7 +15000,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -14961,7 +15089,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-st\u00e4rk-erweise als Lena \u00fcber ihr-e Probleme."
     },
     "GermanSpeakComp5": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -14985,7 +15114,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15074,7 +15203,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-COMP-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-COMP-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-st\u00e4rk-er-erweise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp6": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15098,7 +15228,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15187,7 +15317,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-stark-erweise-r als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp7": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15211,7 +15342,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15300,7 +15431,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more loudly than Lena.",
-        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS loud-strong-wise-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t laut-st\u00e4rk-erweise-r als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp8": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15324,7 +15456,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15415,7 +15547,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-out-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-er als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp9": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15439,7 +15572,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15530,7 +15663,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-COMP-out than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-COMP-out than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-er-heraus als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp10": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15554,7 +15688,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15645,7 +15779,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-out-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-erweise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp11": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15669,7 +15804,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15760,7 +15895,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-out-COMP-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-COMP-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-er-erweise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp12": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15784,7 +15920,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15875,7 +16011,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-out-wise-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-wise-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-weise-r als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp13": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -15899,7 +16036,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -15990,7 +16127,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-COMP-out-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-COMP-out-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-er-heraus-weise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp14": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -16014,7 +16152,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16105,7 +16243,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-out-wise-COMP than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-out-wise-COMP than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-heraus-erweise-r als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanSpeakComp15": {
         "main_question": "Emma spricht \u2026 als Lena \u00fcber ihre Probleme.",
@@ -16129,7 +16268,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16220,7 +16359,8 @@
             "comparative"
         ],
         "translation": "Emma speaks about her problems more freely than Lena.",
-        "gloss": "Emma speak-3SG.PRS free-COMP-out-wise than Lena about her-ACC.PL problem-ACC.PL"
+        "gloss": "Emma speak-3SG.PRS free-COMP-out-wise than Lena about her-ACC.PL problem-ACC.PL",
+        "split_item": "Emma sprich-t frei-er-heraus-erweise als Lena \u00fcber ihr-e Problem-e."
     },
     "GermanLaughComp1": {
         "main_question": "Lena lacht \u2026 als Emma.",
@@ -16244,7 +16384,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16334,7 +16474,8 @@
             "comparative"
         ],
         "translation": "Lena laughs more loudly than Emma.",
-        "gloss": "Lena laugh-3SG.PRS loud-throat-COMP than Emma"
+        "gloss": "Lena laugh-3SG.PRS loud-throat-COMP than Emma",
+        "split_item": "Lena lach-t laut-hals-er als Emma."
     },
     "GermanLaughComp2": {
         "main_question": "Lena lacht \u2026 als Emma.",
@@ -16358,7 +16499,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16448,7 +16589,8 @@
             "comparative"
         ],
         "translation": "Lena laughs more loudly than Emma.",
-        "gloss": "Lena laugh-3SG.PRS loud-throat-wise-COMP than Emma"
+        "gloss": "Lena laugh-3SG.PRS loud-throat-wise-COMP than Emma",
+        "split_item": "Lena lach-t laut-hals-weise-r als Emma."
     },
     "GermanLaughComp3": {
         "main_question": "Lena lacht \u2026 als Emma.",
@@ -16472,7 +16614,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16562,7 +16704,8 @@
             "comparative"
         ],
         "translation": "Lena laughs more loudly than Emma.",
-        "gloss": "Lena laugh-3SG.PRS loud-COMP-throat-wise than Emma"
+        "gloss": "Lena laugh-3SG.PRS loud-COMP-throat-wise than Emma",
+        "split_item": "Lena lach-t laut-er-hals-weise als Emma."
     },
     "GermanLaughComp4": {
         "main_question": "Lena lacht \u2026 als Emma.",
@@ -16586,7 +16729,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16676,7 +16819,8 @@
             "comparative"
         ],
         "translation": "Lena laughs more loudly than Emma.",
-        "gloss": "Lena laugh-3SG.PRS loud-throat-wise than Emma"
+        "gloss": "Lena laugh-3SG.PRS loud-throat-wise than Emma",
+        "split_item": "Lena lach-t laut-hals-erweise als Emma."
     },
     "GermanLaughComp5": {
         "main_question": "Lena lacht \u2026 als Emma.",
@@ -16700,7 +16844,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16790,7 +16934,8 @@
             "comparative"
         ],
         "translation": "Lena laughs more loudly than Emma.",
-        "gloss": "Lena laugh-3SG.PRS loud-throat-wise-COMP than Emma"
+        "gloss": "Lena laugh-3SG.PRS loud-throat-wise-COMP than Emma",
+        "split_item": "Lena lach-t laut-hals-erweise-r als Emma."
     },
     "GermanSpeakSup1": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -16814,7 +16959,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -16903,7 +17048,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most loudly of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am laut-st\u00e4rk-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup2": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -16927,7 +17073,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17016,7 +17162,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most loudly of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am laut-stark-weise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup3": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17040,7 +17187,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17129,7 +17276,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most loudly of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am laut-stark-erweise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup4": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17153,7 +17301,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17242,7 +17390,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most loudly of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am laut-st\u00e4rk-erweise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup5": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17266,7 +17415,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17355,7 +17504,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most loudly of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-SUP-DAT.SG-wise of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG loud-strong-SUP-DAT.SG-wise of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am laut-st\u00e4rk-st-en-weise von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup6": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17379,7 +17529,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17470,7 +17620,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most freely of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am frei-heraus-est-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup7": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17494,7 +17645,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17585,7 +17736,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most freely of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am frei-heraus-weise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup8": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17609,7 +17761,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17700,7 +17852,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most freely of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am frei-heraus-weise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanSpeakSup9": {
         "main_question": "Bert spricht \u2026 von allen \u00fcber seine Probleme.",
@@ -17724,7 +17877,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17815,7 +17968,8 @@
             "superlative"
         ],
         "translation": "Bert speaks about his problems the most freely of all.",
-        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL"
+        "gloss": "Bert speak-3SG.PRS on.the.DAT.SG free-out-wise-SUP-DAT.SG of all-DAT.PL about his-ACC.PL problem-ACC.PL",
+        "split_item": "Bert sprich-t am frei-heraus-erweise-st-en von all-en \u00fcber sein-e Problem-e."
     },
     "GermanLaughSup1": {
         "main_question": "Lena lacht \u2026 von allen.",
@@ -17839,7 +17993,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -17929,7 +18083,8 @@
             "superlative"
         ],
         "translation": "Lena laughs the most loudly of all.",
-        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Lena lach-t am laut-hals-est-en von all-en."
     },
     "GermanLaughSup2": {
         "main_question": "Lena lacht \u2026 von allen.",
@@ -17953,7 +18108,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18043,7 +18198,8 @@
             "superlative"
         ],
         "translation": "Lena laughs the most loudly of all.",
-        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Lena lach-t am laut-h\u00e4ls-est-en von all-en."
     },
     "GermanLaughSup3": {
         "main_question": "Lena lacht \u2026 von allen.",
@@ -18067,7 +18223,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18157,7 +18313,8 @@
             "superlative"
         ],
         "translation": "Lena laughs the most loudly of all.",
-        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Lena lach-t am laut-hals-weise-st-en von all-en."
     },
     "GermanLaughSup4": {
         "main_question": "Lena lacht \u2026 von allen.",
@@ -18181,7 +18338,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18271,7 +18428,8 @@
             "superlative"
         ],
         "translation": "Lena laughs the most loudly of all.",
-        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-wise-SUP-DAT.SG of all-DAT.PL"
+        "gloss": "Lena laugh-3SG.PRS on.the.DAT.SG loud-throat-wise-SUP-DAT.SG of all-DAT.PL",
+        "split_item": "Lena lach-t am laut-hals-erweise-st-en von all-en."
     },
     "GermanSmartComp1": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung als Daan.",
@@ -18295,7 +18453,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18385,7 +18543,8 @@
             "comparative"
         ],
         "translation": "Karin speaks more scholarly about her research than Daan.",
-        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-COMP about her-ACC.F research than Daan"
+        "gloss": "Karin speak-3SG.PRS learn.PST.PTCP-COMP about her-ACC.F research than Daan",
+        "split_item": "Karin sprich-t gelehrt-er \u00fcber ihr-e Forschung als Daan."
     },
     "GermanSmartComp2": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung als Daan.",
@@ -18409,7 +18568,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18501,7 +18660,8 @@
             "comparative"
         ],
         "translation": "Karin speaks more scholarly about her research than Daan.",
-        "gloss": "Karin speak-3SG.PRS in learn.PST.PTCP-COMP-ACC.F way about her-ACC.F research than Daan"
+        "gloss": "Karin speak-3SG.PRS in learn.PST.PTCP-COMP-ACC.F way about her-ACC.F research than Daan",
+        "split_item": "Karin sprich-t auf gelehrt-er-e Weise \u00fcber ihr-e Forschung als Daan."
     },
     "GermanSmartComp3": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung als Daan.",
@@ -18525,7 +18685,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18614,7 +18774,8 @@
             "comparative"
         ],
         "translation": "Karin speaks more stupidly about her research than Daan.",
-        "gloss": "Karin speak-3SG.PRS stupid-COMP about her-ACC.F research than Daan"
+        "gloss": "Karin speak-3SG.PRS stupid-COMP about her-ACC.F research than Daan",
+        "split_item": "Karin sprich-t d\u00fcmm-er \u00fcber ihr-e Forschung als Daan."
     },
     "GermanSmartComp4": {
         "main_question": "Karin spricht \u2026 \u00fcber ihre Forschung als Daan.",
@@ -18638,7 +18799,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18729,7 +18890,8 @@
             "comparative"
         ],
         "translation": "Karin speaks more stupidly about her research than Daan.",
-        "gloss": "Karin speak-3SG.PRS in stupid-COMP-ACC.F way about her-ACC.F research than Daan"
+        "gloss": "Karin speak-3SG.PRS in stupid-COMP-ACC.F way about her-ACC.F research than Daan",
+        "split_item": "Karin sprich-t auf d\u00fcmm-er-e Weise \u00fcber ihr-e Forschung als Daan."
     },
     "GermanSmartSup1": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -18753,7 +18915,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18843,7 +19005,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most scholarly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am gelehrt-est-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanSmartSup2": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -18867,7 +19030,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -18957,7 +19120,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most scholarly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am gelehrt-weise-st-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanSmartSup3": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -18981,7 +19145,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19071,7 +19235,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most scholarly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG learn.PST.PTCP-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am gelehrt-erweise-st-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanSmartSup4": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -19095,7 +19260,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19184,7 +19349,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most stupidly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am d\u00fcmm-st-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanSmartSup5": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -19208,7 +19374,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19297,7 +19463,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most stupidly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am dumm-weise-st-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanSmartSup6": {
         "main_question": "Karin spricht \u2026 von allen \u00fcber ihre Forschung.",
@@ -19321,7 +19488,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19410,7 +19577,8 @@
             "superlative"
         ],
         "translation": "Karin speaks the most stupidly of all about her research.",
-        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research"
+        "gloss": "Karin speak-3SG.PRS on.the.DAT.SG stupid-wise-SUP-DAT.SG of all-DAT.PL about her-ACC.F research",
+        "split_item": "Karin sprich-t am d\u00fcmm-erweise-st-en von all-en \u00fcber ihr-e Forschung."
     },
     "GermanGetanzt1": {
         "main_question": "Er hat getanzt, wie sein Vater auch so getanzt hat",
@@ -19434,7 +19602,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19522,7 +19690,8 @@
             ""
         ],
         "translation": "He danced as his father (also) danced.",
-        "gloss": "he have.3SG.PRS dance.PTCP how his father also so dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS dance.PTCP how his father also so dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat getanzt, wie sein Vater auch so getanzt hat."
     },
     "GermanGetanzt2": {
         "main_question": "Er hat so getanzt, wie sein Vater auch getanzt hat",
@@ -19546,7 +19715,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19634,7 +19803,8 @@
             "extraposition"
         ],
         "translation": "He danced as his father (also) danced.",
-        "gloss": "he have.3SG.PRS so dance.PTCP how his father also dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS so dance.PTCP how his father also dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat so getanzt, wie sein Vater auch getanzt hat."
     },
     "GermanGetanzt3": {
         "main_question": "Er hat getanzt, wie sein Vater so getanzt hat",
@@ -19658,7 +19828,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19746,7 +19916,8 @@
             ""
         ],
         "translation": "He danced as his father danced.",
-        "gloss": "he have.3SG.PRS dance.PTCP how his father so dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS dance.PTCP how his father so dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat getanzt, wie sein Vater so getanzt hat."
     },
     "GermanGetanzt4": {
         "main_question": "Er hat getanzt, wie sein Vater auch getanzt hat",
@@ -19770,7 +19941,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19858,7 +20029,8 @@
             ""
         ],
         "translation": "He danced as his father (also) danced.",
-        "gloss": "he have.3SG.PRS dance.PTCP how his father also dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS dance.PTCP how his father also dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat getanzt, wie sein Vater auch getanzt hat."
     },
     "GermanGetanzt5": {
         "main_question": "Er hat gleich getanzt, wie sein Vater getanzt hat",
@@ -19882,7 +20054,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -19970,7 +20142,8 @@
             "extraposition"
         ],
         "translation": "He danced as his father danced.",
-        "gloss": "he have.3SG.PRS same dance.PTCP how his father dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS same dance.PTCP how his father dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat gleich getanzt, wie sein Vater getanzt hat."
     },
     "GermanGetanzt6": {
         "main_question": "Er hat so getanzt, wie sein Vater engelhaft getanzt hat",
@@ -19994,7 +20167,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20082,7 +20255,8 @@
             "gap"
         ],
         "translation": "He danced as his father danced angelically.",
-        "gloss": "he have.3SG.PRS so dance.PTCP how his father angelical-ly dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS so dance.PTCP how his father angelical-ly dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat so getanzt, wie sein Vater engel-haft getanzt hat."
     },
     "GermanGetanzt7": {
         "main_question": "Er hat so getanzt, wie du mir gesagt hast, dass er tanzen w\u00fcrde",
@@ -20106,7 +20280,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20194,7 +20368,8 @@
             "longdistancemovement"
         ],
         "translation": "He danced as you told me that he would dance.",
-        "gloss": "he have.3SG.PRS  so dance.PTCP how you me.DAT say.PTCP have.2SG.PRS that he dance would.3SG      "
+        "gloss": "he have.3SG.PRS  so dance.PTCP how you me.DAT say.PTCP have.2SG.PRS that he dance would.3SG      ",
+        "split_item": "Er hat so getanzt, wie du mir gesagt hast, dass er tanzen w\u00fcrde."
     },
     "GermanGetanzt8": {
         "main_question": "Er hat so getanzt, wie ich die Geschichte geh\u00f6rt habe, dass sein Vater getanzt hat",
@@ -20218,7 +20393,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20307,7 +20482,8 @@
             "complexNPisland"
         ],
         "translation": "He danced as I heard the story that his father danced.",
-        "gloss": "he have.3SG.PRS so dance.PTCP how I the story hear.PTCP have.1SG.PRS that his father dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS so dance.PTCP how I the story hear.PTCP have.1SG.PRS that his father dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat so getanzt, wie ich die Geschichte geh\u00f6rt habe, dass sein Vater getanzt hat."
     },
     "GermanGetanzt9": {
         "main_question": "Er hat so getanzt, wie ich mich gefragt habe, wer getanzt hat",
@@ -20331,7 +20507,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20420,7 +20596,8 @@
             "whisland"
         ],
         "translation": "He danced as I asked myself who danced.",
-        "gloss": "he have.3SG.PRS  so dance.PTCP how  I me.ACC ask.PTCP have.1SG.PRS who dance.PTCP have.3SG.PRS      "
+        "gloss": "he have.3SG.PRS  so dance.PTCP how  I me.ACC ask.PTCP have.1SG.PRS who dance.PTCP have.3SG.PRS      ",
+        "split_item": "Er hat so getanzt, wie ich mich gefragt habe, wer getanzt hat."
     },
     "GermanGetanzt10": {
         "main_question": "Er hat so getanzt, wie sein Vater nicht getanzt hat",
@@ -20444,7 +20621,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20533,7 +20710,8 @@
             "innerisland"
         ],
         "translation": "He danced as his father didn\u2019t dance.",
-        "gloss": "he have.3SG.PRS so dance.PTCP how his father not dance.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS so dance.PTCP how his father not dance.PTCP have.3SG.PRS ",
+        "split_item": "Er hat so getanzt, wie sein Vater nicht getanzt hat."
     },
     "GermanGetanzt11": {
         "main_question": "Er hat so getanzt, wie sein Vater erstaunt war, weil er getanzt hat",
@@ -20557,7 +20735,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20646,7 +20824,8 @@
             "adjunctisland"
         ],
         "translation": "He danced as his father was surprised because he danced.",
-        "gloss": "he have.3SG.PRS  so dance.PTCP how  his father surprised be.3SG.PST because he dance.PTCP have.3SG.PRS"
+        "gloss": "he have.3SG.PRS  so dance.PTCP how  his father surprised be.3SG.PST because he dance.PTCP have.3SG.PRS",
+        "split_item": "Er hat so getanzt, wie sein Vater erstaunt war, weil er getanzt hat."
     },
     "GermanGetanzt12": {
         "main_question": "So, wie sein Vater getanzt hat, hat er getanzt (und nicht wie seine Mutter)",
@@ -20670,7 +20849,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20758,7 +20937,460 @@
             "topicalization"
         ],
         "translation": "As his father danced, he danced (and not as his mother).",
-        "gloss": "so how his father dance.PTCP have.3SG.PRS have.3SG.PRS he dance.PTCP (and not how his-F mother)"
+        "gloss": "so how his father dance.PTCP have.3SG.PRS have.3SG.PRS he dance.PTCP (and not how his-F mother)",
+        "split_item": "So, wie sein Vater getanzt hat, hat er getanzt (und nicht wie sein-e Mutter)."
+    },
+    "GermanSatzpaaren1a": {
+        "main_question": "",
+        "main_question_id": "GermanSatzpaaren1a",
+        "sub_question": null,
+        "sub_question_id": null,
+        "sub_question_text_id": null,
+        "responses": [
+            {
+                "participant_id": "GermanInf1",
+                "dialects": [
+                    "German",
+                    "Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf2",
+                "dialects": [
+                    "German",
+                    "Bundesdeutsches Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "GermanInf3",
+                "dialects": [
+                    "German",
+                    "German (Ostmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf4",
+                "dialects": [
+                    "German",
+                    "German (Westmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "GermanInf5",
+                "dialects": [
+                    "German",
+                    "German (\u00d6dingsch Platt)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf6",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf7",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "GermanInf8",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf9",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John is dancing as if he is drunk.",
+        "gloss": "Jan dance-3SG.PRS just.now as be.3SG.PRS he drunk ",
+        "split_item": "Jan tanz-t gerade, als ist er betrunken."
+    },
+    "GermanSatzpaaren1b": {
+        "main_question": "",
+        "main_question_id": "GermanSatzpaaren1b",
+        "sub_question": null,
+        "sub_question_id": null,
+        "sub_question_text_id": null,
+        "responses": [
+            {
+                "participant_id": "GermanInf1",
+                "dialects": [
+                    "German",
+                    "Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "GermanInf2",
+                "dialects": [
+                    "German",
+                    "Bundesdeutsches Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf3",
+                "dialects": [
+                    "German",
+                    "German (Ostmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf4",
+                "dialects": [
+                    "German",
+                    "German (Westmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf5",
+                "dialects": [
+                    "German",
+                    "German (\u00d6dingsch Platt)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf6",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf7",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf8",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "GermanInf9",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John is dancing as if he is drunk.",
+        "gloss": "Jan dance-3SG.PRS just.now as if  he be.3SG.PRS drunk ",
+        "split_item": "Jan tanz-t gerade, als ob er betrunken ist."
+    },
+    "GermanSatzpaaren1c": {
+        "main_question": "",
+        "main_question_id": "GermanSatzpaaren1c",
+        "sub_question": null,
+        "sub_question_id": null,
+        "sub_question_text_id": null,
+        "responses": [
+            {
+                "participant_id": "GermanInf1",
+                "dialects": [
+                    "German",
+                    "Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "2"
+            },
+            {
+                "participant_id": "GermanInf2",
+                "dialects": [
+                    "German",
+                    "Bundesdeutsches Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf3",
+                "dialects": [
+                    "German",
+                    "German (Ostmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf4",
+                "dialects": [
+                    "German",
+                    "German (Westmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf5",
+                "dialects": [
+                    "German",
+                    "German (\u00d6dingsch Platt)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf6",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf7",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf8",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf9",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John is dancing as if he is drunk.",
+        "gloss": "Jan dance-3SG.PRS just.now as if  he be.3SG.PRS drunk ",
+        "split_item": " Jan tanz-t gerade, als wenn er betrunken ist."
+    },
+    "GermanSatzpaaren1d": {
+        "main_question": "",
+        "main_question_id": "GermanSatzpaaren1d",
+        "sub_question": null,
+        "sub_question_id": null,
+        "sub_question_text_id": null,
+        "responses": [
+            {
+                "participant_id": "GermanInf1",
+                "dialects": [
+                    "German",
+                    "Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf2",
+                "dialects": [
+                    "German",
+                    "Bundesdeutsches Standard German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "4"
+            },
+            {
+                "participant_id": "GermanInf3",
+                "dialects": [
+                    "German",
+                    "German (Ostmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "GermanInf4",
+                "dialects": [
+                    "German",
+                    "German (Westmittelbairisch)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf5",
+                "dialects": [
+                    "German",
+                    "German (\u00d6dingsch Platt)"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf6",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "5"
+            },
+            {
+                "participant_id": "GermanInf7",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "3"
+            },
+            {
+                "participant_id": "GermanInf8",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            },
+            {
+                "participant_id": "GermanInf9",
+                "dialects": [
+                    "German"
+                ],
+                "country": [
+                    "Germany"
+                ],
+                "score": "1"
+            }
+        ],
+        "chapters": [
+            "simulativeclause"
+        ],
+        "tags": [
+            ""
+        ],
+        "translation": "John is dancing as if he is drunk.",
+        "gloss": "Jan dance-3SG.PRS just.now how if  he be.3SG.PRS drunk ",
+        "split_item": " Jan tanz-t gerade, wie wenn er betrunken ist."
     },
     "GermanBenimmt1": {
         "main_question": "Er hat so getanzt und wie sein Vater es ihm beigebracht hat",
@@ -20782,7 +21414,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20870,7 +21502,8 @@
             "coordination"
         ],
         "translation": "He danced like this and as his father taught him.",
-        "gloss": "he have.3SG.PRS so dance.PTCP and how his father it him.DAT teach.PTCP have.3SG.PRS "
+        "gloss": "he have.3SG.PRS so dance.PTCP and how his father it him.DAT teach.PTCP have.3SG.PRS ",
+        "split_item": "Er hat so getanzt und wie sein Vater es ihm beigebracht hat."
     },
     "GermanBenimmt2": {
         "main_question": "Jan benimmt sich, wie ein Verbrecher sich benimmt und als ob er verfolgt w\u00fcrde",
@@ -20894,7 +21527,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -20982,8 +21615,9 @@
         "tags": [
             "coordination"
         ],
-        "translation": "\u201cJohn behaves as a criminal behaves and as if he were followed.\u201d ",
-        "gloss": "Jan behave-3SG.PRS SE.3 how a criminal SE.3 behave-3SG.PRS and as if he follow.PTCP would"
+        "translation": "John behaves as a criminal behaves and as if he were followed.\u201d ",
+        "gloss": "Jan behave-3SG.PRS SE.3 how a criminal SE.3 behave-3SG.PRS and as if he follow.PTCP would",
+        "split_item": "Jan benimm-t sich, wie ein Verbrecher sich benimm-t und als ob er verfolgt w\u00fcrde."
     },
     "GermanBenimmt3": {
         "main_question": "Jan benimmt sich, als ob er verfolgt w\u00fcrde und wie ein Verbrecher sich benimmt",
@@ -21007,7 +21641,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21095,8 +21729,9 @@
         "tags": [
             "coordination"
         ],
-        "translation": "\u201cJohn behaves as a criminal behaves and as if he were followed.\u201d ",
-        "gloss": "Jan behave-3SG.PRS SE.3  as if he follow.PTCP would.3SG and how a criminal SE.3 behave-3SG.PRS "
+        "translation": "John behaves as a criminal behaves and as if he were followed.\u201d ",
+        "gloss": "Jan behave-3SG.PRS SE.3  as if he follow.PTCP would.3SG and how a criminal SE.3 behave-3SG.PRS ",
+        "split_item": "Jan benimm-t sich, als ob er verfolgt w\u00fcrde und wie ein Verbrecher sich benimm-t."
     },
     "GermanBenimmt4": {
         "main_question": "Jan benimmt sich, als w\u00e4re er ein Verbrecher und ob er verfolgt w\u00fcrde",
@@ -21120,7 +21755,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21208,7 +21843,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als w\u00e4re er ein Verbrecher und ob er verfolgt w\u00fcrde."
     },
     "GermanBenimmt5": {
         "main_question": "Jan benimmt sich, als w\u00e4re er ein Verbrecher und als ob er verfolgt w\u00fcrde",
@@ -21232,7 +21868,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21320,7 +21956,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and as if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and as if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als w\u00e4re er ein Verbrecher und als ob er verfolgt w\u00fcrde."
     },
     "GermanBenimmt6": {
         "main_question": "Jan benimmt sich, als w\u00e4re er ein Verbrecher und wenn er verfolgt w\u00fcrde",
@@ -21344,7 +21981,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21432,7 +22069,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als w\u00e4re er ein Verbrecher und wenn er verfolgt w\u00fcrde."
     },
     "GermanBenimmt7": {
         "main_question": "Jan benimmt sich, als w\u00e4re er ein Verbrecher und als wenn er verfolgt w\u00fcrde",
@@ -21456,7 +22094,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21544,7 +22182,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and as if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as be.3SG.SBJV he a criminal and as if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als w\u00e4re er ein Verbrecher und als wenn er verfolgt w\u00fcrde."
     },
     "GermanBenimmt8": {
         "main_question": "Jan benimmt sich, als ob er ein Verbrecher w\u00e4re und ob er verfolgt w\u00fcrde",
@@ -21568,7 +22207,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21646,7 +22285,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als ob er ein Verbrecher w\u00e4re und ob er verfolgt w\u00fcrde."
     },
     "GermanBenimmt9": {
         "main_question": "Jan benimmt sich, als wenn er ein Verbrecher w\u00e4re und wenn er verfolgt w\u00fcrde",
@@ -21670,7 +22310,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21748,7 +22388,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als wenn er ein Verbrecher w\u00e4re und wenn er verfolgt w\u00fcrde."
     },
     "GermanBenimmt10": {
         "main_question": "Jan benimmt sich, als ob er ein Verbrecher w\u00e4re und wenn er verfolgt w\u00fcrde",
@@ -21772,7 +22413,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21860,7 +22501,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimmt sich, als ob er ein Verbrecher w\u00e4re und wenn er verfolgt w\u00fcrde."
     },
     "GermanBenimmt11": {
         "main_question": "Jan benimmt sich, als wenn er ein Verbrecher w\u00e4re und ob er verfolgt w\u00fcrde",
@@ -21884,7 +22526,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -21972,7 +22614,8 @@
             "coordination"
         ],
         "translation": "John behaves as if he were a criminal and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3 as if he a criminal be.3SG.SBJV  and  if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, als wenn er ein Verbrecher w\u00e4re und ob er verfolgt w\u00fcrde."
     },
     "GermanBenimmt12": {
         "main_question": "Jan benimmt sich, wie wenn er verfolgt w\u00fcrde und ein Verbrecher sich benimmt",
@@ -21996,7 +22639,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -22075,7 +22718,8 @@
             "coordination"
         ],
         "translation": "John behaves as a criminal behaves and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3  how if he follow.PTCP would.3SG and a criminal SE.3 behave-3SG.PRS "
+        "gloss": "Jan behave-3SG.PRS SE.3  how if he follow.PTCP would.3SG and a criminal SE.3 behave-3SG.PRS ",
+        "split_item": "Jan benimm-t sich, wie wenn er verfolgt w\u00fcrde und ein Verbrecher sich benimmt."
     },
     "GermanBenimmt13": {
         "main_question": "Jan benimmt sich, wie ein Verbrecher sich benimmt und wenn er verfolgt w\u00fcrde",
@@ -22099,7 +22743,7 @@
                 "participant_id": "GermanInf2",
                 "dialects": [
                     "German",
-                    "Standard German"
+                    "Bundesdeutsches Standard German"
                 ],
                 "country": [
                     "Germany"
@@ -22178,6 +22822,7 @@
             "coordination"
         ],
         "translation": "John behaves as a criminal behaves and as if he were followed.",
-        "gloss": "Jan behave-3SG.PRS SE.3  how a criminal SE.3 behave-3SG.PRS and if he follow.PTCP would.3SG  "
+        "gloss": "Jan behave-3SG.PRS SE.3  how a criminal SE.3 behave-3SG.PRS and if he follow.PTCP would.3SG  ",
+        "split_item": "Jan benimm-t sich, wie ein Verbrecher sich benimmt und wenn er verfolgt w\u00fcrde."
     }
 }

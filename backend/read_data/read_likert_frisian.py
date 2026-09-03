@@ -37,14 +37,15 @@ def get_likert_responses(line, indices, index_to_id, judgment_items):
     participant_id = line[0]
     for index in indices:
         score = line[index]
-        judgment_items[index_to_id[index]].responses.append(
-            Response(
-                participant_id,
-                ['Frisian', 'Klaaifrysk'],
-                ['Netherlands'],
-                score
+        if score:
+            judgment_items[index_to_id[index]].responses.append(
+                Response(
+                    participant_id,
+                    ['Frisian', 'Klaaifrysk'],
+                    ['Netherlands'],
+                    score
+                )
             )
-        )
     return judgment_items
 
 frisian_data = []
@@ -66,6 +67,8 @@ with open(FRISIAN_META, encoding='utf8') as file:
             judgment_items[question_id].tags = line[3].split(';')
             judgment_items[question_id].translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', line[4])
             judgment_items[question_id].gloss = line[5]
+            judgment_items[question_id].split_item = line[1]
+
 
 
 with open(os.path.join(OUTPUT_PATH, "likert_scales_frisian.json"), "w") as file:

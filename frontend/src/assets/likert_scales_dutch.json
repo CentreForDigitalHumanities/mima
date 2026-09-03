@@ -853,7 +853,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -1234,7 +1234,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -1560,8 +1560,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -1810,7 +1809,8 @@
             "comparative"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-COMP than Marie",
+        "split_item": "Jan praat zacht-er dan Marie"
     },
     "V11Z1[SQ002]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -2666,7 +2666,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -3047,7 +3047,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -3373,8 +3373,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -3624,7 +3623,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zacht-je-s-er dan Marie"
     },
     "V11Z1[SQ003]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -4480,7 +4480,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -4861,7 +4861,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -5187,8 +5187,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -5438,7 +5437,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zach-ie-s-er dan Marie"
     },
     "V11Z1[SQ004]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -6294,7 +6294,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -6675,7 +6675,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -7001,8 +7001,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -7252,7 +7251,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zach-ie-s-der dan Marie"
     },
     "V11Z1[SQ005]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -8108,7 +8108,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -8489,7 +8489,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -8815,8 +8815,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -9066,7 +9065,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-COMP-DIM-S than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-COMP-DIM-S than Marie",
+        "split_item": "Jan praat zacht-er-tje-s dan Marie"
     },
     "V11Z1[SQ006]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -9922,7 +9922,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -10303,7 +10303,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -10629,8 +10629,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -10880,7 +10879,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zuit-je-s-er dan Marie"
     },
     "V11Z1[SQ007]": {
         "main_question": "Jan praat \u2026 dan Marie",
@@ -11736,7 +11736,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -12117,7 +12117,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -12443,8 +12443,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -12694,7 +12693,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softlyly than Marie.",
-        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3.SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zuit-je-s-der dan Marie"
     },
     "V11Z2[SQ001]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -13550,7 +13550,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -13931,7 +13931,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -14257,8 +14257,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -14507,7 +14506,8 @@
             "comparative"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-COMP than Emma",
+        "split_item": "Jan dans-t stijv-er dan Emma"
     },
     "V11Z2[SQ002]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -15363,7 +15363,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -15744,7 +15744,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -16070,8 +16070,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -16321,7 +16320,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma",
+        "split_item": "Jan dans-t stijf-je-s-er dan Emma"
     },
     "V11Z2[SQ003]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -17177,7 +17177,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -17558,7 +17558,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -17884,8 +17884,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -18135,7 +18134,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma",
+        "split_item": "Jan dans-t stijf-ie-s-er dan Emma"
     },
     "V11Z2[SQ004]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -18991,7 +18991,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -19372,7 +19372,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -19698,8 +19698,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -19949,7 +19948,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma",
+        "split_item": "Jan dans-t stijf-ke-s-er dan Emma"
     },
     "V11Z2[SQ005]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -20805,7 +20805,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -21186,7 +21186,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -21512,8 +21512,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -21763,7 +21762,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-S-COMP than Emma",
+        "split_item": "Jan dans-t stijf-eje-s-er dan Emma"
     },
     "V11Z2[SQ006]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -22619,7 +22619,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -23000,7 +23000,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -23326,8 +23326,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -23577,7 +23576,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-COMP than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-DIM-COMP than Emma",
+        "split_item": "Jan dans-t STIJF-m-er dan Emma"
     },
     "V11Z2[SQ007]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -24433,7 +24433,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -24814,7 +24814,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -25140,8 +25140,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -25391,7 +25390,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma",
+        "split_item": "Jan dans-t stijv-er-je-s dan Emma"
     },
     "V11Z2[SQ008]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -26247,7 +26247,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -26628,7 +26628,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -26954,8 +26954,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -27205,7 +27204,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma",
+        "split_item": "Jan dans-t stijv-er-tje-s dan Emma"
     },
     "V11Z2[SQ009]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -28061,7 +28061,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -28442,7 +28442,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -28768,8 +28768,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -29019,7 +29018,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM-S than Emma",
+        "split_item": "Jan dans-t stijv-er-ke-s dan Emma"
     },
     "V11Z2[SQ010]": {
         "main_question": "Jan danst \u2026 dan Emma",
@@ -29875,7 +29875,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -30256,7 +30256,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -30582,8 +30582,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -30833,7 +30832,8 @@
             "diminutive"
         ],
         "translation": "Jan dances more stiffly than Marie.",
-        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM than Emma"
+        "gloss": "Jan dance-3.SG.PRS stiffly-COMP-DIM than Emma",
+        "split_item": "Jan dans-t STIJF-er-m dan Emma"
     },
     "V11Z3[SQ001]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -31689,7 +31689,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -32070,7 +32070,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -32396,8 +32396,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -32646,7 +32645,8 @@
             "comparative"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP than Marie",
+        "split_item": "Jan gedraag-t zich lomp-er dan Marie"
     },
     "V11Z3[SQ002]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -33502,7 +33502,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -33883,7 +33883,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -34209,8 +34209,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -34460,7 +34459,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-DIM-S-COMP than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-DIM-S-COMP than Marie",
+        "split_item": "Jan gedraag-t zich lomp-je-s-er dan Marie"
     },
     "V11Z3[SQ003]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -35316,7 +35316,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -35697,7 +35697,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -36023,8 +36023,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -36274,7 +36273,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-DIM-COMP than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-DIM-COMP than Marie",
+        "split_item": "Jan gedraag-t zich LOMP-m-er dan Marie"
     },
     "V11Z3[SQ004]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -37130,7 +37130,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -37511,7 +37511,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -37837,8 +37837,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -38087,7 +38086,8 @@
             "comparative"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-S-COMP than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-S-COMP than Marie",
+        "split_item": "Jan gedraag-t zich lomp-es-er dan Marie"
     },
     "V11Z3[SQ005]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -38943,7 +38943,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -39324,7 +39324,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -39650,8 +39650,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -39901,7 +39900,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-S-COMP than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-S-COMP than Marie",
+        "split_item": "Jan gedraag-t zich lomp-eje-s-er dan Marie"
     },
     "V11Z3[SQ006]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -40757,7 +40757,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -41138,7 +41138,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -41464,8 +41464,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -41715,7 +41714,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-DIM-S than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-DIM-S than Marie",
+        "split_item": "Jan gedraag-t zich lomp-er-tje-s dan Marie"
     },
     "V11Z3[SQ007]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -42571,7 +42571,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -42952,7 +42952,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -43278,8 +43278,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -43529,7 +43528,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-DIM than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-DIM than Marie",
+        "split_item": "Jan gedraag-t zich LOMP-er-m dan Marie"
     },
     "V11Z3[SQ008]": {
         "main_question": "Jan gedraagt zich \u2026 dan Marie",
@@ -44385,7 +44385,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -44766,7 +44766,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -45092,8 +45092,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -45342,7 +45341,8 @@
             "comparative"
         ],
         "translation": "Jan behaves more clumsily than Marie.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-S than Marie"
+        "gloss": "Jan behave-3.SG.PRS SE.3 clumsily-COMP-S than Marie",
+        "split_item": "Jan gedraag-t zich lomp-er-es dan Marie"
     },
     "V11Z4[SQ001]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -46198,7 +46198,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -46579,7 +46579,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -46905,8 +46905,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -47155,7 +47154,8 @@
             "superlative"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quiet-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quiet-SUP of everyone",
+        "split_item": "Jan sluip-t het stil-st van iedereen"
     },
     "V11Z4[SQ002]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -48011,7 +48011,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -48392,7 +48392,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -48718,8 +48718,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -48968,7 +48967,8 @@
             "superlative"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak.3.SG.PRS the quiet-SUP-E of everyone"
+        "gloss": "Jan sneak.3.SG.PRS the quiet-SUP-E of everyone",
+        "split_item": "Jan sluip-t het stil-st-e van iedereen"
     },
     "V11Z4[SQ003]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -49824,7 +49824,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -50205,7 +50205,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -50531,8 +50531,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -50782,7 +50781,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone",
+        "split_item": "Jan sluip-t het still-etje-s-t van iedereen"
     },
     "V11Z4[SQ004]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -51638,7 +51638,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -52019,7 +52019,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -52345,8 +52345,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -52596,7 +52595,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone",
+        "split_item": "Jan sluip-t het still-eke-s-t van iedereen"
     },
     "V11Z4[SQ005]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -53452,7 +53452,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -53833,7 +53833,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -54159,8 +54159,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -54410,7 +54409,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-SUP of everyone",
+        "split_item": "Jan sluip-t het stil-n-st van iedereen"
     },
     "V11Z4[SQ006]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -55266,7 +55266,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -55647,7 +55647,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -55973,8 +55973,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -56224,7 +56223,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quiet-DIM-S-SUP of everyone",
+        "split_item": "Jan sluip-t het stil-n-est van iedereen"
     },
     "V11Z4[SQ007]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -57080,7 +57080,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -57461,7 +57461,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -57787,8 +57787,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -58038,7 +58037,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietly of everybody.",
-        "gloss": "Jan neak-3.SG.PRS the quietly-SUP-DIM of everyone"
+        "gloss": "Jan neak-3.SG.PRS the quietly-SUP-DIM of everyone",
+        "split_item": "Jan sluip-t het stil-st-n van iedereen"
     },
     "V11Z4[SQ008]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -58894,7 +58894,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -59275,7 +59275,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -59601,8 +59601,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -59851,7 +59850,8 @@
             "superlative"
         ],
         "translation": "Jan sneaks around the most quietlyly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quietly-SUP-E-DIM of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quietly-SUP-E-DIM of everyone",
+        "split_item": "Jan sluip-t het stil-st-en van iedereen"
     },
     "V11Z4[SQ009]": {
         "main_question": "Jan sluipt het \u2026 van iedereen",
@@ -60707,7 +60707,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -61088,7 +61088,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -61414,8 +61414,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -61665,7 +61664,8 @@
             "diminutive"
         ],
         "translation": "Jan sneaks around the most quietlyly of everybody.",
-        "gloss": "Jan sneak-3.SG.PRS the quietly-DIM-SUP of everyone"
+        "gloss": "Jan sneak-3.SG.PRS the quietly-DIM-SUP of everyone",
+        "split_item": "Jan sluip-t het still-ie-st van iedereen"
     },
     "V11Z5a[SQ001]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -62521,7 +62521,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -62902,7 +62902,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -63228,8 +63228,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -63478,7 +63477,8 @@
             "superlative"
         ],
         "translation": "Jan speaks the most quietlyly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-SUP of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-SUP of everyone",
+        "split_item": "Jan praat het zacht-st van iedereen"
     },
     "V11Z5a[SQ002]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -64334,7 +64334,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -64715,7 +64715,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -65041,8 +65041,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -65291,7 +65290,8 @@
             "superlative"
         ],
         "translation": "Jan speaks the most quietlyly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-E of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-E of everyone",
+        "split_item": "Jan praat het zacht-st-e van iedereen"
     },
     "V11Z5a[SQ003]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -66147,7 +66147,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -66528,7 +66528,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -66854,8 +66854,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -67105,7 +67104,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietlyly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone",
+        "split_item": "Jan praat het zacht-je-s-t van iedereen"
     },
     "V11Z5a[SQ004]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -67961,7 +67961,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -68342,7 +68342,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -68668,8 +68668,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -68913,7 +68912,8 @@
         "chapters": [],
         "tags": [],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": ""
     },
     "V11Z5a[SQ005]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -69769,7 +69769,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -70150,7 +70150,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -70476,8 +70476,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -70727,7 +70726,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone",
+        "split_item": "Jan praat het zach-ie-s-t van iedereen"
     },
     "V11Z5a[SQ006]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -71583,7 +71583,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -71964,7 +71964,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -72290,8 +72290,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -72541,7 +72540,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP-E of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP-E of everyone",
+        "split_item": "Jan praat het zach-ie-s-t-e van iedereen"
     },
     "V11Z5b[SQ007]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -73397,7 +73397,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -73778,7 +73778,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -74104,8 +74104,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -74355,7 +74354,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP of everyone",
+        "split_item": "Jan praat het zuit-je-s-t van iedereen"
     },
     "V11Z5b[SQ008]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -75211,7 +75211,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -75592,7 +75592,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -75918,8 +75918,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -76169,7 +76168,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP-E of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-DIM-S-SUP-E of everyone",
+        "split_item": "Jan praat het zuit-je-s-t-e van iedereen"
     },
     "V11Z5b[SQ009]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -77025,7 +77025,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -77406,7 +77406,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -77732,8 +77732,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -77983,7 +77982,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-E of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-E of everyone",
+        "split_item": "Jan praat het zacht-st-je-s van iedereen"
     },
     "V11Z5b[SQ010]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -78839,7 +78839,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -79220,7 +79220,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -79546,8 +79546,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -79797,7 +79796,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-S of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-S of everyone",
+        "split_item": "Jan praat het zacht-st-ie-s van iedereen"
     },
     "V11Z5b[SQ011]": {
         "main_question": "Jan praat het \u2026 van iedereen",
@@ -80653,7 +80653,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -81034,7 +81034,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -81360,8 +81360,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -81611,7 +81610,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks the most quietly of everybody.",
-        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-S of everyone"
+        "gloss": "Jan speak.3.SG.PRS the quietly-SUP-DIM-S of everyone",
+        "split_item": "Jan praat het zuit-st-je-s van iedereen"
     },
     "V11Z6a[SQ001]": {
         "main_question": "Jan danst het",
@@ -82467,7 +82467,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -82848,7 +82848,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -83174,8 +83174,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -83424,7 +83423,8 @@
             "superlative"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP of everyone",
+        "split_item": "Jan dans-t het stijf-st van iedereen"
     },
     "V11Z6a[SQ002]": {
         "main_question": "Jan danst het",
@@ -84280,7 +84280,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -84661,7 +84661,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -84987,8 +84987,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -85237,7 +85236,8 @@
             "superlative"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the siffly-SUP-E of everyone"
+        "gloss": "Jan dance-3.SG.PRS the siffly-SUP-E of everyone",
+        "split_item": "Jan dans-t het stijf-st-e van iedereen"
     },
     "V11Z6a[SQ003]": {
         "main_question": "Jan danst het",
@@ -86093,7 +86093,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -86474,7 +86474,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -86800,8 +86800,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -87051,7 +87050,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone",
+        "split_item": "Jan dans-t het stijf-je-s-t van iedereen"
     },
     "V11Z6a[SQ004]": {
         "main_question": "Jan danst het",
@@ -87907,7 +87907,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -88288,7 +88288,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -88614,8 +88614,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -88865,7 +88864,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone",
+        "split_item": "Jan dans-t het stijf-je-s-t-e van iedereen"
     },
     "V11Z6a[SQ005]": {
         "main_question": "Jan danst het",
@@ -89721,7 +89721,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -90102,7 +90102,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -90428,8 +90428,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -90679,7 +90678,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone",
+        "split_item": "Jan dans-t het stijf-ie-s-t van iedereen"
     },
     "V11Z6a[SQ006]": {
         "main_question": "Jan danst het",
@@ -91535,7 +91535,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -91916,7 +91916,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -92242,8 +92242,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -92493,7 +92492,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone",
+        "split_item": "Jan dans-t het stijf-ie-s-t-e van iedereen"
     },
     "V11Z6a[SQ007]": {
         "main_question": "Jan danst het",
@@ -93349,7 +93349,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -93730,7 +93730,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -94056,8 +94056,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -94307,7 +94306,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP of everyone",
+        "split_item": "Jan dans-t het stijf-ke-s-t van iedereen"
     },
     "V11Z6b[SQ008]": {
         "main_question": "Jan danst het",
@@ -95163,7 +95163,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -95544,7 +95544,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -95870,8 +95870,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -96121,7 +96120,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-S-SUP-E of everyone",
+        "split_item": "Jan dans-t het stijf-ke-s-t-e van iedereen"
     },
     "V11Z6b[SQ009]": {
         "main_question": "Jan danst het",
@@ -96977,7 +96977,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -97358,7 +97358,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -97684,8 +97684,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -97935,7 +97934,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-SUP of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-SUP of everyone",
+        "split_item": "Jan dans-t het STIJF-m-st van iedereen"
     },
     "V11Z6b[SQ010]": {
         "main_question": "Jan danst het",
@@ -98791,7 +98791,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -99172,7 +99172,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -99498,8 +99498,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -99749,7 +99748,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-SUP-E of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-DIM-SUP-E of everyone",
+        "split_item": "Jan dans-t het STIJF-m-st-e van iedereen"
     },
     "V11Z6b[SQ011]": {
         "main_question": "Jan danst het",
@@ -100605,7 +100605,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -100986,7 +100986,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -101312,8 +101312,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -101563,7 +101562,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone",
+        "split_item": "Jan dans-t het stijf-st-je-s van iedereen"
     },
     "V11Z6b[SQ012]": {
         "main_question": "Jan danst het",
@@ -102419,7 +102419,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -102800,7 +102800,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -103126,8 +103126,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -103377,7 +103376,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone",
+        "split_item": "Jan dans-t het stijf-st-ie-s van iedereen"
     },
     "V11Z6b[SQ013]": {
         "main_question": "Jan danst het",
@@ -104233,7 +104233,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -104614,7 +104614,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -104940,8 +104940,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -105191,7 +105190,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM-S of everyone",
+        "split_item": "Jan dans-t het stijf-st-ke-s van iedereen"
     },
     "V11Z6b[SQ014]": {
         "main_question": "Jan danst het",
@@ -106047,7 +106047,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -106428,7 +106428,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -106754,8 +106754,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -107005,7 +107004,8 @@
             "diminutive"
         ],
         "translation": "Jan dances the most stiffly of everybody.",
-        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM of everyone"
+        "gloss": "Jan dance-3.SG.PRS the stiffly-SUP-DIM of everyone",
+        "split_item": "Jan dans-t het STIJF-st-m van iedereen"
     },
     "V11Z7a[SQ001]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -107861,7 +107861,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -108242,7 +108242,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -108568,8 +108568,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -108818,7 +108817,8 @@
             "superlative"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-st van iedereen"
     },
     "V11Z7a[SQ002]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -109674,7 +109674,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -110055,7 +110055,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -110381,8 +110381,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -110631,7 +110630,8 @@
             "superlative"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-E of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-E of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-st-e van iedereen"
     },
     "V11Z7a[SQ003]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -111487,7 +111487,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -111868,7 +111868,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -112194,8 +112194,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -112445,7 +112444,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-je-s-t van iedereen"
     },
     "V11Z7a[SQ004]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -113301,7 +113301,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -113682,7 +113682,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -114008,8 +114008,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -114259,7 +114258,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP-E of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP-E of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-je-s-t-e van iedereen"
     },
     "V11Z7a[SQ005]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -115115,7 +115115,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -115496,7 +115496,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -115822,8 +115822,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -116073,7 +116072,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP of everyone",
+        "split_item": "Jan gedraag-t zich het LOMP-m-st van iedereen"
     },
     "V11Z7a[SQ006]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -116929,7 +116929,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -117310,7 +117310,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -117636,8 +117636,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -117887,7 +117886,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP-E of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP-E of everyone",
+        "split_item": "Jan gedraag-t zich het LOMP-m-st-e van iedereen"
     },
     "V11Z7a[SQ007]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -118743,7 +118743,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -119124,7 +119124,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -119450,8 +119450,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -119700,7 +119699,8 @@
             "superlative"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-S-SUP of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-S-SUP of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-es-t van iedereen"
     },
     "V11Z7b[SQ008]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -120556,7 +120556,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -120937,7 +120937,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -121263,8 +121263,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -121513,7 +121512,8 @@
             "superlative"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-S-SUP-E of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-S-SUP-E of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-es-t-e van iedereen"
     },
     "V11Z7b[SQ009]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -122369,7 +122369,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -122750,7 +122750,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -123076,8 +123076,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -123327,7 +123326,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-SUP of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-eje-st van iedereen"
     },
     "V11Z7b[SQ010]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -124183,7 +124183,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -124564,7 +124564,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -124890,8 +124890,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -125141,7 +125140,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP-E of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-DIM-S-SUP-E of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-eje-s-t-e van iedereen"
     },
     "V11Z7b[SQ011]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -125997,7 +125997,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -126378,7 +126378,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -126704,8 +126704,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -126955,7 +126954,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-DIM-S of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-DIM-S of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-st-je-s van iedereen"
     },
     "V11Z7b[SQ012]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -127811,7 +127811,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -128192,7 +128192,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -128518,8 +128518,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -128769,7 +128768,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-DIM of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-DIM of everyone",
+        "split_item": "Jan gedraag-t zich het LOMP-st-m van iedereen"
     },
     "V11Z7b[SQ013]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -129625,7 +129625,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -130006,7 +130006,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -130332,8 +130332,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -130583,7 +130582,8 @@
             "diminutive"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-E-DIM of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-E-DIM of everyone",
+        "split_item": "Jan gedraag-t zich het LOMP-st-e-m van iedereen"
     },
     "V11Z7b[SQ014]": {
         "main_question": "Jan gedraagt zich het \u2026 van iedereen",
@@ -131439,7 +131439,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -131820,7 +131820,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -132146,8 +132146,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -132396,7 +132395,8 @@
             "superlative"
         ],
         "translation": "Jan behaves the most clumsily of everybody.",
-        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-S of everyone"
+        "gloss": "Jan behave-3.SG.PRS SE.3 the clumsily-SUP-S of everyone",
+        "split_item": "Jan gedraag-t zich het lomp-st-es van iedereen"
     },
     "VA4Z1[SQ001]": {
         "main_question": "Marie praat",
@@ -133252,7 +133252,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -133633,7 +133633,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -133959,8 +133959,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -134209,7 +134208,8 @@
             "comparative"
         ],
         "translation": "Marie speaks more loudly than Jan.",
-        "gloss": "Marie speak.3.SG.PRS loudly-COMP than Jan"
+        "gloss": "Marie speak.3.SG.PRS loudly-COMP than Jan",
+        "split_item": "Marie praat hard-er dan Jan"
     },
     "VA4Z1[SQ002]": {
         "main_question": "Marie praat",
@@ -135065,7 +135065,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -135446,7 +135446,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -135772,8 +135772,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -136023,7 +136022,8 @@
             "postposition"
         ],
         "translation": "Marie speaks more loudly than Jan.",
-        "gloss": "Marie speak.3.SG.PRS loudly-COMP-up than Jan"
+        "gloss": "Marie speak.3.SG.PRS loudly-COMP-up than Jan",
+        "split_item": "Marie praat hard-er-op dan Jan"
     },
     "VA4Z1[SQ003]": {
         "main_question": "Marie praat",
@@ -136879,7 +136879,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -137260,7 +137260,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -137586,8 +137586,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -137837,7 +137836,8 @@
             "postposition"
         ],
         "translation": "Marie speaks more loudly than Jan.",
-        "gloss": "Marie speak.3.SG.PRS loudly-up-COMP than Jan"
+        "gloss": "Marie speak.3.SG.PRS loudly-up-COMP than Jan",
+        "split_item": "Marie praat hard-opp-er dan Jan"
     },
     "VA4Z1[SQ004]": {
         "main_question": "Marie praat",
@@ -138693,7 +138693,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -139074,7 +139074,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -139400,8 +139400,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -139650,7 +139649,8 @@
             "preposition"
         ],
         "translation": "Marie speaks more loudly than Jan.",
-        "gloss": "Marie speak.3.SG.PRS up loudly than Jan"
+        "gloss": "Marie speak.3.SG.PRS up loudly than Jan",
+        "split_item": "Marie praat op hard dan Jan"
     },
     "VA4Z1[SQ005]": {
         "main_question": "Marie praat",
@@ -140506,7 +140506,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -140887,7 +140887,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -141213,8 +141213,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -141464,7 +141463,8 @@
             "preposition"
         ],
         "translation": "Marie speaks more loudly than Jan.",
-        "gloss": "Marie speak.3.SG.PRS up-COMP loudly than Jan"
+        "gloss": "Marie speak.3.SG.PRS up-COMP loudly than Jan",
+        "split_item": "Marie praat opp-er hard dan Jan"
     },
     "VA4Z1[SQ006]": {
         "main_question": "Marie praat",
@@ -142320,7 +142320,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -142701,7 +142701,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -143027,8 +143027,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -143278,7 +143277,8 @@
             "preposition"
         ],
         "translation": "Marie speaks in a louder tone of voice than Jan.",
-        "gloss": "Marie speak.3.SG.PRS up loudly-COMP-E than Jan"
+        "gloss": "Marie speak.3.SG.PRS up loudly-COMP-E than Jan",
+        "split_item": "Marie praat op hard-er-e toon dan Jan"
     },
     "VA4Z2[SQ001]": {
         "main_question": "Marie praat het",
@@ -144134,7 +144134,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -144515,7 +144515,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -144841,8 +144841,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -145091,7 +145090,8 @@
             "superlative"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly-SUP of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly-SUP of everyone",
+        "split_item": "Marie praat het hard-st van iedereen"
     },
     "VA4Z2[SQ002]": {
         "main_question": "Marie praat het",
@@ -145947,7 +145947,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -146328,7 +146328,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -146654,8 +146654,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -146904,7 +146903,8 @@
             "superlative"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly-SUP-E of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly-SUP-E of everyone",
+        "split_item": "Marie praat het hard-st-e van iedereen"
     },
     "VA4Z2[SQ003]": {
         "main_question": "Marie praat het",
@@ -147760,7 +147760,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -148141,7 +148141,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -148467,8 +148467,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -148718,7 +148717,8 @@
             "postposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly-SUP up of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly-SUP up of everyone",
+        "split_item": "Marie praat het hard-st op van iedereen"
     },
     "VA4Z2[SQ004]": {
         "main_question": "Marie praat het",
@@ -149574,7 +149574,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -149955,7 +149955,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -150281,8 +150281,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -150532,7 +150531,8 @@
             "postposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly-SUP-E up of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly-SUP-E up of everyone",
+        "split_item": "Marie praat het hard-st-e op van iedereen"
     },
     "VA4Z2[SQ005]": {
         "main_question": "Marie praat het",
@@ -151388,7 +151388,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -151769,7 +151769,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -152095,8 +152095,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -152346,7 +152345,8 @@
             "postposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly up-SUP of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly up-SUP of everyone",
+        "split_item": "Marie praat het hard op-st van iedereen"
     },
     "VA4Z2[SQ006]": {
         "main_question": "Marie praat het",
@@ -153202,7 +153202,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -153583,7 +153583,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -153909,8 +153909,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -154160,7 +154159,8 @@
             "postposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the loudly up-SUP-E of everyone"
+        "gloss": "Marie speak.3.SG.PRS the loudly up-SUP-E of everyone",
+        "split_item": "Marie praat het hard op-st-e van iedereen"
     },
     "VA4Z2[SQ007]": {
         "main_question": "Marie praat het",
@@ -155016,7 +155016,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -155397,7 +155397,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -155723,8 +155723,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -155974,7 +155973,8 @@
             "preposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the up loudly-SUP of everyone"
+        "gloss": "Marie speak.3.SG.PRS the up loudly-SUP of everyone",
+        "split_item": "Marie praat het op hard-st van iedereen"
     },
     "VA4Z2[SQ008]": {
         "main_question": "Marie praat het",
@@ -156830,7 +156830,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -157211,7 +157211,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -157537,8 +157537,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -157788,7 +157787,8 @@
             "preposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the up loudly-SUP-E of everyone"
+        "gloss": "Marie speak.3.SG.PRS the up loudly-SUP-E of everyone",
+        "split_item": "Marie praat het op hard-st-e van iedereen"
     },
     "VA4Z2[SQ009]": {
         "main_question": "Marie praat het",
@@ -158644,7 +158644,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -159025,7 +159025,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -159351,8 +159351,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -159602,7 +159601,8 @@
             "preposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the up-SUP loudly of everyone"
+        "gloss": "Marie speak.3.SG.PRS the up-SUP loudly of everyone",
+        "split_item": "Marie praat het op-st hard van iedereen"
     },
     "VA4Z2[SQ010]": {
         "main_question": "Marie praat het",
@@ -160458,7 +160458,7 @@
                 "participant_id": "165533732",
                 "dialects": [
                     "Standaardnederlands",
-                    "Frisian"
+                    "Fries"
                 ],
                 "country": [
                     "Nederland"
@@ -160839,7 +160839,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "Zuid-Gelders",
-                    "Nijmeegs"
+                    "Nijmegen"
                 ],
                 "country": [
                     "Nederland"
@@ -161165,8 +161165,7 @@
             {
                 "participant_id": "41766892",
                 "dialects": [
-                    "Nedersaksisch",
-                    "Nederfrankisch",
+                    "Overgangsdialect Nedersaksisch/Nederfrankisch",
                     "Urks"
                 ],
                 "country": [
@@ -161416,7 +161415,8 @@
             "preposition"
         ],
         "translation": "Marie speaks the most loudly of everybody.",
-        "gloss": "Marie speak.3.SG.PRS the up-SUP-E loudly of everyone"
+        "gloss": "Marie speak.3.SG.PRS the up-SUP-E loudly of everyone",
+        "split_item": "Marie praat het op-st-e hard van iedereen"
     },
     "D4Z1[SQ001]": {
         "main_question": "Jan praat",
@@ -161791,7 +161791,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -163148,7 +163148,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -163353,7 +163353,8 @@
             "comparative"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS softly than Marie"
+        "gloss": "Jan speak.3SG.PRS softly than Marie",
+        "split_item": "Jan praat zacht dan Marie."
     },
     "D4Z1[SQ002]": {
         "main_question": "Jan praat",
@@ -163728,7 +163729,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -165085,7 +165086,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -165290,7 +165291,8 @@
             "comparative"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS softly-COMP than Marie "
+        "gloss": "Jan speak.3SG.PRS softly-COMP than Marie ",
+        "split_item": "Jan praat zacht-er dan Marie."
     },
     "D4Z1[SQ003]": {
         "main_question": "Jan praat",
@@ -165665,7 +165667,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -167022,7 +167024,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -167228,7 +167230,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS softly-DIM-S than Marie"
+        "gloss": "Jan speak.3SG.PRS softly-DIM-S than Marie",
+        "split_item": "Jan praat zacht-je-s dan Marie."
     },
     "D4Z1[SQ004]": {
         "main_question": "Jan praat",
@@ -167603,7 +167606,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -168960,7 +168963,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -169166,7 +169169,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS softly-DIM-S-COMP than Marie"
+        "gloss": "Jan speak.3SG.PRS softly-DIM-S-COMP than Marie",
+        "split_item": "Jan praat zacht-je-s-er dan Marie."
     },
     "D4Z1[SQ005]": {
         "main_question": "Jan praat",
@@ -169541,7 +169545,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -170898,7 +170902,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -171104,7 +171108,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS   softly-COMP-DIM-S"
+        "gloss": "Jan speak.3SG.PRS   softly-COMP-DIM-S",
+        "split_item": "Jan praat zacht-er-tje-s dan Marie."
     },
     "D4Z1[SQ006]": {
         "main_question": "Jan praat",
@@ -171479,7 +171484,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -172836,7 +172841,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -173041,7 +173046,8 @@
             "comparative"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS more softly than Marie"
+        "gloss": "Jan speak.3SG.PRS more softly than Marie",
+        "split_item": "Jan praat meer zacht dan Marie."
     },
     "D4Z1[SQ007]": {
         "main_question": "Jan praat",
@@ -173416,7 +173422,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -174773,7 +174779,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -174979,7 +174985,8 @@
             "diminutive"
         ],
         "translation": "Jan speaks more softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS more softly-DIM-S than Marie "
+        "gloss": "Jan speak.3SG.PRS more softly-DIM-S than Marie ",
+        "split_item": "Jan praat meer zacht-je-s dan Marie."
     },
     "D4Z1[SQ008]": {
         "main_question": "Jan praat",
@@ -175354,7 +175361,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -176711,7 +176718,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -176916,7 +176923,8 @@
             "comparative"
         ],
         "translation": "Jan speaks less softly than Marie.",
-        "gloss": "Jan speak.3SG.PRS less softly than Marie"
+        "gloss": "Jan speak.3SG.PRS less softly than Marie",
+        "split_item": "Jan praat minder zacht dan Marie."
     },
     "D4Z1[SQ009]": {
         "main_question": "Jan praat",
@@ -177291,7 +177299,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -178648,7 +178656,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -178853,8 +178861,9 @@
             "comparative",
             "diminutive"
         ],
-        "translation": "Jan speaks less softly than Marie.\u201d",
-        "gloss": "Jan speak.3SG.PRS less softly-DIM-S than Marie "
+        "translation": "Jan speaks less softly than Marie.",
+        "gloss": "Jan speak.3SG.PRS less softly-DIM-S than Marie ",
+        "split_item": "Jan praat minder zacht-je-s dan Marie."
     },
     "D4Z2[SQ001]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -179229,7 +179238,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -180586,7 +180595,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -180791,7 +180800,8 @@
             "comparative"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS quietly than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS quietly than Jan the stairs up",
+        "split_item": "Marie sluip-t stil dan Jan de trap op."
     },
     "D4Z2[SQ002]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -181166,7 +181176,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -182523,7 +182533,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -182728,7 +182738,8 @@
             "comparative"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS quietly-COMP than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS quietly-COMP than Jan the stairs up",
+        "split_item": "Marie sluip-t still-er dan Jan de trap op."
     },
     "D4Z2[SQ003]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -183103,7 +183114,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -184460,7 +184471,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -184666,7 +184677,8 @@
             "diminutive"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS quietly-E-DIM-S than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS quietly-E-DIM-S than Jan the stairs up",
+        "split_item": "Marie sluipt still-e-tje-s dan Jan de trap op."
     },
     "D4Z2[SQ004]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -185041,7 +185053,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -186398,7 +186410,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -186604,7 +186616,8 @@
             "diminutive"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS quietly-E-DIM-S-COMP than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS quietly-E-DIM-S-COMP than Jan the stairs up",
+        "split_item": "Marie sluip-t still-e-tje-s-er dan Jan de trap op."
     },
     "D4Z2[SQ005]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -186979,7 +186992,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -188336,7 +188349,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -188542,7 +188555,8 @@
             "diminutive"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS quietly-COMP-DIM-S than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS quietly-COMP-DIM-S than Jan the stairs up",
+        "split_item": "Marie sluip-t still-er-tje-s dan Jan de trap op."
     },
     "D4Z2[SQ006]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -188917,7 +188931,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -190274,7 +190288,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -190479,7 +190493,8 @@
             "comparative"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS more quietly than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS more quietly than Jan the stairs up",
+        "split_item": "Marie sluip-t meer stil dan Jan de trap op."
     },
     "D4Z2[SQ007]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -190854,7 +190869,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -192211,7 +192226,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -192417,7 +192432,8 @@
             "diminutive"
         ],
         "translation": "Marie creeps up the stairs more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS more quietly-E-DIM-S than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS more quietly-E-DIM-S than Jan the stairs up",
+        "split_item": "Marie sluip-t meer still-e-tje-s dan Jan de trap op."
     },
     "D4Z2[SQ008]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -192792,7 +192808,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -194149,7 +194165,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -194354,7 +194370,8 @@
             "comparative"
         ],
         "translation": "Marie creeps up the stairs less quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS less quietly than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS less quietly than Jan the stairs up",
+        "split_item": "Marie sluip-t minder stil dan Jan de trap op."
     },
     "D4Z2[SQ009]": {
         "main_question": "Marie sluipt \u2026 dan Jan de trap op",
@@ -194729,7 +194746,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -196086,7 +196103,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -196292,7 +196309,8 @@
             "diminutive"
         ],
         "translation": "Marie creeps up the stairs less quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS less quietly-E-DIM-S than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS less quietly-E-DIM-S than Jan the stairs up",
+        "split_item": "Marie sluip-t minder still-e-tje-s dan Jan de trap op."
     },
     "D5Z1a[SQ001]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -196667,7 +196685,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -198024,7 +198042,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -198229,7 +198247,8 @@
             "comparative"
         ],
         "translation": "Marie creeps past the house more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS less quietly-COMP than Jan the stairs up"
+        "gloss": "Marie sneak.3SG.PRS less quietly-COMP than Jan the stairs up",
+        "split_item": "Marie sluip-t still-er dan Jan aan het huis voorbij."
     },
     "D5Z1a[SQ002]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -198604,7 +198623,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -199961,7 +199980,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -200166,7 +200185,8 @@
             "comparative"
         ],
         "translation": "Marie creeps past the house more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  quietly-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  quietly-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t zacht-er dan Jan aan het huis voorbij."
     },
     "D5Z1a[SQ003]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -200541,7 +200561,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -201898,7 +201918,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -202103,7 +202123,8 @@
             "comparative"
         ],
         "translation": "Marie creeps past the house more quickly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  quickly-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  quickly-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t snel-er dan Jan aan het huis voorbij."
     },
     "D5Z1a[SQ004]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -202478,7 +202499,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -203835,7 +203856,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -204040,7 +204061,8 @@
             "comparative"
         ],
         "translation": "Marie creeps past the house more slowly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  slowly-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  slowly-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t langzam-er dan Jan aan het huis voorbij."
     },
     "D5Z1a[SQ005]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -204415,7 +204437,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -205772,7 +205794,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -205976,8 +205998,9 @@
             "degreeofcomparison",
             "comparative"
         ],
-        "translation": "\u201cMarie creeps past the house more sneakily than Jan.\u201d ",
-        "gloss": "Marie sneak.3SG.PRS  sneakily-COMP than Jan on the house past"
+        "translation": "Marie creeps past the house more sneakily than Jan.\u201d ",
+        "gloss": "Marie sneak.3SG.PRS  sneakily-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t stiekem-er dan Jan aan het huis voorbij."
     },
     "D5Z1a[SQ006]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -206352,7 +206375,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -207709,7 +207732,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -207914,7 +207937,8 @@
             "comparative"
         ],
         "translation": "Marie creeps past the house more carefully than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  carefully-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  carefully-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t voorzichtig-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ007]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -208289,7 +208313,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -209646,7 +209670,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -209852,7 +209876,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  quietly-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  quietly-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t still-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ008]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -210227,7 +210252,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -211584,7 +211609,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -211790,7 +211815,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more quietly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  quietly-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  quietly-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t zacht-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ009]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -212165,7 +212191,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -213522,7 +213548,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -213728,7 +213754,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more quickly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  quickly-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  quickly-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t snel-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ010]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -214103,7 +214130,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -215460,7 +215487,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -215666,7 +215693,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more slowly than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  slowly-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  slowly-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t langzam-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ011]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -216041,7 +216069,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -217398,7 +217426,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -217604,7 +217632,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more sneakily than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  sneakily-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  sneakily-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t stiekem-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z1b[SQ012]": {
         "main_question": "Marie sluipt \u2026 dan Jan aan het huis voorbij",
@@ -217979,7 +218008,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -219336,7 +219365,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -219542,7 +219571,8 @@
             "doublecomparative"
         ],
         "translation": "Marie creeps past the house more carefully than Jan.",
-        "gloss": "Marie sneak.3SG.PRS  carefully-COMP-D-COMP than Jan on the house past"
+        "gloss": "Marie sneak.3SG.PRS  carefully-COMP-D-COMP than Jan on the house past",
+        "split_item": "Marie sluip-t voorzichtig-er-d-er dan Jan aan het huis voorbij."
     },
     "D5Z2a[SQ001]": {
         "main_question": "Marie doet haar werk",
@@ -219917,7 +219947,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -221274,7 +221304,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -221479,7 +221509,8 @@
             "comparative"
         ],
         "translation": "Marie does her work better than Jan.",
-        "gloss": "Marie do-3SG.PRS her work good.COMP than Jan"
+        "gloss": "Marie do-3SG.PRS her work good.COMP than Jan",
+        "split_item": "Marie doe-t haar werk beter dan Jan."
     },
     "D5Z2b[SQ002]": {
         "main_question": "Marie doet haar werk",
@@ -221854,7 +221885,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -223211,7 +223242,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -223417,7 +223448,8 @@
             "doublecomparative"
         ],
         "translation": "Marie does her work  better than Jan.",
-        "gloss": "Marie do-3SG.PRS her work good.COMP-D-COMP than Jan"
+        "gloss": "Marie do-3SG.PRS her work good.COMP-D-COMP than Jan",
+        "split_item": "Marie doe-t haar werk beter-d-er dan Jan."
     },
     "D5Z3a[SQ001]": {
         "main_question": "Jan klaagt altijd \u2026 over zijn werk dan Marie",
@@ -223792,7 +223824,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -225149,7 +225181,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -225354,7 +225386,8 @@
             "comparative"
         ],
         "translation": "Jan always complains about his work less than Marie.",
-        "gloss": "Jan complain-3SG.PRS always less about his work than Marie"
+        "gloss": "Jan complain-3SG.PRS always less about his work than Marie",
+        "split_item": "Jan klaag-t altijd minder over zijn werk dan Marie."
     },
     "D5Z3b[SQ002]": {
         "main_question": "Jan klaagt altijd \u2026 over zijn werk dan Marie",
@@ -225729,7 +225762,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -227086,7 +227119,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -227292,7 +227325,8 @@
             "doublecomparative"
         ],
         "translation": "Jan always complains about his work  less than Marie.",
-        "gloss": "Jan complain-3SG.PRS always less-D-COMP about his work than Marie"
+        "gloss": "Jan complain-3SG.PRS always less-D-COMP about his work than Marie",
+        "split_item": "Jan klaag-t altijd minder-d-er over zijn werk dan Marie."
     },
     "P1Z1a[SQ001]": {
         "main_question": "Iris gaat",
@@ -227667,7 +227701,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -229024,7 +229058,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -229228,7 +229262,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP to house",
+        "split_item": "Iris gaa-t lop-end naar huis."
     },
     "P1Z1a[SQ002]": {
         "main_question": "Iris gaat",
@@ -229603,7 +229638,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -230960,7 +230995,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -231164,7 +231199,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-E to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-E to house",
+        "split_item": "Iris gaa-t lop-end-e naar huis."
     },
     "P1Z1a[SQ003]": {
         "main_question": "Iris gaat",
@@ -231539,7 +231575,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -232896,7 +232932,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -233100,7 +233136,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-S to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-S to house",
+        "split_item": "Iris gaa-t lop-en-s naar huis."
     },
     "P1Z1a[SQ004]": {
         "main_question": "Iris gaat",
@@ -233475,7 +233512,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -234832,7 +234869,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -235036,7 +235073,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk.PRS.PTCP-ES to house"
+        "gloss": "Iris go-3SG.PRS walk.PRS.PTCP-ES to house",
+        "split_item": "Iris gaa-t lop-es naar huis."
     },
     "P1Z1a[SQ005]": {
         "main_question": "Iris gaat",
@@ -235411,7 +235449,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -236768,7 +236806,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -236972,7 +237010,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-S to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-S to house",
+        "split_item": "Iris gaa-t lop-end-s naar huis."
     },
     "P1Z1a[SQ006]": {
         "main_question": "Iris gaat",
@@ -237347,7 +237386,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -238704,7 +238743,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -238908,7 +238947,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ER to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ER to house",
+        "split_item": "Iris gaa-t lop-end-er naar huis."
     },
     "P1Z1a[SQ007]": {
         "main_question": "Iris gaat",
@@ -239283,7 +239323,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -240640,7 +240680,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -240844,7 +240884,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ERE to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ERE to house",
+        "split_item": "Iris gaa-t lop-end-ere naar huis."
     },
     "P1Z1b[SQ008]": {
         "main_question": "Iris gaat",
@@ -241219,7 +241260,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -242576,7 +242617,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -242780,7 +242821,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP to house"
+        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP to house",
+        "split_item": "Iris gaa-t al lop-end naar huis."
     },
     "P1Z1b[SQ009]": {
         "main_question": "Iris gaat",
@@ -243155,7 +243197,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -244512,7 +244554,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -244716,7 +244758,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-E to house"
+        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-E to house",
+        "split_item": "Iris gaa-t al lop-end-e naar huis."
     },
     "P1Z1b[SQ010]": {
         "main_question": "Iris gaat",
@@ -245091,7 +245134,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -246448,7 +246491,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -246652,7 +246695,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-S to house"
+        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-S to house",
+        "split_item": "Iris gaa-t al lop-en-s naar huis."
     },
     "P1Z1b[SQ011]": {
         "main_question": "Iris gaat",
@@ -247027,7 +247071,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -248384,7 +248428,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -248588,7 +248632,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk.PRS.PTCP-ES to house"
+        "gloss": "Iris go-3SG.PRS while walk.PRS.PTCP-ES to house",
+        "split_item": "Iris gaa-t al lop-es naar huis."
     },
     "P1Z1b[SQ012]": {
         "main_question": "Iris gaat",
@@ -248963,7 +249008,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -250320,7 +250365,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -250524,7 +250569,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-S to house"
+        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-S to house",
+        "split_item": "Iris gaa-t al lop-end-s naar huis."
     },
     "P1Z1b[SQ013]": {
         "main_question": "Iris gaat",
@@ -250899,7 +250945,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -252256,7 +252302,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -252460,7 +252506,8 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ER to house"
+        "gloss": "Iris go-3SG.PRS walk-PRS.PTCP-ER to house",
+        "split_item": "Iris gaa-t lop-end-er naar huis."
     },
     "P1Z1b[SQ014]": {
         "main_question": "Iris gaat",
@@ -252835,7 +252882,7 @@
             {
                 "participant_id": "50154247",
                 "dialects": [
-                    "Standaardnederlands",
+                    "standaardnederlands",
                     "Nederfrankisch",
                     "Brabants",
                     "Antwerps"
@@ -254192,7 +254239,7 @@
                 "dialects": [
                     "Nederfrankisch",
                     "West-Vlaams",
-                    "Nieuwpoort",
+                    "Nieuwpoorts",
                     "Oostends"
                 ],
                 "country": [
@@ -254396,6 +254443,7 @@
             "participle"
         ],
         "translation": "Iris walks home.",
-        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-ERE to house"
+        "gloss": "Iris go-3SG.PRS while walk-PRS.PTCP-ERE to house",
+        "split_item": "Iris gaa-t al lop-end-ere naar huis."
     }
 }

@@ -58,7 +58,8 @@ export class FilterService {
                 'subQuestion',
                 'subQuestionTextId',
                 'gloss',
-                'translation'
+                'translation',
+                'splitExample'
             ];
         } else if (isQuestion(item)) {
             result = <FilterMatchedObject<T>>new MatchedQuestion();
@@ -207,6 +208,7 @@ export class FilterService {
             case 'mainQuestionId':
             case 'subQuestion':
             case 'subQuestionTextId':
+            case 'splitExample':
                 {
                     const value = object[key];
                     const [parts, partFilters] = this.searchField<T>(<string>value || '', <any>key, filters);

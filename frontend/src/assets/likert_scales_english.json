@@ -58,7 +58,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew slow packed his bag."
     },
     "EnglishSlow2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -119,7 +120,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew slow-ly packed his bag."
     },
     "EnglishSlow3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -181,7 +183,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew slow-ish packed his bag."
     },
     "EnglishSlow4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -243,7 +246,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew slow-ish-ly packed his bag."
     },
     "EnglishSlow5": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -305,7 +309,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew slow-ly-ish packed his bag."
     },
     "EnglishQuick1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -366,7 +371,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew quick packed his bag."
     },
     "EnglishQuick2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -428,7 +434,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew quick-ish packed his bag."
     },
     "EnglishQuick3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -489,7 +496,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew quick-ly packed his bag."
     },
     "EnglishQuick4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -540,7 +548,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew quick-ish-ly packed his bag."
     },
     "EnglishQuick5": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -602,7 +611,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew quick-ly-ish packed his bag."
     },
     "EnglishFast1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -663,7 +673,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew fast packed his bag."
     },
     "EnglishFast2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -724,7 +735,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew fast-ly packed his bag."
     },
     "EnglishHurried1": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -785,7 +797,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew hurried-ly packed his bag."
     },
     "EnglishHurried2": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -846,7 +859,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew hurried packed his bag."
     },
     "EnglishHurried3": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -908,7 +922,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew hurried-ly-ish packed his bag."
     },
     "EnglishHurried4": {
         "main_question": "Andrew \u2026 packed his bag.",
@@ -971,7 +986,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew in a hurried way packed his bag."
     },
     "EnglishSlow6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1032,7 +1048,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag slow."
     },
     "EnglishSlow7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1093,7 +1110,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag slow-ly."
     },
     "EnglishSlow8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1155,7 +1173,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag slow-ish."
     },
     "EnglishSlow9": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1217,7 +1236,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag slow-ish-ly."
     },
     "EnglishSlow10": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1279,7 +1299,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag slow-ly-ish."
     },
     "EnglishQuick6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1340,7 +1361,8 @@
             "participle"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag quick."
     },
     "EnglishQuick7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1402,7 +1424,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag quick-ish."
     },
     "EnglishQuick8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1463,7 +1486,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag quick-ly."
     },
     "EnglishQuick9": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1525,7 +1549,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag quick-ish-ly."
     },
     "EnglishQuick10": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1587,7 +1612,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag quick-ly-ish."
     },
     "EnglishFast3": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1648,7 +1674,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag fast."
     },
     "EnglishFast4": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1709,7 +1736,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag fast-ly."
     },
     "EnglishFast5": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1761,7 +1789,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag fast-ish."
     },
     "EnglishFast6": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1823,7 +1852,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag fast-ish-ly."
     },
     "EnglishFast7": {
         "main_question": "Andrew packed his bag fastly.",
@@ -1885,7 +1915,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag fast-ly-ish."
     },
     "EnglishHurried5": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -1946,7 +1977,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag hurried-ly."
     },
     "EnglishHurried6": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -2007,7 +2039,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag hurried."
     },
     "EnglishHurried7": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -2069,7 +2102,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag hurried-ly-ish."
     },
     "EnglishHurried8": {
         "main_question": "Andrew packed his bag \u2026.",
@@ -2132,7 +2166,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Andrew packed his bag in a hurried way."
     },
     "EnglishBarefoot1": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -2192,7 +2227,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s barefoot on the beach."
     },
     "EnglishBarefoot2": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -2252,7 +2288,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s barefoot-ed on the beach."
     },
     "EnglishBarefoot3": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -2312,7 +2349,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s barefoot-ed-ly on the beach."
     },
     "EnglishBarefoot4": {
         "main_question": "Toby walks \u2026 on the beach.",
@@ -2374,7 +2412,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s with bare feet on the beach."
     },
     "EnglishBarefoot5": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2434,7 +2473,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s on the beach barefoot."
     },
     "EnglishBarefoot6": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2494,7 +2534,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s on the beach barefoot-ed."
     },
     "EnglishBarefoot7": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2554,7 +2595,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s on the beach barefoot-ed-ly."
     },
     "EnglishBarefoot8": {
         "main_question": "Toby walks on the beach \u2026.",
@@ -2616,7 +2658,8 @@
             "modifiednoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Toby walk-s on the beach with bare feet."
     },
     "EnglishLoud1": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2679,7 +2722,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly out loud talk-s about her annoying roommates."
     },
     "EnglishLoud2": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2742,7 +2786,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly out loud-ly talk-s about her annoying roommates."
     },
     "EnglishLoud3": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2805,7 +2850,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly a-loud talk-s about her annoying roommates."
     },
     "EnglishLoud4": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2868,7 +2914,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly a-loud-ly talk-s about her annoying roommates."
     },
     "EnglishWhisper1": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2929,7 +2976,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly whisper-ing talk-s about her annoying roommates."
     },
     "EnglishWhisper2": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -2990,7 +3038,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly whisper-ing-ly talk-s about her annoying roommates."
     },
     "EnglishLoud5": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -3051,7 +3100,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly loud talk-s about her annoying roommates."
     },
     "EnglishLoud6": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -3112,7 +3162,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly loud-ly talk-s about her annoying roommates."
     },
     "EnglishLoud7": {
         "main_question": "Elly \u2026 talks about her annoying roommates.",
@@ -3175,7 +3226,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly a-loud-ly talk-s about her annoying roommates."
     },
     "EnglishLoud8": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3238,7 +3290,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s out loud about her annoying roommates."
     },
     "EnglishLoud9": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3301,7 +3354,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s out loud-ly about her annoying roommates."
     },
     "EnglishLoud10": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3364,7 +3418,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s a-loud about her annoying roommates."
     },
     "EnglishLoud11": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3427,7 +3482,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s a-loud-ly about her annoying roommates."
     },
     "EnglishWhisper3": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3488,7 +3544,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s whispering about her annoying roommates."
     },
     "EnglishWhisper4": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3549,7 +3606,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s in a whisper about her annoying roommates."
     },
     "EnglishWhisper5": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3610,7 +3668,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s in whisper-s about her annoying roommates."
     },
     "EnglishWhisper6": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3671,7 +3730,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s whisper-ing-ly about her annoying roommates."
     },
     "EnglishLoud12": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3732,7 +3792,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s loud about her annoying roommates."
     },
     "EnglishLoud13": {
         "main_question": "Elly talks \u2026 about her annoying roommates.",
@@ -3793,7 +3854,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s loud-ly about her annoying roommates."
     },
     "EnglishLoud14": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3856,7 +3918,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out loud."
     },
     "EnglishLoud15": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -3919,7 +3982,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out loud-ly."
     },
     "EnglishLoud16": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -3982,7 +4046,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out a-loud."
     },
     "EnglishLoud17": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -4045,7 +4110,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out a-loud-ly."
     },
     "EnglishWhisper7": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -4106,7 +4172,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates whisper-ing."
     },
     "EnglishWhisper8": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -4167,7 +4234,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates in a whisper."
     },
     "EnglishWhisper9": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -4228,7 +4296,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates in whispers."
     },
     "EnglishWhisper10": {
         "main_question": "Elly talks about her annoying roommates \u2026.",
@@ -4289,7 +4358,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates whisper-ing-ly."
     },
     "EnglishLoud18": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -4352,7 +4422,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out loud."
     },
     "EnglishLoud19": {
         "main_question": "Elly talks about her annoying roommates out \u2026.",
@@ -4415,7 +4486,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Elly talk-s about her annoying roommates out loud-ly."
     },
     "EnglishQuick11": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4476,7 +4548,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage quick."
     },
     "EnglishCareful1": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4537,7 +4610,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage careful."
     },
     "EnglishQuick12": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4598,7 +4672,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage quick-ly."
     },
     "EnglishCareful2": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4659,7 +4734,8 @@
             "postverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage careful-ly."
     },
     "EnglishCoord1": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4721,7 +4797,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage quick and careful-ly."
     },
     "EnglishCoord2": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4783,7 +4860,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage quick-ly and careful."
     },
     "EnglishCoord3": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4845,7 +4923,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage quick and careful."
     },
     "EnglishCoord4": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -4907,7 +4986,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage careful-ly and quick."
     },
     "EnglishCoord5": {
         "main_question": "Alex pulled off the bandage careful and quicky.",
@@ -4969,7 +5049,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage careful and quick-ly."
     },
     "EnglishCoord6": {
         "main_question": "Alex pulled off the bandage \u2026.",
@@ -5031,7 +5112,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex pulled off the bandage careful and quick."
     },
     "EnglishQuick13": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5092,7 +5174,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex quick pulled off the bandage."
     },
     "EnglishCareful3": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5153,7 +5236,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex careful pulled off the bandage."
     },
     "EnglishQuick14": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5214,7 +5298,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex quick-ly pulled off the bandage."
     },
     "EnglishCareful4": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5275,7 +5360,8 @@
             "preverbal"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex careful-ly pulled off the bandage."
     },
     "EnglishCoord7": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5337,7 +5423,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex quick and careful-ly pulled off the bandage."
     },
     "EnglishCoord8": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5399,7 +5486,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex quick-ly and careful pulled off the bandage."
     },
     "EnglishCoord9": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5461,7 +5549,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex quick and careful pulled off the bandage."
     },
     "EnglishCoord10": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5523,7 +5612,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex careful-ly and quick pulled off the bandage."
     },
     "EnglishCoord11": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5585,7 +5675,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex careful and quick-ly pulled off the bandage."
     },
     "EnglishCoord12": {
         "main_question": "Alex \u2026 pulled off the bandage.",
@@ -5647,7 +5738,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Alex careful and quick pulled off the bandage."
     },
     "EnglishQuick15": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -5707,7 +5799,8 @@
             "positive"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "I do not know when the quick bus will arrive."
     },
     "EnglishQuick16": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -5768,7 +5861,8 @@
             "diminutive"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "I do not know when the quick-ish bus will arrive."
     },
     "EnglishSlow11": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -5828,7 +5922,8 @@
             "positive"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "I do not know when the slow bus will arrive."
     },
     "EnglishSlow12": {
         "main_question": "I do not know when the \u2026 bus will arrive.",
@@ -5889,7 +5984,8 @@
             "diminutive"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "I do not know when the slow-ish bus will arrive."
     },
     "EnglishQuickComp1": {
         "main_question": "The \u2026 bus will not arrive at the same time as the other busses.",
@@ -5950,7 +6046,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The quick-er bus will not arrive at the same time as the other busses."
     },
     "EnglishSlowComp1": {
         "main_question": "The \u2026 bus will not arrive at the same time as the other busses.",
@@ -6011,7 +6108,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The slow-er bus will not arrive at the same time as the other busses."
     },
     "EnglishQuickSup1": {
         "main_question": "That is the \u2026 bus I have ever seen.",
@@ -6072,7 +6170,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "That is the quick-est bus I have ever seen."
     },
     "EnglishSlowSUP1": {
         "main_question": "That is the \u2026 bus I have ever seen.",
@@ -6133,7 +6232,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "That is the slow-est bus I have ever seen."
     },
     "EnglishQuickComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6194,7 +6294,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs quick-er than Mary."
     },
     "EnglishQuickComp3": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6255,7 +6356,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs more quick-ly than Mary."
     },
     "EnglishQuickComp4": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6316,7 +6418,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs quick-li-er than Mary."
     },
     "EnglishQuickComp5": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6379,7 +6482,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs in a quick-er way than Mary."
     },
     "EnglishSlowComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6440,7 +6544,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs slow-er than Mary."
     },
     "EnglishSlowComp3": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6501,7 +6606,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs more slow-ly than Mary."
     },
     "EnglishSlowComp4": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6562,7 +6668,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs slow-li-er than Mary."
     },
     "EnglishSlowComp5": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6625,7 +6732,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs in a slow-er way than Mary."
     },
     "EnglishHurriedComp1": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6687,7 +6795,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs more hurried than Mary."
     },
     "EnglishHurriedComp2": {
         "main_question": "John runs \u2026 than Mary.",
@@ -6749,7 +6858,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs more hurried-ly than Mary."
     },
     "EnglishQuickSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -6810,7 +6920,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs quick-est of all."
     },
     "EnglishQuickSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -6871,7 +6982,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs most quick-ly of all."
     },
     "EnglishQuickSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -6932,7 +7044,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs quick-lie-st of all."
     },
     "EnglishQuickSup5": {
         "main_question": "John runs \u2026 of all.",
@@ -6995,7 +7108,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs in the quick-est way of all."
     },
     "EnglishSlowSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -7056,7 +7170,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs slow-est of all."
     },
     "EnglishSlowSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -7117,7 +7232,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs most slow-ly of all."
     },
     "EnglishSlowSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -7178,7 +7294,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs slow-lie-st of all."
     },
     "EnglishHurriedSup1": {
         "main_question": "John runs \u2026 of all.",
@@ -7240,7 +7357,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs most hurried of all."
     },
     "EnglishHurriedSup2": {
         "main_question": "John runs \u2026 of all.",
@@ -7302,7 +7420,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs most hurried-ly of all."
     },
     "EnglishQuickSup6": {
         "main_question": "John runs \u2026 of all.",
@@ -7363,7 +7482,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the quick-est of all."
     },
     "EnglishQuickSup7": {
         "main_question": "John runs \u2026 of all.",
@@ -7424,7 +7544,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the most quick-ly of all."
     },
     "EnglishQuickSup8": {
         "main_question": "John runs \u2026 of all.",
@@ -7485,7 +7606,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the quick-li-est of all."
     },
     "EnglishQuickSup9": {
         "main_question": "John runs \u2026 of all.",
@@ -7548,7 +7670,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the in the quick-est way of all."
     },
     "EnglishSlowSup5": {
         "main_question": "John runs \u2026 of all.",
@@ -7609,7 +7732,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the slow-est of all."
     },
     "EnglishSlowSup6": {
         "main_question": "John runs \u2026 of all.",
@@ -7670,7 +7794,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the most slow-ly of all."
     },
     "EnglishSlowSup7": {
         "main_question": "John runs \u2026 of all.",
@@ -7731,7 +7856,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the slow-li-est of all."
     },
     "EnglishHurriedSup3": {
         "main_question": "John runs \u2026 of all.",
@@ -7792,7 +7918,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the most hurried of all."
     },
     "EnglishHurriedSup4": {
         "main_question": "John runs \u2026 of all.",
@@ -7853,7 +7980,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John runs the most hurried-ly of all."
     },
     "EnglishLoudComp1": {
         "main_question": "James talks \u2026 than Elly.",
@@ -7914,7 +8042,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks loud-er than Elly."
     },
     "EnglishLoudComp2": {
         "main_question": "James talks \u2026 than Elly.",
@@ -7975,7 +8104,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks more loud than Elly."
     },
     "EnglishLoudComp3": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8038,7 +8168,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks in a loud-er way than Elly."
     },
     "EnglishLoudComp4": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8101,7 +8232,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks out loud-er than Elly."
     },
     "EnglishLoudComp5": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8164,7 +8296,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks a-loud-er than Elly."
     },
     "EnglishLoudComp6": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8227,7 +8360,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks more out loud than Elly."
     },
     "EnglishLoudComp7": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8288,7 +8422,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks more loud-ly than Elly."
     },
     "EnglishLoudComp8": {
         "main_question": "James talks \u2026 than Elly.",
@@ -8349,7 +8484,8 @@
             "comparative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks loud-li-er than Elly."
     },
     "EnglishLoudSup1": {
         "main_question": "James talks \u2026 of all.",
@@ -8410,7 +8546,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks loud-est of all."
     },
     "EnglishLoudSup2": {
         "main_question": "James talks \u2026 of all.",
@@ -8471,7 +8608,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks most loud of all."
     },
     "EnglishLoudSup3": {
         "main_question": "James talks \u2026 of all.",
@@ -8534,7 +8672,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks in the loud-est way of all."
     },
     "EnglishLoudSup4": {
         "main_question": "James talks \u2026 of all.",
@@ -8597,7 +8736,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks out loud-est of all."
     },
     "EnglishLoudSup5": {
         "main_question": "James talks \u2026 of all.",
@@ -8660,7 +8800,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks a-loud-est of all."
     },
     "EnglishLoudSup6": {
         "main_question": "James talks \u2026 of all.",
@@ -8723,7 +8864,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks most out loud of all."
     },
     "EnglishLoudSup7": {
         "main_question": "James talks \u2026 of all.",
@@ -8784,7 +8926,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks most loud-ly of all."
     },
     "EnglishLoudSup8": {
         "main_question": "James talks \u2026 of all.",
@@ -8845,7 +8988,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks loud-li-est of all."
     },
     "EnglishLoudSup9": {
         "main_question": "James talks \u2026 of all.",
@@ -8906,7 +9050,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the loud-est of all."
     },
     "EnglishLoudSup10": {
         "main_question": "James talks \u2026 of all.",
@@ -8967,7 +9112,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the most loud of all."
     },
     "EnglishLoudSup11": {
         "main_question": "James talks \u2026 of all.",
@@ -9030,7 +9176,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the in the loud-est way of all."
     },
     "EnglishLoudSup12": {
         "main_question": "James talks \u2026 of all.",
@@ -9093,7 +9240,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the out loud-est of all."
     },
     "EnglishLoudSup13": {
         "main_question": "James talks \u2026 of all.",
@@ -9156,7 +9304,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the most out loud of all."
     },
     "EnglishLoudSup14": {
         "main_question": "James talks \u2026 of all.",
@@ -9217,7 +9366,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the most loud-ly of all."
     },
     "EnglishLoudSup15": {
         "main_question": "James talks \u2026 of all.",
@@ -9278,7 +9428,8 @@
             "superlative"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "James talks the loud-li-est of all."
     },
     "EnglishEasyMiddle1": {
         "main_question": "This book reads \u2026.",
@@ -9338,7 +9489,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "This book reads easi-ly."
     },
     "EnglishEasyMiddle2": {
         "main_question": "This book reads \u2026 for children.",
@@ -9398,7 +9550,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "This book reads easi-ly for children."
     },
     "EnglishEasyMiddle3": {
         "main_question": "This boek \u2026 reads.",
@@ -9458,7 +9611,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "This boek easi-ly reads."
     },
     "EnglishEasyMiddle4": {
         "main_question": "This book \u2026 reads for children.",
@@ -9518,7 +9672,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "This book easi-ly reads for children."
     },
     "EnglishComfortablyMiddle1": {
         "main_question": "That chair sits \u2026.",
@@ -9578,7 +9733,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "That chair sits comfortab-ly."
     },
     "EnglishComfortablyMiddle2": {
         "main_question": "That chair sits \u2026 for grandma.",
@@ -9638,7 +9794,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "That chair sits comfortab-ly for grandma."
     },
     "EnglishComfortablyMiddle3": {
         "main_question": "The chair \u2026 sits.",
@@ -9698,7 +9855,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The chair comfortab-ly sits."
     },
     "EnglishComfortablyMiddle4": {
         "main_question": "The chair \u2026 sits for grandma.",
@@ -9758,7 +9916,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The chair comfortab-ly sits for grandma."
     },
     "EnglishPoorlyMiddle1": {
         "main_question": "The hard cheese cuts \u2026.",
@@ -9818,7 +9977,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The hard cheese cuts poor-ly."
     },
     "EnglishPoorlyMiddle2": {
         "main_question": "The hard cheese cuts \u2026 for an amateur chef.",
@@ -9878,7 +10038,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The hard cheese cuts poor-ly for an amateur chef."
     },
     "EnglishPoorlyMiddle3": {
         "main_question": "The hard cheese \u2026 cuts.",
@@ -9938,7 +10099,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The hard cheese poor-ly cuts."
     },
     "EnglishPoorlyMiddle4": {
         "main_question": "The hard cheese \u2026 cuts for an amateur chef.",
@@ -9998,7 +10160,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "The hard cheese poor-ly cuts for an amateur chef."
     },
     "EnglishSimilDance1": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10058,7 +10221,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced how her mother always danced."
     },
     "EnglishSimilDance2": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10118,7 +10282,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced like how her mother always danced."
     },
     "EnglishSimilDance3": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10178,7 +10343,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced just how her mother always danced."
     },
     "EnglishSimilDance4": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10238,7 +10404,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced as her mother always danced."
     },
     "EnglishSimilDance5": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10298,7 +10465,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced as how her mother always danced."
     },
     "EnglishSimilDance6": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10358,7 +10526,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced so her mother always danced."
     },
     "EnglishSimilDance7": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10418,7 +10587,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced so as her mother always danced."
     },
     "EnglishSimilDance8": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10478,7 +10648,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced like as her mother always danced."
     },
     "EnglishSimilDance9": {
         "main_question": "Emily danced \u2026 her mother always danced.",
@@ -10538,7 +10709,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily danced like as how her mother always danced."
     },
     "EnglishSimilLook1": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10598,7 +10770,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked exactly like her mother looked."
     },
     "EnglishSimilLook2": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10658,7 +10831,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked just like her mother looked."
     },
     "EnglishSimilLook3": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10718,7 +10892,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked exactly as her mother looked."
     },
     "EnglishSimilLook4": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10778,7 +10953,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked just as her mother looked."
     },
     "EnglishSimilLook5": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10838,7 +11014,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked exactly the way her mother looked."
     },
     "EnglishSimilLook6": {
         "main_question": "Emily looked \u2026 her mother looked.",
@@ -10898,7 +11075,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Emily looked just the way her mother looked."
     },
     "EnglishSimilDance10": {
         "main_question": "John danced as Emily also danced.",
@@ -10958,7 +11136,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as Emily also danced."
     },
     "EnglishSimilDance11": {
         "main_question": "John danced as Emily danced so.",
@@ -11018,7 +11197,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as Emily danced so."
     },
     "EnglishSimilDance12": {
         "main_question": "John danced as Emily did so.",
@@ -11078,7 +11258,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as Emily did so."
     },
     "EnglishSimilDance13": {
         "main_question": "John danced as Emily always did beautifully.",
@@ -11138,7 +11319,8 @@
             "gap"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as Emily always did beautiful-ly."
     },
     "EnglishSimilDance14": {
         "main_question": "John danced as you mentioned that Emily did.",
@@ -11198,7 +11380,8 @@
             "longdistancemovement"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as you mentioned that Emily did."
     },
     "EnglishSimilDance15": {
         "main_question": "John danced as I claimed he would dance.",
@@ -11258,7 +11441,8 @@
             "longdistancemovement"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as I claimed he would dance."
     },
     "EnglishSimilDance16": {
         "main_question": "John danced as I heard the story that Emily did.",
@@ -11361,7 +11545,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced the way that he was taught to and as his parents always did."
     },
     "EnglishSimilDance17": {
         "main_question": "John danced as I asked myself who did.",
@@ -11422,7 +11607,8 @@
             "whisland"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as I asked myself who did."
     },
     "EnglishSimilDance18": {
         "main_question": "John danced as Emily didn't.",
@@ -11483,7 +11669,8 @@
             "innerisland"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as Emily didn't."
     },
     "EnglishSimilDance19": {
         "main_question": "John danced as I was touched because Emily did.",
@@ -11544,7 +11731,8 @@
             "adjunctisland"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as I was touched because Emily did."
     },
     "EnglishSimilDance20": {
         "main_question": "What did John dance like?",
@@ -11604,7 +11792,8 @@
             "wh"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "What did John dance like?"
     },
     "EnglishSimilDance21": {
         "main_question": "How did John dance like?",
@@ -11664,7 +11853,8 @@
             "wh"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "How did John dance like?"
     },
     "EnglishSimilDance22": {
         "main_question": "It's this way that John danced (and not that way).",
@@ -11724,7 +11914,8 @@
             "cleft"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "It's this way that John danced (and not that way)."
     },
     "EnglishSimilDance23": {
         "main_question": "It's so *pointing gesture* that John danced (and not so).",
@@ -11784,7 +11975,8 @@
             "cleft"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "It's so *pointing gesture* that John danced (and not so)."
     },
     "EnglishSimilDance24": {
         "main_question": "It's as Emily always danced that John danced (and not as his mother).",
@@ -11844,7 +12036,8 @@
             "cleft"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "It's as Emily always danced that John danced (and not as his mother)."
     },
     "EnglishSimilSound1": {
         "main_question": "A sound like someone trying not to make a sound.",
@@ -11904,7 +12097,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound like someone trying not to make a sound."
     },
     "EnglishSimilSound2": {
         "main_question": "A sound as someone trying not to make a sound.",
@@ -11964,7 +12158,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound as someone trying not to make a sound."
     },
     "EnglishSimilSound3": {
         "main_question": "A sound like someone tried not to make a sound.",
@@ -12024,7 +12219,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound like someone tried not to make a sound."
     },
     "EnglishSimilSound4": {
         "main_question": "A sound as someone tried not to make a sound.",
@@ -12084,7 +12280,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound as someone tried not to make a sound."
     },
     "EnglishSimilDance25": {
         "main_question": "As I said she would dance, she actually danced.",
@@ -12144,7 +12341,8 @@
             "topicalization"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "As I said she would dance, she actually danced."
     },
     "EnglishSimilDance26": {
         "main_question": "Exactly as I said she would dance, she actually danced.",
@@ -12204,7 +12402,8 @@
             "topicalization"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Exactly as I said she would dance, she actually danced."
     },
     "EnglishSimilDance27": {
         "main_question": "So as I said she would dance, she actually danced.",
@@ -12264,7 +12463,8 @@
             "topicalization"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "So as I said she would dance, she actually danced."
     },
     "EnglishSimilDance28": {
         "main_question": "Just as I said she would dance, she actually danced.",
@@ -12324,7 +12524,8 @@
             "topicalization"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Just as I said she would dance, she actually danced."
     },
     "EnglishSimulDance1": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12384,7 +12585,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced if as it were her birthday."
     },
     "EnglishSimulDance2": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12444,7 +12646,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced like if it were her birthday."
     },
     "EnglishSimulDance3": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12504,7 +12707,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced like as if it were her birthday."
     },
     "EnglishSimulDance4": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12564,7 +12768,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced if like it were her birthday."
     },
     "EnglishSimulDance5": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12624,7 +12829,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced like it were her birthday."
     },
     "EnglishSimulDance6": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12684,7 +12890,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced so as if it were her birthday."
     },
     "EnglishSimulDance7": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12744,7 +12951,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced if so it were her birthday."
     },
     "EnglishSimulDance8": {
         "main_question": "Hannah danced how it were her birthday.",
@@ -12804,7 +13012,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced how it were her birthday."
     },
     "EnglishSimulDance9": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12864,7 +13073,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced like as how it were her birthday."
     },
     "EnglishSimulDance10": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12924,7 +13134,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced as though it were her birthday."
     },
     "EnglishSimulDance11": {
         "main_question": "Hannah danced \u2026 it were her birthday.",
@@ -12984,7 +13195,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "Hannah danced as if though it were her birthday."
     },
     "EnglishSimulDance12": {
         "main_question": "John ate the whole meat pie as if cheese.",
@@ -13044,7 +13256,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John ate the whole meat pie as if cheese."
     },
     "EnglishSimulDance13": {
         "main_question": "John danced as if a bird.",
@@ -13104,7 +13317,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as if a bird."
     },
     "EnglishSimulDance14": {
         "main_question": "John danced as if to fly.",
@@ -13164,7 +13378,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as if to fly."
     },
     "EnglishSimulDance15": {
         "main_question": "John danced as if flying.",
@@ -13224,7 +13439,8 @@
             ""
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John danced as if flying."
     },
     "EngishSimulSound1": {
         "main_question": "A sound as if someone tried not to make a sound.",
@@ -13284,7 +13500,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound as if someone tried not to make a sound."
     },
     "EngishSimulSound2": {
         "main_question": "A sound as if someone trying not to make a sound.",
@@ -13344,7 +13561,8 @@
             "modifyingnoun"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "A sound as if someone trying not to make a sound."
     },
     "EnglishSimilBehave1": {
         "main_question": "John behaved as his father told him and as his mother taught him.",
@@ -13404,7 +13622,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John behaved as his father told him and as his mother taught him."
     },
     "EnglishSimilWalk1": {
         "main_question": "John walked as if he were drunk and as if a dog chased him.",
@@ -13464,7 +13683,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John walked as if he were drunk and as if a dog chased him."
     },
     "EnglishSimilWalk2": {
         "main_question": "John walked as if he were drunk and if a dog chased him.",
@@ -13524,7 +13744,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John walked as if he were drunk and if a dog chased him."
     },
     "EnglishSimilWalk3": {
         "main_question": "John walked as if he were drunk and a dog chased him.",
@@ -13584,7 +13805,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John walked as if he were drunk and a dog chased him."
     },
     "EnglishSimilBehave2": {
         "main_question": "John behaved as if he were being watched and as he was obliged to.",
@@ -13645,7 +13867,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John behaved as if he were being watched and as he was obliged to."
     },
     "EnglishSimilBehave3": {
         "main_question": "John behaved as he was obliged to and as if he were being watched.",
@@ -13706,7 +13929,8 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John behaved as he was obliged to and as if he were being watched."
     },
     "EnglishSimilWalk4": {
         "main_question": "John walked the way he always did and as if he had a stone in his shoe.",
@@ -13767,6 +13991,7 @@
             "coordination"
         ],
         "translation": "",
-        "gloss": ""
+        "gloss": "",
+        "split_item": "John walked the way he always did and as if he had a stone in his shoe."
     }
 }

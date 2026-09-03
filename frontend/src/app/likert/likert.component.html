@@ -24,7 +24,7 @@
     @if (!model.gloss.empty && !model.translation.empty) {
     <div class="notification">
         <luu-view>
-            <luu-line type="example" [value]="question.highlightedText"></luu-line>
+            <luu-line type="example" [value]="model.splitExample.highlightedText"></luu-line>
             @if (!model.gloss.empty) {
             <luu-line type="gloss" [value]="model.gloss.highlightedText"></luu-line>
             }
