@@ -19,18 +19,22 @@
     </div>
     @switch (selectedType.mode) {
     @case ("dropdown") {
-    <div class="control is-expanded">
-        <p-multiSelect class="input" appendTo="body" [options]="dropdownOptions$ | async" [(ngModel)]="filter.content"
-            [panelStyle]="{'width':'min(800px,50vw)'}" [placeholder]="selectedType.placeholder" i18n-placeholder
-            (onChange)="emit()">
-            <ng-template let-value pTemplate="selectedItems">
-                <span *ngIf="!value || value.length === 0; else tags">{{selectedType.placeholder}}</span>
-                <ng-template #tags>
-                    <mima-filter-tags [labels]="dropdownLabels" [selected]="value"></mima-filter-tags>
-                </ng-template>
-            </ng-template>
-        </p-multiSelect>
-    </div>
+        <div class="control is-expanded">
+            <mat-form-field style="width: 100%;">
+                <mat-label i18n>{{selectedType.placeholder}}</mat-label>
+                <mat-select multiple [(value)]="filter.content" (valueChange)="emit()">
+                    <mat-select-trigger>
+                        <span *ngIf="!filter.content || filter.content.length === 0; else tags">{{selectedType.placeholder}}</span>
+                        <ng-template #tags>
+                            <mima-filter-tags [labels]="dropdownLabels" [selected]="filter.content"></mima-filter-tags>
+                        </ng-template>
+                    </mat-select-trigger>
+                    @for (option of (dropdownOptions$ | async); track option.value) {
+                        <mat-option [value]="option.value">{{option.label}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
     }
     @case ("dialect") {
     <div class="control is-expanded">
