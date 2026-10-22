@@ -34,6 +34,8 @@ type DialectNode = {
 })
 export class DialectSelectionComponent implements OnChanges {
     nodes?: DialectNode[];
+    selected?: string[];
+    nodeLabels?: { [name: string]: string }
 
     @Input()
     objectName: FilterObjectName;
@@ -65,18 +67,22 @@ export class DialectSelectionComponent implements OnChanges {
 
         if (this.nodes && changes.content) {
             this.setContent(this.nodes, this.content);
+            this.selected = this.selectedNodes(this.nodes);
         }
     }
 
     selectNode(node: DialectNode, value: boolean) {
-        node.selected = value;
-        node.indeterminate = false;
-        this.setChildren(node);
-        if (node.parents.length) {
-            const root = node.parents[0];
-            this.checkValue(root);
+        if (this.nodes) {
+            node.selected = value;
+            node.indeterminate = false;
+            this.setChildren(node);
+            if (node.parents.length) {
+                const root = node.parents[0];
+                this.checkValue(root);
+            }
+            this.selected = this.selectedNodes(this.nodes);
+            this.outputContent();
         }
-        this.outputContent();
     }
 
     private setChildren(node: DialectNode) {
@@ -111,9 +117,8 @@ export class DialectSelectionComponent implements OnChanges {
     }
 
     private outputContent() {
-        if (this.nodes) {
-            const value = this.selectedNodes(this.nodes);
-            this.contentChange.emit(value);
+        if (this.selected) {
+            this.contentChange.emit(this.selected);
         }
     }
 
@@ -146,6 +151,8 @@ export class DialectSelectionComponent implements OnChanges {
     private fillNodes(name: FilterObjectName) {
         const lookup = this.dialectService.getDialectLookup(name);
         this.nodes = this.parseNodes(lookup.root, []);
+        this.nodeLabels = {};
+        this.addLabels(this.nodes, this.nodeLabels);
         this.dataSource.data = this.nodes;
     }
 
@@ -161,5 +168,12 @@ export class DialectSelectionComponent implements OnChanges {
             self.children = this.parseNodes(dialect.children, [...parents, self]);
             return self;
         });
+    }
+
+    private addLabels(nodes: DialectNode[], labels: Record<string, string>) {
+        for (let node of nodes) {
+            labels[node.data.name] = node.data.label;
+            this.addLabels(node.children, labels);
+        }
     }
 }
