@@ -48,17 +48,18 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss",
-                            {
-                                "input": "src/dark.scss",
-                                "bundleName": "dark",
-                                "inject": false
-                            },
-                            {
-                                "input": "src/light.scss",
-                                "bundleName": "light",
-                                "inject": false
-                            }
+                          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+                          "src/styles.scss",
+                          {
+                            "input": "src/dark.scss",
+                            "bundleName": "dark",
+                            "inject": false
+                          },
+                          {
+                            "input": "src/light.scss",
+                            "bundleName": "light",
+                            "inject": false
+                          }
                         ],
                         "scripts": [],
                         "vendorChunk": true,
@@ -151,7 +152,8 @@
                             "src/assets"
                         ],
                         "styles": [
-                            "src/styles.scss"
+                          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+                          "src/styles.scss"
                         ],
                         "scripts": [],
                         "webWorkerTsConfig": "tsconfig.worker.json"
