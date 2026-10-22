@@ -1,18 +1,11 @@
-    <!-- <p-treeSelect class="input" containerStyleClass="w-full" [(ngModel)]="selectedNodes" [options]="nodes"
-        (onNodeUnselect)="onNodeUnselect($event)" (onNodeSelect)="onNodeSelect($event)" display="comma"
-        [metaKeySelection]="false" selectionMode="checkbox" [propagateSelectionUp]="false" placeholder="Select Item"
-        [filter]="true">
-        <ng-template let-value pTemplate="value">
-
-        </ng-template>
-    </p-treeSelect> -->
-
-    @if (!selected || !nodeLabels || selected.length === 0) {
-        {{placeholder}}
-    } @else {
-        <mima-filter-tags [labels]="nodeLabels" [selected]="selected"></mima-filter-tags>
-    }
-
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        @if (!selected || !nodeLabels || selected.length === 0) {
+            {{placeholder}}
+        } @else {
+            <mima-filter-tags [labels]="nodeLabels" [selected]="selected"></mima-filter-tags>
+        }
+    </mat-expansion-panel-header>
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="dialect-tree">
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
             <mat-checkbox [checked]="node.selected"
@@ -40,3 +33,4 @@
             </div>
         </mat-nested-tree-node>
     </mat-tree>
+</mat-expansion-panel>

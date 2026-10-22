@@ -9,6 +9,7 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 type DialectNode = {
     selected: boolean;
@@ -28,6 +29,7 @@ type DialectNode = {
         MatIconModule,
         MatButtonModule,
         MatCheckboxModule,
+        MatExpansionModule,
     ],
     templateUrl: './dialect-selection.component.html',
     styleUrl: './dialect-selection.component.scss'
