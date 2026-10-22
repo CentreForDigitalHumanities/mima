@@ -34,21 +34,6 @@ type DialectNode = {
 })
 export class DialectSelectionComponent implements OnChanges {
     nodes?: DialectNode[];
-    /**
-     * To (un)select nodes with a different path but the same dialect name
-     * (multiple parents).
-     */
-    // nodesByName: { [path: string]: DialectNode[] };
-    // selectedNodes: DialectNode[];
-    // labels: { [key: string]: string };
-
-    // get selected(): string[] {
-    //     if (!this.selectedNodes) {
-    //         return [];
-    //     }
-
-    //     return [...new Set(this.selectedNodes.map(node => node.data.name))];
-    // }
 
     @Input()
     objectName: FilterObjectName;
@@ -76,17 +61,22 @@ export class DialectSelectionComponent implements OnChanges {
             if (!this.nodes) {
                 this.fillNodes(this.objectName);
             }
-            // this.setContent(this.content);
+        }
+
+        if (this.nodes && changes.content) {
+            this.setContent(this.nodes, this.content);
         }
     }
 
-    onNodeSelect(node: DialectNode, value: boolean) {
+    selectNode(node: DialectNode, value: boolean) {
         node.selected = value;
+        node.indeterminate = false;
         this.setChildren(node);
         if (node.parents.length) {
             const root = node.parents[0];
             this.checkValue(root);
         }
+        this.outputContent();
     }
 
     private setChildren(node: DialectNode) {
@@ -99,102 +89,64 @@ export class DialectSelectionComponent implements OnChanges {
     private checkValue(node: DialectNode) {
         if (node.children.length) {
             node.children.forEach(child => this.checkValue(child));
+            this.setValueFromChildren(node);
+        }
+    }
 
-            if (node.children.find(child => child.indeterminate) ||
-                (node.children.find(child => child.selected) && node.children.find(child => !child.selected))
-            ) {
-                node.indeterminate = true;
-                node.selected = false;
-            } else if (
-                node.children.find(child => child.selected)
-            ) {
-                node.indeterminate = false;
-                node.selected = true;
+    private setValueFromChildren(node: DialectNode) {
+        if (node.children.find(child => child.indeterminate) ||
+            (node.children.find(child => child.selected) && node.children.find(child => !child.selected))
+        ) {
+            node.indeterminate = true;
+            node.selected = false;
+        } else if (
+            node.children.find(child => child.selected)
+        ) {
+            node.indeterminate = false;
+            node.selected = true;
+        } else {
+            node.indeterminate = false;
+            node.selected = false;
+        }
+    }
+
+    private outputContent() {
+        if (this.nodes) {
+            const value = this.selectedNodes(this.nodes);
+            this.contentChange.emit(value);
+        }
+    }
+
+    private selectedNodes(nodes: DialectNode[]): string[] {
+        return nodes.flatMap(node => {
+            if (node.selected) {
+                return [node.data.name];
             } else {
+                return this.selectedNodes(node.children);
+            }
+        });
+    }
+
+    private setContent(nodes: DialectNode[], value: string[]): void {
+        for (let node of nodes) {
+            if (value.includes(node.data.name)) {
+                node.selected = true;
                 node.indeterminate = false;
+                this.setChildren(node);
+            } else if (node.children.length) {
+                this.setContent(node.children, value);
+                this.setValueFromChildren(node);
+            } else {
                 node.selected = false;
+                node.indeterminate = false;
             }
         }
     }
 
-    // onNodeSelect(event: TreeNodeSelectEvent) {
-    //     const duplicates = this.nodesByName[(<DialectPath>event.node.data).name].filter(node => node.key !== event.node.key);
-    //     if (duplicates.length) {
-    //         this.selectedNodes = [...this.selectedNodes, ...duplicates];
-    //     }
-
-    //     this.outputContent();
-    // }
-
-    // private outputContent() {
-    //     this.contentChange.next([...new Set(this.selectedNodes.map(x => x.data.name))]);
-    // }
-
-    // private setContent(value: string[]) {
-    //     const selectedNodes: DialectNode[] = [];
-    //     for (const dialect of value) {
-    //         selectedNodes.push(...this.nodesByName[dialect] ?? []);
-    //     }
-
-    //     if (this.selectedNodes &&
-    //         this.selectedNodes.length === selectedNodes.length) {
-    //         // the same? don't update!
-    //         if (this.selectedNodes.map(x => x.data.name).every(dialect => value.indexOf(dialect) >= 0)) {
-    //             return;
-    //         }
-    //     }
-
-    //     this.selectedNodes = selectedNodes;
-    // }
-
     private fillNodes(name: FilterObjectName) {
         const lookup = this.dialectService.getDialectLookup(name);
-        // const nodes: DialectNode[] = [];
-        // const nodesByPath: { [path: string]: DialectNode } = {};
-        // const nodesByName: { [path: string]: DialectNode[] } = {};
-
-        // labels for the tag list
-        // const labels: { [key: string]: string } = {};
-
-        // for (const path of lookup.flattened) {
-        //     // this works because the data is returned as an hierarchial tree
-        //     // we can expect the parent to have been processed already!
-        //     const parent = nodesByPath[path.parentsPathFlat];
-        //     const node: DialectNode = {
-        //         key: path.pathFlat,
-        //         parent,
-        //         label: path.label,
-        //         data: path
-        //     };
-
-        //     labels[node.data.name] = node.label;
-
-        //     // this way we can also set the parents and children
-        //     nodesByPath[path.pathFlat] = node;
-
-        //     // for (un)selecting the nodes with the same name
-        //     if (nodesByName[node.data.name]) {
-        //         nodesByName[node.data.name].push(node);
-        //     } else {
-        //         nodesByName[node.data.name] = [node];
-        //     }
-
-        //     if (parent) {
-        //         if (!parent.children) {
-        //             parent.children = [];
-        //             parent.leaf = true;
-        //         }
-
-        //         parent.children.push(node);
-        //     } else {
-        //         nodes.push(node);
-        //     }
-        // }
-
-        // this.labels = labels;
         this.nodes = this.parseNodes(lookup.root, []);
         this.dataSource.data = this.nodes;
-        // this.nodesByName = nodesByName;
     }
 
     private parseNodes(dialects: Dialect[], parents: DialectNode[]): DialectNode[] {

@@ -17,7 +17,7 @@
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="dialect-tree">
         <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
             <mat-checkbox [checked]="node.selected"
-                (change)="onNodeSelect(node, $event.checked)">
+                (change)="selectNode(node, $event.checked)">
                 {{node.data.label}}
             </mat-checkbox>
         </mat-tree-node>
@@ -30,7 +30,7 @@
                     </mat-icon>
                 </button>
                 <mat-checkbox [checked]="node.selected"
-                    (change)="onNodeSelect(node, $event.checked)"
+                    (change)="selectNode(node, $event.checked)"
                     [indeterminate]="node.indeterminate">
                     {{node.data.label}}
                 </mat-checkbox>
