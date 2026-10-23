@@ -10701,7 +10701,7 @@
         "split_item": ""
     },
     "FRIq35q": {
-        "main_question": "Jan d\u00fbnset \u2026 wie er dronken ",
+        "main_question": "Jan d\u00fbnset \u2026 wie er dronken",
         "main_question_id": "FRIq35q",
         "sub_question": "anders ",
         "sub_question_id": "FRIq35q_anders ",
@@ -10716,7 +10716,7 @@
                 "country": [
                     "Netherlands"
                 ],
-                "score": "[Jan d\u00fbnset krekt as wie er dronken.] | [Jan d\u00fbnset] net liker as [wie er dronken.] "
+                "score": "[Jan d\u00fbnset krekt as wie er dronken.] | [Jan d\u00fbnset] net liker as [wie er dronken.]"
             }
         ],
         "chapters": [],
