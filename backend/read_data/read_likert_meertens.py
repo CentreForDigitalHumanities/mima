@@ -147,7 +147,7 @@ def enrich_with_metadata(paths, items):
                 if question_id in items.keys():
                     items[question_id].chapters = line[2].split(';')
                     items[question_id].tags = line[3].split(';')
-                    items[question_id].translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', line[4])
+                    items[question_id].translation = re.sub('(^[\u201c"]|[\u201c\u201d"]|\\u201d $)', '', line[4])
                     items[question_id].gloss = line[5]
                     items[question_id].split_item = line[1]
     return items

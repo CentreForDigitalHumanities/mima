@@ -4,6 +4,8 @@ import json
 import os
 from dataclasses import dataclass, asdict
 
+from typing import List
+
 from mima.settings import DATA_PATH_Q1, DATA_PATH_Q2, ADDITIONAL_DATA_PATH_Q1, ADDITIONAL_DATA_PATH_Q2, PARTICIPANTS_PATH_Q1, PARTICIPANTS_PATH_Q2, FRISIAN_PATH, FRISIAN_META, OUTPUT_PATH
 
 def read_csv(filepath):
@@ -31,12 +33,18 @@ def create_frisian_question_dict(path):
             frisian_question_dict[cell] = row[index-1].split('.')[1].strip('[]')
     return frisian_question_dict
 
+
+def clean_prompt(prompt: str):
+    # clean double spaces
+    prompt = ' '.join(part for part in prompt.split(' ') if part)
+    return prompt
+
 def extract_prompt(question_string, frisian_question_dict={}):
     ## Collect the prompts for a given string
     prompt_pattern = r'\[(.*?)\]'
     match = re.search(prompt_pattern, question_string)
     if match:
-        return match.group(1)
+        return clean_prompt(match.group(1))
     elif question_string in frisian_question_dict.keys():
         return frisian_question_dict[question_string]
     else:
@@ -150,10 +158,26 @@ def extract_participant_metadata(participants_data):
             if 'Nederland' in token or 'België' in token:
                 country.append(token)
             else:
-                dialect.append(token)
+                dialect += clean_dialects(token)
         participant_countries[participant_id] = country if country else ['NO COUNTRY']
         participant_dialects[participant_id] = dialect if dialect[0] != '' else ['SKIP']
     return participant_countries, participant_dialects, skip_list
+
+
+# fix some mistakes in the data
+def clean_dialects(dialect: str) -> List[str]:
+    if dialect.startswith('Overgangsdialect'):
+        return dialect.replace('Overgangsdialect', '').strip().split('/')
+    elif dialect == 'standaardnederlands':
+        return ['Standaardnederlands']
+    elif dialect == 'Fries':
+        return ['Frisian']
+    elif dialect == 'Nieuwpoorts':
+        return ['Nieuwpoort']
+    elif dialect == 'Nijmegen':
+        return ['Nijmeegs']
+    else:
+        return [dialect]
 
 
 def extract_answers(data, questionnaire_items, translation_indices, participant_countries, participant_dialects, skip_list):
@@ -213,7 +237,9 @@ def enrich_translation_questions(cleaned_translation_questions, additional_data)
         chapter = entry[2]
         subtags = entry[3].split(';')
         en_translation = re.sub('(^[\u201c"]|[\u201c\u201d"]$)', '', entry[4])
-        gloss = entry[5]
+        if en_translation == "How is Jan walking?\"/\u201cHow does Jan walk?":
+            en_translation = 'How does Jan walk?'
+        gloss = clean_prompt(entry[5])
         for id in ids:
             try:
                 question = cleaned_translation_questions[id]
