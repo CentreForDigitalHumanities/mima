@@ -1,0 +1,17 @@
+.dialect-tree-invisible {
+    display: none;
+}
+
+.dialect-tree ul, .dialect-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+.dialect-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 2rem;
+}
+
+.dialect-tree div[role=group] > .mat-tree-node {
+    padding-left: 3rem;
+}

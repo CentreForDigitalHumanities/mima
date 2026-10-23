@@ -5,7 +5,34 @@
     $yellow: #FFCD00,
     $blue: #5287C6);
 @use 'bulma/bulma';
-@import 'primeicons/primeicons.css';
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$light-theme: mat.define-light-theme((
+    color: (
+        primary: mat.define-palette(mat.$amber-palette),
+        accent: mat.define-palette(mat.$amber-palette),
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+));
+
+$dark-theme: mat.define-dark-theme((
+    color: (
+        primary: mat.define-palette(mat.$amber-palette),
+        accent: mat.define-palette(mat.$amber-palette),
+    ),
+));
+
+@include mat.all-component-themes($light-theme);
+
+.theme-dark {
+    @include mat.all-component-themes($dark-theme);
+
+}
+
 
 $highlight: var(--bulma-warning);
 $highlight-text: var(--bulma-warning-invert);
@@ -85,3 +112,6 @@ p-multiselect.input {
         }
     }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
