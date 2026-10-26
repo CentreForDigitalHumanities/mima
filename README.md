@@ -212,3 +212,7 @@ $ yarn django collectstatic --settings SETTINGS --pythonpath path/to/SETTINGS.py
 ```
 
 You should build the frontend before collecting all static files.
+
+## Reading data
+
+The projects contains the processed survey data in `frontend/src/assets`, to generate these using the original survey output files use `./read_data.sh`. These files are excluded from this repository because they contain privacy sensitive information about the respondents.
