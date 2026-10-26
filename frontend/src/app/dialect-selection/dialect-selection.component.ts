@@ -1,49 +1,61 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TreeNode } from 'primeng/api';
-import { TreeNodeSelectEvent, TreeNodeUnSelectEvent } from 'primeng/tree';
-import { TreeSelectModule } from 'primeng/treeselect';
-import { DialectPath } from '../models/dialect';
+import { Dialect } from '../models/dialect';
 import { FilterTagsComponent } from '../filter-tags/filter-tags.component';
 import { DialectService } from '../services/dialect.service';
 import { FilterObjectName } from '../models/filter';
+import {MatTreeModule, MatTreeNestedDataSource} from '@angular/material/tree';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+type DialectNode = {
+    selected: boolean;
+    indeterminate: boolean;
+    data: Dialect;
+    parents: DialectNode[];
+    children: DialectNode[];
+}
 
 @Component({
     selector: 'mima-dialect-selection',
     standalone: true,
-    imports: [FormsModule, TreeSelectModule, FilterTagsComponent],
+    imports: [
+        FormsModule,
+        FilterTagsComponent,
+        MatTreeModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatExpansionModule,
+    ],
     templateUrl: './dialect-selection.component.html',
     styleUrl: './dialect-selection.component.scss'
 })
 export class DialectSelectionComponent implements OnChanges {
-    nodes: TreeNode<DialectPath>[];
-    /**
-     * To (un)select nodes with a different path but the same dialect name
-     * (multiple parents).
-     */
-    nodesByName: { [path: string]: TreeNode<DialectPath>[] };
-    selectedNodes: TreeNode<DialectPath>[];
-    labels: { [key: string]: string };
-
-    get selected(): string[] {
-        if (!this.selectedNodes) {
-            return [];
-        }
-
-        return [...new Set(this.selectedNodes.map(node => node.data.name))];
-    }
+    nodes?: DialectNode[];
+    selected?: string[];
+    nodeLabels?: { [name: string]: string }
 
     @Input()
     objectName: FilterObjectName;
 
     @Input()
-    placeholder: string;
+    placeholder?: string;
 
     @Input()
     content: string[];
 
     @Output()
     contentChange = new EventEmitter<string[]>();
+
+    treeControl = new NestedTreeControl<DialectNode>(node => node.children);
+    dataSource = new MatTreeNestedDataSource<DialectNode>();
+
+    childrenAccessor = (dialect: Dialect) => dialect.children;
+    hasChild = (_: number, dialect: Dialect) => dialect.children.length > 0;
 
     constructor(private dialectService: DialectService) {
     }
@@ -53,95 +65,117 @@ export class DialectSelectionComponent implements OnChanges {
             if (!this.nodes) {
                 this.fillNodes(this.objectName);
             }
-            this.setContent(this.content);
+        }
+
+        if (this.nodes && changes.content) {
+            this.setContent(this.nodes, this.content);
+            this.selected = this.selectedNodes(this.nodes);
         }
     }
 
-    onNodeUnselect(event: TreeNodeUnSelectEvent) {
-        const duplicates = this.nodesByName[(<DialectPath>event.node.data).name].filter(node => node.key !== event.node.key).map(node => node.key);
-        if (duplicates.length) {
-            this.selectedNodes = this.selectedNodes.filter(node => duplicates.indexOf(node.key) < 0);
+    selectNode(node: DialectNode, value: boolean) {
+        if (this.nodes) {
+            node.selected = value;
+            node.indeterminate = false;
+            this.setChildren(node);
+            if (node.parents.length) {
+                const root = node.parents[0];
+                this.checkValue(root);
+            }
+            this.selected = this.selectedNodes(this.nodes);
+            this.outputContent();
         }
-
-        this.outputContent();
     }
 
-    onNodeSelect(event: TreeNodeSelectEvent) {
-        const duplicates = this.nodesByName[(<DialectPath>event.node.data).name].filter(node => node.key !== event.node.key);
-        if (duplicates.length) {
-            this.selectedNodes = [...this.selectedNodes, ...duplicates];
+    private setChildren(node: DialectNode) {
+        for (let child of node.children) {
+            child.selected = node.selected;
+            this.setChildren(child);
         }
+    }
 
-        this.outputContent();
+    private checkValue(node: DialectNode) {
+        if (node.children.length) {
+            node.children.forEach(child => this.checkValue(child));
+            this.setValueFromChildren(node);
+        }
+    }
+
+    private setValueFromChildren(node: DialectNode) {
+        if (node.children.find(child => child.indeterminate) ||
+            (node.children.find(child => child.selected) && node.children.find(child => !child.selected))
+        ) {
+            node.indeterminate = true;
+            node.selected = false;
+        } else if (
+            node.children.find(child => child.selected)
+        ) {
+            node.indeterminate = false;
+            node.selected = true;
+        } else {
+            node.indeterminate = false;
+            node.selected = false;
+        }
     }
 
     private outputContent() {
-        this.contentChange.next([...new Set(this.selectedNodes.map(x => x.data.name))]);
+        if (this.selected) {
+            this.contentChange.emit(this.selected);
+        }
     }
 
-    private setContent(value: string[]) {
-        const selectedNodes: TreeNode<DialectPath>[] = [];
-        for (const dialect of value) {
-            selectedNodes.push(...this.nodesByName[dialect] ?? []);
-        }
+    private selectedNodes(nodes: DialectNode[]): string[] {
+        return nodes.flatMap(node => {
+            if (node.selected) {
+                return [node.data.name];
+            } else {
+                return this.selectedNodes(node.children);
+            }
+        });
+    }
 
-        if (this.selectedNodes &&
-            this.selectedNodes.length === selectedNodes.length) {
-            // the same? don't update!
-            if (this.selectedNodes.map(x => x.data.name).every(dialect => value.indexOf(dialect) >= 0)) {
-                return;
+    private setContent(nodes: DialectNode[], value: string[]): void {
+        for (let node of nodes) {
+            if (value.includes(node.data.name)) {
+                node.selected = true;
+                node.indeterminate = false;
+                this.setChildren(node);
+            } else if (node.children.length) {
+                this.setContent(node.children, value);
+                this.setValueFromChildren(node);
+            } else {
+                node.selected = false;
+                node.indeterminate = false;
             }
         }
-
-        this.selectedNodes = selectedNodes;
     }
 
     private fillNodes(name: FilterObjectName) {
         const lookup = this.dialectService.getDialectLookup(name);
-        const nodes: TreeNode<DialectPath>[] = [];
-        const nodesByPath: { [path: string]: TreeNode<DialectPath> } = {};
-        const nodesByName: { [path: string]: TreeNode<DialectPath>[] } = {};
+        this.nodes = this.parseNodes(lookup.root, []);
+        this.nodeLabels = {};
+        this.addLabels(this.nodes, this.nodeLabels);
+        this.dataSource.data = this.nodes;
+    }
 
-        // labels for the tag list
-        const labels: { [key: string]: string } = {};
-
-        for (const path of lookup.flattened) {
-            // this works because the data is returned as an hierarchial tree
-            // we can expect the parent to have been processed already!
-            const parent = nodesByPath[path.parentsPathFlat];
-            const node: TreeNode<DialectPath> = {
-                key: path.pathFlat,
-                parent,
-                label: path.label,
-                data: path
-            };
-
-            labels[node.data.name] = node.label;
-
-            // this way we can also set the parents and children
-            nodesByPath[path.pathFlat] = node;
-
-            // for (un)selecting the nodes with the same name
-            if (nodesByName[node.data.name]) {
-                nodesByName[node.data.name].push(node);
-            } else {
-                nodesByName[node.data.name] = [node];
+    private parseNodes(dialects: Dialect[], parents: DialectNode[]): DialectNode[] {
+        return dialects.map(dialect => {
+            const self = {
+                data: dialect,
+                parents,
+                children: [] as DialectNode[],
+                selected: false,
+                indeterminate: false,
             }
+            self.children = this.parseNodes(dialect.children, [...parents, self]);
+            return self;
+        });
+    }
 
-            if (parent) {
-                if (!parent.children) {
-                    parent.children = [];
-                    parent.leaf = true;
-                }
-
-                parent.children.push(node);
-            } else {
-                nodes.push(node);
-            }
+    private addLabels(nodes: DialectNode[], labels: Record<string, string>) {
+        for (let node of nodes) {
+            labels[node.data.name] = node.data.label;
+            this.addLabels(node.children, labels);
         }
-
-        this.labels = labels;
-        this.nodes = nodes;
-        this.nodesByName = nodesByName;
     }
 }

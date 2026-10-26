@@ -13,6 +13,7 @@ import { QuestionnaireEffects } from './questionnaire.effects';
 
 import { JudgmentsEffects } from './judgments.effects';
 import { judgmentsReducer } from './judgments.reducer';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export const appConfig: ApplicationConfig = {
@@ -41,6 +42,6 @@ export const appConfig: ApplicationConfig = {
                 strictStateImmutability: true,
                 strictActionImmutability: true
             }
-        })
+        }), provideAnimationsAsync()
     ]
 };

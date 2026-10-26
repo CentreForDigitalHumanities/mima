@@ -8,7 +8,8 @@ import {
     faTimesCircle,
     faTrash
 } from '@fortawesome/free-solid-svg-icons';
-import { MultiSelectModule } from 'primeng/multiselect';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { Filter, FilterField, FilterObjectName, FilterType } from '../models/filter';
 import { DropdownOption, FilterFieldOptions } from '../services/filter-management.service';
@@ -21,7 +22,16 @@ import { DialectSelectionComponent } from '../dialect-selection/dialect-selectio
     templateUrl: './filter.component.html',
     styleUrls: ['./filter.component.scss'],
     standalone: true,
-    imports: [CommonModule, FontAwesomeModule, FormsModule, ManualButtonComponent, MultiSelectModule, FilterTagsComponent, DialectSelectionComponent]
+    imports: [
+        CommonModule,
+        FontAwesomeModule,
+        FormsModule,
+        ManualButtonComponent,
+        FilterTagsComponent,
+        DialectSelectionComponent,
+        MatSelectModule,
+        MatFormFieldModule,
+    ]
 })
 export class FilterComponent<T extends FilterObjectName> implements OnInit, OnDestroy {
     private subscriptions: Subscription[];
